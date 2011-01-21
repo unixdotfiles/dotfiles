@@ -1,0 +1,18 @@
+include "%S/en_US.UTF-8/Compose"
+<Multi_key> <e> <f> : "∈"
+<Multi_key> <e> <slash> : "∉"
+<Multi_key> <equal> <asciicircum> "≙"
+<Multi_key> <U> <quotedbl> : "Ü"
+<Multi_key> <u> <quotedbl> : "ü"
+<Multi_key> <y> <equal> : "¥"
+<Multi_key> <Y> <equal> : "￥"
+<Multi_key> <8> <8> : "∞"
+<Multi_key> <less> <less> : "←"
+<Multi_key> <greater> <greater> : "→"
+<Multi_key> <less> <greater> : "↔"
+<Multi_key> <less> <slash> : "↚"
+<Multi_key> <greater> <slash> : "↛"
+<Multi_key> <less> <asciitilde> : "↜"
+<Multi_key> <greater> <asciitilde> : "↝"
+
+# ↑ ↓  ↕    
