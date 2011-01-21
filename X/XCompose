@@ -7,6 +7,8 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <y> <equal> : "¥"
 <Multi_key> <Y> <equal> : "￥"
 <Multi_key> <8> <8> : "∞"
+
+#Arrows
 <Multi_key> <less> <less> : "←"
 <Multi_key> <greater> <greater> : "→"
 <Multi_key> <less> <greater> : "↔"
@@ -14,5 +16,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <greater> <slash> : "↛"
 <Multi_key> <less> <asciitilde> : "↜"
 <Multi_key> <greater> <asciitilde> : "↝"
+<Multi_key> <less> <bar> : "↤"
+<Multi_key> <greater> <bar> : "↦"
 
 # ↑ ↓  ↕    
