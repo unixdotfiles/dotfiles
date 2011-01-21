@@ -7,4 +7,5 @@ self=$(realpath ~/.conf);
 [ -e $HOME/.mynano ] || ln -s $self/nano/ $HOME/.mynano
 [ -e $HOME/.XCompose ] || ln -s $self/X/XCompose $HOME/.XCompose
 [ -e $HOME/.hgrc ] || ln -s $self/mercurial/hgrc $HOME/.hgrc
+[ -e $HOME/.mplayer/config ] || ln -s $self/mplayer/config $HOME/.mplayer/config
 
