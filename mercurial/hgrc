@@ -1,0 +1,23 @@
+[ui]
+username = eitan
+[extensions]
+bisect = 
+bookmarks =
+children =
+churn=
+color =
+eol = 
+fetch =
+graphlog =
+highlight =
+parentrevspec =
+progress =
+rebase =
+[defaults]
+pull = --rebase
+[alias]
+nudge = push --rev .
+[progress]
+delay = 2
+[web]
+cacerts = /usr/local/share/certs/ca-root-nss.crt
