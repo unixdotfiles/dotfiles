@@ -1,0 +1,50 @@
+#allowed
+#white, black, red, blue, green, yellow, magenta, and cyan
+#main config
+
+set const  #Constantly display the cursor position in the status bar. 
+set historylog
+#set mouse
+set morespace
+set multibuffer
+set nonewlines
+set smarthome
+set smooth
+set wordbounds
+set tabsize 6
+set nowrap
+unset tabstospaces
+
+
+
+#per file config
+include ~/.mynano/nanorc.nanorc
+include ~/.mynano/php.nanorc
+include ~/.mynano/html.nanorc
+include ~/.mynano/js.nanorc
+include ~/.mynano/patch.nanorc
+include ~/.mynano/makefile.nanorc
+include ~/.mynano/sql.nanorc
+include ~/.mynano/css.nanorc
+include ~/.mynano/xorg_conf.nanorc
+include ~/.mynano/patch.nanorc
+include ~/.mynano/bash.nanorc
+include ~/.mynano/cfg.nanorc
+include ~/.mynano/makefile.nanorc
+include ~/.mynano/xml.nanorc
+include ~/.mynano/c.nanorc
+include ~/.mynano/lolcode.nanorc
+include ~/.mynano/tex.nanorc
+
+include /usr/local/share/nano/python.nanorc
+include /usr/local/share/nano/java.nanorc
+include /usr/local/share/nano/perl.nanorc
+include /usr/local/share/nano/ruby.nanorc
+include /usr/local/share/nano/man.nanorc
+
+
+
+bind	F1	help		all
+bind	^G	gotoline	all
+bind ^Z	undo		all
+bind ^Y	redo		all

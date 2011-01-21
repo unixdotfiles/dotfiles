@@ -1,0 +1,4 @@
+syntax "TeX" "\.tex$"
+color green "\\.|\\[A-Za-z]*"
+color magenta "[{}]"
+color blue "%.*"

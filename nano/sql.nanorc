@@ -1,0 +1,6 @@
+syntax "postgreSQL" "\.sql$"
+#icolor red "\<(A(LL|NALY(S|Z)E|ND|NY|RRAY|S|SC|SYMMETRIC|UTHORIZATION)|B(ETWEEN|INARY|OTH|Y)|C(ASE|AST|HECK|OLLATE|OLUMN|ONSTRAINT|REATE|ROSS|URRENT_(DATE|ROLE|TIME$
+color magenta "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
+color yellow "'[^']*'"
+color green "--.*$"
+
