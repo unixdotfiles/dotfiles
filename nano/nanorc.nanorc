@@ -1,0 +1,10 @@
+syntax "nanorc" "\.nanorc$" 
+color red "(color|syntax|icolor|set|include|unset|bind)"
+color blue "(red|blue|green|yellow|white|magenta|cyan|bright)"
+#for bind
+color green "(help|cancel|exit|writeout|justify|insert|whereis|searchagain|up|down|left|right|cut|uncut|curpos|firstline|lastline|gotoline|replace|mark|copytext|indent|unindent|nextword|prevword|home|end|beginpara|endpara|findbracket|scrollup|scrolldown|prevbuf|nextbuf|verbatim|tab|enter|delete|fulljustify|wordcount|refresh|undo|redo|suspend|casesens|regexp|prevhistory|nexthistory|dontreplace|gototext|dosformat|macformat|append|prepend|backup|firstfile|lastfile|nohelp|constupdate|morespace|smoothscroll|whitespacedisplay|smarthome|autoindent|cuttoend|nowrap|suspendenable)"
+color green "(main|search|replace|replacewith|gotoline|writeout|insert|extcmd|spell|browser|whereisfile|gotodir|all)"
+#comments
+color magenta "#.*$"
+#string
+color white "(\"[^"]*\")"
