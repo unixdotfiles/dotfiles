@@ -7,6 +7,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <y> <equal> : "¥"
 <Multi_key> <Y> <equal> : "￥"
 <Multi_key> <8> <8> : "∞"
+<Multi_key> <numbersign> <numbersign> :"♯"
 
 #Arrows
 <Multi_key> <less> <less> : "←"
