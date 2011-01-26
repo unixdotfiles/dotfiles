@@ -23,3 +23,4 @@ report mplayer;
 report nano;
 report links || report lynx; # prefer lynx - but don't report it if we have links
 report xmodmap;
+report xpdf;
