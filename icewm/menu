@@ -1,0 +1,110 @@
+# menufile == import file; menuprog == get results from a program
+#                                     (shell script anyone?)\
+#NOT YET USED:go-home name system-software-update java fre 
+#eye_green eye_red golf money nude pencil2 pig question read2 tap
+
+menu "Web & Mail" applications-internet
+{
+	prog "Firefox" mozilla firefox3
+	prog "Dillo" dillo dillo
+	prog "Links" app Eterm -e links
+	prog "Links (graphical)" app links -g
+	separator
+	prog Thunderbird mail thunderbird
+	prog Mutt app Eterm -e mutt
+	separator
+	prog "Xchat" face-smile xchat
+	prog "Pidgin" face-smile pidgin
+	prog "Skype" phone skype
+	separator
+	prog "Transmission" app transmission
+}
+
+menu "Multimedia" applications-multimedia
+{
+	menu "Music" folder
+	{
+		prog MPlayer media-cdrom gmplayer
+		prog "VLC (ncurses)" media-cdrom Eterm -e nvlc
+		prog "Xine" media-cdrom xine
+		prog "Xmms" media-cdrom xmms
+	}
+	menu "Image Viewers" applications-graphics {
+		prog "Gview" app gview 
+		prog xPDF read xpdf
+	}
+	menu "Image Editors" applications-graphics {
+		prog xPaint paint xpaint
+	}
+	menu "Audio" folder {
+		prog "Audacity" app audacity
+	}
+}
+
+menu "Editors" accessories-text-editor {
+ prog "Gvim" app gvim 
+ prog "Nano" pencil Eterm -e nano 
+ prog "Nedit" app nedit 
+ prog "Vim" vim Eterm -e vim 
+ prog "Emacs" emacs Eterm -e emacs
+ prog "Openoffice" applications-office openoffice.org-3.1.1-swriter  
+ menu "Openoffice more..." folder {
+   prog "Base" app openoffice.org-3.1.1-sbase
+   prog "Calc" app openoffice.org-3.1.1-scalc
+   prog "Math" app openoffice.org-3.1.1-smath
+   prog "Draw" app openoffice.org-3.1.1-sdraw
+   prog "Impress" app openoffice.org-3.1.1-simpress
+   prog "Set Office Lang" app openoffice.org-3.1.1-setofficelang
+   prog "Impress" app openoffice.org-3.1.1-simpress
+   prog "Padmin" app openoffice.org-3.1.1-spadmin
+ }
+}
+
+menu "Games" applications-games {
+	prog "Nethack" app Eterm -e nethack
+	prog "LBreakout" app lbreakout2
+}
+
+menu "Accessories" applications-accessories
+{
+	prog "Clock" app xclock
+	prog "Xev"	system-software-update Eterm -e xev
+	prog "Xeyes" eye_blue xeyes
+}
+menu "Other WM" folder {
+}
+
+menu "Shells" xterm {
+ prog "Eterm (Bash)" app Eterm -e bash 
+ prog "Eterm (Tcsh)" app Eterm -e tcsh 
+ menu "Eterm Themes" folder {
+  prog "Eterm - Auto Theme" app Eterm -t auto 
+  prog "Eterm - Color Theme" app Eterm -t cEterm 
+  prog "Eterm - Host Chooser" app Etem -t chooser 
+  prog "Eterm - Transparent" app Eterm -t trans 
+ }
+ separator
+ prog "Xterm (bash)" app xterm -e bash
+}
+
+separator
+menu "Options" preferences-desktop {
+	menu "Bell" folder {
+		prog "Turn bell on" (null) xset b on
+		prog "Turn bell off" (null) xset b off
+		prog "Make bell short" (null) xset b 8 1000 10
+		prog "Make bell long" (null) xset b 8 1000 100
+	}
+	menu "Laptop Screen" folder {
+		prog "Normalize" (null) xrandr --output LVDS --rotate normal
+		prog "Invert Screen" (null) xrandr --output LVDS --rotate inverted
+	}
+	menu "Config files" folder {
+		prog "X startup script" file Eterm -e nano ~/.xinitrc
+		prog "Modify this menu" file Eterm -e nano ~/.icewm/menu
+		prog "Change key bindings" file Eterm -e nano ~/.icewm/keys
+		prog "runCmd settings" file Eterm -e nano ~/.runrc
+		prog "Bash Profile" file Eterm -e nano ~/.profile
+		prog "Quotes File" pencil2 bash -c "Eterm -e ~/.fortune/edit.sh"
+	}
+}

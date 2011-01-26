@@ -1,0 +1,49 @@
+ThemeAuthor="Eitan Adler"
+
+# Misc. Global Settings
+#######################
+ShutdownCommand="shutdown -p"
+RebootCommand="shutdown -r"
+
+# Taskbar Settings
+##################
+ShowTaskBar=1
+TaskBarShowTray=1
+TaskBarShowCPUStatus=1
+TaskBarShowNetStatus=1
+TaskBarShowClock=1
+TaskBarShowAPMStatus=0
+TaskBarShowMailboxStatus=0
+TaskBarClockLeds=0
+TaskBarDoubleHeight=0
+TaskBarAtTop=0
+TaskBarKeepBelow=0
+DateFormat="%a, %b %d %Y %R %Z"
+TimeFormat="%I:%M:%S %p"
+TimeFormatAlt="%D"
+NetworkStatusDevice="nfe0"
+MailCheckDelay=120
+
+# menu options
+#######################
+
+Win95Keys=1 #Makes 3 additional keys perform sensible functions.
+TaskBarShowMailboxStatus=0
+UseMouseWheel=1
+WorkspaceNames="Main","Mail", "Devel", "Web"
+ClockCommand="xclock"
+MailCommand="Eterm -e mail"
+LockCommand="xlock"
+NetStatusCommand="xterm -e netstat -f inet -w 5 -d "
+#RunCommand #program to run when Run is selected from the start menu.
+#RunCommand="Eterm -Sv --pause --finished-title '(done)' -T 'Run?' -e ~/runCmd/runCmd.sh"
+RunCommand="Eterm -Sv -T 'Run?' -e runCmd"
+WinMenuItems=rmsnxfhualytickw
+#DesktopBackgroundImage="/home/comperr/.pics/multi_color.jpg"
+DesktopBackgroundColor="green" 
+
+#ShowProgramsMenu=1
+#OpenCommand="Eterm"
+
+
+XineramaPrimaryScreen=0
