@@ -17,4 +17,4 @@ htln nano .mynano
 htln X/XCompose .XCompose
 htln mercurial/hgrc .hgrc
 htln mplayer/config .mplayer/config
-
+htln icewm .icewm
