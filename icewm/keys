@@ -1,0 +1,33 @@
+key "Print" scrot '/home/eitan/shots/%F--%R-%S_$wx$h.png'
+key "Ctrl+Print"  scrot '/home/eitan/shots/%F--%R-%S_$wx$h.png' --exec 'display file:///$f'
+##alt == only program?
+key "XF86AudioMute" mixer vol 0
+key "Ctrl+XF86AudioMute" mixer vol 100
+key "Alt+XF86AudioMute" mixer vol 50
+
+key "XF86AudioRaiseVolume" mixer vol +5
+key "Ctrl+XF86AudioRaiseVolume" mixer vol +1
+
+key "XF86AudioLowerVolume" mixer vol -5
+key "Ctrl+XF86AudioLowerVolume" mixer vol -1
+
+key "Ctrl+Alt+XF86AudioMute" mixer speaker 0
+key "Ctrl+Alt+XF86AudioRaiseVolume" mixer speaker +10
+key "Ctrl+Alt+XF86AudioLowerVolume" mixer speaker -10
+
+
+key "XF86AudioNext" badkey audio-next 144
+key "XF86AudioPrev" badkey audio-prev 153
+key "XF86AudioPlay" badkey audio-play ??
+key "XF86AudioStop" badkey audio-stop ??
+key "XF86AudioPause" badkey audio-pause ??
+
+
+key "XF86Sleep" badkey sleep 151
+key "XF86Hibernate" badkey hibernate 152
+
+key "Sys_Req" badkey sysreq 92
+
+key "XF86WWW" Eterm -e bash www.sh
+
+key "XF86Tools" badkey toolbox 180
