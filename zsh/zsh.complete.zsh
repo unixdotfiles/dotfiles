@@ -44,6 +44,9 @@ zstyle ':completion:*' squeeze-slashes true
 
 #cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+#ignore CVS paths - always
+zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*'
+
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
