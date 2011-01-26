@@ -16,5 +16,7 @@ htln nano/USE_RC .nanorc
 htln nano .mynano
 htln X/XCompose .XCompose
 htln mercurial/hgrc .hgrc
+[ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
 htln mplayer/config .mplayer/config
 htln icewm .icewm
+htln cvs/cvsrc .cvsrc
