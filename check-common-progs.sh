@@ -13,7 +13,7 @@ report port;
 report xchat;
 report pidgin;
 report firefox;
-report mgt || printf "\tcheck multi-gnome-terminal";
+report multi-gnome-terminal && [ -L $(which -s mgt) ]
 report geany;
 report hg;
 report git;
