@@ -1,0 +1,11 @@
+# set the text output options
+textEncoding UTF-8
+textEOL      unix
+
+# Set normal viewing information
+initialZoom 200
+continuousView yes
+
+# Set program defaults
+urlCommand /usr/local/bin/firefox "%s"
+movieCommand /usr/local/bin/mplayer "%s"

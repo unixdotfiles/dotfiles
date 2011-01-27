@@ -20,3 +20,4 @@ htln mercurial/hgrc .hgrc
 htln mplayer/config .mplayer/config
 htln icewm .icewm
 htln cvs/cvsrc .cvsrc
+htln xpdf/xpdfrc .xpdfrc
