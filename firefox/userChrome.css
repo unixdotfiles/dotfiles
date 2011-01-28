@@ -1,0 +1,11 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* change default menu size */
+menupopup > * {
+	font-size: 11pt !important;
+}
+
+/* remove the X button from the status *cough addons* bar */
+#addonbar-closebutton {
+	display: none !important;
+}
