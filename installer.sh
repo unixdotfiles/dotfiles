@@ -21,3 +21,4 @@ htln mplayer/config .mplayer/config
 htln icewm .icewm
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
+find $HOME/.mozilla -name chrome -type d -mindepth 3 -maxdepth 3 -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
