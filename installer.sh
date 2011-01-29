@@ -16,6 +16,7 @@ htln zsh/zshrc .zshrc
 htln nano/USE_RC .nanorc
 htln nano .mynano
 htln X/XCompose .XCompose
+htln X/xinitrc .xinitrc
 htln mercurial/hgrc .hgrc
 [ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
 htln mplayer/config .mplayer/config

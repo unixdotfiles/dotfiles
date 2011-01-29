@@ -1,0 +1,4 @@
+numlockx on &
+setxkbmap -option compose:caps &
+xhost +localhost &
+exec icewm-session;
