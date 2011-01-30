@@ -18,8 +18,8 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <equal> <asciicircum> "≙"
 
 #Arrows
-<Multi_key> <less> <less> : "←"
-<Multi_key> <greater> <greater> : "→"
+<Multi_key> <less> <less> : "«"
+<Multi_key> <greater> <greater> : "»"
 <Multi_key> <less> <greater> : "↔"
 <Multi_key> <less> <slash> : "↚"
 <Multi_key> <greater> <slash> : "↛"
