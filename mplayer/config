@@ -1,3 +1,5 @@
 # Write your default config options here!
 softvol=yes
 softvol-max=400
+
+heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &" 
