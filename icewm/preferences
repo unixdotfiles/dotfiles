@@ -33,7 +33,7 @@ UseMouseWheel=1
 WorkspaceNames="Main","Mail", "Devel", "Web"
 ClockCommand="xclock"
 MailCommand="Eterm -e mail"
-LockCommand="xlock"
+LockCommand="xscreensaver-command -activate"
 NetStatusCommand="xterm -e netstat -f inet -w 5 -d "
 #RunCommand #program to run when Run is selected from the start menu.
 #RunCommand="Eterm -Sv --pause --finished-title '(done)' -T 'Run?' -e ~/runCmd/runCmd.sh"
