@@ -28,4 +28,6 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <less> <bar> : "↤"
 <Multi_key> <greater> <bar> : "↦"
 
+<Multi_key> <colon> <parenright> : "☺"
+
 # ↑ ↓  ↕    
