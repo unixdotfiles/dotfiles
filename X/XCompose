@@ -1,4 +1,6 @@
+include "%L"
 include "%S/en_US.UTF-8/Compose"
+
 <Multi_key> <U> <quotedbl> : "Ü"
 <Multi_key> <u> <quotedbl> : "ü"
 <Multi_key> <numbersign> <numbersign> :"♯"
@@ -16,7 +18,6 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <e> <f> : "∈"
 <Multi_key> <e> <slash> : "∉"
 <Multi_key> <equal> <asciicircum> "≙"
-
 
 #Arrows
 <Multi_key> <less> <less> : "«"
@@ -36,8 +37,17 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <Right> <Left> : "↔" U2194 # LEFT RIGHT ARROW (kragen's)
 <Multi_key> <Up> <Down> : "↕" U2195 # UP DOWN ARROW (kragen's)
 <Multi_key> <Down> <Left> : "↵" U21B5 # DOWNWARDS ARROW WITH CORNER LEFTWARDS
-
-<Multi_key> <period> <slash> <period>	: "⁒"	U2052		# COMMERCIAL MINUS SIGN
+# For some logical statements. I prefer doubled arrows for implication.
+<Multi_key> <equal> <greater> : "⇒" U21D2 # RIGHTWARDS DOUBLE ARROW
+<Multi_key> <equal> <less> : "⇐" U21D0 # LEFTWARDS DOUBLE ARROW
+<Multi_key> <less> <minus> <equal> <greater> : "⇔" U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <equal> <Right> <Right> : "⇒" U21D2 # RIGHTWARDS DOUBLE ARROW
+<Multi_key> <equal> <Left> <Left> : "⇐" U21D0 # LEFTWARDS DOUBLE ARROW
+<Multi_key> <equal> <Left> <Right> : "⇔" U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <equal> <Right> <Left> : "⇔" U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <equal> <Up> <Up> : "⇑" U21D1 # UPWARDS DOUBLE ARROW
+<Multi_key> <equal> <Down> <Down> : "⇓" U21D3 # DOWNWARDS DOUBLE ARROW
+<Multi_key> <equal> <Up> <Down> : "⇕" U21D5 # UP DOWN DOUBLE ARROW
 
 <Multi_key> <colon> <parenright> : "☺"
 
@@ -52,11 +62,30 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <dash> <period> <period> : "⋯" U22EF # MIDLINE HORIZONTAL ELLIPSIS
 <Multi_key> <period> <slash> <period> : "⁒" U2052 # COMMERCIAL MINUS SIGN
 
-
-<Multi_key> <less> <3> : "♥" U2665 		# BLACK HEART SUIT
-<Multi_key> <3> <3> : "♣" U2663 			# BLACK CLUB SUIT
-<Multi_key> <less> <asciicircum><greater> : "♢" U2662 # WHITE DIAMOND SUIT
-<Multi_key> <3> <minus> : "♠" U2660 # BLACK SPADE SUIT
-<Multi_key> <E> <greater> : "♡" U2661 # WHITE HEART SUIT
+<Multi_key> <3> <greater> : "♡" U2661 # WHITE HEART SUIT
 <Multi_key> <ampersand> <O> <Y> : "☮" U262E # PEACE SYMBOL
 <Multi_key> <ampersand> <y> <y> : "☯" U262F # YIN YANG
+
+# Roman numerals
+
+<Multi_key> <percent> <1> : "ⅰ" U2170 # SMALL ROMAN NUMERAL ONE
+<Multi_key> <percent> <2> : "ⅱ" U2171 # SMALL ROMAN NUMERAL TWO
+<Multi_key> <percent> <3> : "ⅲ" U2172 # SMALL ROMAN NUMERAL THREE
+<Multi_key> <percent> <4> : "ⅳ" U2173 # SMALL ROMAN NUMERAL FOUR
+<Multi_key> <percent> <5> : "ⅴ" U2174 # SMALL ROMAN NUMERAL FIVE
+<Multi_key> <percent> <6> : "ⅵ" U2175 # SMALL ROMAN NUMERAL SIX
+<Multi_key> <percent> <7> : "ⅶ" U2176 # SMALL ROMAN NUMERAL SEVEN
+<Multi_key> <percent> <8> : "ⅷ" U2177 # SMALL ROMAN NUMERAL EIGHT
+<Multi_key> <percent> <9> : "ⅸ" U2178 # SMALL ROMAN NUMERAL NINE
+<Multi_key> <percent> <x> : "ⅹ" U2179 # SMALL ROMAN NUMERAL TEN
+
+<Multi_key> <numbersign> <1> : "Ⅰ" U2160 # ROMAN NUMERAL ONE
+<Multi_key> <numbersign> <2> : "Ⅱ" U2161 # ROMAN NUMERAL TWO
+<Multi_key> <numbersign> <3> : "Ⅲ" U2162 # ROMAN NUMERAL THREE
+<Multi_key> <numbersign> <4> : "Ⅳ" U2163 # ROMAN NUMERAL FOUR
+<Multi_key> <numbersign> <5> : "Ⅴ" U2164 # ROMAN NUMERAL FIVE
+<Multi_key> <numbersign> <6> : "Ⅵ" U2165 # ROMAN NUMERAL SIX
+<Multi_key> <numbersign>  <7> : "Ⅶ" U2166 # ROMAN NUMERAL SEVEN
+<Multi_key> <numbersign> <8> : "Ⅷ" U2167 # ROMAN NUMERAL EIGHT
+<Multi_key> <numbersign> <9> : "Ⅸ" U2168 # ROMAN NUMERAL NINE
+<Multi_key> <numbersign> <x> : "Ⅹ" U2169 # ROMAN NUMERAL TEN
