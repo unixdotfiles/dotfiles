@@ -15,8 +15,6 @@ __exists firefox3 && export BROWSER="/usr/local/bin/firefox3";
 
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-export CVSROOT="anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
-
 export XZ_OPT="-9eM 90%";
 export GZIP="-9";
 
