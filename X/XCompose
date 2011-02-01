@@ -17,6 +17,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <e> <slash> : "∉"
 <Multi_key> <equal> <asciicircum> "≙"
 
+
 #Arrows
 <Multi_key> <less> <less> : "«"
 <Multi_key> <greater> <greater> : "»"
@@ -27,7 +28,35 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <greater> <asciitilde> : "↝"
 <Multi_key> <less> <bar> : "↤"
 <Multi_key> <greater> <bar> : "↦"
+<Multi_key> <Left> <Left> : "←" leftarrow # LEFTWARDS ARROW
+<Multi_key> <Up> <Up> : "↑" uparrow # UPWARDS ARROW
+<Multi_key> <Right> <Right> : "→" rightarrow # RIGHTWARDS ARROW
+<Multi_key> <Down> <Down> : "↓" downarrow # DOWNWARDS ARROW
+<Multi_key> <Left> <Right> : "↔" U2194 # LEFT RIGHT ARROW (kragen's)
+<Multi_key> <Right> <Left> : "↔" U2194 # LEFT RIGHT ARROW (kragen's)
+<Multi_key> <Up> <Down> : "↕" U2195 # UP DOWN ARROW (kragen's)
+<Multi_key> <Down> <Left> : "↵" U21B5 # DOWNWARDS ARROW WITH CORNER LEFTWARDS
+
+<Multi_key> <period> <slash> <period>	: "⁒"	U2052		# COMMERCIAL MINUS SIGN
 
 <Multi_key> <colon> <parenright> : "☺"
 
-# ↑ ↓  ↕    
+# Temp
+<Multi_key> <0> <0> : "͏°" U00B0 # DEGREE SIGN
+<Multi_key> <0> <C > : "℃" U2103 # DEGREE CELSIUS
+<Multi_key> <0> <F> : "℉" U2109 # DEGREE FAHRENHEIT
+
+# Punctunation 
+<Multi_key> <period> <period> <period> : "…" U2026 # HORIZONTAL ELLIPSIS
+<Multi_key> <colon> <colon>v<colon> : "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <dash> <period> <period> : "⋯" U22EF # MIDLINE HORIZONTAL ELLIPSIS
+<Multi_key> <period> <slash> <period> : "⁒" U2052 # COMMERCIAL MINUS SIGN
+
+
+<Multi_key> <less> <3> : "♥" U2665 		# BLACK HEART SUIT
+<Multi_key> <3> <3> : "♣" U2663 			# BLACK CLUB SUIT
+<Multi_key> <less> <asciicircum><greater> : "♢" U2662 # WHITE DIAMOND SUIT
+<Multi_key> <3> <minus> : "♠" U2660 # BLACK SPADE SUIT
+<Multi_key> <E> <greater> : "♡" U2661 # WHITE HEART SUIT
+<Multi_key> <ampersand> <O> <Y> : "☮" U262E # PEACE SYMBOL
+<Multi_key> <ampersand> <y> <y> : "☯" U262F # YIN YANG
