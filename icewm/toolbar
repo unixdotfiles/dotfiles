@@ -1,1 +1,1 @@
-prog	lock   none  xlock
+prog	lock   none  xscreensaver-command -activate
