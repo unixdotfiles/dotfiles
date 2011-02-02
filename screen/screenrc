@@ -1,0 +1,5 @@
+caption always "%n(%t) : %C"
+defscrollback 1024
+startup_message off
+hardstatus on
+hardstatus alwayslastline
