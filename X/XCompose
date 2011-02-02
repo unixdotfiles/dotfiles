@@ -4,6 +4,8 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <U> <quotedbl> : "Ü"
 <Multi_key> <u> <quotedbl> : "ü"
 <Multi_key> <numbersign> <numbersign> :"♯"
+<Multi_key> <D> <D> : "δ"
+<Multi_key> <d> <d> : "Δ"
 <Multi_key> <N> <o> : "№"
 
 #currency 
