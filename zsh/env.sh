@@ -23,3 +23,6 @@ export CHARSET="UTF-8";
 
 #Yes GTK - I really do want you to listen to my config file
 export GTK_IM_MODULE="xim";
+
+#Specific to ZSH - but this is an envrioment variable so meh
+export CORRECT_IGNORE="_*";
