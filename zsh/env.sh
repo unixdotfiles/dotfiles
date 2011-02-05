@@ -31,7 +31,7 @@ export CORRECT_IGNORE="_*";
 if [ "x$USER" = "xeadler" -o "x$USER" = "xeadler1" -o "x$USER" = "eitan" ]
 then
 	GIT_AUTHOR_NAME="eitan";
-	GIT_AUTHOR_EMAIL"lists@eitanadler.com";
+	GIT_AUTHOR_EMAIL="lists@eitanadler.com";
 else
 	GIT_AUTHOR_NAME="$USER";
 fi
