@@ -1,5 +1,5 @@
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/eitan/.zshrc'
+zstyle :compinstall filename ~/.zshrc
 
 autoload -U compinit
 compinit -i
