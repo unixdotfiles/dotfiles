@@ -20,6 +20,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <e> <f> : "∈"
 <Multi_key> <e> <slash> : "∉"
 <Multi_key> <equal> <asciicircum> "≙"
+<Multi_key> <R> <R> : "ℝ"
 
 #Arrows
 <Multi_key> <less> <less> : "«"
