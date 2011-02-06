@@ -7,6 +7,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <D> <D> : "δ"
 <Multi_key> <d> <d> : "Δ"
 <Multi_key> <N> <o> : "№"
+<Multi_key> <s> <s>										: "§"	U00A7 # SECTION SIGN
 
 #currency 
 
@@ -21,8 +22,21 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <e> <slash> : "∉"
 <Multi_key> <equal> <asciicircum> "≙"
 <Multi_key> <R> <R> : "ℝ"
+<Multi_key> <less> <V> : "⊂"
+<Multi_key> <greater> <V> : "⊃"
+<Multi_key> <less> <underscore> : "⊆"
+<Multi_key> <greater> <underscore> : "⊇"
+
+#german
+# ß
 
 #greek letters
+<Multi_key> <b> <b> : "β"
+<Multi_key> <asciicircum> <B> : "ᵝ"
+<Multi_key> <asciicircum> <b> : "ᵦ"
+
+
+<Multi_key> <B> <B> : "ϐ"
 <Multi_key> <t> <t> : "τ"
 <Multi_key> <p> <i> : "π"
 <Multi_key> <P> <I> : "Π"
