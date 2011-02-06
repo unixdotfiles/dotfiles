@@ -13,6 +13,7 @@ highlight =
 parentrevspec =
 progress =
 rebase =
+transplant =
 [defaults]
 pull = --rebase
 [alias]
