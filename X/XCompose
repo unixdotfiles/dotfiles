@@ -22,6 +22,11 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <equal> <asciicircum> "≙"
 <Multi_key> <R> <R> : "ℝ"
 
+#greek letters
+<Multi_key> <t> <t> : "τ"
+<Multi_key> <p> <i> : "π"
+<Multi_key> <P> <I> : "Π"
+
 #Arrows
 <Multi_key> <less> <less> : "«"
 <Multi_key> <greater> <greater> : "»"
