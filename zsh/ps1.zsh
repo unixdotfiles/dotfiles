@@ -20,7 +20,7 @@ function setCurrentPS1()
 {
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
 #	PS1_VCS="%(1v.%F{green}%1v%f.)";		
-	PS1="[$PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
+	PS1="[%! $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
 	RPROMPT="$PS1_VCS%f";
 
 }
