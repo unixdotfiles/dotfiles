@@ -5,6 +5,7 @@ __vcs_dir() {
 }
 
 #some settings
+PS1_HIST="%!";				#history
 PS1_USER="%F{blue}%n";			#my username
 if __inSSH
 then
@@ -20,9 +21,11 @@ function setCurrentPS1()
 {
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
 #	PS1_VCS="%(1v.%F{green}%1v%f.)";		
-	PS1="[%! $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
+	export PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
 	RPROMPT="$PS1_VCS%f";
 
 }
+
+export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
 
 builtin cd $PWD
