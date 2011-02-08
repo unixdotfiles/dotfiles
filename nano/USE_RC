@@ -35,6 +35,7 @@ include ~/.mynano/xml.nanorc
 include ~/.mynano/c.nanorc
 include ~/.mynano/lolcode.nanorc
 include ~/.mynano/tex.nanorc
+include ~/.mynano/asm.nanorc
 
 include /usr/local/share/nano/python.nanorc
 include /usr/local/share/nano/java.nanorc
