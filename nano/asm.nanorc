@@ -1,8 +1,8 @@
 syntax "asm" "\.s$"
 
 #instructions
-color brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc)([lwbq])"
-color brightgreen		"(call|leave|ret)"
+color brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea)([blwq])"
+color brightgreen		"(call|leave|ret|int)"
 #directives 
 color green			"\.(section|align|text|type|ident|size|string|globl|note)"
 #annotations
@@ -12,9 +12,11 @@ color blue 			"('[^']*')|(\"[^"]*\")"
 #numbers
 color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"			
 #labels in call
-color magenta		"\$\.[a-zA-Z0-9]*"		
+color magenta		"\$\.[a-zA-Z0-9]*"
 #registers
-color cyan			"%(e)?([abcds])([hilpx])"					
+color cyan			"%e?[abcd][hlx]?"
+color cyan			"%e?[sd]i"
+
 #comments
 color yellow		"#.*$"						
 #functions
