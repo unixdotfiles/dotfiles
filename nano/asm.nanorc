@@ -1,14 +1,25 @@
 syntax "asm" "\.s$"
 
-color brightgreen		"(push(f)?|pop|add|sub|subi|mul|imul|mov|and|adc)([lwbq])"	#instructions
-color brightgreen		"(call|leave|ret)"							#more of the same
-color green			"\.(section|align|text|type|ident|size|string|globl|note)"	#directives 
-color	brightmagenta	"@[a-zA-Z0-9]*"								#annotation
-color blue 			"('[^']*')|(\"[^"]*\")"							#strings
-color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"						#numbers
-color cyan			"%(e)?([abcds])([hilpx])"						#registers
-color yellow		"#.*$"									#comments
-color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"						#functions
-color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"						#labels
+#instructions
+color brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc)([lwbq])"
+color brightgreen		"(call|leave|ret)"
+#directives 
+color green			"\.(section|align|text|type|ident|size|string|globl|note)"
+#annotations
+color	brightmagenta	"@[a-zA-Z0-9]*"				
+#strings
+color blue 			"('[^']*')|(\"[^"]*\")"	
+#numbers
+color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"			
+#labels in call
+color magenta		"\$\.[a-zA-Z0-9]*"		
+#registers
+color cyan			"%(e)?([abcds])([hilpx])"					
+#comments
+color yellow		"#.*$"						
+#functions
+color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"			
+#labels
+color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"			
 
-#white, black, bblue byellow, bmagenta, bcyan. 
+#white, black, bblue byellow, bcyan. 
