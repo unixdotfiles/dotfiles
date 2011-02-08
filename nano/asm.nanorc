@@ -1,10 +1,17 @@
 syntax "asm" "\.s$"
 
 #instructions
-color brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea)([blwq])"
-color brightgreen		"(call|leave|ret|int)"
+icolor brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea)([blwq])"
+icolor brightgreen		"(call|leave|ret|int)"
 #directives 
-color green			"\.(section|align|text|type|ident|size|string|globl|note)"
+icolor green			"\.(section|b?align|byte|data|double|text|type|ident|size|string|globl|note)"
+icolor green			"\.(dim|eject|else|elseif|end|endef|endfunc|endif|err|exitm|extern|fail|file)"
+icolor green			"\.(fill|float|hidden|hword|if|incbin|include|int|irp|irpc|lcomm|lflags|ln)"
+icolor green			"\.(list|long|macro|mri|nolist|octa|org|p2align|popsection|previous|protected|psize|purgem)"
+icolor green			"\.(pushsection|quad|rept|sbttl|scl|set|short|single|skip|space|sleb128|stab)"
+icolor green			"\.(struct|subsection|symver|tab|title|uleb128|val|version|vtable(entry|inherit)|weak|word)"
+
+
 #annotations
 color	brightmagenta	"@[a-zA-Z0-9]*"				
 #strings
