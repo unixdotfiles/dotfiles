@@ -1,0 +1,14 @@
+syntax "asm" "\.s$"
+
+color brightgreen		"(push(f)?|pop|add|sub|subi|mul|imul|mov|and|adc)([lwbq])"	#instructions
+color brightgreen		"(call|leave|ret)"							#more of the same
+color green			"\.(section|align|text|type|ident|size|string|globl|note)"	#directives 
+color	brightmagenta	"@[a-zA-Z0-9]*"								#annotation
+color blue 			"('[^']*')|(\"[^"]*\")"							#strings
+color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"						#numbers
+color cyan			"%(e)?([abcds])([hilpx])"						#registers
+color yellow		"#.*$"									#comments
+color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"						#functions
+color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"						#labels
+
+#white, black, bblue byellow, bmagenta, bcyan. 
