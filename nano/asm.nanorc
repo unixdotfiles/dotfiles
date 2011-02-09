@@ -21,8 +21,11 @@ color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"
 #labels in call
 color magenta		"\$\.[a-zA-Z0-9]*"
 #registers
-color cyan			"%e?[abcd][hlx]?"
-color cyan			"%e?[bsd][ip]"
+color cyan			"%[er]?[abcd][hlx]?"
+color cyan			"%[er]?[bsd][ip]"
+color cyan			"%[er]?ip"
+color cyan			"%r(8|9|1[0-5])"
+color cyan			"%((cr[0-8])|(dr[012367])|(tr[34567]))"
 
 #comments
 color yellow		"#.*$"						
