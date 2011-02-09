@@ -22,7 +22,7 @@ color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"
 color magenta		"\$\.[a-zA-Z0-9]*"
 #registers
 color cyan			"%e?[abcd][hlx]?"
-color cyan			"%e?[sd]i"
+color cyan			"%e?[bsd][ip]"
 
 #comments
 color yellow		"#.*$"						
