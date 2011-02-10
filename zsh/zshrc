@@ -11,7 +11,6 @@ source $confpath/exists.func
 source $confpath/set-options.zsh
 source $confpath/env.sh
 source $confpath/aliases.sh
-source $confpath/zsh.load.zsh
 source $confpath/zsh.alias.zsh
 source $confpath/zsh.complete.zsh
 source $confpath/ps1.zsh

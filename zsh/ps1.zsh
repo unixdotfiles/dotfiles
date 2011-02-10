@@ -1,5 +1,5 @@
+autoload -Uz vcs_info
 __vcs_dir() {
-	autoload -Uz vcs_info
 	vcs_info
 	echo $vcs_info_msg_0_;
 }
@@ -20,9 +20,8 @@ PS1_PROMPT="%#";					#EOF
 function setCurrentPS1()
 {
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
-#	PS1_VCS="%(1v.%F{green}%1v%f.)";		
-	export PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
-	RPROMPT="$PS1_VCS%f";
+	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
+	RPS1="$PS1_VCS%f";
 
 }
 
