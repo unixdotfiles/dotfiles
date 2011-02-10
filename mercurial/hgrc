@@ -22,3 +22,8 @@ nudge = push --rev .
 delay = 2
 [web]
 cacerts = /usr/local/share/certs/ca-root-nss.crt
+[hooks]
+# Prevent "hg pull" if MQ patches are applied.
+prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
+# Prevent "hg push" if MQ patches are applied.
+preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
