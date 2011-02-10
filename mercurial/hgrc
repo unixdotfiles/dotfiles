@@ -14,8 +14,6 @@ parentrevspec =
 progress =
 rebase =
 transplant =
-[defaults]
-pull = --rebase
 [alias]
 nudge = push --rev .
 [progress]
