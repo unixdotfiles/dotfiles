@@ -7,13 +7,13 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <D> <D> : "δ"
 <Multi_key> <d> <d> : "Δ"
 <Multi_key> <N> <o> : "№"
-<Multi_key> <s> <s>										: "§"	U00A7 # SECTION SIGN
+<Multi_key> <s> <s> : "§"	U00A7 # SECTION SIGN
+<Multi_key> <p> <p> : "¶"
 
 #currency 
 
 <Multi_key> <y> <equal> : "¥"
 <Multi_key> <Y> <equal> : "￥"
-
 <Multi_key> <n> <n> : "₪"
 
 #math 
