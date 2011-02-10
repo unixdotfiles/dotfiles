@@ -1,5 +1,5 @@
 autoload -Uz vcs_info
-zstyle ':vcs_info:hg*:' use-simple true 
+zstyle ':vcs_info:*:' use-simple true 
 zstyle ':vcs_info:*' enable svn git hg cvs
 # [ formats ] 
 #zstyle ':vcs_info:*' formats "%b%c%u"
