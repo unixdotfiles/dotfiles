@@ -9,6 +9,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <N> <o> : "№"
 <Multi_key> <s> <s> : "§"	U00A7 # SECTION SIGN
 <Multi_key> <p> <p> : "¶"
+<Multi_key> <asterisk> <asterisk> : "⚛"
 
 #currency 
 
