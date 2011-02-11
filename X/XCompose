@@ -79,10 +79,12 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <0> <0> : "͏°" U00B0 # DEGREE SIGN
 <Multi_key> <0> <C > : "℃" U2103 # DEGREE CELSIUS
 <Multi_key> <0> <F> : "℉" U2109 # DEGREE FAHRENHEIT
-
+<Multi_key> <0> <c> : "℃" U2103 # DEGREE CELSIUS
+<Multi_key> <0> <f> : "℉" U2109 # DEGREE FAHRENHEIT
+͏
 # Punctunation 
 <Multi_key> <period> <period> <period> : "…" U2026 # HORIZONTAL ELLIPSIS
-<Multi_key> <colon> <colon>v<colon> : "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <colon> <colon> <i> : "⋮" U22EE # VERTICAL ELLIPSIS
 <Multi_key> <dash> <period> <period> : "⋯" U22EF # MIDLINE HORIZONTAL ELLIPSIS
 <Multi_key> <period> <slash> <period> : "⁒" U2052 # COMMERCIAL MINUS SIGN
 
