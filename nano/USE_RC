@@ -13,6 +13,7 @@ set smooth
 set wordbounds
 set tabsize 6
 set nowrap
+set speller "aspell -c"
 unset tabstospaces
 
 
