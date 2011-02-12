@@ -1,7 +1,7 @@
 syntax "asm" "\.s$"
 
 #instructions
-icolor brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv)([blwq])"
+icolor brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv|x?or)([blwq])"
 icolor brightgreen		"(call|leave|ret|int|s[ha][rl])"
 #directives 
 icolor green			"\.(section|b?align|byte|data|double|text|type|ident|size|string|globl|note)"
