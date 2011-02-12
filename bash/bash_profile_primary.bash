@@ -16,7 +16,6 @@ source $confpath/inSSH.func
 source $confpath/exists.func
 source $confpath/env.sh
 source $confpath/aliases.sh
-source $confpath/ps1.zsh
 source $confpath/eval_spin.func
 source $confpath/portsnap.zfunc
 	
