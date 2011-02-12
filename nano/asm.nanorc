@@ -2,7 +2,7 @@ syntax "asm" "\.s$"
 
 #instructions
 icolor brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv)([blwq])"
-icolor brightgreen		"(call|leave|ret|int)"
+icolor brightgreen		"(call|leave|ret|int|s[ha][rl])"
 #directives 
 icolor green			"\.(section|b?align|byte|data|double|text|type|ident|size|string|globl|note)"
 icolor green			"\.(dim|eject|else|elseif|end|endef|endfunc|endif|err|exitm|extern|fail|file)"
