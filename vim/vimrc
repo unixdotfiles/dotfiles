@@ -7,5 +7,6 @@ if &term == "xterm" || &term == "xterm-color"
 	set guifont=fixed
 	set hlsearch
 	set visualbell
+	sy on
 endif
 
