@@ -1,6 +1,11 @@
 set ruler
+set showcmd
+set backspace=indent,eol,start
 if &term == "xterm" || &term == "xterm-color"
 	set background=light
 	set t_Co=16
+	set guifont=fixed
+	set hlsearch
+	set visualbell
 endif
 
