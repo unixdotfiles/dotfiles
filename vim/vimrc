@@ -1,0 +1,6 @@
+set ruler
+if &term == "xterm" || &term == "xterm-color"
+	set background=light
+	set t_Co=16
+endif
+
