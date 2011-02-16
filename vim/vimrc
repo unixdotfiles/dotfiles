@@ -1,3 +1,13 @@
+"{{{Auto Commands
+
+	" Automatically cd into the directory that the file is in
+	autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+
+	" Remove any trailing whitespace that is in the file
+	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+"}}}
+
 set ruler
 set showcmd
 set backspace=indent,eol,start
@@ -7,6 +17,27 @@ if &term == "xterm" || &term == "xterm-color"
 	set guifont=fixed
 	set hlsearch
 	set visualbell
-	sy on
+
+	" Needed for Syntax Highlighting and stuff
+	filetype on
+	filetype plugin on
+	syntax enable
+	set grepprg=grep\ -nH\ $*
+	
 endif
 
+" Cool tab completion stuff
+set wildmenu
+set wildmode=list:longest,full
+
+" Enable mouse support in console
+set mouse=a
+
+" Who doesn't like autoindent?
+set autoindent
+
+" Line Numbers PWN!
+set number
+
+" And so is Artificial Intellegence!
+set smartcase
