@@ -1,5 +1,6 @@
 [ui]
 username = eitan
+ssh = ssh -vTNxo ControlMaster=no
 [extensions]
 bisect = 
 bookmarks =
