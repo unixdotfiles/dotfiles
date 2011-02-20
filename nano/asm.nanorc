@@ -1,8 +1,9 @@
-syntax "asm" "\.s$"
+syntax "asm" "\.[sS]$"
 
 #instructions
-icolor brightgreen		"(push(f)?|pop(f)?|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv|x?or)([blwq])"
-icolor brightgreen		"(call|leave|ret|int|s[ha][rl])"
+icolor brightgreen		"(push(f)?|pop(f)?|inc|dec|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv|x?or|out|in|loop|test)([blwq])"
+icolor brightgreen		"jn?(z|l|a|g)e?"
+icolor brightgreen		"(call|leave|ret|int|s[ha][rl]|loopz)"
 #directives 
 icolor green			"\.(section|b?align|byte|data|double|text|type|ident|size|string|globl|note)"
 icolor green			"\.(dim|eject|else|elseif|end|endef|endfunc|endif|err|exitm|extern|fail|file)"
