@@ -32,6 +32,7 @@ include "%S/en_US.UTF-8/Compose"
 # ß
 
 #greek letters
+<Multi_key> <a> <a> : "α"
 <Multi_key> <b> <b> : "β"
 <Multi_key> <asciicircum> <B> : "ᵝ"
 <Multi_key> <asciicircum> <b> : "ᵦ"
