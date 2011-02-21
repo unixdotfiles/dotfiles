@@ -36,3 +36,5 @@ else
 	GIT_AUTHOR_NAME="$USER";
 fi
 
+
+export ENV=~/.shrc;
