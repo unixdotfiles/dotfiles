@@ -4,5 +4,6 @@ setxkbmap -option compose:caps &
 #setxkbmap -option grp:alt_shift_toggle &
 xhost +localhost &
 idesk &
+[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 eval $(gpg-agent --daemon) &
 exec icewm-session;
