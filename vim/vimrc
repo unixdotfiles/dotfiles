@@ -1,8 +1,8 @@
 "{{{Auto Commands
 
 	" Remove any trailing whitespace that is in the file
-	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-	call histdel("search", -1)
+"	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+"	call histdel("search", -1)
 
 "}}}
 
@@ -39,6 +39,9 @@ set autoindent
 
 " Line Numbers PWN!
 set number
+
+" Try this for a bit"
+set spell 
 
 " And so is Artificial Intellegence!
 set smartcase
