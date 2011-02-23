@@ -1,5 +1,5 @@
 export BLOCKSIZE=K;
-export EDITOR=nano;
+export EDITOR=vim;
 export PAGER=less;
 
 export PATH="/usr/local/llvm-svn:$PATH:$HOME/bin";
