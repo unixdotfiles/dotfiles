@@ -27,6 +27,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <greater> <V> : "⊃"
 <Multi_key> <less> <underscore> : "⊆"
 <Multi_key> <greater> <underscore> : "⊇"
+<Multi_key> <s> <q> <r> <t> : "√"
 
 #german
 # ß
@@ -36,6 +37,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <b> <b> : "β"
 <Multi_key> <asciicircum> <B> : "ᵝ"
 <Multi_key> <asciicircum> <b> : "ᵦ"
+<Multi_key> <o> <minus> : "σ"
 
 
 <Multi_key> <B> <B> : "ϐ"
