@@ -1,0 +1,9 @@
+ keycode 163 = XF86_Launch0
+ keycode 142 = XF86_Launch1
+ keycode 154 = XF86_Search
+ keycode 143 = XF86_Mail
+ keycode 147 = XF86_Launch2
+ keycode 148 = XF86_Music
+ keycode 149 = XF86_Q
+ keycode 155 = XF86_Shop
+
