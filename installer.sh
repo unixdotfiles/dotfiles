@@ -13,6 +13,7 @@ htln () {
 }
 
 htln zsh/zshrc .zshrc
+htln zsh/zlogout .zlogout
 htln nano/USE_RC .nanorc
 htln nano .mynano
 htln X/XCompose .XCompose
