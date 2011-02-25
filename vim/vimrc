@@ -17,7 +17,7 @@ if &term == "xterm" || &term == "xterm-color"
 	set t_Co=16
 	set guifont=fixed
 	set hlsearch
-	set visualbell
+	#set visualbell
 
 	" Needed for Syntax Highlighting and stuff
 	filetype on
@@ -61,3 +61,7 @@ au BufNewFile,BufReadPre *.gpg :set secure vimi= noswap noback nowriteback hist=
 au BufReadPost *.gpg :%!gpg -d 2>/dev/null
 au BufWritePre *.gpg :%!gpg -e -r 'name@email.com' 2>/dev/null
 au BufWritePost *.gpg u
+
+"we don't want to be compatible with vi.
+set nocompat
+

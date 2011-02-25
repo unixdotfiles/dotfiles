@@ -45,6 +45,11 @@ alias touch='nocorrect touch'
 alias ln='nocorrect ln'
 alias mkdir='nocorrect mkdir'
 
+alias -g N="&>/dev/null"
+alias -g N1="1>/dev/null"
+alias -g N2="2>/dev/null"
+alias -g DN="/dev/null"
+
 alias cd\?="dirs";
 alias back='cd "$OLDPWD";pwd'
 h () { history 0 | grep "$1" }
