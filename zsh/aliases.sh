@@ -32,8 +32,15 @@ alias cd="pushd";
 alias p="pushd";
 alias b="popd";
 
+# chmod aliases
+alias rwx="chmod 700"
+alias rw-="chmod 600"
+alias r-x="chmod 755"
+alias r--="chmod 644"
+
 
 __exists idprio && alias verynice="nice nice idprio 31";
 
 __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
 	alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
+
