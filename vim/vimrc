@@ -22,6 +22,7 @@ if &term == "xterm" || &term == "xterm-color"
 	" Needed for Syntax Highlighting and stuff
 	filetype on
 	filetype plugin on
+	filetype indent on
 	syntax enable
 	set grepprg=grep\ -nH\ $*
 	
