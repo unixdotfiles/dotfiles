@@ -48,7 +48,7 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 #also ignore completer functions
 zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*' '_*'
 #this is correction - not completion - but ignore these too
-CORRECT_IGNORE="_*" ?
+CORRECT_IGNORE="_*"
 
 
 unsetopt menu_complete   # do not autoselect the first completion entry
