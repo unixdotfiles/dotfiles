@@ -3,7 +3,7 @@ textEncoding UTF-8
 textEOL      unix
 
 # Set normal viewing information
-initialZoom 200
+initialZoom 150
 continuousView yes
 
 # Set program defaults
