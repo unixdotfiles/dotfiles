@@ -17,7 +17,7 @@ if &term == "xterm" || &term == "xterm-color"
 	set t_Co=16
 	set guifont=fixed
 	set hlsearch
-	#set visualbell
+	"set visualbell
 
 	" Needed for Syntax Highlighting and stuff
 	filetype on
