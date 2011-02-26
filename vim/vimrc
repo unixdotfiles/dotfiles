@@ -63,5 +63,5 @@ au BufWritePre *.gpg :%!gpg -e -r 'name@email.com' 2>/dev/null
 au BufWritePost *.gpg u
 
 "we don't want to be compatible with vi.
-set nocompat
+"set nocompat
 
