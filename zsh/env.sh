@@ -3,7 +3,7 @@ export EDITOR=vim;
 export PAGER=less;
 
 export PATH="/usr/local/llvm-svn:$PATH:$HOME/bin";
-export FORTUNE_PATH="/usr/share/games/fortune:$HOME/.fortune";
+export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
 #top default arguments
 export TOP="-IC";
