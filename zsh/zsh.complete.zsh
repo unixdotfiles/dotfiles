@@ -52,6 +52,7 @@
 	#ignore CVS paths - always
 	#also ignore completer functions
 	zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*' '_*'
+	export FIGNORE="";
 
 # General commands
 
