@@ -1,66 +1,106 @@
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename ~/.zshrc
+# A bit of explanation
+# :completion:<func>:<completer>:<command>:<argument>:<tag>
 
-autoload -U compinit
-compinit -i
+# Enable Completion
 
-zmodload -i zsh/complist
+	autoload -U compinit
+	zmodload -i zsh/complist
+	compinit -i
 
-## case-insensitive (all),partial-word and then substring completion
-if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unset CASE_SENSITIVE
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-fi
+# Global completion settings
 
-#Some functions, like are very slow. You can use a cache in order to proxy the list of results (like the list of available debian packages) Use a cache:
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+	zstyle ':completion:*' completer _complete _ignored
+	zstyle :compinstall filename ~/.zshrc
+	unsetopt menu_complete   # do not autoselect the first completion entry
+	unsetopt flowcontrol
+	setopt auto_menu         # show completion menu on succesive tab press
+	setopt complete_in_word
+	setopt always_to_end
 
-#Fuzzy matching of completions for when you mistype them:
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
+#Some functions, are very slow. 
+	zstyle ':completion:*' use-cache on
+	zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# How fuzzy should we get? When should we display completions?
+
+	#Fuzzy matching of completions for when you mistype them:
+	zstyle ':completion:*' completer _complete _match _approximate
+	zstyle ':completion:*:match:*' original only
+	zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+	#the number of errors allowed by _approximate increase with the length of what has been typed:
+	zstyle -e ':completion:*:approximate:*' \
+		max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+
+	# How do we display completions?
+
+	zstyle ':completion:*:*:*:*:*' menu select
+	zstyle ':completion:*' list-colors ''
+	
+	#Remove trailing slash of empty directory when completed
+	zstyle ':completion:*' squeeze-slashes true
+
+	# case-insensitive (all),partial-word and then substring completion
+	if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
+	  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+	  unset CASE_SENSITIVE
+	else
+	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+	fi
+
+# What should _never_ correct?
+	#ignore CVS paths - always
+	#also ignore completer functions
+	zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*' '_*'
+
+# General commands
+
+## users ##
+zstyle ':completion:*:' users root $USER 
 
 
-#from the auto complete on zsh install
-zstyle ':completion:*:*:*:*:*' menu select
+# Particular commands
+
+## cd ##
+
+#cd will never select the parent directory (e.g.: cd ../<TAB>):
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+## kill ##
+
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-zstyle ':completion:*' list-colors ''
-
-
-#And if you want the number of errors allowed by _approximate to increase with the length of what you have typed so far:
-zstyle -e ':completion:*:approximate:*' \
-        max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
-
 #Completing process IDs with menu selection:
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 
-#Remove trailing slash of empty directory when completed
-zstyle ':completion:*' squeeze-slashes true
+## ps ##
 
-#cd will never select the parent directory (e.g.: cd ../<TAB>):
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-#ignore CVS paths - always
-#also ignore completer functions
-zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*' '_*'
-#this is correction - not completion - but ignore these too
-CORRECT_IGNORE="_*"
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
-
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
-setopt auto_menu         # show completion menu on succesive tab press
-setopt complete_in_word
-setopt always_to_end
-
+## ssh scp ##
 # Load known hosts file for auto-completion with ssh and scp commands
 if [ -f ~/.ssh/known_hosts ]; then
   zstyle ':completion:*' hosts $( sed 's/[, ].*$//' $HOME/.ssh/known_hosts )
   zstyle ':completion:*:*:(ssh|scp):*:*' hosts `sed 's/^\([^ ,]*\).*$/\1/' ~/.ssh/known_hosts`
 fi
+
+## vim ##
+zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
+
+
+#this is correction - not completion - but ignore these too
+CORRECT_IGNORE="_*"
+
+#[ misc ]#######################################################################
+zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
+    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
+zstyle ':completion:*:*:kghostview:*' file-patterns \
+    '*.(ps|pdf)(|.gz|.bz2):pspdf-files:PostScript\ or\ PDF\ files *(-/):directories:Directories' '*:all-files'
+zstyle ':completion:*:*:swfplayer:*' file-patterns \
+    '*.swf:swf-files:Swf\ files *(-/):directories:Directories' '*:all-files'
+
+zstyle ':completion:*' file-patterns \
+    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
+
 
 compdef _precommand verynice
