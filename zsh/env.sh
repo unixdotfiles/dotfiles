@@ -28,7 +28,7 @@ export GTK_IM_MODULE="xim";
 export CORRECT_IGNORE="_*";
 
 ## Git specific things
-if [ "x$USER" = "xeadler" -o "x$USER" = "xeadler1" -o "x$USER" = "eitan" ]
+if [ "x$USER" = "xeadler" -o "x$USER" = "xeadler1" -o "x$USER" = "xeitan" ]
 then
 	GIT_AUTHOR_NAME="eitan";
 	GIT_AUTHOR_EMAIL="lists@eitanadler.com";
