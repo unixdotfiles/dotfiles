@@ -65,4 +65,7 @@ au BufWritePost *.gpg u
 
 "we don't want to be compatible with vi.
 set nocompatible
-
+augroup crontab
+    au! BufRead crontab.* set nowritebackup
+    au BufRead crontab.* set filetype=crontab
+augroup END
