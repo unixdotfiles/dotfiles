@@ -7,6 +7,9 @@ then
 	alias rm="rm -I";
 	alias less="less -R";
 fi
+
+__exists vim && alias vi="vim";
+
 alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
