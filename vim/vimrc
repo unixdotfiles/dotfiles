@@ -17,17 +17,17 @@ set backspace=indent,eol,start
 if &term == "xterm" || &term == "xterm-color"
 	set background=light
 	#set t_Co=16
-	set guifont=fixed
 	set hlsearch
 	"set visualbell
 
-	" Needed for Syntax Highlighting and stuff
-	filetype on
-	filetype plugin on
-	syntax enable
 	set grepprg=grep\ -nH\ $*
 	
 endif
+
+" Needed for Syntax Highlighting and stuff
+filetype on
+filetype plugin on
+syntax enable
 
 " Cool tab completion stuff
 set wildmenu
