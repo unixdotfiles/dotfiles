@@ -109,7 +109,7 @@ set autochdir
 set backspace=indent,eol,start
 if &term == "xterm" || &term == "xterm-color"
 	set background=light
-	#set t_Co=16
+	"set t_Co=16
 	set grepprg=grep\ -nH\ $*
 	
 endif
@@ -118,7 +118,7 @@ endif
 set wildmode=list:longest,full
 
 " Try this for a bit"
-#set spell 
+"set spell 
 
 "display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
