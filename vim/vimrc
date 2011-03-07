@@ -1,3 +1,5 @@
+"we don't want to be compatible with vi.
+set nocompatible
 "{{{Auto Commands
 
 	" Remove any trailing whitespace that is in the file
@@ -62,8 +64,6 @@ au BufReadPost *.gpg :%!gpg -d 2>/dev/null
 au BufWritePre *.gpg :%!gpg -e -r 'name@email.com' 2>/dev/null
 au BufWritePost *.gpg u
 
-"we don't want to be compatible with vi.
-set nocompatible
 augroup crontab
     au! BufRead crontab.* set nowritebackup
     au BufRead crontab.* set filetype=crontab
