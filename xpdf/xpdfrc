@@ -7,5 +7,5 @@ initialZoom 150
 continuousView yes
 
 # Set program defaults
-urlCommand /usr/local/bin/firefox "%s"
-movieCommand /usr/local/bin/mplayer "%s"
+#urlCommand /usr/local/bin/firefox "%s"
+#movieCommand /usr/local/bin/mplayer "%s"
