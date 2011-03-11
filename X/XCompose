@@ -11,6 +11,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <p> <p> : "¶"
 <Multi_key> <asterisk> <asterisk> : "⚛"
 <Multi_key> <underscore> <underscore> : "‾"
+<Multi_key> <quotedbl> <parenright> : "ツ"
 
 #currency 
 
