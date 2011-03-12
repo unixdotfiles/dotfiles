@@ -139,3 +139,13 @@ augroup crontab
     au! BufRead crontab.* set nowritebackup
     au BufRead crontab.* set filetype=crontab
 augroup END
+
+" Stolen from gjb
+if !exists("format_fdp_sgml")
+  let format_fdp_sgml = 1
+  " correction for highlighting special characters
+  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html syn match sgmlSpecial "&[^;]*;"
+
+  " formatting FreeBSD SGML/Docbook
+  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html set autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
+endif
