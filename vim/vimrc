@@ -91,8 +91,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 set autochdir
 
 "Little trick to find ending whitespace in docs
-set list listchars=tab:>>,trail:*,eol:$
-hi nontext ctermfg=red
+"set list listchars=tab:>>,trail:*,eol:$
+"hi nontext ctermfg=red
 
 
 
