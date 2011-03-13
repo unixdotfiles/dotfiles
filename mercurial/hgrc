@@ -12,6 +12,7 @@ fetch =
 graphlog =
 highlight =
 parentrevspec =
+patchbomb =
 progress =
 purge = 
 rebase =
