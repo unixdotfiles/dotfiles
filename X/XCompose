@@ -80,6 +80,9 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <colon> <parenright> : "☺"
 <Multi_key> <colon> <parenleft> : "☹"
 
+#Units
+<Multi_key> <m> <m> : "㎜"
+
 # Temp
 <Multi_key> <0> <0> : "͏°" U00B0 # DEGREE SIGN
 <Multi_key> <0> <C > : "℃" U2103 # DEGREE CELSIUS
