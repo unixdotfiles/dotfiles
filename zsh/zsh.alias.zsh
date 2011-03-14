@@ -36,6 +36,17 @@ function mcd () {
 		mkdir $@;
 	fi
 }
+
+function purgeHistory () {
+	size="$1"
+	[[ -z "$size" ]] && return 1;
+	set HIST_EXPIRE_DUPS_FIRST;
+	set HIST_IGNORE_DUPS;
+	set histignorealldups;
+	export SAVEHIST=$size;
+	export HISTSIZE=$size;
+	return 0;
+}
 setopt correct_all
 
 alias man='nocorrect man'
