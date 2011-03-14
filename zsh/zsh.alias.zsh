@@ -43,6 +43,7 @@ function purgeHistory () {
 	set HIST_EXPIRE_DUPS_FIRST;
 	set HIST_IGNORE_DUPS;
 	set histignorealldups;
+	set HIST_SAVE_NO_DUPS;
 	export SAVEHIST=$size;
 	export HISTSIZE=$size;
 	return 0;
