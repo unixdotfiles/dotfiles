@@ -4,11 +4,58 @@ alias -s cpp=$EDITOR
 #alias -s nawk=nawk
 # cd to a file should take you to the dir that contains the file
 # courtesy of Artur Penttinen <artur@xxxxxxxxxxx>
+#function cd () {
+#  if [[ -f $1 ]]; then
+#    builtin cd $1:h
+#  else
+#    builtin cd $1
+#  fi
+#}
 function cd () {
-  if [[ -f $1 ]]; then
-    builtin cd $1:h
+  local opt
+  # eat options from the beginning
+  while case $1 in
+    -[qLPs]#|--)
+      opt=($opt $1)
+      shift
+    ;|
+    --)
+    ;&
+    ^(-[qLPs]#))
+      false
+    ;;
+  esac; do :; done
+  # eat options from the end, if -- wasn't given
+  if [[ $opt[(I)--] == 0 ]]; then; while case $@[#] in
+    -[qLPs]#)
+      opt=($opt $@[#])
+      set -- $@[1,#-1]
+    ;;
+    *)
+      false
+    ;;
+  esac; do :; done; fi
+  if [[ $1:t = "cu" ]]; then
+    local dir=$1:h
+    shift
+    builtin cd -q $opt $dir && {
+      preexec cup $@
+      cup $@
+    }
   else
-    builtin cd $1
+    if [[ ${+2} = 0 ]]; then
+      if [[ -f $1 ]]; then
+        builtin cd $opt $1:h
+      else
+        builtin cd $opt $1 
+      fi
+    else
+      if [[ -z $3 ]]; then
+        builtin cd $opt "$1" "$2"
+      else
+        echo cd: too many arguments
+      fi
+    fi
   fi
 }
 

@@ -31,8 +31,11 @@ alias shareThisDir="python -m http.server 8000";
 alias lls="ls -lao";
 __exists firefox && alias firefox="firefox -no-remote";
 __exists firefox3 && alias firefox="firefox3 -no-remote";
+alias tolower="tr A-Z a-z"
+alias toupper="tr a-z A-Z"
+	
 
-alias cd="pushd";
+#alias cd="pushd";
 alias p="pushd";
 alias b="popd";
 
