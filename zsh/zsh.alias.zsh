@@ -73,6 +73,10 @@ function pushd () {
 	fi
 }
 
+function concat() {
+	echo -n ${(j::)@}
+}
+
 #mkdir should cd as well
 function mcd () {
 	if [ $# -eq 1 ]
@@ -95,10 +99,28 @@ function purgeHistory () {
 	export HISTSIZE=$size;
 	return 0;
 }
-setopt correct_all
+
+## Glob functions
+
+#usage, *(e:in /other/dir:)
+function in() {
+	test -e $1/$REPLY
+}
+
+#usage, *(e:hastype mp3:)
+function hastype() {
+	local a; a=( $REPLY/*.$1([1]N) ); [[ -n $a ]]
+}
+
+# *(@-) also works
+function brokensym() {
+	[[ -L $REPLY && ! -e $(zstat +link $REPLY) ]]
+}
+
 
 alias man='nocorrect man'
-alias mv='nocorrect mv'
+alias mv='nocorrect mv -i'
+alias rm='rm -v'
 alias cp='nocorrect cp'
 alias touch='nocorrect touch'
 alias ln='nocorrect ln'
@@ -109,8 +131,10 @@ alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
 alias -g DN="/dev/null"
 
+alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
+
 alias cd\?="dirs";
-alias back='cd "$OLDPWD";pwd'
+alias back='builtin cd "$OLDPWD";pwd'
 h () { history 0 | grep "$1" }
 
 # Enable ls colors

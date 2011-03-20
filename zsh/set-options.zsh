@@ -24,6 +24,9 @@ setopt no_hist_beep
 setopt hist_reduce_blanks
 #setopt share_history
 
+# Job related options
+setopt LONG_LIST_JOBS
+
 # correction/completion related options
 setopt autocd
 setopt auto_pushd
@@ -33,9 +36,20 @@ setopt extendedglob
 setopt correct_all
 unsetopt nomatch
 
+# Speedy options
+setopt hashcmds
+setopt hashdirs
+
 #unsetopt check_jobs #don't warn me when I have jobs in the background
 unsetopt hup #when the shell exits keep background jobs.
-#setopt bsd_echo # make zsh echo act like bsd echo
+
+setopt interactive_comments
+
+#output options
+setopt C_BASES
+
+#C Compatability
+setopt C_PRECEDENCES
 
 bindkey -e
 
