@@ -22,6 +22,8 @@ set showcmd
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
+" But remove the highlighting when i type ctrl-l
+:nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
