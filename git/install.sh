@@ -25,7 +25,6 @@ git config --global alias.w  whatchanged
 # Coloring options
 gc color.branch auto
 gc color.diff auto
-gc color.status auto
 gc color.branch.current red bold
 gc color.branch.local red
 gc color.branch.remote green
