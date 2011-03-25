@@ -28,7 +28,8 @@ htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
 htln vim/vimrc .vimrc
-htln git/gitconfig .gitconfig
+#htln git/gitconfig .gitconfig
+__exits git && git/install.sh	
 htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
 find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
