@@ -18,7 +18,7 @@ gc apply.whitespace warn
 
 # Aliases
 git config --global alias.co checkout
-git config --global alias.ci checkin
+git config --global alias.ci commit 
 git config --global alias.st status
 git config --global alias.w  whatchanged
 
