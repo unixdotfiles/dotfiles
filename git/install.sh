@@ -17,10 +17,11 @@ gc sendemail.supresscc self
 gc apply.whitespace warn
 
 # Aliases
-git config --global alias.co checkout
-git config --global alias.ci commit 
-git config --global alias.st status
-git config --global alias.w  whatchanged
+gc alias.co checkout
+gc alias.ci commit 
+gc alias.st status
+gc alias.w  whatchanged
+gc alias.rollback reset --soft HEAD^
 
 # Coloring options
 gc color.branch auto
