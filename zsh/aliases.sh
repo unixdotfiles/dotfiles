@@ -45,6 +45,14 @@ alias rw-="chmod 600"
 alias r-x="chmod 755"
 alias r--="chmod 644"
 
+portsGrep() {
+	if [ "x$PORTSDIR" -eq "x" ]
+	then
+		PORTSDIR="/usr/ports"
+	fi
+	find $PORTSDIR -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
+}
+
 
 __exists idprio && alias verynice="nice nice idprio 31";
 
