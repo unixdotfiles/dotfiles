@@ -50,7 +50,7 @@ portsGrep() {
 	then
 		PORTSDIR="/usr/ports"
 	fi
-	find $PORTSDIR -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
+	find "$PORTSDIR" -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
 }
 
 
