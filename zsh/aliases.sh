@@ -46,7 +46,7 @@ alias r-x="chmod 755"
 alias r--="chmod 644"
 
 portsGrep() {
-	if [ "x$PORTSDIR" -eq "x" ]
+	if [ "x$PORTSDIR" = "x" ]
 	then
 		PORTSDIR="/usr/ports"
 	fi
