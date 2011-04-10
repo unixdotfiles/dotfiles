@@ -21,7 +21,7 @@ gc alias.co checkout
 gc alias.ci commit 
 gc alias.st status
 gc alias.w  whatchanged
-gc alias.rollback reset --soft HEAD^
+gc alias.rollback "reset --soft HEAD^"
 
 # Coloring options
 gc color.branch auto
