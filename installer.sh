@@ -23,6 +23,7 @@ htln X/Xmodmap .xmodmap
 htln mercurial/hgrc .hgrc
 [ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
 htln mplayer/config .mplayer/config
+htln mplayer/mencoder.conf .mplayer/mencoder.conf
 htln icewm .icewm
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
