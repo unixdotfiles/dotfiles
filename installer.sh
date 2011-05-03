@@ -29,6 +29,7 @@ htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
+htln gdb/gdbinit .gdbinit
 __exits git && git/install.sh	
 htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
