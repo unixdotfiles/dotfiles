@@ -14,6 +14,7 @@ alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
 alias bcvs="cvs -d anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
+alias projcvs="cvs -d anoncvs@projcvs.FreeBSD.org:/home/projcvs";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
 alias python2="python -tt3";
 __exists python3.1 && alias python="python3.1"
@@ -46,11 +47,11 @@ alias r-x="chmod 755"
 alias r--="chmod 644"
 
 portsGrep() {
-	if [ "x$PORTSDIR" -eq "x" ]
+	if [ "x$PORTSDIR" = "x" ]
 	then
 		PORTSDIR="/usr/ports"
 	fi
-	find $PORTSDIR -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
+	find "$PORTSDIR" -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
 }
 
 

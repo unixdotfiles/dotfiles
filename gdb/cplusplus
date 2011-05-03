@@ -1,0 +1,12 @@
+set print demangle
+set print asm-demangle
+set print object
+set print vtbl
+set overload-resolution on
+set print array on
+set print null-stop
+set print pretty
+set print object on
+set history save
+
+handle SIGPIPE nostop noprint pass
