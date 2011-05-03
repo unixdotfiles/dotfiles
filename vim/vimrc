@@ -151,3 +151,20 @@ if !exists("format_fdp_sgml")
   " formatting FreeBSD SGML/Docbook
   autocmd BufNewFile,BufRead *.sgml,*.ent,*.html set autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
 endif
+
+
+" highlight too long lines
+autocmd BufWinEnter *.c let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+autocmd BufWinLeave *.c call matchdelete(w:m2)
+
+" permanently highlight 80th column
+" set colorcolumn=80
+
+" highlight trailing whitespace and tabs after spaces in leading whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
+autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
+autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
+autocmd BufWinLeave *.c call clearmatches()
+
+
