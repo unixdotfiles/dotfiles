@@ -26,7 +26,7 @@ alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 alias srcloc="whereis -qs";
 alias portmaster="portmaster -m'-DNO_DEPENDS'";
-alias su="su -l"
+#alias su="su -l"
 __exists proxychains && alias pc="proxychains";
 alias shareThisDir="python -m http.server 8000";
 alias lls="ls -lao";
@@ -59,4 +59,6 @@ __exists idprio && alias verynice="nice nice idprio 31";
 
 __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
 	alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
+
+__exists now && alias now="now '%a, %b %d %Y, %r %Z (%z)'"
 
