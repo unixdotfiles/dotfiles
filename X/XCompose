@@ -14,10 +14,11 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <quotedbl> <parenright> : "ツ"
 
 #currency 
-
-<Multi_key> <y> <equal> : "¥"
-<Multi_key> <Y> <equal> : "￥"
-<Multi_key> <n> <n> : "₪"
+<Multi_key> <c> <dollar> : "¢"
+<Multi_key> <l> <dollar> : "£"
+<Multi_key> <n> <dollar> : "₪"
+<Multi_key> <y> <dollar> : "¥"
+<Multi_key> <Y> <dollar> : "￥"
 
 #math 
 <Multi_key> <8> <8> : "∞"
