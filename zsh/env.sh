@@ -36,5 +36,9 @@ else
 	GIT_AUTHOR_NAME="$USER";
 fi
 
+export MANCOLOR="yes"; # view color data
+export MANWIDTH="tty"; # view man pages in full width
+
+
 
 export ENV=~/.shrc;
