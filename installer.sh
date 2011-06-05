@@ -31,6 +31,9 @@ htln screen/screenrc .screenrc
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
 htln gdb/gdbinit .gdbinit
+[ -d ~/.config ] || mkdir ~/.config 
+[ -d ~/.config/awesome ] || mkdir ~/.config/awesome
+htln awesome/rc.lua .config/awesome/rc.lua
 __exits git && git/install.sh	
 htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
