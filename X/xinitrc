@@ -6,4 +6,5 @@ xhost +localhost &
 idesk &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 eval $(gpg-agent --daemon) &
-exec icewm-session;
+exec awesome;
+#exec icewm-session;
