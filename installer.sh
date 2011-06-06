@@ -34,7 +34,10 @@ htln gdb/gdbinit .gdbinit
 [ -d ~/.config ] || mkdir ~/.config 
 [ -d ~/.config/awesome ] || mkdir ~/.config/awesome
 htln awesome/rc.lua .config/awesome/rc.lua
-__exits git && git/install.sh	
+[ -d ~/.config/openbox ] || mkdir ~/.config/openbox
+htln openbox/menu.xml .config/openbox/menu.xml
+htln openbox/rc.xml .config/openbox/rc.xml
+__exists git && git/install.sh	
 htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
 find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
