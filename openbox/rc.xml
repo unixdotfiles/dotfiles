@@ -277,7 +277,48 @@
         </startupnotify>
         <command>kfmclient openProfile filemanagement</command>
       </action>
+  </keybind>
+  	<!-- max, icon, close, move, resize, etc -->
+	<keybind key="W-A-Right">
+      <action name="NextWindow"/>
     </keybind>
+    <keybind key="W-A-Left">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="W-A-Up">
+      <action name="ToggleMaximizeFull"/>
+    </keybind>
+    <keybind key="W-A-Down">
+      <action name="Iconify"/>
+    </keybind>
+    <keybind key="W-A-End">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="GrowToEdgeEast"/>
+    </keybind>
+    <keybind key="W-C-Left">
+      <action name="GrowToEdgeWest"/>
+    </keybind>
+    <keybind key="W-C-Up">
+      <action name="GrowToEdgeNorth"/>
+    </keybind>
+    <keybind key="W-C-Down">
+      <action name="GrowToEdgeSouth"/>
+    </keybind>
+    <keybind key="W-C-A-Right">
+      <action name="MoveToEdgeEast"/>
+    </keybind>
+    <keybind key="W-C-A-Left">
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-C-A-Up">
+      <action name="MoveToEdgeNorth"/>
+    </keybind>
+    <keybind key="W-C-A-Down">
+      <action name="MoveToEdgeSouth"/>
+    </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
