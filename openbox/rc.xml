@@ -273,9 +273,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Konqueror</name>
+          <name>Terminal</name>
         </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
+        <command>terminal</command>
       </action>
   </keybind>
   	<!-- max, icon, close, move, resize, etc -->
