@@ -278,6 +278,16 @@
         <command>terminal</command>
       </action>
   </keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Lock Screen</name>
+        </startupnotify>
+        <command>xscreensaver-command -activate</command>
+      </action>
+  </keybind>
+  	<!-- max, icon, close, move, resize, etc -->
   	<!-- max, icon, close, move, resize, etc -->
 	<keybind key="W-A-Right">
       <action name="NextWindow"/>
