@@ -6,6 +6,7 @@ xhost +localhost &
 idesk &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 eval $(gpg-agent --daemon) &
-exec lxpanel &
+lxpanel &
+launchy &
 exec openbox-session;
 #exec icewm-session;
