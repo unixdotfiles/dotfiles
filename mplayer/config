@@ -7,3 +7,5 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 msgcolor=on
 zoom=on
 
+vc=ffh264vdpau,
+
