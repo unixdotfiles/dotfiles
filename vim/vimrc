@@ -6,6 +6,8 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
+" I'm usually on a light background
+set bg=light
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
