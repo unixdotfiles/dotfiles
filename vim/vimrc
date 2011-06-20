@@ -67,6 +67,22 @@ set number
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
+" Taken from joe @ sw
+set smarttab
+set smartindent
+set showmatch		" Show matching brackets.
+
+set incsearch		" Incremental search
+
+set autowrite		" Automatically save before commands like :next and :make
+
+set noerrorbells
+set novisualbell
+
+set showtabline=2
+set tabpagemax=1000
+
+
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -98,6 +114,18 @@ set autochdir
 "set list listchars=tab:>>,trail:*,eol:$
 "hi nontext ctermfg=red
 
+"Taken from joe @ sw
+map <C-i> <Esc>:tabp<CR>
+map <C-o> <Esc>:tabn<CR>
+map <C-n> <Esc>:tabe<CR>
+map <silent> <C-j> <Esc>:exe "silent! tabm " . (tabpagenr() - 2)<CR>
+map <silent> <C-k> <Esc>:exe "silent! tabm " . tabpagenr()<CR>
+map <silent> <C-f> <Esc>:exe "FufFile"<CR>
+nmap <C-Right> <C-W>>
+nmap <C-Left> <C-W><
+nmap <C-Up> <C-W>-
+nmap <C-Down> <C-W>+
+nmap <silent> <F9> <Esc>:call ToggleLineTooLong()<CR>
 
 
 "{{{Auto Commands
@@ -154,11 +182,6 @@ if !exists("format_fdp_sgml")
   autocmd BufNewFile,BufRead *.sgml,*.ent,*.html set autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
 endif
 
-
-" highlight too long lines
-autocmd BufWinEnter *.c let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-autocmd BufWinLeave *.c call matchdelete(w:m2)
-
 " permanently highlight 80th column
 " set colorcolumn=80
 
@@ -169,4 +192,31 @@ autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
 autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
 autocmd BufWinLeave *.c call clearmatches()
 
+if has("autocmd")
+    filetype indent on
+    filetype plugin on
+endif
+
+au BufRead,BufNewFile *.txt             setfiletype text
+autocmd FileType text,html,css,xml,ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+if version >= 600
+    set foldenable
+    set foldmethod=marker
+endif
+
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" function that highlights lines longer than 80 characters
+let g:hl_visible = 1
+function! ToggleLineTooLong()
+    if g:hl_visible == 1
+        match
+        let g:hl_visible = 0
+    else
+        hi LineTooLong cterm=bold ctermbg=red guibg=LightYellow
+        match LineTooLong /\%>80v.\+/
+        let g:hl_visible = 1
+    endif
+endfunction
 
