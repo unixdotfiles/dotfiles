@@ -19,6 +19,7 @@ htln nano .mynano
 htln X/XCompose .XCompose
 htln X/xinitrc .xinitrc
 htln X/Xmodmap .xmodmap
+htln X/Xdefaults .Xdefaults
 #htln X/xsession .xsession
 htln mercurial/hgrc .hgrc
 [ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
