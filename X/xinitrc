@@ -8,5 +8,6 @@ idesk &
 eval $(gpg-agent --daemon) &
 lxpanel &
 launchy &
+urxvtd -q -f -o &
 exec openbox-session;
 #exec icewm-session;
