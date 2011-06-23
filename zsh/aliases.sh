@@ -26,6 +26,7 @@ alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 alias srcloc="whereis -qs";
 alias portmaster="portmaster -m'-DNO_DEPENDS'";
+alias urxvt="urxvtcd"
 #alias su="su -l"
 __exists proxychains && alias pc="proxychains";
 alias shareThisDir="python -m http.server 8000";
