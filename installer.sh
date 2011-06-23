@@ -1,5 +1,5 @@
 #! /bin/sh -x
-self=$(realpath ~/.conf);
+self=~/.conf;
 begon="$self/.begon";
 
 #Test ln. only link if the second argument doesn't exist
