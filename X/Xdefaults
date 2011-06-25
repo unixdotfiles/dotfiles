@@ -1,0 +1,20 @@
+xvt*saveLines:20000
+
+URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
+
+Urxvt*scrollBar:true
+URxvt*scrollBar_right:false
+URxvt*scrollstyle:rxvt
+
+# Clickable URLs
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/local/bin/firefox -P new 
+URxvt.matcher.button:   1 
+
+# Yankable URLs (No Mouse)
+#URxvt.perl-ext:      default,url-select
+#URxvt.keysym.M-u:    perl:url-select:select_next
+#URxvt.urlLauncher:   firefox
+#URxvt.underlineURLs: true
+
+URxvt.perl-ext-common:  default,tabbed
