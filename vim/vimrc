@@ -87,8 +87,8 @@ set tabpagemax=1000
 " Indentation options {{{1
 "
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" Use F12 to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F12>
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " N characters wide.
