@@ -150,14 +150,14 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>BottomLeft</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
     <noStrut>no</noStrut>
     <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -277,7 +277,7 @@
         </startupnotify>
         <command>urxvtcd</command>
       </action>
-  </keybind>
+    </keybind>
     <keybind key="W-l">
       <action name="Execute">
         <startupnotify>
@@ -286,10 +286,10 @@
         </startupnotify>
         <command>xscreensaver-command -activate</command>
       </action>
-  </keybind>
-  	<!-- max, icon, close, move, resize, etc -->
-  	<!-- max, icon, close, move, resize, etc -->
-	<keybind key="W-A-Right">
+    </keybind>
+    <!-- max, icon, close, move, resize, etc -->
+    <!-- max, icon, close, move, resize, etc -->
+    <keybind key="W-A-Right">
       <action name="NextWindow"/>
     </keybind>
     <keybind key="W-A-Left">
@@ -328,7 +328,6 @@
     <keybind key="W-C-A-Down">
       <action name="MoveToEdgeSouth"/>
     </keybind>
-
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
