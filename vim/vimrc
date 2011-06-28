@@ -117,6 +117,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Automatically cd into the directory that the file is in
 set autochdir
 
+let mapleader = ","
+
 "Little trick to find ending whitespace in docs
 "set list listchars=tab:>>,trail:*,eol:$
 "hi nontext ctermfg=red
