@@ -67,6 +67,10 @@ set number
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
+"--
+"------------------------------------------------------------
+" Tabbing Options {{{1
+"
 " Taken from joe @ sw
 set smarttab
 set smartindent
@@ -82,7 +86,10 @@ set novisualbell
 set showtabline=2
 set tabpagemax=1000
 
-
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000		"maximum number of changes that can be undone
+set undoreload=10000	"maximum number lines to save for undo on a buffer reload
 "------------------------------------------------------------
 " Indentation options {{{1
 "
