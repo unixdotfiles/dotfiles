@@ -13,7 +13,7 @@ export GREP_OPTIONS="--color"
 __exists firefox && export BROWSER="/usr/local/bin/firefox";
 __exists firefox3 && export BROWSER="/usr/local/bin/firefox3";
 
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+#export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 export XZ_OPT="-9eM 90%";
 export GZIP="-9";
