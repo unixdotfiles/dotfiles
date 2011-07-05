@@ -130,6 +130,11 @@ alias -g N="&>/dev/null"
 alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
 alias -g DN=">/dev/null"
+alias -g G='| grep'
+alias -g S='| sort'
+alias -g U='| uniq'
+alias -g H='| head'
+alias -g T='| tail'
 
 alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
 
@@ -143,3 +148,11 @@ then
   # Find the option for using colors in ls, depending on the version: Linux or BSD
   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 fi
+
+autodisown() {
+	"$@" &
+	disown
+}
+
+alias xpdf="autodisown xpdf";
+
