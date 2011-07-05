@@ -1,21 +1,24 @@
 #!/bin/sh
 if __exists tmux 
 then
-	if tmux has-session -t "$1";
+	if [ "x$TMUX" == "x" ]
 	then
-		tmux
-#	if __inSSH
-#		then
-#			exec tmux attach-session -t "$1"
-#		else
-#			if [ "$TERM" != "screen" ]
-#			then
-#				#tmux new-window -t "$1"d
-#				#exec tmux attach-session -t "$1"
-#			fi
-#		fi
-	else
+		if __inSSH
+		then
+			if tmux has-session -t "$1";
+			then
+				tmux attach-session -t "$1";
+			else
+				exec tmux new-session -s "$1";
+				#tmux new-window -t "$1";
+				#exec tmux attach-session -t "$1";
+			fi
+		else
+			exec tmux new-session -s "$1";
+		fi
+		#I'm in tmux already about to start a new shell (likely)
 		tmux			
 		exec tmux new-session -s "$1"
 	fi
 fi
+
