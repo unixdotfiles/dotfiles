@@ -36,7 +36,6 @@ function title() {
   local location
 
   location="$HOST"
-  [ "$USERNAME" != "$LOGNAME" ] && location="${USERNAME}@${location}"
 
   # Special format for use with print -Pn
   value="%70>...>$value%<<"
@@ -45,7 +44,7 @@ function title() {
     screen)
       # Put this in your .screenrc:
       # hardstatus string "[%n] %h - %t"
-      # termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen (not title yet)\007'
+      # termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen (no title yet)\007'
       print -Pn "\ek${value}\e\\"     # screen title (in windowlist)
       print -Pn "\e_${location}\e\\"  # screen location
 #	local CMD=${1[(wr)^(*=*|sudo|-*)]}
