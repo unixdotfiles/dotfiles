@@ -1,7 +1,7 @@
 fpath=( $fpath ~/bin ~/bin/zbin )
 #umask 0077;
 
-#History related options
+#History related options {{{
 HISTFILE=~/.zsh_history
 HISTSIZE=10100
 SAVEHIST=10000
@@ -24,10 +24,12 @@ setopt no_hist_beep
 setopt hist_reduce_blanks
 #setopt share_history
 
+# }}}
+
 # Job related options
 setopt LONG_LIST_JOBS
 
-# correction/completion related options
+# correction/completion related options {{{
 setopt autocd
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -35,6 +37,8 @@ setopt complete_aliases
 setopt extendedglob
 setopt correct_all
 unsetopt nomatch
+
+# }}}
 
 # Speedy options
 setopt hashcmds
@@ -55,3 +59,8 @@ bindkey -e
 
 #export LC_ALL="en_US.UTF-8"
 #export LANG="en_US.UTF-8"
+
+# Prevent overwriting existing files with '> filename', use '>| filename'
+# (or >!) instead.
+setopt noclobber
+
