@@ -17,7 +17,7 @@ source $confpath/ps1.zsh
 source $confpath/home-end.zsh
 source $confpath/eval_spin.func
 source $confpath/portsnap.zfunc
-source $confpath/premcd.zsh
+source $confpath/precmd.zsh
 
 #To discover what keycode is being sent, hit ^v
 #and then the key you want to test.
