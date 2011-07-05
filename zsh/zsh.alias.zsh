@@ -129,7 +129,7 @@ alias mkdir='nocorrect mkdir'
 alias -g N="&>/dev/null"
 alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
-alias -g DN="/dev/null"
+alias -g DN=">/dev/null"
 
 alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
 

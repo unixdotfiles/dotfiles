@@ -16,8 +16,9 @@ then
 		else
 			exec tmux new-session -s "$1";
 		fi
-	else
 		#I'm in tmux already about to start a new shell (likely)
+		tmux			
+		exec tmux new-session -s "$1"
 	fi
 fi
 
