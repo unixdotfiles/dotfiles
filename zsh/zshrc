@@ -23,5 +23,7 @@ source $confpath/precmd.zsh
 #To discover what keycode is being sent, hit ^v
 #and then the key you want to test.
 
+# Make sure every entry in $fpath is unique.
+typeset -U fpath
 
 return 0;
