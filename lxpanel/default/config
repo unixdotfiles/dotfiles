@@ -1,0 +1,3 @@
+[Command]
+FileManager=thunar "%s"
+Terminal=urxvtcd
