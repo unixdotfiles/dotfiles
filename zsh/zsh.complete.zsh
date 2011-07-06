@@ -4,10 +4,10 @@
 # Enable Completion
 
 	autoload -U compinit
-	zmodload -i zsh/complist
+:q:	zmodload -i zsh/complist
 	compinit -i
 
-# Global completion settings
+# Global completion settings {{{
 
 	zstyle ':completion:*' completer _complete _ignored
 	zstyle :compinstall filename ~/.zshrc
@@ -53,26 +53,30 @@
 	#also ignore completer functions
 	zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*' '_*'
 	export FIGNORE="";
+# }}}
 
-# General commands
+# General commands {{{
 
-## users ##
+## users {{{
 zstyle ':completion:*:' users root $USER 
 
-
+# }}}
 # Particular commands
 
-## cd ##
+## cd {{{
 
 #cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+# }}}
 
-## kill ##
+## kill {{{
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 #Completing process IDs with menu selection:
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
+
+#}}}
 
 ## ps ##
 
@@ -87,6 +91,18 @@ fi
 
 ## vim ##
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
+
+# Always complete one value (file name) only once in the current line. This
+# makes it easy to complete multiple values because I can just press tab to
+# get all possible values. Otherwise I would have to skip the first value
+# again and again.
+zstyle ':completion:*' ignore-line yes
+# Except for mv and cp, because I often want to use to similar names, so I
+# complete to the same and change it.
+zstyle ':completion:*:(mv|cp):*' ignore-line no
+# Don't complete ./config.* files, this makes running ./configure much
+# simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
+zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 
 
 #this is correction - not completion - but ignore these too
@@ -105,3 +121,4 @@ zstyle ':completion:*' file-patterns \
 
 
 compdef _precommand verynice
+
