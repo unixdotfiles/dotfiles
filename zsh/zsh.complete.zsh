@@ -4,7 +4,7 @@
 # Enable Completion
 
 	autoload -U compinit
-:q:	zmodload -i zsh/complist
+	zmodload -i zsh/complist
 	compinit -i
 
 # Global completion settings {{{
