@@ -48,3 +48,10 @@ function setCurrentPS1()
 export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
 
 builtin cd $PWD
+
+# Colorize stderr in red
+#OBexec 2>>(while read -r -k -u 0 line; do
+#    printf '\e[91m%s\e[0m' "$line";
+#	    print -n $'\0';
+#	done &)
+#
