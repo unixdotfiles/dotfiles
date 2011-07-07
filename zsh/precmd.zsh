@@ -1,10 +1,4 @@
 autoload -Uz  add-zsh-hook
-#add-zsh-hook precmd setCurrentPS1
-add-zsh-hook precmd resetWindowTitle
-#add-zsh-hook preexec changeTitlePreExec
-    # Add the preexec() and precmd() hooks.
-    add-zsh-hook preexec window_preexec
-    add-zsh-hook precmd window_precmd
 if [[ $TERM == screen* || $TERM == xterm* || $TERM == rxvt* ]]; then
     # Is set to a non empty value to reset the window name in the next
     # precmd() call.
@@ -167,3 +161,10 @@ TRAPINT() {
     # Return the default exit code so Zsh aborts the current command.
     return $1
 }
+#add-zsh-hook precmd setCurrentPS1
+add-zsh-hook precmd resetWindowTitle
+#add-zsh-hook preexec changeTitlePreExec
+    # Add the preexec() and precmd() hooks.
+    add-zsh-hook preexec window_preexec
+#    add-zsh-hook precmd window_precmd
+
