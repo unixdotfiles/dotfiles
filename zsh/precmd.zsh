@@ -1,7 +1,7 @@
 autoload -Uz  add-zsh-hook
-add-zsh-hook precmd setCurrentPS1
-add-zsh-hook precmd changeTitlePreCmd
-add-zsh-hook preexec changeTitlePreExec
+#add-zsh-hook precmd setCurrentPS1
+add-zsh-hook precmd resetWindowTitle
+#add-zsh-hook preexec changeTitlePreExec
     # Add the preexec() and precmd() hooks.
     add-zsh-hook preexec window_preexec
     add-zsh-hook precmd window_precmd
@@ -48,7 +48,7 @@ if [[ $TERM == screen* || $TERM == xterm* || $TERM == rxvt* ]]; then
 
         # Add an at mark at the beginning if running through ssh on a
         # different computer.
-        if [[ -n $SSH_CONNECTION ]]; then
+        if __inSSH  then
             program_name="@$program_name"
 
             # If tmux is running in SSH then display "@:hostname" as title
@@ -62,29 +62,10 @@ if [[ $TERM == screen* || $TERM == xterm* || $TERM == rxvt* ]]; then
         fi
 
         # Set the window name to the currently running program.
-        window_title "$program_name"
+        setWindowTitle "$program_name"
 
         # Tell precmd() to reset the window name when the program stops.
         window_reset=yes
-    }
-
-    window_precmd() {
-        # Abort if no window name reset is necessary.
-        [[ -z $window_reset ]] && return
-
-        local name="zsh - $CWD"
-
-        # Prepend prefixes like in window_preexec().
-        if [[ -n $window_root ]]; then
-            name="!$name"
-        fi
-        if [[ -n $SSH_CONNECTION ]]; then
-            name="@$name"
-        fi
-        window_title $name
-
-        # Just reset the name, so no screen reset necessary for the moment.
-        window_reset=
     }
 
 else
@@ -116,9 +97,27 @@ if [[ $UID -eq 0 ]]; then
 	window_root=yes
 fi
 
-#function changeTitlePreCmd() {
-#	title "zsh - $CWD";
-#}
+function resetWindowTitle() {
+	title "zsh - $CWD";
+	# Abort if no window name reset is necessary.
+	[[ -z $window_reset ]] && return
+
+	local name="zsh - $CWD"
+
+	# Prepend prefixes like in window_preexec().
+	if [[ -n $window_root ]]; then
+		name="!$name"
+	fi
+
+	if __inSSH then
+		name="@$name"
+	fi
+	setWindowTitle $name
+
+	# Just reset the name, so no screen reset necessary for the moment.
+	window_reset=
+    }
+}
 
 #function changeTitlePreExec() {
 #  # The full command line comes in as "$1"
