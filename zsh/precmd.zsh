@@ -1,79 +1,83 @@
-autoload -Uz  add-zsh-hook
-if [[ $TERM == screen* || $TERM == xterm* || $TERM == rxvt* ]]; then
-    # Is set to a non empty value to reset the window name in the next
-    # precmd() call.
-    window_reset=yes
-    # Is set to a non empty value when the shell is running as root.
+checkAndSetWindowTitle() {
+	local program_name="$1";
+	program_name=$(convertAliasToFull "$program_name");
+
+	# Set the window name to the currently running program.
+	if  ! isShortName "$program_name" 
+	then
+		setWindowTitle $(getTitleFromProgram "$program_name");
+		window_reset="yes"
+	fi
+}
+
+getTitleFromProgram() {
+	local program_name="$@";
+	local runningAsRoot="";
+
+	if [[ $program_name = ${program_name#sudo} ]] # || $program_name=${program_name#su} ]];
+	then
+		runningAsRoot=yes
+	fi
+
     if [[ $UID -eq 0 ]]; then
-        window_root=yes
+		runningAsRoot=yes
     fi
 
-    window_preexec() {
-        # Get the program name with its arguments.
-        local program_name=$1
+	# Add an exclamation mark at the beginning if running with sudo or if
+	# running zsh as root.
+	if [[ -n $runnignAsRoot ]]; then
+		program_name="!$program_name"
+	fi
 
-        # When sudo is used use real program name instead, but with an
-        # exclamation mark at the beginning (handled below).
-        local program_sudo=
-        if [[ $program_name == sudo* ]]; then
-            program_name=${program_name#sudo }
-            program_sudo=yes
-        fi
-        # Remove all arguments from the program name.
-        program_name=${program_name%% *}
+	# Add an at mark at the beginning if running through ssh on a
+	# different computer.
+	if __inSSH;  then
+		program_name="@$program_name"
+		# If tmux is running in SSH then display "@:hostname" as title
+		# in the term/outer screen.
+		if [[ $program_name == "@tmux" ]]; then
+			program_name="@:${HOST//.*/}"
+		# Use "@:!hostname" for root screens.
+		elif [[ $program_name == "@!tmux" ]]; then
+			program_name="@:!${HOST//.*/}"
+		fi
+	fi
+	echo $program_name;
+}
 
-        # Ignore often used commands which are only running for a very short
-        # time. This prevents a "blinking" name when it's changed to "cd" for
-        # example and then some milliseconds later back to "zsh".
-        [[ $program_name == (cd*|b|ls|la|ll) ]] && return
+# Change my shortcuts so the real name of the program is displayed.
+convertAliasToFull() {
+	local text="$1"
+#	case $text in
+#	   sgrep)
+#			text=grep
+#			;;
+#	esac
 
-        # Change my shortcuts so the real name of the program is displayed.
-#        case $program_name in
-#            alias)
-#                program_name=realname
-#                ;;
-#        esac
-#
-        # Add an exclamation mark at the beginning if running with sudo or if
-        # running zsh as root.
-        if [[ -n $program_sudo || -n $window_root ]]; then
-            program_name="!$program_name"
-        fi
+	echo "$text";
+}
 
-        # Add an at mark at the beginning if running through ssh on a
-        # different computer.
-        if __inSSH  then
-            program_name="@$program_name"
+# Ignore often used commands which are only running for a very short
+# time. This prevents a "blinking" look.
+isShortName() {
+	[[ "$1" == (cd*|b|ls|la|ll|lls) ]] && return 0 ;
+	return 1;
+}
 
-            # If tmux is running in SSH then display "@:hostname" as title
-            # in the term/outer screen.
-            if [[ $program_name == "@tmux" ]]; then
-                program_name="@:${HOST//.*/}"
-            # Use "@:!hostname" for root screens.
-            elif [[ $program_name == "@!tmux" ]]; then
-                program_name="@:!${HOST//.*/}"
-            fi
-        fi
+programWithoutArgs() {
+	return ${$1%% *}
+}
 
-        # Set the window name to the currently running program.
-        setWindowTitle "$program_name"
-
-        # Tell precmd() to reset the window name when the program stops.
-        window_reset=yes
-    }
-
-else
-    # Fallback if another TERM is used, necessary to run screen (see below in
-    # "RUN COMMANDS").
-    window_preexec() { }
-fi
-
+# Create function per terminal. Don't check inside function for performance reasons
 case "$TERM" in
 	screen*) # and tmux
 		setWindowTitle() {
             print -n "\ek${(V)1}\e\\";
 		};;
 	xterm*)
+		setWindowTitle() {
+            print -n "\e]2;${(V)1}\e\\";
+		};;
 	*rxvt*)
 		setWindowTitle() {
             print -n "\e]2;${(V)1}\e\\";
@@ -86,31 +90,17 @@ case "$TERM" in
 		setWindowTitle() {
 		};;
 esac	
-window_r
-if [[ $UID -eq 0 ]]; then
-	window_root=yes
-fi
+
 
 function resetWindowTitle() {
-	title "zsh - $CWD";
 	# Abort if no window name reset is necessary.
 	[[ -z $window_reset ]] && return
 
-	local name="zsh - $CWD"
-
-	# Prepend prefixes like in window_preexec().
-	if [[ -n $window_root ]]; then
-		name="!$name"
-	fi
-
-	if __inSSH then
-		name="@$name"
-	fi
-	setWindowTitle $name
+	local name="zsh - $CWD";
+	setWindowTitle "$name";
 
 	# Just reset the name, so no screen reset necessary for the moment.
-	window_reset=
-    }
+	window_reset="";
 }
 
 #function changeTitlePreExec() {
@@ -161,10 +151,10 @@ TRAPINT() {
     # Return the default exit code so Zsh aborts the current command.
     return $1
 }
-#add-zsh-hook precmd setCurrentPS1
+autoload -Uz  add-zsh-hook
+add-zsh-hook precmd setCurrentPS1
+add-zsh-hook preexec checkAndSetWindowTitle
 add-zsh-hook precmd resetWindowTitle
 #add-zsh-hook preexec changeTitlePreExec
-    # Add the preexec() and precmd() hooks.
-    add-zsh-hook preexec window_preexec
-#    add-zsh-hook precmd window_precmd
+
 
