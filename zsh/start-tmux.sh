@@ -1,6 +1,12 @@
 #!/bin/sh
 if __exists tmux 
 then
+	if [ "x$TERM" != "xscreen" ]
+	then
+		exec tmux
+	fi
+fi
+return 0;
 	if tmux has-session -t "$1";
 	then
 		tmux
