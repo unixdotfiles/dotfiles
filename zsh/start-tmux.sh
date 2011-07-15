@@ -1,9 +1,16 @@
 #!/bin/sh
+
+prepend="";
+if [ "x$SSH_AUTH_SOCK" = "x" ]
+then
+	prepend="ssh-agent"
+fi
+
 if __exists tmux 
 then
 	if [ "x$TERM" != "xscreen" ]
 	then
-		exec tmux
+		exec $prepend tmux
 	fi
 fi
 return 0;
