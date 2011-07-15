@@ -136,6 +136,7 @@ alias -g S='| sort'
 alias -g U='| uniq'
 alias -g H='| head'
 alias -g T='| tail'
+alias -g W='| wc'
 
 alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
 
