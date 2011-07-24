@@ -33,8 +33,8 @@ gc color.diff.meta yellow
 gc color.diff.frag magenta
 gc color.diff.old red bold
 gc color.diff.new green bold
-gc color.status added
-gc color.status changed
-gc color.status untracked
+#gc color.status added
+#gc color.status changed
+#gc color.status untracked
 
 
