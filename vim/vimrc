@@ -235,3 +235,7 @@ function! ToggleLineTooLong()
     endif
 endfunction
 
+" {{{ Includes 
+
+source ~/.conf/vim/language.vim
+" }}}
