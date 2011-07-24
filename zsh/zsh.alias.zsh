@@ -131,10 +131,12 @@ alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
 alias -g DN=">/dev/null"
 alias -g G='| grep'
+alias -g L='| less'
 alias -g S='| sort'
 alias -g U='| uniq'
 alias -g H='| head'
 alias -g T='| tail'
+alias -g W='| wc'
 
 alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
 

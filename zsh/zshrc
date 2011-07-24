@@ -18,6 +18,7 @@ source $confpath/home-end.zsh
 source $confpath/eval_spin.func
 source $confpath/portsnap.zfunc
 source $confpath/precmd.zsh
+source $confpath/start-tmux.sh
 
 #To discover what keycode is being sent, hit ^v
 #and then the key you want to test.
