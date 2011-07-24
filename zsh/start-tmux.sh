@@ -1,7 +1,13 @@
 #!/bin/sh
+
+prepend="";
+if [ "x$SSH_AUTH_SOCK" = "x" ]
+then
+	prepend="ssh-agent"
+fi
+
 if __exists tmux 
 then
-	if [ "x$TMUX" == "x" ]
 	then
 		if __inSSH
 		then

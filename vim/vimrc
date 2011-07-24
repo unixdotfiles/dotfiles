@@ -155,7 +155,6 @@ inoremap <Down>  <NOP>
 
 set backspace=indent,eol,start
 if &term == "xterm" || &term == "xterm-color"
-	set background=light
 	"set t_Co=16
 	set grepprg=grep\ -nH\ $*
 	
@@ -202,12 +201,12 @@ endif
 " set colorcolumn=80
 
 " highlight trailing whitespace and tabs after spaces in leading whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
-autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
-autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
-autocmd BufWinLeave *.c call clearmatches()
-
+"highlight ExtraWhitespace ctermbg=red guibg=red
+"autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
+"autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
+"autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
+"autocmd BufWinLeave *.c call clearmatches()
+"
 if has("autocmd")
     filetype indent on
     filetype plugin on
@@ -236,3 +235,7 @@ function! ToggleLineTooLong()
     endif
 endfunction
 
+" {{{ Includes 
+
+source ~/.conf/vim/language.vim
+" }}}
