@@ -8,7 +8,7 @@ fi
 
 if __exists tmux 
 then
-	if [ "x$TERM" != "xscreen" ]
+	if [ "x$TERM" != "xscreen" -a "x$TERM" != "xcons25" ]
 	then
 		exec $prepend tmux
 	fi
