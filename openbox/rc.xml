@@ -258,7 +258,6 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
 			<action name="NextWindow">
-				<raise>yes</raise>
 			</action>
     </keybind>
     <keybind key="A-S-Tab">
