@@ -47,8 +47,6 @@ setopt hashdirs
 #unsetopt check_jobs #don't warn me when I have jobs in the background
 unsetopt hup #when the shell exits keep background jobs.
 
-setopt interactive_comments
-
 #output options
 setopt C_BASES
 
