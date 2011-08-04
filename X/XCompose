@@ -15,6 +15,7 @@ include "%S/en_US.UTF-8/Compose"
 
 #currency 
 <Multi_key> <c> <dollar> : "¢"
+<Multi_key> <e> <dollar> : "€"
 <Multi_key> <l> <dollar> : "£"
 <Multi_key> <n> <dollar> : "₪"
 <Multi_key> <y> <dollar> : "¥"
