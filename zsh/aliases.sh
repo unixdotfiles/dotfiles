@@ -35,6 +35,7 @@ __exists firefox && alias firefox="firefox -no-remote";
 __exists firefox3 && alias firefox="firefox3 -no-remote";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
+__exists pastebinit && alias pastebinit="pastebinit -a ''";
 
 alias ll="ls -halt"
 	
