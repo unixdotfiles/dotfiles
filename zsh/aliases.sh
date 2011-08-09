@@ -14,6 +14,7 @@ alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
 alias bcvs="cvs -d anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
+alias fbcvs="cvs -d anoncvs@anoncvs.fr.FreeBSD.org:/home/ncvs";
 alias projcvs="cvs -d anoncvs@projcvs.FreeBSD.org:/home/projcvs";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
 alias python2="python -tt3";
@@ -35,6 +36,7 @@ __exists firefox && alias firefox="firefox -no-remote";
 __exists firefox3 && alias firefox="firefox3 -no-remote";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
+__exists pastebinit && alias pastebinit="pastebinit -a ''";
 
 alias ll="ls -halt"
 	

@@ -194,7 +194,7 @@ if !exists("format_fdp_sgml")
   autocmd BufNewFile,BufRead *.sgml,*.ent,*.html syn match sgmlSpecial "&[^;]*;"
 
   " formatting FreeBSD SGML/Docbook
-  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html set autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
+  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html setlocal autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
 endif
 
 " permanently highlight 80th column
