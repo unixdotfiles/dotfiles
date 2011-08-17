@@ -7,7 +7,7 @@ idesk &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 eval $(gpg-agent --daemon) &
 lxpanel &
-launchy &
+#launchy &
 urxvtd -q -f -o &
 exec openbox-session;
 #exec icewm-session;
