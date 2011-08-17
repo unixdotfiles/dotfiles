@@ -80,6 +80,6 @@ endfunction " ShowSpecial()
 function SourceMatchit()
     " http://www.vim.org/scripts/script.php?script_id=39
     setlocal smartindent
-    source $HOME/.vim/matchit.vim
+	"source $HOME/.vim/matchit.vim
     return 0
 endfunction " SourceMatchit()
