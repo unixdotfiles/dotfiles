@@ -13,6 +13,8 @@ __exists vim && alias vi="vim";
 alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
+alias pcvs="cvs -d eadler@pcvs.freebsd.org/home/pcvs";
+
 alias bcvs="cvs -d anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
 alias fbcvs="cvs -d anoncvs@anoncvs.fr.FreeBSD.org:/home/ncvs";
 alias projcvs="cvs -d anoncvs@projcvs.FreeBSD.org:/home/projcvs";
