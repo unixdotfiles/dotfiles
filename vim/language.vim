@@ -22,7 +22,7 @@ function Set_C()
 endfunction " Set_C()
 
 function Set_WWW()
-    source $HOME/.vim/matchit.vim
+"    source $HOME/.vim/matchit.vim
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal syntax=php.html
@@ -31,7 +31,7 @@ function Set_WWW()
 endfunction " Set_WWW()
 
 function Set_CSS()
-    source $HOME/.vim/matchit.vim
+"    source $HOME/.vim/matchit.vim
     setlocal ruler
     setlocal textwidth=78
     setlocal tabstop=4
