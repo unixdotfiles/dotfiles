@@ -197,9 +197,6 @@ if !exists("format_fdp_sgml")
   autocmd BufNewFile,BufRead *.sgml,*.ent,*.html setlocal autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
 endif
 
-" permanently highlight 80th column
-" set colorcolumn=80
-
 " highlight trailing whitespace and tabs after spaces in leading whitespace
 "highlight ExtraWhitespace ctermbg=red guibg=red
 "autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
@@ -215,10 +212,8 @@ endif
 au BufRead,BufNewFile *.txt             setfiletype text
 autocmd FileType text,html,css,xml,ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-if version >= 600
-    set foldenable
-    set foldmethod=marker
-endif
+set foldenable
+set foldmethod=marker
 
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 

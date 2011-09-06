@@ -63,13 +63,6 @@ function Set_SGML()
     return 0
 endfunction " Set_SGML()
 
-function Set_Mutt()
-    setlocal textwidth=72
-    setlocal noruler
-    setlocal nonumber
-    return 0
-endfunction " Set_Mutt()
-
 function ShowSpecial()
     " blackend gave me these
     setlocal list listchars=tab:>>,trail:*,eol:$
