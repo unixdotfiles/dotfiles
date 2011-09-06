@@ -6,7 +6,6 @@ if has("autocmd")
     au BufNewFile,BufRead *.js call Set_JavaScript()
     au BufNewFile,BufRead *.sgml,*.ent,*.xsl call Set_SGML()
     au BufNewFile,BufRead *.[1-9] call ShowSpecial()
-    au FileType mail,tex call Set_Mutt()
 endif " has(autocmd)
 
 function Set_Ruby()
