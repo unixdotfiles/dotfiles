@@ -42,7 +42,7 @@ unsetopt nomatch
 
 # Key Bindings {{{
 bindkey '^[OD' backward-word
-bindkey '^[OD' forward-word
+bindkey '^[OC' forward-word
 # }}}
 
 # Speedy options
