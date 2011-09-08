@@ -15,7 +15,7 @@ source $confpath/aliases.sh
 source $confpath/zsh.alias.zsh
 source $confpath/zsh.complete.zsh
 source $confpath/ps1.zsh
-source $confpath/home-end.zsh
+source $confpath/keybinding.zsh
 source $confpath/eval_spin.func
 source $confpath/portsnap.zfunc
 source $confpath/precmd.zsh

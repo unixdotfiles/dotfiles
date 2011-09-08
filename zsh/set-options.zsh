@@ -40,11 +40,6 @@ unsetopt nomatch
 
 # }}}
 
-# Key Bindings {{{
-bindkey '^[OD' backward-word
-bindkey '^[OC' forward-word
-# }}}
-
 # Speedy options
 setopt hashcmds
 setopt hashdirs
