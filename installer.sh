@@ -31,7 +31,7 @@ htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
-htln gdb/gdbinit .gdbinit
+htln gdb/gdbinit .gdbrc
 [ -d ~/.config ] || mkdir ~/.config 
 [ -d ~/.config/awesome ] || mkdir ~/.config/awesome
 htln awesome/rc.lua .config/awesome/rc.lua

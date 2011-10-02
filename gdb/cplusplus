@@ -7,6 +7,6 @@ set print array on
 set print null-stop
 set print pretty
 set print object on
-set history save
+set history save on
 
 handle SIGPIPE nostop noprint pass
