@@ -1,5 +1,5 @@
 numlockx on &
-xscreensaver &
+xscreensaver -no-splash &
 setxkbmap -option compose:caps &
 #setxkbmap -option grp:alt_shift_toggle &
 xhost +localhost &
