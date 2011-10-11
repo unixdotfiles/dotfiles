@@ -99,8 +99,8 @@ set pastetoggle=<F12>
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " N characters wide.
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=8
+set tabstop=8
 
 "------------------------------------------------------------
 " Mappings {{{1
