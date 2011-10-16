@@ -5,7 +5,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.css call Set_CSS()
     au BufNewFile,BufRead *.js call Set_JavaScript()
     au BufNewFile,BufRead *.sgml,*.ent,*.xsl call Set_SGML()
-    au BufNewFile,BufRead *.[1-9] call ShowSpecial()
+    au BufNewFile,BufRead *.[1-9] call Set_Man()
 endif " has(autocmd)
 
 function Set_Ruby()
@@ -61,6 +61,12 @@ function Set_SGML()
     setlocal tabstop=8
     return 0
 endfunction " Set_SGML()
+
+function Set_Man()
+	call ShowSpecial()
+	setlocal tabstop=4
+	setlocal shiftwidth=4
+endfunction "Set_Man()
 
 function ShowSpecial()
     " blackend gave me these
