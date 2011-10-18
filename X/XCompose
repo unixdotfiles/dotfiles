@@ -32,9 +32,14 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <less> <underscore> : "⊆"
 <Multi_key> <greater> <underscore> : "⊇"
 <Multi_key> <s> <q> <r> <t> : "√"
+<Multi_key> <l> <less> : "≺"
+<Multi_key> <8> <k> : "∝"
+<Multi_key> <O> <x> : "⊗"
+<Multi_key> <slash> <period> : "÷"
+
 
 #german
-# ß
+<Multi_key> <b> <B> : "ß"
 
 #greek letters
 <Multi_key> <a> <a> : "α"
