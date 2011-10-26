@@ -26,15 +26,22 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <e> <f> : "∈"
 <Multi_key> <e> <slash> : "∉"
 <Multi_key> <equal> <asciicircum> "≙"
+<Multi_key> <equal> <equal> "≡"
 <Multi_key> <R> <R> : "ℝ"
 <Multi_key> <less> <V> : "⊂"
 <Multi_key> <greater> <V> : "⊃"
 <Multi_key> <less> <underscore> : "⊆"
 <Multi_key> <greater> <underscore> : "⊇"
 <Multi_key> <s> <q> <r> <t> : "√"
+<Multi_key> <l> <less> : "≺"
+<Multi_key> <8> <k> : "∝"
+<Multi_key> <O> <x> : "⊗"
+<Multi_key> <slash> <period> : "÷"
+<Multi_key> <N> <N> : "ℕ"
+<Multi_key> <N> <plus> : "ℕ⁺"
 
 #german
-# ß
+<Multi_key> <b> <B> : "ß"
 
 #greek letters
 <Multi_key> <a> <a> : "α"
