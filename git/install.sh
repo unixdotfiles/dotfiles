@@ -8,11 +8,13 @@ if [ "$USER" = "eitan" -o "$USER" = "eadler" -o "$USER" = "eadler1" ]
 then
 	gc user.name "Eitan Adler"
 	gc user.email "lists@eitanadler.com"
+	gc sendemail.from "lists@eitanadler.com"
 fi
 
 # Email formatting options
 gc sendemail.confirm always
 gc sendemail.supresscc self
+gc sendemail.chainreplyto false
 
 gc apply.whitespace warn
 
