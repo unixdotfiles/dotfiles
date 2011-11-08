@@ -29,8 +29,8 @@
 	zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 	#the number of errors allowed by _approximate increase with the length of what has been typed:
-	zstyle -e ':completion:*:approximate:*' \
-		max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+#	zstyle -e ':completion:*:approximate:*' \
+#		max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 
 	# How do we display completions?
 
