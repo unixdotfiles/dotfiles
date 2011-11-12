@@ -176,27 +176,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
 
-" Automatically handle GPG files
-au BufNewFile,BufReadPre *.gpg :set secure vimi= noswap noback nowriteback hist=0 binary
-au BufReadPost *.gpg :%!gpg -d 2>/dev/null
-au BufWritePre *.gpg :%!gpg -e -r 'name@email.com' 2>/dev/null
-au BufWritePost *.gpg u
-
-augroup crontab
-    au! BufRead crontab.* set nowritebackup
-    au BufRead crontab.* set filetype=crontab
-augroup END
-
-" Stolen from gjb
-if !exists("format_fdp_sgml")
-  let format_fdp_sgml = 1
-  " correction for highlighting special characters
-  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html syn match sgmlSpecial "&[^;]*;"
-
-  " formatting FreeBSD SGML/Docbook
-  autocmd BufNewFile,BufRead *.sgml,*.ent,*.html setlocal autoindent formatoptions=tcq2l textwidth=70 shiftwidth=2 softtabstop=2 tabstop=8
-endif
-
 " highlight trailing whitespace and tabs after spaces in leading whitespace
 "highlight ExtraWhitespace ctermbg=red guibg=red
 "autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
@@ -209,8 +188,6 @@ if has("autocmd")
     filetype plugin on
 endif
 
-au BufRead,BufNewFile *.txt             setfiletype text
-autocmd FileType text,html,css,xml,ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set foldenable
 set foldmethod=marker

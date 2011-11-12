@@ -4,9 +4,22 @@ if has("autocmd")
     au BufNewFile,BufRead *.php,*.html,*.css,*.js call Set_WWW()
     au BufNewFile,BufRead *.css call Set_CSS()
     au BufNewFile,BufRead *.js call Set_JavaScript()
-    au BufNewFile,BufRead *.sgml,*.ent,*.xsl call Set_SGML()
+    au BufNewFile,BufRead *.html *.sgml,*.ent,*.xsl call Set_SGML()
+    au BufNewFile,BufRead *.txt call Set_txt()
+    au BufNewFile,BufRead crontab.* call Set_crontab()
     au BufNewFile,BufRead *.[1-9] call Set_Man()
 endif " has(autocmd)
+
+function Set_txt()
+	setfiletype text
+	return 0
+endfunction
+
+function Set_crontab()
+	setlocal nowritebackup
+	setlocal filetype=crontab
+	return 0
+endfunction
 
 function Set_Ruby()
     setlocal textwidth=70
@@ -50,15 +63,19 @@ function Set_JavaScript()
 endfunction " Set_JavaScript()
 
 function Set_SGML()
+    " Stolen from gjb
     call SourceMatchit()
     call ShowSpecial()
     setlocal nonumber
     syn match sgmlSpecial "&[^;]*;"
+    setlocal autoident
     setlocal syntax=sgml
     setlocal ft=sgml
     setlocal shiftwidth=2
-    setlocal textwidth=72
+    setlocal softtabstop=2
+    setlocal textwidth=70
     setlocal tabstop=8
+    setlocal formatoptions=tcq2l
     return 0
 endfunction " Set_SGML()
 
