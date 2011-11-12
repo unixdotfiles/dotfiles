@@ -5,8 +5,14 @@ if has("autocmd")
     au BufNewFile,BufRead *.css call Set_CSS()
     au BufNewFile,BufRead *.js call Set_JavaScript()
     au BufNewFile,BufRead *.html *.sgml,*.ent,*.xsl call Set_SGML()
+    au BufNewFile,BufRead *.txt call Set_txt()
     au BufNewFile,BufRead *.[1-9] call Set_Man()
 endif " has(autocmd)
+
+function Set_txt()
+	setfiletype text
+	return 0
+endfunction
 
 function Set_Ruby()
     setlocal textwidth=70
@@ -62,8 +68,7 @@ function Set_SGML()
     setlocal softtabstop=2
     setlocal textwidth=70
     setlocal tabstop=8
-    setlocal formatoptions=tcq2l 
-
+    setlocal formatoptions=tcq2l
     return 0
 endfunction " Set_SGML()
 

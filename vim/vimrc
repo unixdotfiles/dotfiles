@@ -199,8 +199,6 @@ if has("autocmd")
     filetype plugin on
 endif
 
-au BufRead,BufNewFile *.txt             setfiletype text
-autocmd FileType text,html,css,xml,ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set foldenable
 set foldmethod=marker
