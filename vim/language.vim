@@ -6,11 +6,18 @@ if has("autocmd")
     au BufNewFile,BufRead *.js call Set_JavaScript()
     au BufNewFile,BufRead *.html *.sgml,*.ent,*.xsl call Set_SGML()
     au BufNewFile,BufRead *.txt call Set_txt()
+    au BufNewFile,BufRead crontab.* call Set_crontab()
     au BufNewFile,BufRead *.[1-9] call Set_Man()
 endif " has(autocmd)
 
 function Set_txt()
 	setfiletype text
+	return 0
+endfunction
+
+function Set_crontab()
+	setlocal nowritebackup
+	setlocal filetype=crontab
 	return 0
 endfunction
 

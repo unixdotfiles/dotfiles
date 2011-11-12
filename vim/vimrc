@@ -176,17 +176,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
 
-" Automatically handle GPG files
-au BufNewFile,BufReadPre *.gpg :set secure vimi= noswap noback nowriteback hist=0 binary
-au BufReadPost *.gpg :%!gpg -d 2>/dev/null
-au BufWritePre *.gpg :%!gpg -e -r 'name@email.com' 2>/dev/null
-au BufWritePost *.gpg u
-
-augroup crontab
-    au! BufRead crontab.* set nowritebackup
-    au BufRead crontab.* set filetype=crontab
-augroup END
-
 " highlight trailing whitespace and tabs after spaces in leading whitespace
 "highlight ExtraWhitespace ctermbg=red guibg=red
 "autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
