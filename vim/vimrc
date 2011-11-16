@@ -166,16 +166,6 @@ set wildmode=list:longest,full
 " Try this for a bit"
 "set spell 
 
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
 " highlight trailing whitespace and tabs after spaces in leading whitespace
 "highlight ExtraWhitespace ctermbg=red guibg=red
 "autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
@@ -210,4 +200,5 @@ endfunction
 " {{{ Includes 
 
 source ~/.conf/vim/language.vim
+source ~/.conf/vim./statusline.vim
 " }}}
