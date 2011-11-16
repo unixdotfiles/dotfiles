@@ -16,6 +16,9 @@ gc sendemail.confirm always
 gc sendemail.supresscc self
 gc sendemail.chainreplyto false
 
+# Patch format options
+gc format.signoff true
+
 gc apply.whitespace warn
 
 # Aliases
