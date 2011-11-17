@@ -5,7 +5,7 @@ set print vtbl
 set overload-resolution on
 set print array on
 set print null-stop
-set print pretty
+set print pretty on
 set print object on
 set history save on
 
