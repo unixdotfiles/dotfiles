@@ -391,11 +391,11 @@
       <mousebind button="Left" action="DoubleClick">
         <action name="ToggleMaximizeFull"/>
       </mousebind>
-      <mousebind button="Middle" action="Press">
+      <!--      <mousebind button="Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
-      </mousebind>
+      </mousebind> -->
       <mousebind button="Up" action="Click">
         <action name="Shade"/>
         <action name="FocusToBottom"/>
