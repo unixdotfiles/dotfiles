@@ -154,8 +154,6 @@ inoremap <Down>  <NOP>
 "
 "}}}
 
-
-set backspace=indent,eol,start
 if &term == "xterm" || &term == "xterm-color"
 	"set t_Co=16
 	set grepprg=grep\ -nH\ $*
