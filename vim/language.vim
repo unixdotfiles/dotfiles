@@ -27,9 +27,12 @@ function Set_Ruby()
 endfunction " Set_Ruby()
 
 function Set_C()
-    setlocal textwidth=78
-    setlocal shiftwidth=4
-    setlocal softtabstop=4
+    setlocal textwidth=80
+
+    setlocal tabstop=8
+    setlocal shiftwidth=8
+    setlocal softtabstop=8
+
     return 0
 endfunction " Set_C()
 
