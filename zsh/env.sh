@@ -45,6 +45,8 @@ export MANWIDTH="tty"; # view man pages in full width
 
 export TINDY="/usr/local/tinderbox/";
 
+export INPUTRC="~/.inputrc";
+
 
 
 export ENV=~/.shrc;
