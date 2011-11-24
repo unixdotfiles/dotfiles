@@ -5,6 +5,10 @@ export PAGER=less;
 export PATH="/usr/local/llvm-svn:$PATH:$HOME/bin";
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
+# Required for macports
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+
 #top default arguments
 export TOP="-IC";
 #grep default options
