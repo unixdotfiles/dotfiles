@@ -50,9 +50,6 @@ unsetopt hup #when the shell exits keep background jobs.
 #output options
 setopt C_BASES
 
-#C Compatability
-setopt C_PRECEDENCES
-
 bindkey -e
 
 #export LC_ALL="en_US.UTF-8"
