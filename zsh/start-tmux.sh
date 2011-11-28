@@ -10,10 +10,11 @@ if __exists tmux
 then
 	if [ -z "$TMUX" ]
 	then
-		if [ "x$TERM" != "xscreen" -a "x$TERM" != "xcons25" ]
-		then
+#		if [ "x$TERM" != "xscreen" -a "x$TERM" != "xcons25" \
+#			-a "x$TERM" != "xxterm" ]
+#		then
 			exec $prepend tmux
-		fi
+#		fi
 	fi
 fi
 return 0;

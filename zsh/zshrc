@@ -8,9 +8,9 @@ HOST="${HOST%%.*}"
 
 source $confpath/inSSH.func
 source $confpath/exists.func
+source $confpath/env.sh
 source $confpath/start-tmux.sh
 source $confpath/set-options.zsh
-source $confpath/env.sh
 source $confpath/aliases.sh
 source $confpath/zsh.alias.zsh
 source $confpath/zsh.complete.zsh
