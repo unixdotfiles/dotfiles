@@ -8,13 +8,17 @@ fi
 
 if __exists tmux 
 then
-	if [ -z "$TMUX" ]
+	# Don't let tmux run except in a child shell.
+	# This allows me to run X outside of tmux and have
+	# tmux run inside each tmux terminal
+	if [ "x$FIRST_RUN" = "x" ]
 	then
-#		if [ "x$TERM" != "xscreen" -a "x$TERM" != "xcons25" \
-#			-a "x$TERM" != "xxterm" ]
-#		then
+		export FIRST_RUN="ready";
+	else
+		if [ -z "$TMUX" ]
+		then
 			exec $prepend tmux
-#		fi
+		fi
 	fi
 fi
 return 0;
