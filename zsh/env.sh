@@ -7,7 +7,7 @@ export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HO
 
 # Required for macports
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
+#export MANPATH=/opt/local/share/man:$MANPATH
 
 #top default arguments
 export TOP="-IC";
