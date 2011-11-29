@@ -11,7 +11,11 @@ then
 	# Don't let tmux run except in a child shell.
 	# This allows me to run X outside of tmux and have
 	# tmux run inside each tmux terminal
-	if [ "x$FIRST_RUN" = "x" -o __inSSH ]
+	if __inSSH
+	then
+		export FIRST_RUN="ready";
+	fi
+	if [ "x$FIRST_RUN" = "x" ]
 	then
 		export FIRST_RUN="ready";
 	else
