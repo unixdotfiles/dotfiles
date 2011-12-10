@@ -46,7 +46,7 @@ __exists firefox && alias firefox="firefox -no-remote";
 __exists firefox3 && alias firefox="firefox3 -no-remote";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
-__exists pastebinit && alias pastebinit="pastebinit -a ''";
+__exists pastebinit && alias pastebinit="pastebinit -a '' -b pastie.org";
 
 alias ll="ls -halt"
 	
