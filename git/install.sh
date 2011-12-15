@@ -42,4 +42,6 @@ gc color.diff.new green bold
 #gc color.status changed
 #gc color.status untracked
 
+#Garbage collection
+gc gc.auto 0
 
