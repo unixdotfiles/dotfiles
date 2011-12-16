@@ -2,6 +2,8 @@
 self=~/.conf;
 begon="$self/.begon";
 
+source $self/zsh/exists.func
+
 #Test ln. only link if the second argument doesn't exist
 tln () {
 	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
