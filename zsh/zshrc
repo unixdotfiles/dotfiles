@@ -6,8 +6,14 @@ confpath=~/.conf/zsh
 HOST="$(hostname)"
 HOST="${HOST%%.*}"
 
+msource() {
+	f="$1";
+	[ -f "$f" ] && source "$f";
+}
+
 source $confpath/inSSH.func
 source $confpath/exists.func
+msource $confpath/prelocal.zsh
 source $confpath/env.sh
 source $confpath/start-tmux.sh
 source $confpath/set-options.zsh
@@ -19,6 +25,7 @@ source $confpath/keybinding.zsh
 source $confpath/eval_spin.func
 source $confpath/portsnap.zfunc
 source $confpath/precmd.zsh
+msource $confpath/postlocal.zsh
 
 #To discover what keycode is being sent, hit ^v
 #and then the key you want to test.
