@@ -22,13 +22,13 @@ alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 alias dcvs="cvs -d eadler@dcvs.freebsd.org/home/dcvs";
 alias pcvs="cvs -d eadler@pcvs.freebsd.org/home/pcvs";
 alias projcvs="cvs -d eadler@projcvs.freebsd.org/home/projcvs";
-
 alias bcvs="cvs -d anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
 alias fbcvs="cvs -d anoncvs@anoncvs.fr.FreeBSD.org:/home/ncvs";
 alias projcvs="cvs -d anoncvs@projcvs.FreeBSD.org:/home/projcvs";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
-alias python2="python -tt3";
-__exists python3.1 && alias python="python3.1"
+
+__exists python2 && alias python2="python -tt3";
+__exists python3.2 && alias python="python3.2"
 alias noflash="pkill -3 -l npviewer.bin";
 alias noflash_9="noflash|sed "s/3/9/"|sh -x 2>&1|sed 's/\+ //'";
 alias switch-background="pkill idesk && idesk &";
@@ -49,7 +49,8 @@ alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
 
 alias ll="ls -halt"
-	
+
+alias timestamp='date +%s'
 
 #alias cd="pushd";
 alias p="pushd";
