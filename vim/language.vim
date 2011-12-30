@@ -47,7 +47,6 @@ endfunction " Set_WWW()
 
 function Set_CSS()
 "    source $HOME/.vim/matchit.vim
-    setlocal ruler
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal syntax=css
@@ -57,7 +56,6 @@ endfunction " Set_CSS()
 
 function Set_JavaScript()
     call SourceMatchit()
-    setlocal ruler
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal syntax=javascript
