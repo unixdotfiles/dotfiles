@@ -69,7 +69,6 @@ function Set_SGML()
     call ShowSpecial()
     setlocal nonumber
     syn match sgmlSpecial "&[^;]*;"
-    setlocal autoindent
     setlocal syntax=sgml
     setlocal ft=sgml
     setlocal shiftwidth=2
@@ -95,7 +94,6 @@ endfunction " ShowSpecial()
 
 function SourceMatchit()
     " http://www.vim.org/scripts/script.php?script_id=39
-    setlocal smartindent
 	"source $HOME/.vim/matchit.vim
     return 0
 endfunction " SourceMatchit()
