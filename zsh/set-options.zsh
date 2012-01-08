@@ -35,7 +35,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 setopt extendedglob
-setopt correct_all
+#setopt correct_all
 unsetopt nomatch
 
 # }}}
