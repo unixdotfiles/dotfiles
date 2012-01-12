@@ -78,6 +78,16 @@ zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 
 #}}}
+#
+
+## git {{{
+
+# Don't complete remote files for faster git completion on large repos
+__git_files () {
+	_wanted files expl ?local files? _files
+}
+
+# }}}
 
 ## ps ##
 
