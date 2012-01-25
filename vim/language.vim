@@ -7,6 +7,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.html,*.sgml,*.ent,*.xsl call Set_SGML()
     au BufNewFile,BufRead *.txt call Set_txt()
     au BufNewFile,BufRead crontab.* call Set_crontab()
+    au BufNewFile,BufRead *.vm call Set_Velocity() " TA
     au BufNewFile,BufRead *.[1-9] call Set_Man()
 endif " has(autocmd)
 
@@ -58,7 +59,6 @@ function Set_JavaScript()
     call SourceMatchit()
     setlocal textwidth=78
     setlocal tabstop=4
-    setlocal syntax=javascript
     setlocal ft=javascript
     return 0
 endfunction " Set_JavaScript()
@@ -84,6 +84,14 @@ function Set_Man()
 	setlocal tabstop=4
 	setlocal shiftwidth=4
 endfunction "Set_Man()
+
+function Set_Velocity()
+	set ts=2
+	set expandtab
+	set softtabstop=2
+	set sw=2
+	set ts=2
+endfunction "Set_Velocity()
 
 function ShowSpecial()
     " blackend gave me these
