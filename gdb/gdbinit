@@ -1,4 +1,3 @@
 source ~/.conf/gdb/cplusplus
 source ~/.conf/gdb/prole_cracker
-
-
+set fork-follow-mode child                                                                                                                                   
