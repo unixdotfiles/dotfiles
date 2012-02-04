@@ -35,7 +35,6 @@ gc color.diff auto
 gc color.branch.current red bold
 gc color.branch.local red
 gc color.branch.remote green
-gc color.diff.meta yellow
 gc color.diff.frag magenta
 gc color.diff.old red bold
 gc color.diff.new green bold
