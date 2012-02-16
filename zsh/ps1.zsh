@@ -37,13 +37,13 @@ PS1_ERR="%F{red}%(?..!%?!)";  		#return code of last command (if it was not 0)
 PS1_WD="%F{magenta}%30<...<%~";	#current working directory limited to 30 chars
 PS1_PROMPT="%#";					#EOF
 
-export PS1_VIM="%F{green}${VIMRUNTIME:+vim}"
+export PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
 function setCurrentPS1()
 {
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
 	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
-	RPS1="{$PS1_VIM%f}$PS1_VCS%f";
+	RPS1="${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f";
 }
 
 export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
