@@ -24,7 +24,7 @@ alias pcvs="cvs -d eadler@pcvs.freebsd.org/home/pcvs";
 alias projcvs="cvs -d eadler@projcvs.freebsd.org/home/projcvs";
 alias bcvs="cvs -d anoncvs@anoncvs1.FreeBSD.org:/home/ncvs";
 alias fbcvs="cvs -d anoncvs@anoncvs.fr.FreeBSD.org:/home/ncvs";
-alias projcvs="cvs -d anoncvs@projcvs.FreeBSD.org:/home/projcvs";
+alias projcvs="cvs -d eadler@projcvs.FreeBSD.org:/home/projcvs";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
 
 __exists python2 && alias python2="python -tt3";
