@@ -34,10 +34,10 @@ gc color.branch auto
 gc color.diff auto
 gc color.branch.current red bold
 gc color.branch.local red
-gc color.branch.remote green
+gc color.branch.remote blue
 gc color.diff.frag magenta
 gc color.diff.old red bold
-gc color.diff.new green bold
+gc color.diff.new blue bold
 #gc color.status added
 #gc color.status changed
 #gc color.status untracked
