@@ -125,12 +125,12 @@ let mapleader = ","
 "hi nontext ctermfg=red
 
 "Taken from joe @ sw
-map <C-i> <Esc>:tabp<CR>
-map <C-o> <Esc>:tabn<CR>
-map <C-n> <Esc>:tabe<CR>
-map <silent> <C-j> <Esc>:exe "silent! tabm " . (tabpagenr() - 2)<CR>
-map <silent> <C-k> <Esc>:exe "silent! tabm " . tabpagenr()<CR>
-map <silent> <C-f> <Esc>:exe "FufFile"<CR>
+nmap <C-i> <Esc>:tabp<CR>
+nmap <C-o> <Esc>:tabn<CR>
+nmap <C-n> <Esc>:tabe<CR>
+nmap <silent> <C-j> <Esc>:exe "silent! tabm " . (tabpagenr() - 2)<CR>
+nmap <silent> <C-k> <Esc>:exe "silent! tabm " . tabpagenr()<CR>
+nmap <silent> <C-f> <Esc>:exe "FufFile"<CR>
 nmap <C-Right> <C-W>>
 nmap <C-Left> <C-W><
 nmap <C-Up> <C-W>-
