@@ -137,14 +137,6 @@ nmap <C-Up> <C-W>-
 nmap <C-Down> <C-W>+
 nmap <silent> <F9> <Esc>:call ToggleLineTooLong()<CR>
 
-" Stay out of insert mode {{{2
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-
-"}}}
-
 "}}}
 
 "{{{ Auto Commands
