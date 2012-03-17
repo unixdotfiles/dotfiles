@@ -70,7 +70,7 @@ set notimeout ttimeout ttimeoutlen=200
 
 "--
 "------------------------------------------------------------
-" Tabbing Options {{{1
+" Tabbing Options {{{
 "
 " Taken from joe @ sw
 set smarttab
@@ -91,8 +91,7 @@ set undodir=~/.vim/undodir
 set undofile
 set undolevels=1000		"maximum number of changes that can be undone
 set undoreload=10000	"maximum number lines to save for undo on a buffer reload
-"------------------------------------------------------------
-" Indentation options {{{1
+" Indentation options {{{
 "
 
 " Use F12 to toggle between 'paste' and 'nopaste'
@@ -104,7 +103,7 @@ set shiftwidth=8
 set tabstop=8
 
 "------------------------------------------------------------
-" Mappings {{{1
+" Mappings {{{
 "
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
@@ -148,16 +147,12 @@ nmap <silent> <F9> <Esc>:call ToggleLineTooLong()<CR>
 "}}}
 
 if &term == "xterm" || &term == "xterm-color"
-	"set t_Co=16
 	set grepprg=grep\ -nH\ $*
 	
 endif
 
 " Cool tab completion stuff
 set wildmode=list:longest,full
-
-" Try this for a bit"
-"set spell 
 
 " highlight trailing whitespace and tabs after spaces in leading whitespace
 "highlight ExtraWhitespace ctermbg=red guibg=red
