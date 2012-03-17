@@ -178,7 +178,7 @@ function! ToggleLineTooLong()
         let g:hl_visible = 0
     else
         hi LineTooLong cterm=bold ctermbg=red guibg=LightYellow
-        match LineTooLong /\%>80v.\+/
+        exe 'match LineTooLong /\%>' . &textwidth . 'v.\+/'
         let g:hl_visible = 1
     endif
 endfunction
