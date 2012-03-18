@@ -82,7 +82,6 @@ function Set_Man()
 endfunction "Set_Man()
 
 function Set_Velocity()
-	set ts=2
 	set expandtab
 	set softtabstop=2
 	set sw=2
