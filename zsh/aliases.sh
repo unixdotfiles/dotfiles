@@ -8,10 +8,17 @@ then
 	ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
 fi
 
-if [ $(uname -s ) = "FreeBSD" ]
+uname_s=$(uname -s)
+
+if [ "$uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";
 	alias less="less -R";
+	alias free="top -b|egrep '^(Mem|Swap)'"
+	alias iotop='top -m io -o total'
+elif [ "$uname_s" = "Linux" ]
+then
+	alias fetch="wget"
 fi
 
 __exists vim && alias vi="vim";
@@ -36,7 +43,7 @@ alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 alias srcloc="whereis -qs";
-alias portmaster="portmaster -m'-DNO_DEPENDS'";
+__exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
 alias urxvt="urxvtcd"
 #alias su="su -l"
 __exists proxychains && alias pc="proxychains";
@@ -47,6 +54,7 @@ __exists firefox3 && alias firefox="firefox3 -no-remote";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
+__exists portlint && alias portlint="portlint -C";
 
 alias ll="ls -halt"
 
@@ -78,3 +86,14 @@ __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
 
 __exists now && alias now="now '%a, %b %d %Y, %r %Z (%z)'"
 
+# stolen from zi (from cacits@rit.edu)
+wiki()  {
+	dig +short txt $1.wp.dg.cx;
+}
+dirsize() {
+	du -sk $* | sort -n | perl -ne 'if ( /^(\d+)\s+(.*$)/){$l=log($1+.1);$m=int($l/log(1024)); printf ("%6.1f\t%s\t%25s %s\n",($1/(2**(10*$m))),(("K","M","G","T","P")[$m]),"*"x (1.5*$l),$2);}';
+}
+randpassword() {
+	< /dev/urandom tr -dc A-Za-z0-9_ | head -c${1:-16} && printf "\n";
+
+}
