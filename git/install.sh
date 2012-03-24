@@ -22,8 +22,10 @@ gc format.signoff true
 gc apply.whitespace warn
 
 # Aliases
+gc alias.ammend "commit --amend -v"
+gc alias.cat "cat-file -p"
 gc alias.co checkout
-gc alias.ci commit 
+gc alias.ci commit
 gc alias.st status
 gc alias.w  whatchanged
 gc alias.rollback checkout
