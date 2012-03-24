@@ -14,6 +14,7 @@ htln () {
 	tln "$self/$1" "$HOME/$2"
 }
 
+[ -d ~/.zsh/cache ] || mkdir ~/.zsh/cache
 htln zsh/zshrc .zshrc
 htln zsh/zlogout .zlogout
 htln nano/USE_RC .nanorc
@@ -31,6 +32,10 @@ htln icewm .icewm
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
+[ -d ~/.vim/undo ] || mkdir -p ~/.vim/undo
+[ -d ~/.vim/backup ] || mkdir -p ~/.vim/backup
+[ -d ~/.vim/swap ] || mkdir -p ~/.vim/swap
+[ -d ~/.vim/viminfo ] || mkdir -p ~/.vim/viminfo
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
 htln gdb/gdbinit .gdbrc

@@ -16,6 +16,18 @@ set bg=light
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
+set backupdir
+set backupdir=~/.vim/backup
+" Prevent backups from overwriting each other. The naming is weird,
+" since I'm using the 'backupext' variable to append the path.
+" So the file '/home/docwhat/.vimrc' becomes '.vimrc%home%docwhat~'
+au BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g') . '~'
+
+" for swap file
+set directory+=~/.vim/swap// " double / so that the complete path gets used
+set directory+=.
+
+
 " Better command-line completion
 set wildmenu
 
@@ -55,8 +67,10 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
-" Enable use of the mouse for all modes
-"set mouse=a
+if has('mouse')
+	" Enable use of the mouse for all modes
+	"set mouse=a
+endif
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -85,10 +99,12 @@ set novisualbell
 set showtabline=2
 set tabpagemax=1000
 
-set undodir=~/.vim/undodir
-set undofile
+if exists("+undofile")
+	set undodir=~/.vim/undodir
+	set undofile
+	set undoreload=10000	"maximum number lines to save for undo on a buffer reload
+endif
 set undolevels=1000		"maximum number of changes that can be undone
-set undoreload=10000	"maximum number lines to save for undo on a buffer reload
 " }}}
 " Indentation options {{{
 "
@@ -185,7 +201,9 @@ function! ToggleLineTooLong()
 endfunction
 
 " {{{ Includes 
-
 source ~/.conf/vim/language.vim
 source ~/.conf/vim/statusline.vim
+if has("macunix")
+	source ~/.conf/vim/mac-host.vim
+endif
 " }}}
