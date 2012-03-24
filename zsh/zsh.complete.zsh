@@ -84,7 +84,7 @@ zstyle ':completion:*:kill:*'   force-list always
 
 # Don't complete remote files for faster git completion on large repos
 __git_files () {
-	_wanted files expl ?local files? _files
+	_wanted files expl 'local files' _files
 }
 
 # }}}
