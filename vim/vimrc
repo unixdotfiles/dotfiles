@@ -101,7 +101,8 @@ set pastetoggle=<F12>
 set shiftwidth=8
 set tabstop=8
 
-" }}} Mappings {{{
+" }}}
+" Mappings {{{
 "
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
