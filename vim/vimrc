@@ -16,7 +16,6 @@ set bg=light
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
-set backupdir
 set backupdir=~/.vim/backup
 " Prevent backups from overwriting each other. The naming is weird,
 " since I'm using the 'backupext' variable to append the path.
