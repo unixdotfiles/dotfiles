@@ -38,7 +38,6 @@ function Set_C()
 endfunction " Set_C()
 
 function Set_WWW()
-"    source $HOME/.vim/matchit.vim
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal syntax=php.html
@@ -47,7 +46,6 @@ function Set_WWW()
 endfunction " Set_WWW()
 
 function Set_CSS()
-"    source $HOME/.vim/matchit.vim
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal syntax=css
@@ -56,7 +54,6 @@ function Set_CSS()
 endfunction " Set_CSS()
 
 function Set_JavaScript()
-    call SourceMatchit()
     setlocal textwidth=78
     setlocal tabstop=4
     setlocal ft=javascript
@@ -65,7 +62,6 @@ endfunction " Set_JavaScript()
 
 function Set_SGML()
     " Stolen from gjb
-    call SourceMatchit()
     call ShowSpecial()
     setlocal nonumber
     syn match sgmlSpecial "&[^;]*;"
@@ -86,7 +82,6 @@ function Set_Man()
 endfunction "Set_Man()
 
 function Set_Velocity()
-	set ts=2
 	set expandtab
 	set softtabstop=2
 	set sw=2
@@ -100,8 +95,3 @@ function ShowSpecial()
     return 0
 endfunction " ShowSpecial()
 
-function SourceMatchit()
-    " http://www.vim.org/scripts/script.php?script_id=39
-	"source $HOME/.vim/matchit.vim
-    return 0
-endfunction " SourceMatchit()
