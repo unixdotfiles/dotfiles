@@ -4,7 +4,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.php,*.html,*.css,*.js call Set_WWW()
     au BufNewFile,BufRead *.css call Set_CSS()
     au BufNewFile,BufRead *.js call Set_JavaScript()
-    au BufNewFile,BufRead *.html,*.sgml,*.ent,*.xsl call Set_SGML()
+    au BufNewFile,BufRead *.html,*.sgml,*.ent,*.xsl,*.xml call Set_SGML()
     au BufNewFile,BufRead *.txt call Set_txt()
     au BufNewFile,BufRead crontab.* call Set_crontab()
     au BufNewFile,BufRead *.vm call Set_Velocity() " TA
