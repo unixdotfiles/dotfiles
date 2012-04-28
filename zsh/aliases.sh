@@ -56,6 +56,8 @@ alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
 __exists portlint && alias portlint="portlint -C";
 
+alias diff="diff -p";
+
 alias ll="ls -halt"
 
 alias timestamp='date +%s'
