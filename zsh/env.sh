@@ -3,6 +3,9 @@ export EDITOR=vim;
 export PAGER=less;
 
 export PATH="/usr/local/llvm-svn:$PATH:$HOME/bin";
+export PATH=/usr/local/libexec/ccache:$PATH
+export CCACHE_PATH=/usr/bin:/usr/local/bin
+export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
 # Required for macports
