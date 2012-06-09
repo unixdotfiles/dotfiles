@@ -28,7 +28,7 @@ gc alias.co checkout
 gc alias.ci commit
 gc alias.st status
 gc alias.w  whatchanged
-gc alias.rollback checkout
+gc alias.rollback 'reset HEAD^'
 gc alias.lg "log --graph '--format=%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
 
 # Coloring options
