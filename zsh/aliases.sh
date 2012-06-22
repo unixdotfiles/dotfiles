@@ -99,3 +99,5 @@ randpassword() {
 	< /dev/urandom tr -dc A-Za-z0-9_ | head -c${1:-16} && printf "\n";
 
 }
+
+__exists cscope="cscope -CqRv";
