@@ -100,4 +100,4 @@ randpassword() {
 
 }
 
-__exists cscope="cscope -CqRv";
+__exists cscope && alias cscope="cscope -CqRv";
