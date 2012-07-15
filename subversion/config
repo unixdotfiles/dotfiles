@@ -1,0 +1,158 @@
+### This file configures various client-side behaviors.
+
+### Section for authentication and authorization customizations.
+[auth]
+### Set password stores used by Subversion. They should be
+### delimited by spaces or commas. The order of values determines
+### the order in which password stores are used.
+### Valid password stores:
+###   gnome-keyring        (Unix-like systems)
+###   kwallet              (Unix-like systems)
+###   keychain             (Mac OS X)
+###   windows-cryptoapi    (Windows)
+# password-stores = gnome-keyring,kwallet
+
+### Section for configuring external helper applications.
+[helpers]
+### Set editor-cmd to the command used to invoke your text editor.
+###   This will override the environment variables that Subversion
+###   examines by default to find this information ($EDITOR, 
+###   et al).
+# editor-cmd = editor (vi, emacs, notepad, etc.)
+### Set diff-cmd to the absolute path of your 'diff' program.
+###   This will override the compile-time default, which is to use
+###   Subversion's internal diff implementation.
+# diff-cmd = diff_program (diff, gdiff, etc.)
+### Set diff3-cmd to the absolute path of your 'diff3' program.
+###   This will override the compile-time default, which is to use
+###   Subversion's internal diff3 implementation.
+# diff3-cmd = diff3_program (diff3, gdiff3, etc.)
+### Set diff3-has-program-arg to 'yes' if your 'diff3' program
+###   accepts the '--diff-program' option.
+# diff3-has-program-arg = [yes | no]
+### Set merge-tool-cmd to the command used to invoke your external
+### merging tool of choice. Subversion will pass 4 arguments to
+### the specified command: base theirs mine merged
+# merge-tool-cmd = merge_command
+
+### Section for configuring tunnel agents.
+[tunnels]
+### Configure svn protocol tunnel schemes here.  By default, only
+### the 'ssh' scheme is defined.  You can define other schemes to
+### be used with 'svn+scheme://hostname/path' URLs.  A scheme
+### definition is simply a command, optionally prefixed by an
+### environment variable name which can override the command if it
+### is defined.  The command (or environment variable) may contain
+### arguments, using standard shell quoting for arguments with
+### spaces.  The command will be invoked as:
+###   <command> <hostname> svnserve -t
+### (If the URL includes a username, then the hostname will be
+### passed to the tunnel agent as <user>@<hostname>.)  If the
+### built-in ssh scheme were not predefined, it could be defined
+### as:
+# ssh = $SVN_SSH ssh -q
+### If you wanted to define a new 'rsh' scheme, to be used with
+### 'svn+rsh:' URLs, you could do so as follows:
+# rsh = rsh
+### Or, if you wanted to specify a full path and arguments:
+# rsh = /path/to/rsh -l myusername
+
+### Section for configuring miscelleneous Subversion options.
+[miscellany]
+### Set global-ignores to a set of whitespace-delimited globs
+### which Subversion will ignore in its 'status' output, and
+### while importing or adding files and directories.
+### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
+global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej *~ .*.swp .DS_Store
+### Set log-encoding to the default encoding for log messages
+# log-encoding = latin1
+### Set use-commit-times to make checkout/update/switch/revert
+### put last-committed timestamps on every file touched.
+# use-commit-times = yes
+### Set no-unlock to prevent 'svn commit' from automatically
+### releasing locks on files.
+# no-unlock = yes
+### Set mime-types-file to a MIME type registry file, used to
+### provide hints to Subversion's MIME type auto-detection
+### algorithm.
+# mime-types-file = /path/to/mime.types
+### Set preserved-conflict-file-exts to a whitespace-delimited
+### list of patterns matching file extensions which should be
+### preserved in generated conflict file names.  By default,
+### conflict files use custom extensions.
+# preserved-conflict-file-exts = doc ppt xls od?
+### Set enable-auto-props to 'yes' to enable automatic properties
+### for 'svn add' and 'svn import', it defaults to 'no'.
+### Automatic properties are defined in the section 'auto-props'.
+enable-auto-props = yes
+### Set interactive-conflicts to 'no' to disable interactive
+### conflict resolution prompting.  It defaults to 'yes'.
+# interactive-conflicts = no
+
+### Section for configuring automatic properties.
+[auto-props]
+### The format of the entries is:
+###   file-name-pattern = propname[=value][;propname[=value]...]
+### The file-name-pattern can contain wildcards (such as '*' and
+### '?').  All entries which match (case-insensitively) will be
+### applied to the file.
+
+[auto-props]
+*.c     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.h     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.s     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.S     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.cc    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.cpp   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.cxx   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.in    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.sh    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain; svn:executable
+*.pl    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain; svn:executable
+*.pm    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.py    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.rb    = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.awk   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.sed   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.txt   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.conf  = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+Makefile* = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.1     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.2     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.3     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.4     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.5     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.6     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.7     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.8     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+*.9     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+
+*.css   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/css
+*.html  = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/html
+*.xhtml = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/html+xml
+*.xml   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/xml
+*.xsd   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/xml
+*.xsl   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/xml
+*.xslt  = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/xml
+*.xul   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/xul
+*.sgml   = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/sgml
+*.docbook = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/sgml
+
+bsd.*.mk     = svn:eol-style=native; svn:keywords=FreeBSD=%H; svn:mime-type=text/plain
+
+*.pdf   = svn:mime-type=application/pdf
+*.ps    = svn:mime-type=application/postscript
+*.eps   = svn:mime-type=application/postscript
+*.exe   = svn:mime-type=application/octet-stream
+*.bin   = svn:mime-type=application/octet-stream
+
+*.jpg   = svn:mime-type=image/jpeg
+*.jpeg  = svn:mime-type=image/jpeg
+*.gif   = svn:mime-type=image/gif
+*.png   = svn:mime-type=image/png
+*.tiff  = svn:mime-type=image/tiff
+
+distinfo*    = svn:eol-style=native; fbsd:nokeywords=yes; svn:mime-type=text/plain
+extrapatch-* = svn:eol-style=native; fbsd:nokeywords=yes; svn:mime-type=text/plain
+extra-patch-*= svn:eol-style=native; fbsd:nokeywords=yes; svn:mime-type=text/plain
+patch-*      = svn:eol-style=native; fbsd:nokeywords=yes; svn:mime-type=text/plain
+pkg-*        = svn:eol-style=native; fbsd:nokeywords=yes; svn:mime-type=text/plain
