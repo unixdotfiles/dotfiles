@@ -3,7 +3,7 @@ export EDITOR=vim;
 export PAGER=less;
 
 export PATH="/usr/local/libexec/ccache:$PATH:$HOME/bin";
-export CCACHE_PATH=/usr/bin:/usr/local/bin
+export CCACHE_PATH=/usr/local/bin:/usr/bin
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
