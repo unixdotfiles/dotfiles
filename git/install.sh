@@ -23,6 +23,7 @@ gc apply.whitespace warn
 
 # Aliases
 gc alias.ammend "commit --amend -v"
+gc alias.bvv "branch --list -vv"
 gc alias.cat "cat-file -p"
 gc alias.co checkout
 gc alias.ci commit
