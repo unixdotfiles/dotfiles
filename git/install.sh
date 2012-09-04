@@ -26,11 +26,15 @@ gc alias.ammend "commit --amend -v"
 gc alias.bvv "branch --list -vv"
 gc alias.cat "cat-file -p"
 gc alias.co checkout
-gc alias.ci commit
+gc alias.ci commit -v
+gc alias.contains "branch -a --contains"
+gc alias.count "count-objects -v"
+gc alias.dci "svn dcommit"
+gc alias.fixup "commit -a --amend -C HEAD"
+gc alias.lg "log --graph '--format=%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
+gc alias.rollback 'reset HEAD^'
 gc alias.st status
 gc alias.w  whatchanged
-gc alias.rollback 'reset HEAD^'
-gc alias.lg "log --graph '--format=%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
 
 # Coloring options
 gc color.branch auto
@@ -48,3 +52,5 @@ gc color.diff.new blue bold
 #Garbage collection
 gc gc.auto 0
 
+#Nicer conflict markers (shows 'before' too)
+gc merge.conflictstyle = diff3
