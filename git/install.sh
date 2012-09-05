@@ -53,4 +53,4 @@ gc color.diff.new blue bold
 gc gc.auto 0
 
 #Nicer conflict markers (shows 'before' too)
-gc merge.conflictstyle = diff3
+gc merge.conflictstyle diff3
