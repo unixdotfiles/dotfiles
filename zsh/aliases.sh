@@ -21,7 +21,8 @@ then
 	alias fetch="wget"
 fi
 
-__exists vim && alias vi="vim";
+__exists vim && alias vi="vim -p";
+__exists vim && alias vim="vim -p";
 
 alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
