@@ -54,3 +54,5 @@ gc gc.auto 0
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
+
+gc init.templatedir '~/.conf/git/template/'
