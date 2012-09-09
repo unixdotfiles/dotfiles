@@ -66,7 +66,7 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
-"use ctags instead of cscope for :tags
+" use ctags instead of cscope for :tags
 set nocst
 
 if has('mouse')
@@ -133,6 +133,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Automatically cd into the directory that the file is in
 set autochdir
+
+" If using a git repo, correctly set the tags directory.
+au BufRead,BufNewFile * let project_dir = system("cd ".shellescape(expand("%:p:h"))." && git rev-parse --show-toplevel")
+au BufRead,BufNewFile * let &tags = project_dir[:-2]."/.git/tags,./.tags"
 
 let mapleader = ","
 
