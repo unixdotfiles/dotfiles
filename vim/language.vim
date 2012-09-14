@@ -9,6 +9,7 @@ if has("autocmd")
     au BufNewFile,BufRead crontab.* call Set_crontab()
     au BufNewFile,BufRead *.vm call Set_Velocity() " TA
     au BufNewFile,BufRead *.[1-9] call Set_Man()
+    au BufNewFile,BufRead *.py call Set_Python()
 endif " has(autocmd)
 
 function Set_txt()
@@ -87,6 +88,13 @@ function Set_Velocity()
 	set sw=2
 	set ts=2
 endfunction "Set_Velocity()
+
+function Set_Python()
+	set expandtab
+	set softtabstop=4
+	set shiftwidth=4
+	set tabstop=4
+endfunction
 
 function ShowSpecial()
     " blackend gave me these
