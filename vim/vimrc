@@ -141,7 +141,7 @@ au BufRead,BufNewFile * let &tags = project_dir[:-2]."/.git/tags,./.tags"
 let mapleader = ","
 
 "Little trick to find ending whitespace in docs
-"set list listchars=tab:>>,trail:*,eol:$
+set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
 "hi nontext ctermfg=red
 
 "Taken from joe @ sw
