@@ -1,0 +1,68 @@
+# General Files
+*~
+
+# Ignore CVS Files
+/CVS/*
+*/CVS/*
+.cvsignore
+*/.cvsignoreA
+
+# And Another Version Control
+.svn/
+
+# Vim specific files
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# OSX Specific
+._*
+
+# Compiled Object files
+*.o
+*.lo
+*.slo
+*.class
+
+# Compiled Libraries
+*.lib
+
+# Compiled Dynamic libraries
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Compiled Static libraries
+*.a
+*.la
+*.lai
+
+# Executables
+*.app
+*.exe
+*.out
+*.hi
+*.jar
+
+# Latex
+*.aux
+*.dvi
+*.log
+*.pdf
+*.ps
+
+# Dump Files
+*.core
+
+# Diffs and Patches
+*.rej
+*.orig
+*.old
+
+# R
+.Rhistory
+
+# Never Ignore .gitignore
+!.gitignore
