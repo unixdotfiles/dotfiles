@@ -15,6 +15,7 @@
 	setopt auto_menu         # show completion menu on succesive tab press
 	setopt complete_in_word
 	setopt always_to_end
+	setopt rec_exact
 
 #Some functions, are very slow. 
 	zstyle ':completion:*' use-cache on
@@ -37,7 +38,7 @@
 	zstyle ':completion:*' list-colors ''
 	
 	#Remove trailing slash of empty directory when completed
-	zstyle ':completion:*' squeeze-slashes true
+#	zstyle ':completion:*' squeeze-slashes true
 
 	# case-insensitive (all),partial-word and then substring completion
 	if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
@@ -95,9 +96,9 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm 
 
 ## ssh scp ##
 # Load known hosts file for auto-completion with ssh and scp commands
-if [ -f ~/.ssh/known_hosts ]; then
-#  zstyle ':completion:*' hosts $( sed 's/[, ].*$//' $HOME/.ssh/known_hosts )
-  zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6):*:*' hosts $( sed 's/[, ].*$//' $HOME/.ssh/known_hosts )
+if [ -f ~/.ssh/known_hosts ];
+then
+	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet):*:*' hosts $( sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
 fi
 
 ## vim ##
