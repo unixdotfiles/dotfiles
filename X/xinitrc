@@ -5,7 +5,6 @@ setxkbmap -option compose:caps &
 xhost +localhost &
 idesk &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
-eval $(gpg-agent --daemon) &
 lxpanel &
 #launchy &
 urxvtd -q -f -o &

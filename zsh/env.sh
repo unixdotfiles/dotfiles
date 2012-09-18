@@ -49,6 +49,7 @@ export TINDY="/usr/local/tinderbox/";
 
 export INPUTRC="~/.inputrc";
 
-
-
 export ENV=~/.shrc;
+
+# GPG Agent --daemon should be here somewhere
+
