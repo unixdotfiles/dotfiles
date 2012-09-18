@@ -58,7 +58,7 @@ function cd () {
 function pushd () {
 	if [[ $# -eq 0 ]]
 	then
-		builtin cd;
+		builtin pushd;
 	else
 		if [[ -f $1 ]]
 		then
