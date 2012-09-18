@@ -35,26 +35,17 @@ function cd () {
       false
     ;;
   esac; do :; done; fi
-  if [[ $1:t = "cu" ]]; then
-    local dir=$1:h
-    shift
-    builtin cd -q $opt $dir && {
-      preexec cup $@
-      cup $@
-    }
-  else
-    if [[ ${+2} = 0 ]]; then
-      if [[ -f $1 ]]; then
-        builtin cd $opt $1:h
-      else
-        builtin cd $opt $1 
-      fi
+  if [[ ${+2} = 0 ]]; then
+    if [[ -f "$1" ]]; then
+      builtin cd $opt "$1:h"
     else
-      if [[ -z $3 ]]; then
-        builtin cd $opt "$1" "$2"
-      else
-        echo cd: too many arguments
-      fi
+      builtin cd $opt "$1"
+    fi
+  else
+    if [[ -z "$3" ]]; then
+      builtin cd $opt "$1" "$2"
+    else
+      echo >&2 cd: too many arguments
     fi
   fi
 }
