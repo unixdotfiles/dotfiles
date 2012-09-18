@@ -27,25 +27,30 @@ function cd () {
   esac; do :; done
   # eat options from the end, if -- wasn't given
   if [[ $opt[(I)--] == 0 ]]; then; while case $@[#] in
-    -[qLPs]#)
-      opt=($opt $@[#])
-      set -- $@[1,#-1]
-    ;;
-    *)
-      false
-    ;;
+  -[qLPs]#)
+    opt=($opt $@[#])
+    set -- $@[1,#-1]
+  ;;
+  *)
+    false
+  ;;
   esac; do :; done; fi
-  if [[ ${+2} = 0 ]]; then
-    if [[ -f "$1" ]]; then
-      builtin cd $opt "$1:h"
-    else
-      builtin cd $opt "$1"
-    fi
+  if [[ $# = 0 ]]
+  then
+	builtin cd $opt;
   else
-    if [[ -z "$3" ]]; then
-      builtin cd $opt "$1" "$2"
+    if [[ ${+2} = 0 ]]; then
+      if [[ -f "$1" ]]; then
+	builtin cd $opt "$1:h"
+      else
+	builtin cd $opt "$1"
+      fi
     else
-      echo >&2 cd: too many arguments
+      if [[ -z "$3" ]]; then
+	builtin cd $opt "$1" "$2"
+      else
+	echo >&2 cd: too many arguments
+      fi
     fi
   fi
 }
