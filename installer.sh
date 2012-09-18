@@ -56,4 +56,4 @@ htln subversion/config .subversion/config
 htln gpg/gpg.conf .gnupg/gpg.conf
 find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
 find $HOME/.mozilla -mindepth 3 -maxdepth 4 -type l -name userChrome.css -exec sh -c "echo begon \"{}/userChrome.css\" >> $begon" \;
-sort $begon | uniq  > $begon-temp && mv $begon-temp $begon;
+sort -u $begon > $begon-temp && mv $begon-temp $begon;
