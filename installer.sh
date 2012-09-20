@@ -2,7 +2,7 @@
 self=~/.conf;
 begon="$self/.begon";
 
-source $self/zsh/exists.func
+. $self/zsh/exists.func
 
 #Test ln. only link if the second argument doesn't exist
 tln () {
