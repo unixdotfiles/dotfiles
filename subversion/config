@@ -35,6 +35,8 @@
 ### the specified command: base theirs mine merged
 # merge-tool-cmd = merge_command
 
+diff-extensions = -u -p
+
 ### Section for configuring tunnel agents.
 [tunnels]
 ### Configure svn protocol tunnel schemes here.  By default, only
