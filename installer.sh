@@ -25,6 +25,8 @@ htln X/Xmodmap .xmodmap
 htln X/Xdefaults .Xdefaults
 #htln X/xsession .xsession
 htln mercurial/hgrc .hgrc
+htln idesk/ideskrc .ideskrc
+htln idesk/idesktop .idesktop
 [ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
 htln mplayer/config .mplayer/config
 htln mplayer/mencoder.conf .mplayer/mencoder.conf
