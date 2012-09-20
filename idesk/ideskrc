@@ -1,0 +1,40 @@
+table Config
+	DoubleClick: false
+	FontName: verdana
+	FontSize: 11
+	FontColor: #ffffff
+	PaddingX: 10
+	PaddingY: 10
+	Transparency: 70
+	HighContrast: true
+	Locked: true
+	Shadow: true
+	ShadowColor: #000000
+	ShadowX: 1
+	ShadowY: 2
+	SnapShadow: false
+	IconSnap: true
+	SnapWidth: 10
+	SnapHeight: 10
+	SnapOrigin: BottomLeft
+	SnapShadowTrans: 300
+	CaptionOnHover: false
+	CaptionTipOnHover: false
+	CaptionTipPlacement: right
+	CaptionPlacement: bottom
+	Bold: true
+	Background.Delay: 1
+	Background.Source: /home/eitan/.pics
+   	#Background.File: /home/eitan/.pics/wolf.jpg 
+	Background.Mode: Mirror
+	Background.Color: #FFFFFF
+end
+
+table Actions
+	Lock: control right doubleClk
+	Reload: middle doubleClk
+	Drag: left hold
+	EndDrag: left singleClk
+	Execute[0]: left doubleClk
+	Execute[1]: right doubleClk
+end 
