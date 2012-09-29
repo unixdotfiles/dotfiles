@@ -9,7 +9,6 @@
 
 # Global completion settings {{{
 
-	zstyle ':completion:*' completer _complete _ignored
 	zstyle :compinstall filename ~/.zshrc
 	unsetopt flowcontrol
 	setopt auto_menu         # show completion menu on succesive tab press
