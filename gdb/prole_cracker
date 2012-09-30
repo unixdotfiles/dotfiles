@@ -2,16 +2,18 @@
 #
 # DESCRIPTION: A cracker-friendly gdb configuration file.
 #
-# REVISION : 6.1 
+# REVISION : 7.0
 # 
-# CONTRIBUTORS: mammon_, elaine, pusillus, mong
+# CONTRIBUTORS: mammon_, elaine, pusillus, mong, eadler
 #
-# FEEDBACK: http://board.anticrack.de/viewforum.php?f=35
-# 
 # NOTES: 'help user' in gdb will list the commands/descriptions in this file
 #        'context on' now enables auto-display of context screen
 #
 # CHANGELOG:
+# 	Version 7
+# 	  removed old source (404s now)
+# 	  removed stuff that doesn't work
+# 	  don't override builtin stepping
 #	Version 6.1
 #        fixed filename in step_to_call so it points to /dev/null
 #        changed location of logfiles from /tmp  to ~
@@ -394,13 +396,6 @@ Disable display of context on every program stop
 end
 
 # ________________process control______________
-define n
- ni
-end
-document n
-Step one instruction
-end
-
 define go
  stepi $arg0
 end
@@ -423,16 +418,6 @@ define init
 end
 document init
 Run program; break on _init()
-end
-
-define start
- set $SHOW_CONTEXT = 1
- set $SHOW_NEST_INSN=0
- tbreak _start
- r
-end
-document start
-Run program; break on _start()
 end
 
 define sstart
