@@ -33,6 +33,7 @@
 # TODO:
 #	* add global vars to allow user to control stack,data,code win sizes
 #	* add dump, append, set write, etc commands
+#	* make this 64 bit compatible
 #	* more tips!
 
 
@@ -959,12 +960,7 @@ end
 document tip_display
 Tips on automatically displaying values when a program stops.
 end
-# __________________gdb options_________________
-# These make gdb never pause in its output
-#set height 0
-#set width 0
+
 # why do these not work???
 set $SHOW_CONTEXT = 1
 set $SHOW_NEST_INSN=0
-
-#EOF
