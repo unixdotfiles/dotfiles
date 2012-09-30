@@ -40,7 +40,7 @@ htln screen/screenrc .screenrc
 [ -d ~/.vim/viminfo ] || mkdir -p ~/.vim/viminfo
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
-htln gdb/gdbinit .gdbrc
+htln gdb/gdbinit .gdbinit
 [ -d ~/.config ] || mkdir ~/.config 
 [ -d ~/.config/awesome ] || mkdir ~/.config/awesome
 htln awesome/rc.lua .config/awesome/rc.lua

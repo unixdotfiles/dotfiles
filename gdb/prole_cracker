@@ -960,9 +960,6 @@ document tip_display
 Tips on automatically displaying values when a program stops.
 end
 # __________________gdb options_________________
-set prompt gdb> 
-set output-radix 0x10
-set input-radix 0x10
 # These make gdb never pause in its output
 #set height 0
 #set width 0

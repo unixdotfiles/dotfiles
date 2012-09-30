@@ -1,0 +1,5 @@
+# This file contains the generic settings
+# prole_cracker is a set of useful routines
+# cplusplus is for c++ specific settings
+
+set prompt gdb> 

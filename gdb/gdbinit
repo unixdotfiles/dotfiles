@@ -1,3 +1,5 @@
+source ~/.conf/gdb/gdbrc
 source ~/.conf/gdb/cplusplus
 source ~/.conf/gdb/prole_cracker
+source ~/.conf/gdb/gdbrc
 set fork-follow-mode child                                                                                                                                   
