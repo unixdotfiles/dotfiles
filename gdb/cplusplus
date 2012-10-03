@@ -3,10 +3,6 @@ set print asm-demangle
 set print object
 set print vtbl
 set overload-resolution on
-set print array on
-set print null-stop
-set print pretty on
 set print object on
-set history save on
+set print static-members on
 
-handle SIGPIPE nostop noprint pass
