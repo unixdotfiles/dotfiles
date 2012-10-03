@@ -3,3 +3,4 @@
 # cplusplus is for c++ specific settings
 
 set prompt gdb> 
+set fork-follow-mode child
