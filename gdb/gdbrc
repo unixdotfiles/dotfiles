@@ -1,6 +1,16 @@
 # This file contains the generic settings
-# prole_cracker is a set of useful routines
-# cplusplus is for c++ specific settings
 
 set prompt gdb> 
+
+set history save on
+
+# Stop printing arrays at a nul
+set print null-stop
+
+# Pretty Print things
+set print pretty on
+set print array on
+
 set fork-follow-mode child
+
+handle SIGPIPE nostop noprint pass
