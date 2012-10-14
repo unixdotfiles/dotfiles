@@ -31,7 +31,7 @@ gc alias.contains "branch -a --contains"
 gc alias.count "count-objects -v"
 gc alias.dci "svn dcommit"
 gc alias.fixup "commit -a --amend -C HEAD"
-gc alias.lg "log --graph '--format=%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
+gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
 gc alias.rollback 'reset HEAD^'
 gc alias.st status
 gc alias.w  whatchanged

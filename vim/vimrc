@@ -151,6 +151,7 @@ let mapleader = ","
 
 "Little trick to find ending whitespace in docs
 set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
+"""""" eh? - not getting picked up
 "hi nontext ctermfg=red
 
 "Taken from joe @ sw
@@ -223,3 +224,10 @@ if has("macunix")
 	source ~/.conf/vim/mac-host.vim
 endif
 " }}}
+
+
+"try this:
+"set tildeop
+"
+
+set completeopt=menuone
