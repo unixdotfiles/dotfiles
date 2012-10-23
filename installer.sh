@@ -54,6 +54,7 @@ htln tmux/tmux.conf .tmux.conf
 htln readline/inputrc .inputrc
 [ -d ~/.subversion ] || mkdir ~/.subversion
 htln subversion/config .subversion/config
+htln mutt/muttrc .muttrc
 [ -d ~/.gnupg ] || mkdir ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
 find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;

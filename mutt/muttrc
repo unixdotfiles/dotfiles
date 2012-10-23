@@ -1,0 +1,25 @@
+# Sort by default using threads
+# (see last paragraph of 4.8 Handling Mailing Lists)
+set sort=threads
+
+# Default sent-mail folder for all outgoing messages
+set record="=Sent"
+
+# Set a postponed folder, see the P in 2.4 Sending Mail
+set postponed="~/mail/postponed"
+
+# Sort sent messages by date instead of thread
+folder-hook Sent     set sort=date-sent
+
+# Special options for fowarding attachments
+set mime_forward=ask-no
+set mime_forward_decode
+
+# Turn off the exit without saving key (x, by deault), make it exit with
+# save (equivalent to by default, q).
+bind index x quit
+
+set index_format="%4C %Z %{%b %d %Y} %-15.15L (%4l) %s"
+
+set sendmail="/usr/local/bin/ssmtp -oi"	# how to deliver mail
+
