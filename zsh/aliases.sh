@@ -100,3 +100,5 @@ randpassword() {
 }
 
 __exists cscope && alias cscope="cscope -CqRv";
+
+__exists hub && alias git="hub";
