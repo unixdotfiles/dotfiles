@@ -9,7 +9,6 @@
 
 # Global completion settings {{{
 
-	zstyle :compinstall filename ~/.zshrc
 	setopt auto_menu         # show completion menu on succesive tab press
 	setopt complete_in_word
 	setopt always_to_end
