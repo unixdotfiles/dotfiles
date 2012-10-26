@@ -115,10 +115,6 @@ zstyle ':completion:*:(mv|cp):*' ignore-line no
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 
-
-#this is correction - not completion - but ignore these too
-CORRECT_IGNORE="_*"
-
 #[ misc ]#######################################################################
 zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
     '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
