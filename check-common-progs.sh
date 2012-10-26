@@ -13,12 +13,10 @@ report port;
 report xchat;
 report pidgin;
 report firefox;
-report multi-gnome-terminal && [ -L $(which -s mgt) ]
 report geany;
 report hg;
 report git;
 report svn;
-report icewm-session;
 report mplayer;
 report nano;
 __exists links || report lynx; # prefer lynx - but don't report it if we have links
