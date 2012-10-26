@@ -69,10 +69,8 @@ alias r-x="chmod 755"
 alias r--="chmod 644"
 
 portsGrep() {
-	if [ "x$PORTSDIR" = "x" ]
-	then
-		PORTSDIR="/usr/ports"
-	fi
+	local PORTSDIR
+	PORTSDIR=${PORTSDIR:-/usr/ports}
 	find "$PORTSDIR" -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
 }
 
