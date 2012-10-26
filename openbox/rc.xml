@@ -356,11 +356,13 @@
       <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
+      <!--
       <mousebind button="A-Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
       </mousebind>
+      -->
       <mousebind button="A-Up" action="Click">
         <action name="DesktopPrevious"/>
       </mousebind>
@@ -472,11 +474,13 @@
           <edge>bottom</edge>
         </action>
       </mousebind>
+      <!--
       <mousebind button="Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
       </mousebind>
+      -->
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
@@ -528,10 +532,12 @@
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+      <!--
       <mousebind button="Middle" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+      -->
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
@@ -588,11 +594,13 @@
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
+      <!--
       <mousebind button="Middle" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
+      -->
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
@@ -601,9 +609,11 @@
       <mousebind button="Left" action="Click">
         <action name="ToggleMaximizeFull"/>
       </mousebind>
+      <!--
       <mousebind button="Middle" action="Click">
         <action name="ToggleMaximizeVert"/>
       </mousebind>
+      -->
       <mousebind button="Right" action="Click">
         <action name="ToggleMaximizeHorz"/>
       </mousebind>
