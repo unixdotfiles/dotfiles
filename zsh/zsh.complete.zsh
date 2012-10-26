@@ -54,6 +54,12 @@
 	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns FIRST_RUN
 	export FIGNORE="";
 
+	# Always complete one value (file name) only once in the current line. This
+	# makes it easy to complete multiple values because I can just press tab to
+	# get all possible values. Otherwise I would have to skip the first value
+	# again and again.
+	zstyle ':completion:*' ignore-line yes
+
 # }}}
 
 # General commands {{{
@@ -103,11 +109,6 @@ fi
 ## vim ##
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 
-# Always complete one value (file name) only once in the current line. This
-# makes it easy to complete multiple values because I can just press tab to
-# get all possible values. Otherwise I would have to skip the first value
-# again and again.
-zstyle ':completion:*' ignore-line yes
 # Except for mv and cp, because I often want to use to similar names, so I
 # complete to the same and change it.
 zstyle ':completion:*:(mv|cp):*' ignore-line no
