@@ -1,7 +1,7 @@
 #!/bin/sh
 
 prepend="";
-if [ "x$SSH_AUTH_SOCK" = "x" ]
+if [ -z "$SSH_AUTH_SOCK" ]
 then
 	prepend="ssh-agent"
 fi
@@ -15,7 +15,7 @@ then
 	then
 		export FIRST_RUN="ready";
 	fi
-	if [ "x$FIRST_RUN" = "x" ]
+	if [ -z "$FIRST_RUN" ]
 	then
 		export FIRST_RUN="ready";
 	else
