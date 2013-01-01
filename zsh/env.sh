@@ -1,7 +1,7 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
-export LESS="R F M"
+#export LESS="R F M"
 
 export PATH="/usr/local/libexec/ccache:$PATH:$HOME/bin";
 export CCACHE_PATH=/usr/local/bin:/usr/bin
