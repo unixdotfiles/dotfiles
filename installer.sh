@@ -57,6 +57,8 @@ htln subversion/config .subversion/config
 htln mutt/muttrc .muttrc
 [ -d ~/.gnupg ] || mkdir ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
+[ ! -f ~/.ssh/config ] && mkdir -p ~/.ssh/ && cp -p $self/ssh/config.template ~/.ssh/config
+[ ! -d ~/.ssh/sockets ] && mkdir -p ~/.ssh/sockets
 find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
 find $HOME/.mozilla -mindepth 3 -maxdepth 4 -type l -name userChrome.css -exec sh -c "echo begon \"{}/userChrome.css\" >> $begon" \;
 sort -u $begon > $begon-temp && mv $begon-temp $begon;
