@@ -1,4 +1,4 @@
-#! /bin/sh -x
+#! /bin/sh
 self=~/.conf;
 begon="$self/.begon";
 
@@ -7,6 +7,15 @@ begon="$self/.begon";
 #Test ln. only link if the second argument doesn't exist
 tln () {
 	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
+	if [ ! -L "$2" ]; then
+		if cmp "$1" "$2"; then
+			echo "warning: $2 matches $1 but is not symlink";
+		else
+			echo "warning: $2 does not match $1"
+		fi
+	fi
+
+
 }
 
 #Home test ln. Like tln but assumes everything is relative to $HOME && $self
