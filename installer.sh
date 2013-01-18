@@ -17,6 +17,7 @@ htln () {
 [ -d ~/.zsh/cache ] || mkdir ~/.zsh/cache
 htln zsh/zshrc .zshrc
 htln zsh/zlogout .zlogout
+htln sh/profile .profile
 htln nano/USE_RC .nanorc
 htln nano .mynano
 htln X/XCompose .XCompose
