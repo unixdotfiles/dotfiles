@@ -1,0 +1,6 @@
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:$HOME/bin; export PATH
+BLOCKSIZE=M;	export BLOCKSIZE
+EDITOR=vi;   	export EDITOR
+PAGER=less;  	export PAGER
+
+ENV=$HOME/.shrc; export ENV
