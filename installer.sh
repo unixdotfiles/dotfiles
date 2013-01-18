@@ -8,7 +8,7 @@ begon="$self/.begon";
 tln () {
 	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
 	if [ ! -L "$2" ]; then
-		if cmp "$1" "$2"; then
+		if cmp -s "$1" "$2"; then
 			echo "warning: $2 matches $1 but is not symlink";
 		else
 			echo "warning: $2 does not match $1"
@@ -70,6 +70,6 @@ htln mutt/muttrc .muttrc
 htln gpg/gpg.conf .gnupg/gpg.conf
 [ ! -f ~/.ssh/config ] && mkdir -p ~/.ssh/ && cp -p $self/ssh/config.template ~/.ssh/config
 [ ! -d ~/.ssh/sockets ] && mkdir -p ~/.ssh/sockets
-find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
-find $HOME/.mozilla -mindepth 3 -maxdepth 4 -type l -name userChrome.css -exec sh -c "echo begon \"{}/userChrome.css\" >> $begon" \;
+[ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
+[ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 4 -type l -name userChrome.css -exec sh -c "echo begon \"{}/userChrome.css\" >> $begon" \;
 sort -u $begon > $begon-temp && mv $begon-temp $begon;
