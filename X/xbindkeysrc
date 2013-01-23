@@ -65,6 +65,16 @@
 #"rxvt"
 #  Control + b:2 + Release
 
+"mixer vol -1"
+    m:0x0 + c:174
+    XF86AudioLowerVolume
+
+"mixer vol +1"
+    m:0x0 + c:176
+    XF86AudioRaiseVolume
+
+
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
