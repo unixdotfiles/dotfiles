@@ -41,8 +41,9 @@ export PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
 function setCurrentPS1()
 {
+	PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life))%%"
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
-	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
+	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_BATTERY $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
 	RPS1="${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f";
 }
 
