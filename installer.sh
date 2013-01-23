@@ -34,6 +34,7 @@ htln X/xinitrc .xinitrc
 htln X/Xmodmap .xmodmap
 htln X/Xdefaults .Xdefaults
 htln X/xserverrc .xserverrc
+htln X/xbindkeysrc .xbindkeysrc
 #htln X/xsession .xsession
 htln mercurial/hgrc .hgrc
 htln idesk/ideskrc .ideskrc
