@@ -7,6 +7,7 @@ idesk &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 lxpanel &
 #launchy &
+xbindkeys &
 urxvtd -q -f -o &
 exec openbox-session;
 #exec icewm-session;
