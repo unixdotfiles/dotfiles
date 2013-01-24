@@ -1,5 +1,12 @@
+Host localhost
+StrictHostKeyChecking no
+ExitOnForwardFailure yes
+ControlMaster no
+
 Host *
 ControlMaster yes
 ControlPath ~/.ssh/sockets/%r@%h:%p.sock
 ControlPersist yes
+CheckHostIP yes
+ServerAliveInterval 5
 
