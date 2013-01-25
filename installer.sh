@@ -67,6 +67,7 @@ htln readline/inputrc .inputrc
 [ -d ~/.subversion ] || mkdir ~/.subversion
 htln subversion/config .subversion/config
 htln mutt/muttrc .muttrc
+htln xchat/xchat.conf .xchat2/xchat.conf
 [ -d ~/.gnupg ] || mkdir ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
 [ ! -f ~/.ssh/config ] && mkdir -p ~/.ssh/ && cp -p $self/ssh/config.template ~/.ssh/config
