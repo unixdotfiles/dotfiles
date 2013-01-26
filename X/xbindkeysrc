@@ -85,6 +85,11 @@
     m:0x4 + c:176
     XF86AudioRaiseVolume
 
+"mixer -S pcm|grep -q 100 && (mixer pcm 0) || (mixer pcm 100)"
+    m:0x10 + c:140
+    Mod2 + NoSymbol
+
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
