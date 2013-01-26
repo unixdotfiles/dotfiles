@@ -31,7 +31,7 @@ htln nano/USE_RC .nanorc
 htln nano .mynano
 htln X/XCompose .XCompose
 htln X/xinitrc .xinitrc
-htln X/Xmodmap .xmodmap
+htln X/Xmodmap .Xmodmap
 htln X/Xdefaults .Xdefaults
 htln X/xserverrc .xserverrc
 htln X/xbindkeysrc .xbindkeysrc
