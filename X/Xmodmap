@@ -1,1 +1,6 @@
- keycode 146 = XF86_Suspend
+keycode 146 = XF86_Suspend
+!keycode 33 = XF86_Next_VMode XK_3270_ChangeScreen (also the 'p' key)
+!92 really is sysreq
+keycode 92 = XF86_Launch0
+keycode 216 = XF86_TouchpadOff
+keycode 217 = XF86_TouchpadOn
