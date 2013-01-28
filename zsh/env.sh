@@ -54,3 +54,4 @@ export ENV=~/.shrc;
 
 # GPG Agent --daemon should be here somewhere
 
+export AUDIODEV=/dev/dsp2.0
