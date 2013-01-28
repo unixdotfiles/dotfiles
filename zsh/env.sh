@@ -18,7 +18,7 @@ export TOP="-IC";
 export GREP_OPTIONS="--color"
 
 __exists firefox && export BROWSER="/usr/local/bin/firefox";
-__exists firefox3 && export BROWSER="/usr/local/bin/firefox3";
+__exists chrome && export BROWSER="/usr/local/bin/chrome"
 
 #export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
