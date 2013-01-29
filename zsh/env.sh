@@ -1,7 +1,7 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
-export LESS="-RM"
+export LESS="-RMj5"
 
 export PATH="/usr/local/libexec/ccache:$PATH:$HOME/bin";
 export CCACHE_PATH=/usr/local/bin:/usr/bin
@@ -55,3 +55,8 @@ export ENV=~/.shrc;
 # GPG Agent --daemon should be here somewhere
 
 export AUDIODEV=/dev/dsp2.0
+
+export GOOS=freebsd
+export GOARCH=amd64
+export GOROOT=/usr/local/go
+
