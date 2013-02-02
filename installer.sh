@@ -70,6 +70,7 @@ htln mutt/muttrc .muttrc
 htln xchat/xchat.conf .xchat2/xchat.conf
 [ -d ~/.gnupg ] || mkdir ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
+htln gtk/gtk-bookmarks .gtk-bookmarks
 [ ! -f ~/.ssh/config ] && mkdir -p ~/.ssh/ && cp -p $self/ssh/config.template ~/.ssh/config
 [ ! -d ~/.ssh/sockets ] && mkdir -p ~/.ssh/sockets
 [ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
