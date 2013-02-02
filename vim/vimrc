@@ -113,8 +113,8 @@ set tabpagemax=1000
 " Automatically cd into the directory that the file is in
 set autochdir
 
-if exists("+undofile")
-	set undodir=~/.vim/undodir
+if has("persistent_undo")
+	set undodir=~/.vim/undo
 	set undofile
 	set undoreload=10000	"maximum number lines to save for undo on a buffer reload
 endif
