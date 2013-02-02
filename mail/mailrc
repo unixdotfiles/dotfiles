@@ -1,8 +1,8 @@
 set append ask autoprint
 set indentprefix="> "
-set PAGER=more
-set EDITOR=vi
-set VISUAL=vi
+set PAGER=less
+set EDITOR=vim
+set VISUAL=vim
 set folder=Mail
 retain bcc cc date from subject to
 
