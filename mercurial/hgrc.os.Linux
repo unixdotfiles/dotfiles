@@ -1,0 +1,30 @@
+[ui]
+username = eitan
+#ssh = ssh -Nxo ControlMaster=no
+[extensions]
+bisect = 
+bookmarks =
+children =
+churn=
+color =
+eol = 
+fetch =
+graphlog =
+highlight =
+parentrevspec =
+patchbomb =
+progress =
+purge = 
+rebase =
+transplant =
+[alias]
+nudge = push --rev .
+[progress]
+delay = 2
+[web]
+allow_archive = gz zip
+[hooks]
+# Prevent "hg pull" if MQ patches are applied.
+prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
+# Prevent "hg push" if MQ patches are applied.
+preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
