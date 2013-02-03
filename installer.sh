@@ -1,10 +1,11 @@
 #! /bin/sh
 self=~/.conf;
 begon="$self/.begon";
+boxnme=$(hostname -s)
+osname=$(uname -s)
 
 . $self/zsh/exists.func
 
-#Test ln. only link if the second argument doesn't exist
 tln () {
 	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
 	if [ ! -L "$2" ]; then
@@ -18,9 +19,16 @@ tln () {
 
 }
 
-#Home test ln. Like tln but assumes everything is relative to $HOME && $self
 htln () {
-	tln "$self/$1" "$HOME/$2"
+	if [ -e "$self/$1.local.$boxname" ]
+	then
+		tln "$self/$1.local.$boxname"
+	elif [ -e "$self/$1.os.$osname" ]
+	then
+		tln "$self/$1.os.$osname" "$HOME/$2"
+	else
+		tln "$self/$1" "$HOME/$2"
+	fi
 }
 
 [ -d ~/.zsh/cache ] || mkdir ~/.zsh/cache
