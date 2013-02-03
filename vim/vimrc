@@ -150,7 +150,9 @@ au BufRead,BufNewFile * let &tags = project_dir[:-2]."/.git/tags,./.tags"
 let mapleader = ","
 
 "Little trick to find ending whitespace in docs
-set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
+if version >= 703
+	set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
+endif
 """""" eh? - not getting picked up
 "hi nontext ctermfg=red
 
