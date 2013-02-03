@@ -81,12 +81,6 @@ __exists idprio && alias verynice="nice nice idprio 31";
 __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
 	alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
 
-__exists now && alias now="now '%a, %b %d %Y, %r %Z (%z)'"
-
-# stolen from zi (from cacits@rit.edu)
-wiki()  {
-	dig +short txt $1.wp.dg.cx;
-}
 dirsize() {
 	du -sk $* | sort -n | perl -ne 'if ( /^(\d+)\s+(.*$)/){$l=log($1+.1);$m=int($l/log(1024)); printf ("%6.1f\t%s\t%25s %s\n",($1/(2**(10*$m))),(("K","M","G","T","P")[$m]),"*"x (1.5*$l),$2);}';
 }
