@@ -6,7 +6,7 @@ osname=$(uname -s)
 
 . $self/zsh/exists.func
 
-tln () {
+_tln () {
 	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
 	if [ ! -L "$2" ]; then
 		if cmp -s "$1" "$2"; then
@@ -22,12 +22,12 @@ tln () {
 htln () {
 	if [ -e "$self/$1.local.$boxname" ]
 	then
-		tln "$self/$1.local.$boxname"
+		_tln "$self/$1.local.$boxname"
 	elif [ -e "$self/$1.os.$osname" ]
 	then
-		tln "$self/$1.os.$osname" "$HOME/$2"
+		_tln "$self/$1.os.$osname" "$HOME/$2"
 	else
-		tln "$self/$1" "$HOME/$2"
+		_tln "$self/$1" "$HOME/$2"
 	fi
 }
 
