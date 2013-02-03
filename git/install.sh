@@ -4,12 +4,9 @@ gc() {
 	git config --global --replace-all "$@"
 }
 
-if [ "$USER" = "eitan" -o "$USER" = "eadler" -o "$USER" = "eadler1" ]
-then
-	gc user.name "Eitan Adler"
-	gc user.email "lists@eitanadler.com"
-	gc sendemail.from "lists@eitanadler.com"
-fi
+gc user.name "Eitan Adler"
+gc user.email "lists@eitanadler.com"
+gc sendemail.from "lists@eitanadler.com"
 
 # Email formatting options
 gc sendemail.confirm always
