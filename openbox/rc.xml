@@ -260,6 +260,7 @@
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow"/>
+      <raise>yes</raise>
     </keybind>
     <keybind key="C-A-Tab">
       <action name="NextWindow">
