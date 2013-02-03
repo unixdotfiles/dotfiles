@@ -65,6 +65,8 @@ htln gdb/gdbinit .gdbinit
 [ -d ~/.config/awesome ] || mkdir ~/.config/awesome
 htln awesome/rc.lua .config/awesome/rc.lua
 [ -d ~/.config/openbox ] || mkdir ~/.config/openbox
+[ -d ~/.config/pianobar ] || mkdir ~/.config/pianobar
+htln pianobar/config .config/pianobar/config
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
 __exists git && git/install.sh	
