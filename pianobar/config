@@ -1,0 +1,3 @@
+history = 10
+user = eitan@eitanadler.com
+password_command = cat ~/.config/pianobar/passwd
