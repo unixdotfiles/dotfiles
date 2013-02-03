@@ -77,10 +77,10 @@ function concat() {
 function mcd () {
 	if [ $# -eq 1 ]
 	then
-		mkdir $1;
-		cd $1;
+		mkdir "$1";
+		cd "$1";
 	else
-		mkdir $@;
+		mkdir "$@";
 	fi
 }
 
