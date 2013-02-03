@@ -11,6 +11,6 @@ set print null-stop
 set print pretty on
 set print array on
 
-set fork-follow-mode child
+#set fork-follow-mode child
 
 handle SIGPIPE nostop noprint pass
