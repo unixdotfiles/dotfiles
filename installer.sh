@@ -1,7 +1,7 @@
 #! /bin/sh
 self=~/.conf;
 begon="$self/.begon";
-boxnme=$(hostname -s)
+boxname=$(hostname -s)
 osname=$(uname -s)
 
 . $self/zsh/exists.func
@@ -14,21 +14,18 @@ _tln () {
 		else
 			echo "warning: $2 does not match $1"
 		fi
+		return 1
 	fi
-
-
+	return 0
 }
 
 htln () {
-	if [ -e "$self/$1.local.$boxname" ]
-	then
-		_tln "$self/$1.local.$boxname"
-	elif [ -e "$self/$1.os.$osname" ]
-	then
-		_tln "$self/$1.os.$osname" "$HOME/$2"
-	else
-		_tln "$self/$1" "$HOME/$2"
-	fi
+	local attempts
+	attempts="$self/$1.local.$boxname $self/$1.os.$osname $self/$1"
+	for f in $attempts
+	do
+		_tln "$f" "$HOME/$2" && break
+	done
 }
 
 ensure_directories() {
