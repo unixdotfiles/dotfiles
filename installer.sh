@@ -31,7 +31,11 @@ htln () {
 	fi
 }
 
-[ -d ~/.zsh/cache ] || mkdir ~/.zsh/cache
+ensure_directories() {
+	mkdir -p "$@"
+}
+
+ensure_directories ~/.zsh/cache
 htln zsh/zshrc .zshrc
 htln zsh/zlogout .zlogout
 htln sh/profile .profile
@@ -47,25 +51,19 @@ htln X/xbindkeysrc .xbindkeysrc
 htln mercurial/hgrc .hgrc
 htln idesk/ideskrc .ideskrc
 htln idesk/idesktop .idesktop
-[ -d $HOME/.mplayer ] || mkdir $HOME/.mplayer
+ensure_directories ~/.mplayer
 htln mplayer/config .mplayer/config
 htln mplayer/mencoder.conf .mplayer/mencoder.conf
 htln icewm .icewm
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
-[ -d ~/.vim/undo ] || mkdir -p ~/.vim/undo
-[ -d ~/.vim/backup ] || mkdir -p ~/.vim/backup
-[ -d ~/.vim/swap ] || mkdir -p ~/.vim/swap
-[ -d ~/.vim/viminfo ] || mkdir -p ~/.vim/viminfo
+ensure_directories ~/.vim/undo ~/.vim/backup ~/.vim/swap ~/.vim/viminfo
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
 htln gdb/gdbinit .gdbinit
-[ -d ~/.config ] || mkdir ~/.config 
-[ -d ~/.config/awesome ] || mkdir ~/.config/awesome
+ensure_directories ~/.config/awesome ~/.config/openbox ~/.config/pianobar
 htln awesome/rc.lua .config/awesome/rc.lua
-[ -d ~/.config/openbox ] || mkdir ~/.config/openbox
-[ -d ~/.config/pianobar ] || mkdir ~/.config/pianobar
 htln pianobar/config .config/pianobar/config
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
@@ -74,16 +72,16 @@ htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
 htln tmux/tmux.conf .tmux.conf
 htln readline/inputrc .inputrc
-[ -d ~/.subversion ] || mkdir ~/.subversion
+ensure_directories ~/.subversion
 htln subversion/config .subversion/config
 htln mutt/muttrc .muttrc
 htln mail/mailrc .mailrc
 htln xchat/xchat.conf .xchat2/xchat.conf
-[ -d ~/.gnupg ] || mkdir ~/.gnupg
+ensure_directories ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
 htln gtk/gtk-bookmarks .gtk-bookmarks
-[ ! -f ~/.ssh/config ] && mkdir -p ~/.ssh/ && cp -p $self/ssh/config.template ~/.ssh/config
-[ ! -d ~/.ssh/sockets ] && mkdir -p ~/.ssh/sockets
+ensure_directories ~/.ssh ~/.ssh/sockets
+[ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 [ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
 [ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 4 -type l -name userChrome.css -exec sh -c "echo begon \"{}/userChrome.css\" >> $begon" \;
 sort -u $begon > $begon-temp && mv $begon-temp $begon;

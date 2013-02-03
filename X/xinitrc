@@ -9,5 +9,6 @@ lxpanel &
 #launchy &
 xbindkeys &
 urxvtd -q -f -o &
+$(gpg-agent --daemon)
 exec openbox-session;
 #exec icewm-session;
