@@ -89,7 +89,15 @@
     m:0x10 + c:140
     Mod2 + NoSymbol
 
-
-##################################
-# End of xbindkeys configuration #
-##################################
+"printf p > ~/.config/pianobar/ctl"
+    m:0x0 + c:162
+    XF86AudioPlay
+"printf q > ~/.config/pianobar/ctl"
+    m:0x0 + c:164
+    XF86AudioStop
+"printf n > ~/.config/pianobar/ctl"
+    m:0x0 + c:153
+    XF86AudioNext
+#"(Scheme function)"
+#   3m:0x0 + c:144
+#    XF86AudioPrev
