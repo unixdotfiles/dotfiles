@@ -1,5 +1,5 @@
 #! /bin/sh -x
-self=$(realpath ~/.conf);
+self=~/.conf;
 
 #Test ln remover - only remove items if they are symlinks.
 #Sanity checks to make sure they reside in a specific directory may be useful.
