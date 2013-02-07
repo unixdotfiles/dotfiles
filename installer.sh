@@ -7,7 +7,6 @@ osname=$(uname -s)
 . $self/zsh/exists.func
 
 _tln () {
-	echo $1 $2
 	[ ! -e "$1" ] && return 1;
 
 	[ -L "$2" -o -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
