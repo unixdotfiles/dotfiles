@@ -7,7 +7,11 @@ osname=$(uname -s)
 . $self/zsh/exists.func
 
 _tln () {
-	[ -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
+	echo $1 $2
+	[ ! -e "$1" ] && return 1;
+
+	[ -L "$2" -o -e "$2" ] || (ln -s "$1" "$2" && echo begon \"$2\" >> $begon )
+
 	if [ ! -L "$2" ]; then
 		if cmp -s "$1" "$2"; then
 			echo "warning: $2 matches $1 but is not symlink";
