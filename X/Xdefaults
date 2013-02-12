@@ -41,7 +41,7 @@ URxvt.scrollBar_right: true
 URxvt.cursorBlink: true
 #URxvt.cursorColor: yellow
 URxvt.font: xft:Liberation Mono:pixelsize=12
-URxvt.iconfile: /usr/local/share/icons/hicolor/128x128/apps/urxvt.png
+URxvt.iconFile: /usr/local/share/icons/hicolor/128x128/apps/urxvt.png
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: chrome
 URxvt.matcher.button: 1
