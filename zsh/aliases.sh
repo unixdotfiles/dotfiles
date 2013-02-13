@@ -27,7 +27,6 @@ __exists vim && alias vim="vim -p";
 alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
-alias projcvs="cvs -d eadler@projcvs.FreeBSD.org:/home/projcvs";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
 
 __exists python2 && alias python2="python -tt3";
