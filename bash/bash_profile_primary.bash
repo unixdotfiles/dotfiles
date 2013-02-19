@@ -1,5 +1,3 @@
-#used for interactive shells
-use="all"
 confpath=~/.conf/zsh/
 
 #Set some useful variables
