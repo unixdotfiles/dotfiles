@@ -1,3 +1,4 @@
+return
 if [ -t 0 ]
 then
 	[ -e /usr/bin/zsh ] && exec /usr/bin/zsh
