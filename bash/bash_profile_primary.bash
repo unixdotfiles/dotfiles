@@ -10,7 +10,6 @@ source $confpath/exists.func
 source $confpath/env.sh
 source $confpath/aliases.sh
 source $confpath/eval_spin.func
-source $confpath/portsnap.zfunc
 	
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH:${HOME}/bin
 export ANSI_COLOR_BLACK="\e[0;30m"
