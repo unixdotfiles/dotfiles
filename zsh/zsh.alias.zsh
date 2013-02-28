@@ -116,8 +116,8 @@ function brokensym() {
 
 alias man='nocorrect man'
 alias mv='nocorrect mv -i'
+alias cp='nocorrect cp -i'
 alias rm='rm -v'
-alias cp='nocorrect cp'
 alias touch='nocorrect touch'
 alias ln='nocorrect ln'
 alias mkdir='nocorrect mkdir'
