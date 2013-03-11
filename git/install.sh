@@ -23,7 +23,7 @@ gc alias.ammend "commit --amend -v"
 gc alias.bvv "branch --list -vv"
 gc alias.cat "cat-file -p"
 gc alias.co checkout
-gc alias.ci commit -v
+gc alias.ci 'commit -v'
 gc alias.contains "branch -a --contains"
 gc alias.count "count-objects -v"
 gc alias.dci "svn dcommit"
