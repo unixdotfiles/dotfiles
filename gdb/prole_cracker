@@ -113,12 +113,12 @@ document stack
 Print call stack
 end
 
-define frame
+define xframe
  info frame
  info args
  info locals
 end
-document frame
+document xframe
 Print stack frame
 end
 
@@ -233,10 +233,10 @@ document sig
 Print signal actions for target
 end
 
-define thread
+define xthread
  info threads
 end
-document thread
+document xthread
 Print threads in target
 end
 
