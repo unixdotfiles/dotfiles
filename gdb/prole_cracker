@@ -2,7 +2,7 @@
 #
 # DESCRIPTION: A cracker-friendly gdb configuration file.
 #
-# REVISION : 7.0
+# REVISION : 7.1
 # 
 # CONTRIBUTORS: mammon_, elaine, pusillus, mong, eadler
 #
@@ -10,6 +10,10 @@
 #        'context on' now enables auto-display of context screen
 #
 # CHANGELOG:
+# 	Version 7.1
+# 	  renamed thread and frame to not overwrite existing ones
+# 	  removed hook-stop
+# 	  added 64 bit registers
 # 	Version 7
 # 	  removed old source (404s now)
 # 	  removed stuff that doesn't work
@@ -113,12 +117,12 @@ document stack
 Print call stack
 end
 
-define frame
+define xframe
  info frame
  info args
  info locals
 end
-document frame
+document xframe
 Print stack frame
 end
 
@@ -192,7 +196,24 @@ document eflags
 Print entire eflags register
 end
 
-define reg
+define reg64
+ printf "     rax:%10X rbx:%10X  rcx:%10X ",  $rax, $rbx, $rcx
+ printf " rdx:%10X     eflags:%10X\n",  $rdx, $eflags
+ printf "     rsi:%10X rdi:%10X  rsp:%10X ",  $rsi, $rdi, $rsp
+ printf " rbp:%10X     rip:%10X\n", $rbp, $rip
+ printf "      r8:%10X  r9:%10X  r10:%10X ", $r8, $r9, $r10
+ printf " r11:%10X     r12:%10X\n", $r11, $r12
+ printf "     r13:%10X r14:%10X  r15:%10X \n", $r13, $r14, $r15
+ printf "     cs:%04X\n", $cs
+ printf "     Flags: "
+ flags
+end
+document reg64
+Print 64 bit CPU registers
+end
+
+
+define reg32
  printf "     eax:%08X ebx:%08X  ecx:%08X ",  $eax, $ebx, $ecx
  printf " edx:%08X     eflags:%08X\n",  $edx, $eflags
  printf "     esi:%08X edi:%08X  esp:%08X ",  $esi, $edi, $esp
@@ -201,8 +222,8 @@ define reg
  printf "  fs:%04X  gs:%04X  ss:%04X    ", $fs, $gs, $ss
  flags
 end
-document reg
-Print CPU registers
+document reg32
+Print 32 bit CPU registers
 end
 
 define func
@@ -233,10 +254,10 @@ document sig
 Print signal actions for target
 end
 
-define thread
+define xthread
  info threads
 end
-document thread
+document xthread
 Print threads in target
 end
 
@@ -363,7 +384,7 @@ end
 define context
  printf "_______________________________________"
  printf "________________________________________\n"
- reg
+ reg64
  printf "[%04X:%08X]------------------------", $ss, $esp
  printf "---------------------------------[stack]\n"
  hexdump $sp+0x30
@@ -771,22 +792,6 @@ end
 document trace_run
 Creates a runtime trace of the target in ~/gdb_trace_run.txt. Note
 that this is very slow because gdb "set redirect on" does not work!
-end
-
-
-# _____________________misc_____________________
-# this makes 'context' be called at every BP/step
-define hook-stop
- if ( $SHOW_CONTEXT > 0 )
-  context
- end
- if ( $SHOW_NEST_INSN > 0 )
-  set $x = $_nest
-  while ($x > 0 )
-   printf "\t"
-   set $x = $x - 1
-  end
- end
 end
 
 define assemble
