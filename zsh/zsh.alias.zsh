@@ -116,8 +116,8 @@ function brokensym() {
 
 alias man='nocorrect man'
 alias mv='nocorrect mv -i'
+alias cp='nocorrect cp -i'
 alias rm='rm -v'
-alias cp='nocorrect cp'
 alias touch='nocorrect touch'
 alias ln='nocorrect ln'
 alias mkdir='nocorrect mkdir'
@@ -146,6 +146,7 @@ autodisown() {
 }
 
 __exists xpdf && alias xpdf="autodisown xpdf";
+__exists evince && alias evince="autodisown evince";
 
 if __exists hub
 then

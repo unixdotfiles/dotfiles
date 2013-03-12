@@ -233,3 +233,5 @@ endif
 "
 
 set completeopt=menuone
+
+set cm=blowfish
