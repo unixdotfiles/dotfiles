@@ -235,3 +235,8 @@ endif
 set completeopt=menuone
 
 set cm=blowfish
+
+command W w
+command WQ wq
+command Wq wq
+command Q q
