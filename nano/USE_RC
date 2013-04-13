@@ -16,6 +16,11 @@ set nowrap
 set speller "aspell -c"
 unset tabstospaces
 
+set autoindent
+set backup
+set backupdir ~/.nano/backup
+set locking
+
 
 
 #per file config
