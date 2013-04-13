@@ -60,3 +60,4 @@ export GOOS=freebsd
 export GOARCH=amd64
 export GOROOT=/usr/local/go
 
+export DICTIONARY=en_US
