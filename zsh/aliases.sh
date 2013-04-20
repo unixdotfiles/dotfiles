@@ -29,8 +29,7 @@ alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
 #alias vlc="vlc_create_sock";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
 
-__exists python2 && alias python2="python -tt3";
-__exists python3.2 && alias python="python3.2"
+__exists python2 && alias python2="python -tt";
 alias noflash="pkill -3 -l npviewer.bin";
 alias noflash_9="noflash|sed "s/3/9/"|sh -x 2>&1|sed 's/\+ //'";
 alias switch-background="pkill idesk && idesk &";
