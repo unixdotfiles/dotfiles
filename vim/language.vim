@@ -85,17 +85,17 @@ function Set_Man()
 endfunction "Set_Man()
 
 function Set_Velocity()
-	set expandtab
-	set softtabstop=2
-	set sw=2
-	set ts=2
+	setlocal expandtab
+	setlocal softtabstop=2
+	setlocal sw=2
+	setlocal ts=2
 endfunction "Set_Velocity()
 
 function Set_Python()
-	set expandtab
-	set softtabstop=4
-	set shiftwidth=4
-	set tabstop=4
+	setlocal expandtab
+	setlocal softtabstop=4
+	setlocal shiftwidth=4
+	setlocal tabstop=4
 endfunction
 
 function Set_GitCommit()
