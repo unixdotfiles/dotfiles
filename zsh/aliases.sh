@@ -22,7 +22,7 @@ fi
 __exists vim && alias vi="vim -p";
 __exists vim && alias vim="vim -p";
 
-alias cEterm="\Eterm -C -T 'Console Eterm' -f'red'";
+alias cterm="xterm -C -T 'Console Eterm'";
 #alias nvlc="nvlc --volume 1024";
 #alias vlc="vlc_create_sock";
 alias marcus-cvs="cvs -z3 -d:pserver:anonymous@creme-brulee.marcuscom.com:/space/cvs/marcuscom-cvs";
