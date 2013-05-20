@@ -16,10 +16,8 @@ then
 	alias less="less -R";
 	alias free="top -b|egrep '^(Mem|Swap)'"
 	alias iotop='top -m io -o total'
-elif [ "$uname_s" = "Linux" ]
-then
-	alias fetch="wget"
 fi
+! __exists fetch && __exists wget && alias fetch=wget
 
 __exists vim && alias vi="vim -p";
 __exists vim && alias vim="vim -p";
