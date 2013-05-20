@@ -10,6 +10,8 @@ if has("autocmd")
     au BufNewFile,BufRead *.vm call Set_Velocity() " TA
     au BufNewFile,BufRead *.[1-9] call Set_Man()
     au BufNewFile,BufRead *.py call Set_Python()
+    au Filetype gitcommit call Set_GitCommit()
+
 endif " has(autocmd)
 
 function Set_txt()
@@ -94,6 +96,11 @@ function Set_Python()
 	set softtabstop=4
 	set shiftwidth=4
 	set tabstop=4
+endfunction
+
+function Set_GitCommit()
+	 setlocal spell
+	 setlocal textwidth=72
 endfunction
 
 function ShowSpecial()
