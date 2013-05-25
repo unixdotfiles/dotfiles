@@ -35,13 +35,8 @@ export GTK_IM_MODULE="xim";
 export CORRECT_IGNORE="_*";
 
 ## Git specific things
-if [ "x$USER" = "xeadler" -o "x$USER" = "xeadler1" -o "x$USER" = "xeitan" ]
-then
-	GIT_AUTHOR_NAME="eitan";
-	GIT_AUTHOR_EMAIL="lists@eitanadler.com";
-else
-	GIT_AUTHOR_NAME="$USER";
-fi
+GIT_AUTHOR_NAME="Eitan";
+GIT_AUTHOR_EMAIL="lists@eitanadler.com";
 
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
