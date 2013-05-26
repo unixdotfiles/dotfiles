@@ -82,7 +82,7 @@ case "$TERM" in
 		setWindowTitle() {
             print -n "\e]2;${(V)1}\e\\";
 		};;
-    Eterm*)
+	Eterm*)
 		setWindowTitle() {
 			print -Pn "\e]2;$value\a\e[1;\a";
 		};;
