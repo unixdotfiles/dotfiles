@@ -3,13 +3,11 @@ export EDITOR=vim;
 export PAGER=less;
 export LESS="-RMj5"
 
-export PATH="/usr/local/libexec/ccache:$PATH:$HOME/bin";
+export PATH="/usr/local/libexec/ccache:/opt/local/bin:/opt/local/sbin:$PATH:$HOME/bin";
 export CCACHE_PATH=/usr/local/bin:/usr/bin
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
-# Required for macports
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export MANPATH=/opt/local/share/man:$MANPATH
 
 #top default arguments
