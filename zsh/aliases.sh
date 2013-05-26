@@ -26,7 +26,7 @@ alias cterm="xterm -C -T 'Console Eterm'";
 
 __exists python2 && alias python2="python -tt";
 alias noflash="pkill -3 -l npviewer.bin";
-alias noflash_9="noflash|sed "s/3/9/"|sh -x 2>&1|sed 's/\+ //'";
+alias noflash_9="pkill -9 -l npviewer.bin";
 alias switch-background="pkill idesk && idesk &";
 alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
