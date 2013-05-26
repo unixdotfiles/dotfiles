@@ -25,7 +25,7 @@ getTitleFromProgram() {
 
 	# Add an exclamation mark at the beginning if running with sudo or if
 	# running zsh as root.
-	if [[ -n $runnignAsRoot ]]; then
+	if [[ -n $runningAsRoot ]]; then
 		program_name="!$program_name"
 	fi
 
