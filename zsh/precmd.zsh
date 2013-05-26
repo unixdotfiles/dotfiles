@@ -72,15 +72,15 @@ programWithoutArgs() {
 case "$TERM" in
 	screen*) # and tmux
 		setWindowTitle() {
-            print -n "\ek${(V)1}\e\\";
+		    print -n "\ek${(V)1}\e\\";
 		};;
 	xterm*)
 		setWindowTitle() {
-            print -n "\e]2;${(V)1}\e\\";
+		    print -n "\e]2;${(V)1}\e\\";
 		};;
 	*rxvt*)
 		setWindowTitle() {
-            print -n "\e]2;${(V)1}\e\\";
+		    print -n "\e]2;${(V)1}\e\\";
 		};;
 	Eterm*)
 		setWindowTitle() {
