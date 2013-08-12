@@ -1,7 +1,7 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
-export LESS="-RMj5"
+#export LESS="-RMj5"
 
 export PATH="/usr/local/libexec/ccache:/opt/local/bin:/opt/local/sbin:$PATH:$HOME/bin";
 export CCACHE_PATH=/usr/local/bin:/usr/bin
@@ -15,8 +15,9 @@ export TOP="-IC";
 #grep default options
 export GREP_OPTIONS="--color"
 
-__exists firefox && export BROWSER="/usr/local/bin/firefox";
-__exists chrome && export BROWSER="/usr/local/bin/chrome"
+__exists firefox && export BROWSER=$(which firefox)
+__exists chrome && export BROWSER=$(which chrome)
+__exists google-chrome && export BROWSER=$(which google-chrome)
 
 #export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
@@ -33,7 +34,7 @@ export GTK_IM_MODULE="xim";
 export CORRECT_IGNORE="_*";
 
 ## Git specific things
-GIT_AUTHOR_NAME="Eitan";
+GIT_AUTHOR_NAME="Eitan Adler";
 GIT_AUTHOR_EMAIL="lists@eitanadler.com";
 
 export MANCOLOR="yes"; # view color data
@@ -56,3 +57,7 @@ export GOROOT=/usr/local/go
 export DICTIONARY=en_US
 
 export P4DIFF="diff -u"
+
+export PL_SVN_IGNORE=1
+
+export LANG=en_US.UTF-8
