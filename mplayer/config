@@ -9,3 +9,8 @@ zoom=on
 
 vc=ffh264vdpau,
 
+[protocol.dvdnav]
+profile-desc="profile for dvdnav:// streams"
+#profile=protocol.dvd
+mouse-movements=yes
+nocache=yes
