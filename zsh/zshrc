@@ -30,5 +30,6 @@ source $confpath/precmd.zsh
 
 # Make sure every entry in $fpath is unique.
 typeset -U fpath
+typeset -U path
 
 return 0;
