@@ -68,6 +68,7 @@ htln pianobar/config .config/pianobar/config
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
 __exists git && git/install.sh	
+__exists xdg-mime && xdg/install.sh
 htln bash/bash_profile_primary.bash .bashrc
 htln bash/bash_profile.sh .bash_profile
 htln tmux/tmux.conf .tmux.conf
