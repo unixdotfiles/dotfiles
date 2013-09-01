@@ -62,11 +62,12 @@ ensure_directories ~/.vim/undo ~/.vim/backup ~/.vim/swap ~/.vim/viminfo
 htln vim/vimrc .vimrc
 #htln git/gitconfig .gitconfig
 htln gdb/gdbinit .gdbinit
-ensure_directories ~/.config/awesome ~/.config/openbox ~/.config/pianobar
+ensure_directories ~/.config/awesome ~/.config/openbox ~/.config/pianobar ~/.config/libfm
 htln awesome/rc.lua .config/awesome/rc.lua
 htln pianobar/config .config/pianobar/config
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
+htln libfm/libfm.conf .config/libfm/libfm.conf
 __exists git && git/install.sh	
 __exists xdg-mime && xdg/install.sh
 htln bash/bash_profile_primary.bash .bashrc
