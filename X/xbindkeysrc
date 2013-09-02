@@ -103,7 +103,7 @@
 #    XF86AudioPrev
 
 ### Switch screen key
-#"(Scheme function)"
-#    m:0x50 + c:33
-#    Mod2+Mod4 + p
+"Xdialog --infobox 'you pressed the key' 0 0"
+    m:0x50 + c:33
+    Mod2+Mod4 + p
 
