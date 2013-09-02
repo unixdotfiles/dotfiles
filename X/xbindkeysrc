@@ -89,7 +89,7 @@
     m:0x10 + c:140
     Mod2 + NoSymbol
 
-"~/.conf/scripts/start-pandora.sh; printf p > ~/.config/pianobar/ctl"
+"~/.conf/scripts/start-pandora.sh && printf p > ~/.config/pianobar/ctl"
     m:0x0 + c:162
     XF86AudioPlay
 "printf q > ~/.config/pianobar/ctl"
