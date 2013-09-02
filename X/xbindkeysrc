@@ -102,8 +102,8 @@
 #   3m:0x0 + c:144
 #    XF86AudioPrev
 
-### Switch screen key
-"Xdialog --infobox 'you pressed the key' 0 0"
+# Switch screen key
+"~/.conf/scripts/externalswitch.sh HDMI1"
     m:0x50 + c:33
     Mod2+Mod4 + p
 
