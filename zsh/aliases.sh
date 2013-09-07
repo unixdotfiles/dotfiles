@@ -85,3 +85,12 @@ randpassword() {
 __exists cscope && alias cscope="cscope -CqRv";
 
 __exists hub && alias git="hub";
+
+ssh-add-maybe() {
+	ssh-add -l >/dev/null 2>&1 || ssh-add
+	return 0;
+}
+
+ssh() {
+	ssh-add-maybe && command ssh "$@"
+}
