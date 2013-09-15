@@ -284,7 +284,7 @@
           <enabled>true</enabled>
           <name>Lock Screen</name>
         </startupnotify>
-        <command>xscreensaver-command -lock</command>
+        <command>xdg-screensaver activate</command>
       </action>
     </keybind>
     <!-- max, icon, close, move, resize, etc -->
