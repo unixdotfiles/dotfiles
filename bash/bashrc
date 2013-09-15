@@ -1,3 +1,4 @@
+# Interactive non-login shell
 confpath=~/.conf/zsh/
 
 #Set some useful variables
@@ -8,7 +9,10 @@ source $confpath/exists.func
 source $confpath/env.sh
 source $confpath/aliases.sh
 source $confpath/eval_spin.func
-	
+
+if [[ $- == *i* ]]
+then
+
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH:${HOME}/bin
 export ANSI_BOLD="$(tput smso)"
 export ANSI_BOLD_EXIT="$(tput rmso)"
@@ -54,5 +58,4 @@ PS1_PROMPT="\$";                          #EOF
 
 export PS1="[\! $PS1_USER@$PS1_HOST $PS1_WD ${ANSI_COLOR_DEFAULT}]$PS1_PROMPT"
 
-
-
+fi
