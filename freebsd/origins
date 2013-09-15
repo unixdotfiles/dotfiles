@@ -14,6 +14,7 @@ lang/ruby19
 mail/ssmtp
 misc/cpuid
 multimedia/mplayer
+multimedia/webcamd
 net/sixxs-aiccu
 ports-mgmt/distilator
 ports-mgmt/pkg-devel
