@@ -30,6 +30,7 @@ www/chromium
 www/firefox
 www/linux-f10-flashplugin11
 www/nspluginwrapper
+www/wgetpaste
 x11-fonts/liberation-fonts-ttf
 x11-wm/openbox
 x11/idesk
@@ -37,6 +38,7 @@ x11/lxpanel
 x11/numlockx
 x11/rxvt-unicode
 x11/xbindkeys
+x11/xclip
 x11/xev
 x11/xeyes
 x11/xhost
