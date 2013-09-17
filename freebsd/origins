@@ -12,6 +12,8 @@ emulators/virtualbox-ose
 graphics/evince
 irc/xchat
 lang/ruby19
+lang/python3
+lang/python
 mail/ssmtp
 misc/cpuid
 multimedia/mplayer
