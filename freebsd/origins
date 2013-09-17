@@ -5,6 +5,7 @@ devel/fossil
 devel/git
 devel/mercurial
 devel/ninja
+devel/valgrind
 dns/ddclient
 editors/vim
 emulators/virtualbox-ose
@@ -26,6 +27,7 @@ shells/zsh
 sysutils/devcpu-data
 sysutils/tmux
 textproc/docproj-nojadetex
+textproc/en-hunspell
 www/chromium
 www/firefox
 www/linux-f10-flashplugin11
