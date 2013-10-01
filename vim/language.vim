@@ -10,6 +10,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.vm call Set_Velocity() " TA
     au BufNewFile,BufRead *.[1-9] call Set_Man()
     au BufNewFile,BufRead *.py call Set_Python()
+    au BufNewFile,BufRead *.in call Set_Automake()
     au Filetype gitcommit call Set_GitCommit()
 
 endif " has(autocmd)
@@ -36,6 +37,15 @@ function Set_C()
     setlocal tabstop=8
     setlocal shiftwidth=8
     setlocal softtabstop=8
+
+    return 0
+endfunction " Set_C()
+
+function Set_Automake()
+    setlocal tabstop=2
+    setlocal shiftwidth=2
+    setlocal softtabstop=2
+    setlocal expandtab
 
     return 0
 endfunction " Set_C()
