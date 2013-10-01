@@ -25,6 +25,7 @@ ports-mgmt/portlint
 ports-mgmt/portmaster
 ports-mgmt/poudriere
 security/gnupg
+security/vuxml
 shells/zsh
 sysutils/devcpu-data
 sysutils/tmux
