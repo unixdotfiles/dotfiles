@@ -1,3 +1,6 @@
+[defaults]
+add = --exclude=.svn --exclude="glob:**.orig"
+status = --exclude=.svn
 [ui]
 username = eitan
 #ssh = ssh -Nxo ControlMaster=no
