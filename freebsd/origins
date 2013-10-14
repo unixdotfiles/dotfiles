@@ -24,6 +24,7 @@ ports-mgmt/pkg-devel
 ports-mgmt/portlint
 ports-mgmt/portmaster
 ports-mgmt/poudriere
+print/latex-beamer
 security/gnupg
 security/vuxml
 shells/zsh
