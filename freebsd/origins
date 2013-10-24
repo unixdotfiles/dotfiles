@@ -11,9 +11,11 @@ editors/vim
 emulators/virtualbox-ose
 graphics/evince
 irc/xchat
+lang/ghc
 lang/ruby19
 lang/python3
 lang/python
+lang/whitespace
 mail/ssmtp
 misc/cpuid
 multimedia/mplayer
