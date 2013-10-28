@@ -62,36 +62,27 @@
 
 # General commands {{{
 
-## users {{{
 zstyle ':completion:*:' users root $USER 
 
-# }}}
 # Particular commands
-
-## cd {{{
 
 #cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
-# }}}
 
-## kill {{{
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 #Completing process IDs with menu selection:
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 
-#}}}
 #
 
-## git {{{
 
 # Don't complete remote files for faster git completion on large repos
 __git_files () {
 	_wanted files expl 'local files' _files
 }
 
-# }}}
 
 ## ps ##
 
