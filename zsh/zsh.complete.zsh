@@ -45,10 +45,7 @@
 	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 	fi
 
-# What should _never_ correct?
-	#ignore CVS paths - always
 	#also ignore completer functions
-	zstyle ':completion:*' ignored-patterns 'CVS' '*/CVS' 'CVS/*'
 	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns FIRST_RUN
 	export FIGNORE="";
 
@@ -69,14 +66,10 @@ zstyle ':completion:*:' users root $USER
 #cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 #Completing process IDs with menu selection:
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
-
-#
-
 
 # Don't complete remote files for faster git completion on large repos
 __git_files () {
@@ -85,7 +78,6 @@ __git_files () {
 
 
 ## ps ##
-
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
 ## ssh scp ##
@@ -116,6 +108,4 @@ zstyle ':completion:*:*:swfplayer:*' file-patterns \
 zstyle ':completion:*' file-patterns \
     '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
-
 compdef _precommand verynice
-
