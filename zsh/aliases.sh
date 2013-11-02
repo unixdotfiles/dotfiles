@@ -25,13 +25,10 @@ __exists vim && alias vim="vim -p";
 alias cterm="xterm -C -T 'Console Eterm'";
 
 __exists python2 && alias python2="python -tt";
-alias noflash="pkill -3 -l npviewer.bin";
-alias noflash_9="pkill -9 -l npviewer.bin";
 alias switch-background="pkill idesk && idesk &";
 alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
-alias srcloc="whereis -qs";
 __exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
 alias urxvt="urxvtcd"
 #alias su="su -l"
