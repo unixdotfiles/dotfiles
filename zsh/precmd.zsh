@@ -64,10 +64,6 @@ isShortName() {
 	return 1;
 }
 
-programWithoutArgs() {
-	return ${$1%% *}
-}
-
 # Create function per terminal. Don't check inside function for performance reasons
 case "$TERM" in
 	screen*) # and tmux
