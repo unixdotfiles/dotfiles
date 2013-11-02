@@ -25,9 +25,6 @@ source $confpath/keybinding.zsh
 source $confpath/eval_spin.func
 source $confpath/precmd.zsh
 
-#To discover what keycode is being sent, hit ^v
-#and then the key you want to test.
-
 # Make sure every entry in $fpath is unique.
 typeset -U fpath
 typeset -U path
