@@ -134,8 +134,6 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g W='| wc'
 
-alias -s {avi,mkv,ogm,mpg,wmv,vob,mp3,mp4,flv,ogg,flac,tta,wav,rar}='mplayer -fs -cache 10000'
-
 alias cd\?="dirs -pv";
 alias back='builtin cd "$OLDPWD";pwd'
 h () { history 0 | grep "$1" }
