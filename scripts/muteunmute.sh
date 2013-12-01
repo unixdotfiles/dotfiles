@@ -3,7 +3,7 @@
 alert() {
 	text="$1"; shift;
 	#__exists Xdialog || return
-	(Xdialog --infobox "$text" 0 0 5000 &)
+	(Xdialog --title "pcm sound" --infobox "$text" 0 0 3000 &)
 }
 mute() {
 	mixer pcm 0
