@@ -12,6 +12,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.py call Set_Python()
     au BufNewFile,BufRead *.in call Set_Automake()
     au Filetype gitcommit call Set_GitCommit()
+    au BufNewFile,BufRead log call Set_SVNLog()
 
 endif " has(autocmd)
 
@@ -111,6 +112,13 @@ endfunction
 function Set_GitCommit()
 	 setlocal spell
 	 setlocal textwidth=72
+	 setlocal cc=+1
+endfunction
+
+function Set_SVNLog()
+	 setlocal spell
+	 setlocal textwidth=80
+	 setlocal cc=+1
 endfunction
 
 function ShowSpecial()
