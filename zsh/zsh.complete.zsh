@@ -21,10 +21,10 @@
 # How fuzzy should we get? When should we display completions?
 
 	#Fuzzy matching of completions for when you mistype them:
-	zstyle ':completion:*' completer _complete _match _approximate
-	zstyle ':completion:*:match:*' original only
-	zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
+#	zstyle ':completion:*' completer _complete _match _approximate
+#	zstyle ':completion:*:match:*' original only
+#	zstyle ':completion:*:approximate:*' max-errors 1 numeric
+#
 	#the number of errors allowed by _approximate increase with the length of what has been typed:
 #	zstyle -e ':completion:*:approximate:*' \
 #		max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
@@ -38,16 +38,16 @@
 #	zstyle ':completion:*' squeeze-slashes true
 
 	# case-insensitive (all),partial-word and then substring completion
-	if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
-	  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-	  unset CASE_SENSITIVE
-	else
-	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-	fi
+#	if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
+#	  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+#	  unset CASE_SENSITIVE
+#	else
+#	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+#	fi
 
 	#also ignore completer functions
-	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns FIRST_RUN
-	export FIGNORE="";
+#	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns FIRST_RUN
+#	export FIGNORE="";
 
 	# Always complete one value (file name) only once in the current line. This
 	# makes it easy to complete multiple values because I can just press tab to
@@ -78,7 +78,7 @@ __git_files () {
 
 
 ## ps ##
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 
 ## ssh scp ##
 # Load known hosts file for auto-completion with ssh and scp commands
@@ -98,14 +98,14 @@ zstyle ':completion:*:(mv|cp):*' ignore-line no
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 
 #[ misc ]#######################################################################
-zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
-    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
-zstyle ':completion:*:*:kghostview:*' file-patterns \
-    '*.(ps|pdf)(|.gz|.bz2):pspdf-files:PostScript\ or\ PDF\ files *(-/):directories:Directories' '*:all-files'
-zstyle ':completion:*:*:swfplayer:*' file-patterns \
-    '*.swf:swf-files:Swf\ files *(-/):directories:Directories' '*:all-files'
-
-zstyle ':completion:*' file-patterns \
-    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
+#zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
+#    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
+#zstyle ':completion:*:*:kghostview:*' file-patterns \
+#    '*.(ps|pdf)(|.gz|.bz2):pspdf-files:PostScript\ or\ PDF\ files *(-/):directories:Directories' '*:all-files'
+#zstyle ':completion:*:*:swfplayer:*' file-patterns \
+#    '*.swf:swf-files:Swf\ files *(-/):directories:Directories' '*:all-files'
+#
+#zstyle ':completion:*' file-patterns \
+#    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
 compdef _precommand verynice
