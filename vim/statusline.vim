@@ -8,10 +8,15 @@ set statusline+=%h      "help file flag
 set statusline+=%w      "preview flag
 set statusline+=%r      "read only flag
 set statusline+=%y      "filetype
+set statusline+=[%{&fo}] "vim format-options
+
 set statusline+=%=      "left/right separator
+
+
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L\ (%O)   "cursor line/total lines (byte number)
 set statusline+=\ %P    "percent through file
+
 
 "display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
