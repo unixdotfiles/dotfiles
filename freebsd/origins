@@ -15,7 +15,6 @@ irc/xchat
 lang/ghc
 lang/ruby19
 lang/python3
-lang/python
 lang/whitespace
 mail/ssmtp
 misc/cpuid
@@ -33,7 +32,7 @@ security/vuxml
 shells/zsh
 sysutils/devcpu-data
 sysutils/tmux
-textproc/docproj-nojadetex
+textproc/docproj
 textproc/en-hunspell
 www/chromium
 www/firefox
@@ -46,7 +45,7 @@ x11/idesk
 x11/lxpanel
 x11/numlockx
 x11/rxvt-unicode
-x11/xetkbmap
+x11/setkbmap
 x11/xbindkeys
 x11/xclip
 x11/xev
