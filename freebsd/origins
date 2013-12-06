@@ -5,6 +5,7 @@ devel/fossil
 devel/git
 devel/mercurial
 devel/ninja
+devel/py-xdg
 devel/valgrind
 dns/ddclient
 editors/vim
@@ -45,6 +46,7 @@ x11/idesk
 x11/lxpanel
 x11/numlockx
 x11/rxvt-unicode
+x11/xetkbmap
 x11/xbindkeys
 x11/xclip
 x11/xev
