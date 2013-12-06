@@ -45,7 +45,7 @@ x11/idesk
 x11/lxpanel
 x11/numlockx
 x11/rxvt-unicode
-x11/setkbmap
+x11/setxkbmap
 x11/xbindkeys
 x11/xclip
 x11/xev
