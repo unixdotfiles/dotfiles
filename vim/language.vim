@@ -86,6 +86,7 @@ function Set_SGML()
     setlocal textwidth=70
     setlocal tabstop=8
     setlocal formatoptions=tcq2l
+    setlocal cc=+1
     return 0
 endfunction " Set_SGML()
 
