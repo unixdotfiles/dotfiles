@@ -85,11 +85,11 @@
     m:0x4 + c:176
     XF86AudioRaiseVolume
 
-"~/.conf/scripts/muteunmute.sh"
+"$CONF_PATH/.conf/scripts/muteunmute.sh"
     m:0x10 + c:140
     Mod2 + NoSymbol
 
-"~/.conf/scripts/start-pandora.sh && printf p > ~/.config/pianobar/ctl"
+"$CONF_PATH/scripts/start-pandora.sh && printf p > ~/.config/pianobar/ctl"
     m:0x0 + c:162
     XF86AudioPlay
 "printf q > ~/.config/pianobar/ctl"
@@ -103,7 +103,7 @@
 #    XF86AudioPrev
 
 # Switch screen key
-"~/.conf/scripts/externalswitch.sh HDMI1"
+"$CONF_PATH/scripts/externalswitch.sh HDMI1"
     m:0x50 + c:33
     Mod2+Mod4 + p
 
