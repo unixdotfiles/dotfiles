@@ -107,3 +107,8 @@
     m:0x50 + c:33
     Mod2+Mod4 + p
 
+# This should be suspend, but needs some kind of root privs or wrapper
+"$CONF_PATH/scripts/suspend.sh"
+    m:0x10 + c:146
+    Mod2 + NoSymbol
+
