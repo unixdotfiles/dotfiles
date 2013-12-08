@@ -61,3 +61,5 @@ export P4DIFF="diff -u"
 export PL_SVN_IGNORE=1
 
 export LANG=en_US.UTF-8
+
+export CONF_PATH=~/.conf/
