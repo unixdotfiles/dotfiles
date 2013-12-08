@@ -1,10 +1,5 @@
-. ~/.conf/zsh/exists.func
+. ~/.conf/scripts/lib.sh
 
-alert() {
-	text="$1"; shift;
-	__exists Xdialog || return
-	(Xdialog --title "pcm sound" --infobox "$text" 0 0 3000 &)
-}
 mute() {
 	mixer pcm 0
 	alert "Mute"
