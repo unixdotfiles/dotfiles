@@ -7,7 +7,18 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 msgcolor=on
 zoom=on
 
-vc=ffh264vdpau,
+#vc=ffh264vdpau,
+
+#ass=yes
+embeddedfonts=yes
+fontconfig=yes
+
+slang=en
+alang=en
+
+# allow to seek in a file which is still downloading whilst watching it
+idx=yes
+
 
 [protocol.dvdnav]
 profile-desc="profile for dvdnav:// streams"
