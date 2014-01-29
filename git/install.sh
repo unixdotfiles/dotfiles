@@ -47,8 +47,11 @@ gc color.diff.new blue bold
 #gc color.status changed
 #gc color.status untracked
 
+gc diff.mnemonicprefix true
+
 #Garbage collection
 gc gc.auto 0
+gc diff.algorithm patience
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
