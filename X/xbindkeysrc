@@ -85,7 +85,7 @@
     m:0x4 + c:176
     XF86AudioRaiseVolume
 
-"$CONF_PATH/.conf/scripts/muteunmute.sh"
+"$CONF_PATH/scripts/muteunmute.sh"
     m:0x10 + c:140
     Mod2 + NoSymbol
 
