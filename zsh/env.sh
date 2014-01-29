@@ -18,6 +18,7 @@ export GREP_OPTIONS="--color"
 __exists firefox && export BROWSER=$(whereis -qbx firefox)
 __exists chrome && export BROWSER=$(which chrome)
 __exists google-chrome && export BROWSER=$(which google-chrome)
+__exists urxvtcd && export TERMINAL=urxvtcd
 
 #export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
@@ -63,3 +64,4 @@ export PL_SVN_IGNORE=1
 export LANG=en_US.UTF-8
 
 export CONF_PATH=~/.conf/
+
