@@ -145,3 +145,6 @@ bar {
 
 bindsym $mod+l exec xscreensaver-command -activate
 
+
+assign [class="^MPlayer$"] → 2
+for_window [class="^MPlayer$"] floating enable
