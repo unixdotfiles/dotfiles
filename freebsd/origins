@@ -30,6 +30,7 @@ print/latex-beamer
 security/gnupg
 security/vuxml
 shells/zsh
+sysutils/cpdup
 sysutils/devcpu-data
 sysutils/tmux
 textproc/docproj
@@ -40,9 +41,8 @@ www/linux-f10-flashplugin11
 www/nspluginwrapper
 www/wgetpaste
 x11-fonts/liberation-fonts-ttf
-x11-wm/openbox
+x11-wm/i3
 x11/idesk
-x11/lxpanel
 x11/numlockx
 x11/rxvt-unicode
 x11/setxkbmap
