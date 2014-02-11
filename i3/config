@@ -83,8 +83,8 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+bindsym $mod+2 workspace 2: mplayer
+bindsym $mod+3 workspace 3: firefox
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -96,8 +96,8 @@ bindsym $mod+i workspace irc
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+2 move container to workspace 2: mplayer
+bindsym $mod+Shift+3 move container to workspace 3: firefox
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -147,6 +147,8 @@ assign [class="^MPlayer$"] → 2: mplayer
 for_window [class="^MPlayer$"] floating enable
 workspace "2: mplayer" output HDMI1
 
-assign [class="Hexchat"] → 0: irc
+assign [class="^Firefox$"] → 3: firefox
 
-bindsym $mod+s move workspace to output right
+assign [class="^Hexchat$"] → irc
+
+bindsym $mod+p move workspace to output right
