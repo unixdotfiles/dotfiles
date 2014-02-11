@@ -14,7 +14,7 @@ if [ "$uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";
 	alias less="less -R";
-	alias free="top -b|egrep '^(Mem|Swap)'"
+	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
 fi
 ! __exists fetch && __exists wget && alias fetch=wget
