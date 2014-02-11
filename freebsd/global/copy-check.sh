@@ -1,6 +1,9 @@
 #!/bin/sh
 files="
 /boot/loader.conf
+/etc/dhclient.conf
+/etc/make.conf
+/etc/src.conf
 /etc/rc.conf
 "
 
