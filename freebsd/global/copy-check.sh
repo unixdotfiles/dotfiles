@@ -1,10 +1,14 @@
 #!/bin/sh
 files="
 /boot/loader.conf
+/etc/devfs.conf
 /etc/dhclient.conf
+/etc/login.conf
 /etc/make.conf
-/etc/src.conf
+/etc/pf.conf
 /etc/rc.conf
+/etc/src.conf
+/etc/syslog.conf
 "
 
 for f in $files
