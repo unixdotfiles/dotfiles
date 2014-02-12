@@ -9,6 +9,7 @@ files="
 /etc/rc.conf
 /etc/src.conf
 /etc/syslog.conf
+/usr/local/etc/pkg.conf
 "
 
 for f in $files
