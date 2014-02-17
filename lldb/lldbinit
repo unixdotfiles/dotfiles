@@ -1,3 +1,6 @@
 command unalias b 
-command alias b breakpoint 
+command alias b breakpoint set
+command alias bd breakpoint disable
+command alias be breakpoint enable
 
+command alias return thread return
