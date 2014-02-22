@@ -5,6 +5,7 @@ files="
 /etc/dhclient.conf
 /etc/login.conf
 /etc/make.conf
+/etc/newsyslog.conf
 /etc/pf.conf
 /etc/rc.conf
 /etc/src.conf
