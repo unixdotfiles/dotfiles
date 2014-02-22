@@ -14,7 +14,7 @@ gc sendemail.supresscc self
 gc sendemail.chainreplyto false
 
 # Patch format options
-gc format.signoff true
+gc --bool format.signoff true
 
 gc apply.whitespace warn
 
@@ -47,7 +47,7 @@ gc color.diff.new blue bold
 #gc color.status changed
 #gc color.status untracked
 
-gc diff.mnemonicprefix true
+gc --bool diff.mnemonicprefix true
 
 #Garbage collection
 gc gc.auto 0
