@@ -9,6 +9,7 @@ files="
 /etc/pf.conf
 /etc/rc.conf
 /etc/src.conf
+/etc/sysctl.conf
 /etc/syslog.conf
 /usr/local/etc/pkg.conf
 "
