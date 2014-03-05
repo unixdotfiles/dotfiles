@@ -1,6 +1,33 @@
 "we don't want to be compatible with vi.
 set nocompatible
 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
+nnoremap <C-g> :NERDTreeToggle<cr>
+
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
+	    \ '\.so$', '\.egg$', '^\.git$', '\.cmi', '\.cmo' ]
+let NERDTreeHighlightCursorline=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowFiles=1
+let g:NERDSpaceDelims = 1
+
+let mapleader = ","
+
+
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+
+nnoremap <Leader>a :Ack
+
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+
+
 " Determine the type of a file based on its name and its contents.
 filetype indent plugin on
 
@@ -148,8 +175,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 " If using a git repo, correctly set the tags directory.
 au BufRead,BufNewFile * let project_dir = system("cd ".shellescape(expand("%:p:h"))." && git rev-parse --show-toplevel")
 au BufRead,BufNewFile * let &tags = project_dir[:-2]."/.git/tags,./.tags"
-
-let mapleader = ","
 
 "Little trick to find ending whitespace in docs
 if version >= 703
