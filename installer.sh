@@ -87,6 +87,7 @@ htln xchat/xchat.conf .xchat2/xchat.conf
 ensure_directories ~/.gnupg
 htln gpg/gpg.conf .gnupg/gpg.conf
 htln gtk/gtk-bookmarks .gtk-bookmarks
+htln ack/ackrc .ackrc
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 [ -e $HOME/.mozilla ] && find $HOME/.mozilla -mindepth 3 -maxdepth 3 -type d -name chrome -exec sh -c "[ -e {}/userChrome.css ] || ln -s $self/firefox/userChrome.css {}/userChrome.css" \;
