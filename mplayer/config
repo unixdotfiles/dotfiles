@@ -7,6 +7,9 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 msgcolor=on
 zoom=on
 
+vo=gl
+msgcolor=no
+
 #vc=ffh264vdpau,
 
 #ass=yes
