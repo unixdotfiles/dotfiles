@@ -49,6 +49,19 @@ export ENV=~/.shrc;
 
 # GPG Agent --daemon should be here somewhere
 
+if __exists gpg-agent
+then
+	if [ -f ~/.gpg-agent-info ]
+	then
+		. ~/.gpg-agent-info
+		export GPG_AGENT_INFO
+	fi
+	if gpg-agent --daemon -q >/dev/null 2>&1
+	then
+		eval $(gpg-agent --write-env-file ~/.gpg-agent-info --daemon)
+	fi
+fi
+
 export AUDIODEV=/dev/dsp2.0
 
 export GOOS=freebsd
