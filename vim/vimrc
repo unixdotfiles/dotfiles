@@ -1,20 +1,8 @@
 "we don't want to be compatible with vi.
 set nocompatible
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'mileszs/ack.vim'
-nnoremap <C-g> :NERDTreeToggle<cr>
+source ~/.conf/vim/plugins.vim
 
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
-	    \ '\.so$', '\.egg$', '^\.git$', '\.cmi', '\.cmo' ]
-let NERDTreeHighlightCursorline=1
-let NERDTreeShowBookmarks=1
-let NERDTreeShowFiles=1
-let g:NERDSpaceDelims = 1
 
 let mapleader = ","
 
