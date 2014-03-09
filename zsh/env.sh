@@ -56,7 +56,7 @@ then
 		. ~/.gpg-agent-info
 		export GPG_AGENT_INFO
 	fi
-	if gpg-agent --daemon -q >/dev/null 2>&1
+	if ! gpg-agent -q >/dev/null 2>&1
 	then
 		eval $(gpg-agent --write-env-file ~/.gpg-agent-info --daemon)
 	fi
