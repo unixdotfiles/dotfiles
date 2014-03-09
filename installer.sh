@@ -73,10 +73,6 @@ htln i3/config .i3/config
 htln i3/i3status.conf .i3status.conf
 htln libfm/libfm.conf .config/libfm/libfm.conf
 __exists git && git/install.sh	
-if [ $(uname -s) = "Darwin" ]
-then
-	./osx/osx.sh
-fi
 __exists xdg-mime && xdg/install.sh
 htln bash/bashrc .bashrc
 htln bash/bash_profile.bash .bash_profile

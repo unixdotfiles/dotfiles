@@ -12,4 +12,3 @@ urxvtd -q -f -o &
 #exec openbox-session;
 xrandr --output HDMI1 --right-of LVDS1 --primary --auto &
 exec i3 # -V >> ~/.i3/i3log 2>&1
-
