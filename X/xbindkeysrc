@@ -112,3 +112,12 @@
     m:0x10 + c:146
     Mod2 + NoSymbol
 
+#"$CONF_PATH/scripts/screenshot.sh" w/control and therefore -s
+#   m:0x14 + c:111
+#   Control+Mod2 + Print
+
+"$CONF_PATH/scripts/screenshot.sh"
+   m:0x10 + c:111
+   Mod2 + Print
+
+#"scrot '%Y-%m-%d-%H-%M-%S_$p_$wx$h_$(mktemp ~/a/XXXXX.png).png' -e 'mv $f ~/screenshots'"
