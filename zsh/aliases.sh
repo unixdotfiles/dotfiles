@@ -36,7 +36,6 @@ __exists python3.2 && ! __exists python3 && alias python3=python3.2
 __exists proxychains && alias pc="proxychains";
 alias shareThisDir="python3 -m http.server 8000";
 alias lls="ls -lao";
-__exists firefox && alias firefox="firefox -no-remote";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
