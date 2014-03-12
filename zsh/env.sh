@@ -51,14 +51,17 @@ export ENV=~/.shrc;
 
 if __exists gpg-agent
 then
-	if [ -f ~/.gpg-agent-info ]
+	if [ $UID != 0 ]
 	then
-		. ~/.gpg-agent-info
-		export GPG_AGENT_INFO
-	fi
-	if ! gpg-agent -q >/dev/null 2>&1
-	then
-		eval $(gpg-agent --write-env-file ~/.gpg-agent-info --daemon)
+		if [ -f ~/.gpg-agent-info ]
+		then
+			. ~/.gpg-agent-info
+			export GPG_AGENT_INFO
+		fi
+		if ! gpg-agent -q >/dev/null 2>&1
+		then
+			eval $(gpg-agent --write-env-file ~/.gpg-agent-info --daemon)
+		fi
 	fi
 fi
 
