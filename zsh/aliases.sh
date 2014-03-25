@@ -78,3 +78,14 @@ randpassword() {
 	LANG=C < /dev/urandom tr -dc A-Za-z0-9_ | head -c${1:-16} && printf "\n";
 
 }
+
+explain_type() {
+    local type="$1"
+
+    if [ -z "${type}" ]; then
+        echo "No type given, dude"
+        return 1
+    fi
+
+    dtrace -qn 'BEGIN {p=('"${type}"'*)alloca(sizeof('"${type}"')); print(*p);exit(0)}'
+}

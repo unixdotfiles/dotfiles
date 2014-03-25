@@ -6,6 +6,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
+Bundle 'ajh17/VimCompletesMe'
+Bundle 'vim-scripts/a.vim'
 
 " }}}
 
@@ -21,4 +23,7 @@ nnoremap <C-g> :NERDTreeToggle<cr>
 nnoremap <Leader>nt :NERDTreeToggle<cr>
 " }}}
 
+" {{{
+nnoremap <F2> :A<cr>
+" }}}
 
