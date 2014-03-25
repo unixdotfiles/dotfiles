@@ -23,7 +23,10 @@ nnoremap <C-g> :NERDTreeToggle<cr>
 nnoremap <Leader>nt :NERDTreeToggle<cr>
 " }}}
 
-" {{{
+" {{{ a.vim
 nnoremap <F2> :A<cr>
 " }}}
 
+" {{{ VimCompleteMe
+imap <expr> <CR> pumvisible() ? "\<C-y> " : "\<CR>"
+" }}}
