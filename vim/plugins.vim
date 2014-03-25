@@ -18,6 +18,7 @@ let NERDTreeShowFiles=1
 let g:NERDSpaceDelims = 1
 
 nnoremap <C-g> :NERDTreeToggle<cr>
+nnoremap <Leader>nt :NERDTreeToggle<cr>
 " }}}
 
 
