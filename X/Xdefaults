@@ -43,7 +43,7 @@ URxvt.cursorBlink: true
 URxvt.font: xft:Liberation Mono:pixelsize=14
 URxvt.iconFile: /usr/local/share/icons/hicolor/128x128/apps/urxvt.png
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: chrome
+URxvt.url-launcher: xdg-open
 URxvt.matcher.button: 1
 URxvt.saveLines: 2048
 
