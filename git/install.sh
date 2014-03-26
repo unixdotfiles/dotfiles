@@ -58,3 +58,5 @@ gc merge.conflictstyle diff3
 
 gc init.templatedir '~/.conf/git/template/'
 gc core.excludesfile '~/.conf/git/gitignore'
+
+gc push.default simple
