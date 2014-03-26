@@ -1,46 +1,35 @@
 #!/bin/sh
 
-prepend="";
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-	prepend="ssh-agent"
-fi
+__permit_free_tmux() {
+	__inSSH && return 0;
+	[ $(uname -s) = "Darwin" ] && return 0;
 
-if __exists tmux 
-then
+	false
+}
+
+__prepend_begin() {
+	local prepend
+	prepend=""
+	if [ -z "$SSH_AUTH_SOCK" ]
+	then
+		prepend="ssh-agent"
+	fi
+
 	# Don't let tmux run except in a child shell.
 	# This allows me to run X outside of tmux and have
 	# tmux run inside each tmux terminal
-	if __inSSH
+	if __exists tmux
 	then
-		export FIRST_RUN="ready";
-	fi
-	if [ -z "$FIRST_RUN" ]
-	then
-		export FIRST_RUN="ready";
-	else
-		if [ -z "$TMUX" ]
+		if [ -n "$FIRST_RUN" ] || __permit_free_tmux
 		then
-			exec $prepend tmux
+			if [ -z "$TMUX" ]
+			then
+				exec $prepend tmux
+			fi
+		else
+			export FIRST_RUN="ready";
 		fi
 	fi
-fi
-return 0;
-	if tmux has-session -t "$1";
-	then
-		tmux
-#	if __inSSH
-#		then
-#			exec tmux attach-session -t "$1"
-#		else
-#			if [ "$TERM" != "screen" ]
-#			then
-#				#tmux new-window -t "$1"d
-#				#exec tmux attach-session -t "$1"
-#			fi
-#		fi
-	else
-		tmux			
-		exec tmux new-session -s "$1"
-	fi
-fi
+}
+
+__prepend_begin
