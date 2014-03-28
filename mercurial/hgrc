@@ -11,15 +11,20 @@ children =
 churn=
 color =
 eol = 
+extdiff =
 fetch =
 graphlog =
 highlight =
+mq =
 parentrevspec =
 patchbomb =
 progress =
 purge = 
 rebase =
+record =
 transplant =
+pager =
+parentrevspec =
 [alias]
 nudge = push --rev .
 [progress]
