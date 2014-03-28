@@ -1,0 +1,70 @@
+[defaults]
+add = --exclude=.svn --exclude="glob:**.orig"
+status = --exclude=.svn
+[ui]
+#ssh = ssh -Nxo ControlMaster=no
+merge = internal:merge
+verbose = True
+[extensions]
+bisect = 
+bookmarks =
+children =
+churn=
+color =
+eol = 
+extdiff =
+fetch =
+graphlog =
+highlight =
+mq =
+parentrevspec =
+patchbomb =
+progress =
+purge = 
+rebase =
+record =
+transplant =
+pager =
+parentrevspec =
+[alias]
+nudge = push --rev .
+; Show changed files between your branch and the last parent branch at the point you branched.
+bst = status --rev bparent
+; Gets the diff between your branch and the last parent branch at the point you branched.
+bdiff = diff -r bparent
+; Gets you the name of your parent in case you forget.
+bparent = id -b -r bparent
+
+; Usage: hg bfinish <parent-branch-name>
+bfinish = rebase --collapse --dest $1
+; Usage: hg brebase <parent-branch-name>
+brebase = rebase --keepbranches --dest $1
+; Pushes only the branch you are currently on.
+bpush = push -b .
+; Puts all commits in the current branch in the "draft" phase (so you can rebase them)
+bmakedraft = phase -d --force -r "branch($1)"
+
+[revsetalias]
+; Gets you the parent branch of your branch.  This is also the common ancestor.
+bparent = parents(min(branch(.)))
+; Gets you the head of the parent branch of your branch.
+bdest = max(branch(bparent))
+
+[progress]
+delay = 2
+
+[web]
+allow_archive = gz zip
+
+[hooks]
+# Prevent "hg pull" if MQ patches are applied.
+prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
+# Prevent "hg push" if MQ patches are applied.
+preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, bdiff, out
+
+[annotate]
+ignorews = 1
