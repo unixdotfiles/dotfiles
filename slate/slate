@@ -45,6 +45,4 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Window Hints
-bind esc:cmd hint
-
-bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+bind esc:cmd hint ASDFGHJKLQWERTYUIOPCVBN
