@@ -16,6 +16,7 @@ extdiff =
 fetch =
 graphlog =
 highlight =
+histedit =
 mq =
 parentrevspec =
 patchbomb =
