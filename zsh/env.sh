@@ -82,3 +82,5 @@ export LANG=en_US.UTF-8
 export CONF_PATH=~/.conf/
 
 export GOPATH=~/goprojects/
+
+export MYSQL_PS1="\u@\h [\d]>"
