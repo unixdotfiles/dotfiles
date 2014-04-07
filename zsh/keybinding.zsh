@@ -27,4 +27,6 @@ if [[ "$TERM" != emacs ]]; then
 
 bindkey '^[OC' forward-word 
 bindkey '^[OD' backward-word 
+bindkey '5C' forward-word
+bindkey '5D' backward-word
 fi
