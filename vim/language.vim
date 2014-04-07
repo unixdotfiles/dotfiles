@@ -104,6 +104,7 @@ function Set_Velocity()
 endfunction "Set_Velocity()
 
 function Set_Python()
+	set ft=python
 	setlocal expandtab
 	setlocal softtabstop=4
 	setlocal shiftwidth=4
