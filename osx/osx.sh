@@ -46,3 +46,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Show POSIX path in title of Finder
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
