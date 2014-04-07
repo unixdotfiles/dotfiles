@@ -125,8 +125,9 @@ set undolevels=1000		"maximum number of changes that can be undone
 " Indentation options {{{
 "
 
-" Use F12 to toggle between 'paste' and 'nopaste'
+" Toggle between 'paste' and 'nopaste'
 set pastetoggle=<F12>
+set pastetoggle=<F8>
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " N characters wide.
@@ -243,3 +244,9 @@ command W w
 command WQ wq
 command Wq wq
 command Q q
+
+" now set it up to change the status line based on mode
+if version >= 700
+	au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+	au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+endif
