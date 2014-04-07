@@ -29,6 +29,7 @@ pager =
 parentrevspec =
 [alias]
 nudge = push --rev .
+xpush = !$HG pull --rebase; $HG push
 ; Show changed files between your branch and the last parent branch at the point you branched.
 bst = status --rev bparent
 ; Gets the diff between your branch and the last parent branch at the point you branched.
