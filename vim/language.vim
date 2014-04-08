@@ -13,6 +13,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.in call Set_Automake()
     au Filetype gitcommit call Set_GitCommit()
     au BufNewFile,BufRead log call Set_SVNLog()
+    au BufNewFile,BufRead *.sh,*.bash call Set_Shell()
 
 endif " has(autocmd)
 
@@ -121,6 +122,13 @@ function Set_SVNLog()
 	 setlocal spell
 	 setlocal textwidth=80
 	 setlocal cc=+1
+endfunction
+
+function Set_Shell()
+	setlocal expandtab
+	setlocal softtabstop=4
+	setlocal sw=4
+	setlocal ts=4
 endfunction
 
 function ShowSpecial()
