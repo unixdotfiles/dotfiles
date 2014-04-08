@@ -4,8 +4,7 @@ confpath=~/.conf/zsh/
 #Set some useful variables
 HOST="$(hostname)"
 
-source $confpath/inSSH.func
-source $confpath/exists.func
+source $confpath/functions.sh
 source $confpath/env.sh
 source $confpath/aliases.sh
 source $confpath/eval_spin.func

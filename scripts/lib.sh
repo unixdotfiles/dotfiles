@@ -1,4 +1,4 @@
-. ~/.conf/zsh/exists.func
+. ~/.conf/zsh/functions.sh
 
 : ${LIBSH_ALERT_TIME:=3000}
 

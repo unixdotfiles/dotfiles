@@ -11,8 +11,7 @@ msource() {
 	[ -f "$f" ] && source "$f";
 }
 
-source $confpath/inSSH.func
-source $confpath/exists.func
+source $confpath/functions.sh
 msource $confpath/local.pre.$(hostname -s).zsh
 source $confpath/env.sh
 source $confpath/start-tmux.sh
