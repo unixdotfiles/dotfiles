@@ -28,19 +28,19 @@ fi
 __exists vim && alias vi="vim -p";
 __exists vim && alias vim="vim -p";
 
-alias cterm="xterm -C -T 'Console Eterm'";
+__exists xterm && alias cterm="xterm -C -T 'Console Eterm'";
 
 __exists python2 && alias python2="python2 -tt";
-alias switch-background="pkill idesk && idesk &";
-alias youtube-dl="youtube-dl -t";
+__exists idesk && alias switch-background="pkill idesk && idesk &";
+__exists youtube-dl && alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 __exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
-alias urxvt="urxvtcd"
+__exists urxvt && alias urxvt="urxvtcd"
 #alias su="su -l"
 __exists python3.2 && ! __exists python3 && alias python3=python3.2
 __exists proxychains && alias pc="proxychains";
-alias shareThisDir="python3 -m http.server 8000";
+__exists python3 && alias shareThisDir="python3 -m http.server 8000";
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
