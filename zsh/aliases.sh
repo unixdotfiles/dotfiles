@@ -1,3 +1,7 @@
+__ealias() {
+    __exists "$1" && alias "$1 $2"
+}
+
 alias mv="mv -i";
 alias cp="cp -i";
 
@@ -16,6 +20,8 @@ then
 	alias less="less -R";
 	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
+    __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
+        alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
 fi
 ! __exists fetch && __exists wget && alias fetch=wget
 
@@ -24,7 +30,7 @@ __exists vim && alias vim="vim -p";
 
 alias cterm="xterm -C -T 'Console Eterm'";
 
-__exists python2 && alias python2="python -tt";
+__exists python2 && alias python2="python2 -tt";
 alias switch-background="pkill idesk && idesk &";
 alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
@@ -65,8 +71,6 @@ portsGrep() {
 }
 
 __exists idprio && alias verynice="nice nice idprio 31";
-__exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
-	alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
 __exists cscope && alias cscope="cscope -CqRv";
 __exists hub && alias git="hub";
 __exists txt2regex && alias txt2regex="txt2regex --whitebg";
