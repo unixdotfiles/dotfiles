@@ -32,4 +32,4 @@ __prepend_begin() {
 	fi
 }
 
-__prepend_begin
+[ -z "$__zshrc_prepend_disable" ] && __prepend_begin

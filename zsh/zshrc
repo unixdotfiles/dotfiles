@@ -8,8 +8,10 @@ HOST="${HOST%%.*}"
 
 msource() {
 	f="$1";
-	[ -f "$f" ] && source "$f";
+	[ -f "$f" ] && . "$f";
 }
+
+msource ~/.options.zshrc
 
 source $confpath/functions.sh
 msource $confpath/local.pre.$(hostname -s).zsh
