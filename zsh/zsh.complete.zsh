@@ -46,7 +46,7 @@
 #	fi
 
 	#also ignore completer functions
-#	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns FIRST_RUN
+#	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns __ZSHRC_FIRST_RUN
 #	export FIGNORE="";
 
 	# Always complete one value (file name) only once in the current line. This

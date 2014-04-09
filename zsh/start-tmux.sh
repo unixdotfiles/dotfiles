@@ -20,14 +20,14 @@ __prepend_begin() {
 	# tmux run inside each tmux terminal
 	if __exists tmux
 	then
-		if [ -n "$FIRST_RUN" ] || __permit_free_tmux
+		if [ -n "$__ZSHRC_FIRST_RUN" ] || __permit_free_tmux
 		then
 			if [ -z "$TMUX" ]
 			then
 				exec $prepend tmux
 			fi
 		else
-			export FIRST_RUN="ready";
+			export __ZSHRC_FIRST_RUN="ready";
 		fi
 	fi
 }
