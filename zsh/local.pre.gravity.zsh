@@ -1,1 +1,0 @@
-__SHOW_BSD_BATTERY="YES"
