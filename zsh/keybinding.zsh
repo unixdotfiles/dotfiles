@@ -25,8 +25,8 @@
 #[[ "$terminfo[khome]" == "^[O"* ]] && bindkey -M emacs "${terminfo[khome]/O/[}" beginning-of-line
 #[[ "$terminfo[kend]" == "^[O"* ]] && bindkey -M emacs "${terminfo[kend]/O/[}" end-of-line
 #
-bindkey '^[OC' forward-word 
-bindkey '^[OD' backward-word 
+bindkey '^[Oc' forward-word
+bindkey '^[Od' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 ##fi
