@@ -14,6 +14,7 @@ if has("autocmd")
     au Filetype gitcommit call Set_GitCommit()
     au BufNewFile,BufRead log call Set_SVNLog()
     au BufNewFile,BufRead *.sh,*.bash call Set_Shell()
+    au BufNewFile,BufRead *.json call Set_Json()
 
 endif " has(autocmd)
 
@@ -50,7 +51,16 @@ function Set_Automake()
     setlocal expandtab
 
     return 0
-endfunction " Set_C()
+endfunction " Set_Automake()
+
+function Set_Json()
+    setlocal tabstop=2
+    setlocal shiftwidth=2
+    setlocal softtabstop=2
+    setlocal expandtab
+
+    return 0
+endfunction " Set_Automake()
 
 function Set_WWW()
     setlocal textwidth=78
