@@ -3,8 +3,8 @@ use="all"
 confpath=~/.conf/zsh
 
 #Set some useful variables
-HOST="$(hostname)"
-HOST="${HOST%%.*}"
+__HOSTNAME="$(hostname)"
+HOST="${__HOSTNAME%%.*}"
 
 msource() {
 	f="$1";
