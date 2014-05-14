@@ -28,8 +28,10 @@ transplant =
 pager =
 parentrevspec =
 [alias]
+amend = ci --amend
 nudge = push --rev .
 xpush = !$HG pull --rebase; $HG push --branch default
+xblame = blame -udncl
 pout = out -p -b .
 ; Show changed files between your branch and the last parent branch at the point you branched.
 bst = status --rev bparent
