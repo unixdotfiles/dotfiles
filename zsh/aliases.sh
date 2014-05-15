@@ -21,7 +21,7 @@ uname_s=$(uname -s)
 
 if [ "$uname_s" = "FreeBSD" ]
 then
-	alias rm="rm -I";
+	alias rm="rm -Iv";
 	alias less="less -R";
 	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
