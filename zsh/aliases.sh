@@ -9,7 +9,8 @@ alias cp="cp -i";
 if [ "$DISABLE_LS_COLORS" != "true" ]
 then
 	# Find the option for using colors in ls, depending on the version: Linux or BSD
-	ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
+    __exists colorls && alias ls="colorls -GF"
+    ! __exists colorls && ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
 fi
 
 uname_s=$(uname -s)
