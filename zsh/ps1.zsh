@@ -13,8 +13,8 @@ zstyle ':vcs_info:git*:' get-revision false
 __VCS_SCM="%F{magenta}(%f%s:%r%F{magenta})"
 __VCS_BRANCH="%F{green}%b%f"
 __VCS_ACTION="%F{3}|%F{1}%a"
-__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta]]%f"
-__VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta]]%f"
+__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta]%f"
+__VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta]%f"
 
 zstyle ':vcs_info:*' formats      "$__VCS_FORMATS"
 zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS"
