@@ -88,7 +88,7 @@ then
 fi
 
 ## vim ##
-zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
+zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 
 # Except for mv and cp, because I often want to use to similar names, so I
 # complete to the same and change it.
