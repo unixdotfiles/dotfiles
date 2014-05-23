@@ -149,6 +149,7 @@ TRAPINT() {
 }
 autoload -Uz  add-zsh-hook
 add-zsh-hook precmd setCurrentPS1
+add-zsh-hook preexec setExecutionTimer
 add-zsh-hook preexec checkAndSetWindowTitle
 add-zsh-hook precmd resetWindowTitle
 #add-zsh-hook preexec changeTitlePreExec
