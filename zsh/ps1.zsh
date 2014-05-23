@@ -64,7 +64,7 @@ function setCurrentPS1()
 		fi
 		unset __cmd_exec_timer
 	fi
-	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f";
+	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f ";
 }
 
 function setExecutionTimer() {
