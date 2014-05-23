@@ -60,11 +60,11 @@ function setCurrentPS1()
 		__cmd_exec_timediff="$(($SECONDS - $__cmd_exec_timer))"
 		if [ $__cmd_exec_timediff -gt 2 ]
 		then
-			RPS1_TIMER="%F{cyan}${__cmd_exec_timediff}s%f"
+			RPS1_TIMER="%F{cyan}${__cmd_exec_timediff}s%f "
 		fi
 		unset __cmd_exec_timer
 	fi
-	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f ";
+	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f";
 }
 
 function setExecutionTimer() {
