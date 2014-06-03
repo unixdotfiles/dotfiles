@@ -67,9 +67,12 @@ fi
 
 export AUDIODEV=/dev/dsp2.0
 
-export GOOS=freebsd
-export GOARCH=amd64
-export GOROOT=/usr/local/go
+if [ "$uname_s" = "FreeBSD" ]
+then
+    export GOOS=freebsd
+    export GOARCH=amd64
+    export GOROOT=/usr/local/go
+fi
 
 export DICTIONARY=en_US
 
