@@ -49,3 +49,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Show POSIX path in title of Finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Get a developer mode crash dialog
+defaults write com.apple.CrashReporter DialogType developer
