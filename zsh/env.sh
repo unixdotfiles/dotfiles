@@ -10,8 +10,6 @@ export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HO
 
 #export MANPATH=/opt/local/share/man:$MANPATH
 
-#top default arguments
-export TOP="-IC";
 #grep default options
 export GREP_OPTIONS="--color"
 

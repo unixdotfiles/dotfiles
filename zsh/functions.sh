@@ -6,3 +6,6 @@ __exists () {
 __inSSH() {
 	[ -n "$SSH_CONNECTION" ]
 }
+__isroot() {
+    [ $(id -g) = 0 ]
+}

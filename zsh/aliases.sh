@@ -57,6 +57,8 @@ alias diff="diff -p";
 
 alias ll="ls -halt"
 
+alias top="top -IC"
+
 alias timestamp='date +%s'
 
 #alias cd="pushd";
