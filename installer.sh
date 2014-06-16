@@ -60,7 +60,6 @@ htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
 ensure_directories ~/.vim/undo ~/.vim/backup ~/.vim/swap ~/.vim/viminfo
 htln vim/vimrc .vimrc
-#htln git/gitconfig .gitconfig
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
 ensure_directories ~/.config/awesome ~/.config/openbox ~/.config/pianobar ~/.config/libfm
@@ -92,3 +91,4 @@ htln slate/slate .slate
 htln psql/psqlrc .psqlrc
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
+. "$self/vim/installer.sh"
