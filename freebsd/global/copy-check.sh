@@ -12,6 +12,7 @@ files="
 /etc/sysctl.conf
 /etc/syslog.conf
 /usr/local/etc/pkg.conf
+/usr/local/etc/portmaster.rc
 "
 
 for f in $files
