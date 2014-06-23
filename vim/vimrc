@@ -13,7 +13,7 @@ set bg=light
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
-" {{{ Vim Files 
+" Vim Files 
 set backupdir=~/.vim/backup
 " Prevent backups from overwriting each other. The naming is weird,
 " since I'm using the 'backupext' variable to append the path.
@@ -24,8 +24,6 @@ au BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g') . '
 set directory+=~/.vim/swap// " double / so that the complete path gets used
 set directory+=.
 
-" }}}
-
 
 " Better command-line completion
 set wildmenu
@@ -35,7 +33,6 @@ set showcmd
 
 set clipboard=unnamed,unnamedplus,autoselect
 
-" {{{ search
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
@@ -45,8 +42,6 @@ set hlsearch
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
-
-" }}}
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -92,7 +87,7 @@ set notimeout ttimeout ttimeoutlen=200
 "show lines above and below current position at all times
 set scrolloff=2
 
-" Tabbing Options {{{
+" Tabbing Options 
 "
 " Taken from joe @ sw
 set smarttab
@@ -119,7 +114,7 @@ if has("persistent_undo")
 endif
 set undolevels=1000		"maximum number of changes that can be undone
 " }}}
-" Indentation options {{{
+" Indentation options 
 "
 
 " Toggle between 'paste' and 'nopaste'
@@ -132,7 +127,7 @@ set shiftwidth=8
 set tabstop=8
 
 " }}}
-" Mappings {{{
+" Mappings 
 "
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
@@ -171,13 +166,12 @@ map S i<RETURN><ESC>==k$
 
 "}}}
 
-"{{{ Auto Commands
+"Auto Commands
 
 	" Remove any trailing whitespace that is in the file
 "	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 "	call histdel("search", -1)
 "
-"}}}
 
 if &term == "xterm" || &term == "xterm-color"
 	set grepprg=grep\ -nH\ $*
@@ -205,7 +199,7 @@ set foldmethod=marker
 
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-"  {{{ function that highlights lines longer than 80 characters
+"  function that highlights lines longer than 80 characters
 let g:hl_visible = 1
 function! ToggleLineTooLong()
     if g:hl_visible == 1
@@ -219,14 +213,13 @@ function! ToggleLineTooLong()
 endfunction
 " }}}
 
-" {{{ Includes 
+" Includes 
 source ~/.conf/vim/language.vim
 source ~/.conf/vim/statusline.vim
 source ~/.conf/vim/plugins.vim
 if has("macunix")
 	source ~/.conf/vim/mac-host.vim
 endif
-" }}}
 
 
 "try this:
