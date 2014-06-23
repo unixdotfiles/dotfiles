@@ -1,6 +1,13 @@
 "we don't want to be compatible with vi.
 set nocompatible
 
+function! EnsureDirExists (dirarg)
+    let l:dir=expand(a:dirarg)
+    if !isdirectory(l:dir)
+        call mkdir(l:dir,'p')
+    endif
+endfunction
+
 " Enable syntax highlighting
 syntax on
 " I'm usually on a light background
@@ -15,6 +22,7 @@ set hidden
 
 " Vim Files 
 set backupdir=~/.vim/backup
+call EnsureDirExists(&backupdir)
 " Prevent backups from overwriting each other. The naming is weird,
 " since I'm using the 'backupext' variable to append the path.
 " So the file '/home/docwhat/.vimrc' becomes '.vimrc%home%docwhat~'
@@ -23,6 +31,7 @@ au BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g') . '
 " for swap file
 set directory+=~/.vim/swap// " double / so that the complete path gets used
 set directory+=.
+call EnsureDirExists("~/.vim/swap")
 
 
 " Better command-line completion
@@ -111,6 +120,7 @@ if has("persistent_undo")
 	set undodir=~/.vim/undo
 	set undofile
 	set undoreload=10000	"maximum number lines to save for undo on a buffer reload
+    call EnsureDirExists(&undodir)
 endif
 set undolevels=1000		"maximum number of changes that can be undone
 " }}}
@@ -120,11 +130,6 @@ set undolevels=1000		"maximum number of changes that can be undone
 " Toggle between 'paste' and 'nopaste'
 set pastetoggle=<F12>
 set pastetoggle=<F8>
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" N characters wide.
-set shiftwidth=8
-set tabstop=8
 
 " }}}
 " Mappings 
@@ -148,7 +153,6 @@ let mapleader = ","
 if version >= 703
 	set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
 endif
-"""""" eh? - not getting picked up
 "hi nontext ctermfg=red
 
 "Taken from joe @ sw
@@ -187,11 +191,6 @@ set wildmode=list:longest,full
 "autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
 "autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
 "autocmd BufWinLeave *.c call clearmatches()
-"
-if has("autocmd")
-    filetype indent on
-    filetype plugin on
-endif
 
 
 set foldenable
@@ -224,7 +223,6 @@ endif
 
 "try this:
 "set tildeop
-"
 
 set completeopt=menuone
 
@@ -235,6 +233,11 @@ command WQ wq
 command Wq wq
 command Q q
 
+" Set defaults
+set tabstop=4
+set shiftwidth=4
+
+
 " now set it up to change the status line based on mode
 if version >= 700
 	au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
@@ -242,9 +245,11 @@ if version >= 700
 endif
 
 " Determine the type of a file based on its name and its contents.
-filetype indent plugin on
-set ts=4
-set sw=4
+if has("autocmd")
+    filetype indent on
+    filetype plugin on
+endif
+
 if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
