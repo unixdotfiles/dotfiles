@@ -250,3 +250,8 @@ endif
 
 " Determine the type of a file based on its name and its contents.
 filetype indent plugin on
+set ts=4
+set sw=4
+if filereadable(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
