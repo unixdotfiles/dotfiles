@@ -96,6 +96,9 @@ zstyle ':completion:*:(mv|cp):*' ignore-line no
 # Don't complete ./config.* files, this makes running ./configure much
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
+zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
+zstyle ':completion:*:ls:*:(all-|)files' ignored-patterns
+zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 
 #[ misc ]#######################################################################
 #zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
