@@ -9,3 +9,13 @@ __inSSH() {
 __isroot() {
     [ $(id -g) = 0 ]
 }
+
+__create_remote_alias() {
+    cmd="$1"; shift 1
+    remote="$1"; shift 1
+    printf '%s() { ssh -t -q "%s" "%s" "$@"} \n' "$cmd" "$remote" "$cmd"
+}
+
+define_remote_alias() {
+    eval $(__create_remote_alias "$@")
+}

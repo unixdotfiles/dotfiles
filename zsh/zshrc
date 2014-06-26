@@ -11,9 +11,9 @@ msource() {
 	[ -f "$f" ] && . "$f";
 }
 
+source $confpath/functions.sh
 msource ~/.options.zshrc
 
-source $confpath/functions.sh
 source $confpath/env.sh
 source $confpath/start-tmux.sh
 source $confpath/set-options.zsh
