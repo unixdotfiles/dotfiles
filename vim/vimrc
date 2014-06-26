@@ -253,6 +253,9 @@ if has("autocmd")
     filetype plugin on
 endif
 
+set modeline
+set modelines=2
+
 if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
