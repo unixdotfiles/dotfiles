@@ -14,8 +14,8 @@ msource() {
 source $confpath/functions.sh
 msource ~/.options.zshrc
 
-source $confpath/env.sh
 source $confpath/start-tmux.sh
+source $confpath/env.sh
 source $confpath/set-options.zsh
 source $confpath/aliases.sh
 source $confpath/zsh.alias.zsh
