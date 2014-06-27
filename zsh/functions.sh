@@ -7,6 +7,7 @@ __inSSH() {
 	[ -n "$SSH_CONNECTION" ]
 }
 __isroot() {
+    [ $UID ] && return $UID
     [ $(id -g) = 0 ]
 }
 

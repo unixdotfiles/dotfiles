@@ -19,13 +19,11 @@ getTitleFromProgram() {
 		runningAsRoot=yes
 	fi
 
-    if [[ $UID -eq 0 ]]; then
+    if __isroot
 		runningAsRoot=yes
     fi
 
-	# Add an exclamation mark at the beginning if running with sudo or if
-	# running zsh as root.
-	if [[ -n $runningAsRoot ]]; then
+	if [ -n $runningAsRoot ]; then
 		program_name="!$program_name"
 	fi
 
