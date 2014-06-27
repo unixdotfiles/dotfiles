@@ -16,4 +16,12 @@ __tmux_begin() {
     export __ZSHRC_FIRST_RUN="ready";
 }
 
-[ -z "$__zshrc_tmux_disable" ] && __tmux_begin
+__tmux_restore_env() {
+    local temp_sock
+    temp_sock=$(tmux show-environment |grep SSH_AUTH_SOCK)
+    if [ ${temp_sock%*=*} = "SSH_AUTH_SOCK" ]; then
+        export $temp_sock
+    fi
+}
+
+[ -z "$__zshrc_tmux_disable" ] && __tmux_begin && __tmux_restore_env
