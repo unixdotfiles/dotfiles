@@ -20,6 +20,7 @@ getTitleFromProgram() {
 	fi
 
     if __isroot
+    then
 		runningAsRoot=yes
     fi
 
