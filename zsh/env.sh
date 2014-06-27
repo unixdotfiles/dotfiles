@@ -63,6 +63,11 @@ then
 	fi
 fi
 
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+    eval $(ssh-agent)
+fi
+
 export AUDIODEV=/dev/dsp2.0
 
 if [ "$uname_s" = "FreeBSD" ]

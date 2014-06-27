@@ -12,9 +12,4 @@ __tmux_begin() {
 	fi
 }
 
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-    eval $(ssh-agent)
-fi
-
 [ -z "$__zshrc_tmux_disable" ] && __tmux_begin
