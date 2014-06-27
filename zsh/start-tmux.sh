@@ -1,10 +1,6 @@
 #!/bin/sh
 
 __tmux_begin() {
-	# Don't let tmux run except in a child shell.
-	# This allows me to run X outside of tmux and have
-	# tmux run inside each tmux terminal
-
 	if __exists tmux && ! [ -z "$__ZSHRC_FIRST_RUN" -a -n "$__zshrc_tmux_childonly" ] && [ -z "$TMUX" ]
     then
         # If we want to automatically attach to existing session - do so
