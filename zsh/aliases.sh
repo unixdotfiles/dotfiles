@@ -1,7 +1,3 @@
-__ealias() {
-    __exists "$1" && alias "$1 $2"
-}
-
 alias mv="mv -i";
 alias cp="cp -i";
 
