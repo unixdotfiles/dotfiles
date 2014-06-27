@@ -1,35 +1,20 @@
 #!/bin/sh
 
-__permit_free_tmux() {
-	__inSSH && return 0;
-	[ $(uname -s) = "Darwin" ] && return 0;
-
-	false
-}
-
-__prepend_begin() {
-	local prepend
-	prepend=""
-	if [ -z "$SSH_AUTH_SOCK" ]
-	then
-		prepend="ssh-agent"
-	fi
-
+__tmux_begin() {
 	# Don't let tmux run except in a child shell.
 	# This allows me to run X outside of tmux and have
 	# tmux run inside each tmux terminal
-	if __exists tmux
-	then
-		if [ -n "$__ZSHRC_FIRST_RUN" ] || __permit_free_tmux
-		then
-			if [ -z "$TMUX" ]
-			then
-				exec $prepend tmux
-			fi
-		else
-			export __ZSHRC_FIRST_RUN="ready";
-		fi
+	if __exists tmux && [ -n "$__ZSHRC_FIRST_RUN" ] && [ -z "$TMUX" ]
+    then
+        exec tmux
+    else
+        export __ZSHRC_FIRST_RUN="ready";
 	fi
 }
 
-[ -z "$__zshrc_prepend_disable" ] && __prepend_begin
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+    eval $(ssh-agent)
+fi
+
+[ -z "$__zshrc_tmux_disable" ] && __tmux_begin
