@@ -65,7 +65,7 @@ fi
 
 if [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
-    eval $(ssh-agent >/dev/null)
+    eval $(ssh-agent) >/dev/null
 fi
 
 export AUDIODEV=/dev/dsp2.0
