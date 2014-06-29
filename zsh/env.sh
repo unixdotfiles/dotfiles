@@ -49,7 +49,7 @@ export ENV=~/.shrc;
 
 if __exists gpg-agent
 then
-	if [ $UID != 0 ]
+	if ! __isroot
 	then
 		if [ -f ~/.gpg-agent-info ]
 		then
@@ -63,7 +63,7 @@ then
 	fi
 fi
 
-if [ -z "$SSH_AUTH_SOCK" ]
+if [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
     eval $(ssh-agent >/dev/null)
 fi
