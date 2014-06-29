@@ -13,6 +13,7 @@ __tmux_begin() {
 }
 
 __tmux_restore_env() {
+    [ -z "$TMUX" ] && return
     local temp_sock
     temp_sock=$(tmux show-environment |grep SSH_AUTH_SOCK)
     if [ ${temp_sock%*=*} = "SSH_AUTH_SOCK" ]; then
