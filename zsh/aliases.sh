@@ -48,14 +48,12 @@ alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
-
 alias diff="diff -p";
-
 alias ll="ls -halt"
-
 alias top="top -IC"
-
 alias timestamp='date +%s'
+
+alias ssh="__ensure_sshagent && ssh"
 
 #alias cd="pushd";
 alias p="pushd";
