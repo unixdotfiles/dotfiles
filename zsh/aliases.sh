@@ -4,11 +4,11 @@ alias cp="cp -i";
 # Enable ls colors
 if [ "$DISABLE_LS_COLORS" != "true" ]
 then
-	# Find the option for using colors in ls, depending on the version: Linux or BSD
     if __exists colorls
     then
         alias ls="colorls -GF"
     else
+        # Find the option for using colors in ls, depending on the version: Linux or BSD
         ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
     fi
 fi
@@ -17,12 +17,10 @@ uname_s=$(uname -s)
 
 if [ "$uname_s" = "FreeBSD" ]
 then
-	alias rm="rm -Iv";
+	alias rm="rm -I";
 	alias less="less -R";
 	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
-    __exists calendar && [ -f /usr/share/calendar/calendar.freebsd ] &&
-        alias bsdcal="calendar -f /usr/share/calendar/calendar.freebsd";
 fi
 ! __exists fetch && __exists wget && alias fetch=wget
 
@@ -41,6 +39,7 @@ __exists urxvt && alias urxvt="urxvtcd"
 #alias su="su -l"
 __exists python3.2 && ! __exists python3 && alias python3=python3.2
 __exists proxychains && alias pc="proxychains";
+__exists python2 && alias shareThisDir="python2 -m SimpleHTTPServer";
 __exists python3 && alias shareThisDir="python3 -m http.server 8000";
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
@@ -48,12 +47,14 @@ alias toupper="tr a-z A-Z"
 __exists pastebinit && alias pastebinit="pastebinit -a ''";
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
-alias diff="diff -p";
-alias ll="ls -halt"
-alias top="top -IC"
-alias timestamp='date +%s'
-
 alias ssh="__ensure_sshagent && ssh"
+alias hg="__ensure_sshagent && hg"
+
+alias diff="diff -p";
+
+alias ll="ls -halt"
+
+alias timestamp='date +%s'
 
 #alias cd="pushd";
 alias p="pushd";
