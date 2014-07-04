@@ -98,9 +98,10 @@
 "printf n > ~/.config/pianobar/ctl"
     m:0x0 + c:153
     XF86AudioNext
-#"(Scheme function)"
-#   3m:0x0 + c:144
-#    XF86AudioPrev
+"printf t > ~/.config/pianobar/ctl"
+    m:0x10 + c:144
+	Mod2 + XF86AudioPrev
+    XF86AudioPrev
 
 # Switch screen key
 "$CONF_PATH/scripts/externalswitch.sh HDMI1"
