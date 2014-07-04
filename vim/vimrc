@@ -212,6 +212,10 @@ function! ToggleLineTooLong()
 endfunction
 " }}}
 
+" Set defaults
+set tabstop=8
+set shiftwidth=8
+
 " Includes 
 source ~/.conf/vim/language.vim
 source ~/.conf/vim/statusline.vim
@@ -235,10 +239,6 @@ command W w
 command WQ wq
 command Wq wq
 command Q q
-
-" Set defaults
-set tabstop=4
-set shiftwidth=4
 
 
 " now set it up to change the status line based on mode
