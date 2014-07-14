@@ -49,6 +49,8 @@ __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias ssh="__ensure_sshagent && ssh"
 alias hg="__ensure_sshagent && hg"
+alias git="__ensure_sshagent && git"
+alias scp="__ensure_sshagent && scp"
 
 alias diff="diff -p";
 
