@@ -50,6 +50,7 @@ alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias ssh="__ensure_sshagent && ssh"
 __exists hg && alias hg="__ensure_sshagent && hg"
 __exists git && alias git="__ensure_sshagent && git"
+__exists svn && alias svn="__ensure_sshagent && svn"
 alias scp="__ensure_sshagent && scp"
 
 alias diff="diff -p";
