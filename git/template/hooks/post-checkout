@@ -1,3 +1,3 @@
 #!/bin/sh
-source generic_fns.sh;
+. generic_fns.sh;
 rerun_ctags;

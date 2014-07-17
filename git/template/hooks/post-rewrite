@@ -1,5 +1,5 @@
 #!/bin/sh
-source generic_fns.sh;
+. generic_fns.sh;
 case "$1" in
 	rebase) exec .git/scripts/post-merge;
 		;;
