@@ -5,26 +5,28 @@ zstyle ':vcs_info:*' enable svn git hg cvs p4
 #zstyle ':vcs_info:*' formats "%b%c%u"
 #zstyle ':vcs_info:*' disable cdv darcs mtn svk tla git-p4 bzr
 #zstyle ':vcs_info:*' branchformat "%b:%r"
-zstyle ':vcs_info:*' check-for-changes false
-zstyle ':vcs_info:hg*:' get-revision true
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:hg*:*' get-revision true
 zstyle ':vcs_info:hg*:' get-bookmarks true
-zstyle ':vcs_info:git*:' get-revision false
+zstyle ':vcs_info:hg*:*' get-mq true
+zstyle ':vcs_info:hg*:*' get-unapplied true
+zstyle ':vcs_info:hg*:*' hgrevformat "%r:%h"
+zstyle ':vcs_info:hg*:*' branchformat "%b" # no %r
+zstyle ':vcs_info:hg*:*' patchformat "%p%u%n%c%a%g%G"
+zstyle ':vcs_info:hg*:*' nopatchformat "%p%u%n%c%a%g%G"
+zstyle ':vcs_info:*' stagedstr "+"
+zstyle ':vcs_info:*' unstagedstr "!"
 
 __VCS_SCM="%F{magenta}(%f%s:%r%F{magenta})"
-__VCS_BRANCH="%F{green}%b%f"
+__VCS_BRANCH="%F{green}%b%u%c%f"
+__VCS_REV="%i"
 __VCS_ACTION="%F{3}|%F{1}%a"
-__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f"
-__VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta}]%f"
+__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f-[$__VCS_REV]%f" # no %m
+__VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta}]%f-[$__VCS_REV]%f"
 
 zstyle ':vcs_info:*' formats      "$__VCS_FORMATS"
 zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS"
 
-# [ stagedstr ]
-# This string will be used in the %c escape if there are staged changes in the repository. 
-zstyle ':vcs_info:*' stagedstr "+"
-# [ unstagedstr ]
-# This string will be used in the %u escape if there are unstaged changes in the repository. 
-zstyle ':vcs_info:*' unstagedstr "!"
 
 zstyle ':vcs_info:p4*:' use-server false
 
