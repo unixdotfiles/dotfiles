@@ -28,7 +28,7 @@ __tmux_restore_env() {
 
 # return 0 if the agent has keys loaded; else 0.
 __sshagent_keysloaded() {
-    ssh-add -l |grep -qE '(RSA|DSA|ECDSA)'
+    ssh-add -l 2>/dev/null |grep -qE '(RSA|DSA|ECDSA)'
 }
 
 __ensure_sshagent() {
