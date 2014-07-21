@@ -30,6 +30,7 @@ gc alias.dci "svn dcommit"
 gc alias.fixup "commit -a --amend -C HEAD"
 gc alias.last "log --oneline -1"
 gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
+gc alias.view "log --graph --decorate --oneline --boundary"
 gc alias.rollback 'reset HEAD^'
 gc alias.st status
 gc alias.w  whatchanged
@@ -37,20 +38,31 @@ gc alias.w  whatchanged
 # Coloring options
 gc color.branch auto
 gc color.diff auto
-gc color.branch.current red bold
+gc color.branch.current "red bold"
 gc color.branch.local red
 gc color.branch.remote blue
 gc color.diff.frag magenta
-gc color.diff.old red bold
-gc color.diff.new blue bold
+gc color.diff.old "red bold"
+gc color.diff.new "blue bold"
 #gc color.status added
 #gc color.status changed
 #gc color.status untracked
 
 gc --bool diff.mnemonicprefix true
 
-#Garbage collection
+#Don't throw anything away
+gc core.logAllRefUpdates true
+gc gc.reflogExpire none
+gc gc.reflogExpireUnreachable none
 gc gc.auto 0
+
+gc core.quotepath true
+
+# Set pull to rebase instead of merge
+gc branch.autosetuprebase remote
+
+# core.precomposeunicode
+
 gc diff.algorithm patience
 
 #Nicer conflict markers (shows 'before' too)
@@ -58,5 +70,7 @@ gc merge.conflictstyle diff3
 
 gc init.templatedir '~/.conf/git/template/'
 gc core.excludesfile '~/.conf/git/gitignore'
+
+
 
 gc push.default simple
