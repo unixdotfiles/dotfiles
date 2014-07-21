@@ -5,8 +5,8 @@ gc() {
 }
 
 gc user.name "Eitan Adler"
-gc user.email "lists@eitanadler.com"
-gc sendemail.from "lists@eitanadler.com"
+#gc user.email "lists@eitanadler.com"
+#gc sendemail.from "lists@eitanadler.com"
 
 # Email formatting options
 gc sendemail.confirm always
