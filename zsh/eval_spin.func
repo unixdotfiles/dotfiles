@@ -1,10 +1,8 @@
 #Taken from FreeBSD mailing list. BSD licensed: Devin Teske
 
+# Execute a command w/ spinner
 spin()
 {
-	#
-	# Execute a command w/ spinner
-	#
 	(
 		if [ $# -gt 0 ]; then
 			# Take commands from positional arguments
@@ -31,4 +29,3 @@ spin()
 		exit $DONE
 	)
 }
-

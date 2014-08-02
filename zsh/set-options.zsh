@@ -55,4 +55,3 @@ bindkey -e
 # Prevent overwriting existing files with '> filename', use '>| filename'
 # (or >!) instead.
 setopt noclobber
-

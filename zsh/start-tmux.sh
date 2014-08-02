@@ -12,5 +12,4 @@ __tmux_begin() {
     export __ZSHRC_FIRST_RUN="ready";
 }
 
-
 [ -z "$__zshrc_tmux_disable" ] && __tmux_begin && __tmux_restore_env

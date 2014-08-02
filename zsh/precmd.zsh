@@ -152,5 +152,3 @@ add-zsh-hook preexec setExecutionTimer
 add-zsh-hook preexec checkAndSetWindowTitle
 add-zsh-hook precmd resetWindowTitle
 #add-zsh-hook preexec changeTitlePreExec
-
-

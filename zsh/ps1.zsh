@@ -80,4 +80,3 @@ export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
 #    printf '\e[91m%s\e[0m' "$line";
 #	    print -n $'\0';
 #	done &)
-#
