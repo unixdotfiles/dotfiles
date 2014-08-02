@@ -4,13 +4,7 @@ alias -s cpp=$EDITOR
 #alias -s nawk=nawk
 # cd to a file should take you to the dir that contains the file
 # courtesy of Artur Penttinen <artur@xxxxxxxxxxx>
-#function cd () {
-#  if [[ -f $1 ]]; then
-#    builtin cd $1:h
-#  else
-#    builtin cd $1
-#  fi
-#}
+
 function cd () {
   local opt
   # eat options from the beginning
@@ -82,18 +76,6 @@ function mcd () {
 	else
 		mkdir "$@";
 	fi
-}
-
-function purgeHistory () {
-	size="$1"
-	[[ -z "$size" ]] && return 1;
-	set HIST_EXPIRE_DUPS_FIRST;
-	set HIST_IGNORE_DUPS;
-	set histignorealldups;
-	set HIST_SAVE_NO_DUPS;
-	export SAVEHIST=$size;
-	export HISTSIZE=$size;
-	return 0;
 }
 
 ## Glob functions
