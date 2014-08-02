@@ -30,6 +30,7 @@ __exists vim && alias vim="vim -p";
 __exists xterm && alias cterm="xterm -C -T 'Console Eterm'";
 
 __exists python2 && alias python2="python2 -tt";
+__exists ipython && alias ipython="ipython --no-confirm-exit";
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 __exists youtube-dl && alias youtube-dl="youtube-dl -t";
 alias startx="ssh-agent startx -audit 4 -nolisten tcp";
