@@ -32,10 +32,6 @@ export GTK_IM_MODULE="xim";
 #Specific to ZSH - but this is an envrioment variable so meh
 export CORRECT_IGNORE="_*";
 
-## Git specific things
-GIT_AUTHOR_NAME="Eitan Adler";
-GIT_AUTHOR_EMAIL="lists@eitanadler.com";
-
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
 
@@ -44,8 +40,6 @@ export TINDY="/usr/local/tinderbox/";
 export INPUTRC="~/.inputrc";
 
 export ENV=~/.shrc;
-
-# GPG Agent --daemon should be here somewhere
 
 if __exists gpg-agent
 then
