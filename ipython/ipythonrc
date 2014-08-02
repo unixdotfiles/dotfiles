@@ -1,0 +1,8 @@
+import IPython.ipapi
+ip = IPython.ipapi.get()
+
+def main():
+	o = ip.options
+	o.autoexec.append('%colors LightBG')
+
+main()
