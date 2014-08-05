@@ -26,6 +26,20 @@ __tmux_restore_env() {
     fi
 }
 
+# Check filesystem for what might be an ssh socket and attempt to use it.
+__aggressive_ssh_agent_restore() {
+    SOCKETS="$(find /tmp/ssh-* -maxdepth 1 -mindepth 1 -type s -name 'agent.*' 2>/dev/null)"
+    echo $SOCKETS | while read sock
+    do
+        SSH_AUTH_SOCK=$sock __sshagent_keysloaded
+        if [ $? -eq 0 ]
+        then
+            export SSH_AUTH_SOCK="$sock"
+        fi
+    done
+
+}
+
 # return 0 if the agent has keys loaded; else 0.
 __sshagent_keysloaded() {
     ssh-add -l 2>/dev/null |grep -qE '(RSA|DSA|ECDSA)'
@@ -33,6 +47,7 @@ __sshagent_keysloaded() {
 
 __ensure_sshagent() {
     __sshagent_keysloaded || __tmux_restore_env
+    __sshagent_keysloaded || __aggressive_ssh_agent_restore
     __sshagent_keysloaded || ssh-add
 }
 
