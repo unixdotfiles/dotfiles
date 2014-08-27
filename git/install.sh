@@ -30,6 +30,7 @@ gc alias.dci "svn dcommit"
 gc alias.fixup "commit -a --amend -C HEAD"
 gc alias.last "log --oneline -1"
 gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
+gc alias.pout "diff --stat -p origin/master HEAD"
 gc alias.view "log --graph --decorate --oneline --boundary"
 gc alias.rollback 'reset HEAD^'
 gc alias.st status
