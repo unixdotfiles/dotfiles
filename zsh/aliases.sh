@@ -37,21 +37,21 @@ alias startx="ssh-agent startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 __exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
 __exists urxvt && alias urxvt="urxvtcd"
-#alias su="su -l"
 __exists python3.2 && ! __exists python3 && alias python3=python3.2
-__exists proxychains && alias pc="proxychains";
-__exists python && alias shareThisDir="python -m http.server 8000";
-__exists python2 && alias shareThisDir="python2 -m SimpleHTTPServer";
-__exists python3 && alias shareThisDir="python3 -m http.server 8000";
+__exists proxychains && alias pc="proxychains"
+__exists python && alias shareThisDir="python -m http.server 8000"
+__exists python2 && alias shareThisDir="python2 -m SimpleHTTPServer"
+__exists python3 && alias shareThisDir="python3 -m http.server 8000"
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
-__exists pastebinit && alias pastebinit="pastebinit -a ''";
+__exists pastebinit && alias pastebinit="pastebinit -a ''"
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias ssh="__ensure_sshagent && ssh"
 __exists hg && alias hg="__ensure_sshagent && hg"
 __exists git && alias git="__ensure_sshagent && git"
+__exists hub && alias git="__ensure_sshagent && hub"
 __exists svn && alias svn="__ensure_sshagent && svn"
 alias scp="__ensure_sshagent && scp"
 
@@ -79,7 +79,6 @@ portsGrep() {
 
 __exists idprio && alias verynice="nice nice idprio 31";
 __exists cscope && alias cscope="cscope -CqRv";
-__exists hub && alias git="hub";
 __exists txt2regex && alias txt2regex="txt2regex --whitebg";
 __exists ack-grep && alias ack="ack-grep"
 

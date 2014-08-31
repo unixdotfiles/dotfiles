@@ -27,7 +27,6 @@ __VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__V
 zstyle ':vcs_info:*' formats      "$__VCS_FORMATS"
 zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS"
 
-
 zstyle ':vcs_info:p4*:' use-server false
 
 __vcs_dir() {
@@ -74,9 +73,3 @@ function setExecutionTimer() {
 }
 
 export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
-
-# Colorize stderr in red
-#OBexec 2>>(while read -r -k -u 0 line; do
-#    printf '\e[91m%s\e[0m' "$line";
-#	    print -n $'\0';
-#	done &)
