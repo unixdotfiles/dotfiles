@@ -2,7 +2,7 @@ alias mv="mv -i";
 alias cp="cp -i";
 
 # Enable ls colors
-if [ -n "$DISABLE_LS_COLORS" ]
+if [ -z "$DISABLE_LS_COLORS" ]
 then
     if __exists colorls
     then
