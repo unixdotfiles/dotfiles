@@ -126,10 +126,3 @@ autodisown() {
 
 __exists xpdf && alias xpdf="autodisown xpdf";
 __exists evince && alias evince="autodisown evince";
-
-if __exists hub
-then
-	if type compdef >/dev/null; then
-		compdef hub=git
-	fi
-fi

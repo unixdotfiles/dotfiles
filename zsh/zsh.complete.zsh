@@ -106,3 +106,4 @@ zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 #    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
 compdef _precommand verynice
+__exists hub && __exists git && compdef hub=git
