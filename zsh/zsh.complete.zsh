@@ -18,17 +18,11 @@
 	zstyle ':completion:*' use-cache on
 	zstyle ':completion:*' cache-path ~/.zsh/cache
 
-# How fuzzy should we get? When should we display completions?
-
 	#Fuzzy matching of completions for when you mistype them:
 #	zstyle ':completion:*' completer _complete _match _approximate
 #	zstyle ':completion:*:match:*' original only
 #	zstyle ':completion:*:approximate:*' max-errors 1 numeric
 #
-	#the number of errors allowed by _approximate increase with the length of what has been typed:
-#	zstyle -e ':completion:*:approximate:*' \
-#		max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
-
 	# How do we display completions?
 
 	zstyle ':completion:*:*:*:*:*' menu select
@@ -49,8 +43,8 @@
 #	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns __ZSHRC_FIRST_RUN
 #	export FIGNORE="";
 
-	# Always complete one value (file name) only once in the current line. This
-	# makes it easy to complete multiple values because I can just press tab to
+	# Always complete one value (file name) only once in the current line.
+	# makes it easy to complete multiple values because I can just press rab to
 	# get all possible values. Otherwise I would have to skip the first value
 	# again and again.
 	zstyle ':completion:*' ignore-line yes
