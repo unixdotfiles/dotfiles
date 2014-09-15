@@ -54,7 +54,6 @@ htln idesk/idesktop .idesktop
 ensure_directories ~/.mplayer
 htln mplayer/config .mplayer/config
 htln mplayer/mencoder.conf .mplayer/mencoder.conf
-htln icewm .icewm
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
