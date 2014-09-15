@@ -7,7 +7,7 @@ __HOSTNAME="$(hostname)"
 HOST="${__HOSTNAME%%.*}"
 
 msource() {
-	f="$1";
+	local f="$1";
 	[ -f "$f" ] && . "$f";
 }
 
