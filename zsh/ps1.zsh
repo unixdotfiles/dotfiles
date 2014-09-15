@@ -41,11 +41,12 @@ if __inSSH
 then
 	PS1_HOST="%B%F{blue}%m%b"
 else
-	PS1_HOST="%F{blue}%m";			#hostname
+	PS1_HOST="%F{blue}%m";
 fi
 PS1_ERR="%F{red}%(?..!%?!)";  		#return code of last command (if it was not 0)
-PS1_WD="%F{magenta}%30<...<%~";	#current working directory limited to 30 chars
-PS1_PROMPT="%#";					#EOF
+PS1_WD="%F{magenta}%30<...<%~";	    #current working directory limited to 30 chars
+[ -n "__EC2" ] && PS1_EC2_IID="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)"
+[ -n "$PS1_EC2_IID" ] && PS1_EC2="($PS1_EC2_IID)"
 
 export PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
@@ -54,7 +55,7 @@ function setCurrentPS1()
 	PS1_BATTERY=""
 	[ -n "$__SHOW_BSD_BATTERY" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
-	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_BATTERY $PS1_WD $PS1_ERR%f]$PS1_PROMPT"
+	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_BATTERY $PS1_EC2 $PS1_WD $PS1_ERR%f]%#"
 	RPS1_TIMER=""
 	if [ $__cmd_exec_timer ]
 	then
