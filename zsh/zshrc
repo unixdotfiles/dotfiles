@@ -11,6 +11,8 @@ msource() {
 	[ -f "$f" ] && . "$f";
 }
 
+msource /etc/environment
+
 source $confpath/functions.sh
 msource ~/.options.zshrc
 
