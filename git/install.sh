@@ -34,7 +34,7 @@ gc alias.pout "diff --stat -p origin/master HEAD"
 gc alias.view "log --graph --decorate --oneline --boundary"
 gc alias.rollback 'reset HEAD^'
 gc alias.st status
-gc alias.w  whatchanged
+gc alias.where refs/heads/master
 
 # Coloring options
 gc color.branch auto
