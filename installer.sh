@@ -88,6 +88,7 @@ htln gtk/gtk-bookmarks .gtk-bookmarks
 htln ack/ackrc .ackrc
 htln slate/slate .slate
 htln psql/psqlrc .psqlrc
+htln irb/irbrc .irbrc
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"
