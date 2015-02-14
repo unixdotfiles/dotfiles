@@ -30,6 +30,7 @@ parentrevspec =
 [alias]
 amend = ci --amend
 nudge = push --rev .
+tree = log -G --template "{node|short} {desc|firstline} {author} {date|age} {diffstat}" -l20
 xpush = !$HG pull --rebase; $HG push --branch default
 xblame = blame -udncl
 pout = out -p -b .
