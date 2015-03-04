@@ -50,6 +50,7 @@ __ensure_sshagent() {
     __sshagent_keysloaded || __tmux_restore_env
     __sshagent_keysloaded || __aggressive_ssh_agent_restore
     __sshagent_keysloaded || ssh-add
+    true
 }
 
 define_remote_alias() {
