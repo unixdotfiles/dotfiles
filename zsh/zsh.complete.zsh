@@ -49,6 +49,10 @@
 	# again and again.
 	zstyle ':completion:*' ignore-line yes
 
+	# quote pasted URLs
+	autoload -U url-quote-magic
+	zle -N self-insert url-quote-magic
+
 # }}}
 
 # General commands {{{
