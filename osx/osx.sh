@@ -73,3 +73,5 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
+
+git config --global credential.helper osxkeychain
