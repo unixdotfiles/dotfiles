@@ -47,7 +47,7 @@ PS1_WD="%F{magenta}%30<...<%~";	    #current working directory limited to 30 cha
 [ -n "$__EC2" ] && PS1_EC2_IID="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)"
 [ -n "$PS1_EC2_IID" ] && PS1_EC2="($PS1_EC2_IID)"
 
-export PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
+PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
 function setCurrentPS1()
 {
@@ -72,4 +72,4 @@ function setExecutionTimer() {
 	__cmd_exec_timer=${__cmd_exec_timer:-$SECONDS}
 }
 
-export PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
+PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
