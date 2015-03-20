@@ -20,6 +20,9 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Disabling press-and-hold for special keys in favor of key repeat
+# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
@@ -36,6 +39,12 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Check for updates daily
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+# Save to disk rather than icloud by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
 # Disable smart quotes and smart dashes as they're annoying
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
@@ -49,6 +58,16 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Show POSIX path in title of Finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Show hidden files in Finder by default
+# defaults write com.apple.Finder AppleShowAllFiles -bool true
+
+# Show dotfiles in Finder by default
+# defaults write com.apple.finder AppleShowAllFiles TRUE
+
+# Show status bar in finder
+defaults write com.apple.finder ShowStatusBar -bool true
+
 
 ###############################################################################
 # Safari & WebKit #
@@ -73,5 +92,30 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
+
+###############################################################################
+# Safari & WebKit #
+###############################################################################
+
+# Disable backswipe in chrome
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+
+###############################################################################
+# Transmission
+###############################################################################
+
+# Create 'incomplete' folder
+mkdir -p ~/Downloads/Incomplete
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+
+# Hide 'donate' message and 'legal' disclaimer
+defaults write org.m0k.transmission WarningDonate -bool false
+defaults write org.m0k.transmission WarningLegal -bool false
+
+###############################################################################
+# git
+###############################################################################
 
 git config --global credential.helper osxkeychain
