@@ -2,9 +2,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*:' use-simple false
 zstyle ':vcs_info:*' enable svn git hg cvs p4 
 # [ formats ] 
-#zstyle ':vcs_info:*' formats "%b%c%u"
 #zstyle ':vcs_info:*' disable cdv darcs mtn svk tla git-p4 bzr
-#zstyle ':vcs_info:*' branchformat "%b:%r"
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:hg*:*' get-revision true
 zstyle ':vcs_info:hg*:' get-bookmarks true
@@ -23,9 +21,10 @@ __VCS_REV="%i"
 __VCS_ACTION="%F{3}|%F{1}%a"
 __VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f-[$__VCS_REV]%f" # no %m
 __VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta}]%f-[$__VCS_REV]%f"
+__VCS_NAME_FORMAT="%s"
 
-zstyle ':vcs_info:*' formats      "$__VCS_FORMATS"
-zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS"
+zstyle ':vcs_info:*' formats      "$__VCS_FORMATS" "$__VCS_NAME_FORMAT"
+zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS" "$__VCS_NAME_FORMAT"
 
 zstyle ':vcs_info:p4*:' use-server false
 
