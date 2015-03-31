@@ -29,19 +29,38 @@ __exists vim && alias vim="vim -p";
 
 __exists xterm && alias cterm="xterm -C -T 'Console Eterm'";
 
-__exists python2 && alias python2="python2 -tt";
-__exists ipython && alias ipython="ipython --no-confirm-exit";
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 __exists youtube-dl && alias youtube-dl="youtube-dl -t";
 alias startx="startx -audit 4 -nolisten tcp";
 alias sgrep='grep --exclude "*svn*" -I';
 __exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
 __exists urxvt && alias urxvt="urxvtcd"
-__exists python3.2 && ! __exists python3 && alias python3=python3.2
 __exists proxychains && alias pc="proxychains"
-__exists python && alias shareThisDir="python -m http.server 8000"
-__exists python2 && alias shareThisDir="python2 -m SimpleHTTPServer"
-__exists python3 && alias shareThisDir="python3 -m http.server 8000"
+
+__exists ipython && alias ipython="ipython --no-confirm-exit";
+
+for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
+do
+
+    _pythonver="${wpython#python}"
+    _pythonmajorver="${_pythonver%%[^0-9]*}"
+    if __exists $wpython
+    then
+        case $_pythonmajorver in
+            3)
+                alias python="$wpython -bbO"
+                alias python${_pythonmajorver}="$wpython -bb0"
+                alias shareThisDir="python3 -m http.server 8000"
+                ;;
+            2)
+                alias python="$wpython -ttO"
+                alias python${_pythonmajorver}="$wpython -tt0"
+                alias shareThisDir="$wpython -m SimpleHTTPServer"
+                ;;
+        esac
+    fi
+done
+
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
