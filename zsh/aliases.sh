@@ -72,16 +72,16 @@ alias rw-="chmod 600"
 alias r-x="chmod 755"
 alias r--="chmod 644"
 
-portsGrep() {
-	local PORTSDIR
-	PORTSDIR=${PORTSDIR:-/usr/ports}
-	find "$PORTSDIR" -depth 2 -type d -execdir fgrep -H "$1" {}/Makefile \;
-}
-
 __exists idprio && alias verynice="nice nice idprio 31";
 __exists cscope && alias cscope="cscope -CqRv";
 __exists txt2regex && alias txt2regex="txt2regex --whitebg";
 __exists ack-grep && alias ack="ack-grep"
+
+text_textbelt() {
+    number="$1"
+    message="$2"
+    curl http://textbelt.com/text -d number="$1" -d message="'$2'"
+}
 
 dirsize() {
 	du -sk $* | sort -n | perl -ne 'if ( /^(\d+)\s+(.*$)/){$l=log($1+.1);$m=int($l/log(1024)); printf ("%6.1f\t%s\t%25s %s\n",($1/(2**(10*$m))),(("K","M","G","T","P")[$m]),"*"x (1.5*$l),$2);}';
