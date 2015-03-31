@@ -40,7 +40,8 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-set clipboard=unnamed,unnamedplus,autoselect
+"set clipboard=unnamed,unnamedplus,autoselect
+set clipboard=
 
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
