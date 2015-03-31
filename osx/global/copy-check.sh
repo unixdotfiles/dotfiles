@@ -2,6 +2,7 @@
 files="
 /opt/local/etc/macports/macports.conf
 /opt/local/etc/macports/sources.conf
+/etc/exports
 "
 
 for f in $files
