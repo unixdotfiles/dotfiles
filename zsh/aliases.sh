@@ -49,12 +49,12 @@ do
         case $_pythonmajorver in
             3)
                 alias python="$wpython -bbO"
-                alias python${_pythonmajorver}="$wpython -bb0"
+                alias python${_pythonmajorver}="$wpython -bbO"
                 alias shareThisDir="python3 -m http.server 8000"
                 ;;
             2)
                 alias python="$wpython -ttO"
-                alias python${_pythonmajorver}="$wpython -tt0"
+                alias python${_pythonmajorver}="$wpython -ttO"
                 alias shareThisDir="$wpython -m SimpleHTTPServer"
                 ;;
         esac
