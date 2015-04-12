@@ -36,6 +36,7 @@ alias sgrep='grep --exclude "*svn*" -I';
 __exists portmaster && alias portmaster="portmaster -m'-DNO_DEPENDS'";
 __exists urxvt && alias urxvt="urxvtcd"
 __exists proxychains && alias pc="proxychains"
+alias myip="curl ifconfig.pro";
 
 __exists ipython && alias ipython="ipython --no-confirm-exit";
 
