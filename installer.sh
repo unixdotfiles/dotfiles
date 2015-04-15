@@ -61,8 +61,7 @@ ensure_directories ~/.vim/undo ~/.vim/backup ~/.vim/swap ~/.vim/viminfo
 htln vim/vimrc .vimrc
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
-ensure_directories ~/.config/awesome ~/.config/openbox ~/.config/pianobar ~/.config/libfm
-htln awesome/rc.lua .config/awesome/rc.lua
+ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm
 htln pianobar/config .config/pianobar/config
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
