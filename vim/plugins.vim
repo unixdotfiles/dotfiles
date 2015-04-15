@@ -6,7 +6,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
-Bundle 'ajh17/VimCompletesMe'
+"Bundle 'ajh17/VimCompletesMe'
+Plugin 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
 
 " }}}
