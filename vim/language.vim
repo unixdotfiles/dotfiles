@@ -1,7 +1,7 @@
 if has("autocmd")
     au Filetype ruby call Set_Ruby()
     au Filetype c,cpp call Set_C()
-    au Filetype php Set_WWW()
+    au Filetype php call Set_WWW()
     au Filetype css call Set_CSS()
     au Filetype javascript call Set_JavaScript()
     au Filetype html,sgml,xsl,xml call Set_SGML()
@@ -13,7 +13,7 @@ if has("autocmd")
     au Filetype gitcommit call Set_GitCommit()
     au BufNewFile,BufRead log call Set_SVNLog()
     au Filetype sh  call Set_Shell()
-    au BufNewFile,BufRead *.json setlocal filetype=json
+    au BufNewFile,BufRead *.json,.arclint setlocal filetype=json
     au Filetype json call Set_Json()
 endif " has(autocmd)
 
@@ -58,7 +58,6 @@ endfunction " Set_Automake()
 function Set_WWW()
     setlocal textwidth=78
     setlocal tabstop=4
-    setlocal syntax=php.html
     return 0
 endfunction " Set_WWW()
 
