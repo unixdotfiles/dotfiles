@@ -96,6 +96,7 @@ __exists idprio && alias verynice="nice nice idprio 31";
 __exists cscope && alias cscope="cscope -CqRv";
 __exists txt2regex && alias txt2regex="txt2regex --whitebg";
 __exists ack-grep && alias ack="ack-grep"
+__exists gpg2 && ! __exists gpg && alias gpg=gpg2
 
 text_textbelt() {
     number="$1"

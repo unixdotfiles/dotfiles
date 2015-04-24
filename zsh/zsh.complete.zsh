@@ -111,3 +111,4 @@ zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 
 compdef _precommand verynice
 __exists hub && __exists git && compdef hub=git
+__exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
