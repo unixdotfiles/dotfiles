@@ -10,69 +10,57 @@ if has("autocmd")
     au BufNewFile,BufRead *.[1-9] call Set_Man()
     au Filetype python  call Set_Python()
     au BufNewFile,BufRead *.in call Set_Automake()
-    au Filetype gitcommit call Set_GitCommit()
-    au BufNewFile,BufRead log call Set_SVNLog()
+    au Filetype gitcommit call Set_CommitLog()
+    au BufNewFile,BufRead log call Set_CommitLog()
     au Filetype sh  call Set_Shell()
     au BufNewFile,BufRead *.json,.arclint setlocal filetype=json
     au Filetype json call Set_Json()
+    au Filetype vim call Set_Vim()
 endif " has(autocmd)
 
+function Shared_Tabs(len)
+    let &tabstop = a:len
+    let &shiftwidth = a:len
+    let &softtabstop = a:len
+    echom &tw
+endfunction
+
 function Set_crontab()
-	setlocal nowritebackup
-	return 0
+    setlocal nowritebackup
 endfunction
 
 function Set_Ruby()
     setlocal textwidth=70
-    return 0
 endfunction " Set_Ruby()
 
 function Set_C()
     setlocal textwidth=80
-
-    setlocal tabstop=8
-    setlocal shiftwidth=8
-    setlocal softtabstop=8
-
-    return 0
+    call Shared_Tabs(8)
 endfunction " Set_C()
 
 function Set_Automake()
-    setlocal tabstop=2
-    setlocal shiftwidth=2
-    setlocal softtabstop=2
+    call Shared_Tabs(len)
     setlocal expandtab
-
-    return 0
 endfunction " Set_Automake()
 
 function Set_Json()
-    setlocal tabstop=2
-    setlocal shiftwidth=2
-    setlocal softtabstop=2
+    call Shared_Tabs(2)
     setlocal expandtab
-
-    return 0
-endfunction " Set_Automake()
+endfunction " Set_Json()
 
 function Set_WWW()
     setlocal textwidth=78
     setlocal tabstop=4
-    return 0
 endfunction " Set_WWW()
 
 function Set_CSS()
     setlocal textwidth=78
     setlocal tabstop=4
-    setlocal syntax=css
-    setlocal ft=css
-    return 0
 endfunction " Set_CSS()
 
 function Set_JavaScript()
     setlocal textwidth=78
-    setlocal tabstop=4
-    return 0
+    call Shared_Tabs(4)
 endfunction " Set_JavaScript()
 
 function Set_SGML()
@@ -90,42 +78,33 @@ function Set_SGML()
 endfunction " Set_SGML()
 
 function Set_Man()
-	call ShowSpecial()
-	setlocal tabstop=4
-	setlocal shiftwidth=4
+    call ShowSpecial()
+    call Shared_Tabs(4)
 endfunction "Set_Man()
 
 function Set_Velocity()
-	setlocal expandtab
-	setlocal softtabstop=2
-	setlocal sw=2
-	setlocal ts=2
+    setlocal expandtab
+    call Shared_Tabs(2)
 endfunction "Set_Velocity()
 
 function Set_Python()
-	setlocal expandtab
-	setlocal softtabstop=4
-	setlocal shiftwidth=4
-	setlocal tabstop=4
+    setlocal expandtab
+    call Shared_Tabs(2)
 endfunction
 
-function Set_GitCommit()
-	 setlocal spell
-	 setlocal textwidth=72
-	 setlocal cc=+1
-endfunction
-
-function Set_SVNLog()
-	 setlocal spell
-	 setlocal textwidth=80
-	 setlocal cc=+1
+function Set_CommitLog()
+    setlocal spell
+    setlocal textwidth=72
+    setlocal cc=+1
 endfunction
 
 function Set_Shell()
-	setlocal expandtab
-	setlocal softtabstop=4
-	setlocal sw=4
-	setlocal ts=4
+    setlocal expandtab
+    call Shared_Tabs(4)
+endfunction
+
+function Set_Vim()
+    call Shared_Tabs(4)
 endfunction
 
 function ShowSpecial()
