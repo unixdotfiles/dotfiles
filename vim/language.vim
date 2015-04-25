@@ -80,8 +80,6 @@ function Set_SGML()
     call ShowSpecial()
     setlocal nonumber
     syn match sgmlSpecial "&[^;]*;"
-    setlocal syntax=sgml
-    setlocal ft=sgml
     setlocal shiftwidth=2
     setlocal softtabstop=2
     setlocal textwidth=70
