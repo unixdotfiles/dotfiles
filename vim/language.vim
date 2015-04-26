@@ -4,7 +4,7 @@ if has("autocmd")
     au Filetype php call Set_WWW()
     au Filetype css call Set_CSS()
     au Filetype javascript call Set_JavaScript()
-    au Filetype html,sgml,xsl,xml call Set_SGML()
+    au Filetype html,sgml,xsl,xml,docbk call Set_SGML()
     au Filetype crontab call Set_crontab()
     au BufNewFile,BufRead *.vm call Set_Velocity() " TA
     au BufNewFile,BufRead *.[1-9] call Set_Man()
