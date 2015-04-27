@@ -1,5 +1,9 @@
 #!/bin/sh 
 
+gc_add() {
+    git config --global "$@"
+}
+
 gc() {
 	git config --global --replace-all "$@"
 }
@@ -34,11 +38,12 @@ gc alias.pout "diff --stat -p origin/master HEAD"
 gc alias.view "log --graph --decorate --oneline --boundary"
 gc alias.rollback 'reset HEAD^'
 gc alias.st status
-gc alias.where refs/heads/master
 
 # Coloring options
 gc color.branch auto
 gc color.diff auto
+gc color.status auto
+gc color.ui auto
 gc color.branch.current "red bold"
 gc color.branch.local red
 gc color.branch.remote blue
@@ -72,6 +77,6 @@ gc merge.conflictstyle diff3
 gc init.templatedir '~/.conf/git/template/'
 gc core.excludesfile '~/.conf/git/gitignore'
 
-
-
 gc push.default simple
+
+gc_add url.git@github.com:.pushInsteadOf git://github.com/
