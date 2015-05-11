@@ -107,6 +107,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+i move container to workspace irc
 
+bindsym $mod+p move workspace to output right
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -151,4 +153,4 @@ assign [class="^Firefox$"] → 3: firefox
 
 assign [class="^Hexchat$"] → irc
 
-bindsym $mod+p move workspace to output right
+for_window [window_role="pop-up"] floating enable
