@@ -154,3 +154,4 @@ assign [class="^Firefox$"] → 3: firefox
 assign [class="^Hexchat$"] → irc
 
 for_window [window_role="pop-up"] floating enable
+for_window [class="^Firefox$" instance="^Toolkit$"] floating enable
