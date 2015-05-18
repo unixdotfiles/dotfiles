@@ -50,7 +50,6 @@ endfunction " Set_Json()
 
 function Set_WWW()
     setlocal textwidth=78
-    setlocal tabstop=4
 endfunction " Set_WWW()
 
 function Set_CSS()
@@ -89,7 +88,7 @@ endfunction "Set_Velocity()
 
 function Set_Python()
     setlocal expandtab
-    call Shared_Tabs(2)
+    call Shared_Tabs(4)
 endfunction
 
 function Set_CommitLog()
