@@ -73,3 +73,7 @@ function setExecutionTimer() {
 }
 
 PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
+
+autoload -Uz  add-zsh-hook
+add-zsh-hook precmd setCurrentPS1
+add-zsh-hook preexec setExecutionTimer
