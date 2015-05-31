@@ -22,7 +22,6 @@ function Shared_Tabs(len)
     let &tabstop = a:len
     let &shiftwidth = a:len
     let &softtabstop = a:len
-    echom &tw
 endfunction
 
 function Set_crontab()
