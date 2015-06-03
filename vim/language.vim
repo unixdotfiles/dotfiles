@@ -38,7 +38,7 @@ function Set_C()
 endfunction " Set_C()
 
 function Set_Automake()
-    call Shared_Tabs(len)
+    call Shared_Tabs(8)
     setlocal expandtab
 endfunction " Set_Automake()
 
