@@ -27,6 +27,8 @@ source $confpath/keybinding.zsh
 source $confpath/eval_spin.func
 source $confpath/precmd.zsh
 
+msource ~/.post.zshrc
+
 # Make sure every entry in $fpath is unique.
 typeset -U fpath
 typeset -U path
