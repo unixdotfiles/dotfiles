@@ -1,8 +1,6 @@
 # Interactive non-login shell
 source ~/.conf/common_shell/rc.sh
 
-source $_confpath/functions.sh
-source $_confpath/env.sh
 source $_shellpath/eval_spin.func
 
 if [[ $- == *i* ]]
