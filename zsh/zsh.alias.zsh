@@ -126,3 +126,25 @@ autodisown() {
 
 __exists xpdf && alias xpdf="autodisown xpdf";
 __exists evince && alias evince="autodisown evince";
+
+for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
+do
+
+    _pythonver="${wpython#python}"
+    _pythonmajorver="${_pythonver%%[^0-9]*}"
+    if __exists $wpython
+    then
+        case $_pythonmajorver in
+            3)
+                alias python="$wpython -bbO"
+                alias python${_pythonmajorver}="$wpython -bbO"
+                alias shareThisDir="python3 -m http.server 8000"
+                ;;
+            2)
+                alias python="$wpython -ttO"
+                alias python${_pythonmajorver}="$wpython -ttO"
+                alias shareThisDir="$wpython -m SimpleHTTPServer"
+                ;;
+        esac
+    fi
+done

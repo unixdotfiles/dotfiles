@@ -40,27 +40,6 @@ alias myip="curl ifconfig.pro";
 
 __exists ipython && alias ipython="ipython --no-confirm-exit";
 
-for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
-do
-
-    _pythonver="${wpython#python}"
-    _pythonmajorver="${_pythonver%%[^0-9]*}"
-    if __exists $wpython
-    then
-        case $_pythonmajorver in
-            3)
-                alias python="$wpython -bbO"
-                alias python${_pythonmajorver}="$wpython -bbO"
-                alias shareThisDir="python3 -m http.server 8000"
-                ;;
-            2)
-                alias python="$wpython -ttO"
-                alias python${_pythonmajorver}="$wpython -ttO"
-                alias shareThisDir="$wpython -m SimpleHTTPServer"
-                ;;
-        esac
-    fi
-done
 
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
