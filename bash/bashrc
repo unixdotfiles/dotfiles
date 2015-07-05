@@ -1,12 +1,9 @@
 # Interactive non-login shell
-confpath=~/.conf/zsh/
+source ~/.conf/common_shell/rc.sh
 
-#Set some useful variables
-HOST="$(hostname)"
-
-source $confpath/functions.sh
-source $confpath/env.sh
-source $confpath/eval_spin.func
+source $_confpath/functions.sh
+source $_confpath/env.sh
+source $_shellpath/eval_spin.func
 
 if [[ $- == *i* ]]
 then

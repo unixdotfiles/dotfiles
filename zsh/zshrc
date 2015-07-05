@@ -4,7 +4,7 @@ msource ~/.options.zshrc
 
 source $_shellpath/start-tmux.sh
 source $_shellpath/set-options.zsh
-source $_shellpath/aliases.sh
+source $_confpath/aliases.sh
 source $_shellpath/zsh.alias.zsh
 source $_shellpath/zsh.complete.zsh
 source $_shellpath/ps1.zsh

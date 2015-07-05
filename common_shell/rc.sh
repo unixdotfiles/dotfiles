@@ -9,5 +9,3 @@ source $_confpath/functions.sh
 msource /etc/environment
 
 source $_confpath/env.sh
-
-export _confpath=~/.conf/zsh
