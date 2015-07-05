@@ -1,31 +1,16 @@
-#used for interactive shells
-use="all"
-confpath=~/.conf/zsh
+source ~/.conf/common_shell/rc.sh
 
-#Set some useful variables
-__HOSTNAME="$(hostname)"
-HOST="${__HOSTNAME%%.*}"
-
-msource() {
-	local f="$1";
-	[ -f "$f" ] && . "$f";
-}
-
-msource /etc/environment
-
-source $confpath/functions.sh
 msource ~/.options.zshrc
 
-source $confpath/env.sh
-source $confpath/start-tmux.sh
-source $confpath/set-options.zsh
-source $confpath/aliases.sh
-source $confpath/zsh.alias.zsh
-source $confpath/zsh.complete.zsh
-source $confpath/ps1.zsh
-source $confpath/keybinding.zsh
-source $confpath/eval_spin.func
-source $confpath/precmd.zsh
+source $_shellpath/start-tmux.sh
+source $_shellpath/set-options.zsh
+source $_shellpath/aliases.sh
+source $_shellpath/zsh.alias.zsh
+source $_shellpath/zsh.complete.zsh
+source $_shellpath/ps1.zsh
+source $_shellpath/keybinding.zsh
+source $_shellpath/eval_spin.func
+source $_shellpath/precmd.zsh
 
 msource ~/.post.zshrc
 

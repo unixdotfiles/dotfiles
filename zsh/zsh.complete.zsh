@@ -12,7 +12,6 @@
 	setopt auto_menu         # show completion menu on succesive tab press
 	setopt complete_in_word
 	setopt always_to_end
-	setopt rec_exact
 
 #Some functions, are very slow. 
 	zstyle ':completion:*' use-cache on

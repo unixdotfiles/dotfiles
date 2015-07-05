@@ -56,3 +56,8 @@ __ensure_sshagent() {
 define_remote_alias() {
     eval $(__create_remote_alias "$@")
 }
+
+msource() {
+	local f="$1";
+	[ -f "$f" ] && . "$f";
+}
