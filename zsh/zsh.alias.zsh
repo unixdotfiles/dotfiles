@@ -118,6 +118,7 @@ alias -g W='| wc'
 alias cd\?="dirs -pv";
 alias back='builtin cd "$OLDPWD";pwd'
 h () { history 0 | grep "$1" }
+__exists curl && dict() { curl "dict://dict.org/d:$1" }
 
 autodisown() {
 	"$@" &
