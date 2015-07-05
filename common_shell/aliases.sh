@@ -13,8 +13,6 @@ then
     fi
 fi
 
-uname_s=$(uname -s)
-
 if [ "$uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";

@@ -52,7 +52,7 @@ PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 function setCurrentPS1()
 {
 	PS1_BATTERY=""
-	[ -n "$__SHOW_BSD_BATTERY" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
+	[ "$uname_s" = "FreeBSD" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 	PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
 	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_BATTERY $PS1_EC2 $PS1_WD $PS1_ERR%f]%#"
 	RPS1_TIMER=""

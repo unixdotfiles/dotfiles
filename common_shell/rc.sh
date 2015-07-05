@@ -5,6 +5,8 @@ export _confpath=~/.conf/common_shell
 __HOSTNAME="$(hostname)"
 HOST="${__HOSTNAME%%.*}"
 
+uname_s=$(uname -s)
+
 source $_confpath/functions.sh
 msource /etc/environment
 
