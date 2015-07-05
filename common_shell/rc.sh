@@ -11,3 +11,4 @@ source $_confpath/functions.sh
 msource /etc/environment
 
 source $_confpath/env.sh
+source $_confpath/extra/eval_spin.func

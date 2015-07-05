@@ -9,7 +9,6 @@ source $_shellpath/zsh.alias.zsh
 source $_shellpath/zsh.complete.zsh
 source $_shellpath/ps1.zsh
 source $_shellpath/keybinding.zsh
-source $_shellpath/eval_spin.func
 source $_shellpath/precmd.zsh
 
 msource ~/.post.zshrc
