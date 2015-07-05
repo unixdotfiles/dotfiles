@@ -1,5 +1,5 @@
-confpath=~/.conf/zsh/
-. $confpath/functions.sh
+_confpath=~/.conf/common_shell
+. $_confpath/functions.sh
 
 # Interactive Login Shell or non-interactive shell
 if [[ $- == *i* ]]
