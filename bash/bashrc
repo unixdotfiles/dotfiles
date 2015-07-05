@@ -9,7 +9,7 @@ if [[ $- == *i* ]]
 then
 
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH:${HOME}/bin
-. ~/.conf/common_shell/tputcolors.sh
+. $_confpath/tputcolors.sh
 
 #some settings
 PS1_USER="${ANSI_COLOR_BLUE}\u";              #my username
