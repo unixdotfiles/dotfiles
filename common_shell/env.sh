@@ -1,17 +1,11 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
-#export LESS="-RMj5"
 
 export PATH="/usr/local/libexec/ccache:/opt/local/bin:/opt/local/sbin:$PATH:$HOME/bin:$HOME/svn/arcanist/bin";
 export CCACHE_PATH=/usr/local/bin:/usr/bin
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
-
-#export MANPATH=/opt/local/share/man:$MANPATH
-
-#grep default options
-export GREP_OPTIONS="--color"
 
 __exists chrome && export BROWSER=$(which chrome)
 __exists google-chrome && export BROWSER=$(which google-chrome)
@@ -22,8 +16,8 @@ __exists urxvtcd && export TERMINAL=urxvtcd
 
 export XZ_OPT="-9eM 90%";
 export GZIP="-9";
+export GREP_OPTIONS="--color"
 
-#export TZ="EST";
 export CHARSET="UTF-8";
 
 #Yes GTK - I really do want you to listen to my config file
