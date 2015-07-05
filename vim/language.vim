@@ -1,7 +1,7 @@
 if has("autocmd")
     au Filetype ruby call Set_Ruby()
     au Filetype c,cpp call Set_C()
-    au Filetype php call Set_WWW()
+    au Filetype php call Set_PHP()
     au Filetype css call Set_CSS()
     au Filetype javascript call Set_JavaScript()
     au Filetype html,sgml,xsl,xml,docbk call Set_SGML()
@@ -46,6 +46,12 @@ function Set_Json()
     call Shared_Tabs(2)
     setlocal expandtab
 endfunction " Set_Json()
+
+function Set_PHP()
+	call Shared_Tabs(2)
+	set expandtab
+    setlocal textwidth=78
+endfunction " Set_PHP()
 
 function Set_WWW()
     setlocal textwidth=78
