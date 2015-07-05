@@ -26,4 +26,4 @@ export PS1="[\! $PS1_USER@$PS1_HOST $PS1_WD ${ANSI_COLOR_DEFAULT}]$PS1_PROMPT"
 
 fi
 
-[ -e ~/.bashrc.post ] && . ~/.bashrc.post
+msource ~/.post.bashrc
