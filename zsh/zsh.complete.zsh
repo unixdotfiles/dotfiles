@@ -13,7 +13,7 @@
 	setopt complete_in_word
 	setopt always_to_end
 
-#Some functions, are very slow. 
+	#Some functions, are very slow. 
 	zstyle ':completion:*' use-cache on
 	zstyle ':completion:*' cache-path ~/.zsh/cache
 
@@ -38,8 +38,6 @@
 #	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 #	fi
 
-	#also ignore completer functions
-#	zstyle ':completion:*:complete:-parameter-:*' ignored-patterns __ZSHRC_FIRST_RUN
 #	export FIGNORE="";
 
 	# Always complete one value (file name) only once in the current line.
@@ -72,7 +70,6 @@ zstyle ':completion:*:kill:*'   force-list always
 __git_files () {
 	_wanted files expl 'local files' _files
 }
-
 
 ## ps ##
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
