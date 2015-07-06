@@ -1,6 +1,6 @@
 source ~/.conf/common_shell/rc.sh
 
-msource ~/.options.zshrc
+msource ~/.options.pre
 
 source $_shellpath/start-tmux.sh
 source $_shellpath/set-options.zsh
@@ -10,7 +10,7 @@ source $_shellpath/ps1.zsh
 source $_shellpath/keybinding.zsh
 source $_shellpath/precmd.zsh
 
-msource ~/.post.zshrc
+msource ~/.options.post
 
 # Make sure every entry in $fpath is unique.
 typeset -U fpath
