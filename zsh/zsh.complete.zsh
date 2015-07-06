@@ -27,17 +27,13 @@
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' list-colors ''
 	
-	#Remove trailing slash of empty directory when completed
-#	zstyle ':completion:*' squeeze-slashes true
-
 	# case-insensitive (all),partial-word and then substring completion
-#	if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
+#	if [ "$CASE_SENSITIVE" = "true" ]; then
 #	  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 #	  unset CASE_SENSITIVE
 #	else
 #	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 #	fi
-
 #	export FIGNORE="";
 
 	# Always complete one value (file name) only once in the current line.
