@@ -2,7 +2,6 @@
 
 msource ~/.options.pre
 
-source $_shellpath/start-tmux.sh
 source $_shellpath/set-options.zsh
 source $_shellpath/zsh.alias.zsh
 source $_shellpath/zsh.complete.zsh

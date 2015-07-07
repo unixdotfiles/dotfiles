@@ -4,7 +4,6 @@ msource ~/.options.pre
 
 if [[ $- == *i* ]]
 then
-# Interactive non-login shell
 
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH:${HOME}/bin
 . $_confpath/tputcolors.sh
