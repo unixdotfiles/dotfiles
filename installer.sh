@@ -4,7 +4,7 @@ begon="$self/.begon";
 boxname=$(hostname -s)
 osname=$(uname -s)
 
-. $self/zsh/functions.sh
+. $self/common_shell/functions.sh
 
 _tln () {
 	[ ! -e "$1" ] && return 1;
