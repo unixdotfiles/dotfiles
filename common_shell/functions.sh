@@ -1,3 +1,7 @@
+# __ prefix = internal function
+#  _ prefix = shellrc function
+# no prefix = user function
+
 __exists () {
       which $1 >/dev/null 2>&1;
       return $?;
@@ -51,6 +55,10 @@ __ensure_sshagent() {
     __sshagent_keysloaded || __aggressive_ssh_agent_restore
     __sshagent_keysloaded || ssh-add
     true
+}
+
+ensure_kinit() {
+    klist -t 2>/dev/null || kinit --keychain &
 }
 
 define_remote_alias() {
