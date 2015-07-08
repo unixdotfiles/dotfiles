@@ -29,8 +29,6 @@ export CORRECT_IGNORE="_*";
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
 
-export TINDY="/usr/local/tinderbox/";
-
 export INPUTRC="~/.inputrc";
 
 export ENV=~/.shrc;
@@ -76,3 +74,5 @@ export LANG=en_US.UTF-8
 export CONF_PATH=~/.conf/
 
 export MYSQL_PS1="\u@\h [\d]>"
+
+export WORKON_HOME=~/.ve
