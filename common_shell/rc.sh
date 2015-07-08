@@ -12,8 +12,9 @@ __INTSHELL="sh";
 uname_s=$(uname -s)
 
 source $_confpath/functions.sh
-msource /etc/environment
+msource ~/.options.pre
 
+msource /etc/environment
 source $_confpath/env.sh
 source $_confpath/start-tmux.sh
 source $_confpath/aliases.sh

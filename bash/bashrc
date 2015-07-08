@@ -1,7 +1,5 @@
 . ~/.conf/common_shell/rc.sh
 
-msource ~/.options.pre
-
 if [[ $- == *i* ]]
 then
 
