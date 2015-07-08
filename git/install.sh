@@ -54,6 +54,7 @@ gc color.diff.new "blue bold"
 #gc color.status changed
 #gc color.status untracked
 
+gc diff.renames copies
 gc --bool diff.mnemonicprefix true
 
 #Don't throw anything away
