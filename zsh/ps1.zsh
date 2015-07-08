@@ -65,7 +65,10 @@ function setCurrentPS1()
 		fi
 		unset __cmd_exec_timer
 	fi
-	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}$PS1_VCS%f";
+	_VENV_NAME="${VIRTUAL_ENV##*/}"
+	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f)"
+	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
+	RPS1="$RPS1_TIMER${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f";
 }
 
 function setExecutionTimer() {
