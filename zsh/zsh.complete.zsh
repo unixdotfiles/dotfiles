@@ -17,6 +17,8 @@
 	zstyle ':completion:*' use-cache on
 	zstyle ':completion:*' cache-path ~/.zsh/cache
 
+	zstyle ':completion:*' rehash true
+
 	#Fuzzy matching of completions for when you mistype them:
 #	zstyle ':completion:*' completer _complete _match _approximate
 #	zstyle ':completion:*:match:*' original only
