@@ -1,4 +1,3 @@
-export _shellpath=~/.conf/zsh
 export _confpath=~/.conf/common_shell
 
 #Set some useful variables
@@ -8,6 +7,7 @@ HOST="${__HOSTNAME%%.*}"
 __INTSHELL="sh";
 [ -n "$BASH_VERSION" ] && __INTSHELL="bash"
 [ -n "$ZSH_VERSION" ] && __INTSHELL="zsh"
+export _shellpath=~/.conf/$__INTSHELL
 
 uname_s=$(uname -s)
 
