@@ -44,7 +44,7 @@ then
 		fi
 		if ! gpg-agent -q >/dev/null 2>&1
 		then
-			eval $(gpg-agent --write-env-file ~/.gpg-agent-info --daemon)
+			eval $(gpg-agent --daemon)
 		fi
 	fi
 fi
