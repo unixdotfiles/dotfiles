@@ -11,11 +11,12 @@ export _shellpath=~/.conf/$__INTSHELL
 
 uname_s=$(uname -s)
 
-source $_confpath/functions.sh
+. $_confpath/functions.sh
 msource ~/.options.pre
 
 msource /etc/environment
-source $_confpath/env.sh
-source $_confpath/start-tmux.sh
-source $_confpath/aliases.sh
-source $_confpath/extra/eval_spin.func
+. $_confpath/env.sh
+. $_confpath/start-tmux.sh
+. $_confpath/aliases.sh
+. $_confpath/extra/eval_spin.func
+. $_shellpath/ps1.$__INTSHELL
