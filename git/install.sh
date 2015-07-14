@@ -59,8 +59,8 @@ gc --bool diff.mnemonicprefix true
 
 #Don't throw anything away
 gc core.logAllRefUpdates true
-gc gc.reflogExpire none
-gc gc.reflogExpireUnreachable none
+gc gc.reflogExpire never
+gc gc.reflogExpireUnreachable never
 gc gc.auto 0
 
 gc core.quotepath true
