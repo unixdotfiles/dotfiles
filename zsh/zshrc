@@ -1,8 +1,8 @@
 . ~/.conf/common_shell/rc.sh
 
 source $_shellpath/set-options.zsh
-source $_shellpath/zsh.alias.zsh
-source $_shellpath/zsh.complete.zsh
+source $_shellpath/alias.zsh
+source $_shellpath/complete.zsh
 source $_shellpath/keybinding.zsh
 source $_shellpath/precmd.zsh
 
