@@ -48,7 +48,7 @@ alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 alias ssh="__ensure_sshagent && ssh"
 __exists hg && alias hg="__ensure_sshagent && hg"
-if [ -n "$__shellrc_noalias_git" ]
+if [ -z "$__shellrc_noalias_git" ]
 then
     __exists git && alias git="__ensure_sshagent && git"
     __exists hub && alias git="__ensure_sshagent && hub"
