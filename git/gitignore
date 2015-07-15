@@ -11,13 +11,17 @@
 .svn/
 
 # Vim specific files
-.*.sw[a-z]
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 
 # OSX Specific
 ._*
+.AppleDouble
+.DS_Store
+.LSOverride
 
 # Compiled Object files
 *.o
@@ -63,6 +67,17 @@ Session.vim
 
 # R
 .Rhistory
+
+# Python
+__pycache__/
+*.py[cdo]
+*$py.class
+.[Pp]ython
+dist/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
 
 # Never Ignore .gitignore
 !.gitignore
