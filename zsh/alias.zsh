@@ -123,6 +123,7 @@ autodisown() {
 __exists xpdf && alias xpdf="autodisown xpdf";
 __exists evince && alias evince="autodisown evince";
 
+[ -z "__shellrc_noalias_python" ] && \
 for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
 do
 
