@@ -1,7 +1,17 @@
 #!/bin/sh 
 
+set -e
+
+_gc_prefix() {
+  git config --global "$@"
+}
+
+gc_add() {
+  _gc_prefix --add "$@"
+}
+
 gc() {
-	git config --global --replace-all "$@"
+  _gc_prefix --replace-all "$@"
 }
 
 gc user.name "Eitan Adler"
@@ -71,12 +81,14 @@ gc diff.algorithm patience
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
 
-gc init.templatedir '~/.conf/git/template/'
-gc core.excludesfile '~/.conf/git/gitignore'
+gc --path init.templatedir '~/.conf/git/template/'
+gc --path core.excludesfile '~/.conf/git/gitignore'
 
 gc push.default simple
 
 # URLs that should be auto replaced
-gc url.git@github.com:.pushInsteadOf git://github.com/
+_gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
+gc_add url.git@github.com:.pushInsteadOf https://github.com/billiob/
+gc_add url.git@github.com:.pushInsteadOf git://github.com/
 
-gc core.include ~/.gitconfig.local
+gc --path core.include ~/.gitconfig.local
