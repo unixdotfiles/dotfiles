@@ -1,9 +1,5 @@
 #!/bin/sh 
 
-gc_add() {
-    git config --global "$@"
-}
-
 gc() {
 	git config --global --replace-all "$@"
 }
@@ -80,4 +76,7 @@ gc core.excludesfile '~/.conf/git/gitignore'
 
 gc push.default simple
 
-gc_add url.git@github.com:.pushInsteadOf git://github.com/
+# URLs that should be auto replaced
+gc url.git@github.com:.pushInsteadOf git://github.com/
+
+gc core.include ~/.gitconfig.local
