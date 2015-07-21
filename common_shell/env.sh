@@ -73,6 +73,6 @@ export LANG=en_US.UTF-8
 
 export CONF_PATH=~/.conf/
 
-export MYSQL_PS1="\u@\h [\d]>"
+export MYSQL_PS1="\c \u@\h:\p [\d]>"
 
 export WORKON_HOME=~/.ve
