@@ -1,0 +1,2 @@
+:- (current_prolog_flag(gui, true) -> guitracer ; true).
+:- set_prolog_flag(history, 5000).

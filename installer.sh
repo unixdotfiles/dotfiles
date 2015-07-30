@@ -41,6 +41,7 @@ htln zsh/zlogout .zlogout
 htln sh/profile .profile
 htln nano/USE_RC .nanorc
 htln nano .mynano
+htln swipl/swipl .swipl
 htln X/XCompose .XCompose
 htln X/xinitrc .xinitrc
 htln X/Xmodmap .Xmodmap
