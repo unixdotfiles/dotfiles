@@ -1,4 +1,10 @@
 git
+ipython27
 ipython34
+swi-prolog
+perl5.16
+python27
 python34
+swi-prolog
+vim +huge +python34 +python27 +cscope +ruby20 +tcl
 zsh
