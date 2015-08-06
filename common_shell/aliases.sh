@@ -46,15 +46,12 @@ __exists pastebinit && alias pastebinit="pastebinit -a ''"
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
-alias ssh="__ensure_sshagent && ssh"
-__exists hg && alias hg="__ensure_sshagent && hg"
-if [ -z "$__shellrc_noalias_git" ]
-then
-    __exists git && alias git="__ensure_sshagent && git"
-    __exists hub && alias git="__ensure_sshagent && hub"
-fi
-__exists svn && alias svn="__ensure_sshagent && svn"
-alias scp="__ensure_sshagent && scp"
+__exists ssh && alias ssh="ensure_auth && ssh"
+__exists scp && alias scp="ensure_auth && scp"
+__exists hg && alias hg="ensure_auth && hg"
+__exists git && alias git="ensure_auth && git"
+__exists hub && alias git="ensure_auth && hub"
+__exists svn && alias svn="ensure_auth && svn"
 
 alias diff="diff -p";
 

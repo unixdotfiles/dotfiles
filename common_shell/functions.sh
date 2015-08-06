@@ -57,9 +57,25 @@ __ensure_sshagent() {
     true
 }
 
-ensure_kinit() {
+__ensure_kinit() {
     klist -t 2>/dev/null || kinit --keychain &
 }
+
+# maybe run in precmd instead of using an alias...
+ensure_auth() {
+  case "$__shellrc_auth_mode" in
+    "")
+      ;;
+    "ssh")
+      __ensure_sshagent
+      ;;
+    "kinit")
+      __ensure_kinit
+      ;;
+  esac
+}
+
+
 
 define_remote_alias() {
     eval $(__create_remote_alias "$@")
