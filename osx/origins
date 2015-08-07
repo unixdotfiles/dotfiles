@@ -5,6 +5,7 @@ swi-prolog
 perl5.16
 python27
 python34
+subversion
 swi-prolog
 the_silver_searcher
 tmux
