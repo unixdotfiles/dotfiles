@@ -42,6 +42,9 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+# Keep WiFi on logout
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 prefs DisconnectOnLogout=NO
+
 ###############################################################################
 # Finder
 ###############################################################################
@@ -57,6 +60,9 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Show status bar in finder
 defaults write com.apple.finder ShowStatusBar -bool true
+
+# Disable AirDrop
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
 
 
 ###############################################################################

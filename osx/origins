@@ -1,5 +1,6 @@
 git +bash_completion +svn
 mercurial
+nmap +zenmap
 swi-prolog
 perl5.16
 py27-ipython
