@@ -1,5 +1,6 @@
+curl +ares +http2
 git +bash_completion +svn
-mercurial
+mercurial +bash_completion +zsh_completion
 nmap +zenmap
 swi-prolog
 perl5.16
