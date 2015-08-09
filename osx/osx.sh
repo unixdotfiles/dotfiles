@@ -16,28 +16,21 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Enable full keyboard access for all controls
-# (e.g. enable Tab in modal dialogs)
+# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Disabling press-and-hold for special keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
-# Expand save panel by default
+# Expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Display ASCII control characters using caret notation in standard text views
 # defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
-
-# Check for updates daily
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Save to disk rather than icloud by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -59,18 +52,15 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Show POSIX path in title of Finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-# Show hidden files in Finder by default
+# Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
-
-# Show dotfiles in Finder by default
-# defaults write com.apple.finder AppleShowAllFiles TRUE
 
 # Show status bar in finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
 
 ###############################################################################
-# Safari & WebKit #
+# Safari & WebKit
 ###############################################################################
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
@@ -94,7 +84,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.CrashReporter DialogType developer
 
 ###############################################################################
-# Safari & WebKit #
+# Chrome
 ###############################################################################
 
 # Disable backswipe in chrome

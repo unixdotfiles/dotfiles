@@ -8,6 +8,5 @@
 
 msource ~/.options.post
 
-# Make sure every entry in $fpath is unique.
 typeset -U fpath
 typeset -U path
