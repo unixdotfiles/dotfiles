@@ -1,11 +1,12 @@
-git
-ipython27
-ipython34
+git +bash_completion +svn
 mercurial
 swi-prolog
 perl5.16
+py27-ipython
+py34-ipython
 python27
 python34
+scala2.11
 subversion
 swi-prolog
 the_silver_searcher
