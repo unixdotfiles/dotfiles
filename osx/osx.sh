@@ -114,4 +114,4 @@ defaults write org.m0k.transmission WarningLegal -bool false
 # git
 ###############################################################################
 
-git config --global credential.helper osxkeychain
+git config --global --replace-all credential.helper osxkeychain
