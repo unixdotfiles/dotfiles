@@ -67,7 +67,7 @@ gc --bool diff.mnemonicprefix true
 gc core.logAllRefUpdates true
 gc gc.reflogExpire never
 gc gc.reflogExpireUnreachable never
-gc gc.auto 0
+gc --int gc.auto 0
 
 gc core.quotepath true
 
