@@ -72,7 +72,7 @@ gc gc.auto 0
 gc core.quotepath true
 
 # Set pull to rebase instead of merge
-gc branch.autosetuprebase remote
+gc branch.autosetuprebase always
 
 # core.precomposeunicode
 
