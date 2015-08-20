@@ -3,6 +3,8 @@ files="
 /opt/local/etc/macports/macports.conf
 /opt/local/etc/macports/sources.conf
 /etc/exports
+/etc/launchd.conf
+/etc/sysctl.conf
 "
 
 for f in $files
