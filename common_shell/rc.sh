@@ -20,3 +20,6 @@ msource /etc/environment
 . $_confpath/aliases.sh
 . $_confpath/extra/eval_spin.func
 . $_shellpath/ps1.$__INTSHELL
+
+# Used to work with a PATH unmodified by .options.post
+__CLEAN_PATH=$PATH
