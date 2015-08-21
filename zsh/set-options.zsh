@@ -28,7 +28,6 @@ setopt hist_reduce_blanks
 # Job related options
 setopt LONG_LIST_JOBS
 
-# correction/completion related options {{{
 setopt autocd
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -36,8 +35,6 @@ setopt complete_aliases
 setopt extendedglob
 #setopt correct_all
 unsetopt nomatch
-
-# }}}
 
 # Speedy options
 setopt hashcmds

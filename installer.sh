@@ -37,6 +37,7 @@ ensure_directories() {
 
 ensure_directories ~/.zsh/cache
 htln zsh/zshrc .zshrc
+htln zsh/zshenv .zshenv
 htln sh/profile .profile
 htln nano/USE_RC .nanorc
 htln nano .mynano
