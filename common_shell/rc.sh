@@ -27,6 +27,6 @@ do
 done
 
 # Used to work with a PATH unmodified by .options.post
-__CLEAN_PATH=$PATH
+CLEAN_PATH=$PATH
 
 msource ~/.options.post
