@@ -30,3 +30,5 @@ done
 CLEAN_PATH=$PATH
 
 msource ~/.options.post
+
+export PATH="$__EARLY_PATH:$PATH:$__LATEPATH"

@@ -2,7 +2,8 @@ export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
 
-export PATH="$HOME/bin:/usr/local/libexec/ccache:/opt/local/bin:/opt/local/sbin:$PATH:$HOME/svn/arcanist/bin";
+export __EARLY_PATH="$HOME/bin"
+export __LATE_PATH="/usr/local/libexec/ccache:/opt/local/sbin:/opt/local/bin:$HOME/svn/arcanist/bin"
 export CCACHE_PATH=/usr/local/bin:/usr/bin
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
