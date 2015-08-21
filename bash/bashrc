@@ -3,5 +3,3 @@ then
 . ~/.conf/common_shelL/tputcolors.sh
 fi
 . ~/.conf/common_shell/rc.sh
-
-msource ~/.options.post

@@ -1,12 +1,5 @@
+__rc_shell_files="set-options alias complete keybinding precmd"
 . ~/.conf/common_shell/rc.sh
-
-. $_shellpath/set-options.zsh
-. $_shellpath/alias.zsh
-. $_shellpath/complete.zsh
-. $_shellpath/keybinding.zsh
-. $_shellpath/precmd.zsh
-
-msource ~/.options.post
 
 typeset -U fpath
 typeset -U path

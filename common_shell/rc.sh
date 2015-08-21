@@ -21,5 +21,12 @@ msource /etc/environment
 . $_confpath/extra/eval_spin.func
 . $_shellpath/ps1.$__INTSHELL
 
+for fle in $__rc_shell_files
+do
+  . $_shellpath/$fle.$__INTSHELL
+done
+
 # Used to work with a PATH unmodified by .options.post
 __CLEAN_PATH=$PATH
+
+msource ~/.options.post
