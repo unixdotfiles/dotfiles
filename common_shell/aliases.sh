@@ -78,6 +78,7 @@ __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 __exists kinit && alias kinit="kinit --keychain"
 
 __exists swipl && alias swipl="swipl -q"
+__exists R && alias R="R --save --quiet"
 
 text_textbelt() {
     number="$1"

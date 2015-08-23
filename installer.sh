@@ -89,6 +89,7 @@ htln ack/ackrc .ackrc
 htln slate/slate .slate
 htln psql/psqlrc .psqlrc
 htln irb/irbrc .irbrc
+htln R/Rprofile .Rprofile
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"

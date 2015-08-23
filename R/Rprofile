@@ -1,0 +1,23 @@
+options(show.error.locations = TRUE)
+options(warnPartialMatchAttr = TRUE)
+options(warnPartialMatchDollar = TRUE)
+options(warnPartialMatchArgs = TRUE)
+options(warn = 2)
+
+options(useFancyQuotes = FALSE)
+
+options(max.print = 100)
+
+options("devtools.desc" = list(
+  Author = "Eitan Adler",
+  Maintainer = "Eitan Adler <lists@eitanadler.com>",
+  License = "MIT",
+  Version = "0.0.1"
+))
+options("devtools.name" = "Eitan Adler")
+
+utils::rc.settings(ipck = TRUE)
+
+.__Rprofile_env__. <- new.env(parent = emptyenv())
+# objects go here
+attach(.__Rprofile_env__.)
