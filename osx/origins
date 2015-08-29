@@ -1,5 +1,5 @@
 curl +ares +http2
-git +bash_completion +svn
+git +bash_completion +svn +credential_osxkeychain
 mercurial +bash_completion +zsh_completion
 nmap +zenmap
 perl5.16
@@ -10,9 +10,10 @@ python34
 R +gfortran49-gfortran48+tcltk
 rust
 scala2.11
-subversion
+subversion +tools
 swi-prolog
 the_silver_searcher
+tk +x11
 tmux
 tmux-pasteboard
 vim +huge +python34 +python27 +cscope +ruby20 +tcl
