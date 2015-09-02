@@ -45,6 +45,12 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Keep WiFi on logout
 sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 prefs DisconnectOnLogout=NO
 
+# Don't show debug text or filename on picture (cmd+option on desktop settings for more info)
+defaults write com.apple.dock desktop-picture-show-debug-text -bool FALSE
+
+# Get a developer mode crash dialog
+defaults write com.apple.CrashReporter DialogType developer
+
 ###############################################################################
 # Finder
 ###############################################################################
@@ -63,7 +69,6 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
-
 
 ###############################################################################
 # Safari & WebKit
@@ -85,9 +90,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-# Get a developer mode crash dialog
-defaults write com.apple.CrashReporter DialogType developer
 
 ###############################################################################
 # Chrome
