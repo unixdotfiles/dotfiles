@@ -64,15 +64,11 @@ then
 fi
 
 export DICTIONARY=en_US
-
 export P4DIFF="diff -u"
-
 export PL_SVN_IGNORE=1
-
 export LANG=en_US.UTF-8
-
 export CONF_PATH=~/.conf/
-
 export MYSQL_PS1="\c \u@\h:\p [\d]>"
-
 export WORKON_HOME=~/.ve
+# Show time(1) like information for long running commands
+export REPORTTIME=2
