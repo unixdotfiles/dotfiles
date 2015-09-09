@@ -112,7 +112,6 @@ alias -g T='| tail'
 alias -g W='| wc'
 
 alias cd\?="dirs -pv";
-alias back='builtin cd "$OLDPWD";pwd'
 h () { history 0 | grep "$1" }
 
 autodisown() {
