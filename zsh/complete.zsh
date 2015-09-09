@@ -1,13 +1,14 @@
 # A bit of explanation
 # :completion:<func>:<completer>:<command>:<argument>:<tag>
 
-# Enable Completion
-
+  # Enable Zsh completion
 	autoload -U compinit
-	zmodload -i zsh/complist
+	zmodload zsh/complist
+  zmodload  zsh/complete
 	compinit -i
 
-# Global completion settings {{{
+  # Enable Bash completion
+  autoload -U bashcompinit && bashcompinit
 
 	setopt auto_menu         # show completion menu on succesive tab press
 	setopt complete_in_word
@@ -29,15 +30,6 @@
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' list-colors ''
 	
-	# case-insensitive (all),partial-word and then substring completion
-#	if [ "$CASE_SENSITIVE" = "true" ]; then
-#	  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-#	  unset CASE_SENSITIVE
-#	else
-#	  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-#	fi
-#	export FIGNORE="";
-
 	# Always complete one value (file name) only once in the current line.
 	# makes it easy to complete multiple values because I can just press rab to
 	# get all possible values. Otherwise I would have to skip the first value
@@ -47,10 +39,6 @@
 	# quote pasted URLs
 	autoload -U url-quote-magic
 	zle -N self-insert url-quote-magic
-
-# }}}
-
-# General commands {{{
 
 zstyle ':completion:*:' users root $USER 
 
@@ -106,3 +94,4 @@ zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 compdef _precommand verynice
 __exists hub && __exists git && compdef hub=git
 __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
+
