@@ -90,6 +90,8 @@ htln slate/slate .slate
 htln psql/psqlrc .psqlrc
 htln irb/irbrc .irbrc
 htln R/Rprofile .Rprofile
+ensure_directories ~/.ipython/profile_default
+htln ipython/ipython_config.py .ipython/profile_default/ipython_config.py
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"

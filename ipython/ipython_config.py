@@ -1,0 +1,10 @@
+c.InteractiveShellApp.reraise_ipython_extension_failures = True
+#c.InteractiveShellApp.pylab = 'auto'
+#c.InteractiveShellApp.matplotlib = 'auto'
+c.InteractiveShellApp.pylab_import_all = False
+c.TerminalIPythonApp.force_interact = True
+c.TerminalIPythonApp.display_banner = False
+c.TerminalInteractiveShell.term_title = True
+c.TerminalInteractiveShell.confirm_exit = False
+c.HistoryManager.db_log_output = True
+c.StoreMagics.autorestore = True

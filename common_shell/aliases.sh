@@ -36,9 +36,6 @@ __exists urxvt && alias urxvt="urxvtcd"
 __exists proxychains && alias pc="proxychains"
 alias myip="curl ifconfig.pro";
 
-__exists ipython && alias ipython="ipython --no-confirm-exit";
-
-
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
