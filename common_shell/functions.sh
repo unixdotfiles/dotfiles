@@ -7,6 +7,12 @@ __exists () {
       return $?;
 }
 
+redefine() {
+  full="$1"
+  cmd="${full%%=*}"
+  __exists "$cmd" && alias "$full"
+}
+
 __inSSH() {
 	[ -n "$SSH_CONNECTION" ]
 }
