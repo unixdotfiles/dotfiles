@@ -63,7 +63,6 @@ function concat() {
 	echo -n ${(j::)@}
 }
 
-#mkdir should cd as well
 function mcd () {
 	if [ $# -eq 1 ]
 	then
@@ -73,24 +72,6 @@ function mcd () {
 		mkdir "$@";
 	fi
 }
-
-## Glob functions
-
-#usage, *(e:in /other/dir:)
-function in() {
-	test -e $1/$REPLY
-}
-
-#usage, *(e:hastype mp3:)
-function hastype() {
-	local a; a=( $REPLY/*.$1([1]N) ); [[ -n $a ]]
-}
-
-# *(@-) also works
-function brokensym() {
-	[[ -L $REPLY && ! -e $(zstat +link $REPLY) ]]
-}
-
 
 alias man='nocorrect man'
 alias mv='nocorrect mv -i'
@@ -119,8 +100,8 @@ autodisown() {
 	disown
 }
 
-__exists xpdf && alias xpdf="autodisown xpdf";
-__exists evince && alias evince="autodisown evince";
+redefine xpdf="autodisown xpdf";
+redefine evince="autodisown evince";
 
 [ -z "__shellrc_noalias_python" ] && \
 for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
