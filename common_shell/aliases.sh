@@ -39,6 +39,7 @@ alias myip="curl ifconfig.pro";
 alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
+alias rot13="tr [A-Za-z] [N-ZA-Mn-za-m]"
 __exists pastebinit && alias pastebinit="pastebinit -a ''"
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
@@ -61,7 +62,6 @@ alias rw-="chmod 600"
 alias r-x="chmod 755"
 alias r--="chmod 644"
 
-__exists idprio && alias verynice="nice nice idprio 31";
 __exists cscope && alias cscope="cscope -CqRv";
 __exists txt2regex && alias txt2regex="txt2regex --whitebg";
 __exists ack-grep && alias ack="ack-grep"
