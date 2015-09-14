@@ -1,6 +1,5 @@
 checkAndSetWindowTitle() {
 	local program_name="$1";
-	program_name=$(convertAliasToFull "$program_name");
 
 	# Set the window name to the currently running program.
 	if  ! isShortName "$program_name" 
@@ -12,19 +11,8 @@ checkAndSetWindowTitle() {
 
 getTitleFromProgram() {
 	local program_name="$@";
-	local runningAsRoot="";
 
-	if [[ $program_name = ${program_name#sudo} ]] # || $program_name=${program_name#su} ]];
-	then
-		runningAsRoot=yes
-	fi
-
-    if __isroot
-    then
-		runningAsRoot=yes
-    fi
-
-	if [ -n $runningAsRoot ]; then
+	if [ "$program_name" = "${program_name#sudo}" ] || [ __isroot ]; then
 		program_name="!$program_name"
 	fi
 
@@ -42,18 +30,6 @@ getTitleFromProgram() {
 		fi
 	fi
 	echo $program_name;
-}
-
-# Change my shortcuts so the real name of the program is displayed.
-convertAliasToFull() {
-	local text="$1"
-#	case $text in
-#	   sgrep)
-#			text=grep
-#			;;
-#	esac
-
-	echo "$text";
 }
 
 # Ignore often used commands which are only running for a very short
@@ -98,52 +74,14 @@ function resetWindowTitle() {
 	window_reset="";
 }
 
-#function changeTitlePreExec() {
-#  # The full command line comes in as "$1"
-#  local cmd="$1"
-#  local -a args
-#
-#  args=${(z)tmpcmd}
-#
-#  if [ "${args[1]}" = "fg" ] ; then
-#    local jobnum="${args[2]}"
-#    if [ -z "$jobnum" ] ; then
-#      # If no jobnum specified, find the current job.
-#      for i in ${(k)jobtexts}; do
-#        [ -z "${jobstates[$i]%%*:+:*}" ] && jobnum=$i
-#      done
-#    fi
-#    cmd="${jobtexts[${jobnum#%}]}"
-#  else
-#  fi
-#  title "$cmd"
-#}
-#function title() {
-#  # This is madness.
-#  # We replace literal '%' with '%%'
-#  # Also use ${(V) ...} to make nonvisible chars printable (think cat -v)
-#  # Replace newlines with '; '
-#  local value="${${${(V)1//\%/\%\%}//'\n'/; }//'\t'/ }"
-#  local location
-#
-#  location="$HOST"
-#
-#  # Special format for use with print -Pn
-#  value="%70>...>$value%<<"
-#  unset PROMPT_SUBST
-#  setopt LOCAL_OPTIONS
-#}
-
 # If ^C is pressed while typing a command, add it to the history so it can be
-# easily retrieved later and then abort like ^C normally does. This is useful
-# when I want to abort an command to do something in between and then finish
-# typing the command.
+# easily retrieved later and then abort like ^C normally does.
 
 TRAPINT() {
     # Store the current buffer in the history.
     zle && print -s -r -- $BUFFER
 
-    # Return the default exit code so Zsh aborts the current command.
+    # Return the default exit code so zsh aborts the current command.
     return $1
 }
 autoload -Uz  add-zsh-hook
