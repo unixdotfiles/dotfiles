@@ -74,6 +74,14 @@ function resetWindowTitle() {
 	window_reset="";
 }
 
+function ensureAuthForCmd() {
+  fullcmd="$1"
+  cmd="${fullcmd%% *}"  # Doesn't properly handle quotes commandsS
+  [[ "$cmd" == (git|hub|svn|hg|curl|ssh|scp) ]] && ensure_auth
+
+  return 0
+}
+
 # If ^C is pressed while typing a command, add it to the history so it can be
 # easily retrieved later and then abort like ^C normally does.
 
@@ -86,5 +94,6 @@ TRAPINT() {
 }
 autoload -Uz  add-zsh-hook
 add-zsh-hook preexec checkAndSetWindowTitle
+add-zsh-hook preexec ensureAuthForCmd
 add-zsh-hook precmd resetWindowTitle
 #add-zsh-hook preexec changeTitlePreExec

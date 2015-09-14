@@ -61,7 +61,6 @@ __ensure_kinit() {
     klist -t 2>/dev/null || kinit --keychain &
 }
 
-# maybe run in precmd instead of using an alias...
 ensure_auth() {
   case "$__shellrc_auth_mode" in
     "")

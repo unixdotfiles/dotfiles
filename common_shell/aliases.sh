@@ -43,12 +43,7 @@ __exists pastebinit && alias pastebinit="pastebinit -a ''"
 __exists portlint && alias portlint="portlint -C";
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
-__exists ssh && alias ssh="ensure_auth && ssh"
-__exists scp && alias scp="ensure_auth && scp"
-__exists hg && alias hg="ensure_auth && hg"
-__exists git && alias git="ensure_auth && git"
-__exists hub && alias git="ensure_auth && hub"
-__exists svn && alias svn="ensure_auth && svn"
+__exists hub && alias git="hub"
 
 alias diff="diff -p";
 
