@@ -33,19 +33,18 @@ __vcs_dir() {
 	echo $vcs_info_msg_0_;
 }
 
-#some settings
-PS1_HIST="%!";				#history
-PS1_USER="%F{blue}%n";			#my username
+PS1_HIST="%! ";
+PS1_USER="%F{blue}%n";
 if __inSSH
 then
 	PS1_HOST="%B%F{blue}%m%b"
 else
 	PS1_HOST="%F{blue}%m";
 fi
-PS1_ERR="%F{red}%(?..!%?!)";  		#return code of last command (if it was not 0)
-PS1_WD="%F{magenta}%30<...<%~";	    #current working directory limited to 30 chars
+PS1_ERR=" %F{red}%(?..!%?!)";  		#return code of last command (if it was not 0)
+PS1_WD=" %F{magenta}%30<...<%~ ";	    #current working directory limited to 30 chars
 [ -n "$__EC2" ] && PS1_EC2_IID="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)"
-[ -n "$PS1_EC2_IID" ] && PS1_EC2="($PS1_EC2_IID)"
+[ -n "$PS1_EC2_IID" ] && PS1_EC2=" ($PS1_EC2_IID) "
 
 PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
@@ -56,7 +55,8 @@ setCurrentPS1()
 	local PS1_BATTERY=""
 	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 	local PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
-	PS1="[$PS1_HIST $PS1_USER@$PS1_HOST $PS1_BATTERY $PS1_EC2 $PS1_WD $PS1_ERR%f]%#"
+  local PS1_END="%(!.★.∴)"
+	PS1="[$PS1_HIST$PS1_USER@$PS1_HOST $PS1_BATTERY$PS1_EC2$PS1_WD$PS1_ERR%f]$PS1_END"
 	local _VENV_NAME="${VIRTUAL_ENV##*/}"
 	local _COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f)"
 	local _VENV_VCS_SPACE="${PS1_VCS:+ }"
