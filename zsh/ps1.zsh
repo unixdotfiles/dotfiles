@@ -51,17 +51,17 @@ PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
 setCurrentPS1()
 {
-  local $(stat -Ls .)A
-  local PS1_N_FILES="[$(( $st_nlink - 1 )) files]"
+  local $(stat -Ls .)
+  local PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
 	local PS1_BATTERY=""
 	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
-	local PS1_VCS="%F{green}$(__vcs_dir)";	#info about the vcs
+	local PS1_VCS_DATA="$(__vcs_dir)";
+  local PS1_VCS="%F{green}$PS1_VCS_DATA${PS1_VCS_DATA:+ }"
 	PS1="[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_ERR%f]$PS1_END"
 	local _VENV_NAME="${VIRTUAL_ENV##*/}"
-	local _COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f)"
-	local _VENV_VCS_SPACE="${PS1_VCS:+ }"
-	local RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}$_VENV_VCS_SPACE"
-	RPS1="$PS1_N_FILES ${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f";
+	local _COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
+	local RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
+	RPS1="$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f";
 }
 
 setExecutionTimer() {
