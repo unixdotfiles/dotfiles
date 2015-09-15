@@ -12,8 +12,8 @@ zstyle ':vcs_info:hg*:*' hgrevformat "%r:%h"
 zstyle ':vcs_info:hg*:*' branchformat "%b" # no %r
 zstyle ':vcs_info:hg*:*' patchformat "%p%u%n%c%a%g%G"
 zstyle ':vcs_info:hg*:*' nopatchformat "%p%u%n%c%a%g%G"
-zstyle ':vcs_info:*' stagedstr "+"
-zstyle ':vcs_info:*' unstagedstr "!"
+zstyle ':vcs_info:*' stagedstr "%F{red}●%f"
+zstyle ':vcs_info:*' unstagedstr "%F{yellow}●%f"
 
 __VCS_SCM="%F{magenta}(%f%s:%r%F{magenta})"
 __VCS_BRANCH="%F{green}%b%u%c%f"
