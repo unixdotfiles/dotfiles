@@ -1,15 +1,14 @@
 #Alert user to mismatched parens
 set blink-matching-paren on
 
-#Don't show annoying meta chars
+# Better UTF-8 support
+set input-meta on
+set output-meta on
 set convert-meta off
-
-# Completion {{{
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
 #Show the file type (dir, etc) in completion
 set visisble-stats on
-
-# }}}
+set colored-stats on
