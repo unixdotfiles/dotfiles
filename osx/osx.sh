@@ -46,10 +46,13 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 prefs DisconnectOnLogout=NO
 
 # Don't show debug text or filename on picture (cmd+option on desktop settings for more info)
-defaults write com.apple.dock desktop-picture-show-debug-text -bool FALSE
+defaults write com.apple.dock desktop-picture-show-debug-text -bool false
 
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
+
+# Disable mission control
+defaults write com.apple.dock mcx-expose-disabled -bool true
 
 ###############################################################################
 # Finder
