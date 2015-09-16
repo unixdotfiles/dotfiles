@@ -51,9 +51,6 @@ defaults write com.apple.dock desktop-picture-show-debug-text -bool false
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
 
-# Disable mission control
-defaults write com.apple.dock mcx-expose-disabled -bool true
-
 ###############################################################################
 # Finder
 ###############################################################################
