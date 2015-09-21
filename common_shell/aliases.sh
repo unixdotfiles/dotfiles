@@ -66,6 +66,28 @@ alias r--="chmod 644"
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 
+[ -z "$__shellrc_noalias_python" ] && \
+for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
+do
+    _pythonver="${wpython#python}"
+    _pythonmajorver="${_pythonver%%[^0-9]*}"
+    if __exists $wpython
+    then
+        case $_pythonmajorver in
+            3)
+                alias python="$wpython -bbO"
+                alias python${_pythonmajorver}="$wpython -bbO"
+                alias shareThisDir="python3 -m http.server 8000"
+                ;;
+            2)
+                alias python="$wpython -ttO"
+                alias python${_pythonmajorver}="$wpython -ttO"
+                alias shareThisDir="$wpython -m SimpleHTTPServer"
+                ;;
+        esac
+    fi
+done
+
 text_textbelt() {
     number="$1"
     message="$2"
