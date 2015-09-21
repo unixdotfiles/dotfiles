@@ -51,9 +51,8 @@ defaults write com.apple.dock desktop-picture-show-debug-text -bool false
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
 
-###############################################################################
-# Finder
-###############################################################################
+# Use plain text mode for new TextEdit documents
+defaults write com.apple.TextEdit RichText -int 0
 
 # Show all file extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -64,11 +63,24 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
 
+# Show Path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
 # Show status bar in finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
+
+# Enable the debug menu in Address Book
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Enable the debug menu in Disk Utility
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 ###############################################################################
 # Safari & WebKit
@@ -87,6 +99,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
