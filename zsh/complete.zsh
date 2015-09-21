@@ -4,7 +4,7 @@
   # Enable Zsh completion
 	autoload -U compinit
 	zmodload zsh/complist
-  zmodload  zsh/complete
+	zmodload zsh/complete
 	compinit -i
 
   # Enable Bash completion
@@ -31,9 +31,8 @@
 	zstyle ':completion:*' list-colors ''
 	
 	# Always complete one value (file name) only once in the current line.
-	# makes it easy to complete multiple values because I can just press rab to
-	# get all possible values. Otherwise I would have to skip the first value
-	# again and again.
+	# makes it easy to complete multiple values because I can just press tab to
+	# get all possible values.
 	zstyle ':completion:*' ignore-line yes
 
 	# quote pasted URLs
@@ -44,21 +43,20 @@ zstyle ':completion:*:' users root $USER
 
 # Particular commands
 
-#cd will never select the parent directory (e.g.: cd ../<TAB>):
+# cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-#Completing process IDs with menu selection:
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
+# Completing process IDs with menu selection:
+zstyle ':completion:*:*:*:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 
 # Don't complete remote files for faster git completion on large repos
 __git_files () {
 	_wanted files expl 'local files' _files
 }
 
-## ps ##
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 
 ## ssh scp ##
 # Load known hosts file for auto-completion with ssh and scp commands
