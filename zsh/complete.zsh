@@ -20,11 +20,6 @@
 
 	zstyle ':completion:*' rehash true
 
-	#Fuzzy matching of completions for when you mistype them:
-#	zstyle ':completion:*' completer _complete _match _approximate
-#	zstyle ':completion:*:match:*' original only
-#	zstyle ':completion:*:approximate:*' max-errors 1 numeric
-#
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' list-colors ''
 	
@@ -32,6 +27,7 @@
 	zstyle ':completion:*' ignore-line yes
   zstyle '*' single-ignored show
 
+zstyle ':completion:*' verbose yes
 
 zstyle ':completion:*:' users root $USER 
 
@@ -51,17 +47,18 @@ zstyle ':completion:*:*:*:*:processes' menu yes select
 zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 
+zstyle ':completion:*:manuals' separate-sections true
+
 # Don't complete remote files for faster git completion on large repos
 __git_files () {
 	_wanted files expl 'local files' _files
 }
 
-
 ## ssh scp ##
 # Load known hosts file for auto-completion with ssh and scp commands
 if [ -f ~/.ssh/known_hosts ];
 then
-	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet):*:*' hosts $( sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
+	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill):*:*' hosts $(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
 fi
 
 ## vim ##
@@ -88,6 +85,5 @@ zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 #zstyle ':completion:*' file-patterns \
 #    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
-compdef _precommand verynice
 __exists hub && __exists git && compdef hub=git
 __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
