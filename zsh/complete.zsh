@@ -25,21 +25,20 @@
 #	zstyle ':completion:*:match:*' original only
 #	zstyle ':completion:*:approximate:*' max-errors 1 numeric
 #
-	# How do we display completions?
-
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' list-colors ''
 	
 	# Always complete one value (file name) only once in the current line.
-	# makes it easy to complete multiple values because I can just press tab to
-	# get all possible values.
 	zstyle ':completion:*' ignore-line yes
+  zstyle '*' single-ignored show
 
-	# quote pasted URLs
-	autoload -U url-quote-magic
-	zle -N self-insert url-quote-magic
 
 zstyle ':completion:*:' users root $USER 
+
+# quote pasted URLs
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+zstyle :urlglobber url-other-schema http https ftp git gopher magnet ssh
 
 # Particular commands
 
@@ -92,4 +91,3 @@ zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
 compdef _precommand verynice
 __exists hub && __exists git && compdef hub=git
 __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
-
