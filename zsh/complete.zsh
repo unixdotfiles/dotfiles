@@ -23,9 +23,10 @@
 	zstyle ':completion:*:*:*:*:*' menu select
 	zstyle ':completion:*' list-colors ''
 	
-	# Always complete one value (file name) only once in the current line.
-	zstyle ':completion:*' ignore-line yes
-  zstyle '*' single-ignored show
+# Always complete one value (file name) only once in the current line.
+zstyle ':completion:*' ignore-line other
+zstyle ':completion:*:(mv|cp):*' ignore-line no
+zstyle ':completion:*' single-ignored show
 
 zstyle ':completion:*' verbose yes
 
@@ -35,8 +36,6 @@ zstyle ':completion:*:' users root $USER
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle :urlglobber url-other-schema http https ftp git gopher magnet ssh
-
-# Particular commands
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -64,9 +63,6 @@ fi
 ## vim ##
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 
-# Except for mv and cp, because I often want to use to similar names, so I
-# complete to the same and change it.
-zstyle ':completion:*:(mv|cp):*' ignore-line no
 # Don't complete ./config.* files, this makes running ./configure much
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
