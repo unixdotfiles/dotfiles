@@ -1,0 +1,4 @@
+[idea]
+options:
+ --idea-java-language-level=7
+ --idea-idea-version=14
