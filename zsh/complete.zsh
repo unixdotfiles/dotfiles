@@ -60,24 +60,16 @@ then
 	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill):*:*' hosts $(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
 fi
 
-## vim ##
-zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
-
 # Don't complete ./config.* files, this makes running ./configure much
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
-zstyle ':completion:*:ls:*:(all-|)files' ignored-patterns
-zstyle ':completion:*:rm:*:(all-|)files' ignored-patterns
+zstyle ':completion:*:(ls|rm):*:(all-|)files' ignored-patterns
+zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 
-#[ misc ]#######################################################################
+#
 #zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
 #    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
-#zstyle ':completion:*:*:kghostview:*' file-patterns \
-#    '*.(ps|pdf)(|.gz|.bz2):pspdf-files:PostScript\ or\ PDF\ files *(-/):directories:Directories' '*:all-files'
-#zstyle ':completion:*:*:swfplayer:*' file-patterns \
-#    '*.swf:swf-files:Swf\ files *(-/):directories:Directories' '*:all-files'
-#
 #zstyle ':completion:*' file-patterns \
 #    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
