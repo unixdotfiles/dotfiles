@@ -44,3 +44,6 @@ setopt C_BASES
 # Prevent overwriting existing files with '> filename', use '>| filename'
 # (or >!) instead.
 setopt noclobber
+
+zmodload zsh/mathfunc
+zmodload zsh/termcap
