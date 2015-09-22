@@ -1,6 +1,5 @@
 fpath=( $fpath ~/bin ~/bin/zbin )
 
-#History related options {{{
 HISTFILE=~/.zsh_history
 HISTSIZE=10100
 SAVEHIST=10000
@@ -23,8 +22,6 @@ setopt no_hist_beep
 setopt hist_reduce_blanks
 #setopt share_history
 
-# }}}
-
 # Job related options
 setopt LONG_LIST_JOBS
 
@@ -33,20 +30,16 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 setopt extendedglob
-#setopt correct_all
 unsetopt nomatch
 
 # Speedy options
 setopt hashcmds
 setopt hashdirs
 
-#unsetopt check_jobs #don't warn me when I have jobs in the background
-unsetopt hup #when the shell exits keep background jobs.
+# when the shell exits keep background jobs.
+unsetopt hup
 
-#output options
 setopt C_BASES
-
-bindkey -e
 
 # Prevent overwriting existing files with '> filename', use '>| filename'
 # (or >!) instead.
