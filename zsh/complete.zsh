@@ -53,8 +53,6 @@ __git_files () {
 	_wanted files expl 'local files' _files
 }
 
-## ssh scp ##
-# Load known hosts file for auto-completion with ssh and scp commands
 if [ -f ~/.ssh/known_hosts ];
 then
 	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill):*:*' hosts $(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
@@ -66,8 +64,8 @@ zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 zstyle ':completion:*:(ls|rm):*:(all-|)files' ignored-patterns
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
+zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
 
-#
 #zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
 #    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
 #zstyle ':completion:*' file-patterns \
