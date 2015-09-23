@@ -46,31 +46,21 @@ function cd () {
 }
 
 function pushd () {
-	if [[ $# -eq 0 ]]
+	if [ $# -eq 0 ]
 	then
 		builtin pushd;
 	else
-		if [[ -f $1 ]]
+		if [ -f "$1" ]
 		then
-			builtin pushd $1:h;
+			builtin pushd "${1:h}";
 		else
-			builtin pushd $1;
+			builtin pushd "$1";
 		fi
 	fi
 }
 
 function concat() {
 	echo -n ${(j::)@}
-}
-
-function mcd () {
-	if [ $# -eq 1 ]
-	then
-		mkdir "$1";
-		cd "$1";
-	else
-		mkdir "$@";
-	fi
 }
 
 alias man='nocorrect man'
