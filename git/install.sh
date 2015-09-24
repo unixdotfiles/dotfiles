@@ -91,5 +91,9 @@ gc push.default simple
 _gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
 gc_add url.git@github.com:.pushInsteadOf https://github.com/
 gc_add url.git@github.com:.pushInsteadOf git://github.com/
+gc_add url.git@gist.github.com:.pushInsteadOf git://gist.github.com/
+gc_add url.git@bitbucket.org:.pushInsteadOf https://bitbucket.org/
+gc_add url.git@bitbucket.org:.pushInsteadOf http://bitbucket.org/
+gc_add url.git@bitbucket.org:.pushInsteadOf git://bitbucket.org/
 
 gc --path core.include ~/.gitconfig.local
