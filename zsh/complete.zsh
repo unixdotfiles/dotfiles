@@ -76,3 +76,6 @@ zstyle :completion::complete:git-push:argument-1: tag-order '! hosts' -
 
 __exists hub && __exists git && compdef hub=git
 __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
+
+compdef ll=ls
+compdef lls=ls
