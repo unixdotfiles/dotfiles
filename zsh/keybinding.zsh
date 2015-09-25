@@ -14,3 +14,5 @@ bindkey '^[Oc' forward-word
 bindkey '^[Od' backward-word
 bindkey '^[[1;5C' forward-word # C-left
 bindkey '^[[1;5D' backward-word # C-right
+
+bindkey '^Xh' _complete_help

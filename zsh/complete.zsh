@@ -66,6 +66,9 @@ zstyle ':completion:*:(ls|rm):*:(all-|)files' ignored-patterns
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
 
+# Don't complete arbitrary hosts for git push
+zstyle :completion::complete:git-push:argument-1: tag-order '! hosts' -
+
 #zstyle ':completion:*:*:[ak]dvi:*' file-patterns \
 #    '*.dvi:dvi-files:DVI\ files *(-/):directories:Directories' '*:all-files'
 #zstyle ':completion:*' file-patterns \
