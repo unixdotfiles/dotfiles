@@ -10,8 +10,7 @@ bindkey -e
 [[ -z "$terminfo[kich1]" ]]  || bindkey -M vicmd "$terminfo[kich1]" overwrite-mode
 #[[ "$terminfo[kcuu1]" == "^[O"* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" vi-up-line-or-history
 
-bindkey '^[Oc' forward-word
-bindkey '^[Od' backward-word
+# xterm extensions
 bindkey '^[[1;5C' forward-word # C-left
 bindkey '^[[1;5D' backward-word # C-right
 
