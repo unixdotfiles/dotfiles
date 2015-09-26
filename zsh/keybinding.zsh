@@ -11,7 +11,7 @@ bindkey -e
 #[[ "$terminfo[kcuu1]" == "^[O"* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" vi-up-line-or-history
 
 # xterm extensions
-bindkey '^[[1;5C' forward-word # C-left
-bindkey '^[[1;5D' backward-word # C-right
+bindkey $terminfo[kLFT5] backward-word # C-left
+bindkey $terminfo[kRIT5] forward-word # C-right
 
 bindkey '^Xh' _complete_help
