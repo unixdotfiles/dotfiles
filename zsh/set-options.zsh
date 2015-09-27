@@ -47,3 +47,5 @@ setopt noclobber
 
 zmodload zsh/mathfunc
 zmodload zsh/termcap
+autoload -Uz zcalc
+autoload -Uz zmathfuncdef
