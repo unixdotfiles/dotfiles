@@ -1,28 +1,28 @@
 # A bit of explanation
 # :completion:<func>:<completer>:<command>:<argument>:<tag>
 
-  # Enable Zsh completion
-	autoload -U compinit
-	zmodload zsh/complist
-	zmodload zsh/complete
-	compinit -i
+# Enable Zsh completion
+autoload -Uz compinit
+zmodload zsh/complist
+zmodload zsh/complete
+compinit -i
 
-  # Enable Bash completion
-  autoload -U bashcompinit && bashcompinit
+# Enable Bash completion
+autoload -Uz bashcompinit && bashcompinit
 
-	setopt auto_menu         # show completion menu on succesive tab press
-	setopt complete_in_word
-	setopt always_to_end
+# show completion menu on succesive tab press
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
 
-	#Some functions, are very slow. 
-	zstyle ':completion:*' use-cache on
-	zstyle ':completion:*' cache-path ~/.zsh/cache
+#Some functions, are very slow. 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' rehash true
 
-	zstyle ':completion:*' rehash true
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
 
-	zstyle ':completion:*:*:*:*:*' menu select
-	zstyle ':completion:*' list-colors ''
-	
 # Always complete one value (file name) only once in the current line.
 zstyle ':completion:*' ignore-line other
 zstyle ':completion:*:(mv|cp):*' ignore-line no
@@ -33,7 +33,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*:' users root $USER 
 
 # quote pasted URLs
-autoload -U url-quote-magic
+autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle :urlglobber url-other-schema http https ftp git gopher magnet ssh
 
