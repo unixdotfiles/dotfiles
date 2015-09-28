@@ -9,6 +9,7 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'ajh17/VimCompletesMe'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
+Bundle 'PCGen/vim-pcgen.git'
 
 " NERDTree
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
