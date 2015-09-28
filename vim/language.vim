@@ -13,6 +13,7 @@ if has("autocmd")
     au Filetype gitcommit call Set_CommitLog()
     au BufNewFile,BufRead log call Set_CommitLog()
     au Filetype sh  call Set_Shell()
+    au Filetype zsh call Set_Shell()
     au BufNewFile,BufRead *.json,.arclint setlocal filetype=json
     au Filetype json call Set_Json()
     au Filetype vim call Set_Vim()
@@ -104,7 +105,7 @@ endfunction
 
 function Set_Shell()
     setlocal expandtab
-    call Shared_Tabs(4)
+    call Shared_Tabs(2)
 endfunction
 
 function Set_Vim()
