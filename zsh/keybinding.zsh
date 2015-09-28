@@ -8,6 +8,8 @@ bindkey -e
 [[ -z "$terminfo[kich1]" ]]  || bindkey -M emacs "$terminfo[kich1]" overwrite-mode
 [[ -z "$terminfo[kLFT5]" ]] || bindkey -M emacs $terminfo[kLFT5] backward-word # C-left
 [[ -z "$terminfo[kRIT5]" ]] || bindkey -M emacs $terminfo[kRIT5] forward-word # C-right
+bindkey -M emacs '^[[1;5D' backward-word # screen-256-color C-left
+bindkey -M emacs '^[[1;5C' forward-word # screen-256-color C-right
 
 [[ -z "$terminfo[kich1]" ]]  || bindkey -M vicmd "$terminfo[kich1]" overwrite-mode
 #[[ "$terminfo[kcuu1]" == "^[O"* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" vi-up-line-or-history
