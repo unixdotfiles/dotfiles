@@ -96,6 +96,8 @@ htln R/Rprofile .Rprofile
 ensure_directories ~/.ipython/profile_default
 htln ipython/ipython_config.py .ipython/profile_default/ipython_config.py
 htln pants/pantsrc .pants.new.rc
+htln grc/grcat .grcat
+htln mysql/my.cnf .my.cnf
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"

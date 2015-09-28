@@ -1,5 +1,6 @@
 curl +ares +http2
 git +bash_completion +svn +credential_osxkeychain
+grc
 hub
 mercurial +bash_completion +zsh_completion
 nmap +zenmap
