@@ -17,5 +17,5 @@ the_silver_searcher
 tk +x11
 tmux
 tmux-pasteboard
-vim +huge +python34 +python27 +cscope +ruby20 +tcl
+vim +huge +perl +python34 +python27 +cscope +ruby20 +tcl
 zsh
