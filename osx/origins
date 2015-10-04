@@ -1,5 +1,5 @@
 ctags
-curl +ares +http2
+curl +ares +idn +http2
 git +bash_completion +svn +credential_osxkeychain
 grc
 hub
