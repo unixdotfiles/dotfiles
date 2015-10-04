@@ -32,6 +32,8 @@ setopt complete_aliases
 setopt extendedglob
 unsetopt nomatch
 
+setopt prompt_subst
+
 # Speedy options
 setopt hashcmds
 setopt hashdirs

@@ -53,15 +53,17 @@ PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 setCurrentPS1()
 {
   local $(stat -Ls .)
-  local PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
-	local PS1_VCS_DATA="$(__vcs_dir)";
-  local PS1_VCS="%F{green}$PS1_VCS_DATA${PS1_VCS_DATA:+ }"
-	PS1="[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_ERR%f]$PS1_END"
-	local _VENV_NAME="${VIRTUAL_ENV##*/}"
-	local _COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
-	local RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
-	RPS1="$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f";
+  PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
+	PS1_VCS_DATA="$(__vcs_dir)";
+  PS1_VCS="%F{green}$PS1_VCS_DATA${PS1_VCS_DATA:+ }"
+	_VENV_NAME="${VIRTUAL_ENV##*/}"
+	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
+	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
 }
+
+PS1='[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_ERR%f]$PS1_END'
+PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
+RPS1='$X$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
 setExecutionTimer() {
 	__cmd_exec_timer=${__cmd_exec_timer:-$SECONDS}
@@ -71,7 +73,6 @@ setPS1Battery() {
 	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 }
 
-PS2="%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ";
 
 autoload -Uz  add-zsh-hook
 add-zsh-hook precmd setCurrentPS1
