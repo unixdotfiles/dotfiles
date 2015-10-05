@@ -15,6 +15,7 @@ uname_s=$(uname -s)
 msource ~/.options.pre
 
 msource /etc/environment
+. $_confpath/options.sh
 . $_confpath/env.sh
 . $_confpath/start-tmux.sh
 . $_confpath/aliases.sh
