@@ -80,9 +80,14 @@ set confirm
 set nocst
 
 if has('mouse')
-	" Enable use of the mouse for all modes
-	"set mouse=a
+	set mouse=n
 endif
+
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -159,7 +164,6 @@ endif
 "Taken from joe @ sw
 nmap <silent> <C-j> <Esc>:exe "silent! tabm " . (tabpagenr() - 2)<CR>
 nmap <silent> <C-k> <Esc>:exe "silent! tabm " . tabpagenr()<CR>
-nmap <silent> <C-f> <Esc>:exe "FufFile"<CR>
 nmap <silent> <F9> <Esc>:call ToggleLineTooLong()<CR>
 
 "Taken from ryan
