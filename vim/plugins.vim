@@ -3,13 +3,15 @@ set rtp+=~/.vim/bundle/vundle/
 filetype off
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'mileszs/ack.vim'
-"Bundle 'ajh17/VimCompletesMe'
-Plugin 'Valloric/YouCompleteMe'
-Bundle 'vim-scripts/a.vim'
-Bundle 'PCGen/vim-pcgen.git'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mileszs/ack.vim'
+"Plugin 'ajh17/VimCompletesMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/a.vim'
+Plugin 'PCGen/vim-pcgen.git'
+Plugin 'jmcantrell/vim-virtualenv'
 
 " NERDTree
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
