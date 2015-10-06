@@ -6,6 +6,8 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+nnoremap <Leader>nt :NERDTreeToggle<cr>
+Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 "Plugin 'ajh17/VimCompletesMe'
 "Plugin 'Valloric/YouCompleteMe'
@@ -21,8 +23,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowFiles=1
 let g:NERDSpaceDelims = 1
 
-nnoremap <C-g> :NERDTreeToggle<cr>
-nnoremap <Leader>nt :NERDTreeToggle<cr>
+nnoremap <C-g> :NERDTreeTabsToggle<cr>
 
 " a.vim
 nnoremap <F2> :A<cr>
