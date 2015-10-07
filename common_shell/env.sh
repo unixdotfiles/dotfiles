@@ -72,4 +72,4 @@ export MYSQL_PS1="\c \u@\h:\p [\d]>"
 export WORKON_HOME=~/.ve
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 # Show time(1) like information for long running commands
-export REPORTTIME=2
+REPORTTIME=2
