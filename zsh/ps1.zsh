@@ -59,9 +59,11 @@ setCurrentPS1()
 	_VENV_NAME="${VIRTUAL_ENV##*/}"
 	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
 	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
+  local _bg_jobs="$(jobs)"
+  PS1_BG_JOBS="${_bg_jobs:+ ⚙}"
 }
 
-PS1='[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_ERR%f]$PS1_END'
+PS1='[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_BG_JOBS$PS1_ERR%f]$PS1_END'
 PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
 RPS1='$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
