@@ -32,6 +32,8 @@ getTitleFromProgram() {
 	echo $program_name;
 }
 
+
+
 # Ignore often used commands which are only running for a very short
 # time. This prevents a "blinking" look.
 isShortName() {
@@ -74,12 +76,12 @@ function resetWindowTitle() {
 	window_reset="";
 }
 
+auth_required_cmds+=("git", "hub", "svn", "hg", "curl", "ssh", "scp")
+
 function ensureAuthForCmd() {
   fullcmd="$1"
-  cmd="${fullcmd%% *}"  # Doesn't properly handle quotes commandsS
-  [[ "$cmd" == (git|hub|svn|hg|curl|ssh|scp) ]] && ensure_auth
-
-  return 0
+  cmd="${fullcmd%% *}"  # Doesn't properly handle quoted commands
+  [[ -n "${(M)auth_required_cmds#${cmd}}" ]] && ensure_auth
 }
 
 # If ^C is pressed while typing a command, add it to the history so it can be
