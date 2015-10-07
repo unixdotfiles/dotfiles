@@ -177,9 +177,8 @@ map S i<RETURN><ESC>==k$
 	" Remove any trailing whitespace that is in the file
 "	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 "	call histdel("search", -1)
-"
 
-if &term == "xterm" || &term == "xterm-color"
+if &t_Co == "256"
 	set grepprg=grep\ -nH\ $*
 	
 endif
@@ -193,7 +192,6 @@ set wildmode=list:longest,full
 "autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
 "autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
 "autocmd BufWinLeave *.c call clearmatches()
-
 
 set foldenable
 set foldmethod=marker
