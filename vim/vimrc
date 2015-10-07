@@ -223,7 +223,7 @@ set shiftwidth=8
 
 " Includes 
 source ~/.conf/vim/language.vim
-source ~/.conf/vim/statusline.vim
+"source ~/.conf/vim/statusline.vim
 source ~/.conf/vim/plugins.vim
 
 "try this:

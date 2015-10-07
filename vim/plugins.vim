@@ -5,15 +5,17 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 nnoremap <Leader>nt :NERDTreeToggle<cr>
-Plugin 'scrooloose/nerdtree-git-plugin'
+"Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 "Plugin 'ajh17/VimCompletesMe'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
 Plugin 'PCGen/vim-pcgen.git'
-Plugin 'jmcantrell/vim-virtualenv'
+"Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',

@@ -19,8 +19,7 @@ then
 fi
 ! __exists fetch && __exists wget && alias fetch=wget
 
-__exists vim && alias vi="vim -p";
-redefine vim="vim -p";
+__exists vim && redefine vi="vim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
