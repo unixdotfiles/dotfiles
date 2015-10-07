@@ -129,7 +129,6 @@ if has("persistent_undo")
     call EnsureDirExists(&undodir)
 endif
 set undolevels=1000		"maximum number of changes that can be undone
-" }}}
 " Indentation options 
 "
 
@@ -137,7 +136,6 @@ set undolevels=1000		"maximum number of changes that can be undone
 set pastetoggle=<F12>
 set pastetoggle=<F8>
 
-" }}}
 " Mappings 
 "
 
@@ -173,7 +171,6 @@ map Q :noh<RETURN>
 map S i<RETURN><ESC>==k$
 
 
-"}}}
 
 "Auto Commands
 
@@ -215,7 +212,6 @@ function! ToggleLineTooLong()
         let g:hl_visible = 1
     endif
 endfunction
-" }}}
 
 " Set defaults
 set tabstop=8
