@@ -238,13 +238,6 @@ command WQ wq
 command Wq wq
 command Q q
 
-
-" now set it up to change the status line based on mode
-if version >= 700
-	au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-	au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-endif
-
 " Determine the type of a file based on its name and its contents.
 if has("autocmd")
     filetype indent on
