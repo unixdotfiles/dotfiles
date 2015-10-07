@@ -170,7 +170,11 @@ map Q :noh<RETURN>
 "S -- split line at char under cursor
 map S i<RETURN><ESC>==k$
 
-
+nmap <leader>T :enew<cr>
+nmap <leader>n :bnext<CR>
+nmap <leader>p :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
 
 "Auto Commands
 
@@ -180,7 +184,6 @@ map S i<RETURN><ESC>==k$
 
 if &t_Co == "256"
 	set grepprg=grep\ -nH\ $*
-	
 endif
 
 " Cool tab completion stuff
