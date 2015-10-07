@@ -130,14 +130,8 @@ if has("persistent_undo")
 endif
 set undolevels=1000		"maximum number of changes that can be undone
 " Indentation options 
-"
 
-" Toggle between 'paste' and 'nopaste'
-set pastetoggle=<F12>
 set pastetoggle=<F8>
-
-" Mappings 
-"
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -153,11 +147,7 @@ au BufRead,BufNewFile * let &tags = project_dir[:-2]."/.git/tags,./.tags"
 
 let mapleader = ","
 
-"Little trick to find ending whitespace in docs
-if version >= 703
-	set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
-endif
-"hi nontext ctermfg=red
+set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
 
 "Taken from joe @ sw
 nmap <silent> <C-j> <Esc>:exe "silent! tabm " . (tabpagenr() - 2)<CR>
@@ -175,8 +165,6 @@ nmap <leader>n :bnext<CR>
 nmap <leader>p :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
-
-"Auto Commands
 
 	" Remove any trailing whitespace that is in the file
 "	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
