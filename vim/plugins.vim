@@ -3,6 +3,7 @@ set rtp+=~/.vim/bundle/vundle/
 filetype off
 call vundle#rc()
 
+Plugin 'kien/ctrlp.vim'
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/nerdtree-git-plugin'
