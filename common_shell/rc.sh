@@ -19,7 +19,6 @@ msource /etc/environment
 . $_confpath/env.sh
 . $_confpath/start-tmux.sh
 . $_confpath/aliases.sh
-. $_confpath/extra/eval_spin.func
 . $_shellpath/ps1.$__INTSHELL
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 
