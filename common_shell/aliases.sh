@@ -67,7 +67,7 @@ __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig tail head
 
-for wpython in python2 python2.6 python2.7 python3 python3.2 python3.3 python3.4
+for wpython in python2 python2.7 python3 python3.3 python3.5 python3.4
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
