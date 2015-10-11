@@ -3,7 +3,7 @@
 # no prefix = user function
 
 __exists () {
-      which $1 >/dev/null 2>&1;
+      which "$1" >/dev/null 2>&1;
       return $?;
 }
 
@@ -11,6 +11,16 @@ redefine() {
   full="$1"
   cmd="${full%%=*}"
   __exists "$cmd" && alias "$full"
+}
+
+prefixwith() {
+  local fullprefix="$1"; shift
+  local prefix="${fullprefix%% *}"
+  while [ -n "$1" ]
+  do
+    local cmd="$1"; shift
+    __exists "$prefix" && redefine "$cmd"="$fullprefix $cmd"
+  done
 }
 
 __osx_define_alias() {
