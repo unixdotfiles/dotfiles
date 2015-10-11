@@ -1,13 +1,10 @@
 # Enable ls colors
-if [ -z "$DISABLE_LS_COLORS" ]
+if __exists colorls
 then
-    if __exists colorls
-    then
-        alias ls="colorls -GF"
-    else
-        # Find the option for using colors in ls, depending on the version: Linux or BSD
-        ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
-    fi
+    alias ls="colorls -GF"
+else
+    # Find the option for using colors in ls, depending on the version: Linux or BSD
+    ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
 fi
 
 if [ "$uname_s" = "FreeBSD" ]
@@ -17,7 +14,6 @@ then
 	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
 fi
-! __exists fetch && __exists wget && alias fetch=wget
 
 __exists vim && redefine vi="vim"
 

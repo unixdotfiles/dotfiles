@@ -24,7 +24,7 @@ export CHARSET="UTF-8";
 export GTK_IM_MODULE="xim";
 
 #Specific to ZSH - but this is an envrioment variable so meh
-export CORRECT_IGNORE="_*";
+CORRECT_IGNORE="_*";
 
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
