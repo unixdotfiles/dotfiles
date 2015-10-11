@@ -13,6 +13,12 @@ redefine() {
   __exists "$cmd" && alias "$full"
 }
 
+__osx_define_alias() {
+  name="$1"
+  cmd="$2"
+  [ -r "$cmd" ] && alias "$name"="open $cmd --args"
+}
+
 __inSSH() {
 	[ -n "$SSH_CONNECTION" ]
 }
