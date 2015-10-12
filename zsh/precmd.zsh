@@ -76,12 +76,12 @@ function resetWindowTitle() {
 	window_reset="";
 }
 
-auth_required_cmds+=("git", "hub", "svn", "hg", "curl", "ssh", "scp")
+auth_required_cmds+=("git", "hub", "svn", "hg", "curl", "ssh", "scp", "fetch", "wget")
 
 function ensureAuthForCmd() {
   fullcmd="$1"
   cmd="${fullcmd%% *}"  # Doesn't properly handle quoted commands
-  [[ -n "${(M)auth_required_cmds#${cmd}}" ]] && ensure_auth
+  [[ -n "${(M)auth_required_cmds#${cmd}}" ]] && __exists "$cmd" && ensure_auth
 }
 
 # If ^C is pressed while typing a command, add it to the history so it can be
