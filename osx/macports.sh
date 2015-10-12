@@ -14,5 +14,7 @@ sudo port select --set pip pip34
 sudo port select --set ipython ipython34
 sudo port select --set ipython2 ipython27
 sudo port select --set ipython3 ipython34
+sudo port select --set gcc mp-gcc49
+sudo port select --set llvm mp-llvm-3.5
 
 port select --summary
