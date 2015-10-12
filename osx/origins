@@ -3,6 +3,7 @@ cowsay
 curl +ares +http2
 figlet
 git +bash_completion +svn +credential_osxkeychain
+ghc
 grc
 hub
 mercurial +bash_completion +zsh_completion
