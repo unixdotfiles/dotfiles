@@ -1,5 +1,7 @@
 ctags
+cowsay
 curl +ares +http2
+figlet
 git +bash_completion +svn +credential_osxkeychain
 grc
 hub
