@@ -11,9 +11,9 @@ sudo port select --set python3 python34
 sudo port select --set ruby ruby20
 sudo port select --set scala scala2.11
 sudo port select --set pip pip34
-sudo port select --set ipython ipython34
-sudo port select --set ipython2 ipython27
-sudo port select --set ipython3 ipython34
+sudo port select --set ipython py34-ipython
+sudo port select --set ipython2 py27-ipython
+sudo port select --set ipython3 py34-ipython
 sudo port select --set gcc mp-gcc49
 sudo port select --set llvm mp-llvm-3.5
 
