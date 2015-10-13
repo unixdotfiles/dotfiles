@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ../common_shell/functions.sh
+
 set -x
 
 if [ $(uname -s) != "Darwin" ]
@@ -129,12 +131,14 @@ defaults write org.m0k.transmission WarningLegal -bool false
 # git
 ###############################################################################
 
-git config --global --replace-all credential.helper osxkeychain
+__exists git && git config --global --replace-all credential.helper osxkeychain
 
 ###############################################################################
 # macports
 ###############################################################################
 
+if __exists port
+then
 sudo port select --set cython cython27
 sudo port select --set python python34
 sudo port select --set python2 python27
@@ -149,3 +153,4 @@ sudo port select --set gcc mp-gcc49
 sudo port select --set llvm mp-llvm-3.5
 
 port select --summary
+fi
