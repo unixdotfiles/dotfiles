@@ -1,9 +1,9 @@
-ctags
 cowsay
+ctags
 curl +ares +http2
 figlet
-git +bash_completion +svn +credential_osxkeychain
 ghc
+git +bash_completion +svn +credential_osxkeychain
 grc
 hub
 mercurial +bash_completion +zsh_completion
@@ -11,7 +11,9 @@ nmap +zenmap
 perl5.16
 pip
 py27-ipython
+py27-ipython_genutils
 py34-ipython
+py34-ipython_genutils
 python27
 python34
 R +gfortran49-gfortran48+tcltk
