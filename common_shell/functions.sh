@@ -3,8 +3,12 @@
 # no prefix = user function
 
 __exists () {
-      which "$1" >/dev/null 2>&1;
-      return $?;
+  while [ -n "$1" ];
+  do
+    local cmd="$1"; shift
+    which "$cmd" >/dev/null 2>&1 || return 1
+  done
+  return 0;
 }
 
 redefine() {
@@ -43,7 +47,7 @@ __create_remote_alias() {
     printf '%s() { ssh -t -q "%s" "%s" "$@"} \n' "$cmd" "$remote" "$cmd"
 }
 
-__tmux_restore_env() {
+__tmux_restore_ssh_env() {
     [ -z "$TMUX" ] && return
     local temp_sock
     temp_sock=$(tmux show-environment |grep SSH_AUTH_SOCK)
@@ -73,7 +77,7 @@ __sshagent_keysloaded() {
 }
 
 __ensure_sshagent() {
-    __sshagent_keysloaded || __tmux_restore_env
+    __sshagent_keysloaded || __tmux_restore_ssh_env
     __sshagent_keysloaded || __aggressive_ssh_agent_restore
     __sshagent_keysloaded || ssh-add
     true

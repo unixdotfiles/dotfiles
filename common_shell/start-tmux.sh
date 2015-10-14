@@ -15,5 +15,5 @@ __tmux_begin() {
     fi
 }
 
-[ -z "$__shellrc_tmux_disable" ] && __tmux_begin && __tmux_restore_env
+[ -z "$__shellrc_tmux_disable" ] && __tmux_begin && __tmux_restore_ssh_env
 export __SHELLRC_FIRST_RUN="ready";
