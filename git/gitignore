@@ -1,13 +1,11 @@
 # General Files
 *~
 
-# Ignore CVS Files
+# Ignore VCS Files
 /CVS/*
 */CVS/*
 .cvsignore
 */.cvsignoreA
-
-# And Another Version Control
 .svn/
 
 # Vim specific files
@@ -26,20 +24,22 @@ Session.vim
 # Compiled Object files
 *.o
 *.lo
-*.slo
+.slo
 *.class
 
-# Compiled Libraries
-*.lib
+# Headers
+*.gch
+*.pch
 
-# Compiled Dynamic libraries
+# Compiled Libraries
+*.a
 *.dll
+*.elF
+*.lib
 *.so
 *.so.*
 *.dylib
-
-# Compiled Static libraries
-*.a
+*.ali
 *.la
 *.lai
 
@@ -49,6 +49,11 @@ Session.vim
 *.out
 *.hi
 *.jar
+*.dex
+
+# Debug
+*.dSYM/
+*.debug
 
 # Latex
 *.aux
@@ -79,9 +84,51 @@ eggs/
 *.egg-info/
 *.egg
 
-# Sublime
+# IDE
 *.sublime-workspace
 *.sublime-project
+*.iml
+
+# Generated files
+bin/
+build/
+captures/
+gen/
+proguard/
+.gradle/
+.navigation/
+
+# Automake
+Makefile.in
+autom4te.cache
+aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
+
+# ctags, cscope, and friends
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+# Binary files: likely assets, not committed
+*.zip
+*.tgz
+*.tar
 
 # Never Ignore .gitignore
 !.gitignore
