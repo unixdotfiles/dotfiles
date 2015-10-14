@@ -4,6 +4,8 @@
 
 set -x
 
+trap "exit 1" INT
+
 if [ $(uname -s) != "Darwin" ]
 then
 	printf "This script must be run on OSX only"
