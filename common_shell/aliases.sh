@@ -46,7 +46,7 @@ redefine txt2regex="txt2regex --whitebg";
 redefine kinit="kinit --keychain"
 redefine swipl="swipl -q"
 redefine R="R --save --quiet"
-
+alias week="date +%V"
 alias timestamp='date +%s'
 
 alias p="pushd";
