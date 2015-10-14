@@ -79,5 +79,9 @@ eggs/
 *.egg-info/
 *.egg
 
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
 # Never Ignore .gitignore
 !.gitignore
