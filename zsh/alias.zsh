@@ -74,11 +74,13 @@ alias -g N="&>/dev/null"
 alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
 alias -g DN=">/dev/null"
+alias -g A='| awk'
+alias -g C='| cat'
 alias -g G='| grep'
+alias -g H='| head'
 alias -g L='| less'
 alias -g S='| sort'
 alias -g U='| uniq'
-alias -g H='| head'
 alias -g T='| tail'
 alias -g W='| wc'
 
