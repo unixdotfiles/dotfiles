@@ -41,10 +41,9 @@ then
 else
 	PS1_HOST="%F{blue}%m";
 fi
-PS1_ERR="%F{red}%(?.. !%?!)";  		#return code of last command (if it was not 0)
-PS1_WD=" %F{magenta}%30<...<%~";	    #current working directory limited to 30 chars
+PS1_ERR="%F{red}%(?.. !%?!)";    #return code of last command (if it was not 0)
+PS1_WD=" %F{magenta}%30<...<%~"; #current working directory limited to 30 chars
 PS1_END="%(!.★.∴)"
-PS1_BATTERY=""
 [ -n "$__EC2_IID" ] && PS1_EC2=" ($__EC2_IID)"
 
 PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
