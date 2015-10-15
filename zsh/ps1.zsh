@@ -45,8 +45,7 @@ PS1_ERR="%F{red}%(?.. !%?!)";  		#return code of last command (if it was not 0)
 PS1_WD=" %F{magenta}%30<...<%~";	    #current working directory limited to 30 chars
 PS1_END="%(!.★.∴)"
 PS1_BATTERY=""
-[ -n "$__EC2" ] && PS1_EC2_IID="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)"
-[ -n "$PS1_EC2_IID" ] && PS1_EC2=" ($PS1_EC2_IID) "
+[ -n "$__EC2_IID" ] && PS1_EC2=" ($__EC2_IID)"
 
 PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
