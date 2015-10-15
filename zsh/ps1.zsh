@@ -21,10 +21,9 @@ __VCS_REV="%i"
 __VCS_ACTION="%F{3}|%F{1}%a"
 __VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f-[$__VCS_REV]%f" # no %m
 __VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta}]%f-[$__VCS_REV]%f"
-__VCS_NAME_FORMAT="%s"
 
-zstyle ':vcs_info:*' formats      "$__VCS_FORMATS" "$__VCS_NAME_FORMAT"
-zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS" "$__VCS_NAME_FORMAT"
+zstyle ':vcs_info:*' formats       "$__VCS_FORMATS"
+zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS"
 
 zstyle ':vcs_info:p4*:' use-server false
 
