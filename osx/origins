@@ -5,6 +5,7 @@ figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain
 grc
+htop
 hub
 mercurial +bash_completion +zsh_completion
 nmap +zenmap
