@@ -19,10 +19,7 @@ __exists vim && redefine vi="vim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
-alias sgrep='grep --exclude "*svn*" -I';
-
 alias myip="curl ifconfig.pro";
-
 alias mv="mv -i";
 alias cp="cp -i";
 alias ll="ls -halt"
@@ -31,6 +28,8 @@ alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
 alias rot13="tr [A-Za-z] [N-ZA-Mn-za-m]"
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
+alias week="date +%V"
+alias timestamp='date +%s'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
 
@@ -46,11 +45,12 @@ redefine txt2regex="txt2regex --whitebg";
 redefine kinit="kinit --keychain"
 redefine swipl="swipl -q"
 redefine R="R --save --quiet"
-alias week="date +%V"
-alias timestamp='date +%s'
 
 alias p="pushd";
 alias b="popd";
+
+# if an alias ends with a space the shell checks if the next word is an alias
+redefine sudo="sudo "
 
 # chmod aliases
 alias rwx="chmod 700"
