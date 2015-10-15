@@ -67,17 +67,11 @@ PS1='[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_BG_JOBS$PS1_ER
 PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
 RPS1='$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
-setExecutionTimer() {
-	__cmd_exec_timer=${__cmd_exec_timer:-$SECONDS}
-}
-
 setPS1Battery() {
 	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 }
 
-
 autoload -Uz  add-zsh-hook
 add-zsh-hook precmd setCurrentPS1
-add-zsh-hook preexec setExecutionTimer
 add-zsh-hook periodic setPS1Battery
 export PERIOD=5
