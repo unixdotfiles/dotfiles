@@ -17,12 +17,9 @@ setopt appendhistory
 setopt inc_append_history
 
 setopt hist_verify
-setopt no_hist_beep 
-
+setopt no_hist_beep
 setopt hist_reduce_blanks
-#setopt share_history
 
-# Job related options
 setopt LONG_LIST_JOBS
 
 setopt autocd
@@ -46,6 +43,9 @@ setopt C_BASES
 # Prevent overwriting existing files with '> filename', use '>| filename'
 # (or >!) instead.
 setopt noclobber
+
+setopt BSD_ECHO
+setopt COMBINING_CHARS # hide this behind a TERM check
 
 zmodload zsh/mathfunc
 zmodload zsh/termcap
