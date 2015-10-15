@@ -28,11 +28,6 @@ zstyle ':vcs_info:*' actionformats "$__VCS_ACTION_FORMATS" "$__VCS_NAME_FORMAT"
 
 zstyle ':vcs_info:p4*:' use-server false
 
-__vcs_dir() {
-	vcs_info
-	echo $vcs_info_msg_0_;
-}
-
 PS1_HIST="%! ";
 PS1_USER="%F{blue}%n";
 if __inSSH
@@ -52,7 +47,7 @@ setCurrentPS1()
 {
   local $(stat -Ls .)
   PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
-	PS1_VCS_DATA="$(__vcs_dir)";
+	PS1_VCS_DATA="$vcs_info_msg_0_";
   PS1_VCS="%F{green}$PS1_VCS_DATA${PS1_VCS_DATA:+ }"
 	_VENV_NAME="${VIRTUAL_ENV##*/}"
 	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
@@ -70,5 +65,6 @@ setPS1Battery() {
 }
 
 autoload -Uz  add-zsh-hook
+add-zsh-hook precmd vcs_info
 add-zsh-hook precmd setCurrentPS1
 add-zsh-hook periodic setPS1Battery
