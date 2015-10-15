@@ -83,7 +83,7 @@ alias -g T='| tail'
 alias -g W='| wc'
 
 alias cd\?="dirs -pv";
-h () { history 0 | grep "$1" }
+h () { history 0 | grep "$@" }
 
 autodisown() {
 	"$@" &
