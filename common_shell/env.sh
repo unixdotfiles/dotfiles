@@ -77,3 +77,4 @@ __exists wget && __EC2_IID="$(wget -q -t 0 -T 0.1 -O - http://169.254.169.254/la
 
 # Show time(1) like information for long running commands
 REPORTTIME=2
+PERIOD=5

@@ -73,4 +73,3 @@ setPS1Battery() {
 autoload -Uz  add-zsh-hook
 add-zsh-hook precmd setCurrentPS1
 add-zsh-hook periodic setPS1Battery
-export PERIOD=5
