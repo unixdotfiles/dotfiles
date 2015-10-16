@@ -23,10 +23,10 @@ getTitleFromProgram() {
 		# If tmux is running in SSH then display "@:hostname" as title
 		# in the term/outer screen.
 		if [[ $program_name == "@tmux" ]]; then
-			program_name="@:${HOST//.*/}"
+			program_name="@:${__HOSTNAME//.*/}"
 		# Use "@:!hostname" for root screens.
 		elif [[ $program_name == "@!tmux" ]]; then
-			program_name="@:!${HOST//.*/}"
+			program_name="@:!${__HOSTNAME//.*/}"
 		fi
 	fi
 	echo $program_name;

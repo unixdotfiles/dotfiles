@@ -1,8 +1,7 @@
 export _confpath=~/.conf/common_shell
 
 #Set some useful variables
-__HOSTNAME="$(hostname)"
-HOST="${__HOSTNAME%%.*}"
+__HOSTNAME="$(hostname -s)"
 
 __INTSHELL="sh";
 [ -n "$BASH_VERSION" ] && __INTSHELL="bash"
