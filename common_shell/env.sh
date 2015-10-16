@@ -73,7 +73,7 @@ export WORKON_HOME=~/.ve
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 
-__exists wget && __EC2_IID="$(wget -q -t 0 -T 0.1 -O - http://169.254.169.254/latest/meta-data/instance-id)"
+__exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
 # Show time(1) like information for long running commands
 REPORTTIME=2
