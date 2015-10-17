@@ -87,7 +87,7 @@ do
     fi
 done
 
-function mcd () {
+mcd() {
   for last; do :; done
   mkdir "$@"
   cd "$last"
