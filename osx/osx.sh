@@ -86,6 +86,13 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write com.apple.dashboard devmode -bool true
+
+# Mail.app
+defaults write com.apple.Mail DisableReplyAnimations -bool true
+defaults write com.apple.Mail DisableSendAnimations -bool true
+
 ###############################################################################
 # Safari & WebKit
 ###############################################################################
