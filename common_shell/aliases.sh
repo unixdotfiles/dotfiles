@@ -19,7 +19,7 @@ __exists vim && redefine vi="vim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
-alias myip="curl ifconfig.pro";
+alias myip="dig myip.opendns.com @resolver1.opendns.com";
 alias mv="mv -i";
 alias cp="cp -i";
 alias ll="ls -halt"
