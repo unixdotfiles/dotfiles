@@ -88,13 +88,9 @@ do
 done
 
 function mcd () {
-	if [ $# -eq 1 ]
-	then
-		mkdir "$1";
-		cd "$1";
-	else
-		mkdir "$@";
-	fi
+  for last; do :; done
+  mkdir "$@"
+  cd "$last"
 }
 
 text_textbelt() {
