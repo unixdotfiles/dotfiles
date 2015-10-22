@@ -75,7 +75,6 @@ htln i3/i3status.conf .i3status.conf
 htln libfm/libfm.conf .config/libfm/libfm.conf
 __exists git && git/install.sh	
 __exists xdg-mime && xdg/install.sh
-__exists gem && gem/install.sh
 htln bash/bashrc .bashrc
 htln bash/bash_profile.bash .bash_profile
 htln tmux/tmux.conf .tmux.conf
@@ -100,6 +99,7 @@ htln pants/pantsrc .pants.new.rc
 htln grc/grcat .grcat
 htln sqlite/sqliterc .sqliterc
 htln mysql/my.cnf .my.cnf
+htln pdb/pdbrc .pdbrc
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"
