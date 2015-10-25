@@ -45,6 +45,7 @@ redefine txt2regex="txt2regex --whitebg";
 redefine kinit="kinit --keychain"
 redefine swipl="swipl -q"
 redefine R="R --save --quiet"
+redefine ipython="LESS='-r' ipython"
 
 alias p="pushd";
 alias b="popd";
