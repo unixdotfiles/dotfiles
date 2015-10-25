@@ -46,8 +46,7 @@ setCurrentPS1()
 {
   local $(stat -Ls .)
   PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
-	PS1_VCS_DATA="$vcs_info_msg_0_";
-  PS1_VCS="%F{green}$PS1_VCS_DATA${PS1_VCS_DATA:+ }"
+  PS1_VCS="%F{green}$vcs_info_msg_0_${vcs_info_msg_0_:+ }"
 	_VENV_NAME="${VIRTUAL_ENV##*/}"
 	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
 	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
