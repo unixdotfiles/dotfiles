@@ -1,0 +1,1 @@
+redefine ipython="LESS='-r' ipython"
