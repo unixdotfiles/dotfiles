@@ -88,6 +88,8 @@ eggs/
 *.sublime-workspace
 *.sublime-project
 *.iml
+.idea/
+.idea_modules/
 
 # Generated files
 bin/
@@ -97,6 +99,7 @@ gen/
 proguard/
 .gradle/
 .navigation/
+/out/
 
 # Automake
 Makefile.in

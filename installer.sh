@@ -100,6 +100,9 @@ htln grc/grcat .grcat
 htln sqlite/sqliterc .sqliterc
 htln mysql/my.cnf .my.cnf
 htln pdb/pdbrc .pdbrc
+ensure_directories ~/.ve
+htln ipython/postactivate .ve/postactivate
+htln ipython/postdeactivate .ve/postdeactivate
 ensure_directories ~/.ssh ~/.ssh/sockets
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"
