@@ -8,6 +8,7 @@ grc
 htop
 hub
 mercurial +bash_completion +zsh_completion
+netcat
 nmap +zenmap
 perl5.16
 pip
