@@ -146,6 +146,7 @@ __exists git && git config --global --replace-all credential.helper osxkeychain
 if __exists port
 then
 sudo port select --set cython cython27
+sudo port select --set maven maven3
 sudo port select --set python python34
 sudo port select --set python2 python27
 sudo port select --set python3 python34
