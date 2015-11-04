@@ -79,10 +79,6 @@ set confirm
 " use ctags instead of cscope for :tags
 set nocst
 
-if has('mouse')
-	set mouse=n
-endif
-
 if has("mouse_sgr")
     set ttymouse=sgr
 else
