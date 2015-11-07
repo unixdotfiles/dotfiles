@@ -59,7 +59,7 @@ PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
 RPS1='$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
 setPS1Battery() {
-	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY="%F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
+	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY=" %F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
 }
 
 autoload -Uz  add-zsh-hook
