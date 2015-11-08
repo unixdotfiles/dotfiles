@@ -77,6 +77,8 @@ gc core.quotepath true
 # Set pull to rebase instead of merge
 gc branch.autosetuprebase always
 
+gc --bool status.submodulesummary true
+
 # core.precomposeunicode
 
 gc diff.algorithm patience
