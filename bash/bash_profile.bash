@@ -8,3 +8,4 @@ then
 fi
 
 . ~/.bashrc
+#source /opt/twitter_mde/etc/bash_profile
