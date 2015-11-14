@@ -1,3 +1,6 @@
 ipython>=4.0.0
 ipython-genutils>=0.1.0
+pep8>=1.6.2
 python-igraph>=0.1.9
+sortedcontainers==0.9.5
+virtualenvwrapper>=4.7.1
