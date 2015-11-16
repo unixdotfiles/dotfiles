@@ -95,6 +95,8 @@ gc --path core.attributesfile '~/.conf/git/attributes'
 
 gc push.default simple
 
+gc notes.displayRef '*'
+
 # URLs that should be auto replaced
 _gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
 gc_add url.git@github.com:.pushInsteadOf https://github.com/
