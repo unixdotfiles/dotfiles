@@ -87,6 +87,8 @@ gc diff.algorithm patience
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
 
+gc --bool rerere.enabled true
+
 gc --path init.templatedir '~/.conf/git/template/'
 gc --path core.excludesfile '~/.conf/git/gitignore'
 gc --path core.attributesfile '~/.conf/git/attributes'
