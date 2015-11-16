@@ -39,12 +39,13 @@ gc alias.contains "branch -a --contains"
 gc alias.count "count-objects -v"
 gc alias.dci "svn dcommit"
 gc alias.fixup "commit -a --amend -C HEAD"
+gc alias.fulllog "log --graph --decorate --boundary --left-right --source --cherry-mark --notes"
 gc alias.last "log --oneline -1"
 gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
 gc alias.pout "diff --stat -p origin/master HEAD"
 gc alias.type "git cat-file -t"
-gc alias.view "log --graph --decorate --oneline --boundary"
 gc alias.rollback 'reset HEAD^'
+gc alias.view "log --decorate --boundary --left-right --oneline --cherry-mark"
 gc alias.st status
 gc alias.whatis '!f() { git cat-file -e "$1" && printf "type=" && git cat-file -t "$1" && printf "size=" && git cat-file -s "$1"; }; f'
 
