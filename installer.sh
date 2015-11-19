@@ -103,7 +103,7 @@ htln pdb/pdbrc .pdbrc
 ensure_directories ~/.ve
 htln ipython/postactivate .ve/postactivate
 htln ipython/postdeactivate .ve/postdeactivate
-ensure_directories ~/.ssh ~/.ssh/sockets
+ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/config.template ~/.ssh/config
 . "$self/vim/installer.sh"
 # add password to config/pianobar/passwd
