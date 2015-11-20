@@ -17,6 +17,7 @@ py27-ipython
 py27-ipython_genutils
 py34-ipython
 py34-ipython_genutils
+py27-nose
 python27
 python34
 R +gfortran49-gfortran48+tcltk
