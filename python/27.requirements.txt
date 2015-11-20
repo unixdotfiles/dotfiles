@@ -1,0 +1,10 @@
+backports.lzma
+enum34
+functools32>=3.2.3
+future>=0.15.2
+futures>=3.0.3
+pathlib
+selectors34>=1.1
+singledispatch>=3.4.0.3
+subprocess32
+typing>=3
