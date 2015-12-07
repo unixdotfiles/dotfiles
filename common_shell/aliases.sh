@@ -19,7 +19,7 @@ __exists vim && redefine vi="vim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
-alias myip="dig myip.opendns.com @resolver1.opendns.com";
+__exists dig && alias myip="dig myip.opendns.com @resolver1.opendns.com";
 alias mv="mv -i";
 alias cp="cp -i";
 alias ll="ls -halt"
@@ -27,7 +27,7 @@ alias lls="ls -lao";
 alias tolower="tr A-Z a-z"
 alias toupper="tr a-z A-Z"
 alias rot13="tr [A-Za-z] [N-ZA-Mn-za-m]"
-alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
+__exists curl && alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias week="date +%V"
 alias timestamp='date +%s'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
@@ -62,7 +62,7 @@ alias r--="chmod 644"
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
-prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig tail head
+prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig drill tail head
 
 __py3opt="-bbOR"
 __py2opt="-ttOR"
