@@ -133,6 +133,9 @@ set pastetoggle=<F8>
 " which is the default
 map Y y$
 
+" Write using sudo when possible
+cmap w!! w !sudo tee > /dev/null %
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
