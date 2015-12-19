@@ -29,6 +29,7 @@ python27 +ucs4
 python34
 R +gfortran49-gfortran48+tcltk
 rust
+sbt
 scala2.11
 subversion +tools
 swi-prolog
