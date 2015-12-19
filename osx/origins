@@ -8,13 +8,16 @@ git +bash_completion +svn +credential_osxkeychain
 grc
 htop
 hub
+mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
+mysql56-server
 nasm
 netcat
 nmap +zenmap
 nginx
 perl5.16
 pip
+postgresql95-server
 py27-ipython
 py27-ipython_genutils
 py34-ipython
