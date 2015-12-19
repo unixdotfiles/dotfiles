@@ -4,7 +4,7 @@ ctags
 curl +ares +http2
 figlet
 ghc
-git +bash_completion +svn +credential_osxkeychain
+git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
 grc
 htop
 hub
@@ -15,7 +15,8 @@ nasm
 netcat
 nmap +zenmap
 nginx
-perl5.16
+perl_select
+perl5.22
 pip
 postgresql95-server
 py27-ipython

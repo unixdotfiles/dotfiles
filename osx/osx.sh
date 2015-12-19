@@ -160,6 +160,7 @@ sudo port select --set gcc mp-gcc49
 sudo port select --set llvm mp-llvm-3.5
 sudo port select --set mysql_select mariadb10
 sudo port select --set postgresql_select postgresql95
+sudo port select --set perl perl522
 
 port select --summary
 fi
