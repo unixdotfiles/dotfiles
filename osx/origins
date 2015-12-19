@@ -2,6 +2,7 @@ ccache
 cowsay
 ctags
 curl +ares +http2
+ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
@@ -36,5 +37,7 @@ tk +x11
 tmux
 tmux-pasteboard
 vim +huge +perl +python34 +python27 +cscope +ruby20 +tcl
+xorg-libxcb +python34 -python27
+xorg-libxcb-proto +python34 -python27
 youtube-dl +python34
 zsh
