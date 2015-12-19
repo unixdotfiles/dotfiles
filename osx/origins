@@ -14,10 +14,9 @@ mysql56-server
 nasm
 netcat
 nmap +zenmap
-nginx
+nginx +gzip_static +http2
 perl_select
 perl5.22
-pip
 postgresql95-server
 py27-ipython
 py27-ipython_genutils
@@ -25,7 +24,7 @@ py34-ipython
 py34-ipython_genutils
 py27-nose
 py27-numpy
-python27
+python27 +ucs4
 python34
 R +gfortran49-gfortran48+tcltk
 rust
