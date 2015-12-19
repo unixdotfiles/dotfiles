@@ -11,6 +11,7 @@ mercurial +bash_completion +zsh_completion
 nasm
 netcat
 nmap +zenmap
+nginx
 perl5.16
 pip
 py27-ipython
