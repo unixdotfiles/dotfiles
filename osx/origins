@@ -7,6 +7,7 @@ figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
 grc
+gobject-introspection +python_ucs4
 htop
 hub
 mariadb-10.1-server
