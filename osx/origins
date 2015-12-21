@@ -15,7 +15,7 @@ mercurial +bash_completion +zsh_completion
 mysql56-server
 nasm
 netcat
-nmap +zenmap
+nmap
 nginx +gzip_static +http2
 perl_select
 perl5.22
