@@ -16,6 +16,7 @@ mysql56-server
 nasm
 netcat
 nmap
+nghttp2
 nginx +gzip_static +http2
 perl_select
 perl5.22
