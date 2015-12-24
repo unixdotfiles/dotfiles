@@ -7,7 +7,7 @@ figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
 grc
-gobject-introspection +python_ucs4
+gobject-introspection
 htop
 hub
 mariadb-10.1-server
@@ -28,7 +28,7 @@ py34-ipython
 py34-ipython_genutils
 py27-nose
 py27-numpy
-python27 +ucs4
+python27
 python34
 R +gfortran49-gfortran48+tcltk
 rust
