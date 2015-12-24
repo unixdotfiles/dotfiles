@@ -36,7 +36,6 @@ __exists hub && redefine git="hub"
 redefine diff="diff -p";
 redefine pastebinit="pastebinit -a ''"
 redefine portlint="portlint -C";
-redefine youtube-dl="youtube-dl -t";
 redefine startx="startx -audit 4 -nolisten tcp";
 redefine portmaster="portmaster -m'-DNO_DEPENDS'";
 redefine urxvt="urxvtcd"
