@@ -45,7 +45,6 @@ PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 setCurrentPS1()
 {
   local $(stat -Ls .)
-  PS1_N_FILES="[$(( $st_nlink - 1 )) files] "
   PS1_VCS="%F{green}$vcs_info_msg_0_${vcs_info_msg_0_:+ }"
 	_VENV_NAME="${VIRTUAL_ENV##*/}"
 	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
@@ -56,7 +55,7 @@ setCurrentPS1()
 
 PS1='[$PS1_HIST$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_BG_JOBS$PS1_ERR%f]$PS1_END'
 PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
-RPS1='$PS1_N_FILES${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
+RPS1='${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
 setPS1Battery() {
 	[ "$uname_s" = "FreeBSD" -a -n "$__shellrc_battery" ] && PS1_BATTERY=" %F{yellow}($(sysctl -n hw.acpi.battery.life)%%)"
