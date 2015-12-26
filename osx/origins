@@ -21,6 +21,7 @@ nghttp2
 nginx +gzip_static +http2
 nmap
 npm
+p7zip
 perl5.22
 perl_select
 postgresql95-server
