@@ -1,4 +1,5 @@
 ccache
+cloc
 cowsay
 ctags
 curl +ares +http2
@@ -16,19 +17,19 @@ mercurial +bash_completion +zsh_completion
 mysql56-server
 nasm
 netcat
-npm
-nmap
 nghttp2
 nginx +gzip_static +http2
-perl_select
+nmap
+npm
 perl5.22
+perl_select
 postgresql95-server
 py27-ipython
 py27-ipython_genutils
-py34-ipython
-py34-ipython_genutils
 py27-nose
 py27-numpy
+py34-ipython
+py34-ipython_genutils
 python27
 python34
 R +gfortran49-gfortran48+tcltk
