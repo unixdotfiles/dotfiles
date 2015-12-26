@@ -44,6 +44,7 @@ tk +x11
 tmux
 tmux-pasteboard
 vim +huge +perl +python34 +python27 +cscope +ruby20 +tcl
+wget
 xorg-libxcb +python34 -python27
 youtube-dl +python34
 zsh
