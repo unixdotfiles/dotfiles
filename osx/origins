@@ -31,6 +31,7 @@ py27-nose
 py27-numpy
 py34-ipython
 py34-ipython_genutils
+py34-virtualenv
 python27
 python34
 R +gfortran49-gfortran48+tcltk

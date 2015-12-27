@@ -167,6 +167,7 @@ sudo port select --set postgresql_select postgresql95
 sudo port select --set perl perl5.18-apple.15
 sudo port select --set nosetests nosetests27
 sudo port select --set postgresql postgresql95
+sudo port select --set virtualenv virtualenv34
 
 port select --summary
 fi
