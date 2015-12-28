@@ -1,4 +1,4 @@
-set append ask autoprint
+set append asksub
 set indentprefix="> "
 set PAGER=less
 set EDITOR=vim
