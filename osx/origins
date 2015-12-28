@@ -29,11 +29,11 @@ py27-ipython
 py27-ipython_genutils
 py27-nose
 py27-numpy
-py34-ipython
-py34-ipython_genutils
-py34-virtualenv
+py35-ipython
+py35-ipython_genutils
+py35-virtualenv
 python27
-python34
+python35
 R +gfortran49-gfortran48+tcltk
 rust
 sbt
@@ -44,8 +44,7 @@ the_silver_searcher
 tk +x11
 tmux
 tmux-pasteboard
-vim +huge +perl +python34 +python27 +cscope +ruby20 +tcl
+vim +huge +perl +python35 +python27 +cscope +ruby20 +tcl
 wget
-xorg-libxcb +python34 -python27
-youtube-dl +python34
+youtube-dl +python35
 zsh

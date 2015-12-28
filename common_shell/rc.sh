@@ -20,7 +20,7 @@ msource /etc/environment
 . $_shellpath/ps1.$__INTSHELL
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 
-msource /opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin/virtualenvwrapper.sh
+msource /opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin/virtualenvwrapper.sh
 
 for fle in $__rc_shell_files
 do
