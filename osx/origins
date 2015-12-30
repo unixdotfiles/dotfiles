@@ -7,7 +7,7 @@ ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
-graphviz +gdk_pixbuf +lua +perl +poppler +python27 +r +rsvg +smyrna +tcl
+graphviz
 grc
 htop
 hub

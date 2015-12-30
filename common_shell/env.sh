@@ -69,7 +69,6 @@ export PL_SVN_IGNORE=1
 export LANG=en_US.UTF-8
 export CONF_PATH=~/.conf/
 export MYSQL_PS1="\c \u@\h:\p [\d]>"
-export WORKON_HOME=~/.ve
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 
