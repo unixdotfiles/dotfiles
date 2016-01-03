@@ -62,7 +62,7 @@ htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
 ensure_directories ~/.vim/undo ~/.vim/backup ~/.vim/swap ~/.vim/viminfo
-htln vim/vimrc .vimrc
+htln vim/home .vim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
 ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm
