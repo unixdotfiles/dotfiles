@@ -59,11 +59,7 @@ diff-extensions = -u -p
 
 ### Section for configuring miscelleneous Subversion options.
 [miscellany]
-### Set global-ignores to a set of whitespace-delimited globs
-### which Subversion will ignore in its 'status' output, and
-### while importing or adding files and directories.
-### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
-global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej *~ .*.swp .DS_Store
+global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.py[co] *.rej *~ .*.swp .DS_Store *.bak *.orig
 log-encoding = utf-8
 ### Set use-commit-times to make checkout/update/switch/revert
 ### put last-committed timestamps on every file touched.
