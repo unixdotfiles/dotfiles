@@ -37,6 +37,7 @@ py35-virtualenv
 python27
 python35
 R +gfortran49-gfortran48+tcltk
+realpath
 rust
 sbt
 scala2.11
