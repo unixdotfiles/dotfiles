@@ -1,6 +1,3 @@
-### This file configures various client-side behaviors.
-
-### Section for authentication and authorization customizations.
 [auth]
 ### Set password stores used by Subversion. They should be
 ### delimited by spaces or commas. The order of values determines
@@ -67,14 +64,10 @@ diff-extensions = -u -p
 ### while importing or adding files and directories.
 ### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
 global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej *~ .*.swp .DS_Store
-### Set log-encoding to the default encoding for log messages
-# log-encoding = latin1
+log-encoding = utf-8
 ### Set use-commit-times to make checkout/update/switch/revert
 ### put last-committed timestamps on every file touched.
 # use-commit-times = yes
-### Set no-unlock to prevent 'svn commit' from automatically
-### releasing locks on files.
-# no-unlock = yes
 ### Set mime-types-file to a MIME type registry file, used to
 ### provide hints to Subversion's MIME type auto-detection
 ### algorithm.
@@ -84,9 +77,6 @@ global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo *.rej
 ### preserved in generated conflict file names.  By default,
 ### conflict files use custom extensions.
 # preserved-conflict-file-exts = doc ppt xls od?
-### Set enable-auto-props to 'yes' to enable automatic properties
-### for 'svn add' and 'svn import', it defaults to 'no'.
-### Automatic properties are defined in the section 'auto-props'.
 enable-auto-props = yes
 ### Set interactive-conflicts to 'no' to disable interactive
 ### conflict resolution prompting.  It defaults to 'yes'.
