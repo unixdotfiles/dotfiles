@@ -49,9 +49,6 @@ redefine ipython="LESS='-r' ipython"
 alias p="pushd";
 alias b="popd";
 
-# if an alias ends with a space the shell checks if the next word is an alias
-redefine sudo="sudo "
-
 # chmod aliases
 alias rwx="chmod 700"
 alias rw-="chmod 600"
