@@ -79,6 +79,7 @@ gc core.quotepath true
 gc branch.autosetuprebase always
 
 gc --bool status.submodulesummary true
+gc push.recurseSubmodules check
 
 # core.precomposeunicode
 
