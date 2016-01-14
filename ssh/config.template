@@ -9,4 +9,4 @@ ControlPath ~/.ssh/s/%r@%h:%p.sock
 ControlPersist yes
 CheckHostIP yes
 ServerAliveInterval 5
-
+UseRoaming no
