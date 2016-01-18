@@ -28,6 +28,8 @@ gc --bool format.signoff true
 
 gc apply.whitespace warn
 
+gc --int help.autocorrect 1
+
 # Aliases
 gc alias.amend "commit --amend -v"
 gc alias.br "branch"
