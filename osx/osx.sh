@@ -160,7 +160,7 @@ sudo port select --set pip pip35
 sudo port select --set ipython py35-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py35-ipython
-sudo port select --set gcc mp-gcc49
+sudo port select --set gcc mp-gcc5
 sudo port select --set llvm mp-llvm-3.5
 sudo port select --set mysql mariadb-10.1
 sudo port select --set postgresql_select postgresql95
