@@ -2,6 +2,7 @@
 files="
 /opt/local/etc/macports/macports.conf
 /opt/local/etc/macports/sources.conf
+/opt/local/etc/macports/variants.conf
 /etc/exports
 /etc/launchd.conf
 /etc/sysctl.conf
