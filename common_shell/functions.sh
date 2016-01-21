@@ -84,7 +84,7 @@ __ensure_sshagent() {
 }
 
 __ensure_kinit() {
-    klist -t 2>/dev/null || kinit --keychain &
+    /usr/bin/klist -t 2>/dev/null || /usr/bin/kinit --keychain &
 }
 
 ensure_auth() {
