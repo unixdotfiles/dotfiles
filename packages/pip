@@ -1,1 +1,2 @@
 virtualenv-clone==0.2.6
+virtualenvwrapper>=4.7.1
