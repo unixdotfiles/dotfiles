@@ -9,6 +9,5 @@ color yellow "[^A-Za-z0-9](Identifier|Screen|InputDevice|Option|RightOf|LeftOf|D
 color magenta "[0-9]"
 # strings
 color green ""(\\.|[^\"])*""
-# comments                                                               
+# comments
 color blue "#.*"
-

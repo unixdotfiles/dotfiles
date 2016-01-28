@@ -22,4 +22,3 @@ bind index x quit
 set index_format="%4C %Z %{%b %d %Y} %-15.15L (%4l) %s"
 
 set sendmail="/usr/local/bin/ssmtp -oi"	# how to deliver mail
-

@@ -3,4 +3,3 @@ syntax "postgreSQL" "\.sql$"
 color magenta "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
 color yellow "'[^']*'"
 color green "--.*$"
-

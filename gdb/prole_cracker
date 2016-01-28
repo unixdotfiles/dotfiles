@@ -3,7 +3,7 @@
 # DESCRIPTION: A cracker-friendly gdb configuration file.
 #
 # REVISION : 7.1
-# 
+#
 # CONTRIBUTORS: mammon_, elaine, pusillus, mong, eadler
 #
 # NOTES: 'help user' in gdb will list the commands/descriptions in this file
@@ -60,7 +60,7 @@ Set a breakpoint on address
 Usage: bp addr
 end
 
-define bpc 
+define bpc
  clear $arg0
 end
 document bpc
@@ -651,7 +651,7 @@ define get_insn_type
   # opcode extension
   set $_byte2=*(unsigned char *)($arg0 +1)
   set $_opext=($_byte2 & 0x38)
-  if ($_opext == 0x10 || $_opext == 0x18) 
+  if ($_opext == 0x10 || $_opext == 0x18)
    # "call"
    set $INSN_TYPE=3
   end
@@ -710,7 +710,7 @@ define trace_calls
  set logging file ~/gdb_trace_calls.txt
  set logging on
  set logging redirect on
- 
+
  while ( $_nest > 0 )
   get_insn_type $pc
 
@@ -743,13 +743,13 @@ define trace_calls
  set logging redirect off
  set logging off
  set logging file gdb.txt
- 
+
  # clean up trace file
  shell  grep -v ' at ' ~/gdb_trace_calls.txt > ~/gdb_trace_calls.1
  shell  grep -v ' in ' ~/gdb_trace_calls.1 > ~/gdb_trace_calls.txt
 end
 document trace_calls
-Creates a runtime trace of the calls made target in ~/gdb_trace_calls.txt. 
+Creates a runtime trace of the calls made target in ~/gdb_trace_calls.txt.
 Note that this is very slow because gdb "set redirect on" does not work!
 end
 
@@ -810,7 +810,7 @@ define gas_asm
 printf "Type code to assemble, hit Ctrl-D until results appear :)\n"
 printf "Note that this command uses GAS (AT&T syntax) to assemble.\n"
 shell as -o ~/__gdb_tmp.bin
-shell objdump -d -j .text --adjust-vma=$arg0 ~/__gdb_tmp.bin 
+shell objdump -d -j .text --adjust-vma=$arg0 ~/__gdb_tmp.bin
 shell rm ~/__gdb_tmp.bin
 end
 document gas_asm
@@ -826,7 +826,7 @@ end
 #	0x4008e0b3 <malloc+15>: add    $0xa3f6e,%ebx
 # At 0x4008e0b3, %ebx contains the address that has just been allocated
 # The bp_alloc macro generates this breakpoint and *should* work for
-# the forseeable future ... but if it breaks, set a breakpoint on 
+# the forseeable future ... but if it breaks, set a breakpoint on
 # __libc_malloc and look for where where the return value gets popped.
 
 define bp_alloc
@@ -865,7 +865,7 @@ define tips
 	printf "\ttip_syntax  : ATT vs Intel syntax\n"
 end
 document tips
-Provide a list of tips from crackers on various topics. 
+Provide a list of tips from crackers on various topics.
 end
 
 define tip_patch
@@ -912,7 +912,7 @@ end
 define tip_syntax
 	printf "\n"
 	printf "\t    INTEL SYNTAX                        AT&T SYNTAX\n"
-	printf "\tmnemonic dest, src, imm            mnemonic src, dest, imm\n" 
+	printf "\tmnemonic dest, src, imm            mnemonic src, dest, imm\n"
 	printf "\t[base+index*scale+disp]            disp(base, index, scale)\n"
 	printf "\tregister:      eax                 register:      %%eax\n"
 	printf "\timmediate:     0xFF                immediate:     $0xFF\n"

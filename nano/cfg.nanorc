@@ -1,6 +1,6 @@
 syntax "cfg" "\.cfg$"
 color magenta start="\[" end="\]"
-#color blue start="<[^\?]" end="[^\?]>"                                   
+#color blue start="<[^\?]" end="[^\?]>"
 #color cyan "\$[a-zA-Z_0-9]*"
 #color cyan "(\[)|(\])"
 #color brightcyan "(null|true|false|return)"

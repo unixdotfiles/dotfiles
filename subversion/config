@@ -13,7 +13,7 @@
 [helpers]
 ### Set editor-cmd to the command used to invoke your text editor.
 ###   This will override the environment variables that Subversion
-###   examines by default to find this information ($EDITOR, 
+###   examines by default to find this information ($EDITOR,
 ###   et al).
 # editor-cmd = editor (vi, emacs, notepad, etc.)
 ### Set diff-cmd to the absolute path of your 'diff' program.
@@ -57,7 +57,7 @@ diff-extensions = -u -p
 ### Or, if you wanted to specify a full path and arguments:
 # rsh = /path/to/rsh -l myusername
 
-### Section for configuring miscelleneous Subversion options.
+### Section for configuring miscellaneous Subversion options.
 [miscellany]
 global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.py[co] *.rej *~ .*.swp .DS_Store *.bak *.orig
 log-encoding = utf-8

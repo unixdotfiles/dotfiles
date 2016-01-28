@@ -2,7 +2,7 @@ checkAndSetWindowTitle() {
 	local program_name="$1";
 
 	# Set the window name to the currently running program.
-	if  ! isShortName "$program_name" 
+	if  ! isShortName "$program_name"
 	then
 		setWindowTitle $(getTitleFromProgram "$program_name");
 		window_reset="yes"

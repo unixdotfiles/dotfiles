@@ -1,4 +1,4 @@
-## Here iz TEH syntax highlight for lolcode
+## Here iz THE syntax highlight for lolcode
 ## based on the example for C/C++.
 ## no can has moar color
 syntax "lolcode" "\.lol"

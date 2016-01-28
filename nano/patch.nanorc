@@ -6,4 +6,3 @@ color brightred "^-.*"
 color red "^---.*"
 color brightyellow "^@@.*"
 color magenta "^diff.*"
-

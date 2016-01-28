@@ -20,7 +20,7 @@ set bg=light
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
-" Vim Files 
+" Vim Files
 set backupdir=~/.vim/backup
 call EnsureDirExists(&backupdir)
 " Prevent backups from overwriting each other. The naming is weird,
@@ -98,7 +98,7 @@ set notimeout ttimeout ttimeoutlen=100
 "show lines above and below current position at all times
 set scrolloff=2
 
-" Tabbing Options 
+" Tabbing Options
 "
 " Taken from joe @ sw
 set smarttab
@@ -125,7 +125,7 @@ if has("persistent_undo")
     call EnsureDirExists(&undodir)
 endif
 set undolevels=1000		"maximum number of changes that can be undone
-" Indentation options 
+" Indentation options
 
 set pastetoggle=<F8>
 
@@ -205,7 +205,7 @@ endfunction
 set tabstop=8
 set shiftwidth=8
 
-" Includes 
+" Includes
 source ~/.conf/vim/language.vim
 "source ~/.conf/vim/statusline.vim
 source ~/.conf/vim/plugins.vim

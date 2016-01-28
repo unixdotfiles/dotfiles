@@ -9,7 +9,7 @@ setopt hist_ignore_space
 
 setopt extended_history
 
-setopt hist_ignore_dups 
+setopt hist_ignore_dups
 setopt hist_find_no_dups # don't show dups even if not contiguous
 setopt hist_expire_dups_first
 

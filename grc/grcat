@@ -44,7 +44,7 @@ regexp=[\w\.\-_]+@[\w\.\-_]+
 colours=magenta
 -
 
-#row delimeter when using \G key
+#row delimiter when using \G key
 regexp=[*]+.+[*]+
 count=stop
 colours=white

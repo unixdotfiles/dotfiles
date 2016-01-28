@@ -2,7 +2,7 @@
 #white, black, red, blue, green, yellow, magenta, and cyan
 #main config
 
-set const  #Constantly display the cursor position in the status bar. 
+set const  #Constantly display the cursor position in the status bar.
 set historylog
 #set mouse
 set morespace

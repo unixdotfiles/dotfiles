@@ -1,4 +1,4 @@
-command unalias b 
+command unalias b
 command alias b breakpoint set
 command alias bd breakpoint disable
 command alias be breakpoint enable

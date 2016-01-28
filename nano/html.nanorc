@@ -1,6 +1,6 @@
 syntax "HTML" "\.html$"
 # list of tags
-color brightcyan "<[\/]?(html|head|body|title|metal|link|meta|table|tr|td|h[1-6])[>]?" 
+color brightcyan "<[\/]?(html|head|body|title|metal|link|meta|table|tr|td|h[1-6])[>]?"
 # list of attributes
 color cyan "(alt|src|type|onclick|name|content|id|class|style)"
 # text in quotes
@@ -9,4 +9,3 @@ color brightwhite ""(\\.|[^\"])*""
 color yellow start="<!--" end="-->"
 # html entities
 color red "&[^; ]*;"
-

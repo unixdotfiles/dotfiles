@@ -15,7 +15,7 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
-#Some functions, are very slow. 
+#Some functions, are very slow.
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' rehash true
@@ -30,7 +30,7 @@ zstyle ':completion:*' single-ignored show
 
 zstyle ':completion:*' verbose yes
 
-zstyle ':completion:*:' users root $USER 
+zstyle ':completion:*:' users root $USER
 
 # quote pasted URLs
 autoload -Uz url-quote-magic

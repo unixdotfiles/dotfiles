@@ -26,7 +26,7 @@ def FlagsForFile(filename, **kwargs):
         all_flags += cpp_flags
 
     return {
-            'flags': all_flags, 
+            'flags': all_flags,
             'do_cache': True
 
         }

@@ -118,4 +118,3 @@ function ShowSpecial()
     hi nontext ctermfg=red
     return 0
 endfunction " ShowSpecial()
-

@@ -7,4 +7,4 @@ begon () {
 	[ -L "$1" ] && rm "$1";
 }
 
-. $self/.begon 
+. $self/.begon

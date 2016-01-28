@@ -25,7 +25,7 @@ table Config
 	Bold: true
 	Background.Delay: 1
 	Background.Source: /home/eitan/.pics
-   	#Background.File: /home/eitan/.pics/wolf.jpg 
+   	#Background.File: /home/eitan/.pics/wolf.jpg
 	Background.Mode: Mirror
 	Background.Color: #FFFFFF
 end
@@ -37,4 +37,4 @@ table Actions
 	EndDrag: left singleClk
 	Execute[0]: left doubleClk
 	Execute[1]: right doubleClk
-end 
+end

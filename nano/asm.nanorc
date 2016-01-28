@@ -4,7 +4,7 @@ syntax "asm" "\.[sS]$"
 icolor brightgreen		"(push(f)?|pop(f)?|inc|dec|add|sub|subi|mul|imul|mov|and|adc|lea|div|idiv|x?or|out|in|loop|test)([blwq])"
 icolor brightgreen		"jn?(z|l|a|g)e?"
 icolor brightgreen		"(call|leave|ret|int|s[ha][rl]|loopz)"
-#directives 
+#directives
 icolor green			"\.(section|b?align|byte|data|double|text|type|ident|size|string|globl|note)"
 icolor green			"\.(dim|eject|else|elseif|end|endef|endfunc|endif|err|exitm|extern|fail|file)"
 icolor green			"\.(fill|float|hidden|hword|if|incbin|include|int|irp|irpc|lcomm|lflags|ln)"
@@ -35,4 +35,4 @@ color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"
 #labels
 color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"			
 
-#white, black, bblue byellow, bcyan. 
+#white, black, bblue byellow, bcyan.

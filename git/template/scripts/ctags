@@ -3,6 +3,5 @@ TAGSDIR=".git";
 TAGSFILE="$TAGSDIR/tags";
 set -e
 trap "rm -f $TAGSPATH.$$" EXIT
-exctags --tag-relative -Rf"$TAGSFILE.$$" --exclude=.git 
+exctags --tag-relative -Rf"$TAGSFILE.$$" --exclude=.git
 mv "$TAGSFILE.$$" "$TAGSFILE"
-

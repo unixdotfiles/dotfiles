@@ -6,12 +6,12 @@ status = --exclude=.svn
 merge = internal:merge
 verbose = True
 [extensions]
-bisect = 
+bisect =
 bookmarks =
 children =
 churn=
 color =
-eol = 
+eol =
 extdiff =
 fetch =
 graphlog =
@@ -21,7 +21,7 @@ mq =
 parentrevspec =
 patchbomb =
 progress =
-purge = 
+purge =
 rebase =
 record =
 transplant =
