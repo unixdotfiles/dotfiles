@@ -1,0 +1,37 @@
+{
+  "linters": {
+    "chmod": {
+      "type": "chmod"
+    },
+    "filename": {
+      "type": "filename"
+    },
+    "generated": {
+      "type": "generated"
+    },
+    "json": {
+      "type": "json",
+      "include": [
+        "(^\\.arcconfig$)",
+        "(^\\.arclint$)",
+        "(\\.json$)"
+      ]
+    },
+    "merge-conflict": {
+      "type": "merge-conflict"
+    },
+    "nolint": {
+      "type": "nolint"
+    },
+    "spelling": {
+      "type": "spelling",
+      "exclude": "(^resources/spelling/.*\\.json$)"
+    },
+    "text": {
+      "type": "text",
+      "severity": {
+        "2": "disabled"
+      }
+    }
+  }
+}
