@@ -17,6 +17,14 @@
         "(\\.json$)"
       ]
     },
+    "jsonlint": {
+      "type": "jsonlint",
+      "include": [
+        "(^\\.arcconfig$)",
+        "(^\\.arclint$)",
+        "(\\.json$)"
+      ]
+    },
     "merge-conflict": {
       "type": "merge-conflict"
     },
@@ -30,8 +38,18 @@
     "text": {
       "type": "text",
       "severity": {
-        "2": "disabled"
-      }
+        "2": "disabled",
+        "5": "disabled",
+        "3": "disabled"
+      },
+      "exclude": [
+        "(gdb/gdbrc)",
+        "(xchat/xchat.conf)"
+      ]
+    },
+    "xml": {
+      "type": "xml",
+      "include": "(\\.xml$)"
     }
   }
 }
