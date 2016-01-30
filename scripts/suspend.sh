@@ -1,3 +1,3 @@
-. $CONF_PATH/scripts/lib.sh
+. ~/.conf/common_shell/functions.sh
 
-alert suspend
+_alert suspend "PCM sound"

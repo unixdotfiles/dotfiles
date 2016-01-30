@@ -110,3 +110,12 @@ msource() {
 	local f="$1";
 	[ -f "$f" ] && . "$f";
 }
+
+: ${LIBSH_ALERT_TIME:=3000}
+
+_alert() {
+	text="$1";
+	title="$2";
+	__exists Xdialog || return
+	(Xdialog --title "$title" --infobox "$text" 0 0 "$LIBSH_ALERT_TIME" &)
+}

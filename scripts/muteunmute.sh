@@ -1,13 +1,13 @@
-. ~/.conf/scripts/lib.sh
+. ~/.conf/common_shell/functions.sh
 
 mute() {
 	mixer pcm 0
-	alert "Mute"
+	_alert "Mute" "PCM sound"
 }
 
 unmute() {
 	mixer pcm 100
-	alert "Unmute"
+	_alert "Unmute" "PCM sound"
 }
 ismute=""
 mixer -S pcm|grep -q 00 && ismute="yes";
