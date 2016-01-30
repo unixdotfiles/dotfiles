@@ -1,3 +1,5 @@
+NoHostAuthenticationForLocalhost yes
+
 Host localhost
 StrictHostKeyChecking no
 ExitOnForwardFailure yes
