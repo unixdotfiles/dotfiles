@@ -14,3 +14,4 @@ ServerAliveInterval 5
 UseRoaming no
 ForwardAgent no
 HashKnownHosts no
+VisualHostKey yes
