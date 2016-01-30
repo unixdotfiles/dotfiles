@@ -10,3 +10,5 @@ ControlPersist yes
 CheckHostIP yes
 ServerAliveInterval 5
 UseRoaming no
+ForwardAgent no
+HashKnownHosts no
