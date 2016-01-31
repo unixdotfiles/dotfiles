@@ -14,7 +14,8 @@ Plugin 'rodjek/vim-puppet.git'
 Plugin 'vim-scripts/a.vim'
 Plugin 'PCGen/vim-pcgen.git'
 "Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
@@ -30,7 +31,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 
-
 " NERDTree
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
 	    \ '\.so$', '\.egg$', '^\.git$', '\.cmi', '\.cmo' ]
@@ -43,9 +43,6 @@ nnoremap <C-g> :NERDTreeToggle<cr>
 
 " a.vim
 nnoremap <F2> :A<cr>
-
-" VimCompleteMe
-" imap <expr> <CR> pumvisible() ? "\<C-y> " : "\<CR>"
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
