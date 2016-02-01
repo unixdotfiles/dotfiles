@@ -50,7 +50,7 @@ the_silver_searcher
 tk +x11
 tmux
 tmux-pasteboard
-vim +huge +perl +python35 +python27 +cscope +ruby20 +tcl
+vim +huge +perl +python35 +python27 +cscope +ruby20 +tcl +lua
 wget
 youtube-dl +python35
 zsh
