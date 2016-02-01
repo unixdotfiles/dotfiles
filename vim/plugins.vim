@@ -16,6 +16,7 @@ Plugin 'PCGen/vim-pcgen.git'
 "Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Shougo/neocomplete.vim'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
@@ -48,3 +49,5 @@ nnoremap <F2> :A<cr>
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.conf/vim/default_ycm_extra_conf.py'
+
+let g:neocomplete#enable_at_startup = 1
