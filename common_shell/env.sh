@@ -34,23 +34,20 @@ export INPUTRC="~/.inputrc";
 
 export ENV=~/.shrc;
 
-if __exists gpg-agent
+if [ -n "$__shellrc_bgdaemons" ] && __exists gpg-agent && ! __isroot
 then
-	if ! __isroot
-	then
-		if [ -f ~/.gpg-agent-info ]
-		then
-			. ~/.gpg-agent-info
-			export GPG_AGENT_INFO
-		fi
-		if ! gpg-agent -q >/dev/null 2>&1
-		then
-			eval $(gpg-agent --daemon)
-		fi
-	fi
+  if [ -f ~/.gpg-agent-info ]
+  then
+    . ~/.gpg-agent-info
+    export GPG_AGENT_INFO
+  fi
+  if ! gpg-agent -q >/dev/null 2>&1
+  then
+    eval $(gpg-agent --daemon)
+  fi
 fi
 
-if [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
+if [ -n "$__shellrc_bgdaemons" ] && [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
     eval $(ssh-agent) >/dev/null
 fi
