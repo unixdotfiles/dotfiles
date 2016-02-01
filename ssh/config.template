@@ -15,3 +15,5 @@ UseRoaming no
 ForwardAgent no
 HashKnownHosts no
 VisualHostKey yes
+IdentitiesOnly yes
+IdentityFile ~/.ssh/id_rsa
