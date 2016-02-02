@@ -17,6 +17,7 @@ htop
 hub
 ImageMagick +graphviz +rsvg +wmf
 llvm-3.7 +poly
+mandoc
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
 mysql56-server
