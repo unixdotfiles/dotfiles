@@ -1,5 +1,9 @@
 NoHostAuthenticationForLocalhost yes
 
+Host *.github.com github.com
+IdentityFile ~/.ssh/git@id_ed25519.github.com
+RequestTTY no
+
 Host localhost
 StrictHostKeyChecking no
 ExitOnForwardFailure yes
@@ -16,4 +20,3 @@ ForwardAgent no
 HashKnownHosts no
 VisualHostKey yes
 IdentitiesOnly yes
-IdentityFile ~/.ssh/id_rsa
