@@ -91,6 +91,7 @@ htln ack/ackrc .ackrc
 htln slate/slate .slate
 htln psql/psqlrc .psqlrc
 htln irb/irbrc .irbrc
+ensure_directories ~/.R
 htln R/Rprofile .Rprofile
 ensure_directories ~/.ipython/profile_default
 htln ipython/ipython_config.py .ipython/profile_default/ipython_config.py

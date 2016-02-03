@@ -69,6 +69,7 @@ export CONF_PATH=~/.conf/
 export MYSQL_PS1="\c \u@\h:\p [\d]>"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
+export R_LIBS=~/.R
 
 __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
