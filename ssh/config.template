@@ -5,7 +5,7 @@ Host *.github.com github.com
   RequestTTY no
 
 # So that we dont get annoying error messages
-  Host localhost
+Host localhost
   StrictHostKeyChecking no
   ExitOnForwardFailure yes
   ControlMaster no
