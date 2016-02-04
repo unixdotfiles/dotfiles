@@ -1,24 +1,24 @@
 NoHostAuthenticationForLocalhost yes
 
 Host *.github.com github.com
-IdentityFile ~/.ssh/git@id_ed25519.github.com
-RequestTTY no
+  IdentityFile ~/.ssh/git@id_ed25519.github.com
+  RequestTTY no
 
 # So that we dont get annoying error messages
-Host localhost
-StrictHostKeyChecking no
-ExitOnForwardFailure yes
-ControlMaster no
+  Host localhost
+  StrictHostKeyChecking no
+  ExitOnForwardFailure yes
+  ControlMaster no
 
 Host *
-ControlPath ~/.ssh/s/%l-%r@%h:%p
-ControlMaster auto
-ControlPersist yes
-CheckHostIP yes
-ServerAliveInterval 5
-VerifyHostKeyDNS ask
-UseRoaming no
-ForwardAgent no
-HashKnownHosts no
-VisualHostKey yes
-IdentitiesOnly yes
+  ControlPath ~/.ssh/s/%l-%r@%h:%p
+  ControlMaster auto
+  ControlPersist yes
+  CheckHostIP yes
+  ServerAliveInterval 5
+  VerifyHostKeyDNS ask
+  UseRoaming no
+  ForwardAgent no
+  HashKnownHosts no
+  VisualHostKey yes
+  IdentitiesOnly yes
