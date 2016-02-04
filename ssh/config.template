@@ -20,5 +20,5 @@ Host *
   UseRoaming no
   ForwardAgent no
   HashKnownHosts no
-  VisualHostKey yes
+  VisualHostKey no
   IdentitiesOnly yes
