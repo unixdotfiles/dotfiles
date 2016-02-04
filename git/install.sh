@@ -88,7 +88,7 @@ gc push.recurseSubmodules check
 
 # core.precomposeunicode
 
-gc diff.algorithm patience
+gc diff.algorithm histogram
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
