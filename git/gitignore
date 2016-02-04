@@ -133,5 +133,7 @@ cscope.po.out
 *.tgz
 *.tar
 
+log/
+
 # Never Ignore .gitignore
 !.gitignore
