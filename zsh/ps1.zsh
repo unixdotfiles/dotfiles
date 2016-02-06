@@ -1,7 +1,7 @@
 autoload -Uz vcs_info
 zstyle ':vcs_info:*:' use-simple false
-zstyle ':vcs_info:*' enable svn git hg cvs p4 
-# [ formats ] 
+zstyle ':vcs_info:*' enable svn git hg cvs p4
+# [ formats ]
 #zstyle ':vcs_info:*' disable cdv darcs mtn svk tla git-p4 bzr
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:hg*:*' get-revision true

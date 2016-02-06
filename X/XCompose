@@ -14,7 +14,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <quotedbl> <parenright> : "ツ"
 <Multi_key> <colon> <colon> : "∴"
 
-#currency 
+#currency
 <Multi_key> <c> <dollar> : "¢"
 <Multi_key> <e> <dollar> : "€"
 <Multi_key> <l> <dollar> : "£"
@@ -22,7 +22,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <y> <dollar> : "¥"
 <Multi_key> <Y> <dollar> : "￥"
 
-#math 
+#math
 <Multi_key> <8> <8> : "∞"
 <Multi_key> <e> <f> : "∈"
 <Multi_key> <e> <slash> : "∉"
@@ -100,7 +100,7 @@ include "%S/en_US.UTF-8/Compose"
 <Multi_key> <0> <c> : "℃" U2103 # DEGREE CELSIUS
 <Multi_key> <0> <f> : "℉" U2109 # DEGREE FAHRENHEIT
 ͏
-# Punctunation 
+# Punctunation
 <Multi_key> <period> <period> <period> : "…" U2026 # HORIZONTAL ELLIPSIS
 <Multi_key> <colon> <colon> <i> : "⋮" U22EE # VERTICAL ELLIPSIS
 <Multi_key> <dash> <period> <period> : "⋯" U22EF # MIDLINE HORIZONTAL ELLIPSIS
