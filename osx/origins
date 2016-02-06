@@ -20,6 +20,7 @@ llvm-3.7 +poly
 mandoc
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
+mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
 mysql56-server
 nasm
 netcat
