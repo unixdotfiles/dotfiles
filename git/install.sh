@@ -28,6 +28,8 @@ gc --bool format.signoff true
 
 gc apply.whitespace warn
 
+gc core.safecrlf true
+
 gc --int help.autocorrect 1
 
 # Aliases
