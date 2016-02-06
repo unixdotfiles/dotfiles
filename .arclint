@@ -46,8 +46,7 @@
       "severity": {
         "2": "disabled",
         "5": "disabled",
-        "3": "disabled",
-        "10": "disabled"
+        "3": "disabled"
       },
       "exclude": [
         "(gdb/gdbrc)",
