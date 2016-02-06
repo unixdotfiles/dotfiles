@@ -31,6 +31,12 @@
     "nolint": {
       "type": "nolint"
     },
+    "php": {
+      "type": "php",
+      "include": [
+        "(\\.php$)"
+      ]
+    },
     "spelling": {
       "type": "spelling",
       "exclude": "(^resources/spelling/.*\\.json$)"
