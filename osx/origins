@@ -10,6 +10,7 @@ ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
+git-lfs
 gnupg2
 graphviz
 grc
