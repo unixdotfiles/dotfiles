@@ -3,6 +3,7 @@ converters/unix2dos
 devel/cvs
 devel/fossil
 devel/git
+devel/git-lfs
 devel/mercurial
 devel/ninja
 devel/py-xdg
