@@ -1,3 +1,4 @@
+#!/bin/sh
 . ~/.conf/common_shell/functions.sh
 
 mute() {
