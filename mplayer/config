@@ -1,4 +1,3 @@
-# Write your default config options here!
 softvol=yes
 softvol-max=400
 
@@ -22,9 +21,7 @@ alang=en
 # allow to seek in a file which is still downloading whilst watching it
 idx=yes
 
-
 [protocol.dvdnav]
 profile-desc="profile for dvdnav:// streams"
-#profile=protocol.dvd
 mouse-movements=yes
 nocache=yes
