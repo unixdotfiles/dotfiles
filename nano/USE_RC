@@ -1,10 +1,7 @@
-#allowed
 #white, black, red, blue, green, yellow, magenta, and cyan
-#main config
 
 set const  #Constantly display the cursor position in the status bar.
 set historylog
-#set mouse
 set morespace
 set multibuffer
 set nonewlines
@@ -22,26 +19,25 @@ set backupdir ~/.nano/backup
 set locking
 
 
-
 #per file config
-include ~/.mynano/nanorc.nanorc
-include ~/.mynano/php.nanorc
-include ~/.mynano/html.nanorc
-include ~/.mynano/js.nanorc
-include ~/.mynano/patch.nanorc
-include ~/.mynano/makefile.nanorc
-include ~/.mynano/sql.nanorc
-include ~/.mynano/css.nanorc
-include ~/.mynano/xorg_conf.nanorc
-include ~/.mynano/patch.nanorc
-include ~/.mynano/bash.nanorc
-include ~/.mynano/cfg.nanorc
-include ~/.mynano/makefile.nanorc
-include ~/.mynano/xml.nanorc
-include ~/.mynano/c.nanorc
-include ~/.mynano/lolcode.nanorc
-include ~/.mynano/tex.nanorc
-include ~/.mynano/asm.nanorc
+include ~/.conf/nano/nanorc.nanorc
+include ~/.conf/nano/php.nanorc
+include ~/.conf/nano/html.nanorc
+include ~/.conf/nano/js.nanorc
+include ~/.conf/nano/patch.nanorc
+include ~/.conf/nano/makefile.nanorc
+include ~/.conf/nano/sql.nanorc
+include ~/.conf/nano/css.nanorc
+include ~/.conf/nano/xorg_conf.nanorc
+include ~/.conf/nano/patch.nanorc
+include ~/.conf/nano/bash.nanorc
+include ~/.conf/nano/cfg.nanorc
+include ~/.conf/nano/makefile.nanorc
+include ~/.conf/nano/xml.nanorc
+include ~/.conf/nano/c.nanorc
+include ~/.conf/nano/lolcode.nanorc
+include ~/.conf/nano/tex.nanorc
+include ~/.conf/nano/asm.nanorc
 
 include /usr/local/share/nano/python.nanorc
 include /usr/local/share/nano/java.nanorc
