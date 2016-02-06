@@ -16,8 +16,6 @@ unset tabstospaces
 set autoindent
 set backup
 set backupdir ~/.nano/backup
-set locking
-
 
 #per file config
 include ~/.conf/nano/nanorc.nanorc
@@ -45,9 +43,7 @@ include /usr/local/share/nano/perl.nanorc
 include /usr/local/share/nano/ruby.nanorc
 include /usr/local/share/nano/man.nanorc
 
-
-
 bind	F1	help		all
 bind	^G	gotoline	all
-bind ^Z	undo		all
-bind ^Y	redo		all
+bind	^Z	undo		all
+bind	^Y	redo		all
