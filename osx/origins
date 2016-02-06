@@ -14,6 +14,7 @@ git-lfs
 gnupg2
 graphviz
 grc
+hs-cabal-install
 htop
 hub
 ImageMagick +graphviz +rsvg +wmf
