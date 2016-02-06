@@ -37,12 +37,6 @@ include ~/.conf/nano/lolcode.nanorc
 include ~/.conf/nano/tex.nanorc
 include ~/.conf/nano/asm.nanorc
 
-include /usr/local/share/nano/python.nanorc
-include /usr/local/share/nano/java.nanorc
-include /usr/local/share/nano/perl.nanorc
-include /usr/local/share/nano/ruby.nanorc
-include /usr/local/share/nano/man.nanorc
-
 bind	F1	help		all
 bind	^G	gotoline	all
 bind	^Z	undo		all
