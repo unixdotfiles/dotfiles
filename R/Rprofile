@@ -16,6 +16,8 @@ options("devtools.desc" = list(
 ))
 options("devtools.name" = "Eitan Adler")
 
+options(repos=structure(c(CRAN="https://cran.cnr.berkeley.edu/")))
+
 utils::rc.settings(ipck = TRUE)
 
 .__Rprofile_env__. <- new.env(parent = emptyenv())
