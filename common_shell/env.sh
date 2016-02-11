@@ -1,6 +1,7 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
+export READNULLCMD=$PAGER;
 
 _CCACHE_PATH=/opt/local/libexec/ccache:/usr/local/libexec/ccache
 _MACPORTS_PATH=/opt/local/sbin:/opt/local/bin
@@ -51,8 +52,6 @@ if [ -n "$__shellrc_bgdaemons" ] && [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
     eval $(ssh-agent) >/dev/null
 fi
-
-export AUDIODEV=/dev/dsp2.0
 
 if [ "$uname_s" = "FreeBSD" ]
 then
