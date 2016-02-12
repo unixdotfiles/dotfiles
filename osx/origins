@@ -37,7 +37,6 @@ postgresql95-server
 py27-ipython
 py27-ipython_genutils
 py27-nose
-py27-numpy
 py35-ipython
 py35-ipython_genutils
 py35-virtualenv
