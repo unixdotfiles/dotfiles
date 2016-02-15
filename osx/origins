@@ -34,6 +34,7 @@ npm
 p7zip
 perl5.22
 perl_select
+php70
 postgresql95-server
 py27-ipython
 py27-ipython_genutils
