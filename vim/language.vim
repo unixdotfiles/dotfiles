@@ -1,4 +1,5 @@
 if has("autocmd")
+    au BufNewFile,BufRead ssh_config.* setlocal filetype=sshconfig
     au Filetype ruby call Set_Ruby()
     au Filetype c,cpp call Set_C()
     au Filetype php call Set_PHP()
