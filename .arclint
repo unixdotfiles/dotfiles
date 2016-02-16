@@ -44,6 +44,9 @@
     "text": {
       "type": "text",
       "severity": {
+        "2": "disabled",
+        "3": "disabled",
+        "5": "disabled"
       },
       "exclude": [
         "(gdb/gdbrc)",
