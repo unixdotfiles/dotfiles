@@ -80,7 +80,6 @@ function Set_SGML()
 	setlocal tabstop=8
 	setlocal formatoptions=tcq2l
 	setlocal cc=+1
-	return 0
 endfunction " Set_SGML()
 
 function Set_Man()
@@ -117,5 +116,4 @@ function ShowSpecial()
 	" blackend gave me these
 	setlocal list listchars=tab:>>,trail:*,eol:$
 	hi nontext ctermfg=red
-	return 0
 endfunction " ShowSpecial()
