@@ -101,7 +101,7 @@ gc --path init.templatedir '~/.conf/git/template/'
 gc --path core.excludesfile '~/.conf/git/gitignore'
 gc --path core.attributesfile '~/.conf/git/attributes'
 
-gc push.default simple
+[ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
 gc notes.displayRef '*'
 
