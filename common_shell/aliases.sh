@@ -16,7 +16,7 @@ then
 elif [ "$uname_s" = "Darwin" ]
 then
   redefine less="less -R"
-  alias free="top -S|head -15"
+  alias free="top -S|head -12"
 fi
 
 __exists vim && redefine vi="vim"
