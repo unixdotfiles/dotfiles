@@ -10,9 +10,13 @@ fi
 if [ "$uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";
-	alias less="less -R";
+	redefine less="less -R";
 	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
+elif [ "$uname_s" = "Darwin" ]
+then
+  redefine less="less -R"
+  alias free="top -S|head -15"
 fi
 
 __exists vim && redefine vi="vim"
