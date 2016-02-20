@@ -28,7 +28,7 @@ gc --bool format.signoff true
 
 gc apply.whitespace warn
 
-gc core.safecrlf true
+gc --bool core.safecrlf true
 
 gc --int help.autocorrect 1
 
@@ -73,23 +73,21 @@ gc diff.renames copies
 gc --bool diff.mnemonicprefix true
 
 #Don't throw anything away
-gc core.logAllRefUpdates true
+gc --bool core.logAllRefUpdates true
 gc gc.reflogExpire never
 gc gc.reflogExpireUnreachable never
 # gc gc.rerereResolved
 # gc.rerereUnresolved
 # gc.pruneExpire
+gc --bool core.precomposeunicode true
 gc --int gc.auto 0
-
-gc core.quotepath true
+gc --true core.quotepath true
 
 # Set pull to rebase instead of merge
 gc branch.autosetuprebase always
 
 gc --bool status.submodulesummary true
 gc push.recurseSubmodules check
-
-# core.precomposeunicode
 
 gc diff.algorithm histogram
 
