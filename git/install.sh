@@ -81,7 +81,7 @@ gc gc.reflogExpireUnreachable never
 # gc.pruneExpire
 gc --bool core.precomposeunicode true
 gc --int gc.auto 0
-gc --true core.quotepath true
+gc --bool core.quotepath true
 
 # Set pull to rebase instead of merge
 gc branch.autosetuprebase always
