@@ -53,12 +53,6 @@ redefine ipython="LESS='-r' ipython"
 alias p="pushd";
 alias b="popd";
 
-# chmod aliases
-alias rwx="chmod 700"
-alias rw-="chmod 600"
-alias r-x="chmod 755"
-alias r--="chmod 644"
-
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
