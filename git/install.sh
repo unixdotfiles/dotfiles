@@ -104,6 +104,7 @@ gc --path core.attributesfile '~/.conf/git/attributes'
 [ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
 gc notes.displayRef '*'
+gc notes.mergeStrategy 'union'
 
 # URLs that should be auto replaced
 _gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
