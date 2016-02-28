@@ -46,7 +46,7 @@ gc alias.fixup "commit -a --amend -C HEAD"
 gc alias.fulllog "log --graph --decorate --boundary --left-right --source --cherry-mark --notes"
 gc alias.last "log --oneline -1"
 gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
-gc alias.pout "!git diff --stat -p $(git tracking) HEAD"
+gc alias.pout '!git diff --stat -p $(git tracking) HEAD'
 gc alias.type "git cat-file -t"
 gc alias.rollback 'reset HEAD^'
 gc alias.view "log --decorate --boundary --left-right --oneline --cherry-mark"
