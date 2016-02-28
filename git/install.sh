@@ -33,24 +33,24 @@ gc --bool core.safecrlf true
 gc --int help.autocorrect 1
 
 # Aliases
-gc alias.amend "commit --amend -v"
-gc alias.br "branch"
-gc alias.bvv "branch --list -vv"
-gc alias.cat "cat-file -p"
-gc alias.co checkout
+gc alias.amend 'commit --amend -v'
+gc alias.br 'branch'
+gc alias.bvv 'branch --list -vv'
+gc alias.cat 'cat-file -p'
+gc alias.co 'checkout'
 gc alias.ci 'commit -v'
-gc alias.contains "branch -a --contains"
-gc alias.count "count-objects -v"
-gc alias.dci "svn dcommit"
-gc alias.fixup "commit -a --amend -C HEAD"
-gc alias.fulllog "log --graph --decorate --boundary --left-right --source --cherry-mark --notes"
-gc alias.last "log --oneline -1"
-gc alias.lg "log --graph '--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s'"
+gc alias.contains 'branch -a --contains'
+gc alias.count 'count-objects -v'
+gc alias.dci 'svn dcommit'
+gc alias.fixup 'commit -a --amend -C HEAD'
+gc alias.fulllog 'log --graph --decorate --boundary --left-right --source --cherry-mark --notes'
+gc alias.last 'log --oneline -1'
+gc alias.lg 'log --graph "--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s"'
 gc alias.pout '!git diff --stat -p $(git tracking) HEAD'
-gc alias.type "git cat-file -t"
+gc alias.type 'git cat-file -t'
 gc alias.rollback 'reset HEAD^'
-gc alias.view "log --decorate --boundary --left-right --oneline --cherry-mark"
-gc alias.st status
+gc alias.view 'log --decorate --boundary --left-right --oneline --cherry-mark'
+gc alias.st 'status'
 gc alias.sync '!git pull && git push'
 gc alias.tracking '!git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)'
 gc alias.whatis '!f() { git cat-file -e "$1" && printf "type=" && git cat-file -t "$1" && printf "size=" && git cat-file -s "$1"; }; f'
