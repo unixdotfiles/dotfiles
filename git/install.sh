@@ -79,7 +79,7 @@ gc gc.reflogExpire never
 gc gc.reflogExpireUnreachable never
 # gc gc.rerereResolved
 # gc.rerereUnresolved
-# gc.pruneExpire
+gc gc.pruneExpire never
 gc --bool core.precomposeunicode true
 gc --int gc.auto 0
 gc --bool core.quotepath true
