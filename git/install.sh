@@ -77,11 +77,13 @@ gc --bool diff.mnemonicprefix true
 gc --bool core.logAllRefUpdates true
 gc gc.reflogExpire never
 gc gc.reflogExpireUnreachable never
-# gc gc.rerereResolved
-# gc.rerereUnresolved
+gc gc.rerereResolved '90 days'
+gc gc.rerereUnresolved '90 days'
 gc gc.pruneExpire never
 gc --bool core.precomposeunicode true
 gc --int gc.auto 0
+gc --bool receive.autogc false
+
 gc --bool core.quotepath true
 
 # Set pull to rebase instead of merge
@@ -94,6 +96,7 @@ gc diff.algorithm histogram
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
+gc --bool merge.branchdesc true
 
 gc --bool rerere.enabled true
 
@@ -105,6 +108,10 @@ gc --path core.attributesfile '~/.conf/git/attributes'
 
 gc notes.displayRef '*'
 gc notes.mergeStrategy 'union'
+
+gc gitcvs.commitMsgAnnotation ''
+
+gc --bool http.sslTry true
 
 # URLs that should be auto replaced
 _gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
