@@ -114,7 +114,9 @@ gc gitcvs.commitMsgAnnotation ''
 gc --bool http.sslTry true
 
 # URLs that should be auto replaced
-_gc_prefix --remove-section "url.git@github.com:" 2>/dev/null || true
+_gc_prefix --remove-section "url.git@github.com:"  || true
+_gc_prefix --remove-section "url.git@gist.github.com:"  || true
+_gc_prefix --remove-section "url.git@bitbucket.org:"  || true
 gc_add url.git@github.com:.pushInsteadOf https://github.com/
 gc_add url.git@github.com:.pushInsteadOf git://github.com/
 gc_add url.git@gist.github.com:.pushInsteadOf git://gist.github.com/
