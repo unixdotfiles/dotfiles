@@ -6,10 +6,6 @@ _gc_prefix() {
   git config --global "$@"
 }
 
-gc_add() {
-  _gc_prefix --add "$@"
-}
-
 gc() {
   _gc_prefix --replace-all "$@"
 }
@@ -115,11 +111,11 @@ gc --bool http.sslTry true
 
 # URLs that should be auto replaced
 _gc_prefix --remove-section "url.git@github.com:"  || true
+_gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
+_gc_prefix --add url.git@github.com:.pushInsteadOf git://github.com/
 _gc_prefix --remove-section "url.git@gist.github.com:"  || true
+_gc_prefix --add url.git@gist.github.com:.pushInsteadOf git://gist.github.com/
 _gc_prefix --remove-section "url.git@bitbucket.org:"  || true
-gc_add url.git@github.com:.pushInsteadOf https://github.com/
-gc_add url.git@github.com:.pushInsteadOf git://github.com/
-gc_add url.git@gist.github.com:.pushInsteadOf git://gist.github.com/
-gc_add url.git@bitbucket.org:.pushInsteadOf https://bitbucket.org/
-gc_add url.git@bitbucket.org:.pushInsteadOf http://bitbucket.org/
-gc_add url.git@bitbucket.org:.pushInsteadOf git://bitbucket.org/
+_gc_prefix --add url.git@bitbucket.org:.pushInsteadOf https://bitbucket.org/
+_gc_prefix --add url.git@bitbucket.org:.pushInsteadOf http://bitbucket.org/
+_gc_prefix --add url.git@bitbucket.org:.pushInsteadOf git://bitbucket.org/
