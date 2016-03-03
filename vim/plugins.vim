@@ -22,7 +22,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'light'
 " unicode symbols
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
@@ -34,7 +34,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " NERDTree
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$',
-	    \ '\.so$', '\.egg$', '^\.git$', '\.cmi', '\.cmo' ]
+			\ '\.so$', '\.egg$', '^\.git$', '\.cmi', '\.cmo' ]
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowFiles=1
