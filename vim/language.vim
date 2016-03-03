@@ -1,5 +1,4 @@
 if has("autocmd")
-	au BufNewFile,BufRead ssh_config.* setlocal filetype=sshconfig
 	au Filetype ruby call Set_Ruby()
 	au Filetype c,cpp call Set_C()
 	au Filetype php call Set_PHP()
@@ -15,7 +14,6 @@ if has("autocmd")
 	au BufNewFile,BufRead log call Set_CommitLog()
 	au Filetype sh  call Set_Shell()
 	au Filetype zsh call Set_Shell()
-	au BufNewFile,BufRead *.json,.arclint setlocal filetype=json
 	au Filetype json call Set_Json()
 	au Filetype vim call Set_Vim()
 endif " has(autocmd)
