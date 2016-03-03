@@ -49,8 +49,9 @@
         "5": "disabled"
       },
       "exclude": [
-        "(gdb/gdbrc)",
-        "(xchat/xchat.conf)"
+        "(^gdb/gdbrc$)",
+        "(^xchat/xchat.conf$)",
+        "(^mplayer/mencoder.conf$)"
       ]
     },
     "xml": {
