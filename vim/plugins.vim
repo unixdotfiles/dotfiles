@@ -8,7 +8,6 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
-"Plugin 'ajh17/VimCompletesMe'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'rodjek/vim-puppet.git'
 Plugin 'vim-scripts/a.vim'
@@ -41,9 +40,6 @@ let NERDTreeShowFiles=1
 let g:NERDSpaceDelims = 1
 
 nnoremap <C-g> :NERDTreeToggle<cr>
-
-" a.vim
-nnoremap <F2> :A<cr>
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
