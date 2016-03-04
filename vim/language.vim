@@ -7,7 +7,7 @@ if has("autocmd")
 	au Filetype html,sgml,xsl,xml,docbk call Set_SGML()
 	au Filetype crontab call Set_crontab()
 	au BufNewFile,BufRead *.vm call Set_Velocity() " TA
-	au BufNewFile,BufRead *.[1-9] call Set_Man()
+	au Filetype nroff call Set_Man()
 	au Filetype python  call Set_Python()
 	au BufNewFile,BufRead *.in call Set_Automake()
 	au Filetype gitcommit call Set_CommitLog()
