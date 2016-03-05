@@ -27,6 +27,8 @@ do
   . $_shellpath/$fle.$__INTSHELL
 done
 
+msource ~/bin/submodules/arcanist/resources/shell/bash-completion
+
 # Used to work with a PATH unmodified by .options.post
 CLEAN_PATH=$PATH
 
