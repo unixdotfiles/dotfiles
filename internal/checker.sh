@@ -5,10 +5,10 @@ self=~/.conf;
 
 mustexist() {
   pgm="$1"
-  ! __exists "$pgm" && echo "$pgm missing"
+  __exists "$pgm" || echo "$pgm missing"
 }
 
+mustexist git
 mustexist hub
+mustexist vim
 mustexist zsh
-
-true
