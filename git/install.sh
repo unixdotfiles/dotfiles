@@ -109,6 +109,10 @@ gc gitcvs.commitMsgAnnotation ''
 
 gc --bool http.sslTry true
 
+gc --bool gui.warndetachedcommit true
+gc gui.spellingdictionary en_US
+gc gui.maxrecentrepo 25
+
 # URLs that should be auto replaced
 _gc_prefix --remove-section "url.git@github.com:"  || true
 _gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
