@@ -90,9 +90,7 @@ defaults write com.apple.dashboard devmode -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
-###############################################################################
 # Safari & WebKit
-###############################################################################
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
@@ -116,17 +114,13 @@ defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 
 defaults write com.skype.skype IncludeDebugMenu -bool true
 
-###############################################################################
-# Chrome
-###############################################################################
+# Chrome.app
 
 # Disable backswipe in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
-###############################################################################
-# Transmission
-###############################################################################
+# Transmission.app
 
 # Create 'incomplete' folder
 mkdir -p ~/Downloads/Incomplete
