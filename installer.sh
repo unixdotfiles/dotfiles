@@ -82,6 +82,7 @@ ensure_directories ~/.subversion
 htln subversion/config .subversion/config
 htln mutt/muttrc .muttrc
 htln mail/mailrc .mailrc
+htln npm/npmrc .npmrc
 ensure_directories ~/.xchat2
 htln xchat/xchat.conf .xchat2/xchat.conf
 ensure_directories ~/.gnupg
