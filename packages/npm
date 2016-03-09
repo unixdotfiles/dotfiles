@@ -1,5 +1,7 @@
 apm
 cson
+grunt
+grunt-cli
 jpm
 jsonlint
 wscat
