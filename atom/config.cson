@@ -1,6 +1,11 @@
 "*":
   core:
     audioBeep: false
+    disabledPackages: [
+      "metrics"
+      "exception-reporting"
+      "welcome"
+    ]
     projectHome: "/Users/eax/svn"
     themes: [
       "atom-light-ui"
