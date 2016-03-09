@@ -30,7 +30,7 @@ zstyle ':completion:*' single-ignored show
 
 zstyle ':completion:*' verbose yes
 
-zstyle ':completion:*:' users root $USER
+zstyle ':completion:*' users root $USER eax eadler eitan jenkins git $__shellrc_extra_users
 
 # quote pasted URLs
 autoload -Uz url-quote-magic
@@ -55,7 +55,9 @@ __git_files () {
 
 if [ -f ~/.ssh/known_hosts ];
 then
-	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill|rsync|rsh):*:*' hosts $(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)
+  local _host_list
+  _host_list="$(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)"
+	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill|rsync|rsh):*:*' hosts $_host_list
 fi
 
 # Don't complete ./config.* files, this makes running ./configure much
