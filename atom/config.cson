@@ -1,0 +1,16 @@
+"*":
+  core:
+    audioBeep: false
+    projectHome: "/Users/eax/svn"
+    themes: [
+      "atom-light-ui"
+      "atom-light-syntax"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "status-bar": {}
+  welcome:
+    showOnStartup: false

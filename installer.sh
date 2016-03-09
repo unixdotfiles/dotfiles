@@ -44,6 +44,7 @@ htln zsh/zshenv .zshenv
 htln sh/profile .profile
 htln nano/USE_RC .nanorc
 htln nano .mynano
+htln atom/ .atom
 htln swipl/swipl .swipl
 htln X/XCompose .XCompose
 htln X/xinitrc .xinitrc
