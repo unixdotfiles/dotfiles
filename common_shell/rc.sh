@@ -17,6 +17,7 @@ msource /etc/environment
 . $_confpath/env.sh
 . $_confpath/start-tmux.sh
 . $_confpath/aliases.sh
+. $_confpath/completion.sh
 . $_shellpath/ps1.$__INTSHELL
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 
