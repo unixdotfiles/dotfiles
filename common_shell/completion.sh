@@ -1,1 +1,1 @@
-__exists pip && eval "$(pip completion --$__INTSHELL)"
+__exists pip && eval "$(pip --disable-pip-version-check completion --$__INTSHELL)"
