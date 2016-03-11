@@ -35,7 +35,7 @@ zstyle ':completion:*' users root $USER eax eadler eitan jenkins git $__shellrc_
 # quote pasted URLs
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
-zstyle :urlglobber url-other-schema http https ftp git gopher magnet ssh
+zstyle :urlglobber url-other-schema http https h2 h2c ftp git gopher magnet ssh
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
