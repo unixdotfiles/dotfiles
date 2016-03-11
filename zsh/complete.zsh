@@ -53,13 +53,6 @@ __git_files () {
 	_wanted files expl 'local files' _files
 }
 
-if [ -f ~/.ssh/known_hosts ];
-then
-  local _host_list
-  _host_list="$(sed -E -e 's/]/@/' -e 's/\[(.*)@.*[, ].*/\1/g' -e 's/[, ].*$//' ~/.ssh/known_hosts)"
-	zstyle ':completion:*:*:(ssh|scp|sftp|ping|ping6|host|dig|ftp|telnet|drill|rsync|rsh):*:*' hosts $_host_list
-fi
-
 # Don't complete ./config.* files, this makes running ./configure much
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
