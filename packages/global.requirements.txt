@@ -1,6 +1,4 @@
 argcomplete
-ipython>=4.0.0
-ipython-genutils>=0.1.0
 git-review
 numpy
 pep8>=1.6.2
