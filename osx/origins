@@ -41,11 +41,9 @@ php70
 php70-curl
 postgresql95-server
 py27-ipython
-py27-ipython_genutils
-py27-nose
+py27-pip
 py35-ipython
-py35-ipython_genutils
-py35-virtualenv
+py35-pip
 python27
 python35
 R +gfortran49-gfortran48+tcltk
