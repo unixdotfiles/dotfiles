@@ -5,6 +5,7 @@ numpy
 pep8>=1.6.2
 pip
 python-igraph>=0.1.9
+ptpython
 PyYAML
 sortedcontainers==0.9.5
 titlecase==0.7.2
