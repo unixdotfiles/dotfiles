@@ -14,7 +14,7 @@ emulators/virtualbox-ose
 graphics/evince
 irc/xchat
 lang/ghc
-lang/ruby19
+lang/ruby23
 lang/python3
 lang/whitespace
 mail/ssmtp
