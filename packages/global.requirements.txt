@@ -1,4 +1,5 @@
 argcomplete
+bpython
 git-review
 numpy
 pep8>=1.6.2
