@@ -67,6 +67,8 @@ htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
 ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm
 htln pianobar/config .config/pianobar/config
+ensure_directories ~/.ptpython
+htln ptpython/config.py .ptpython/config.py
 htln openbox/menu.xml .config/openbox/menu.xml
 htln openbox/rc.xml .config/openbox/rc.xml
 ensure_directories ~/.i3
