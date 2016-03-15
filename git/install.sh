@@ -73,8 +73,8 @@ gc --bool diff.mnemonicprefix true
 gc --bool core.logAllRefUpdates true
 gc gc.reflogExpire never
 gc gc.reflogExpireUnreachable never
-gc gc.rerereResolved '90 days'
-gc gc.rerereUnresolved '90 days'
+gc gc.rerereResolved '90'
+gc gc.rerereUnresolved '90'
 gc gc.pruneExpire never
 gc --bool core.precomposeunicode true
 gc --int gc.auto 0
