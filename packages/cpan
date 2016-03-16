@@ -1,3 +1,4 @@
+App::cpanminus
 CPAN
 Term::ReadLine::Perl
 Zonemaster
