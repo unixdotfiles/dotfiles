@@ -63,3 +63,4 @@ vim +huge +perl +python35 +python27 +cscope +ruby22 +tcl +lua
 wget
 youtube-dl +python35
 zsh
+zsh-completions
