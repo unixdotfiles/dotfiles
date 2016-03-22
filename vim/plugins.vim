@@ -15,6 +15,7 @@ Plugin 'PCGen/vim-pcgen.git'
 "Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kevints/vim-aurora-syntax'
 Plugin 'Shougo/neocomplete.vim'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
