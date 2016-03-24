@@ -1,4 +1,5 @@
 apache-ant
+arping
 axel
 cairo +quartz +x11
 capnproto
@@ -21,10 +22,12 @@ hs-cabal-install
 htop
 hub
 ImageMagick +graphviz +rsvg +wmf
+ipcalc
 llvm-3.7 +poly
 mandoc
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
+minicom
 mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
 mysql57-server
 nasm
@@ -33,6 +36,7 @@ nghttp2
 nginx +gzip_static +http2 +ssl
 nmap
 npm
+p0f
 p7zip
 pango +quartz +x11
 perl5.22
@@ -53,12 +57,14 @@ ruby23
 rust
 sbt
 scala2.11
+ssldump
 subversion +tools
 swi-prolog
 the_silver_searcher
 tk +x11
 tmux
 tmux-pasteboard
+tree
 vim +huge +perl +python35 +python27 +cscope +ruby22 +tcl +lua
 wget
 youtube-dl +python35
