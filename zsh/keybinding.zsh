@@ -15,11 +15,3 @@ bindkey -M emacs '^[[1;5C' forward-word # screen-256-color C-right
 #[[ "$terminfo[kcuu1]" == "^[O"* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" vi-up-line-or-history
 
 bindkey '^Xh' _complete_help
-
-backward-delete-to-slash () {
-  local WORDCHARS=${WORDCHARS//\//}
-  zle .backward-delete-word
-}
-zle -N backward-delete-to-slash
-
-bindkey -M emacs '\MW'
