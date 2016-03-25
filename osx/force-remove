@@ -1,8 +1,6 @@
 git
 kerberos5
 python2_select
-python27
 python3_select
-python35
 python_select
 subversion
