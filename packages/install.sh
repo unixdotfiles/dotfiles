@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo -H gem install $(<gem)
+gem install --user-install $(<gem)
 npm install -g $(<npm)
 apm install $(<apm)
 pip-2.7 install --user -U -r global.requirements.txt -r 27.requirements.txt
