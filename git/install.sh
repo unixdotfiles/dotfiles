@@ -13,6 +13,7 @@ gc() {
 gc user.name "Eitan Adler"
 #gc user.email "lists@eitanadler.com"
 #gc sendemail.from "lists@eitanadler.com"
+gc --bool user.useconfigonly true
 
 # Email formatting options
 gc sendemail.confirm always
