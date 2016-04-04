@@ -34,7 +34,7 @@ nasm
 netcat
 nghttp2
 nginx +gzip_static +http2 +ssl
-nmap
+nmap -subversion
 npm
 p0f
 p7zip
