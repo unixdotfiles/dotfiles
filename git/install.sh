@@ -48,7 +48,7 @@ gc alias.type 'git cat-file -t'
 gc alias.rollback 'reset HEAD^'
 gc alias.view 'log --decorate --boundary --left-right --oneline --cherry-mark'
 gc alias.st 'status'
-gc alias.sync '!git pull && git push'
+gc alias.sync '!git pull && git push && git submodule update --init --recursive'
 gc alias.tracking '!git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)'
 gc alias.whatis '!f() { git cat-file -e "$1" && printf "type=" && git cat-file -t "$1" && printf "size=" && git cat-file -s "$1"; }; f'
 
