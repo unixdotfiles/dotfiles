@@ -103,9 +103,9 @@ htln grc/grcat .grcat
 htln sqlite/sqliterc .sqliterc
 htln mysql/my.cnf .my.cnf
 htln pdb/pdbrc .pdbrc
-ensure_directories ~/.ve
-htln ipython/postactivate .ve/postactivate
-htln ipython/postdeactivate .ve/postdeactivate
+ensure_directories ~/.virtualenvs
+htln ipython/postactivate .virtualenvs/postactivate
+htln ipython/postdeactivate .virtualenvs/postdeactivate
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 touch ~/.mail_aliases
