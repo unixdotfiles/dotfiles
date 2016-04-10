@@ -42,6 +42,7 @@ pango +quartz +x11
 perl5.22
 perl_select
 php70
+php70-APCu
 php70-curl
 postgresql95-server
 py27-ipython
