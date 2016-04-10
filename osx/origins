@@ -45,6 +45,10 @@ php70
 php70-APCu
 php70-curl
 php70-fpm
+php70-iconv
+php70-mbstring
+php70-openssl
+php70-pear
 postgresql95-server
 py27-ipython
 py27-pip
