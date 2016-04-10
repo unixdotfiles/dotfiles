@@ -44,6 +44,7 @@ perl_select
 php70
 php70-APCu
 php70-curl
+php70-fpm
 postgresql95-server
 py27-ipython
 py27-pip
