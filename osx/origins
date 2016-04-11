@@ -9,7 +9,6 @@ cowsay
 ctags
 curl +ares +http2
 cvs
-ddd
 drill
 ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
