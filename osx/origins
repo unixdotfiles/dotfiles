@@ -50,6 +50,7 @@ php70-mbstring
 php70-openssl
 php70-pear
 postgresql95-server
+pv
 py27-ipython
 py27-pip
 py35-ipython
