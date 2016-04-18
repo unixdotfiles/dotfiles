@@ -41,12 +41,6 @@ __isroot() {
     [ $(id -g) = 0 ]
 }
 
-__create_remote_alias() {
-    cmd="$1"; shift 1
-    remote="$1"; shift 1
-    printf '%s() { ssh -t -q "%s" "%s" "$@"} \n' "$cmd" "$remote" "$cmd"
-}
-
 __tmux_restore_ssh_env() {
     [ -z "$TMUX" ] && return
     local temp_sock
@@ -98,10 +92,6 @@ ensure_auth() {
       __ensure_kinit
       ;;
   esac
-}
-
-define_remote_alias() {
-    eval $(__create_remote_alias "$@")
 }
 
 msource() {
