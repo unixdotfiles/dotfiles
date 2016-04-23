@@ -6,6 +6,7 @@ call vundle#rc()
 Plugin 'kien/ctrlp.vim'
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 "Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 "Plugin 'Valloric/YouCompleteMe'
