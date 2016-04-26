@@ -7,8 +7,6 @@ osname=$(uname -s)
 
 . $self/common_shell/functions.sh
 
-sh $self/internal/checker.sh
-
 _tln () {
 	[ ! -e "$1" ] && return 1;
 
