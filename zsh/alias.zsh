@@ -84,6 +84,9 @@ alias -g U='| uniq'
 alias -g T='| tail'
 alias -g W='| wc'
 
+autoload -U zmv
+alias zcp="zmv -C"
+
 alias cd\?="dirs -pv";
 h () { history 0 | grep "$@" }
 
