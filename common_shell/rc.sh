@@ -30,7 +30,4 @@ done
 
 msource ~/bin/submodules/arcanist/resources/shell/bash-completion
 
-# Used to work with a PATH unmodified by .options.post
-CLEAN_PATH=$PATH
-
 msource ~/.options.post
