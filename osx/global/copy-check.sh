@@ -7,6 +7,7 @@ files="
 /etc/exports
 /etc/launchd.conf
 /etc/sysctl.conf
+/opt/local/etc/grc.conf
 "
 
 for f in $files
