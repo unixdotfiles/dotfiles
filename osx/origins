@@ -57,7 +57,7 @@ py35-ipython
 py35-pip
 python27
 python35
-R +gfortran49-gfortran48+tcltk
+R +gfortran49 -gfortran48 +tcltk
 realpath
 ruby22
 ruby23
