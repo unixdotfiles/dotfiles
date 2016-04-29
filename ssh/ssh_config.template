@@ -12,7 +12,7 @@ Host localhost
   ControlMaster no
 
 Host *
-  ControlPath ~/.ssh/s/%l-%r@%h:%p
+  ControlPath ~/.ssh/s/%r@%h:%p
   ControlMaster auto
   ControlPersist yes
   CheckHostIP yes
