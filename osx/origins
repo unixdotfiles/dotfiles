@@ -36,6 +36,7 @@ nghttp2
 nginx +gzip_static +http2 +ssl
 nmap -subversion
 npm
+opencv +python35 +tbb
 p0f
 p7zip
 pango +quartz +x11
