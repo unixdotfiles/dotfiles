@@ -15,6 +15,8 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
+autoload -U zstyle+
+
 #Some functions, are very slow.
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache

@@ -86,6 +86,9 @@ alias -g W='| wc'
 
 autoload -U zmv
 alias zcp="zmv -C"
+alias zln="zmv -L"
+
+autoload -U zargs
 
 alias cd\?="dirs -pv";
 h () { history 0 | grep "$@" }
