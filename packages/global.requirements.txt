@@ -1,6 +1,7 @@
 argcomplete
 bpython
 git-review
+jupyter
 numpy
 pep8>=1.6.2
 pip
