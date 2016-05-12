@@ -37,7 +37,7 @@ CORRECT_IGNORE="_*";
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
 
-export INPUTRC="~/.inputrc";
+export INPUTRC=~/.inputrc;
 
 export ENV=~/.shrc;
 
