@@ -32,6 +32,7 @@ mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +o
 mysql57-server
 nasm
 netcat
+ninja
 nghttp2
 nginx +gzip_static +http2 +ssl
 nmap -subversion
