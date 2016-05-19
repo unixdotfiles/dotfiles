@@ -5,6 +5,10 @@ Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
   RequestTTY no
 
+Host *.gitlab.com gitlab.com
+  IdentityFile ~/.ssh/git@id_ed25519.gitlab.com
+  RequestTTY no
+
 # So that we dont get annoying error messages
 Host localhost
   StrictHostKeyChecking no
