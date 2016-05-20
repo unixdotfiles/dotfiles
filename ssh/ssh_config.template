@@ -4,10 +4,12 @@ IgnoreUnknown AddKeysToAgent
 Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
   RequestTTY no
+  User git
 
 Host *.gitlab.com gitlab.com
   IdentityFile ~/.ssh/git@id_ed25519.gitlab.com
   RequestTTY no
+  User git
 
 # So that we dont get annoying error messages
 Host localhost
