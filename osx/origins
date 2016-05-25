@@ -28,6 +28,7 @@ mandoc
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
 minicom
+mtr
 mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
 mysql57-server
 nasm
