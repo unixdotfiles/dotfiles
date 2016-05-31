@@ -23,6 +23,7 @@ htop
 hub
 ImageMagick +graphviz +rsvg +wmf
 ipcalc
+libsdl -x11
 llvm-3.7 +poly
 mandoc
 mariadb-10.1-server
