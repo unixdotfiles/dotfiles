@@ -71,6 +71,7 @@ scala2.11
 ssldump
 subversion +tools
 swi-prolog
+tig
 the_silver_searcher
 tk +x11
 tmux
