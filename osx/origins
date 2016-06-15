@@ -5,6 +5,7 @@ cairo +quartz +x11
 capnproto
 ccache
 cloc
+coreutils
 cowsay
 ctags
 curl +ares +http2
@@ -12,6 +13,7 @@ cvs
 drill
 ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
+findutils
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
 git-lfs
@@ -29,14 +31,14 @@ mandoc
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
 minicom
-mtr
 mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
+mtr
 mysql57-server
 nasm
 netcat
-ninja
 nghttp2
 nginx +gzip_static +http2 +ssl
+ninja
 nmap -subversion
 npm
 opencv +python35 +tbb
@@ -71,8 +73,8 @@ scala2.11
 ssldump
 subversion +tools
 swi-prolog
-tig
 the_silver_searcher
+tig
 tk +x11
 tmux
 tmux-pasteboard
