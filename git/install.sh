@@ -89,6 +89,7 @@ gc --bool status.submodulesummary true
 gc push.recurseSubmodules check
 
 gc diff.algorithm histogram
+gc --bool diff.compactionHeuristic true
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
