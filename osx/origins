@@ -55,6 +55,8 @@ php70-iconv
 php70-mbstring
 php70-openssl
 php70-pear
+php70-pcntl
+php70-posix
 postgresql95-server
 pv
 py27-ipython
