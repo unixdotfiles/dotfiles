@@ -42,7 +42,7 @@ gc alias.fulllog 'log --graph --decorate --boundary --left-right --source --cher
 gc alias.last 'log --oneline -1'
 gc alias.lg 'log --graph "--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s"'
 gc alias.pout '!git diff --stat -p $(git tracking) HEAD'
-gc alias.type 'git cat-file -t'
+gc alias.type 'cat-file -t'
 gc alias.rollback 'reset HEAD^'
 gc alias.view 'log --decorate --boundary --left-right --oneline --cherry-mark'
 gc alias.st 'status'
