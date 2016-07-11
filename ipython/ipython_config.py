@@ -1,3 +1,4 @@
+c = get_config()
 c.InteractiveShellApp.reraise_ipython_extension_failures = True
 #c.InteractiveShellApp.pylab = 'auto'
 #c.InteractiveShellApp.matplotlib = 'auto'
