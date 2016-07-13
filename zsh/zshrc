@@ -1,5 +1,18 @@
+if [ -e ~/._profile_startup ]
+then
+  _PROFILE_STARTUP=true
+  PS4=$'%D{%M%S%.} %N:%i> '
+  exec 3>&2 2>$HOME/tmp/startlog.$$
+  setopt xtrace prompt_subst
+fi
 __rc_shell_files="set-options alias complete keybinding precmd"
 . ~/.conf/common_shell/rc.sh
 
 typeset -U fpath
 typeset -U path
+if [ -n "$_PROFILE_STARTUP" ]
+then
+  unsetopt xtrace
+  exec 2>&3 3>&-
+  echo $HOME/tmp/startlog.$$
+fi
