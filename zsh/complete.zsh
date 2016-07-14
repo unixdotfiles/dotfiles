@@ -78,3 +78,17 @@ __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
 
 compdef ll=ls
 compdef lls=ls
+
+if __exists pip
+then
+  # pip --disable-pip-vErsion-check completion --zsh
+  pip_completion() {
+    local words cword
+    read -Ac words
+    read -cn cword
+    reply=( $( COMP_WORDS="$words[*]" \
+               COMP_CWORD=$(( cword-1 )) \
+               PIP_AUTO_COMPLETE=1 $words[1] ) )
+  }
+  compctl -K _pip_completion pip
+fi
