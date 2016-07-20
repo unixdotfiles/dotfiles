@@ -11,6 +11,10 @@ Host *.gitlab.com gitlab.com
   RequestTTY no
   User git
 
+Host apache.org
+   IdentityFile ~/.ssh/eax@id_ed25519.apache.org
+   User eax
+
 # So that we dont get annoying error messages
 Host localhost
   StrictHostKeyChecking no
