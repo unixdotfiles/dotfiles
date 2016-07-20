@@ -5,7 +5,7 @@
 autoload -Uz compinit
 zmodload zsh/complist
 zmodload zsh/complete
-compinit -i
+compinit
 
 # Enable Bash completion
 autoload -Uz bashcompinit && bashcompinit
