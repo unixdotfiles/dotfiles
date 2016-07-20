@@ -29,10 +29,10 @@ gc --bool core.safecrlf true
 
 # Aliases
 gc alias.amend 'commit --amend -v'
-gc alias.br 'branch'
 gc alias.bvv 'branch --list -vv'
 gc alias.cat 'cat-file -p'
 gc alias.co 'checkout'
+gc alias.cbranch 'symbolic-ref --short -q HEAD'
 gc alias.ci 'commit -v'
 gc alias.contains 'branch --contains'
 gc alias.count 'count-objects -v'
