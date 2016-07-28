@@ -38,6 +38,7 @@ else
 fi
 PS1_ERR="%F{red}%(?.. !%?!)";    #return code of last command (if it was not 0)
 PS1_WD=" %F{magenta}%30<...<%~"; #current working directory limited to 30 chars
+PS1_JOBS="%F{green}%(1j.{%j}.)"
 PS1_END="%(!.★.∴)"
 [ -n "$__EC2_IID" ] && PS1_EC2=" ($__EC2_IID)"
 
@@ -54,7 +55,7 @@ setCurrentPS1()
   PS1_BG_JOBS="%f${_bg_jobs:+ ⚙}"
 }
 
-PS1='[$PS1_HIST$PS1_TIME$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_BG_JOBS$PS1_ERR%f]$PS1_END'
+PS1='[$PS1_HIST$PS1_TIME$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_BG_JOBS$PS1_ERR$PS1_JOBS%f]$PS1_END'
 PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
 RPS1='${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
 
