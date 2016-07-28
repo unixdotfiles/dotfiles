@@ -1,8 +1,8 @@
 fpath=( $fpath ~/bin ~/bin/zbin )
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10100
-SAVEHIST=10000
+HISTSIZE=100100
+SAVEHIST=100000
 DIRSTACKSIZE=40
 
 setopt hist_ignore_space
