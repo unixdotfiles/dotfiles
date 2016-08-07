@@ -8,8 +8,7 @@ fi
 __rc_shell_files="set-options alias complete keybinding precmd"
 . ~/.conf/common_shell/rc.sh
 
-typeset -U fpath
-typeset -U path
+typeset -U path cdpath manpath fpath helpdir
 if [ -n "$_PROFILE_STARTUP" ]
 then
   unsetopt xtrace
