@@ -10,6 +10,7 @@
 --type-set=coffee=.coffee
 --type-set=slim=.slim
 --type-set=spark=.spark
+--type-set=mustache=.mustache
 --sort-files
 --color
 --follow
