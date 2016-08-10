@@ -1,5 +1,6 @@
 argcomplete
 bpython
+ebawscli
 git-review
 jupyter
 matplotlib
