@@ -1,5 +1,5 @@
 NoHostAuthenticationForLocalhost yes
-IgnoreUnknown AddKeysToAgent
+IgnoreUnknown AddKeysToAgent,UseRoaming
 
 Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
