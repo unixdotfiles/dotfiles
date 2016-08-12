@@ -1,6 +1,8 @@
 apache-ant
 arping
 axel
+bash
+bash-completion
 cairo +quartz +x11
 capnproto
 ccache
