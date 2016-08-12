@@ -11,6 +11,7 @@ ctags
 curl +ares +http2
 cvs
 drill
+dmd
 ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 findutils
