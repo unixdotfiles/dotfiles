@@ -37,7 +37,6 @@ mercurial +bash_completion +zsh_completion
 minicom
 mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
 mtr
-mysql57-server
 nasm
 netcat
 nghttp2
