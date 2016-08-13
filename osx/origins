@@ -55,6 +55,7 @@ php70-curl
 php70-fpm
 php70-iconv
 php70-mbstring
+php70-mysql
 php70-openssl
 php70-pear
 php70-pcntl
