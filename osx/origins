@@ -31,6 +31,7 @@ libsdl -x11
 llvm-3.7 +poly
 lzop
 mandoc
+mariadb-10.1
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
 minicom
