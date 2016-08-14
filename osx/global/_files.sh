@@ -1,0 +1,12 @@
+files="
+/opt/local/etc/macports/macports.conf
+/opt/local/etc/macports/sources.conf
+/opt/local/etc/macports/variants.conf
+/opt/local/etc/php70/php.ini
+/etc/hosts
+/etc/exports
+/etc/launchd.conf
+/etc/sysctl.conf
+/opt/local/etc/grc.conf
+/etc/apache2/httpd.conf
+"
