@@ -28,8 +28,8 @@ alias mv="mv -i";
 alias cp="cp -i";
 alias ll="ls -halt"
 alias lls="ls -lao";
-alias tolower="tr A-Z a-z"
-alias toupper="tr a-z A-Z"
+alias tolower="tr [:upper:] [:lower:]"
+alias toupper="tr [:lower:] [:upper:]"
 alias rot13="tr [A-Za-z] [N-ZA-Mn-za-m]"
 __exists curl && alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias week="date +%V"
