@@ -66,6 +66,7 @@ py27-pip
 py27-readline
 py35-ipython
 py35-pip
+py35-readline
 python27
 python35
 R +tcltk
