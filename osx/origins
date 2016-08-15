@@ -48,7 +48,7 @@ opencv +python35 +tbb
 p0f
 p7zip
 pango +quartz +x11
-perl5.22
+perl5 +perl5.24
 php70
 php70-APCu
 php70-curl
