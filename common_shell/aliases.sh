@@ -23,7 +23,7 @@ __exists vim && redefine vi="vim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
-__exists dig && alias myip="dig myip.opendns.com @resolver1.opendns.com";
+__exists dig && alias myip="dig +short myip.opendns.com @resolver1.opendns.com";
 alias mv="mv -i";
 alias cp="cp -i";
 alias ll="ls -halt"
@@ -43,7 +43,6 @@ redefine diff="diff -p";
 redefine pastebinit="pastebinit -a ''"
 redefine portlint="portlint -C";
 redefine startx="startx -audit 4 -nolisten tcp";
-redefine portmaster="portmaster -m'-DNO_DEPENDS'";
 redefine urxvt="urxvtcd"
 redefine cscope="cscope -CqRv";
 redefine txt2regex="txt2regex --whitebg";
