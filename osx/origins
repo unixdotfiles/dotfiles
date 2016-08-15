@@ -11,8 +11,8 @@ coreutils
 cowsay
 ctags
 curl +ares +http2
-drill
 dmd
+drill
 ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 findutils
@@ -57,12 +57,13 @@ php70-iconv
 php70-mbstring
 php70-mysql
 php70-openssl
-php70-pear
 php70-pcntl
+php70-pear
 php70-posix
 pv
 py27-ipython
 py27-pip
+py27-readline
 py35-ipython
 py35-pip
 python27
