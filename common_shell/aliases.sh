@@ -59,9 +59,11 @@ __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig drill tail head
 
+redefine python="python -R"
 __py3opt="-bbR"
 __py2opt="-3ttR"
-redefine python="python -R"
+__python_exists=""
+__exists python && __python_exists="true"
 for wpython in python2 python2.7 python3 python3.5 python3.4
 do
     _pythonver="${wpython#python}"
@@ -70,12 +72,12 @@ do
     then
         case $_pythonmajorver in
             3)
-                ! __exists python && alias python="$wpython $__py3opt"
+                [ -z "$__python_exists" ] && alias python="$wpython $__py3opt"
                 alias python${_pythonmajorver}="$wpython $__py3opt"
                 alias shareThisDir="$wpython -m http.server 8000"
                 ;;
             2)
-                ! __exists python && alias python="$wpython $__py2opt"
+                [ -z "$__python_exists" ] && alias python="$wpython $__py2opt"
                 alias python${_pythonmajorver}="$wpython $__py2opt"
                 alias shareThisDir="$wpython -m SimpleHTTPServer"
                 ;;
