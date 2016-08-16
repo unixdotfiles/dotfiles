@@ -64,7 +64,7 @@ __py3opt="-bbR"
 __py2opt="-3ttR"
 __python_exists=""
 __exists python && __python_exists="true"
-for wpython in python2 python2.7 python3 python3.5 python3.4
+for wpython in python2 python2.7 python3 python3.4 python3.5
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
