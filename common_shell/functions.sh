@@ -107,3 +107,14 @@ _alert() {
 	__exists Xdialog || return
 	(Xdialog --title "$title" --infobox "$text" 0 0 "$LIBSH_ALERT_TIME" &)
 }
+
+if [ $uname_s = "Darwin" ]
+then
+  sethostname() {
+    local name
+    name="${1?:hostname is required}"
+    hostname "$name"
+    scutil --set LocalHostName "$1"
+    scutil --set HostName "$1"
+  }
+fi
