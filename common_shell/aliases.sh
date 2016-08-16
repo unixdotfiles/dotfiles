@@ -49,6 +49,7 @@ redefine txt2regex="txt2regex --whitebg";
 redefine kinit="kinit --keychain"
 redefine swipl="swipl -q"
 redefine R="R --save --quiet"
+redefine cython="cython -Werror -Wextra -p --gdb"
 redefine ipython="LESS='-r' ipython"
 
 alias p="pushd";
