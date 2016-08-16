@@ -62,7 +62,7 @@ prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld net
 __py3opt="-bbR"
 __py2opt="-3ttR"
 redefine python="python -R"
-for wpython in python2 python2.7 python3 python3.3 python3.5 python3.4
+for wpython in python2 python2.7 python3 python3.5 python3.4
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
