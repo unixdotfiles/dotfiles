@@ -67,10 +67,8 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
 
-# Show Path bar in Finder
+# Finder.app
 defaults write com.apple.finder ShowPathbar -bool true
-
-# Show status bar in finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # Disable AirDrop
