@@ -20,8 +20,6 @@ __exists google-chrome && export BROWSER=$(which google-chrome)
 __exists firefox && export BROWSER=$(whereis -qbx firefox)
 __exists urxvtcd && export TERMINAL=urxvtcd
 
-#export LSCOLORS="Gxfxcxdxbxegedabagacad"
-
 export XZ_OPT="-9eM 90%";
 export GZIP="-9";
 export GREP_OPTIONS="--color"
@@ -30,9 +28,6 @@ export CHARSET="UTF-8";
 
 #Yes GTK - I really do want you to listen to my config file
 export GTK_IM_MODULE="xim";
-
-#Specific to ZSH - but this is an envrioment variable so meh
-CORRECT_IGNORE="_*";
 
 export MANCOLOR="yes"; # view color data
 export MANWIDTH="tty"; # view man pages in full width
@@ -80,6 +75,8 @@ export GRADLE_OPTS=-Dorg.gradle.daemon=true
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
+#Specific to ZSH - but these are envrioment variables so meh
+CORRECT_IGNORE="_*";
 # Show time(1) like information for long running commands
 REPORTTIME=2
 PERIOD=5
