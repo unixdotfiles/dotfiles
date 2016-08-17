@@ -16,7 +16,9 @@ then
 elif [ "$uname_s" = "Darwin" ]
 then
   redefine less="less -R"
+  redefine kinit="kinit --keychain"
   alias free="top -S|head -12"
+  __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 fi
 
 __exists vim && redefine vi="vim"
@@ -46,7 +48,6 @@ redefine startx="startx -audit 4 -nolisten tcp";
 redefine urxvt="urxvtcd"
 redefine cscope="cscope -CqRv";
 redefine txt2regex="txt2regex --whitebg";
-redefine kinit="kinit --keychain"
 redefine swipl="swipl -q"
 redefine R="R --save --quiet"
 redefine cython="cython -Werror -Wextra -p --gdb"
@@ -57,7 +58,6 @@ alias b="popd";
 
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
-__osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig drill tail head
 
 redefine python="python -R"
