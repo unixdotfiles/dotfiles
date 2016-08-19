@@ -6,7 +6,6 @@ bash-completion
 cairo +quartz +x11
 capnproto
 ccache
-cloc
 coreutils
 cowsay
 ctags
