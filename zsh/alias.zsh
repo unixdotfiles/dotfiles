@@ -100,3 +100,14 @@ autodisown() {
 
 redefine xpdf="autodisown xpdf";
 redefine evince="autodisown evince";
+
+autoload -U colors && colors
+man() {
+	LESS_TERMCAP_md="$fg[blue]" \
+	LESS_TERMCAP_me="$reset_color" \
+	LESS_TERMCAP_se="$reset_color" \
+	LESS_TERMCAP_so="$bg[blue]$fg_bold[yellow]" \
+	LESS_TERMCAP_ue="$reset_color" \
+	LESS_TERMCAP_us="$fg[magenta]" \
+	command man "$@"
+}
