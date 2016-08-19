@@ -17,7 +17,7 @@ ffmpeg +gpl3 +nonfree +libdc1394 +librtmp +libx265
 figlet
 findutils
 ghc
-git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_22
+git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
 git-lfs
 gnupg2
 graphviz
