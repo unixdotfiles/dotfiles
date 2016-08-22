@@ -155,9 +155,9 @@ nmap <silent> <F9> <Esc>:call ToggleLineTooLong()<CR>
 
 "Taken from ryan
 "Q -- :noh (clear highlighting)
-map Q :noh<RETURN>
+nnoremap Q :noh<RETURN>
 "S -- split line at char under cursor
-map S i<RETURN><ESC>==k$
+nnoremap S i<RETURN><ESC>==k$
 
 nmap <leader>T :enew<cr>
 nmap <leader>n :bnext<CR>
