@@ -108,7 +108,7 @@ _alert() {
 	(Xdialog --title "$title" --infobox "$text" 0 0 "$LIBSH_ALERT_TIME" &)
 }
 
-if [ $uname_s = "Darwin" ]
+if [ "$(uname -s)" = "Darwin" ]
 then
   sethostname() {
     local name
