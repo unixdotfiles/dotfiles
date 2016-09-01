@@ -1,0 +1,6 @@
+# If I extract audio, keep video
+-k
+# Don't overwrite things by default
+-w --no-post-overwrites
+
+--console-title --no-call-home
