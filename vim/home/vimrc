@@ -33,7 +33,6 @@ set directory+=~/.vim/swap// " double / so that the complete path gets used
 set directory+=.
 call EnsureDirExists("~/.vim/swap")
 
-
 " Better command-line completion
 set wildmenu
 
@@ -61,8 +60,6 @@ set backspace=indent,eol,start
 set autoindent
 
 " Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
 set nostartofline
 
 " Display the cursor position on the last line of the screen or in the status
@@ -99,7 +96,6 @@ set notimeout ttimeout ttimeoutlen=100
 set scrolloff=2
 
 " Tabbing Options
-"
 " Taken from joe @ sw
 set smarttab
 set smartindent
@@ -165,7 +161,7 @@ nmap <leader>p :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
-	" Remove any trailing whitespace that is in the file
+" Remove any trailing whitespace that is in the file
 "	autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 "	call histdel("search", -1)
 
@@ -175,13 +171,6 @@ endif
 
 " Cool tab completion stuff
 set wildmode=list:longest,full
-
-" highlight trailing whitespace and tabs after spaces in leading whitespace
-"highlight ExtraWhitespace ctermbg=red guibg=red
-"autocmd BufWinEnter *.c match ExtraWhitespace /^\s*     \|\s\+$/
-"autocmd InsertEnter *.c match ExtraWhitespace /^\s*     \|\s\+\%#\@<!$/
-"autocmd InsertLeave *.c match ExtraWhitespace /^\s*     \|\s\+$/
-"autocmd BufWinLeave *.c call clearmatches()
 
 set foldenable
 set foldmethod=marker
