@@ -45,13 +45,13 @@ then
   fi
   if ! gpg-agent -q >/dev/null 2>&1
   then
-    eval $(gpg-agent --daemon)
+    eval "$(gpg-agent --daemon)"
   fi
 fi
 
 if [ -n "$__shellrc_bgdaemons" ] && [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
-    eval $(ssh-agent) >/dev/null
+    eval "$(ssh-agent)" >/dev/null
 fi
 
 if [ "$uname_s" = "FreeBSD" ]
@@ -72,6 +72,8 @@ export PYTHONIOENCODING=utf-8
 export R_LIBS=~/.R
 
 export GRADLE_OPTS=-Dorg.gradle.daemon=true
+
+export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=1044"
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
