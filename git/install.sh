@@ -25,6 +25,7 @@ gc --bool format.signoff true
 
 gc apply.whitespace warn
 
+gc core.autocrlf input
 gc --bool core.safecrlf true
 
 # Aliases
