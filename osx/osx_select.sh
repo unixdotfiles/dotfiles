@@ -17,7 +17,7 @@ sudo port select --set ipython py35-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py35-ipython
 sudo port select --set gcc mp-gcc5
-sudo port select --set llvm mp-llvm-3.7
+sudo port select --set llvm mp-llvm-3.8
 sudo port select --set mysql mariadb-10.1
 sudo port select --set postgresql_select postgresql95
 sudo port select --set perl perl5.18-apple.15
