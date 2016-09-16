@@ -71,9 +71,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export R_LIBS=~/.R
 
-export GRADLE_OPTS=-Dorg.gradle.daemon=true
-
 export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=1044"
+
+export RUST_BACKTRACE=1
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
