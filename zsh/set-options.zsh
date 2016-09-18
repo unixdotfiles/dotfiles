@@ -1,4 +1,4 @@
-fpath=( $fpath ~/bin ~/bin/zbin )
+fpath=( $fpath ~/bin ~/bin/.zfunc/ )
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100100
