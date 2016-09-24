@@ -5,5 +5,9 @@ set -x
 
 for f in $files
 do
-	sudo cp $(printf "%s" ${f#/} | sed 's,/,-,g') "$f"
+  backup="$(printf "%s" ${f#/} | sed 's,/,-,g')"
+  if ! cmp  "$backup" "$f"
+  then
+    sudo cp "$backup" "$f"
+  fi
 done
