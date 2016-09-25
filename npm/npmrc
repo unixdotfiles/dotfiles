@@ -3,3 +3,4 @@ engine-strict=true
 init-author-name=Eitan Adler
 init-author-email=lists@eitanadler.com
 init-license=MIT
+long=true
