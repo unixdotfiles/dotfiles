@@ -1,6 +1,9 @@
 cson
+eslint
 grunt
 grunt-cli
+homoglyph
 jpm
+jscs
 jsonlint
 wscat
