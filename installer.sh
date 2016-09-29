@@ -110,6 +110,8 @@ ensure_directories ~/.gradle
 htln gradle/gradle.properties .gradle/gradle.properties
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
+ensure_directories ~/.karabiner.d/configuration/
+htln karabiner/karabiner.json .karabiner.d/configuration/karabiner.json
 touch ~/.mail_aliases
 . "$self/vim/installer.sh"
 # add password to config/pianobar/passwd
