@@ -3,6 +3,7 @@ arping
 axel
 bash
 bash-completion
+bmake
 cairo +quartz +x11
 capnproto
 cargo
