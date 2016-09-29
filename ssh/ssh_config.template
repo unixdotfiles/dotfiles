@@ -34,3 +34,4 @@ Host *
   VisualHostKey no
   IdentitiesOnly yes
   AddKeysToAgent yes
+  ServerAliveInterval 120
