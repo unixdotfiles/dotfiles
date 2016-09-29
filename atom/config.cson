@@ -17,6 +17,11 @@
     preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
+  "linter-shellcheck":
+    enableNotice: true
   "status-bar": {}
   welcome:
     showOnStartup: false
+".json.source":
+  editor:
+    preferredLineLength: 120
