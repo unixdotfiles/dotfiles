@@ -58,7 +58,7 @@ alias b="popd";
 
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
-prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df mtr ps mount dig drill tail head
+prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df ps mount dig drill tail head
 
 redefine python="python -R"
 __py3opt="-bbR"
