@@ -7,7 +7,6 @@ bmake
 cairo +quartz +x11
 capnproto
 cargo
-ccache
 coreutils
 cowsay
 ctags
