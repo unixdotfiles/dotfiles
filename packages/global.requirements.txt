@@ -10,6 +10,7 @@ pep8>=1.6.2
 pip
 pillow
 python-igraph>=0.1.9
+python-nmap
 ptpython
 PyYAML
 requests
@@ -19,3 +20,4 @@ sympy
 titlecase==0.7.2
 virtualenvwrapper>=4.7.1
 virtualenv-clone
+
