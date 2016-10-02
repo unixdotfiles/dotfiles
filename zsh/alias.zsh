@@ -85,10 +85,12 @@ alias -g T='| tail'
 alias -g W='| wc'
 
 autoload -U zmv
+autoload -U zargs
+
 alias zcp="zmv -C"
 alias zln="zmv -L"
 
-autoload -U zargs
+alias vcsi="vcs_info command; vcs_info_lastmsg"
 
 alias cd\?="dirs -pv";
 h () { history 0 | grep "$@" }
