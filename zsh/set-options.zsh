@@ -27,6 +27,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 setopt extendedglob
+setopt GLOB_STAR_SHORT
 unsetopt nomatch
 
 setopt prompt_subst
