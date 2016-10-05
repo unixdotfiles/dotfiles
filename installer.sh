@@ -106,8 +106,9 @@ htln pdb/pdbrc .pdbrc
 ensure_directories ~/.virtualenvs
 htln ipython/postactivate .virtualenvs/postactivate
 htln ipython/postdeactivate .virtualenvs/postdeactivate
-ensure_directories ~/.gradle
+ensure_directories ~/.gradle ~/.ammonite
 htln gradle/gradle.properties .gradle/gradle.properties
+htln ammonite/predef.sc .ammonite/prefdef.sc
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.karabiner.d/configuration/
