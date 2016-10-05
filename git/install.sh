@@ -105,6 +105,7 @@ gc --path core.attributesfile '~/.conf/git/attributes'
 [ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
 gc notes.displayRef '*'
+[ -n "${__shellrc_git_perf:-}" ] && _gc_prefix --unset-all notes.displayRef
 gc notes.mergeStrategy 'union'
 
 gc gitcvs.commitMsgAnnotation ''
