@@ -39,7 +39,7 @@ gc alias.contains 'branch --contains'
 gc alias.count 'count-objects -v'
 gc alias.dci 'svn dcommit'
 gc alias.fixup 'commit -a --amend -C HEAD'
-gc alias.fulllog 'log --graph --decorate --boundary --left-right --source --cherry-mark --notes --format=fuller'
+gc alias.fulllog 'log --graph --decorate --boundary --left-right --source --cherry-mark --format=fuller'
 gc alias.last 'log --oneline -1'
 gc alias.lg 'log --graph "--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s"'
 gc alias.pout '!git diff --stat -p $(git tracking) HEAD'
@@ -104,8 +104,6 @@ gc --path core.attributesfile '~/.conf/git/attributes'
 
 [ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
-gc notes.displayRef '*'
-[ -n "${__shellrc_git_perf:-}" ] && _gc_prefix --unset-all notes.displayRef
 gc notes.mergeStrategy 'union'
 
 gc gitcvs.commitMsgAnnotation ''
