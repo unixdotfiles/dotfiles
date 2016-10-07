@@ -3,7 +3,7 @@ eslint
 grunt
 grunt-cli
 homoglyph
-jpm@1.1.0
+jpm
 jscs
 jsonlint
 wscat
