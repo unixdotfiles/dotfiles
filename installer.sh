@@ -10,7 +10,7 @@ osname=$(uname -s)
 _tln () {
 	[ ! -e "$1" ] && return 1;
 
-	[ -L "$2" -o -e "$2" ] || (ln -s "$1" "$2" && echo begon '"$2"' >> "$begon")
+	[ -L "$2" -o -e "$2" ] || (ln -s "$1" "$2" && echo begon "$2" >> "$begon")
 
 	if [ ! -L "$2" ]; then
 		if cmp -s "$1" "$2"; then
