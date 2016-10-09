@@ -74,6 +74,8 @@ export MYSQL_PS1="\c \u@\h:\p [\d]>"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export R_LIBS=~/.R
+_OSX_JPM_FX_BINARY='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin'
+[ -f "$_OSX_JPM_FX_BINARY" ] && export JPM_FIREFOX_BINARY="$_OSX_JPM_FX_BINARY"
 
 export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=1044"
 
