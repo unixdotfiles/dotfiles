@@ -1,7 +1,7 @@
 #!/bin/sh
 
 __tmux_begin() {
-	if __exists tmux && [ -z "$TMUX" ]
+	if __exists tmux && [ -z "$TMUX" ] && ! __isroot
     then
         if ([ -n "$__shellrc_tmux_childonly" ] && [ -n "$__SHELLRC_FIRST_RUN" ]) ||
             [ -z "$__shellrc_tmux_childonly" ]
