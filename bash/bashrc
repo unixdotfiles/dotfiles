@@ -1,5 +1,5 @@
 if [[ $- == *i* ]]
 then
-. ~/.conf/common_shelL/tputcolors.sh
+. ~/.conf/common_shell/tputcolors.sh
 fi
 . ~/.conf/common_shell/rc.sh
