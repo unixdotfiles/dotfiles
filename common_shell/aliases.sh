@@ -11,7 +11,7 @@ if [ "$uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";
 	redefine less="less -R";
-	alias free="top -b|egrep '^(Mem|Swap|ARC)'"
+	alias free="top -b|grep -E '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
 elif [ "$uname_s" = "Darwin" ]
 then
@@ -42,6 +42,7 @@ __exists pip-2.7 && alias pip2=pip-2.7
 __exists pip-3.5 && alias pip3=pip-3.5
 
 redefine diff="diff -p";
+__exists grc && redefine diff="grc diff -p"
 redefine pastebinit="pastebinit -a ''"
 redefine portlint="portlint -C";
 redefine startx="startx -audit 4 -nolisten tcp";
@@ -58,14 +59,14 @@ alias b="popd";
 
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
-prefixwith "grc -es --colour=auto" diff make gcc g++ as gas clang clang++ ld netcat nc ping traceroute df ps mount dig drill tail head
+prefixwith "grc -es --colour=auto" wdiff make gmake gcc g++ as gas clang clang++ ld netcat nc ping ping6 traceroute traceroute6 df ps mount dig drill tail head cvs ifconfig last netstat
 
 redefine python="python -R"
 __py3opt="-bbR"
 __py2opt="-3ttR"
 __python_exists=""
 __exists python && __python_exists="true"
-for wpython in python2 python2.7 python3 python3.4 python3.5
+for wpython in python2 python2.7 python3 python3.5
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
