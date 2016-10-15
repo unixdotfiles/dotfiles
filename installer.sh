@@ -99,7 +99,6 @@ ensure_directories ~/.R
 htln R/Rprofile .Rprofile
 ensure_directories ~/.ipython/profile_default
 htln ipython/ipython_config.py .ipython/profile_default/ipython_config.py
-htln grc/grcat .grcat
 htln sqlite/sqliterc .sqliterc
 htln mysql/my.cnf .my.cnf
 htln pdb/pdbrc .pdbrc
