@@ -29,7 +29,7 @@ hub
 ImageMagick +graphviz +rsvg +wmf
 ipcalc
 libsdl -x11
-llvm-3.8 +polly
+llvm-3.8
 lzop
 mandoc
 mariadb-10.1
