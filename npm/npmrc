@@ -5,4 +5,3 @@ init-author-email=lists@eitanadler.com
 init-license=MIT
 long=true
 unsafe-perm=false
-loglevel=info
