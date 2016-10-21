@@ -82,6 +82,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.reminders RemindersDebugMenu -boolean true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.skype.skype IncludeDebugMenu -bool true
+defaults write com.apple.appstore ShowDebugMenu -bool true
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.dashboard devmode -bool true
