@@ -74,12 +74,13 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
 
-# Enable the debug menu in Address Book
+# Enable various debug menus
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-# Enable the debug menu in Disk Utility
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
+defaults write com.apple.reminders RemindersDebugMenu -boolean true
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.skype.skype IncludeDebugMenu -bool true
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.dashboard devmode -bool true
@@ -96,9 +97,6 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 # Allow hitting the Backspace key to go to the previous page in history
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
-# Enable Safari’s debug menu
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
@@ -109,8 +107,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.skype.skype WebKitDeveloperExtras -bool true
 defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
-
-defaults write com.skype.skype IncludeDebugMenu -bool true
 
 # Chrome.app
 
