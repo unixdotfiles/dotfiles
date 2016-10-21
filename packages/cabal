@@ -1,5 +1,5 @@
 c2hs
-cabal
+Cabal
 cabal-install
 git-annex
 shellcheck
