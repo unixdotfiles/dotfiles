@@ -119,9 +119,9 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 # Transmission.app
 
 # Create 'incomplete' folder
-mkdir -p ~/Downloads/Incomplete
+mkdir -p ~/.transmission/.Incomplete
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/.Incomplete"
 
 # Hide 'donate' message and 'legal' disclaimer
 defaults write org.m0k.transmission WarningDonate -bool false
