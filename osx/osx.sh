@@ -30,7 +30,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 
 # Expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
- defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
@@ -67,6 +67,10 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
+
+# Get reasonable units
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 
 # Finder.app
 defaults write com.apple.finder ShowPathbar -bool true
@@ -116,16 +120,27 @@ defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
-# Transmission.app
+# Hermes
+# sort stations by name, not date
+defaults write com.alexcrichton.Hermes sortStations -int 2
 
+# Transmission.app
 # Create 'incomplete' folder
 mkdir -p ~/.transmission/.Incomplete
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
 defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/.Incomplete"
-
 # Hide 'donate' message and 'legal' disclaimer
 defaults write org.m0k.transmission WarningDonate -bool false
 defaults write org.m0k.transmission WarningLegal -bool false
+
+# Java
+# This overwrites the dictionary which may not be what is wanted. Included here as a reminder.
+# Ideally I could convert most of this script into a checker which outputs the correct output rather
+# than blindly running 'default write'.
+# defaults write com.oracle.javadeployment /com/oracle/javadeployment/ -dict install.disable.sponsor.offers -string true
+
+# Things to look at:
+# nvram systemsetup pmset caffeinate
 
 ###############################################################################
 # git
