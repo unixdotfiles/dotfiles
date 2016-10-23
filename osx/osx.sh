@@ -2,7 +2,7 @@
 
 . ../common_shell/functions.sh
 
-set -x
+set -xu
 
 trap "exit 1" INT
 
@@ -110,7 +110,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.skype.skype WebKitDeveloperExtras -bool true
 defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 
@@ -132,6 +131,10 @@ defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Do
 # Hide 'donate' message and 'legal' disclaimer
 defaults write org.m0k.transmission WarningDonate -bool false
 defaults write org.m0k.transmission WarningLegal -bool false
+
+# iTunes
+# disable "remote control daemon"
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 # Java
 # This overwrites the dictionary which may not be what is wanted. Included here as a reminder.
