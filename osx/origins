@@ -36,7 +36,7 @@ mariadb-10.1
 mariadb-10.1-server
 mercurial +bash_completion +zsh_completion
 minicom
-mplayer +a52 +aa +caca +dirac +dts +fribidi +lirc +live +mencoder_extras +mng +osd +speex
+mplayer +a52 +aa +caca +dirac +dts +fribidi +live +mencoder_extras +mng +osd +speex
 mtr
 nasm
 netcat
