@@ -3,7 +3,6 @@ eslint
 fixpack
 grunt
 grunt-cli
-homoglyph
 jpm
 jscs
 jsonlint
