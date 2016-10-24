@@ -1,1 +1,2 @@
 typing>=3
+git+https://git@github.com/reinderien/mimic.git
