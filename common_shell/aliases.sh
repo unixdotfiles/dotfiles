@@ -19,6 +19,7 @@ then
   redefine kinit="kinit --keychain"
   alias free="top -S|head -12"
   alias localip="ipconfig getifaddr en0"
+  alias showcodesign="codesign -dvvv -r - --entitlements - --extract-certificates --file-list - --strict=all --deep"
   __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 fi
 
