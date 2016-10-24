@@ -18,6 +18,7 @@ then
   redefine less="less -R"
   redefine kinit="kinit --keychain"
   alias free="top -S|head -12"
+  alias localip="ipconfig getifaddr en0"
   __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 fi
 
@@ -40,6 +41,7 @@ __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
 __exists pip-2.7 && alias pip2=pip-2.7
 __exists pip-3.5 && alias pip3=pip-3.5
+! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
 redefine diff="diff -p";
 __exists grc && redefine diff="grc diff -p"
