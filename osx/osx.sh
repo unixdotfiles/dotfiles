@@ -55,6 +55,7 @@ defaults write com.apple.dock desktop-picture-show-debug-text -bool false
 
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
+defaults write com.apple.CrashReporter UseUNC -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
