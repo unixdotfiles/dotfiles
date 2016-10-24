@@ -133,6 +133,13 @@ defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Do
 defaults write org.m0k.transmission WarningDonate -bool false
 defaults write org.m0k.transmission WarningLegal -bool false
 
+# Chess.app
+defaults write com.apple.Chess MBCListenForMoves -bool false
+defaults write com.apple.Chess MBCSpeakMoves -bool false
+defaults write com.apple.Chess MBCDefaultVoice -string "com.apple.speech.synthesis.voice.karen"
+defaults write com.apple.Chess MBCAlternateVoice -string "com.apple.speech.synthesis.voice.Victoria"
+
+
 # iTunes
 # disable "remote control daemon"
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
