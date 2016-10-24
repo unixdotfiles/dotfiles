@@ -2,7 +2,7 @@
 
 . ../common_shell/functions.sh
 
-set -xu
+set -x
 
 trap "exit 1" INT
 
@@ -138,6 +138,12 @@ defaults write com.apple.Chess MBCListenForMoves -bool false
 defaults write com.apple.Chess MBCSpeakMoves -bool false
 defaults write com.apple.Chess MBCDefaultVoice -string "com.apple.speech.synthesis.voice.karen"
 defaults write com.apple.Chess MBCAlternateVoice -string "com.apple.speech.synthesis.voice.Victoria"
+
+# LaunchControl
+defaults write com.soma-zone.LaunchControl changeLabelWhenRename -bool true
+defaults write com.soma-zone.LaunchControl dyakAboutTooltips -bool false
+defaults write com.soma-zone.LaunchControl paid -bool true
+defaults write com.soma-zone.LaunchControl warnAboutDeprecatedKeys -bool true
 
 
 # iTunes
