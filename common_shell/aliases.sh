@@ -107,3 +107,12 @@ dirsize() {
 randpassword() {
 	LANG=C < /dev/urandom tr -dc '[:print:]' | head -c${1:-16} && printf "\n";
 }
+
+# Create a data URL from a file
+function dataurl() {
+	local mimeType=$(file -b --mime-type "$1");
+	if [[ $mimeType == text/* ]]; then
+		mimeType="${mimeType};charset=utf-8";
+	fi
+	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+}
