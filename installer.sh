@@ -54,9 +54,10 @@ htln X/xbindkeysrc .xbindkeysrc
 htln mercurial/hgrc .hgrc
 htln idesk/ideskrc .ideskrc
 htln idesk/idesktop .idesktop
-ensure_directories ~/.mplayer
+ensure_directories ~/.mplayer ~/.grc
 htln mplayer/config .mplayer/config
 htln mplayer/mencoder.conf .mplayer/mencoder.conf
+htln grc/grc.conf .grc/grc.conf
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
