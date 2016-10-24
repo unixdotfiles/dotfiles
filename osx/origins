@@ -50,6 +50,7 @@ p0f
 p7zip
 pango +quartz +x11
 perl5 +perl5_24
+pigz
 php70
 php70-APCu
 php70-curl
