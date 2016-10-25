@@ -12,7 +12,8 @@ _USER_PIP_PATH=~/Library/Python/3.5/bin:~/Library/Python/2.7/bin
 _PEAR_PATH=/opt/local/bin/pear
 _CARGO_PATH=~/.cargo/bin
 _MYSQL_PATH="/opt/local/lib/mariadb-10.1/bin:/usr/local/mysql/bin"
-export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_CABAL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$HOME/perl5/bin:$PATH"
+_ANDROID_PATH="~/Library/Android/sdk/platform-tools"
+export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_CABAL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$HOME/perl5/bin:$_ANDROID_PATH:$PATH"
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
