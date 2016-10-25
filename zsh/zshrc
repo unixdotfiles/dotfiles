@@ -3,6 +3,7 @@ then
   _PROFILE_STARTUP=true
   PS4=$'%D{%M%S%.} %N:%i> '
   exec 3>&2 2>$HOME/tmp/startlog.$$
+  zmodload zsh/zprof
   setopt xtrace prompt_subst
 fi
 __rc_shell_files="set-options alias complete keybinding precmd"
@@ -11,7 +12,9 @@ __rc_shell_files="set-options alias complete keybinding precmd"
 typeset -U path cdpath manpath fpath helpdir
 if [ -n "$_PROFILE_STARTUP" ]
 then
+  zprof
   unsetopt xtrace
+  zmodload -u zsh/zprof
   exec 2>&3 3>&-
   echo $HOME/tmp/startlog.$$
 fi
