@@ -4,6 +4,7 @@ IgnoreUnknown AddKeysToAgent,UseRoaming
 Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
   RequestTTY no
+  PreferredAuthentications publickey
   User git
 
 Host *.gitlab.com gitlab.com
@@ -30,8 +31,10 @@ Host *
   VerifyHostKeyDNS ask
   UseRoaming no
   ForwardAgent no
+  ForwardX11 no
   HashKnownHosts no
   VisualHostKey no
   IdentitiesOnly yes
   AddKeysToAgent yes
   ServerAliveInterval 120
+  PermitLocalCommand no
