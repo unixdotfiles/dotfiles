@@ -47,6 +47,7 @@ nmap -subversion
 npm3
 opencv +python35 +tbb
 p0f
+parallel
 p7zip
 pango +quartz +x11
 perl5 +perl5_24

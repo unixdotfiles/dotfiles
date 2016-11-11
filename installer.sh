@@ -113,6 +113,7 @@ ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.karabiner.d/configuration/
 htln karabiner/karabiner.json .karabiner.d/configuration/karabiner.json
-touch ~/.mail_aliases
+ensure_directories ~/.parallel
+touch ~/.mail_aliases ~/.parallel/will-cite
 . "$self/vim/installer.sh"
 # add password to config/pianobar/passwd
