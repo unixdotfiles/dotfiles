@@ -1,5 +1,5 @@
 NoHostAuthenticationForLocalhost yes
-IgnoreUnknown AddKeysToAgent,UseRoaming
+IgnoreUnknown AddKeysToAgent,UseRoaming,UseKeychain
 
 Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
@@ -27,7 +27,7 @@ Host *
   ControlMaster auto
   ControlPersist yes
   CheckHostIP yes
-  ServerAliveInterval 5
+  ServerAliveInterval 30
   VerifyHostKeyDNS ask
   UseRoaming no
   ForwardAgent no
@@ -36,5 +36,5 @@ Host *
   VisualHostKey no
   IdentitiesOnly yes
   AddKeysToAgent yes
-  ServerAliveInterval 120
   PermitLocalCommand no
+  UseKeychain yes
