@@ -4,7 +4,6 @@ graphics/evince
 sysutils/devcpu-data
 www/chromium
 www/firefox
-www/nspluginwrapper
 x11-wm/i3
 x11/idesk
 x11/numlockx

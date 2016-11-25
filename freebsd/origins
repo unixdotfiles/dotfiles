@@ -4,7 +4,6 @@ devel/git
 devel/git-lfs
 devel/mercurial
 devel/ninja
-devel/py-xdg
 devel/valgrind
 editors/vim
 emulators/virtualbox-ose
