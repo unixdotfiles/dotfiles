@@ -74,6 +74,7 @@ python27
 python35
 R +tcltk
 realpath
+ripgrep
 ruby23
 rust
 sbt
