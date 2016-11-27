@@ -15,7 +15,7 @@ ptpython
 PyYAML
 requests
 scrapy
-sortedcontainers==0.9.5
+sortedcontainers==1.5.4
 sympy
 titlecase==0.7.2
 virtualenvwrapper>=4.7.1
