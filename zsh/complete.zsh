@@ -71,7 +71,11 @@ zstyle ':completion::complete:ldapsearch:*' tag-order '! globbed-files' -
 #zstyle ':completion:*' file-patterns \
 #    '%p:globbed-files: *(-/):directories:Directories' '*:all-files'
 
-__exists git-last-modified && zstyle ':completion:*:*:git:*' user-commands last-modified:'shows when files were last modified' imerge:'interactive merge'
+zstyle ':completion:*:*:git:*' user-commands \
+  last-modified:'shows when files were last modified' \
+  imerge:'interactive merge' \
+  all-rebase:'rebases all branches to their tracking branch'
+
 
 __exists hub git && compdef hub=git
 __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
