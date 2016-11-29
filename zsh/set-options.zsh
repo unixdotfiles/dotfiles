@@ -1,4 +1,5 @@
 fpath=( /opt/local/share/zsh/site-functions $fpath ~/bin ~/bin/.zfunc/ )
+autoload -U is-at-least
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100100
@@ -27,7 +28,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 setopt extendedglob
-setopt GLOB_STAR_SHORT
+is-at-least 5.2 && setopt GLOB_STAR_SHORT
 unsetopt nomatch
 
 setopt prompt_subst
