@@ -145,6 +145,12 @@ defaults write com.soma-zone.LaunchControl dyakAboutTooltips -bool false
 defaults write com.soma-zone.LaunchControl paid -bool true
 defaults write com.soma-zone.LaunchControl warnAboutDeprecatedKeys -bool true
 
+# Shut Up Safari
+defaults write com.apple.Safari DefaultBrowserDateOfLastPrompt -date '2050-01-01T00:00:00Z'
+defaults write com.apple.Safari DefaultBrowserPromptingState -int 2
+defaults write com.apple.coreservices.uiagent CSUIHasSafariBeenLaunched -bool YES
+defaults write com.apple.coreservices.uiagent CSUIRecommendSafariNextNotificationDate -date 2050-01-01T00:00:00Z
+defaults write com.apple.coreservices.uiagent CSUILastOSVersionWhereSafariRecommendationWasMade -float 10.99
 
 # iTunes
 # disable "remote control daemon"
