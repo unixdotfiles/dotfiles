@@ -165,10 +165,7 @@ sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # Things to look at:
 # nvram systemsetup pmset caffeinate
 
-###############################################################################
 # git
-###############################################################################
-
 __exists git && git config --global --replace-all credential.helper osxkeychain
 
 ~/.conf/osx/osx_select.sh
