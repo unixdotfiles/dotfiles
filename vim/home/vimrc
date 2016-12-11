@@ -111,6 +111,9 @@ set novisualbell
 set showtabline=2
 set tabpagemax=1000
 
+" Delete comment character when joining commented lines
+set formatoptions+=j
+
 " Automatically cd into the directory that the file is in
 set autochdir
 
