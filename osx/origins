@@ -52,17 +52,17 @@ p7zip
 pango +quartz +x11
 perl5 +perl5_24
 pigz
-php70
-php70-APCu
-php70-curl
-php70-fpm
-php70-iconv
-php70-mbstring
-php70-mysql
-php70-openssl
-php70-pcntl
-php70-pear
-php70-posix
+php71
+php71-APCu
+php71-curl
+php71-fpm
+php71-iconv
+php71-mbstring
+php71-mysql
+php71-openssl
+php71-pcntl
+php71-pear
+php71-posix
 pv
 py27-ipython
 py27-pip
