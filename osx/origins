@@ -61,7 +61,6 @@ php71-mbstring
 php71-mysql
 php71-openssl
 php71-pcntl
-php71-pear
 php71-posix
 pv
 py27-ipython
