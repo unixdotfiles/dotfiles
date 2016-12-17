@@ -29,12 +29,11 @@ gc core.autocrlf input
 gc --bool core.safecrlf true
 
 # Aliases
-gc alias.amend 'commit --amend -v'
+gc alias.amend 'commit --amend'
 gc alias.bvv 'branch --list -vv'
 gc alias.cat 'cat-file -p'
 gc alias.co 'checkout'
 gc alias.cbranch 'symbolic-ref --short -q HEAD'
-gc alias.ci 'commit -v'
 gc alias.contains '!f() { git branch --contains "$1"; git tag --contains "$1"; }; f'
 gc alias.count 'count-objects -v'
 gc alias.dci 'svn dcommit'
@@ -102,6 +101,8 @@ gc --bool rerere.enabled true
 gc --path init.templatedir '~/.conf/git/template/'
 gc --path core.excludesfile '~/.conf/git/gitignore'
 gc --path core.attributesfile '~/.conf/git/attributes'
+
+gc --int commit.verbose 1
 
 [ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
