@@ -84,6 +84,7 @@ gc --bool core.quotepath true
 
 # Set pull to rebase instead of merge
 gc branch.autosetuprebase always
+gc --bool rebase.stat true
 
 gc --bool status.submodulesummary true
 gc push.recurseSubmodules check
