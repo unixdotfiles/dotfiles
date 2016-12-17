@@ -77,7 +77,7 @@ ripgrep
 ruby23
 rust
 sbt
-scala2.11
+scala2.12
 ssldump
 subversion +tools
 swi-prolog
