@@ -130,4 +130,4 @@ _gc_prefix --remove-section url.git+ssh://git.debian.org/git/d-i/ 2>/dev/null ||
 _gc_prefix --add url.git://git.debian.org/d-i/.insteadOf git+ssh://git.debian.org/git/d-i/
 _gc_prefix --add url.git+ssh://git.debian.org/git/d-i/.pushInsteadOf git+ssh://git.debian.org/git/d-i/
 _gc_prefix --remove-section url.git+ssh://dweller@secure.phabricator.com 2>/dev/null || true
-_gc_prefix --add url.dweller@secure.phabricator.com:.pushInsteadOf https://secure.phabricator.com
+_gc_prefix --add url.git+ssh://dweller@secure.phabricator.com:.pushInsteadOf https://secure.phabricator.com
