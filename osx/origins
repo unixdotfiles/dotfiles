@@ -70,7 +70,7 @@ py35-ipython
 py35-pip
 py35-readline
 python27
-python35
+python36
 R +tcltk
 realpath
 ripgrep
