@@ -63,9 +63,6 @@ defaults write com.apple.TextEdit RichText -int 0
 # Show all file extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Show POSIX path in title of Finder
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
 # Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
 
@@ -76,6 +73,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 # Finder.app
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
@@ -88,6 +86,8 @@ defaults write com.apple.reminders RemindersDebugMenu -boolean true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.skype.skype IncludeDebugMenu -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
+defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.dashboard devmode -bool true
