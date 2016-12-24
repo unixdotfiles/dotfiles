@@ -159,6 +159,8 @@ sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # Nothing stops me from doing this from the GUI,
 # but might as well just configure the system as I like
 defaults write com.apple.menuextra.battery ShowPercent YES
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/eax/Dropbox/ApplicationData/iterm2prefs"
+defaults write com.if.Amphetamine "Show Welcome Window" -int 0
 
 # Java
 # This overwrites the dictionary which may not be what is wanted. Included here as a reminder.
