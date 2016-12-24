@@ -156,6 +156,10 @@ defaults write com.apple.coreservices.uiagent CSUILastOSVersionWhereSafariRecomm
 # disable "remote control daemon"
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
+# Nothing stops me from doing this from the GUI,
+# but might as well just configure the system as I like
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 # Java
 # This overwrites the dictionary which may not be what is wanted. Included here as a reminder.
 # Ideally I could convert most of this script into a checker which outputs the correct output rather
