@@ -115,5 +115,8 @@ ensure_directories ~/.karabiner.d/configuration/
 htln karabiner/karabiner.json .karabiner.d/configuration/karabiner.json
 ensure_directories ~/.parallel
 touch ~/.mail_aliases ~/.parallel/will-cite
+_app_support="$HOME/Library/Application Support"
+mkdir -p "$_app_support/pip"
+[ "$osname" = "Darwin" ] && htln "$_app_support/pip/pip.conf" pip/pip.conf
 . "$self/vim/installer.sh"
 # add password to config/pianobar/passwd
