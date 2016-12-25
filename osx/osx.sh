@@ -85,7 +85,6 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.reminders RemindersDebugMenu -boolean true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.skype.skype IncludeDebugMenu -bool true
-defaults write com.apple.appstore ShowDebugMenu -bool true
 defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 
