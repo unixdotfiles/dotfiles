@@ -1,5 +1,6 @@
 apache-ant
 arping
+atool
 axel
 bash
 bash-completion
@@ -47,11 +48,10 @@ nmap -subversion
 npm3
 opencv +python35 +tbb
 p0f
-parallel
 p7zip
 pango +quartz +x11
+parallel
 perl5 +perl5_24
-pigz
 php71
 php71-APCu
 php71-curl
@@ -62,6 +62,7 @@ php71-mysql
 php71-openssl
 php71-pcntl
 php71-posix
+pigz
 pv
 py27-ipython
 py27-pip
