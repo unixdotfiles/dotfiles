@@ -64,7 +64,8 @@ htln screen/screenrc .screenrc
 htln vim/home .vim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
-ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl
+ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/karabiner
+htln karabiner/karabiner.json .config/karabiner/karabiner.json
 htln pianobar/config .config/pianobar/config
 htln youtube-dl/config .config/youtube-dl/config
 ensure_directories ~/.ptpython
@@ -111,8 +112,6 @@ htln gradle/gradle.properties .gradle/gradle.properties
 htln ammonite/predef.sc .ammonite/prefdef.sc
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
-ensure_directories ~/.karabiner.d/configuration/
-htln karabiner/karabiner.json .karabiner.d/configuration/karabiner.json
 ensure_directories ~/.parallel
 touch ~/.mail_aliases ~/.parallel/will-cite
 _app_support="$HOME/Library/Application Support"
