@@ -1,2 +1,3 @@
-typing>=3
 git+https://git@github.com/reinderien/mimic.git
+typing>=3
+yq
