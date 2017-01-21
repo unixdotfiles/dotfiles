@@ -22,6 +22,7 @@ ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
 git-lfs
 gnupg2
+gnutar
 graphviz
 grc
 groovy
