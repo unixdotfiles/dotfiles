@@ -27,6 +27,7 @@ gc apply.whitespace warn
 
 gc core.autocrlf input
 gc --bool core.safecrlf true
+gc --int help.autocorrect -1
 
 # Aliases
 gc alias.amend 'commit --amend'
