@@ -81,6 +81,7 @@ ruby23
 rust
 sbt
 scala2.12
+socat
 ssldump
 subversion +tools
 swi-prolog
