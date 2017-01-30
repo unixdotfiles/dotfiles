@@ -104,6 +104,7 @@ gc --path core.excludesfile '~/.conf/git/gitignore'
 gc --path core.attributesfile '~/.conf/git/attributes'
 
 gc --int commit.verbose 1
+gc --int help.autocorrect -1
 
 [ -z "$(git config --get --global push.default)" ] && gc push.default simple
 
