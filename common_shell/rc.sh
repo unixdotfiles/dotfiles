@@ -19,6 +19,7 @@ msource /etc/environment
 . $_confpath/aliases.sh
 . $_shellpath/ps1.$__INTSHELL
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
+msource /Users/eax/.travis/travis.sh
 
 msource /Users/eax/Library/Python/3.5/bin/virtualenvwrapper_lazy.sh
 
