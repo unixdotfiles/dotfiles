@@ -1,3 +1,4 @@
 git+https://git@github.com/reinderien/mimic.git
+gitsome
 typing>=3
 yq
