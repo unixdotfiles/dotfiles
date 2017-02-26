@@ -26,7 +26,6 @@ gnutar
 graphviz
 grc
 groovy
-hs-cabal-install
 htop
 hub
 ImageMagick +graphviz +rsvg +wmf

@@ -4,7 +4,7 @@ export PAGER=less;
 export READNULLCMD=$PAGER;
 
 _CCACHE_PATH=/opt/local/libexec/ccache:/usr/local/libexec/ccache
-_CABAL_PATH=~/.cabal/bin
+_HASKELL_PATH=/Users/eax/.local/bin
 _MACPORTS_PATH=/opt/local/sbin:/opt/local/bin
 _NPM_PATH=~/.local/lib/npm/bin
 _GEM_PATH=~/.gem/ruby/2.3.0/bin
@@ -13,7 +13,7 @@ _PEAR_PATH=/opt/local/bin/pear
 _CARGO_PATH=~/.cargo/bin
 _MYSQL_PATH=/opt/local/lib/mariadb-10.1/bin:/usr/local/mysql/bin
 _ANDROID_PATH=~/Library/Android/sdk/platform-tools
-export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_CABAL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$HOME/perl5/bin:$_ANDROID_PATH:$PATH"
+export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$HOME/perl5/bin:$_ANDROID_PATH:$PATH"
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
