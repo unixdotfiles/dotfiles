@@ -24,7 +24,6 @@ _tln () {
 }
 
 htln () {
-	local attempts
 	attempts="$self/$1.local.$boxname $self/$1.os.$osname $self/$1"
 	for f in $attempts
 	do
