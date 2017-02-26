@@ -1,6 +1,5 @@
 .begon
 mercurial/local.hgrc
-vim/home/autoload/
 vim/home/backup/
 vim/home/plugged/
 vim/home/undo/
