@@ -1,26 +1,22 @@
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-filetype off
-call vundle#rc()
+call plug#begin()
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'scrooloose/nerdtree-git-plugin'
-Plugin 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'gmarik/vundle'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'mileszs/ack.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'rodjek/vim-puppet.git'
-Plugin 'vim-scripts/a.vim'
-"Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'grimreaper/vim-aurora-syntax'
-Plugin 'grimreaper/arcanist.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neoinclude.vim'
-Plugin 'Shougo/vinarise.vim'
+Plug 'vim-scripts/a.vim'
+"Plug 'jmcantrell/vim-virtualenv'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'grimreaper/vim-aurora-syntax'
+Plug 'grimreaper/arcanist.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/vinarise.vim'
+call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
