@@ -9,5 +9,9 @@
 flags: {}
 extra-package-dbs: []
 packages: []
-extra-deps: []
+extra-deps:
+  - aws-0.16
+  - bloomfilter-2.0.1.0
+  - torrent-10000.0.1
+  - yesod-default-1.2.0
 resolver: lts-8.2
