@@ -20,6 +20,7 @@ figlet
 findutils
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
+git-extras
 git-lfs
 gnupg2
 gnutar
