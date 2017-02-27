@@ -1,7 +1,6 @@
 call plug#begin()
 
 Plug 'kien/ctrlp.vim'
-Plug 'gmarik/vundle'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
