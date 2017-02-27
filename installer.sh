@@ -119,3 +119,4 @@ _app_support="$HOME/Library/Application Support"
 mkdir -p "$_app_support/pip"
 [ "$osname" = "Darwin" ] && htln "$_app_support/pip/pip.conf" pip/pip.conf
 # add password to config/pianobar/passwd
+# import gpg from dbx
