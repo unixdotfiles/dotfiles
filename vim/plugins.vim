@@ -2,7 +2,6 @@ call plug#begin()
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-Plug 'mileszs/ack.vim'
 "Plugin 'Valloric/YouCompleteMe'
 Plug 'vim-scripts/a.vim'
 "Plug 'jmcantrell/vim-virtualenv'
