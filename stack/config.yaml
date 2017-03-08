@@ -1,0 +1,8 @@
+# http://docs.haskellstack.org/en/stable/yaml_configuration/
+
+templates:
+  params:
+    author-name: Eitan Adler
+    author-email: lists@eitanadler.com
+#   copyright:
+    github-username: grimreaper
