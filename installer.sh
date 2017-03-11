@@ -116,8 +116,14 @@ ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
 touch ~/.mail_aliases ~/.parallel/will-cite
-_app_support="$HOME/Library/Application Support"
-mkdir -p "$_app_support/pip"
-[ "$osname" = "Darwin" ] && htln "$_app_support/pip/pip.conf" pip/pip.conf
+if [ "$osname" = "Darwin" ]
+then
+  _app_support="$HOME/Library/Application Support"
+  mkdir -p "$_app_support/pip"
+  if [ ! -e "$_app_support/pip/pip.conf" ]
+  then
+    ln -s "$self/pip/pip.conf" "$_app_support/pip/pip.conf"
+  fi
+fi
 # add password to config/pianobar/passwd
 # import gpg from dbx
