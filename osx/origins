@@ -31,6 +31,8 @@ htop
 hub
 ImageMagick +graphviz +rsvg +wmf
 ipcalc
+iperf
+iperf3
 libsdl -x11
 llvm-3.9
 lzop

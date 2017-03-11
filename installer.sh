@@ -110,7 +110,8 @@ ensure_directories ~/.gradle ~/.ammonite
 htln gradle/gradle.properties .gradle/gradle.properties
 htln ammonite/predef.sc .ammonite/prefdef.sc
 ensure_directories ~/.stack/global-project
-htln haskell/stack.yaml .stack/global-project/stack.yaml 
+htln stack/stack.yaml .stack/global-project/stack.yaml 
+htln stack/config.yaml .stack/config.yaml 
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
