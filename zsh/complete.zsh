@@ -74,7 +74,8 @@ zstyle ':completion::complete:ldapsearch:*' tag-order '! globbed-files' -
 zstyle ':completion:*:*:git:*' user-commands \
   last-modified:'shows when files were last modified' \
   imerge:'interactive merge' \
-  all-rebase:'rebases all branches to their tracking branch'
+  all-rebase:'rebases all branches to their tracking branch' \
+  resolve-conflicts:'quickly resolves simple conflicts'
 
 
 __exists hub git && compdef hub=git
