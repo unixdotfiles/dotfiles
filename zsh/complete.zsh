@@ -75,7 +75,8 @@ zstyle ':completion:*:*:git:*' user-commands \
   last-modified:'shows when files were last modified' \
   imerge:'interactive merge' \
   all-rebase:'rebases all branches to their tracking branch' \
-  resolve-conflicts:'quickly resolves simple conflicts'
+  resolve-conflicts:'quickly resolves simple conflicts' \
+  upstreamable:'counts commits not on master globally'
 
 
 __exists hub git && compdef hub=git
