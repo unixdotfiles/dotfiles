@@ -1,6 +1,7 @@
 bundler
 lolcat
 github_cli
+gist
 t
 travis
 puppet-lint

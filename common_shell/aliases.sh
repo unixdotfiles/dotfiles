@@ -56,6 +56,7 @@ redefine swipl="swipl -q"
 redefine R="R --save --quiet"
 redefine cython="cython -Werror -Wextra -p --gdb"
 redefine ipython="LESS='-r' ipython"
+redefine gist="gist -p"
 
 alias p="pushd";
 alias b="popd";
