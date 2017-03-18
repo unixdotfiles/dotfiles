@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-scripts/a.vim'
 "Plug 'jmcantrell/vim-virtualenv'
 Plug 'vim-airline/vim-airline'
