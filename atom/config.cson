@@ -7,6 +7,7 @@
       "welcome"
     ]
     projectHome: "/Users/eax/svn"
+    telemetryConsent: "limited"
     themes: [
       "atom-light-ui"
       "atom-light-syntax"
