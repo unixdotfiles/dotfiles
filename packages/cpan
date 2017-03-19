@@ -1,6 +1,9 @@
 App::cpanminus
 CPAN
+inc::latest
 Log::Log4perl
+Perl::Critic
 Term::ReadLine::Perl
+YAML
 Zonemaster
 Zonemaster::CLI
