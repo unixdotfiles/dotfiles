@@ -57,6 +57,7 @@ redefine R="R --save --quiet"
 redefine cython="cython -Werror -Wextra -p --gdb"
 redefine ipython="LESS='-r' ipython"
 redefine gist="gist -p"
+redefine ag="ag --path-to-ignore ~/.conf/ag/agignore"
 
 alias p="pushd";
 alias b="popd";
