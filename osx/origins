@@ -40,6 +40,7 @@ lzop
 mandoc
 mariadb-10.1
 mariadb-10.1-server
+maven3
 mercurial +bash_completion +zsh_completion
 minicom
 mplayer +a52 +aa +caca +dirac +fribidi +live +mencoder_extras +osd +speex
