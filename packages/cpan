@@ -1,5 +1,6 @@
 App::cpanminus
 CPAN
+Log::Log4perl
 Term::ReadLine::Perl
 Zonemaster
 Zonemaster::CLI
