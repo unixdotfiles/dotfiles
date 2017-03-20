@@ -7,6 +7,5 @@ files="
 /etc/exports
 /etc/launchd.conf
 /etc/sysctl.conf
-/opt/local/etc/grc.conf
 /etc/apache2/httpd.conf
 "
