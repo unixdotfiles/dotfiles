@@ -89,7 +89,7 @@ gc branch.autosetuprebase always
 gc --bool rebase.stat true
 
 gc --bool status.submodulesummary true
-gc push.recurseSubmodules check
+#gc push.recurseSubmodules check
 
 gc diff.algorithm histogram
 gc --bool diff.compactionHeuristic true
