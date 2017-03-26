@@ -91,6 +91,9 @@ gc --bool rebase.stat true
 gc --bool status.submodulesummary true
 #gc push.recurseSubmodules check
 
+gc log.mailmap true
+gc mailmap.file ~/.conf/git/mailmap
+
 gc diff.algorithm histogram
 gc --bool diff.compactionHeuristic true
 gc --bool diff.indentheuristic true
