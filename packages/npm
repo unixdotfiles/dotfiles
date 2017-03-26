@@ -6,4 +6,5 @@ grunt-cli
 jpm
 jscs
 jsonlint
+stylelint
 wscat
