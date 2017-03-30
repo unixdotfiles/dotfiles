@@ -49,6 +49,7 @@ setopt noclobber
 setopt BSD_ECHO
 setopt COMBINING_CHARS # hide this behind a TERM check
 
+zmodload zsh/datetime
 zmodload zsh/mathfunc
 zmodload zsh/termcap
 autoload -Uz zcalc
