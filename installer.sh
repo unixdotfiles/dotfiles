@@ -112,6 +112,7 @@ htln ammonite/predef.sc .ammonite/prefdef.sc
 ensure_directories ~/.stack/global-project
 htln stack/stack.yaml .stack/global-project/stack.yaml 
 htln stack/config.yaml .stack/config.yaml 
+htln gem/gemrc .gemrc
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
