@@ -41,7 +41,7 @@ alias timestamp='date +%s'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
 __exists pip-2.7 && alias pip2=pip-2.7
-__exists pip-3.5 && alias pip3=pip-3.5
+__exists pip-3.6 && alias pip3=pip-3.6
 ! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
 redefine diff="diff -p";
