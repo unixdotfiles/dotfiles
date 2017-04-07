@@ -79,7 +79,6 @@ ssldump
 subversion +tools
 swi-prolog
 the_silver_searcher
-tig
 tk +x11
 tmux
 tmux-pasteboard
