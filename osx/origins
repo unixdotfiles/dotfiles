@@ -74,9 +74,9 @@ pv
 py27-ipython
 py27-pip
 py27-readline
-py35-ipython
-py35-pip
-py35-readline
+py36-ipython
+py36-pip
+py36-readline
 python27
 python36
 R +tcltk
@@ -96,8 +96,8 @@ tk +x11
 tmux
 tmux-pasteboard
 tree
-vim +huge +perl +python35 +python27 +cscope +ruby23 +tcl +lua
+vim +huge +perl +python36 +python27 +cscope +ruby23 +tcl +lua
 wget
-youtube-dl +python35
+youtube-dl +python36
 zsh
 zsh-completions
