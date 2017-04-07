@@ -26,6 +26,7 @@ sudo port select --set nosetests nosetests36
 sudo port select --set postgresql postgresql95
 sudo port select --set wxWidgets wxWidgets-3.0
 sudo port select --set maven maven3
+sudo port select --set sphinx py36-sphinx
 
 port select --summary
 fi
