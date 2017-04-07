@@ -5,19 +5,19 @@ jupyter
 matplotlib
 nltk
 numpy
-pep8>=1.6.2
+pep8
 pex
 pip
 pillow
-python-igraph>=0.1.9
+python-igraph
 python-nmap
 ptpython
 PyYAML
 requests
 scrapy
-sortedcontainers==1.5.4
+sortedcontainers
 sympy
-titlecase==0.7.2
-virtualenvwrapper>=4.7.1
+titlecase
+virtualenvwrapper
 virtualenv-clone
 
