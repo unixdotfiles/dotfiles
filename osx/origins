@@ -34,7 +34,6 @@ iperf
 iperf3
 jq
 libsdl -x11
-llvm-3.9
 lzop
 mandoc
 maven3
@@ -77,7 +76,6 @@ python27
 python36
 R +tcltk
 realpath
-ripgrep
 ruby23
 sbt
 scala2.12
