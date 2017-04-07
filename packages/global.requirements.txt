@@ -9,7 +9,6 @@ pep8
 pex
 pip
 pillow
-python-igraph
 python-nmap
 ptpython
 PyYAML
