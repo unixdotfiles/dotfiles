@@ -7,7 +7,6 @@ bash-completion
 bmake
 cairo +quartz +x11
 capnproto
-cargo
 coreutils
 cowsay
 ctags
@@ -83,7 +82,6 @@ R +tcltk
 realpath
 ripgrep
 ruby23
-rust
 sbt
 scala2.12
 socat
