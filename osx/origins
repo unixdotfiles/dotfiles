@@ -47,7 +47,6 @@ nghttp2
 ninja
 nmap -subversion
 npm4
-opencv +python35 +tbb
 p0f
 p7zip
 pango +quartz +x11
