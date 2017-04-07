@@ -37,8 +37,6 @@ libsdl -x11
 llvm-3.9
 lzop
 mandoc
-mariadb-10.1
-mariadb-10.1-server
 maven3
 mercurial +bash_completion +zsh_completion
 minicom
@@ -47,7 +45,6 @@ mtr
 nasm
 netcat
 nghttp2
-nginx +gzip_static +http2 +ssl
 ninja
 nmap -subversion
 npm4
