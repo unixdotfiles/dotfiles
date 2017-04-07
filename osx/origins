@@ -21,6 +21,7 @@ ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
 git-extras
 git-lfs
+gnetcat
 gnupg2
 gnutar
 graphviz
@@ -42,7 +43,6 @@ minicom
 mplayer +a52 +aa +caca +dirac +fribidi +live +mencoder_extras +osd +speex
 mtr
 nasm
-netcat
 nghttp2
 ninja
 nmap -subversion
