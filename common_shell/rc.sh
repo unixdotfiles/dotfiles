@@ -8,6 +8,8 @@ __INTSHELL="sh";
 [ -n "$ZSH_VERSION" ] && __INTSHELL="zsh"
 export _shellpath=~/.conf/$__INTSHELL
 
+_PRIMARY_PIP_PATH=~/Library/Python/3.6/bin
+
 uname_s=$(uname -s)
 
 . $_confpath/functions.sh
@@ -21,7 +23,7 @@ msource /etc/environment
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 msource /Users/eax/.travis/travis.sh
 
-msource /Users/eax/Library/Python/3.6/bin/virtualenvwrapper_lazy.sh
+msource "$_PRIMARY_PIP_PATH/virtualenvwrapper_lazy.sh"
 
 for fle in $__rc_shell_files
 do
