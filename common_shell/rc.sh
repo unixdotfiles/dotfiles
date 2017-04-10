@@ -21,7 +21,7 @@ msource /etc/environment
 [ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 msource /Users/eax/.travis/travis.sh
 
-msource /Users/eax/Library/Python/3.5/bin/virtualenvwrapper_lazy.sh
+msource /Users/eax/Library/Python/3.6/bin/virtualenvwrapper_lazy.sh
 
 for fle in $__rc_shell_files
 do
