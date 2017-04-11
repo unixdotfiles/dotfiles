@@ -986,6 +986,10 @@ function! s:update_impl(pull, force, args) abort
   let s:clone_opt = get(g:, 'plug_shallow', 1) ?
         \ '--depth 1' . (s:git_version_requirement(1, 7, 10) ? ' --no-single-branch' : '') : ''
 
+  if has('win32unix')
+    let s:clone_opt .= ' -c core.eol=lf -c core.autocrlf=input'
+  endif
+
   " Python version requirement (>= 2.7)
   if python && !has('python3') && !ruby && !use_job && s:update.threads > 1
     redir => pyv
@@ -1059,7 +1063,7 @@ function! s:update_finish()
       elseif has_key(spec, 'tag')
         let tag = spec.tag
         if tag =~ '\*'
-          let tags = s:lines(s:system('git tag --list '.string(tag).' --sort -version:refname 2>&1', spec.dir))
+          let tags = s:lines(s:system('git tag --list '.s:shellesc(tag).' --sort -version:refname 2>&1', spec.dir))
           if !v:shell_error && !empty(tags)
             let tag = tags[0]
             call s:log4(name, printf('Latest tag for %s -> %s', spec.tag, tag))
