@@ -6,5 +6,9 @@ grunt-cli
 jpm
 jscs
 jsonlint
+remark-cli
+remark-lint
+remark-preset-lint-recommended
+remark-preset-lint-consistent
 stylelint
 wscat
