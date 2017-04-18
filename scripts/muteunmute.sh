@@ -12,4 +12,4 @@ unmute() {
 }
 ismute=""
 mixer -S pcm|grep -q 00 && ismute="yes";
-[ -n "$ismute" ] && mute || unmute
+[ -n "$ismute" ] && (mute || unmute)
