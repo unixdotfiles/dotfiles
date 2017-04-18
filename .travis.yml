@@ -1,8 +1,14 @@
 dist: trusty
 sudo: false
-language: python
+language: bash
 python:
   - "3.6"
+addons:
+  apt:
+    sources:
+    - debian-sid
+    packages:
+    - shellcheck
 install: ci/install.sh
 script: ci/all.sh
 cache:
@@ -12,3 +18,5 @@ cache:
   directories:
   - "$HOME/.cache/pip"
   - "$HOME/.pyenv"
+matrix:
+  fast_finish: true

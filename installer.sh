@@ -5,12 +5,13 @@ begon="$self/.begon";
 boxname=$(hostname -s)
 osname=$(uname -s)
 
+# shellcheck source=common_shell/functions.sh
 . $self/common_shell/functions.sh
 
 _tln () {
 	[ ! -e "$1" ] && return 1;
 
-	[ -L "$2" -o -e "$2" ] || (ln -s "$1" "$2" && echo begon "$2" >> "$begon")
+	[ -L "$2" ] || [ -e "$2" ] || (ln -s "$1" "$2" && echo begon "$2" >> "$begon")
 
 	if [ ! -L "$2" ]; then
 		if cmp -s "$1" "$2"; then
