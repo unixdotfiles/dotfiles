@@ -123,6 +123,8 @@ gc --bool gui.warndetachedcommit true
 gc gui.spellingdictionary en_US
 gc gui.maxrecentrepo 25
 
+gc gitreview.remote origin
+
 # URLs that should be auto replaced
 _gc_prefix --remove-section url.git@github.com: 2>/dev/null || true
 _gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
