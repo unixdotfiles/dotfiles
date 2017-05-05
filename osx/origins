@@ -83,7 +83,7 @@ tk +x11
 tmux
 tmux-pasteboard
 tree
-vim +huge +perl +python36 +python27 +cscope +ruby23 +tcl +lua
+vim +huge +perl -python27 +python36 +python27 +cscope +ruby23 +tcl +lua
 wget
 youtube-dl +python36
 zsh
