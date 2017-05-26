@@ -37,6 +37,7 @@ jq
 libsdl -x11
 lzop
 mandoc
+mas
 maven3
 mercurial +bash_completion +zsh_completion
 minicom
