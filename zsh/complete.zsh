@@ -76,7 +76,8 @@ zstyle ':completion:*:*:git:*' user-commands \
   imerge:'interactive merge' \
   all-rebase:'rebases all branches to their tracking branch' \
   resolve-conflicts:'quickly resolves simple conflicts' \
-  upstreamable:'counts commits not on master globally'
+  upstreamable:'counts commits not on master globally' \
+  pop-master:'switches master to origin/master'
 
 
 __exists hub git && compdef hub=git
