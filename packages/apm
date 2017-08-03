@@ -1,2 +1,11 @@
+bottom-dock
+color-picker
+linter
+linter-clang
+linter-manager
+linter-mixed-indent
+linter-pep8
 linter-shellcheck
+highlight-selected
 mayhem
+pigments
