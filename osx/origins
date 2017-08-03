@@ -33,6 +33,7 @@ ImageMagick +graphviz +rsvg +wmf
 ipcalc
 iperf
 iperf3
+jpegoptim
 jq
 libsdl -x11
 lzop
