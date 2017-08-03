@@ -1,10 +1,13 @@
 "*":
+  "bracket-matcher":
+    autocompleteBrackets: false
   core:
     audioBeep: false
     disabledPackages: [
       "metrics"
       "exception-reporting"
       "welcome"
+      "styleguide"
     ]
     projectHome: "/Users/eax/svn"
     telemetryConsent: "limited"
