@@ -47,7 +47,7 @@ nasm
 nghttp2
 ninja
 nmap -subversion
-npm4
+npm5
 p0f
 p7zip
 pango +quartz +x11
