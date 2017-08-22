@@ -63,7 +63,6 @@ function concat() {
 	echo -n ${(j::)@}
 }
 
-alias man='nocorrect man'
 alias mv='nocorrect mv -i'
 alias cp='nocorrect cp -i'
 alias touch='nocorrect touch'
@@ -111,5 +110,5 @@ man() {
 	LESS_TERMCAP_so="$bg[blue]$fg_bold[yellow]" \
 	LESS_TERMCAP_ue="$reset_color" \
 	LESS_TERMCAP_us="$fg[magenta]" \
-	command man "$@"
+	nocorrect command man "$@"
 }
