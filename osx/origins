@@ -52,7 +52,7 @@ p0f
 p7zip
 pango +quartz +x11
 parallel
-perl5 +perl5_24
+perl5
 php71
 php71-APCu
 php71-curl
