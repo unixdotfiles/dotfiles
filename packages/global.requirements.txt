@@ -16,7 +16,5 @@ PyYAML
 requests
 scrapy
 sortedcontainers
-sympy
-titlecase
 virtualenv-clone
 virtualenvwrapper

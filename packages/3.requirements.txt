@@ -1,5 +1,7 @@
 git+https://git@github.com/reinderien/mimic.git
 #gitsome
 http-prompt
+sympy
+titlecase
 typing>=3
 yq
