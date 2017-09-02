@@ -41,7 +41,7 @@ mas
 maven3
 mercurial +bash_completion +zsh_completion
 minicom
-mplayer +a52 +aa +caca +dirac +fribidi +live +mencoder_extras +osd +speex
+mplayer +a52 +aa +caca +dirac +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
 nghttp2
