@@ -4,7 +4,7 @@ atool
 bash
 bash-completion
 bmake
-cairo +quartz +x11
+cairo +quartz -x11
 capnproto
 coreutils
 cowsay
@@ -50,7 +50,7 @@ nmap -subversion
 npm5
 p0f
 p7zip
-pango +quartz +x11
+pango +quartz -x11
 parallel
 perl5
 php71
@@ -80,7 +80,7 @@ ssldump
 subversion +tools
 swi-prolog
 the_silver_searcher
-tk +x11
+tk +quartz -x11
 tmux
 tmux-pasteboard
 tree
