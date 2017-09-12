@@ -119,10 +119,6 @@ defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
-# Hermes
-# sort stations by name, not date
-defaults write com.alexcrichton.Hermes sortStations -int 2
-
 # Transmission.app
 # Create 'incomplete' folder
 mkdir -p ~/.transmission/.Incomplete
