@@ -67,6 +67,7 @@ pigz
 poedit
 pv
 py27-pip
+py27-pygtk
 py36-pip
 python27
 python36

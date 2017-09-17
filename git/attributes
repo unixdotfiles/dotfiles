@@ -1,6 +1,6 @@
 *.ada		diff=ada
 *.bibtex	diff=bibtex
-*.bat		text eol=crlf
+#*.bat		text eol=crlf
 *.c		diff=cpp
 *.cpp		diff=cpp
 *.h		diff=cpp
