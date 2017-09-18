@@ -66,6 +66,7 @@ php71-posix
 pigz
 poedit
 pv
+py27-numpy +gcc7
 py27-pip
 py27-pygtk
 py36-pip
