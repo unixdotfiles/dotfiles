@@ -1,5 +1,5 @@
 git+https://git@github.com/reinderien/mimic.git
-#gitsome
+git-review
 http-prompt
 sympy
 titlecase

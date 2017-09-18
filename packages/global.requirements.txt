@@ -1,6 +1,5 @@
 argcomplete
 bpython
-git-review
 ipython
 jupyter
 matplotlib
@@ -8,7 +7,6 @@ nltk
 numpy
 pep8
 pex
-pillow
 pip
 ptpython
 python-nmap
