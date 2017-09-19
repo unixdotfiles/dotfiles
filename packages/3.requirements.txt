@@ -1,6 +1,9 @@
+autopep8
+flake8
 git+https://git@github.com/reinderien/mimic.git
 git-review
 http-prompt
+pep8
 sympy
 titlecase
 typing>=3
