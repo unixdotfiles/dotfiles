@@ -155,6 +155,8 @@ sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # but might as well just configure the system as I like
 defaults write com.apple.menuextra.battery ShowPercent YES
 defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/eax/Dropbox/ApplicationData/iterm2prefs"
+# Without this preference iTerm2 leaks DNS
+defaults write com.googlecode.iterm2 PerformDNSLookups 0
 defaults write com.if.Amphetamine "Show Welcome Window" -int 0
 
 # Java
