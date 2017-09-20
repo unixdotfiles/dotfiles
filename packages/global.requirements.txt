@@ -8,6 +8,7 @@ numpy
 pex
 pip
 ptpython
+pycrypto
 python-nmap
 PyYAML
 requests
