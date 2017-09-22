@@ -16,7 +16,7 @@ sudo port select --set php php71
 sudo port select --set ipython py36-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py36-ipython
-sudo port select --set gcc mp-gcc6
+sudo port select --set gcc mp-gcc7
 sudo port select --set llvm mp-llvm-4.0
 sudo port select --set mysql mariadb-10.1
 sudo port select --set postgresql_select postgresql95
