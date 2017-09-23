@@ -20,7 +20,7 @@ msource /etc/environment
 . $_confpath/start-tmux.sh
 . $_confpath/aliases.sh
 . $_shellpath/ps1.$__INTSHELL
-[ "$TERM_PROGRAM" = "iTerm.app" ] && msource $_confpath/extra/iterm2_shell_integration.$__INTSHELL
+. $_confpath/extra/iterm2_shell_integration.$__INTSHELL
 msource /Users/eax/.travis/travis.sh
 
 msource "$_PRIMARY_PIP_PATH/virtualenvwrapper_lazy.sh"
