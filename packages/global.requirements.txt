@@ -4,6 +4,9 @@ ipython
 jupyter
 matplotlib
 nltk
+nose
+nose-capturestderr
+nose-timer
 numpy
 pex
 pip
@@ -16,3 +19,4 @@ scrapy
 sortedcontainers
 virtualenv-clone
 virtualenvwrapper
+yanc
