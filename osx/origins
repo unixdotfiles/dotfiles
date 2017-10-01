@@ -78,6 +78,7 @@ python36
 R -gcc6 +gcc7
 realpath
 ruby23
+ruby24
 sbt
 scala2.12
 socat

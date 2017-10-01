@@ -8,7 +8,7 @@ sudo port select --set maven maven3
 sudo port select --set python python36
 sudo port select --set python2 python27
 sudo port select --set python3 python36
-sudo port select --set ruby ruby23
+sudo port select --set ruby ruby24
 sudo port select --set scala scala2.12
 sudo port select --set pip pip27
 sudo port select --set pip pip36
