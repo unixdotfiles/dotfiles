@@ -2,7 +2,7 @@ files="
 /opt/local/etc/macports/macports.conf
 /opt/local/etc/macports/sources.conf
 /opt/local/etc/macports/variants.conf
-/opt/local/etc/php70/php.ini
+/opt/local/etc/php71/php.ini
 /etc/hosts
 /etc/exports
 /etc/launchd.conf
