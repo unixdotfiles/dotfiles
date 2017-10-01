@@ -75,7 +75,7 @@ py36-gobject3
 py36-pip
 python27
 python36
-R +tcltk
+R -gcc6 +gcc7
 realpath
 ruby23
 sbt
