@@ -27,3 +27,9 @@ defaults write com.codeux.apps.textual SaveInputHistoryPerSelection -bool true
 defaults write com.codeux.apps.textual ServerListDoubleClickConnectServer -bool true
 defaults write com.codeux.apps.textual ServerListDoubleClickJoinChannel -bool true
 defaults write com.codeux.apps.textual ServerListDoubleClickLeaveChannel -bool true
+
+defaults write com.agilebits.onepassword4 ShowCopyJSONItemMenu -bool true
+defaults write com.agilebits.onepassword4 ShowCopyUUIDItemMenu -bool true
+defaults write com.agilebits.onepassword4 ShowItemCounts -bool false
+defaults write com.agilebits.onepassword4 ShowRichIcons -bool true
+defaults write com.agilebits.onepassword4 ShowStatusItem -bool true
