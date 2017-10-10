@@ -33,3 +33,6 @@ defaults write com.agilebits.onepassword4 ShowCopyUUIDItemMenu -bool true
 defaults write com.agilebits.onepassword4 ShowItemCounts -bool false
 defaults write com.agilebits.onepassword4 ShowRichIcons -bool true
 defaults write com.agilebits.onepassword4 ShowStatusItem -bool true
+
+defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool false
+defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
