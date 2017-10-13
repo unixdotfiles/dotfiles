@@ -1,4 +1,3 @@
-App::cpanminus
 CPAN
 inc::latest
 Log::Log4perl
