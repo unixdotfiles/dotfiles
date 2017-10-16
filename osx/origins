@@ -20,6 +20,7 @@ ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
 git-extras
 git-lfs
+glade
 gnetcat
 gnupg2
 gnutar
@@ -70,9 +71,9 @@ py27-numpy +gcc7
 py27-pip
 py27-pygtk
 py36-numpy +gcc7
+py36-pip
 py36-gobject
 py36-gobject3
-py36-pip
 python27
 python36
 R -gcc6 +gcc7
