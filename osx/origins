@@ -24,6 +24,7 @@ glade
 gnetcat
 gnupg2
 gnutar
+gtk3 +quartz
 graphviz
 grc
 groovy
