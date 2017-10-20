@@ -39,7 +39,7 @@ fi
 PS1_ERR="%F{red}%(?.. !%?!)";    #return code of last command (if it was not 0)
 PS1_WD=" %F{magenta}%30<...<%~"; #current working directory limited to 30 chars
 PS1_JOBS="%F{green}%(1j.{%j}.)"
-PS1_END="%(!.★.∴)"
+PS1_END="%(!.☭.∴)"
 [ -n "$__EC2_IID" ] && PS1_EC2=" ($__EC2_IID)"
 
 PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
