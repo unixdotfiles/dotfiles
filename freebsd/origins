@@ -8,7 +8,7 @@ devel/valgrind
 editors/vim
 emulators/virtualbox-ose
 lang/ghc
-lang/ruby23
+lang/ruby24
 lang/python3
 mail/ssmtp
 misc/cpuid
