@@ -10,7 +10,6 @@ emulators/virtualbox-ose
 lang/ghc
 lang/ruby23
 lang/python3
-lang/whitespace
 mail/ssmtp
 misc/cpuid
 multimedia/mplayer
