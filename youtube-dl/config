@@ -3,4 +3,6 @@
 # Don't overwrite things by default
 -w --no-post-overwrites
 
+--xattrs
+
 --console-title --no-call-home
