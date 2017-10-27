@@ -31,6 +31,7 @@ groovy
 htop
 hub
 ImageMagick +graphviz +rsvg +wmf
+inetutils
 ipcalc
 iperf3
 jpegoptim
