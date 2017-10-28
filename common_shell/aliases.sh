@@ -67,11 +67,11 @@ __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 prefixwith "grc -es --colour=auto" wdiff make gmake gcc g++ as gas clang clang++ ld netcat nc ping ping6 traceroute traceroute6 df ps mount dig drill tail head cvs ifconfig last netstat
 
 redefine python="python -R"
-__py3opt="-bbR"
+__py3opt="-bb"
 __py2opt="-3ttR"
 __python_exists=""
 __exists python && __python_exists="true"
-for wpython in python2 python2.7 python3 python3.5
+for wpython in python2 python2.7 python3 python3.6
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
