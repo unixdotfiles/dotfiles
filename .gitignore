@@ -1,4 +1,5 @@
 .begon
+atom/github.cson
 mercurial/local.hgrc
 vim/home/backup/
 vim/home/plugged/
