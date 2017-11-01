@@ -1,6 +1,0 @@
-#!/bin/sh
-. generic_fns.sh;
-case "$1" in
-	rebase) exec .git/scripts/post-merge;
-		;;
-esac
