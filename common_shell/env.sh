@@ -91,3 +91,5 @@ CORRECT_IGNORE="_*";
 # Show time(1) like information for long running commands
 REPORTTIME=2
 PERIOD=5
+
+ulimit -c unlimited
