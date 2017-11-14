@@ -36,3 +36,5 @@ defaults write com.agilebits.onepassword4 ShowStatusItem -bool true
 
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool false
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
+
+defaults write org.openemu.OpenEmu debug -int 1
