@@ -12,6 +12,7 @@ futures>=3.0.3
 mock
 pathlib
 PyGTK
+pwntools
 selectors34>=1.1
 singledispatch>=3.4.0.3
 subprocess32
