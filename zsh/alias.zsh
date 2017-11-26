@@ -27,40 +27,40 @@ function cd () {
   esac; do :; done; fi
   if [[ $# = 0 ]]
   then
-	builtin cd $opt;
+    builtin cd $opt;
   else
     if [[ ${+2} = 0 ]]; then
       if [[ -f "$1" ]]; then
-	builtin cd $opt "$1:h"
+        builtin cd $opt "$1:h"
       else
-	builtin cd $opt "$1"
+        builtin cd $opt "$1"
       fi
     else
       if [[ -z "$3" ]]; then
-	builtin cd $opt "$1" "$2"
+        builtin cd $opt "$1" "$2"
       else
-	echo >&2 cd: too many arguments
+        echo >&2 cd: too many arguments
       fi
     fi
   fi
 }
 
 function pushd () {
-	if [ $# -eq 0 ]
-	then
-		builtin pushd;
-	else
-		if [ -f "$1" ]
-		then
-			builtin pushd "${1:h}";
-		else
-			builtin pushd "$1";
-		fi
-	fi
+  if [ $# -eq 0 ]
+  then
+    builtin pushd;
+  else
+    if [ -f "$1" ]
+    then
+      builtin pushd "${1:h}";
+    else
+      builtin pushd "$1";
+    fi
+  fi
 }
 
 function concat() {
-	echo -n ${(j::)@}
+  printf '%s' ${(j::)@}
 }
 
 alias mv='nocorrect mv -i'
@@ -73,7 +73,6 @@ alias -g N="&>/dev/null"
 alias -g N1="1>/dev/null"
 alias -g N2="2>/dev/null"
 alias -g DN=">/dev/null"
-alias -g A='| awk'
 alias -g C='| cat'
 alias -g G='| grep'
 alias -g H='| head'
@@ -95,8 +94,8 @@ alias cd\?="dirs -pv";
 h () { history 0 | grep "$@" }
 
 autodisown() {
-	"$@" &
-	disown
+  "$@" &
+  disown
 }
 
 redefine xpdf="autodisown xpdf";
