@@ -58,6 +58,7 @@ redefine cython="cython -Werror -Wextra -p --gdb"
 redefine ipython="LESS='-r' ipython"
 redefine gist="gist -p"
 redefine ag="ag --path-to-ignore ~/.conf/ag/agignore"
+redefine xz="xz -T0"
 
 alias p="pushd";
 alias b="popd";
