@@ -20,7 +20,7 @@ export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HO
 
 __exists chrome && export BROWSER=$(which chrome)
 __exists google-chrome && export BROWSER=$(which google-chrome)
-__exists firefox && export BROWSER=$(whereis -qbx firefox)
+__exists firefox && export BROWSER=$(which firefox)
 __exists urxvtcd && export TERMINAL=urxvtcd
 
 [ -d /opt/local/share/cowsay/cows ] && export COWPATH="/opt/local/share/cowsay/cows"
