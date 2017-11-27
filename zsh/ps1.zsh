@@ -47,7 +47,7 @@ PS1_VIM="%F{green}${VIMRUNTIME:+vim}%f"
 
 setCurrentPS1()
 {
-  local $(stat -Ls .)
+  #local $(stat -Ls .)
   PS1_VCS="%F{green}$vcs_info_msg_0_${vcs_info_msg_0_:+ }"
 	_VENV_NAME="${VIRTUAL_ENV##*/}"
 	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
