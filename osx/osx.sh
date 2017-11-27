@@ -74,6 +74,11 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Mac App Store
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
 
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
