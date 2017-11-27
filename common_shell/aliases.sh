@@ -59,6 +59,7 @@ redefine ipython="LESS='-r' ipython"
 redefine gist="gist -p"
 redefine ag="ag --path-to-ignore ~/.conf/ag/agignore"
 redefine xz="xz -T0"
+redefine grunt="grunt --stack"
 
 alias p="pushd";
 alias b="popd";
