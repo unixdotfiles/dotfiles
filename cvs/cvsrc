@@ -1,4 +1,5 @@
 cvs -z3
 diff -Nu
+rdiff -Nu
 update -Pd
 checkout -P
