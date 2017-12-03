@@ -76,6 +76,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONCOERCECLOCALE=warn
 export PYTHONFAULTHANDLER=1
 export R_LIBS=~/.R
+export CVS_RSH="ssh"
 _OSX_JPM_FX_BINARY='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin'
 [ -f "$_OSX_JPM_FX_BINARY" ] && export JPM_FIREFOX_BINARY="$_OSX_JPM_FX_BINARY"
 
