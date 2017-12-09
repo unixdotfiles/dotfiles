@@ -88,7 +88,7 @@ compdef lls=ls
 
 if __exists pip
 then
-  # pip --disable-pip-vErsion-check completion --zsh
+  # pip --disable-pip-version-check completion --zsh
   pip_completion() {
     local words cword
     read -Ac words
