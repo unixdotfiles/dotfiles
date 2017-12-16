@@ -86,7 +86,7 @@ gc --bool core.quotepath true
 gc branch.autosetuprebase always
 gc --bool rebase.stat true
 
-gc --bool status.submodulesummary true
+#gc --bool status.submodulesummary true
 #gc push.recurseSubmodules check
 
 gc log.mailmap true
