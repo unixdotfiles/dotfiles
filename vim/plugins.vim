@@ -11,6 +11,7 @@ Plug 'grimreaper/arcanist.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/vinarise.vim'
+Plug 'wannesm/wmgraphviz.vim'
 call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
