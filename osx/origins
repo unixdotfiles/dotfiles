@@ -56,16 +56,16 @@ p7zip
 pango +quartz -x11
 parallel
 perl5
-php71
-php71-APCu
-php71-curl
-php71-fpm
-php71-iconv
-php71-mbstring
-php71-mysql
-php71-openssl
-php71-pcntl
-php71-posix
+php72
+php72-APCu
+php72-curl
+php72-fpm
+php72-iconv
+php72-mbstring
+php72-mysql
+php72-openssl
+php72-pcntl
+php72-posix
 pigz
 poedit
 pv

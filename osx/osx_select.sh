@@ -12,7 +12,7 @@ sudo port select --set ruby ruby24
 sudo port select --set scala scala2.12
 sudo port select --set pip pip27
 sudo port select --set pip pip36
-sudo port select --set php php71
+sudo port select --set php php72
 sudo port select --set ipython py36-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py36-ipython
