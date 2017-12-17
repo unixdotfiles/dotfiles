@@ -118,12 +118,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.skype.skype WebKitDeveloperExtras -bool true
 defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 
-# Chrome.app
-
-# Disable backswipe in chrome
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
-
 # Transmission.app
 # Create 'incomplete' folder
 mkdir -p ~/.transmission/.Incomplete

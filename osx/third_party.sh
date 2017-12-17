@@ -38,3 +38,11 @@ defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool fal
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
 
 defaults write org.openemu.OpenEmu debug -int 1
+
+# Disable backswipe in chrome
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write org.chromium.Chromium AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
+defaults write org.chromium.Chromium AppleEnableMouseSwipeNavigateWithScrolls -bool false
