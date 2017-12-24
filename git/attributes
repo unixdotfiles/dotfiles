@@ -19,7 +19,6 @@
 *.mat		diff=matlab
 *.pas		diff=pascal
 *.pl		diff=perl
-*.sh 		diff=php
 *.php		diff=php
 *.py		diff=python
 *.ruby		diff=ruby
