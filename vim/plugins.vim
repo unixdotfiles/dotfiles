@@ -55,3 +55,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_sh_shellcheck_args = "-x"
 
 let g:loaded_syntastic_java_javac_checker = 1
+
+let g:portfile_highlight_space_errors=1
