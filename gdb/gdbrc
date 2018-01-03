@@ -22,6 +22,8 @@ set print object on
 # Required on a mac
 set startup-with-shell off
 
+set tui border-kind acs
+
 #set fork-follow-mode child
 
 handle SIGPIPE nostop noprint pass
