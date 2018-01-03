@@ -3,6 +3,10 @@
 set prompt gdb> 
 
 set history save on
+set history save on
+set history size unlimited
+set history remove-duplicates unlimited
+set history expansion on
 
 # Stop printing arrays at a nul
 set print null-stop
@@ -10,6 +14,9 @@ set print null-stop
 # Pretty Print things
 set print pretty on
 set print array on
+
+# Required on a mac
+set startup-with-shell off
 
 #set fork-follow-mode child
 

@@ -17,6 +17,7 @@ drill
 ffmpeg +gpl3 +nonfree +libdc1394 +librtmp
 figlet
 findutils
+gdb
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
 git-extras
