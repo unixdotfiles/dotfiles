@@ -1,7 +1,0 @@
-set print demangle
-set print asm-demangle
-set print object
-set print vtbl
-set overload-resolution on
-set print object on
-set print static-members on

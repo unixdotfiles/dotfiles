@@ -18,6 +18,7 @@ set print array on
 # C++ specific settings
 set print vtbl on
 set print object on
+set overload-resolution on
 
 # Required on a mac
 set startup-with-shell off
