@@ -16,6 +16,10 @@ Host apache.org
    IdentityFile ~/.ssh/eax@id_ed25519.apache.org
    User eax
 
+Host aur.archlinux.org
+   IdentityFile ~/.ssh/eax@id_ed25519.archlinux.org
+   User aur
+
 # So that we dont get annoying error messages
 Host localhost
   StrictHostKeyChecking no
