@@ -12,7 +12,7 @@ diff-extensions = -u -p
 # rsh = /path/to/rsh -l myusername
 
 [miscellany]
-global-ignores = *.o *.lo *.la *.al .libs *.[Ss]o *.[Ss]o.[0-9]* *.a *.py[co] *.rej *~ .*.swp .DS_Store *.bak *.orig *.core *.[0-9].gz log svn-commit.tmp
+global-ignores = *.o *.lo *.la *.al .libs *.[Ss]o *.[Ss]o.[0-9]* *.a *.py[co] *.rej *~ .*.swp .DS_Store *.bak *.orig *.core *.[0-9].gz log svn-commit.tmp .depend
 log-encoding = utf-8
 preserved-conflict-file-exts = doc ppt xls od?
 enable-auto-props = yes
