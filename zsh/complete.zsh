@@ -5,7 +5,8 @@
 autoload -Uz compinit
 zmodload zsh/complist
 zmodload zsh/complete
-compinit
+# -C avoids about a 3x penalty due to readdir calls
+compinit -C
 
 # Enable Bash completion
 autoload -Uz bashcompinit && bashcompinit
