@@ -79,6 +79,7 @@ py36-gobject
 py36-gobject3
 python27
 python36
+qemu +lzo +ssh +target_arm +target_i386 +target_mips +target_x86_64 +vde +vnc
 R -gcc6 +gcc7
 realpath
 ruby23
