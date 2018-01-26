@@ -17,9 +17,10 @@ zstyle ':vcs_info:*' unstagedstr "%F{green}●%f"
 
 __VCS_SCM="%F{magenta}(%f%s:%r%F{magenta})"
 __VCS_BRANCH="%F{green}%b%u%c%f"
-__VCS_REV="%i"
+#__VCS_REV="[-%i]"
+__VCS_REV=""
 __VCS_ACTION="%F{3}|%F{1}%a:%m"
-__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f-[$__VCS_REV]%f"
+__VCS_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT%F{magenta}]%f$__VCS_REV%f"
 __VCS_ACTION_FORMATS="$__VCS_SCM%F{red}-%F{magenta}[$__VCS_BRANCH%F{magenta}$__VCS_FORMAT$__VCS_ACTION%F{magenta}]%f-[$__VCS_REV]%f"
 
 zstyle ':vcs_info:*' formats       "$__VCS_FORMATS"
