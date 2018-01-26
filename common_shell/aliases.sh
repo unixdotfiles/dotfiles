@@ -98,6 +98,10 @@ do
     fi
 done
 
+sum() {
+  awk '{s+=$1} END {print s}'
+}
+
 mcd() {
   for last; do :; done
   mkdir "$@"
