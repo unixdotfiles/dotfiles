@@ -18,6 +18,8 @@ export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GE
 export CCACHE_DIR=/cache/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
+[ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v 9)
+
 __exists chrome && export BROWSER=$(which chrome)
 __exists google-chrome && export BROWSER=$(which google-chrome)
 __exists firefox && export BROWSER=$(which firefox)
