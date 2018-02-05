@@ -21,7 +21,6 @@ gcc7
 gdb
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_26
-git-extras
 git-lfs
 glade
 gnetcat
@@ -74,8 +73,6 @@ pv
 py27-pip
 py36-numpy +gcc7
 py36-pip
-py36-gobject
-py36-gobject3
 python36
 qemu +lzo +ssh +target_arm +target_i386 +target_mips +target_x86_64 +vde +vnc
 R -gcc6 +gcc7
