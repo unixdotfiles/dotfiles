@@ -68,9 +68,7 @@ php72-openssl
 php72-pcntl
 php72-posix
 pigz
-poedit
 pv
-py27-pip
 py36-numpy +gcc7
 py36-pip
 python36
