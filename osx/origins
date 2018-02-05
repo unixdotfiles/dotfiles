@@ -20,7 +20,7 @@ findutils
 gcc7
 gdb
 ghc
-git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_24
+git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_26
 git-extras
 git-lfs
 glade
