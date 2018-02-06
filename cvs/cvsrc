@@ -1,5 +1,7 @@
 cvs -z3
 diff -Nu
+log -N
 rdiff -u
+rlog -N
 update -Pd
 checkout -P
