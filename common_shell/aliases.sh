@@ -63,6 +63,7 @@ redefine xz="xz -T0"
 redefine grunt="grunt --stack"
 
 alias ncvs="cvs -d anoncvs@anoncvs.NetBSD.org:/cvsroot"
+alias nwcvs="cvs -d anoncvs@wiki.NetBSD.org:/cvsroot"
 alias ocvs="cvs -d anoncvs@anoncvs.ca.openbsd.org:/cvs"
 
 alias p="pushd";

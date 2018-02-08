@@ -86,6 +86,7 @@ __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
 
 compdef ll=ls
 compdef lls=ls
+__exists xcc && compdef xcc=clang
 
 if __exists pip
 then
