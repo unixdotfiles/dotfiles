@@ -1,4 +1,4 @@
-cvs -z3
+cvs -q
 diff -Nu
 log -N
 rdiff -u
