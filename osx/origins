@@ -27,7 +27,7 @@ gnupg2
 gnutar
 gtk3 +quartz
 graphviz
-grc
+grc +python36 -python27
 groovy
 htop
 hub
