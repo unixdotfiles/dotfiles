@@ -46,7 +46,7 @@ minicom
 mplayer +aa +caca +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
-nghttp2
+nghttp2 +python36 -python27
 ninja
 nmap -subversion
 npm5
