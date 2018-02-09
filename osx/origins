@@ -6,6 +6,7 @@ bash-completion
 bmake
 cairo +quartz -x11
 capnproto
+cpuid
 coreutils
 cowsay
 ctags
