@@ -90,7 +90,9 @@ export RUST_BACKTRACE=1
 #Specific to ZSH - but these are envrioment variables so meh
 CORRECT_IGNORE="_*";
 # Show time(1) like information for long running commands
+TIMEFMT="%J %U user %S system %P cpu %*E total; max RSS %M"
 REPORTTIME=2
+REPORTMEMORY=2000
 PERIOD=5
 
 ulimit -c unlimited
