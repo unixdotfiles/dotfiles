@@ -36,7 +36,8 @@ alias tolower="tr [:upper:] [:lower:]"
 alias toupper="tr [:lower:] [:upper:]"
 alias rot13='tr "[A-Za-z]" "[N-ZA-Mn-za-m]"'
 __exists curl && alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
-alias week="date +%V"
+alias today="date +%F"
+alias now="date +%F-%H-%M-%S"
 alias timestamp='date +%s'
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
