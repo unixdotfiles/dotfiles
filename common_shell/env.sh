@@ -92,7 +92,7 @@ CORRECT_IGNORE="_*";
 # Show time(1) like information for long running commands
 TIMEFMT="%J %U user %S system %P cpu %*E total; max RSS %MKi"
 REPORTTIME=2
-REPORTMEMORY=20000
+REPORTMEMORY=100000
 PERIOD=5
 
 ulimit -c unlimited
