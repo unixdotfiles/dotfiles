@@ -26,7 +26,7 @@ gnetcat
 gnupg2
 gnutar
 gtk3 +quartz
-graphviz
+graphviz -pangocairo
 grc +python36 -python27
 groovy
 htop
