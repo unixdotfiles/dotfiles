@@ -33,7 +33,16 @@ zstyle ':completion:*' single-ignored show
 
 zstyle ':completion:*' verbose yes
 
-zstyle ':completion:*' users root $USER eax eadler eitan jenkins git $__shellrc_extra_users
+zstyle ':completion:*:*:*:users' ignored-patterns \
+        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+        mailman mailnull mldonkey mysql nagios \
+        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
+        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
+        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs \
+        com.apple.calendarserver macports messagebus \
+        _\*
 
 # quote pasted URLs
 autoload -Uz url-quote-magic
