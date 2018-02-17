@@ -41,8 +41,10 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
         operator pcap postfix postgres privoxy pulse pvm quagga radvd \
         rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs \
-        com.apple.calendarserver macports messagebus \
+        com.apple.calendarserver macports messagebus cups \
         _\*
+
+zstyle ':completion:*:(ssh|scp|rsync):*' users root $USER eax eadler eitan jenkins git $__shellrc_extra_users
 
 # quote pasted URLs
 autoload -Uz url-quote-magic
