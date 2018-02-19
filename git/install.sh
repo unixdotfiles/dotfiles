@@ -123,19 +123,26 @@ gc gui.maxrecentrepo 25
 
 gc gitreview.remote origin
 
-# URLs that should be auto replaced
 _gc_prefix --remove-section url.git@github.com: 2>/dev/null || true
 _gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
 _gc_prefix --add url.git@github.com:.pushInsteadOf git://github.com/
+
+_gc_prefix --remove-section url.git@notabug.org: 2>/dev/null || true
+_gc_prefix --add url.git@notabug.org:.pushInsteadOf git://notabug.org/
+_gc_prefix --add url.git@notabug.org:.pushInsteadOf https://notabug.org/
+
 _gc_prefix --remove-section url.git@gist.github.com: 2>/dev/null || true
 _gc_prefix --add url.git@gist.github.com:.pushInsteadOf git://gist.github.com/
+
 _gc_prefix --remove-section url.git@bitbucket.org: 2>/dev/null || true
 _gc_prefix --add url.git@bitbucket.org:.pushInsteadOf https://bitbucket.org/
 _gc_prefix --add url.git@bitbucket.org:.pushInsteadOf http://bitbucket.org/
 _gc_prefix --add url.git@bitbucket.org:.pushInsteadOf git://bitbucket.org/
+
 _gc_prefix --remove-section url.git://git.debian.org/d-i/ 2>/dev/null || true
 _gc_prefix --remove-section url.git+ssh://git.debian.org/git/d-i/ 2>/dev/null || true
 _gc_prefix --add url.git://git.debian.org/d-i/.insteadOf git+ssh://git.debian.org/git/d-i/
 _gc_prefix --add url.git+ssh://git.debian.org/git/d-i/.pushInsteadOf git+ssh://git.debian.org/git/d-i/
+
 _gc_prefix --remove-section url.git+ssh://dweller@secure.phabricator.com 2>/dev/null || true
 _gc_prefix --add url.git+ssh://dweller@secure.phabricator.com.pushInsteadOf https://secure.phabricator.com
