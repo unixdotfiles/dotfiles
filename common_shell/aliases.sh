@@ -46,6 +46,7 @@ __exists pip-3.6 && alias pip3=pip-3.6
 ! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
 redefine diff="diff -p";
+redefine grep="grep --color=auto"
 __exists grc && redefine diff="grc diff -p"
 redefine pastebinit="pastebinit -a ''"
 redefine portlint="portlint -C";
