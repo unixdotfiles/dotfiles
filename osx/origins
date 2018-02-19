@@ -39,6 +39,7 @@ iperf3
 jpegoptim
 jq
 libsdl -x11
+luarocks
 lzop
 mas
 maven3
