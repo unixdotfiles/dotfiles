@@ -8,7 +8,7 @@ devel/valgrind
 editors/vim
 emulators/virtualbox-ose
 lang/ghc
-lang/ruby24
+lang/ruby25
 lang/python3
 mail/ssmtp
 misc/cpuid
@@ -26,4 +26,3 @@ sysutils/cpdup
 sysutils/tmux
 textproc/docproj
 textproc/en-hunspell
-www/wgetpaste
