@@ -1,2 +1,4 @@
-/Users/eax -alldirs -mapall=eax:staff -network 192.168.56.0 -mask 255.255.255.0
-/Volumes/csdmg -alldirs -mapall=eax:staff -network 192.168.56.0 -mask 255.255.255.0
+#/Users/eax -alldirs -mapall=eax:staff -network 192.168.56.0 -mask 255.255.255.0
+#/Volumes/csdmg -alldirs -mapall=eax:staff -network 192.168.56.0 -mask 255.255.255.0
+#/srv/freebsd -alldirs -ro -network 192.168.1.0 -mask 255.255.255.0
+#/srv/freebsd -alldirs -ro
