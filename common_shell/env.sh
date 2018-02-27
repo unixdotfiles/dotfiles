@@ -16,7 +16,7 @@ _ANDROID_PATH=~/Library/Android/sdk/platform-tools
 _PERL_PATH=/opt/local/libexec/perl5.24/sitebin:$HOME/perl5/bin
 _LUA_PATH=~/.luarocks/bin
 export PATH="$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$PATH"
-export CCACHE_DIR=/cache/ccache
+export CCACHE_DIR=/srv/obj/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
 [ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-9})
