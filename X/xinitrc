@@ -1,4 +1,3 @@
-numlockx on
 xscreensaver -no-splash &
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 setxkbmap -option compose:caps
