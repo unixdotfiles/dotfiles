@@ -16,6 +16,7 @@ if has("autocmd")
 	au Filetype zsh call Set_Shell()
 	au Filetype json call Set_Json()
 	au Filetype vim call Set_Vim()
+	au Filetype ini,yml,yaml call Set_Ini()
 endif " has(autocmd)
 
 function Shared_Tabs(len)
@@ -108,6 +109,10 @@ endfunction
 
 function Set_Vim()
 	call Shared_Tabs(4)
+endfunction
+
+function Set_Ini()
+	call Shared_Tabs(2)
 endfunction
 
 function ShowSpecial()
