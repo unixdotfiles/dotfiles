@@ -4,7 +4,8 @@ then
     alias ls="colorls -GF"
 else
     # Find the option for using colors in ls, depending on the version: Linux or BSD
-    ls --color -d . &>/dev/null 2>&1 && alias ls='ls -F --color=tty' || alias ls='ls -GF'
+    ls --color -d . >/dev/null 2>&1 && alias ls='ls -F --color=tty'
+    ls -G >/dev/null 2>&1 && alias ls='ls -GF'
 fi
 
 if [ "$uname_s" = "FreeBSD" ]
