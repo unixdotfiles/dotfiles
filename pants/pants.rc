@@ -1,3 +1,5 @@
+[GLOBAL]
+time: True
+
 [repl.py]
 ipython: True
-
