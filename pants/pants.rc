@@ -1,5 +1,5 @@
 [GLOBAL]
-time: True
+#time: True
 
 [repl.py]
 ipython: True
