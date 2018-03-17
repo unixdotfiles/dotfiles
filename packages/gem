@@ -1,8 +1,10 @@
+bcrypt_pbkdf
 bundler
 lolcat
 github_cli
 gist
 mdl
-t
+rbnacl
+rbnacl-libsodium
 travis
 puppet-lint

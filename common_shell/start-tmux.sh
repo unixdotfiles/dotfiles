@@ -7,7 +7,7 @@ __tmux_begin() {
             [ -z "$__shellrc_tmux_childonly" ]
         then
             # If we want to automatically attach to existing session - do so
-            [ -n "$__shellrc_auto_attach" ] && tmux has-session && exec tmux attach
+            [ -n "$__shellrc_noauto_attach" ] && tmux has-session && exec tmux attach
 
             # If we want to start tmux normally, do so.
             exec tmux

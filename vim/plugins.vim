@@ -14,7 +14,10 @@ Plug 'Shougo/vinarise.vim'
 Plug 'wannesm/wmgraphviz.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-ruby/vim-ruby'
+Plug 'chr4/sslsecure.vim'
+
 call plug#end()
+
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
