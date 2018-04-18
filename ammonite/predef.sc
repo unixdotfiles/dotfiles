@@ -1,1 +1,1 @@
-repl.compiler.settings.nowarnings.value = false
+Console.println(repl.compiler.settings.nowarnings.value = false)
