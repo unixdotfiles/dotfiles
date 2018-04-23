@@ -15,6 +15,7 @@ Plug 'wannesm/wmgraphviz.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-ruby/vim-ruby'
 Plug 'chr4/sslsecure.vim'
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 
