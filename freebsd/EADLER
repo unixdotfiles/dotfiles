@@ -1,0 +1,9 @@
+include GENERIC
+
+ident   EADLER
+
+# options LOCK_PROFILING
+
+options IEEE80211_DEBUG
+options IWN_DEBUG
+options TEXTDUMP_VERBOSE
