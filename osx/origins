@@ -88,7 +88,7 @@ tmux
 tmux-pasteboard
 tree
 unrar
-vim +huge +perl -python27 +python36 +cscope +ruby23 +tcl +lua
+vim +huge +perl -python27 +python36 +cscope +ruby24 +tcl +lua
 wget
 youtube-dl +python36
 zsh
