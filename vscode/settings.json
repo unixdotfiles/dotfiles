@@ -1,0 +1,12 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.insertSpaces": false,
+    "files.insertFinalNewline": true,
+    "git.promptToSaveFilesBeforeCommit": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "search.smartCase": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.iconTheme": "vscode-icons"
+}

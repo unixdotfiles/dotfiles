@@ -121,13 +121,17 @@ ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
 touch ~/.mail_aliases ~/.parallel/will-cite
+_app_support="$HOME/Library/Application Support"
 if [ "$osname" = "Darwin" ]
 then
-  _app_support="$HOME/Library/Application Support"
-  mkdir -p "$_app_support/pip"
+  mkdir -p "$_app_support/pip" "$_app_support/Code/User"
   if [ ! -e "$_app_support/pip/pip.conf" ]
   then
     ln -s "$self/pip/pip.conf" "$_app_support/pip/pip.conf"
+  fi
+  if [ ! -e "$_app_support/Code/settings.json" ]
+  then
+    ln -s "$self/vscode/settings.json" "$_app_support/Code/User/settings.json"
   fi
 fi
 # add password to config/pianobar/passwd
