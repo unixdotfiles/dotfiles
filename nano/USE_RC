@@ -1,6 +1,5 @@
 #white, black, red, blue, green, yellow, magenta, and cyan
 
-set const  #Constantly display the cursor position in the status bar.
 set historylog
 set morespace
 set multibuffer
@@ -32,12 +31,11 @@ include ~/.conf/nano/bash.nanorc
 include ~/.conf/nano/cfg.nanorc
 include ~/.conf/nano/makefile.nanorc
 include ~/.conf/nano/xml.nanorc
-include ~/.conf/nano/c.nanorc
 include ~/.conf/nano/lolcode.nanorc
 include ~/.conf/nano/tex.nanorc
 include ~/.conf/nano/asm.nanorc
-
-bind	F1	help		all
-bind	^G	gotoline	all
-bind	^Z	undo		all
-bind	^Y	redo		all
+#
+#bind	F1	help		all
+#bind	^G	gotoline	all
+#bind	^Z	undo		all
+#bind	^Y	redo		all
