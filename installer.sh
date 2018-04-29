@@ -64,7 +64,7 @@ htln screen/screenrc .screenrc
 htln vim/home .vim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
-ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/karabiner ~/.config/http-prompt
+ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/karabiner ~/.config/http-prompt ~/.config/htop
 htln http-prompt/config.py .config/http-prompt/config.py
 htln karabiner/karabiner.json .config/karabiner/karabiner.json
 htln pianobar/config .config/pianobar/config
