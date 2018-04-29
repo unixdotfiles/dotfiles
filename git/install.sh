@@ -19,6 +19,7 @@ gc --bool user.useconfigonly true
 gc sendemail.confirm always
 gc sendemail.supresscc self
 gc sendemail.chainreplyto false
+gc sendemail.smtpEncryption tls
 
 # Patch format options
 gc --bool format.signoff true
@@ -122,6 +123,8 @@ gc gui.spellingdictionary en_US
 gc gui.maxrecentrepo 25
 
 gc gitreview.remote origin
+
+gc credential.helper 'store'
 
 _gc_prefix --remove-section url.git@github.com: 2>/dev/null || true
 _gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
