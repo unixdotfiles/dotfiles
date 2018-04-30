@@ -7,3 +7,4 @@ ident   EADLER
 options IEEE80211_DEBUG
 options IWN_DEBUG
 options TEXTDUMP_VERBOSE
+options AMDSBWD_DEBUG
