@@ -25,6 +25,7 @@
     showInvisibles: true
   "linter-shellcheck":
     enableNotice: true
+    userParameters: "-x"
   "status-bar": {}
   welcome:
     showOnStartup: false
