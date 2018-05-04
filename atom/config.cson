@@ -10,6 +10,7 @@
       "styleguide"
       "autocomplete-ruby"
       "linter-ruby"
+      "Hydrogen"
     ]
     projectHome: "/Users/eax/svn"
     telemetryConsent: "limited"
