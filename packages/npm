@@ -8,6 +8,7 @@ grunt-cli
 jpm
 jscs
 jsonlint
+typescript
 phplint
 remark-cli
 remark-lint
