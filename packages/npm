@@ -2,6 +2,7 @@ csslint
 cson
 eslint
 fixpack
+@google/clasp
 grunt
 grunt-cli
 jpm
