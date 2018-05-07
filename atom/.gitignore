@@ -4,5 +4,6 @@ storage/
 compile-cache/
 dev/
 packages/
+persistent-undo/
 .npm
 .node-gyp
