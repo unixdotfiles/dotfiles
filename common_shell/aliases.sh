@@ -8,13 +8,13 @@ else
     ls -G >/dev/null 2>&1 && alias ls='ls -GF'
 fi
 
-if [ "$uname_s" = "FreeBSD" ]
+if [ "$_uname_s" = "FreeBSD" ]
 then
 	alias rm="rm -I";
 	redefine less="less -R";
 	alias free="top -b|grep -E '^(Mem|Swap|ARC)'"
 	alias iotop='top -m io -o total'
-elif [ "$uname_s" = "Darwin" ]
+elif [ "$_uname_s" = "Darwin" ]
 then
   redefine less="less -R"
   redefine kinit="kinit --keychain"

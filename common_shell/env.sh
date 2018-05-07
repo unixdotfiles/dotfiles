@@ -62,7 +62,7 @@ then
     eval "$(ssh-agent)" >/dev/null
 fi
 
-if [ "$uname_s" = "FreeBSD" ]
+if [ "$_uname_s" = "FreeBSD" ]
 then
     export GOOS=freebsd
     export GOARCH=amd64

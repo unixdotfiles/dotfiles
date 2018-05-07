@@ -8,7 +8,7 @@ __INTSHELL="sh";
 [ -n "$ZSH_VERSION" ] && __INTSHELL="zsh"
 export _shellpath=~/.conf/$__INTSHELL
 
-uname_s=$(uname -s)
+_uname_s=$(uname -s)
 
 if [ "$uname_s" = "Darwin" ]
 then
