@@ -8,9 +8,14 @@ __INTSHELL="sh";
 [ -n "$ZSH_VERSION" ] && __INTSHELL="zsh"
 export _shellpath=~/.conf/$__INTSHELL
 
-_PRIMARY_PIP_PATH=~/Library/Python/3.6/bin
-
 uname_s=$(uname -s)
+
+if [ "$uname_s" = "Darwin" ]
+then
+  _PRIMARY_PIP_PATH=~/Library/Python/3.6/bin
+else
+  _PRIMARY_PIP_PATH=~/.local/bin
+fi
 
 . $_confpath/functions.sh
 msource ~/.options.pre
