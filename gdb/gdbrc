@@ -1,6 +1,6 @@
 # This file contains the generic settings
 
-set prompt gdb> 
+set extended-prompt gdb \t:\f>
 
 set history save on
 set history save on
