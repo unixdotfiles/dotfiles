@@ -1,3 +1,32 @@
-source ~/.conf/gdb/gdbrc
-source ~/.conf/gdb/prole_cracker
-source ~/.conf/gdb/reverseputas
+# This file contains the generic settings
+
+#set extended-prompt gdb \t:\f>
+
+set history save on
+set history save on
+set history size unlimited
+set history remove-duplicates unlimited
+set history expansion on
+
+# Stop printing arrays at a nul
+set print null-stop
+
+# Pretty Print things
+set print pretty on
+set print array on
+
+# C++ specific settings
+set print vtbl on
+set print object on
+set overload-resolution on
+
+# Required on a mac
+set startup-with-shell off
+
+#set stop-on-solib-events on
+
+set tui border-kind acs
+
+#set fork-follow-mode child
+
+handle SIGPIPE nostop noprint pass
