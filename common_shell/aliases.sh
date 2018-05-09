@@ -36,7 +36,6 @@ alias lls="ls -lao";
 alias tolower="tr [:upper:] [:lower:]"
 alias toupper="tr [:lower:] [:upper:]"
 alias rot13='tr "[A-Za-z]" "[N-ZA-Mn-za-m]"'
-__exists curl && alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias today="date +%F"
 alias now="date +%F-%H-%M-%S"
 alias timestamp='date +%s'
@@ -64,6 +63,7 @@ redefine ag="ag --path-to-ignore ~/.conf/ag/agignore"
 redefine rg="rg -S"
 redefine xz="xz -T0"
 redefine grunt="grunt --stack"
+redefine gdb="gdb -s"
 
 alias ncvs="cvs -d eadler@cvs.NetBSD.org:/cvsroot"
 alias nwcvs="cvs -d anoncvs@wiki.NetBSD.org:/cvsroot"
