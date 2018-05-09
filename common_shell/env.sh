@@ -87,7 +87,7 @@ export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,add
 export RUST_BACKTRACE=1
 export CG_CONTEXT_SHOW_BACKTRACE=1 # macOS
 export RAKUDO_BACKTRACE=1 # Perl 6
-export NANO_BACKTRACE=1
+export NANO_NOCATCH=1
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
