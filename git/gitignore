@@ -55,6 +55,9 @@ Session.vim
 *.dSYM/
 *.debug
 
+# gdb
+.gdb_history
+
 # Latex
 *.aux
 *.dvi
