@@ -5,3 +5,10 @@ command alias be breakpoint enable
 command alias bdel breakpoint delete
 command alias jump register write pc
 command alias return thread return
+
+
+settings notify-void true
+settings use-all-compiler-flags true
+settings display-expression-in-crashlogs true
+settings set plugin.os.goroutines.enable true
+settings set target.prefer-dynamic-value no-run-target
