@@ -1,0 +1,10 @@
+--track-fds=yes
+--show-below-main=yes
+--gen-suppressions=yes
+--extra-debuginfo-path=/usr/lib/debug
+--read-var-info=yes
+--leak-check=full
+--show-reachable=yes
+--track-origins=yes
+
+
