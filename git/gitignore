@@ -72,6 +72,7 @@ Session.vim
 *.rej
 *.orig
 *.old
+*.patch
 
 # R
 .Rhistory
