@@ -16,5 +16,5 @@ pip-2.7 install --user -U -r global.requirements.txt -r 27.requirements.txt
 pip-3.6 install --user -U -r global.requirements.txt -r 3.requirements.txt
 stack install $(cat cabal)
 #cpan install $(cat cpan)
-luarocks install $(cat luarocks)
+luarocks install --local $(cat luarocks)
 cargo install $(cat cargo)
