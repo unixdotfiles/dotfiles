@@ -8,5 +8,8 @@ options IEEE80211_DEBUG
 options IWN_DEBUG
 options TEXTDUMP_VERBOSE
 options AMDSBWD_DEBUG
+options USB_DEBUG
 
 nooptions FULL_BUF_TRACKING
+
+nodevice agp
