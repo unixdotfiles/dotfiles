@@ -11,5 +11,7 @@ options AMDSBWD_DEBUG
 options USB_DEBUG
 
 nooptions FULL_BUF_TRACKING
+nooptions MALLOC_DEBUG_MAXZONES
 
 nodevice agp
+
