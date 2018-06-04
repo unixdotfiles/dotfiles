@@ -10,11 +10,13 @@ fi
 
 if [ "$_uname_s" = "FreeBSD" ]
 then
-	alias rm="rm -I";
-	alias free="top -b|grep -E '^(Mem|Swap|ARC)'"
-	alias iotop='top -m io -o total'
+  redefine less="less -RM"
+  alias rm="rm -I";
+  alias free="top -b|grep -E '^(Mem|Swap|ARC)'"
+  alias iotop='top -m io -o total'
 elif [ "$_uname_s" = "Darwin" ]
 then
+  redefine less="less -RM"
   redefine kinit="kinit --keychain"
   alias free="top -S|head -12"
   alias localip="ipconfig getifaddr en0"
@@ -43,7 +45,6 @@ __exists pip-2.7 && alias pip2=pip-2.7
 __exists pip-3.6 && alias pip3=pip-3.6
 ! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
-redefine less="less -RM";
 redefine diff="diff -p";
 redefine grep="grep --color=auto"
 __exists grc && redefine diff="grc diff -p"
