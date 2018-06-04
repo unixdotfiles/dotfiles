@@ -1,5 +1,8 @@
 [GLOBAL]
 #time: True
 
+[DEFAULT]
+print_exception_stacktrace: True
+
 [repl.py]
 ipython: True
