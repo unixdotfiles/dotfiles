@@ -72,7 +72,6 @@ pv
 py36-numpy +gcc7
 py36-pip
 python36
-qemu +lzo +ssh +target_arm +target_i386 +target_mips +target_x86_64 +vde +vnc
 R -gcc6 +gcc7
 realpath
 ruby25
