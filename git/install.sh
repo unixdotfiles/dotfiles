@@ -20,6 +20,8 @@ gc sendemail.confirm always
 gc sendemail.supresscc self
 gc sendemail.chainreplyto false
 gc sendemail.smtpEncryption tls
+gc sendemail.aliasfile ~/.conf/git/mailalias
+gc sendemail.aliasfiletype mutt
 
 # Patch format options
 gc --bool format.signoff true
