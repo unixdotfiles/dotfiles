@@ -73,6 +73,7 @@ py36-numpy +gcc7
 py36-pip
 python36
 R -gcc6 +gcc7
+rc
 realpath
 ruby25
 sbt
