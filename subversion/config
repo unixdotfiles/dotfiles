@@ -6,7 +6,7 @@ diff-extensions = -u -p
 
 [tunnels]
 # ssh = $SVN_SSH ssh -q
-# ssh = $SVN_SSH ssh
+ssh = $SVN_SSH ssh
 # rsh = rsh
 ### Or, if you wanted to specify a full path and arguments:
 # rsh = /path/to/rsh -l myusername
