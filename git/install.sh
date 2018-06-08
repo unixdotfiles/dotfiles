@@ -126,7 +126,12 @@ gc gui.maxrecentrepo 25
 
 gc gitreview.remote origin
 
-gc credential.helper 'store'
+if [ "$(uname -s)" = "Darwin" ]
+then
+  gc credential.helper 'osxkeychain'
+else
+  gc credential.helper 'store'
+fi
 
 _gc_prefix --remove-section url.git@github.com: 2>/dev/null || true
 _gc_prefix --add url.git@github.com:.pushInsteadOf https://github.com/
