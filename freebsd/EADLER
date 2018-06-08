@@ -10,6 +10,8 @@ options TEXTDUMP_VERBOSE
 options AMDSBWD_DEBUG
 options USB_DEBUG
 
+options TCPHPTS
+
 nooptions FULL_BUF_TRACKING
 nooptions MALLOC_DEBUG_MAXZONES
 
