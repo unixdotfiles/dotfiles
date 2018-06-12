@@ -6,5 +6,6 @@ gist
 mdl
 rbnacl
 rbnacl-libsodium
+rsense
 travis
 puppet-lint
