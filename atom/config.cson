@@ -3,6 +3,10 @@
     autocompleteBrackets: false
   core:
     audioBeep: false
+    customFileTypes:
+      "source.json": [
+        "workflow"
+      ]
     disabledPackages: [
       "metrics"
       "exception-reporting"
@@ -11,6 +15,7 @@
       "Hydrogen"
     ]
     projectHome: "/Users/eax/svn"
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "atom-light-ui"
@@ -18,6 +23,7 @@
     ]
   editor:
     backUpBeforeSaving: true
+    fontSize: 19
     invisibles: {}
     preferredLineLength: 120
     showIndentGuide: true
