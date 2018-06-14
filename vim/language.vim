@@ -35,7 +35,7 @@ endfunction " Set_Ruby()
 
 function Set_C()
 	setlocal textwidth=80
-	call Shared_Tabs(8)
+	call Shared_Tabs(4)
 endfunction " Set_C()
 
 function Set_Automake()
