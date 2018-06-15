@@ -13,6 +13,8 @@
       "welcome"
       "styleguide"
       "Hydrogen"
+      "github"
+      "update-package-dependencies"
     ]
     projectHome: "/Users/eax/svn"
     restorePreviousWindowsOnStart: "no"
