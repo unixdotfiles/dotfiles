@@ -129,9 +129,14 @@ then
   then
     ln -s "$self/pip/pip.conf" "$_app_support/pip/pip.conf"
   fi
-  if [ ! -e "$_app_support/Code/settings.json" ]
+  if [ ! -e "$_app_support/Code/User/settings.json" ]
   then
     ln -s "$self/vscode/settings.json" "$_app_support/Code/User/settings.json"
+  fi
+
+  if [ ! -e "$_app_support/Code - Insiders/User/settings.json" ]
+  then
+    ln -s "$self/vscode/settings.json" "$_app_support/Code - Insiders/User/settings.json"
   fi
 fi
 # add password to config/pianobar/passwd
