@@ -74,13 +74,11 @@ gc --bool diff.mnemonicprefix true
 #Don't throw anything away
 gc --bool core.logAllRefUpdates true
 gc gc.reflogExpire never
-gc gc.reflogExpireUnreachable never
 gc gc.rerereResolved '90'
 gc gc.rerereUnresolved '90'
 gc gc.pruneExpire never
 gc gc.worktreePruneExpire never
 gc --bool core.precomposeunicode true
-gc --int gc.auto 0
 gc --bool receive.autogc false
 
 gc --bool core.quotepath true

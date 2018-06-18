@@ -35,6 +35,8 @@
   "linter-shellcheck":
     enableNotice: true
     userParameters: "-x"
+  "linter-ui-default":
+    showPanel: true
   "status-bar": {}
   welcome:
     showOnStartup: false
