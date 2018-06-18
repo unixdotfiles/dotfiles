@@ -25,6 +25,7 @@
       "atom-light-ui"
       "atom-light-syntax"
     ]
+    useTreeSitterParsers: true
   editor:
     backUpBeforeSaving: true
     fontSize: 19
