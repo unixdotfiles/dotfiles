@@ -1,6 +1,8 @@
 "*":
   "bracket-matcher":
     autocompleteBrackets: false
+  "command-palette":
+    preserveLastSearch: true
   core:
     audioBeep: false
     customFileTypes:
@@ -19,7 +21,6 @@
       "snippets"
     ]
     projectHome: "/Users/eax/svn"
-    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "atom-light-ui"
@@ -33,11 +34,15 @@
     preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
+  jsonlint:
+    hideOnNoErrors: true
+    validateOnChange: true
   "linter-shellcheck":
     enableNotice: true
     userParameters: "-x"
   "linter-ui-default":
     showPanel: true
+    statusBarRepresents: "Current File"
   "status-bar": {}
   welcome:
     showOnStartup: false
