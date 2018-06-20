@@ -9,6 +9,9 @@
       "source.json": [
         "workflow"
       ]
+      "source.python": [
+        "aurora"
+      ]
     disabledPackages: [
       "metrics"
       "exception-reporting"
@@ -49,3 +52,9 @@
 ".json.source":
   editor:
     preferredLineLength: 120
+".python.regexp.source":
+  editor:
+    tabLength: 2
+".python.source":
+  editor:
+    tabLength: 2
