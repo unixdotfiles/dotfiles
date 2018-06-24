@@ -35,6 +35,7 @@ alias ll="ls -halt"
 alias lls="ls -lao";
 alias tolower="tr [:upper:] [:lower:]"
 alias toupper="tr [:lower:] [:upper:]"
+alias newlines="tr ' ' '\n'"
 alias rot13='tr "[A-Za-z]" "[N-ZA-Mn-za-m]"'
 alias today="date +%F"
 alias now="date +%F-%H-%M-%S"
