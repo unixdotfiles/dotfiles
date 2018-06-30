@@ -14,6 +14,7 @@ options TCPHPTS
 
 nooptions FULL_BUF_TRACKING
 nooptions MALLOC_DEBUG_MAXZONES
+nooptions WITNESS
 
 nodevice agp
 
