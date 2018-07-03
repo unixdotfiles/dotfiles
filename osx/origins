@@ -1,4 +1,3 @@
-apache-ant
 arping
 asciinema
 bash
@@ -10,7 +9,6 @@ cpuid
 colordiff
 coreutils
 cowsay
-ctags
 curl +ares +http2
 dash
 dmd
@@ -73,7 +71,6 @@ py36-numpy +gcc7
 py36-pip
 python37
 R -gcc6 +gcc7
-rc
 realpath
 ruby25
 sbt
