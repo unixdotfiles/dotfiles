@@ -5,9 +5,9 @@ then
 sudo port select --set cython cython27
 sudo port select --set cython cython36
 sudo port select --set maven maven3
-sudo port select --set python python36
+sudo port select --set python python37
 sudo port select --set python2 python27
-sudo port select --set python3 python36
+sudo port select --set python3 python37
 sudo port select --set ruby ruby25
 sudo port select --set scala scala2.12
 sudo port select --set pip pip27

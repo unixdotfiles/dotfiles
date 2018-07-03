@@ -71,7 +71,7 @@ pigz
 pv
 py36-numpy +gcc7
 py36-pip
-python36
+python37
 R -gcc6 +gcc7
 rc
 realpath
@@ -90,6 +90,6 @@ tree
 unrar
 vim +huge +perl -python27 +python36 +cscope +lua
 wget
-youtube-dl +python36
+youtube-dl +python37
 zsh
 zsh-completions
