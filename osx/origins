@@ -13,7 +13,7 @@ curl +ares +http2
 dash
 dmd
 drill
-ffmpeg +gpl3 +nonfree +libdc1394 +librtmp
+ffmpeg +gpl3 +nonfree +librtmp
 figlet
 findutils
 gcc7
