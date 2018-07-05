@@ -22,6 +22,7 @@
       "update-package-dependencies"
       "spell-check"
       "snippets"
+      "language-shellscript"
     ]
     projectHome: "/Users/eax/svn"
     telemetryConsent: "limited"
