@@ -67,7 +67,7 @@ php72-pcntl
 php72-posix
 pigz
 pv
-py36-numpy +gcc7
+py37-numpy
 py36-pip
 python37
 R -gcc6 +gcc7
