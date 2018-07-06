@@ -42,3 +42,6 @@ Host *
   AddKeysToAgent yes
   PermitLocalCommand no
   UseKeychain yes
+  KbdInteractiveAuthentication no
+  PasswordAuthentication no
+  StrictHostKeyChecking accept-new
