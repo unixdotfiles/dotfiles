@@ -2,8 +2,6 @@ argcomplete
 bpython
 ipython
 jupyter
-matplotlib
-nltk
 nose
 nose-capturestderr
 nose-timer
@@ -11,12 +9,8 @@ numpy
 pex
 pip
 ptpython
-pycrypto
 python-nmap
 PyYAML
-requests
-scrapy
-sortedcontainers
 virtualenv-clone
 virtualenvwrapper
 yanc

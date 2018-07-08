@@ -4,7 +4,13 @@ flake8
 git+https://git@github.com/reinderien/mimic.git
 git-review
 http-prompt
+matplotlib
+nltk
 pycodestyle
+pycrypto
+requests
+scrapy
+sortedcontainers
 sphinx
 sympy
 titlecase
