@@ -10,7 +10,7 @@ export _shellpath=~/.conf/$__INTSHELL
 
 _uname_s=$(uname -s)
 
-if [ "$uname_s" = "Darwin" ]
+if [ "$_uname_s" = "Darwin" ]
 then
   _PRIMARY_PIP_PATH=~/Library/Python/3.7/bin
 else
