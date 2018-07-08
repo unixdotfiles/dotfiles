@@ -99,9 +99,6 @@ msource() {
 	[ -f "$f" ] && . "$f";
 }
 
-isodate() {
-  date "+%Y-%m-%d"
-}
 
 : ${LIBSH_ALERT_TIME:=3000}
 

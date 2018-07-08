@@ -37,9 +37,11 @@ alias tolower="tr [:upper:] [:lower:]"
 alias toupper="tr [:lower:] [:upper:]"
 alias newlines="tr ' ' '\n'"
 alias rot13='tr "[A-Za-z]" "[N-ZA-Mn-za-m]"'
+
 alias today="date +%F"
 alias now="date +%F-%H-%M-%S"
 alias timestamp='date +%s'
+
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
 __exists pip-2.7 && alias pip2=pip-2.7
