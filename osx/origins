@@ -68,7 +68,7 @@ php72-posix
 pigz
 pv
 py37-numpy
-py36-pip
+py37-pip
 python37
 R -gcc6 +gcc7
 realpath
