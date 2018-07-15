@@ -69,7 +69,7 @@ pigz
 pv
 py37-numpy
 py37-pip
-python37
+python37 +optimizations
 R -gcc6 +gcc7
 realpath
 ruby25
