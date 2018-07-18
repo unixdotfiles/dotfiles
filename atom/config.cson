@@ -1,4 +1,6 @@
 "*":
+  autosave:
+    enabled: true
   "bracket-matcher":
     autocompleteBrackets: false
   "command-palette":
@@ -33,7 +35,6 @@
     useTreeSitterParsers: true
   editor:
     backUpBeforeSaving: true
-    fontSize: 19
     invisibles: {}
     preferredLineLength: 120
     showIndentGuide: true
@@ -48,8 +49,15 @@
     showPanel: true
     statusBarRepresents: "Current File"
   "status-bar": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".git-commit.text":
+  editor:
+    preferredLineLength: 72
 ".json.source":
   editor:
     preferredLineLength: 120
