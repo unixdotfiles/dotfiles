@@ -1,3 +1,5 @@
+shopt -s checkwinsize
+
 if [[ $- == *i* ]]
 then
 . ~/.conf/common_shell/tputcolors.sh
