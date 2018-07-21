@@ -1,6 +1,6 @@
 call plug#begin()
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'scrooloose/syntastic'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Plug 'jmcantrell/vim-virtualenv'
