@@ -50,7 +50,6 @@ __exists pip-3.7 && alias pip3=pip-3.7
 
 redefine diff="diff -p";
 redefine grep="grep --color=auto"
-__exists grc && redefine diff="grc diff -p"
 redefine pastebinit="pastebinit -a ''"
 redefine portlint="portlint -C";
 redefine startx="startx -audit 4 -nolisten tcp";
@@ -77,7 +76,6 @@ alias b="popd";
 
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
-prefixwith "grc -es --colour=auto" wdiff make gmake gcc g++ as gas clang clang++ ld netcat nc ping ping6 traceroute traceroute6 df ps mount dig drill tail head cvs ifconfig last netstat
 
 redefine python="python -R"
 __py3opt="-bbttq"
