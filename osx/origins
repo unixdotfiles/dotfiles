@@ -45,7 +45,7 @@ mplayer +aa +caca +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
 netperf
-nghttp2 +python36 -python27
+nghttp2 +python37 -python27
 ninja
 nmap -subversion
 npm5
