@@ -86,6 +86,6 @@ tree
 unrar
 vim +huge +perl -python27 +python37 +cscope +lua
 wget
-youtube-dl +python37
+youtube-dl -python36 +python37
 zsh
 zsh-completions
