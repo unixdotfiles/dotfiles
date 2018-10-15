@@ -10,7 +10,6 @@ coreutils
 cowsay
 curl +ares +http2
 dash
-dmd
 drill
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
