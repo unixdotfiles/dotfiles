@@ -11,6 +11,7 @@ cowsay
 curl +ares +http2
 dash
 drill
+ettercap
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
 findutils
