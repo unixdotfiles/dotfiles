@@ -7,6 +7,7 @@ matplotlib
 nltk
 pycodestyle
 pycrypto
+py-spy
 requests
 scrapy
 sortedcontainers
