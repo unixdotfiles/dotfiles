@@ -87,7 +87,7 @@ export CVS_RSH="ssh"
 _OSX_JPM_FX_BINARY='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin'
 [ -f "$_OSX_JPM_FX_BINARY" ] && export JPM_FIREFOX_BINARY="$_OSX_JPM_FX_BINARY"
 
-export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=1044"
+export JVM_DEBUG_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
 
 export RUST_BACKTRACE=1
 export CG_CONTEXT_SHOW_BACKTRACE=1 # macOS
