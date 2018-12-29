@@ -38,6 +38,8 @@ defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool fal
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
 
 defaults write org.openemu.OpenEmu debug -int 1
+defaults write org.openemu.OpenEmu databasePath -string '~/Dropbox/ApplicationData/OpenEmu/GameLibrary/Game Library'
+defaults write org.openemu.OpenEmu databasePath -string '~/Dropbox/ApplicationData/OpenEmu/GameLibrary/Game Library'
 
 # Disable backswipe in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
