@@ -33,7 +33,7 @@ defaults write com.agilebits.onepassword4 ShowCopyUUIDItemMenu -bool true
 defaults write com.agilebits.onepassword4 ShowItemCounts -bool false
 defaults write com.agilebits.onepassword4 ShowRichIcons -bool true
 defaults write com.agilebits.onepassword4 ShowStatusItem -bool true
-
+personal
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool false
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
 
@@ -48,3 +48,7 @@ defaults write org.chromium.Chromium AppleEnableSwipeNavigateWithScrolls -bool f
 defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
 defaults write org.chromium.Chromium AppleEnableMouseSwipeNavigateWithScrolls -bool false
+
+defaults write com.pilotmoon.scroll-reverser ReverseTablet -int 0
+defaults write com.pilotmoon.scroll-reverser ReverseTrackpad -int 0
+defaults write com.pilotmoon.scroll-reverser SUEnableAutomaticChecks -int 1
