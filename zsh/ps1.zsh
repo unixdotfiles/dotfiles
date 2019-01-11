@@ -55,6 +55,18 @@ setCurrentPS1()
 	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
 }
 
+setCurrentIT2Status() {
+  local cbranch
+  if git rev-parse --git-dir 2>/dev/null >&2
+  then
+    cbranch="/$(git cbranch)"
+    arr="${${(@s:/:)cbranch}[-1]}"
+    it2setkeylabel set status "${${(@As:/:)cbranch}[-1]}"
+  else
+    it2setkeylabel set status ""
+  fi
+}
+
 PS1='[$PS1_HIST$PS1_TIME$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_SHLVL$PS1_JOBS$PS1_ERR%f]$PS1_END'
 PS2='%F{cyan}%F{blue}(%F{green}%_%F{blue})%F{cyan}%f ';
 RPS1='${VIMRUNTIME:+"{$PS1_VIM}"}${RPS1_PYTHON}$PS1_VCS%f';
@@ -66,4 +78,5 @@ setPS1Battery() {
 autoload -Uz  add-zsh-hook
 add-zsh-hook precmd vcs_info
 add-zsh-hook precmd setCurrentPS1
+add-zsh-hook precmd setCurrentIT2Status
 add-zsh-hook periodic setPS1Battery
