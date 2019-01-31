@@ -75,6 +75,7 @@ alias -g N2="2>/dev/null"
 alias -g DN=">/dev/null"
 alias -g C='| cat'
 alias -g G='| grep'
+alias -g J='| jq --color-output'
 alias -g H='| head'
 alias -g L='| less'
 alias -g S='| sort'
