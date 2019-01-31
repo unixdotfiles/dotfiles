@@ -16,7 +16,7 @@ options("devtools.desc" = list(
 ))
 options("devtools.name" = "Eitan Adler")
 
-options(repos=structure(c(CRAN="https://cran.cnr.berkeley.edu/")))
+#options(repos=structure(c(CRAN="https://cran.cnr.berkeley.edu/")))
 
 utils::rc.settings(ipck = TRUE)
 
