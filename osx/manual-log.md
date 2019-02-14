@@ -9,11 +9,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 
 == Configuration ==
 
-=== TouchID ===
-Add
-```auth       sufficient     pam_tid.so```
-to the *top* of `/etc/pam.d/sudo`
-
 === User Profile ===
 Set `/opt/local/bin/zsh` to be my login shell.
 
@@ -25,3 +20,5 @@ cd osx
 ./osx.sh
 ./osx_select.sh
 ./third_party.sh
+cd global
+./restore.sh

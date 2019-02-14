@@ -8,4 +8,5 @@ files="
 /etc/launchd.conf
 /etc/sysctl.conf
 /etc/apache2/httpd.conf
+/etc/pam.d/sudo
 "
