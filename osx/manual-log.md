@@ -23,6 +23,7 @@ Enable the following menulets:
 - Bluetooth
 - Volume
 - Input Method
+- Battery Status (incl percent)
 
 # Configuration
 
