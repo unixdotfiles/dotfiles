@@ -135,7 +135,13 @@ then
 
   if [ ! -e "$_app_support/Code - Insiders/User/settings.json" ]
   then
+    mkdir -p "$_app_support/Code - Insiders/User"
     ln -s "$self/vscode/settings.json" "$_app_support/Code - Insiders/User/settings.json"
+  fi
+
+  if [ ! -e "$HOME/Library/Preferences/calibre" ];
+  then
+    ln -s "/Users/eax/Dropbox/ApplicationData/calibre/preferences" "$HOME/Library/Preferences/calibre"
   fi
 fi
 # add password to config/pianobar/passwd
