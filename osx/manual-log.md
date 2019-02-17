@@ -30,6 +30,7 @@ Enable the following menulets:
 Set `/opt/local/bin/zsh` to be my login shell.
 
 ## Scripts
+```
 cd .conf
 ./install.sh
 cd osx
@@ -39,3 +40,4 @@ cd osx
 ./third_party.sh
 cd global
 ./restore.sh
+```
