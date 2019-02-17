@@ -1,7 +1,7 @@
 This file documents manual tests to set up a new macOS machine.
 It is mostly stuff I should eventually automate but have not yet had time figure out how to do so.
 
-== Software ==
+# Software
 
 - [Macports](https://www.macports.org/)
 - [Iterm](https://www.iterm2.com/)
@@ -13,7 +13,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Skim.app](https://skim-app.sourceforge.io/)
 - [Slack](https://slack.com/)
 
-== Menu Bar ==
+# Menu Bar
 
 Enable the following menulets:
 
@@ -21,12 +21,12 @@ Enable the following menulets:
 - Volume
 - Input Method
 
-== Configuration ==
+# Configuration
 
-=== User Profile ===
+## User Profile
 Set `/opt/local/bin/zsh` to be my login shell.
 
-=== Scripts ===
+## Scripts
 cd .conf
 ./install.sh
 cd osx
