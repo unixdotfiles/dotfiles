@@ -54,16 +54,16 @@ p7zip
 pango +quartz -x11
 parallel
 perl5
-php72
-php72-APCu
-php72-curl
-php72-fpm
-php72-iconv
-php72-mbstring
-php72-mysql
-php72-openssl
-php72-pcntl
-php72-posix
+php73
+php73-APCu
+php73-curl
+php73-fpm
+php73-iconv
+php73-mbstring
+php73-mysql
+php73-openssl
+php73-pcntl
+php73-posix
 pigz
 pv
 py37-numpy
