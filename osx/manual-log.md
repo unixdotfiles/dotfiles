@@ -12,6 +12,9 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Calibre](https://calibre-ebook.com/)
 - [Skim.app](https://skim-app.sourceforge.io/)
 - [Slack](https://slack.com/)
+- [Background Music](https://github.com/kyleneideck/BackgroundMusic)
+- [Transmission](https://transmissionbt.com/)
+- [1Password](https://1password.com/)
 
 # Menu Bar
 
