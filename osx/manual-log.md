@@ -3,9 +3,23 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 
 == Software ==
 
-- Macports
-- Iterm
-- Jetbrains Toolbox
+- [Macports](https://www.macports.org/)
+- [Iterm](https://www.iterm2.com/)
+- [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
+- [itsycal](https://www.mowglii.com/itsycal/)
+- [Dropbox](https://dropbox.com/)
+- [Tunnelblick](https://tunnelblick.net/)
+- [Calibre](https://calibre-ebook.com/)
+- [Skim.app](https://skim-app.sourceforge.io/)
+- [Slack](https://slack.com/)
+
+== Menu Bar ==
+
+Enable the following menulets:
+
+- Bluetooth
+- Volume
+- Input Method
 
 == Configuration ==
 
