@@ -38,8 +38,6 @@ cd .conf
 cd osx
 ./boot.sh
 ./osx.sh
-./osx_select.sh
-./third_party.sh
 cd global
 ./restore.sh
 ```

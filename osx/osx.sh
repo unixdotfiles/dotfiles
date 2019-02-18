@@ -171,3 +171,4 @@ defaults write com.if.Amphetamine "Show Welcome Window" -int 0
 __exists git && git config --global --replace-all credential.helper osxkeychain
 
 ~/.conf/osx/osx_select.sh
+~/.conf/osx/third_party.sh
