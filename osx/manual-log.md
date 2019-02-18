@@ -15,6 +15,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Background Music](https://github.com/kyleneideck/BackgroundMusic)
 - [Transmission](https://transmissionbt.com/)
 - [1Password](https://1password.com/)
+- [VLC](https://www.videolan.org/vlc/index.html)
 
 # Menu Bar
 
