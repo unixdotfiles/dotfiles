@@ -16,6 +16,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Transmission](https://transmissionbt.com/)
 - [1Password](https://1password.com/)
 - [VLC](https://www.videolan.org/vlc/index.html)
+- [Scroll Reverser](https://pilotmoon.com/scrollreverser/)
 
 # Menu Bar
 
