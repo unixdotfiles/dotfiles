@@ -119,7 +119,7 @@ htln mdl/mdlrc .mdlrc
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
-touch ~/.mail_aliases ~/.parallel/will-cite
+touch ~/.mail_aliases ~/.parallel/will-cite ~/.hushlogin
 _app_support="$HOME/Library/Application Support"
 if [ "$osname" = "Darwin" ]
 then
