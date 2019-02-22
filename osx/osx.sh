@@ -23,6 +23,12 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Locale & Localization
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+defaults write NSGlobalDomain AppleMeasurementUnits -string Centimeters
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write NSGlobalDomain AppleTemperatureUnit -string Celsius
+
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
@@ -146,17 +152,13 @@ defaults write com.apple.coreservices.uiagent CSUIHasSafariBeenLaunched -bool YE
 defaults write com.apple.coreservices.uiagent CSUIRecommendSafariNextNotificationDate -date 2050-01-01T00:00:00Z
 defaults write com.apple.coreservices.uiagent CSUILastOSVersionWhereSafariRecommendationWasMade -float 10.99
 
-# iTunes
-# disable "remote control daemon"
+# iTunes disable "remote control daemon"
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
-# Nothing stops me from doing this from the GUI,
-# but might as well just configure the system as I like
+# Disable Photos when plugging in a device
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 defaults write com.apple.menuextra.battery ShowPercent YES
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/eax/Dropbox/ApplicationData/iterm2prefs"
-# Without this preference iTerm2 leaks DNS
-defaults write com.googlecode.iterm2 PerformDNSLookups 0
-defaults write com.if.Amphetamine "Show Welcome Window" -int 0
 
 # Java
 # This overwrites the dictionary which may not be what is wanted. Included here as a reminder.

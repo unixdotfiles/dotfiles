@@ -33,7 +33,6 @@ defaults write com.agilebits.onepassword4 ShowCopyUUIDItemMenu -bool true
 defaults write com.agilebits.onepassword4 ShowItemCounts -bool false
 defaults write com.agilebits.onepassword4 ShowRichIcons -bool true
 defaults write com.agilebits.onepassword4 ShowStatusItem -bool true
-personal
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper autosubmit -bool false
 defaults write 2BUA8C4S2C.com.agilebits.onepassword4-helper lenientURLMatch -bool false
 
@@ -52,3 +51,9 @@ defaults write org.chromium.Chromium AppleEnableMouseSwipeNavigateWithScrolls -b
 defaults write com.pilotmoon.scroll-reverser ReverseTablet -int 0
 defaults write com.pilotmoon.scroll-reverser ReverseTrackpad -int 0
 defaults write com.pilotmoon.scroll-reverser SUEnableAutomaticChecks -int 1
+
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/eax/Dropbox/ApplicationData/iterm2prefs"
+# Without this preference iTerm2 leaks DNS
+defaults write com.googlecode.iterm2 PerformDNSLookups 0
+
+defaults write com.if.Amphetamine "Show Welcome Window" -int 0
