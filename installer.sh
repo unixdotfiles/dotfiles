@@ -8,28 +8,21 @@ osname=$(uname -s)
 # shellcheck source=common_shell/functions.sh
 . $self/common_shell/functions.sh
 
-_tln () {
-	[ ! -e "$1" ] && return 1;
+htln () {
+  s="$self/$1"
+  d="$2"
 
-	[ -L "$2" ] || [ -e "$2" ] || (ln -s "$1" "$2" && echo begon "$2" >> "$begon")
+	[ -L "$d" ] || [ -e "$d" ] || (ln -s "$s" "$d" && echo begon "$d" >> "$begon")
 
-	if [ ! -L "$2" ]; then
-		if cmp -s "$1" "$2"; then
-			echo "warning: $2 matches $1 but is not symlink";
+	if [ ! -L "$d" ]; then
+		if cmp -s "$1" "$s"; then
+			echo "warning: $d matches $s but is not symlink";
 		else
-			echo "warning: $2 does not match $1"
+			echo "warning: $d does not match $s"
 		fi
 		return 1
 	fi
 	return 0
-}
-
-htln () {
-	attempts="$self/$1.local.$boxname $self/$1.os.$osname $self/$1"
-	for f in $attempts
-	do
-		_tln "$f" "$HOME/$2" && break
-	done
 }
 
 ensure_directories() {
