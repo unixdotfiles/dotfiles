@@ -48,7 +48,7 @@ netperf
 nghttp2 +python37 -python36 -python27
 ninja
 nmap -subversion
-npm5
+npm6
 p0f
 p7zip
 pango +quartz -x11
