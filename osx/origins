@@ -47,6 +47,7 @@ nasm
 netperf
 nghttp2 +python37 -python36 -python27
 ninja
+ngrep
 nmap -subversion
 npm6
 p0f
