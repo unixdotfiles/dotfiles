@@ -4,6 +4,5 @@ gem: --no-ri --no-rdoc --suggestions
 :bulk_threshold: 1000
 :sources:
 - https://rubygems.org/
-- http://gems.github.com
 :update_sources: true
 :verbose: true
