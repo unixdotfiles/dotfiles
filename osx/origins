@@ -72,7 +72,7 @@ py37-pip
 python37 +optimizations
 R -gcc6 +gcc7
 realpath
-ruby25
+ruby26
 sbt
 scala2.12
 socat
