@@ -29,7 +29,7 @@ ensure_directories() {
 	mkdir -p "$@"
 }
 
-ensure_directories ~/.zsh/cache
+ensure_directories ~/.zsh/cache ~/.nano/backup
 htln zsh/zshrc .zshrc
 htln zsh/zshenv .zshenv
 htln sh/profile .profile
