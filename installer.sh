@@ -10,7 +10,7 @@ osname=$(uname -s)
 
 htln () {
   s="$self/$1"
-  d="$2"
+  d="$HOME/$2"
 
 	[ -L "$d" ] || [ -e "$d" ] || (ln -s "$s" "$d" && echo begon "$d" >> "$begon")
 
@@ -29,7 +29,7 @@ ensure_directories() {
 	mkdir -p "$@"
 }
 
-ensure_directories ~/.zsh/cache ~/.nano/backup
+ensure_directories ~/.zsh/cache ~/.nano/backup ~/.matplotlib
 htln zsh/zshrc .zshrc
 htln zsh/zshenv .zshenv
 htln sh/profile .profile
@@ -45,6 +45,7 @@ htln X/xserverrc .xserverrc
 htln X/xbindkeysrc .xbindkeysrc
 #htln X/xsession .xsession
 htln mercurial/hgrc .hgrc
+htln matplotlib/matplotlibrc .matplotlib/matplotlibrc
 htln idesk/ideskrc .ideskrc
 htln idesk/idesktop .idesktop
 ensure_directories ~/.mplayer
