@@ -79,6 +79,7 @@ function Set_SGML()
 	setlocal tabstop=8
 	setlocal formatoptions=tcq2l
 	setlocal cc=+1
+	setlocal expandtab
 endfunction " Set_SGML()
 
 function Set_Man()
