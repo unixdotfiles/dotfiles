@@ -154,3 +154,7 @@ _gc_prefix --add url.git+ssh://git.debian.org/git/d-i/.pushInsteadOf git+ssh://g
 
 _gc_prefix --remove-section url.git+ssh://dweller@secure.phabricator.com 2>/dev/null || true
 _gc_prefix --add url.git+ssh://dweller@secure.phabricator.com.pushInsteadOf https://secure.phabricator.com
+
+_gc_prefix --remove-section url.git@git.kde.org: 2>/dev/null || true
+_gc_prefix --add url.git://anongit.kde.org.inteadOf kde:
+_gc_prefix --add url.git@git.kde.org:.pushInsteadOf kde:
