@@ -174,3 +174,4 @@ __exists git && git config --global --replace-all credential.helper osxkeychain
 
 ~/.conf/osx/osx_select.sh
 ~/.conf/osx/third_party.sh
+~/.conf/osx/safety.sh
