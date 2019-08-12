@@ -12,7 +12,7 @@ Host *.gitlab.com gitlab.com
   RequestTTY no
   User git
 
-Host apache.org
+Host apache.org *.apache.org
    IdentityFile ~/.ssh/eax@id_ed25519.apache.org
    User eax
 
