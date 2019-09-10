@@ -18,7 +18,7 @@ findutils
 gcc7
 gdb
 ghc
-git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_26
+git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_28
 git-lfs
 gnetcat
 gnupg2
