@@ -70,6 +70,7 @@ gc color.diff.new "blue bold"
 
 gc diff.renames copies
 gc --bool diff.mnemonicprefix true
+gc diff.wsErrorHighlight all
 
 #Don't throw anything away
 gc --bool core.logAllRefUpdates true
@@ -96,6 +97,8 @@ gc mailmap.file ~/.conf/git/mailmap
 gc diff.algorithm histogram
 gc --bool diff.compactionHeuristic true
 gc --bool diff.indentheuristic true
+
+gc --bool am.threeWay true
 
 #Nicer conflict markers (shows 'before' too)
 gc merge.conflictstyle diff3
