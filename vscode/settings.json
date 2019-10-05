@@ -8,5 +8,21 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 2,
+    "editor.formatOnPaste": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "search.showLineNumbers": true,
+    "search.quickOpen.includeSymbols": true,
+    "search.maintainFileSearchCache": true,
+    "css.lint.boxModel": "error",
+    "css.lint.compatibleVendorPrefixes": "error",
+    "css.lint.duplicateProperties": "error",
+    "css.lint.emptyRules": "error",
+    "css.lint.float": "error",
+    "css.lint.fontFaceProperties": "error",
+    "css.lint.idSelector": "error",
+    "css.lint.ieHack": "error",
+    "css.lint.important": "error",
+    "css.lint.importStatement": "error"
 }
