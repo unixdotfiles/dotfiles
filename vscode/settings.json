@@ -68,5 +68,6 @@
     "scss.lint.zeroUnits": "error",
     "javascript.format.insertSpaceAfterConstructor": true,
     "typescript.locale": "en",
-    "maven.pomfile.autoUpdateEffectivePOM": true
+    "maven.pomfile.autoUpdateEffectivePOM": true,
+    "vsicons.dontShowNewVersionMessage": true
 }
