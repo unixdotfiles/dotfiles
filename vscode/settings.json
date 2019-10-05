@@ -31,5 +31,6 @@
     "css.lint.unknownVendorSpecificProperties": "error",
     "css.lint.unknownProperties": "error",
     "css.lint.vendorPrefix": "error",
-    "css.lint.zeroUnits": "error"
+    "css.lint.zeroUnits": "error",
+    "css.trace.server": "messages"
 }
