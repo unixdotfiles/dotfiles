@@ -69,5 +69,20 @@
     "javascript.format.insertSpaceAfterConstructor": true,
     "typescript.locale": "en",
     "maven.pomfile.autoUpdateEffectivePOM": true,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "java.codeGeneration.generateComments": true,
+    "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+    "java.completion.guessMethodArguments": true,
+    "java.errors.incompleteClasspath.severity": "error",
+    "java.implementationsCodeLens.enabled": true,
+    "java.maven.downloadSources": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
