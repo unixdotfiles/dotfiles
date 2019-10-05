@@ -24,5 +24,12 @@
     "css.lint.idSelector": "error",
     "css.lint.ieHack": "error",
     "css.lint.important": "error",
-    "css.lint.importStatement": "error"
+    "css.lint.importStatement": "error",
+    "css.lint.propertyIgnoredDueToDisplay": "error",
+    "css.lint.universalSelector": "error",
+    "css.lint.unknownAtRules": "error",
+    "css.lint.unknownVendorSpecificProperties": "error",
+    "css.lint.unknownProperties": "error",
+    "css.lint.vendorPrefix": "error",
+    "css.lint.zeroUnits": "error"
 }
