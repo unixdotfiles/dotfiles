@@ -67,5 +67,6 @@
     "scss.lint.vendorPrefix": "error",
     "scss.lint.zeroUnits": "error",
     "javascript.format.insertSpaceAfterConstructor": true,
-    "typescript.locale": "en"
+    "typescript.locale": "en",
+    "maven.pomfile.autoUpdateEffectivePOM": true
 }
