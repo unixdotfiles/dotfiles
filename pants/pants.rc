@@ -2,7 +2,7 @@
 #time: True
 
 [DEFAULT]
-print_exception_stacktrace: True
+print_exception_stacktrace: False
 
 [repl.py]
 ipython: True
