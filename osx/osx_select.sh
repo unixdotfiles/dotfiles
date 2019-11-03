@@ -9,11 +9,14 @@ sudo port select --set python python38
 sudo port select --set python2 python27
 sudo port select --set python3 python38
 sudo port select --set ruby ruby25
-sudo port select --set scala scala2.12
 sudo port select --set pip pip38
 sudo port select --set pip2 pip27
 sudo port select --set pip3 pip38
 sudo port select --set php php73
+sudo port select --set pip pip27
+sudo port select --set pip pip37
+sudo port select --set php php74
+sudo port select --set scala scala2.13
 sudo port select --set ipython py38-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py38-ipython

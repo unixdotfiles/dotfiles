@@ -1,5 +1,4 @@
 arping
-asciinema
 bash
 bash-completion
 bmake
@@ -75,7 +74,7 @@ R -gcc6 +gcc7
 realpath
 ruby26
 sbt
-scala2.12
+scala2.13
 socat
 ssldump
 subversion +tools
