@@ -10,7 +10,6 @@ coreutils
 cowsay
 curl +ares +http2
 dash
-drill
 ettercap
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
@@ -34,6 +33,7 @@ ipcalc
 iperf3
 jpegoptim
 jq
+ldns
 libsdl -x11
 luarocks
 lzop
