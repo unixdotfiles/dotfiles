@@ -13,7 +13,7 @@ ettercap
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
 findutils
-gcc7
+gcc9
 gdb
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_28
@@ -70,7 +70,7 @@ py38-numpy
 py38-pip
 py38-ipython
 python37 +optimizations
-R -gcc6 +gcc7
+R -gcc6 +gcc9
 realpath
 ruby26
 sbt

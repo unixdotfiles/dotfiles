@@ -20,7 +20,7 @@ sudo port select --set scala scala2.13
 sudo port select --set ipython py38-ipython
 sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py38-ipython
-sudo port select --set gcc mp-gcc7
+sudo port select --set gcc mp-gcc9
 sudo port select --set llvm mp-llvm-7.0
 sudo port select --set mysql mariadb-10.1
 sudo port select --set postgresql_select postgresql95
