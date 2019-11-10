@@ -90,5 +90,11 @@
         "vs-kubernetes.helm-path": "/Users/eax/.vs-kubernetes/tools/helm/darwin-amd64/helm",
         "vs-kubernetes.minikube-path": "/Users/eax/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
         "vs-kubernetes.kubectl-path": "/Users/eax/.vs-kubernetes/tools/kubectl/kubectl"
-    }
+    },
+    "git.enableSmartCommit": true,
+    "python.jediEnabled": false,
+    "git.autorefresh": false,
+    "git.branchSortOrder": "alphabetically",
+    "git.countBadge": "off",
+    "git.defaultCloneDirectory": "~/svn/"
 }
