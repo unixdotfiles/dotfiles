@@ -95,6 +95,7 @@ eggs/
 *.iml
 .idea/
 .idea_modules/
+.metals/
 
 # Generated files
 bin/
