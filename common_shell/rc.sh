@@ -12,7 +12,7 @@ _uname_s=$(uname -s)
 
 if [ "$_uname_s" = "Darwin" ]
 then
-  _PRIMARY_PIP_PATH=~/Library/Python/3.7/bin
+  _PRIMARY_PIP_PATH=~/Library/Python/3.8/bin
 else
   _PRIMARY_PIP_PATH=~/.local/bin
 fi
