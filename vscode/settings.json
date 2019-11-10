@@ -96,5 +96,8 @@
     "git.autorefresh": false,
     "git.branchSortOrder": "alphabetically",
     "git.countBadge": "off",
-    "git.defaultCloneDirectory": "~/svn/"
+    "git.defaultCloneDirectory": "~/svn/",
+    "platformio-ide.activateOnlyOnPlatformIOProject": true,
+    "platformio-ide.disablePIOHomeStartup": true,
+    "platformio-ide.disableToolbar": true
 }
