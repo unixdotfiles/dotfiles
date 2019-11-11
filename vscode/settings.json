@@ -99,5 +99,8 @@
     "git.defaultCloneDirectory": "~/svn/",
     "platformio-ide.activateOnlyOnPlatformIOProject": true,
     "platformio-ide.disablePIOHomeStartup": true,
-    "platformio-ide.disableToolbar": true
+    "platformio-ide.disableToolbar": true,
+    "java.codeGeneration.useBlocks": true,
+    "java.debug.settings.showHex": true,
+    "java.debug.settings.showStaticVariables": true
 }
