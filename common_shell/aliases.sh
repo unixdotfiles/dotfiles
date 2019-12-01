@@ -10,13 +10,11 @@ fi
 
 if [ "$_uname_s" = "FreeBSD" ]
 then
-  redefine less="less -RM"
   alias rm="rm -I";
   alias free="top -b|grep -E '^(Mem|Swap|ARC)'"
   alias iotop='top -m io -o total'
 elif [ "$_uname_s" = "Darwin" ]
 then
-  redefine less="less -RM"
   redefine kinit="kinit --keychain"
   alias free="top -S|head -12"
   alias localip="ipconfig getifaddr en0"

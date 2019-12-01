@@ -1,7 +1,7 @@
 export BLOCKSIZE=K;
 export EDITOR=vim;
 export PAGER=less;
-export LESS="-i";
+export LESS="-iRM";
 export READNULLCMD=$PAGER;
 
 _LOCAL_PATH=/usr/local/bin
