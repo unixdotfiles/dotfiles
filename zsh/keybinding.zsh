@@ -1,5 +1,11 @@
 bindkey -e
 
+slash-backward-kill-word() {
+    local WORDCHARS="${WORDCHARS:s@/@}"
+    zle backward-kill-word
+}
+zle -N slash-backward-kill-word
+
 [[ -z "$terminfo[kdch1]" ]]  || bindkey -M emacs "$terminfo[kdch1]" delete-char
 [[ -z "$terminfo[khome]" ]]  || bindkey -M emacs "$terminfo[khome]" beginning-of-line
 [[ -z "$terminfo[kend]"  ]]  || bindkey -M emacs "$terminfo[kend]"  end-of-line
@@ -8,6 +14,7 @@ bindkey -e
 [[ -z "$terminfo[kich1]" ]]  || bindkey -M emacs "$terminfo[kich1]" overwrite-mode
 [[ -z "$terminfo[kLFT5]" ]] || bindkey -M emacs $terminfo[kLFT5] backward-word # C-left
 [[ -z "$terminfo[kRIT5]" ]] || bindkey -M emacs $terminfo[kRIT5] forward-word # C-right
+
 bindkey -M emacs '^[[1;5D' backward-word # screen-256-color C-left
 bindkey -M emacs '^[[1;5C' forward-word # screen-256-color C-right
 
