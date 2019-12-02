@@ -6,9 +6,9 @@ command alias bdel breakpoint delete
 command alias return thread return
 
 
-settings notify-void true
-settings use-all-compiler-flags true
-settings display-expression-in-crashlogs true
-settings set plugin.os.goroutines.enable true
+settings set notify-void true
+settings set use-all-compiler-flags true
+settings set display-expression-in-crashlogs true
+# settings set plugin.os.goroutines.enable true
 settings set target.prefer-dynamic-value no-run-target
-settings set display-runtime-support-values true
+# settings set display-runtime-support-values true
