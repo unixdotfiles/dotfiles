@@ -64,6 +64,7 @@ redefine rg="rg -S"
 redefine xz="xz -T0"
 redefine grunt="grunt --stack"
 redefine gdb="gdb -s"
+redefine irb="irb --multiline"
 
 alias ncvs="cvs -d eadler@cvs.NetBSD.org:/cvsroot"
 alias nwcvs="cvs -d anoncvs@wiki.NetBSD.org:/cvsroot"
