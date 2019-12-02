@@ -2,7 +2,6 @@
 self=~/.conf;
 
 begon="$self/.begon";
-boxname=$(hostname -s)
 osname=$(uname -s)
 
 # shellcheck source=common_shell/functions.sh
