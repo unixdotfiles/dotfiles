@@ -1,9 +1,8 @@
 autoload -Uz vcs_info
 zstyle ':vcs_info:*:' use-simple false
-zstyle ':vcs_info:*' enable svn git hg cvs p4
+zstyle ':vcs_info:*' enable svn git hg cvs
 # [ formats ]
-#zstyle ':vcs_info:*' disable cdv darcs mtn svk tla git-p4 bzr
-zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:*' disable cdv darcs mtn svk tla git-p4 bzr p4
 zstyle ':vcs_info:hg*:*' get-revision true
 zstyle ':vcs_info:hg*:' get-bookmarks true
 zstyle ':vcs_info:hg*:*' get-mq true
@@ -12,8 +11,12 @@ zstyle ':vcs_info:hg*:*' hgrevformat "%r:%h"
 zstyle ':vcs_info:hg*:*' branchformat "%b" # no %r
 zstyle ':vcs_info:hg*:*' patchformat "%p%u%n%c%a%g%G"
 zstyle ':vcs_info:hg*:*' nopatchformat "%p%u%n%c%a%g%G"
+
+# disable check-for-changes (%c+%u/staged+unstaged style) since it costs ~ 30ms
+zstyle ':vcs_info:*' check-for-changes false # 30ms cost
+zstyle ':vcs_info:*' check-for-staged-changes false # 25ms cost
 zstyle ':vcs_info:*' stagedstr "%F{red}●%f"
-zstyle ':vcs_info:*' unstagedstr "%F{green}●%f"
+# zstyle ':vcs_info:*' unstagedstr "%F{green}●%f"
 
 __VCS_SCM="%F{magenta}(%f%s:%r%F{magenta})"
 __VCS_BRANCH="%F{green}%b%u%c%f"
