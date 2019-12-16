@@ -72,6 +72,9 @@ gc diff.renames copies
 gc --bool diff.mnemonicprefix true
 gc diff.wsErrorHighlight all
 
+# since I set LESS env var, overide for git
+gc core.pager 'less -FRX'
+
 #Don't throw anything away
 gc --bool core.logAllRefUpdates true
 gc gc.reflogExpire never
