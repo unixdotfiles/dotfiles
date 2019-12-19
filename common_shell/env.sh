@@ -105,3 +105,4 @@ REPORTTIME=2
 PERIOD=5
 
 ulimit -c unlimited
+ulimit -n 1024
