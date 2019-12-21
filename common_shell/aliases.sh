@@ -130,7 +130,9 @@ dataurl() {
 }
 
 pants() {
-  cd "$(git rev-parse --show-toplevel)"
-  ./pants "$@"
+  (
+    cd "$(git rev-parse --show-toplevel)" &&
+    ./pants "$@"
+  )
 }
 
