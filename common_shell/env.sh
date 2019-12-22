@@ -26,9 +26,10 @@ then
   [ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-12})
 fi
 
-__exists chrome && export BROWSER=$(which chrome)
-__exists google-chrome && export BROWSER=$(which google-chrome)
-__exists firefox && export BROWSER=$(which firefox)
+__exists chrome && export BROWSER="$(which chrome)"
+__exists google-chrome && export BROWSER="$(which google-chrome)"
+__exists firefox && export BROWSER="$(which firefox)"
+[ -e /Applications/Firefox.app/Contents/MacOS/firefox ] && export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 __exists urxvtcd && export TERMINAL=urxvtcd
 
 [ -d /opt/local/share/cowsay/cows ] && export COWPATH="/opt/local/share/cowsay/cows"
