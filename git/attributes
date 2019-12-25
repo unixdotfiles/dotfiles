@@ -3,15 +3,19 @@
 #*.bat		text eol=crlf
 *.c		diff=cpp
 *.cpp		diff=cpp
+*.exs		diff=elixir
 *.h		diff=cpp
 *.hpp		diff=cpp
 *.cs		diff=csharp
+*.css		diff=css
+*.dts		diff=dts
 *.f90		diff=fortran
 *.f95		diff=fortran
 *.f03		diff=fortran
 *.for		diff=fortran
 *.ftn		diff=fortran
 *.fountain	diff=fountain
+*.go		diff=golang
 *.html		diff=html
 *.java		diff=java
 *.latex		diff=tex
@@ -21,5 +25,6 @@
 *.pl		diff=perl
 *.php		diff=php
 *.py		diff=python
+*.rs		diff=rust
 *.ruby		diff=ruby
 *.tex		diff=tex
