@@ -1,2 +1,4 @@
+alias linux-input linux-input@vger.kernel.org
+alias linux-kernel linux-kernel@vger.kernel.org
 alias xorg xorg-devel@lists.x.org
 alias zsh zsh-workers@zsh.org
