@@ -96,6 +96,7 @@ eggs/
 .idea/
 .idea_modules/
 .metals/
+.vscode
 
 # Generated files
 bin/
