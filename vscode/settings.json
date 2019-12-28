@@ -102,5 +102,6 @@
     "platformio-ide.disableToolbar": true,
     "java.codeGeneration.useBlocks": true,
     "java.debug.settings.showHex": true,
-    "java.debug.settings.showStaticVariables": true
+    "java.debug.settings.showStaticVariables": true,
+    "workbench.startupEditor": "newUntitledFile"
 }
