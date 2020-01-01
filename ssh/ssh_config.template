@@ -20,6 +20,11 @@ Host aur.archlinux.org
    IdentityFile ~/.ssh/eax@id_ed25519.archlinux.org
    User aur
 
+Match host NetBSD.org host cvs.NetBSD.org
+    IdentityFile ~/.ssh/eadler@id_ed25519_netbsd.org
+    User eadler
+    AddressFamily inet
+
 # So that we dont get annoying error messages
 Host localhost
   StrictHostKeyChecking no
