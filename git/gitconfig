@@ -1,0 +1,131 @@
+[include]
+	path = ~/.gitconfig.local
+[user]
+	name = Eitan Adler
+	useconfigonly = true
+[sendemail]
+	confirm = always
+	supresscc = self
+	chainreplyto = false
+	smtpEncryption = tls
+	aliasesfile = /Users/eax/.conf/git/mailalias
+	aliasfiletype = mutt
+[format]
+	signoff = true
+[apply]
+	whitespace = warn
+[help]
+	autocorrect = -1
+[alias]
+	amend = commit --amend
+	bvv = branch --list -vv
+	cat = cat-file -p
+	co = checkout
+	cbranch = symbolic-ref --short -q HEAD
+	contains = "!f() { git branch --contains \"$1\"; git tag --contains \"$1\"; }; f"
+	count = count-objects -v
+	dci = svn dcommit
+	fixup = commit -a --amend -C HEAD
+	fulllog = log --graph --decorate --boundary --left-right --source --cherry-mark --format=fuller
+	last = log --oneline -1
+	lg = log --graph \"--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s\" --all
+	pout = !git diff --stat -p $(git tracking) HEAD
+	type = cat-file -t
+	rollback = reset --soft HEAD^
+	view = log --decorate --boundary --left-right --oneline --cherry-mark
+	st = status
+	sync = !git pull && git push && git submodule update --init --recursive
+	tracking = !git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)
+	whatis = "!f() { git cat-file -e \"$1\" && printf \"type=\" && git cat-file -t \"$1\" && printf \"size=\" && git cat-file -s \"$1\"; }; f"
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	ui = auto
+[color "branch"]
+	current = red bold
+	local = red
+	remote = blue
+[color "diff"]
+	frag = magenta
+	old = red bold
+	new = blue bold
+[diff]
+	renames = copies
+	mnemonicprefix = true
+	algorithm = histogram
+	compactionHeuristic = true
+	indentheuristic = true
+	wsErrorHighlight = all
+[core]
+	logAllRefUpdates = true
+	precomposeunicode = true
+	quotepath = true
+	excludesfile = ~/.conf/git/gitignore
+	attributesfile = ~/.conf/git/attributes
+	pager = less -FRX
+[gc]
+	reflogExpire = never
+	rerereResolved = 90
+	rerereUnresolved = 90
+	pruneExpire = never
+	worktreePruneExpire = never
+[receive]
+	autogc = false
+[branch]
+	autosetuprebase = always
+[rebase]
+	stat = true
+[log]
+	mailmap = true
+[mailmap]
+	file = /Users/eax/.conf/git/mailmap
+[merge]
+	conflictstyle = diff3
+	branchdesc = true
+[rerere]
+	enabled = true
+[init]
+	templatedir = ~/.conf/git/template/
+[commit]
+	verbose = 1
+[push]
+	default = simple
+[notes]
+	mergeStrategy = union
+[gitcvs]
+	commitMsgAnnotation = 
+[http]
+	sslTry = true
+[gui]
+	warndetachedcommit = true
+	spellingdictionary = en_US
+	maxrecentrepo = 25
+[gitreview]
+	remote = origin
+[credential]
+	helper = osxkeychain
+[url "git://anongit.kde.org"]
+	insteadOf = kde:
+[am]
+	threeWay = true
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+	pushInsteadOf = git://github.com/
+[url "git@notabug.org:"]
+	pushInsteadOf = git://notabug.org/
+	pushInsteadOf = https://notabug.org/
+[url "git@gist.github.com:"]
+	pushInsteadOf = git://gist.github.com/
+[url "git@bitbucket.org:"]
+	pushInsteadOf = https://bitbucket.org/
+	pushInsteadOf = http://bitbucket.org/
+	pushInsteadOf = git://bitbucket.org/
+[url "git://git.debian.org/d-i/"]
+	insteadOf = git+ssh://git.debian.org/git/d-i/
+[url "git+ssh://git.debian.org/git/d-i/"]
+	pushInsteadOf = git+ssh://git.debian.org/git/d-i/
+[url "git+ssh://dweller@secure.phabricator.com"]
+	pushInsteadOf = https://secure.phabricator.com
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
