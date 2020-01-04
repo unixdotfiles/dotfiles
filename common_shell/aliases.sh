@@ -78,27 +78,15 @@ __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 
 redefine python="python -R"
 __py3opt="-bbttq"
-__py2opt="-3ttRq"
-__python_exists=""
-__exists python && __python_exists="true"
-for wpython in python2 python2.7 python3 python3.6
+for wpython in python3 python3.6 python3.7 python3.8 python3.9
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
     if __exists $wpython
     then
-        case $_pythonmajorver in
-            3)
-                [ -z "$__python_exists" ] && alias python="$wpython $__py3opt"
-                alias python${_pythonmajorver}="$wpython $__py3opt"
-                alias shareThisDir="$wpython -m http.server 8000"
-                ;;
-            2)
-                [ -z "$__python_exists" ] && alias python="$wpython $__py2opt"
-                alias python${_pythonmajorver}="$wpython $__py2opt"
-                alias shareThisDir="$wpython -m SimpleHTTPServer"
-                ;;
-        esac
+      __exists python && alias python="$wpython $__py3opt"
+      alias python${_pythonmajorver}="$wpython $__py3opt"
+      alias shareThisDir="$wpython -m http.server 8000"
     fi
 done
 
