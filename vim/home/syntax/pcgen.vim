@@ -1,13 +1,13 @@
 "=============================================================================
 " File:		pcgen.vim
 " Author:	Luc Hermitte <EMAIL:hermitte at free.fr>
-" URL:	http://hermitte.free.fr/vim/ressources/vimfiles/syntax/pcgen.vim
+" URL:	http://hermitte.free.fr/vim/resources/vimfiles/syntax/pcgen.vim
 " Version:	0.5
 " Created:	17th jun 2002
 " Last Update:	25th oct 2002
 " 20th May 2014 DG added various tokens and file definitions
 "------------------------------------------------------------------------
-" Description:	VIM syntax & ftplugin file for PCGen <http://pcgen.sf.net/> 
+" Description:	VIM syntax & ftplugin file for PCGen <http://pcgen.sf.net/>
 " 		lst files
 " Features: {{{
 "	(*) Displays all the tags in several colors :
@@ -27,7 +27,7 @@
 " Installation:	 {{{
 "	0- To be used with the text editor VIM 6.0+ (<http://vim.sf.net/>)
 "	1- Drop it into your one of your $/syntax/ folder
-"	2- Add into your myfiletypes.vim file : 
+"	2- Add into your myfiletypes.vim file :
 "		au BufNewFile,BufRead *.lst,*.pcc set ft=pcgen
 "	NB: this will override the default assocition to assembler source files.
 "	3- You may also have to change the file $VIM/filetype.vim l.1365
@@ -35,7 +35,7 @@
 "	   Or, if your vim version (:version) is superior than 6.1.200, add
 "		let g:ft_ignore_pat = 'lst'
 "	   into your .vimrc.
-"	   
+"
 " }}}
 " History:	{{{
 " 	Version 0.1: {{{
@@ -72,7 +72,7 @@
 " }}}
 " TODO:		{{{
 "	(*) handle formulas (by the way of an option ... ?)
-"	(*) highlight variables in CHOOSE 
+"	(*) highlight variables in CHOOSE
 "	(*) Remove unused stuff
 "	(*) Update the tags from PCgen 2.6.8 to 2.7.x
 "	(*) Continue to extend the i_CTRL-X_CTRL-K i_CTRL-X_CTRL-N facilities to
@@ -168,7 +168,7 @@ endfunction
 
 " Function: s:AddKeywordsToVarAndSyn() {{{
 function! s:AddKeywordsToVarAndSyn(syn_group, var, ...)
-  if !exists('s:'.a:var)   | exe 'let s:'.a:var." = ''" 
+  if !exists('s:'.a:var)   | exe 'let s:'.a:var." = ''"
   endif
   let e = a:0 | let i = 1
   let special = ''
@@ -183,15 +183,15 @@ function! s:AddKeywordsToVarAndSyn(syn_group, var, ...)
 endfunction
 " }}}
 
-command! -buffer -nargs=+ AddTag1st 
-      \ :call <sid>AddKeywordsToVarAndSyn('pcgenTag1stLvl', 
+command! -buffer -nargs=+ AddTag1st
+      \ :call <sid>AddKeywordsToVarAndSyn('pcgenTag1stLvl',
       \			b:pcgenFileType, <f-args>)
 
 command! -buffer -nargs=+ AddTag2ndADDAction
       \ :call <sid>AddKeywordsToVarAndSyn('pcgenTag2ndADDAction',
       \			'ADDAction', <f-args>)
 command! -buffer -nargs=+ AddTag2ndBONUSAction
-      \ :call <sid>AddKeywordsToVarAndSyn('pcgenTag2ndBONUSAction', 
+      \ :call <sid>AddKeywordsToVarAndSyn('pcgenTag2ndBONUSAction',
       \			'BONUSAction', 'nextgroup=pcgenVarID', <f-args>)
 
 function! s:EchoVar(var)
@@ -202,20 +202,20 @@ command! -buffer -nargs=1 EchoVar :call <sid>EchoVar("<args>")
 " }}}
 "------------------------------------------------------------------------
 " Recognize the exact filetype {{{
-" if     exists(':GoBash') | GoBash 
-" elseif exists(':GoZsh')  | GoZsh 
+" if     exists(':GoBash') | GoBash
+" elseif exists(':GoZsh')  | GoZsh
 " endif
 
 " DG added ABILITY and BIOSET - every File type must be defined here, with the
 " tag from the PCC that identifies it.
 " hmmm, this detects ABILITYCATEGORY as ABILITY ?
 let s:pcgenFTs = 'RACE\|ABILITYCATEGORY\|ABILITY\|BIOSET\|CLASS\|SKILL\|FEAT\|DOMAIN\|DEITY\|SPELL\|'.
-      \ 'WEAPONPROF\|ARMORPROF\|SHIELDPROF\|LANGUAGE\|CLASSSKILL\|CLASSSPELL\|'. 
+      \ 'WEAPONPROF\|ARMORPROF\|SHIELDPROF\|LANGUAGE\|CLASSSKILL\|CLASSSPELL\|'.
       \ 'TEMPLATE\|EQUIPMOD\|EQUIPMENT\|COINS\|KIT\|MISC\|COMPANIONMOD'
 
 " lookup the filename in the current .pcc file, and determine its type
 let b:pcgenFileType = matchstr(
-      \ s:StringPresentInfile(expand('%:t'), glob('*.pcc')), 
+      \ s:StringPresentInfile(expand('%:t'), glob('*.pcc')),
       \ '\('.s:pcgenFTs.'\)\ze:')
 if '' == b:pcgenFileType
   let b:filename = expand('%:t')
@@ -274,53 +274,53 @@ syn match pcgenName		contained /[^[:tab:]]/
 " == Reserved Tags ==
 syn cluster pcgenTags	contains=pcgenSources,pcgenClassStuff,pcgenTag1stLvl,pcgenPrereq,pcgenGeneralStuff
 " Sources
-syn keyword pcgenSources	
+syn keyword pcgenSources
       \ SOURCE SOURCEPAGE SOURCEWEB SOURCELONG SOURCESHORT SOURCEDATE
 "
-" == PreReqs Tags == 
+" == PreReqs Tags ==
 syn match   pcgenPrereq	/!\=PRE\k*/
 
 " Global Tags
 AddTag1st CSKILL CCSKILL DR LANGAUTO SA SPELL SR
-      \  UDAM UMULT VISION WEAPONAUTO 
+      \  UDAM UMULT VISION WEAPONAUTO
       \  OUTPUTNAME
 
-" == File Specific Tags == 
+" == File Specific Tags ==
 if     b:pcgenFileType == 'CAMPAIGN'   " Campaign *.pcc {{{
   AddTag1st CAMPAIGN GAME TYPE RANK
 	\ LSTEXCLUDE PCC INFOTEXT
 	\ ISOGL FORWARDREF GAMEMODE BOOKTYPE SHOWINMENU
-  " AddTag1st ISD20 
+  " AddTag1st ISD20
   " lst file tags
   AddTag1st CLASS CLASSSKILL CLASSSPELL COMPANIONMOD COPYRIGHT
-	\ DEITY DOMAIN EQUIPMENT EQUIPMOD FEAT 
+	\ DEITY DOMAIN EQUIPMENT EQUIPMOD FEAT
   AddTag1st
-	\ KIT LANGUAGE RACE SKILL TEMPLATE WEAPONPROF 
+	\ KIT LANGUAGE RACE SKILL TEMPLATE WEAPONPROF
   " PRECAMPAIGN still shows as error?
   	\ PRECAMPAIGN ABILITY ABILITYCATEGORY
-  " Depreciated: COINS INCLUDE EXCLUDE NFO REQSKILL 
+  " Depreciated: COINS INCLUDE EXCLUDE NFO REQSKILL
   " }}}
 elseif b:pcgenFileType == 'ABILITYCATEGORY'       " AbilityCategory.lst {{{
   " DG trying to add Ability file definition
-  AddTag1st ABILITYCATEGORY EDITPOOL EDITABLE DISPLAYLOCATION CATEGORY ABILITY ABILITYLIST FRACTIONALPOOL PLURAL DESC TYPE VISIBLE KEY ASPECT 
-	" \ REP 
+  AddTag1st ABILITYCATEGORY EDITPOOL EDITABLE DISPLAYLOCATION CATEGORY ABILITY ABILITYLIST FRACTIONALPOOL PLURAL DESC TYPE VISIBLE KEY ASPECT
+	" \ REP
   " + ADD, BONUS, CHOOSE, DEFINE
   " }}}
 elseif b:pcgenFileType == 'ABILITY'       " Ability.lst {{{
   " DG trying to add Ability file definition
-  AddTag1st CATEGORY ABILITY DESC TYPE VISIBLE KEY ASPECT SOURCEPAGE SOURCESHORT 
+  AddTag1st CATEGORY ABILITY DESC TYPE VISIBLE KEY ASPECT SOURCEPAGE SOURCESHORT
   	\ SOURCELONG DEFINE
   AddTag1st SPELLS PREMULT PREABILITY TEMPLATE SERVESAS
   	\ AUTO BENEFIT SORTKEY
   " these tags are still shown red...
   AddTag1st PREMULT PREVAREQ PREABILITY
-	" \ REP 
+	" \ REP
   " + ADD, BONUS, CHOOSE, DEFINE
   " }}}
 elseif b:pcgenFileType == 'BIOSET'       " Biosettings.lst {{{
   " DG trying to add biosettings file definition
   AddTag1st AGESET RACENAME BASEAGE MAXAGE AGEDIEROLL SEX CLASS
-	" \ REP 
+	" \ REP
   " + ADD, BONUS, CHOOSE, DEFINE
   " }}}
 elseif b:pcgenFileType == 'CLASS'      " Class.lst {{{
@@ -328,7 +328,7 @@ elseif b:pcgenFileType == 'CLASS'      " Class.lst {{{
   syn keyword pcgenClassStuff	CLASS nextgroup=pcgenDotName
   syn region  pcgenDotName 	contained start=":"  end="$" end="\t"me=e-1 contains=pcgenName oneline
   " Required tags
-  AddTag1st ABB BAB CLASS HD 
+  AddTag1st ABB BAB CLASS HD
 	\ FORTITUDECHECK REFLEXCHECK WILLPOWERCHECK
   AddTag1st MAXLEVEL STARTSKILLPTS TYPE XTRAFEATS
   	\ SUBCLASSLEVEL COST ABILITY KIT PREALIGN
@@ -337,22 +337,22 @@ elseif b:pcgenFileType == 'CLASS'      " Class.lst {{{
   AddTag1st ADDDOMAIN CAST DEITY DOMAIN
 	\  ITEMCREATE  PROHIBITSPELL
   AddTag1st  KNOWN KNOWNSPELLS SPECIALTYKNOWN MEMORIZE PROHIBITED
-	\  SPELLLIST SPELLSTAT SPELLTYPE SUBCLASS 
+	\  SPELLLIST SPELLSTAT SPELLTYPE SUBCLASS
   AddTag1st  PROHIBITCOST CHOICE SPELLLEVEL
   " Other optional tags
   AddTag1st ATTACKCYCLE EXCLASS EXCHANGELEVEL
 	\  FEATAUTO LANGBONUS MULTIPREEQS
-	\ SKILLLIST 
-  AddTag1st SPECIALS TEMPLATE  VFEAT 
+	\ SKILLLIST
+  AddTag1st SPECIALS TEMPLATE  VFEAT
 	\  WEAPONBONUS CLASSTYPE
   AddTag1st PRESKILL PREPCLVL PRELANG PRERACE
   " + ADD, BONUS, DEFINE
   " Monster Specific Tags
-  AddTag1st 
+  AddTag1st
 	\ MODTOSKILLS LEVELSPERFEAT PRERACETYPE
 
   " Depreciated Tags
-	" \ GOLD SUBSA UATT AGESET CASTAS 
+	" \ GOLD SUBSA UATT AGESET CASTAS
 
   " Unidentified tags:
   AddTag1st
@@ -368,14 +368,14 @@ elseif b:pcgenFileType == 'CLASSSPELL' " ClassSpell.lst {{{
   syn region  pcgenDotName 	contained start=":"  end="$" end="\t"me=e-1 contains=pcgenName oneline
   " }}}
 elseif b:pcgenFileType == 'DEITY'      " Deity.lst {{{
-  AddTag1st ALIGN DEITYWEAP DESC DOMAINS 
-	\ FOLLOWERALIGN NAMEISPI PANTHEON SYMBOL TYPE 
+  AddTag1st ALIGN DEITYWEAP DESC DOMAINS
+	\ FOLLOWERALIGN NAMEISPI PANTHEON SYMBOL TYPE
 	" \ RACE
   " + BONUS, SA
   " }}}
 elseif b:pcgenFileType == 'DOMAIN'     " Domain.lst {{{
-  AddTag1st DESC FEAT 
-	" \ RACE SKILL 
+  AddTag1st DESC FEAT
+	" \ RACE SKILL
   " + BONUS, CHOOSE, DEFINE
   " }}}
 elseif b:pcgenFileType == 'COMPANIONMOD'    " COMPANIONMOD.lst {{{
@@ -384,7 +384,7 @@ elseif b:pcgenFileType == 'COMPANIONMOD'    " COMPANIONMOD.lst {{{
   AddTag1st COPYMASTERHP COPYMASTERBAB COPYMASTERCHECK
   " }}}
 elseif b:pcgenFileType == 'EQUIPMENT'  " Equipment.lst {{{
-  AddTag1st ACCHECK ALTCRITICAL ALTDAMAGE 
+  AddTag1st ACCHECK ALTCRITICAL ALTDAMAGE
 	\ ALTTYPE BASEITEM BASEQTY COST CRITMULT CRITRANGE DAMAGE EQMOD
   AddTag1st HANDS MAXDEX MOVE MODS NAMEISPI PROFICIENCY RANGE SIZE
 	\ SPELLFAILURE SPROP TYPE VFEAT WT
@@ -395,19 +395,19 @@ elseif b:pcgenFileType == 'EQUIPMENT'  " Equipment.lst {{{
   " + BONUS, DEFINE
   " special traitment for contains
   AddTag1st /\<CONTA[I]NS\>/
-  " Depreciated: LONGNAME REACH 
+  " Depreciated: LONGNAME REACH
   " }}}
 elseif b:pcgenFileType == 'EQUIPMOD'   " Equipmod.lst {{{
   AddTag1st ARMORTYPE ASSIGNTOALL CHARGES COST COSTPRE
 	\ IGNORES ITYPE KEY NAMEOPT PLUS REPLACES
-	\ SPROP TYPE VISIBLE FORMATCAT SPELLS 
-  "+ BONUS, DEFINE, CHOOSE, 
+	\ SPROP TYPE VISIBLE FORMATCAT SPELLS
+  "+ BONUS, DEFINE, CHOOSE,
   " Depreciated: ADDPROF
   " }}}
 elseif b:pcgenFileType == 'FEAT'       " Feat.lst {{{
   AddTag1st ADDSPELLLEVEL COST DESC MULT NAMEISPI STACK TYPE VISIBLE
   	\ COMPANIONLIST AUTO TEMPLATE
-	" \ REP 
+	" \ REP
   " + ADD, BONUS, CHOOSE, DEFINE
   " }}}
 elseif b:pcgenFileType == 'KIT'        " Kit.lst {{{
@@ -416,22 +416,22 @@ elseif b:pcgenFileType == 'KIT'        " Kit.lst {{{
   " Line tags
   AddTag1st COUNT FEAT GEAR PROF QTY RACIAL RANK REGION SKILL SPELLS
   	\ VISIBLE LANGBONUS EQUIPBUY EQMOD LOCATION SIZE MAXCOST
-  AddTag1st 
+  AddTag1st
 	\ PRECLASS PRERACE PRELEVELMAX NAME RACE ALIGN
 	\ CLASS STAT TYPE LEVEL FREE APPLY OPTION KIT SELECT
   AddTag1st TABLE VALUES LOOKUP SORTKEY
   "+ BONUS, DEFINE
   " }}}
 elseif b:pcgenFileType == 'LANGUAGE'    " Language.lst {{{
-  AddTag1st TYPE 
+  AddTag1st TYPE
   " }}}
 elseif b:pcgenFileType == 'RACE'       " Race.lst {{{
-  AddTag1st AGE CR 
-	\ FAVCLASS FEAT HANDS HEIGHT HITDICE HITDICEADVANCEMENT 
+  AddTag1st AGE CR
+	\ FAVCLASS FEAT HANDS HEIGHT HITDICE HITDICEADVANCEMENT
   AddTag1st LANGBONUS LEVELADJUSTMENT
   AddTag1st MFEAT MONSTERCLASS MOVE NATURALATTACKS
 	\ REACH SAVES SIZE SKILLMULT AUTO
-  AddTag1st STARTFEATS TEMPLATE TYPE VFEAT WEAPONBONUS WEIGHT 
+  AddTag1st STARTFEATS TEMPLATE TYPE VFEAT WEAPONBONUS WEIGHT
 	\ XTRASKILLPTSPERLVL
   AddTag1st PREABILITY PREVAREQ PRESIZEEQ SPELLLEVEL
   	\ PRERACE COST SPELLS
@@ -440,42 +440,42 @@ elseif b:pcgenFileType == 'RACE'       " Race.lst {{{
   " + BONUS, DEFINE, CHOOSE
   " syn match pcgenRaceStuff contained /STATADJ\S\{-}/
   AddTag1st /STATADJ\S\{-}\ze:/
-  " Depreciated: RACENAME BAB 
+  " Depreciated: RACENAME BAB
   " }}}
 elseif b:pcgenFileType == 'SKILL'      " Skill.lst {{{
   AddTag1st ACHECK CLASSES EXCLUSIVE KEYSTAT REQ SYNERGY TYPE
 	\ USEUNTRAINED SERVESAS VISIBLE TEMPDESC KEY SITUATION
   AddTag1st TEMPBONUS AUTO
-  " \ SAVEINFO ROOT 
-  " + BONUS, CHOOSE, DEFINE, 
+  " \ SAVEINFO ROOT
+  " + BONUS, CHOOSE, DEFINE,
   " }}}
 elseif b:pcgenFileType == 'SPELL'      " Spell.lst {{{
-  AddTag1st CASTTIME CLASSES COMPS COST CT DESCRIPTOR DURATION 
-	\ EFFECTS EFFECTTYPE ITEM NAMEISPI RANGE SAVEINFO SCHOOL 
+  AddTag1st CASTTIME CLASSES COMPS COST CT DESCRIPTOR DURATION
+	\ EFFECTS EFFECTTYPE ITEM NAMEISPI RANGE SAVEINFO SCHOOL
   	\ TARGETAREA DESC
-  AddTag1st SPELLRES STAT SUBSCHOOL TYPE VARIANTS XPCOST 
+  AddTag1st SPELLRES STAT SUBSCHOOL TYPE VARIANTS XPCOST
 	\ DOMAINS TEMPDESC
   " }}}
 elseif b:pcgenFileType == 'TEMPLATE'   " Template.lst {{{
   AddTag1st BONUSFEATS GENDERLOCK HD HITDICESIZE
 	\ CR KIT LANGBONUS
 	\ LEVEL LEVELADJUSTMENT
-  AddTag1st 
+  AddTag1st
 	\ HEIGHT WEIGHT SIZE
 	\ FEAT FAVOREDCLASS GOLD
-  AddTag1st 
-	\ MOVE MOVEA MOVECLONE REGION SUBREGION REMOVABLE SPELL 
-	\ SUBRACE TEMPLATE TYPE VISIBLE WEAPONBONUS 
-  AddTag1st 
+  AddTag1st
+	\ MOVE MOVEA MOVECLONE REGION SUBREGION REMOVABLE SPELL
+	\ SUBRACE TEMPLATE TYPE VISIBLE WEAPONBONUS
+  AddTag1st
   	\ KEY DEFINESTAT AUTO HITDIE RACETYPE RACESUBTYPE
   	\ TEMPDESC ABILITY NATURALATTACKS SPELLS
-  AddTag1st 
+  AddTag1st
   	\ TEMPBONUS FACE REACH LEGS HANDS
   	\ PREVARGTEQ PRERACE PRECLASS PRESIZEEQ PREMOVE PRETEMPLATE
   " + BONUS, DEFINE, CHOOSE
-  " Depreciated: AGE BONUSSKILLPOINTS LEVELSPERFEAT NONPP NATURALARMOR 
+  " Depreciated: AGE BONUSSKILLPOINTS LEVELSPERFEAT NONPP NATURALARMOR
   " \ HITDICE POPUPALERT
-  " \ STR DEX CON INT WIS CHA 
+  " \ STR DEX CON INT WIS CHA
   " }}}
 elseif b:pcgenFileType == 'WEAPONPROF' " WeaponProf.lst {{{
   AddTag1st HANDS SIZE TYPE
@@ -504,25 +504,25 @@ syn region  pcgenDefine		contained start=":"  end="|"me=e-1 contains=pcgenID one
 syn keyword pcgenGeneralStuff	contained BONUS  nextgroup=pcgenBonus
 syn region  pcgenBonus		contained start=":"  end="$\|\t"me=e-1 contains=pcgenTag2ndBONUSAction,pcgenUnreconBonusAc oneline
 " syn match   pcgenUnreconBonusAc	contained /[^|[:tab:]]\{-}|/ contains=NONE
-" 
+"
 AddTag2ndBONUSAction
-      \ CHECKS CLASS 
-      \ DAMAGE DOMAIN ESIZE SIZEMOD HD LANGUAGES MISC MOVE PCLEVEL 
+      \ CHECKS CLASS
+      \ DAMAGE DOMAIN ESIZE SIZEMOD HD LANGUAGES MISC MOVE PCLEVEL
 AddTag2ndBONUSAction
       \ RANGEADD RANGEMULT SKILLRANK SKILLMAXRANK SKILLPOINTS
       \ SPELLCAST SPELLKNOWN SPELLCASTMULT SPELL STAT TOHIT
 AddTag2ndBONUSAction
       \ WEAPON WEAPONPROF
-      \ VAR COMBAT SKILL EQMWEAPON 
+      \ VAR COMBAT SKILL EQMWEAPON
 syn region  pcgenVarID		contained start="|" end="|"me=e-1 contains=pcgenID oneline
 
 "  -- ADD
 syn keyword pcgenGeneralStuff	contained ADD  nextgroup=pcgenADD
 syn region  pcgenADD		contained start=":"  end="$\|\t"me=e-1 contains=pcgenTag2ndADDAction oneline
 AddTag2ndADDAction
-      \ SPECIAL FEAT label CLASSSKILLS LIST 
-      \ SPELLCASTER VALUE WEAPONBONUS FORCEPOINT 
-      \ WEAPONPROFS FAVOREDCLASS SPECIAL 
+      \ SPECIAL FEAT label CLASSSKILLS LIST
+      \ SPELLCASTER VALUE WEAPONBONUS FORCEPOINT
+      \ WEAPONPROFS FAVOREDCLASS SPECIAL
       \ INIT LEVEL
 
 "  -- CHOOSE
@@ -700,7 +700,7 @@ endfunction
 " Function: s:GetAlt(dir) {{{
 " Inspired from Gergely Kontra's ComplMenu Script.
 function! s:GetAlt(dir)
-  if 1 == s:Context() 
+  if 1 == s:Context()
     let s:alts = s:GetAlternatives(s:res)
     let s:cur = 1
     if s:alts =~ '^\s*$' | return '' | endif
@@ -715,7 +715,7 @@ function! s:GetAlt(dir)
       echo "\r-- PCGen's tags completion (/^T/l/^N/^P/n/p)  "
 	    \ .s:nb_tags." matches"
       echohl None
-      
+
       let complType=nr2char(getchar())
       if -1 != stridx("\<C-T>l\<C-N>\<C-P>np",complType)
 	if complType =~ '[np]'  | let complType=nr2char(char2nr(complType)-96)
@@ -741,8 +741,8 @@ endfunction
 "     menu.
 " (*) Other invocations are redirected to their default behaviour.
 " NB: Interresting sequences to note with PCGen :
-" (*) |i_CTRL-X_CTRL-D| searchs for definitions ('DEFINE:xxx' tag)
-" (*) |i_CTRL-X_CTRL-F| searchs for file names
+" (*) |i_CTRL-X_CTRL-D| searches for definitions ('DEFINE:xxx' tag)
+" (*) |i_CTRL-X_CTRL-F| searches for file names
 function! s:CTRL_X()
   let s:alts = '' | let s:cur = 0
   while 1
@@ -750,7 +750,7 @@ function! s:CTRL_X()
     if -1 != stridx("l\<C-T>\<C-X>",complType)
       if     complType == "l"      | return s:ShowList()
       elseif complType == "\<C-T>" | return s:GetAlt(1)
-      elseif complType == "\<C-X>" 
+      elseif complType == "\<C-X>"
 	echohl StatusLineNC
 	echo "\r-- mode ^X (/l/^E/^Y/^L/^]/^F/^I/^K/^D/^V/^N/^P/)"
 	echohl None
@@ -791,4 +791,4 @@ endif
 "=============================================================================
 " call confirm('done', 'ok')
 "=============================================================================
-"EOF	vim: ts=8 noet tw=80 sw=2 sts=0 fdm=marker 
+"EOF	vim: ts=8 noet tw=80 sw=2 sts=0 fdm=marker

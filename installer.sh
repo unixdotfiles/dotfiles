@@ -105,8 +105,8 @@ ensure_directories ~/.gradle ~/.ammonite
 htln gradle/gradle.properties .gradle/gradle.properties
 htln ammonite/predef.sc .ammonite/predef.sc
 ensure_directories ~/.stack/global-project
-htln stack/stack.yaml .stack/global-project/stack.yaml 
-htln stack/config.yaml .stack/config.yaml 
+htln stack/stack.yaml .stack/global-project/stack.yaml
+htln stack/config.yaml .stack/config.yaml
 htln gem/gemrc .gemrc
 htln mdl/mdlrc .mdlrc
 ensure_directories ~/.ssh ~/.ssh/s

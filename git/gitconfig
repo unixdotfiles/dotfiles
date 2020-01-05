@@ -94,7 +94,7 @@
 [notes]
 	mergeStrategy = union
 [gitcvs]
-	commitMsgAnnotation = 
+	commitMsgAnnotation =
 [http]
 	sslTry = true
 [gui]

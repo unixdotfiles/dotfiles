@@ -62,7 +62,7 @@ case "$TERM" in
 	*)
 		setWindowTitle() {
 		};;
-esac	
+esac
 
 
 function resetWindowTitle() {

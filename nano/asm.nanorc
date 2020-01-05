@@ -14,11 +14,11 @@ icolor green			"\.(struct|subsection|symver|tab|title|uleb128|val|version|vtable
 
 
 #annotations
-color	brightmagenta	"@[a-zA-Z0-9]*"				
+color	brightmagenta	"@[a-zA-Z0-9]*"
 #strings
-color blue 			"('[^']*')|(\"[^"]*\")"	
+color blue 			"('[^']*')|(\"[^"]*\")"
 #numbers
-color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"			
+color magenta		"\$(0x)?(-)?[0-9a-fA-F.]+"
 #labels in call
 color magenta		"\$\.[a-zA-Z0-9]*"
 #registers
@@ -29,10 +29,10 @@ color cyan			"%r(8|9|1[0-5])"
 color cyan			"%((cr[0-8])|(dr[012367])|(tr[34567]))"
 
 #comments
-color yellow		"#.*$"						
+color yellow		"#.*$"
 #functions
-color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"			
+color	brightred		"^[a-zA-Z][A-Za-z0-9]*:"
 #labels
-color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"			
+color	red			"^\.[a-zA-Z][A-Za-z0-9]*:"
 
 #white, black, bblue byellow, bcyan.
