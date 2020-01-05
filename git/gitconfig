@@ -8,7 +8,7 @@
 	supresscc = self
 	chainreplyto = false
 	smtpEncryption = tls
-	aliasesfile = /Users/eax/.conf/git/mailalias
+	aliasesfile = ~/.conf/git/mailalias
 	aliasfiletype = mutt
 [format]
 	signoff = true
@@ -79,7 +79,7 @@
 [log]
 	mailmap = true
 [mailmap]
-	file = /Users/eax/.conf/git/mailmap
+	file = ~/.conf/git/mailmap
 [merge]
 	conflictstyle = diff3
 	branchdesc = true
