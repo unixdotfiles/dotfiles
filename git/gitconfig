@@ -78,6 +78,7 @@
 	stat = true
 [log]
 	mailmap = true
+	date = iso-local
 [mailmap]
 	file = ~/.conf/git/mailmap
 [merge]
