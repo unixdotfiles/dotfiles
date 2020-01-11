@@ -1,5 +1,6 @@
 [include]
 	path = ~/.gitconfig.local
+	path = ~/.gitconfig.macos
 [user]
 	name = Eitan Adler
 	useconfigonly = true
@@ -104,8 +105,6 @@
 	maxrecentrepo = 25
 [gitreview]
 	remote = origin
-[credential]
-	helper = osxkeychain
 [url "git://anongit.kde.org"]
 	insteadOf = kde:
 [am]
