@@ -75,6 +75,8 @@ then
     export GOROOT=/usr/local/go
 fi
 
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
 export DICTIONARY=en_US
 export P4DIFF="diff -u"
 export LANG=en_US.UTF-8
