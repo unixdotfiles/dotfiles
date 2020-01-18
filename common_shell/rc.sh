@@ -10,10 +10,15 @@ export _shellpath=~/.conf/$__INTSHELL
 
 _uname_s=$(uname -s)
 
-if [ "$_uname_s" = "Darwin" ]
+for v in 3.6 3.7 3.8 3.9
+do
+  if [ -e ~/Library/Python/$v/bin ]
+  then
+    _PRIMARY_PIP_PATH="~/Library/Python/$v/bin"
+  fi
+done
+if [ -z "$_PRIMARY_PIP_PATH" ] && [ -e ~/.local/bin ]
 then
-  _PRIMARY_PIP_PATH=~/Library/Python/3.8/bin
-else
   _PRIMARY_PIP_PATH=~/.local/bin
 fi
 
