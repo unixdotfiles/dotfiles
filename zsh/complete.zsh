@@ -67,6 +67,8 @@ __git_files () {
 	_wanted files expl 'local files' _files
 }
 
+zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
+
 # Don't complete ./config.* files, this makes running ./configure much
 # simpler. Thanks to Nomexous in #zsh on Freenode (2010-03-16 01:54 CET)
 zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
