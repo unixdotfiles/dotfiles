@@ -17,6 +17,9 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [1Password](https://1password.com/)
 - [VLC](https://www.videolan.org/vlc/index.html)
 - [Scroll Reverser](https://pilotmoon.com/scrollreverser/)
+- [Status Clock](https://apps.apple.com/us/app/status-clock/id552792489?mt=12)
+- [Clipy](https://github.com/Clipy/Clipy)
+- [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 
 # Menu Bar
 
@@ -26,6 +29,7 @@ Enable the following menulets:
 - Volume
 - Input Method
 - Battery Status (incl percent)
+- Wifi
 
 # Configuration
 
