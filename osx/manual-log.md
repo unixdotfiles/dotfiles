@@ -42,6 +42,10 @@ Enable the following menulets:
 ## User Profile
 Set `/opt/local/bin/zsh` to be my login shell.
 
+# Actions
+
+- Log into 1password
+
 ## Scripts
 ```
 cd .conf
