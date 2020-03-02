@@ -12,9 +12,9 @@ _uname_s=$(uname -s)
 
 for v in 3.6 3.7 3.8 3.9
 do
-  if [ -e ~/Library/Python/$v/bin ]
+  if [ -e "$HOME/Library/Python/$v/bin" ]
   then
-    _PRIMARY_PIP_PATH="~/Library/Python/$v/bin"
+    _PRIMARY_PIP_PATH="$HOME/Library/Python/$v/bin"
   fi
 done
 if [ -z "$_PRIMARY_PIP_PATH" ] && [ -e ~/.local/bin ]
