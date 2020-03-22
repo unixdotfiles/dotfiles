@@ -3,6 +3,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 
 # Software
 
+- [Authy](https://authy.com/download/)
 - [Macports](https://www.macports.org/)
 - [Iterm](https://www.iterm2.com/)
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
