@@ -22,6 +22,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Clipy](https://github.com/Clipy/Clipy)
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 - [Textual](https://www.codeux.com/textual/)
+- [Keycastr](https://github.com/keycastr/keycastr/releases)
 
 ## Additional Software
 
