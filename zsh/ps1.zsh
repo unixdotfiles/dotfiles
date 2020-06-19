@@ -70,3 +70,9 @@ autoload -Uz  add-zsh-hook
 add-zsh-hook precmd vcs_info
 add-zsh-hook precmd setCurrentPS1
 add-zsh-hook periodic setPS1Battery
+
+# Set up lazily loaded profiler function
+zsh-prompt-benchmark() {
+  source ~/.conf/zsh/funcs/zsh-prompt-benchmark.plugin.zsh
+  zsh-prompt-benchmark "$@"
+}
