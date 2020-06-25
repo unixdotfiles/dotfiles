@@ -81,8 +81,6 @@ subversion +tools
 swi-prolog
 the_silver_searcher
 tk +quartz -x11
-tmux
-tmux-pasteboard
 tree
 unrar
 vim +huge +perl -python27 -python37 +python38 +cscope +lua
