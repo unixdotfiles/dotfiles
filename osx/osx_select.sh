@@ -1,6 +1,6 @@
 . ../common_shell/functions.sh
 
-pythonver=37
+pythonver=38
 phpver=74
 
 if __exists port
@@ -11,7 +11,7 @@ sudo port select --set maven maven3
 sudo port select --set python python${pythonver}
 sudo port select --set python2 python27
 sudo port select --set python3 python${pythonver}
-sudo port select --set ruby ruby25
+sudo port select --set ruby ruby27
 sudo port select --set pip pip${pythonver}
 sudo port select --set pip2 pip27
 sudo port select --set pip3 pip${pythonver}

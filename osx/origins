@@ -44,7 +44,7 @@ mplayer +aa +caca +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
 netperf
-nghttp2 -python38 +python37 -python36 -python27
+nghttp2 +python38 -python37 -python36 -python27
 ninja
 ngrep
 nmap -subversion
@@ -54,25 +54,25 @@ p7zip
 pango +quartz -x11
 parallel
 perl5
-php73
-php73-APCu
-php73-curl
-php73-fpm
-php73-iconv
-php73-mbstring
-php73-mysql
-php73-openssl
-php73-pcntl
-php73-posix
+php74
+php74-APCu
+php74-curl
+php74-fpm
+php74-iconv
+php74-mbstring
+php74-mysql
+php74-openssl
+php74-pcntl
+php74-posix
 pigz
 pv
-py37-numpy
-py37-pip
-py37-ipython
-python37 +optimizations
+py38-numpy
+py38-pip
+py38-ipython
+python38 +optimizations
 R -gcc6 +gcc9
 realpath
-ruby26
+ruby27
 sbt
 scala2.13
 socat
@@ -85,8 +85,8 @@ tmux
 tmux-pasteboard
 tree
 unrar
-vim +huge +perl -python27 +python37 +cscope +lua
+vim +huge +perl -python27 -python37 +python38 +cscope +lua
 wget
-youtube-dl -python36 +python37 -python38
+youtube-dl -python36 -python37 +python38
 zsh
 zsh-completions
