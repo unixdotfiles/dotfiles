@@ -27,6 +27,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Wireshark](https://www.wireshark.org/)
 - [iCue](https://www.corsair.com/us/en/icue-mac)
 - [wonderdraft](https://www.wonderdraft.net/)
+- [openboard](https://openboard.ch)
 
 # Menu Bar
 
