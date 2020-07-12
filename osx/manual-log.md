@@ -28,6 +28,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [iCue](https://www.corsair.com/us/en/icue-mac)
 - [wonderdraft](https://www.wonderdraft.net/)
 - [openboard](https://openboard.ch)
+- [worldographer](https://worldographer.com)
 
 # Menu Bar
 
