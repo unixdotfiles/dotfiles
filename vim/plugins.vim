@@ -12,10 +12,10 @@ Plug 'grimreaper/arcanist.vim'
 "Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/vinarise.vim'
 Plug 'wannesm/wmgraphviz.vim'
-Plug 'rodjek/vim-puppet'
+"Plug 'rodjek/vim-puppet'
 Plug 'vim-ruby/vim-ruby'
-Plug 'chr4/sslsecure.vim'
-Plug 'chr4/nginx.vim'
+"Plug 'chr4/sslsecure.vim'
+"Plug 'chr4/nginx.vim'
 
 call plug#end()
 
