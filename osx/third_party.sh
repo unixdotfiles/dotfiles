@@ -57,3 +57,5 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/eax/Dropbox/Appli
 defaults write com.googlecode.iterm2 PerformDNSLookups 0
 
 defaults write com.if.Amphetamine "Show Welcome Window" -int 0
+
+launchctl setenv SLACK_DEVELOPER_MENU true
