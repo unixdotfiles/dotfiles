@@ -113,6 +113,7 @@ htln stack/stack.yaml .stack/global-project/stack.yaml
 htln stack/config.yaml .stack/config.yaml
 htln gem/gemrc .gemrc
 htln mdl/mdlrc .mdlrc
+htln ghci/ghci .ghci
 ensure_directories ~/.ssh ~/.ssh/s
 [ ! -f ~/.ssh/config ] && cp -p $self/ssh/ssh_config.template ~/.ssh/config
 ensure_directories ~/.parallel
