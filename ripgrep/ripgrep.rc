@@ -1,2 +1,4 @@
 --type-add 
 build:BUILD
+
+--smart-case
