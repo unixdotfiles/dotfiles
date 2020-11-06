@@ -9,8 +9,11 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Background Music](https://github.com/kyleneideck/BackgroundMusic)
 - [Calibre](https://calibre-ebook.com/)
 - [Clipy](https://github.com/Clipy/Clipy)
+- [Discord](https://discord.com/)
 - [Dolphin](https://dolphin-emu.org/)
 - [Dropbox](https://dropbox.com/)
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [Go64](https://www.stclairsoft.com/Go64/)
 - [Gog galaxy](https://www.gog.com/)
 - [ICue](https://www.corsair.com/us/en/icue-mac)
 - [Iterm](https://www.iterm2.com/)
@@ -19,17 +22,23 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
 - [Openboard](https://openboard.ch)
+- [Openemu](https://openemu.org/)
+- [Pandora](https://www.pandora.com/desktop)
+- [SceneBuilder](https://gluonhq.com/products/scene-builder/)
 - [Scroll Reverser](https://pilotmoon.com/scrollreverser/)
 - [Skim.app](https://skim-app.sourceforge.io/)
 - [Slack](https://slack.com/)
 - [Steam](https://store.steampowered.com/)
 - [Textual](https://www.codeux.com/textual/)
 - [Transmission](https://transmissionbt.com/)
+- [Transmission Remote GUI](https://github.com/transmission-remote-gui/transgui)
 - [Tunnelblick](https://tunnelblick.net/)
 - [Unicode Checker](https://earthlingsoft.net/UnicodeChecker/)
+- [Virtualbox](https://www.virtualbox.org/)
 - [VLC](https://www.videolan.org/vlc/index.html)
 - [Wireshark](https://www.wireshark.org/)
 - [Yourkit](https://www.yourkit.com/)
+- [Zoom](https://zoom.us/)
 
 
 ## Proprietary Gaming Software
@@ -41,6 +50,33 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 ## Useful Software
 - [Jamovi](https://www.jamovi.org/)
 
+## Games via Launchers
+- Baldur's Gate Enhanced Edition
+- Baldur's Gate II Enhanced Edition
+- Divinity - Original Sin 2
+- Divinity Original Sin Enhanced Edition
+- Divinity Original Sin Enhanced Edition - Soundtrack
+- Don't Starve Together
+- Eschalon Book 1
+- Eschalon Book 2
+- Eschalon Book 3
+- factorio
+- Icewind Dale 2 Complete
+- Icewind Dale Enhanced Edition
+- Shadowrun Dragonfall - Director's Cut
+- The Witcher Enhanced Edition
+- TIS-100
+- Ultima™ 4 Quest of the Avatar
+
+## Misc Software With Limited Utility
+
+- Android File Transfer
+- Authy Desktop
+- DriveThruRPG
+- lghub
+- Opera Developer
+- Wineskin Winery
+- XMind
 
 # Menu Bar
 
