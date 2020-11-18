@@ -1,6 +1,9 @@
 NoHostAuthenticationForLocalhost yes
 IgnoreUnknown AddKeysToAgent,UseRoaming,UseKeychain
 
+Host antimirov.net
+  PasswordAuthentication yes
+
 Host *.github.com github.com
   IdentityFile ~/.ssh/git@id_ed25519.github.com
   RequestTTY no
