@@ -89,6 +89,7 @@
 	enabled = true
 [init]
 	templatedir = ~/.conf/git/template/
+	defaultBranch = master
 [commit]
 	verbose = 1
 [push]
