@@ -17,6 +17,7 @@ if has("autocmd")
 	au Filetype json call Set_Json()
 	au Filetype vim call Set_Vim()
 	au Filetype ini,yml,yaml call Set_Ini()
+	au Filetype vhdl call Set_hdl()
 endif " has(autocmd)
 
 function Shared_Tabs(len)
@@ -27,6 +28,10 @@ endfunction
 
 function Set_crontab()
 	setlocal nowritebackup
+endfunction
+
+function Set_hdl()
+	call Shared_Tabs(4)
 endfunction
 
 function Set_Ruby()
