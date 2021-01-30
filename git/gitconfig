@@ -130,3 +130,5 @@
 	pushInsteadOf = https://secure.phabricator.com
 [url "git@git.kde.org:"]
 	pushInsteadOf = kde:
+[blame]
+	showemail = true
