@@ -7,6 +7,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer)
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 - [Background Music](https://github.com/kyleneideck/BackgroundMusic)
+- [Battle.net](https://www.blizzard.com/en-us/apps/battle.net/desktop)
 - [Calibre](https://calibre-ebook.com/)
 - [Clipy](https://github.com/Clipy/Clipy)
 - [Discord](https://discord.com/)
