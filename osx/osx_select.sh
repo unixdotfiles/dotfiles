@@ -1,6 +1,6 @@
 . ../common_shell/functions.sh
 
-pythonver=38
+pythonver=39
 phpver=74
 
 if __exists port

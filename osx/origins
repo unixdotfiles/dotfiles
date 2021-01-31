@@ -44,7 +44,7 @@ mplayer +aa +caca +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
 netperf
-nghttp2 +python38 -python37 -python36 -python27
+nghttp2 +python39 -python38 -python37 -python36 -python27
 ninja
 ngrep
 nmap -subversion
@@ -66,10 +66,10 @@ php74-pcntl
 php74-posix
 pigz
 pv
-py38-numpy
-py38-pip
-py38-ipython
-python38 +optimizations
+py39-numpy
+py39-pip
+py39-ipython
+python39 +optimizations
 R -gcc6 +gcc10
 realpath
 ruby27
@@ -83,8 +83,8 @@ the_silver_searcher
 tk +quartz -x11
 tree
 unrar
-vim +huge +perl -python27 -python37 +python38 +cscope +lua
+vim +huge +perl -python27 -python37 -python38 +python39 +cscope +lua
 wget
-youtube-dl -python36 -python37 +python38
+youtube-dl -python36 -python37 -python38 +python39
 zsh
 zsh-completions
