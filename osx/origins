@@ -1,4 +1,3 @@
-arping
 bash
 bash-completion
 bmake
@@ -9,7 +8,6 @@ coreutils
 cowsay
 curl +ares +http2
 dash
-ettercap
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
 findutils
@@ -17,18 +15,15 @@ gcc10
 gdb
 ghc
 git +bash_completion +svn +credential_osxkeychain -gitweb +perl5_28
-git-lfs
 gnetcat
 gnupg2
 gnutar
 gtk3 +quartz
 graphviz -pangocairo
-groovy
 htop
 hub
 ImageMagick +graphviz +rsvg +wmf
 inetutils
-ipcalc
 iperf3
 jpegoptim
 jq
@@ -49,7 +44,6 @@ ninja
 ngrep
 nmap -subversion
 npm6
-p0f
 p7zip
 pango +quartz -x11
 parallel
@@ -64,7 +58,6 @@ php74-mysql
 php74-openssl
 php74-pcntl
 php74-posix
-pigz
 pv
 py39-numpy
 py39-pip
