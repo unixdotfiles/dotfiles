@@ -104,7 +104,7 @@ export RAKUDO_BACKTRACE=1 # Perl 6
 export NANO_NOCATCH=1
 
 # ripgrep does not have a default. Instead it must be set explicitly.
-export RIPGREP_CONFIG_PATH=$(realpath ~/.conf/ripgrep/ripgrep.rc)
+export RIPGREP_CONFIG_PATH="$HOME/.conf/ripgrep/ripgrep.rc"
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
