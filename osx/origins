@@ -48,18 +48,17 @@ p7zip
 pango +quartz -x11
 parallel
 perl5
-php74
-php74-APCu
-php74-curl
-php74-fpm
-php74-iconv
-php74-mbstring
-php74-mysql
-php74-openssl
-php74-pcntl
-php74-posix
+php80
+php80-APCu
+php80-curl
+php80-fpm
+php80-iconv
+php80-mbstring
+php80-mysql
+php80-openssl
+php80-pcntl
+php80-posix
 pv
-py39-numpy
 py39-pip
 py39-ipython
 python39 +optimizations
