@@ -111,6 +111,9 @@ export CG_CONTEXT_SHOW_BACKTRACE=1 # macOS
 export RAKUDO_BACKTRACE=1 # Perl 6
 export NANO_NOCATCH=1
 
+# electron apps
+export SLACK_DEVELOPER_MENU=true
+
 # ripgrep does not have a default. Instead it must be set explicitly.
 export RIPGREP_CONFIG_PATH="$HOME/.conf/ripgrep/ripgrep.rc"
 
