@@ -107,7 +107,7 @@ dirsize() {
 }
 
 randpassword() {
-	LANG=C < /dev/urandom tr -dc '[:print:]' | head -c"${1:-16}" && printf "\n";
+	LC_ALL=C < /dev/urandom tr -dc '[:print:]' | head -c"${1:-16}" && printf "\n";
 }
 
 # Create a data URL from a file
