@@ -68,6 +68,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - The Witcher Enhanced Edition
 - TIS-100
 - Ultima™ 4 Quest of the Avatar
+- Wasteland 3 
 
 ## Misc Software With Limited Utility
 
