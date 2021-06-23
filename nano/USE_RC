@@ -1,11 +1,9 @@
 #white, black, red, blue, green, yellow, magenta, and cyan
 
 set historylog
-set morespace
 set multibuffer
 set nonewlines
 set smarthome
-set smooth
 set wordbounds
 set tabsize 6
 set nowrap
