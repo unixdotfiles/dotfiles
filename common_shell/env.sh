@@ -48,7 +48,6 @@ __exists urxvtcd && export TERMINAL=urxvtcd
 [ -d ~/svn/cowsay-files/cows ] && export COWPATH="$COWPATH:$(realpath ~/svn/cowsay-files/cows)"
 
 export XZ_OPT="-9eM 90%";
-export GZIP="-9";
 
 export CHARSET="UTF-8";
 
