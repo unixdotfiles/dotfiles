@@ -68,6 +68,7 @@ setPS1Battery() {
 
 autoload -Uz  add-zsh-hook
 add-zsh-hook chpwd vcs_info
+add-zsh-hook periodic vcs_info
 add-zsh-hook precmd setCurrentPS1
 add-zsh-hook periodic setPS1Battery
 
