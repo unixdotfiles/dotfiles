@@ -18,6 +18,7 @@ if has("autocmd")
 	au Filetype vim call Set_Vim()
 	au Filetype ini,yml,yaml call Set_Ini()
 	au Filetype vhdl call Set_hdl()
+	au Filetype bzl call Set_bazel()
 endif " has(autocmd)
 
 function Shared_Tabs(len)
@@ -28,6 +29,10 @@ endfunction
 
 function Set_crontab()
 	setlocal nowritebackup
+endfunction
+
+function Set_bazel()
+	call Shared_Tabs(4)
 endfunction
 
 function Set_hdl()
