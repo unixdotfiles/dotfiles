@@ -27,6 +27,7 @@
 	count = count-objects -v
 	dci = svn dcommit
 	fixup = commit -a --amend -C HEAD
+	oneline = log --pretty=format:"%h%x09%ad%x09%s"
 	fulllog = log --graph --decorate --boundary --left-right --source --cherry-mark --format=fuller
 	last = log --oneline -1
 	lg = log --graph \"--format=%m%Cblue%h%Creset %Cred%an%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s\" --all
