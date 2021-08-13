@@ -1,6 +1,8 @@
---type-add 
+--type-add
 build:BUILD
---type-add 
+--type-add
 aurora:aurora
+--type-add
+hocon:*.{conf,hocon}
 
 --smart-case
