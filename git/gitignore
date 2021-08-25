@@ -8,6 +8,9 @@
 */.cvsignoreA
 .svn/
 
+# Backups
+*.bak
+
 # Vim specific files
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -64,6 +67,8 @@ Session.vim
 *.log
 *.pdf
 *.ps
+*.bbl
+*.blg
 
 # Dump Files
 *.core
