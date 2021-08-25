@@ -41,6 +41,10 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Yourkit](https://www.yourkit.com/)
 - [Zoom](https://zoom.us/)
 
+## LaTeX
+- [MacTex](https://www.tug.org/mactex/)
+- [TeXStudio](https://www.texstudio.org/)
+
 
 ## Proprietary Gaming Software
 - [Cityographer](https://worldographer.com)
