@@ -1,5 +1,5 @@
 [GLOBAL]
-# enable_pantsd = False
+enable_pantsd = False
 #time: True
 
 [DEFAULT]
