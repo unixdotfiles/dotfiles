@@ -133,3 +133,5 @@
 	pushInsteadOf = kde:
 [blame]
 	showemail = true
+[pull]
+	rebase = true
