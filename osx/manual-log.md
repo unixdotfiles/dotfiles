@@ -96,6 +96,15 @@ Enable the following menulets:
 
 # Configuration
 
+## Security
+
+- Enable filevault
+
+## System Settings
+- Sound > Play user interface sound settings - off
+- clear most things from the dock
+- change default browser to firefox
+
 ## User Profile
 Set `/opt/local/bin/zsh` to be my login shell.
 
