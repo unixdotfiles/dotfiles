@@ -26,6 +26,7 @@
 	contains = "!f() { git branch --contains \"$1\"; git tag --contains \"$1\"; }; f"
 	count = count-objects -v
 	dci = svn dcommit
+	fastlog = log --no-decorate
 	fixup = commit -a --amend -C HEAD
 	oneline = log --pretty=format:"%h%x09%ad%x09%s"
 	fulllog = log --graph --decorate --boundary --left-right --source --cherry-mark --format=fuller
@@ -39,6 +40,7 @@
 	sync = !git pull && git push && git submodule update --init --recursive
 	tracking = !git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)
 	whatis = "!f() { git cat-file -e \"$1\" && printf \"type=\" && git cat-file -t \"$1\" && printf \"size=\" && git cat-file -s \"$1\"; }; f"
+	xpull = "!git fetch && git rebase origin/master"
 [color]
 	branch = auto
 	diff = auto
