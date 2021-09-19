@@ -35,7 +35,7 @@ export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HO
 
 if [ -z "${JAVA_HOME}" ]
 then
-  [ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-14})
+  [ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-16})
 fi
 
 __exists chrome && export BROWSER="$(which chrome)"
