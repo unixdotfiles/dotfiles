@@ -67,7 +67,16 @@ setPS1Battery() {
 }
 
 autoload -Uz  add-zsh-hook
-add-zsh-hook chpwd vcs_info
+
+# sometimes git can be very slow so it shouldn't run every command
+# but we don't want this on all machines
+if [[ -n "${__shellrc_limit_vcs_info}" ]]
+then
+  add-zsh-hook chpwd vcs_info
+else
+  add-zsh-hook precmd vcs_info
+fi
+
 # add-zsh-hook periodic vcs_info
 add-zsh-hook precmd setCurrentPS1
 add-zsh-hook periodic setPS1Battery
