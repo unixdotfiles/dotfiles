@@ -169,9 +169,6 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 # Things to look at:
 # nvram systemsetup pmset caffeinate
 
-# git
-__exists git && git config --global --replace-all credential.helper osxkeychain
-
 ~/.conf/osx/osx_select.sh
 ~/.conf/osx/third_party.sh
 ~/.conf/osx/safety.sh
