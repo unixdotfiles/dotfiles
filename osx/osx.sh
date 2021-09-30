@@ -85,10 +85,6 @@ defaults write com.apple.finder QuitMenuItem -bool true
 # Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
-
-# Disable AirDrop
-defaults write com.apple.NetworkBrowser DisableAirDrop -bool true
-
 # Enable various debug menus
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
