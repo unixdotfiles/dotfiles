@@ -95,9 +95,6 @@ defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.reminders RemindersDebugMenu -boolean true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.skype.skype IncludeDebugMenu -bool true
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
-
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.dashboard devmode -bool true
@@ -120,10 +117,6 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-# Add a context menu item for showing the Web Inspector in web views
-defaults write com.skype.skype WebKitDeveloperExtras -bool true
-defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
-
 # Transmission.app
 # Create 'incomplete' folder
 mkdir -p ~/.transmission/.Incomplete
@@ -138,12 +131,6 @@ defaults write com.apple.Chess MBCListenForMoves -bool false
 defaults write com.apple.Chess MBCSpeakMoves -bool false
 defaults write com.apple.Chess MBCDefaultVoice -string "com.apple.speech.synthesis.voice.karen"
 defaults write com.apple.Chess MBCAlternateVoice -string "com.apple.speech.synthesis.voice.Victoria"
-
-# LaunchControl
-defaults write com.soma-zone.LaunchControl changeLabelWhenRename -bool true
-defaults write com.soma-zone.LaunchControl dyakAboutTooltips -bool false
-defaults write com.soma-zone.LaunchControl paid -bool true
-defaults write com.soma-zone.LaunchControl warnAboutDeprecatedKeys -bool true
 
 # Shut Up Safari
 defaults write com.apple.Safari DefaultBrowserDateOfLastPrompt -date '2050-01-01T00:00:00Z'

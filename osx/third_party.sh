@@ -40,6 +40,10 @@ defaults write org.openemu.OpenEmu debug -int 1
 defaults write org.openemu.OpenEmu databasePath -string '~/Dropbox/ApplicationData/OpenEmu/GameLibrary/Game Library'
 defaults write org.openemu.OpenEmu databasePath -string '~/Dropbox/ApplicationData/OpenEmu/GameLibrary/Game Library'
 
+# Enable various debug menus
+defaults write com.skype.skype IncludeDebugMenu -bool true
+defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
+
 # Disable backswipe in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
@@ -59,5 +63,15 @@ defaults write com.googlecode.iterm2 PerformDNSLookups 0
 defaults write com.if.Amphetamine "Show Welcome Window" -int 0
 
 defaults write com.mowglii.ItsycalApp UseOutlineIcon -int 1
+
+# LaunchControl
+defaults write com.soma-zone.LaunchControl changeLabelWhenRename -bool true
+defaults write com.soma-zone.LaunchControl dyakAboutTooltips -bool false
+defaults write com.soma-zone.LaunchControl paid -bool true
+defaults write com.soma-zone.LaunchControl warnAboutDeprecatedKeys -bool true
+
+# Add a context menu item for showing the Web Inspector in web views
+defaults write com.skype.skype WebKitDeveloperExtras -bool true
+defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 
 launchctl setenv SLACK_DEVELOPER_MENU true
