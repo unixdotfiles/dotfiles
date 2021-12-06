@@ -1,5 +1,4 @@
 [include]
-	path = ~/.gitconfig.local
 	path = ~/.gitconfig.macos
 [user]
 	name = Eitan Adler
@@ -137,3 +136,5 @@
 	showemail = true
 [pull]
 	rebase = true
+[include]
+	path = ~/.gitconfig.local
