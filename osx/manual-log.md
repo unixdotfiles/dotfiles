@@ -6,15 +6,15 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [1Password](https://1password.com/)
 - [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer)
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
+- [Audacity](https://audacityteam.org/)
 - [Background Music](https://github.com/kyleneideck/BackgroundMusic)
-- [Battle.net](https://www.blizzard.com/en-us/apps/battle.net/desktop)
 - [Calibre](https://calibre-ebook.com/)
 - [Clipy](https://github.com/Clipy/Clipy)
 - [Discord](https://discord.com/)
 - [Dolphin](https://dolphin-emu.org/)
 - [Dropbox](https://dropbox.com/)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-- [Go64](https://www.stclairsoft.com/Go64/)
+- Focusrite Control
 - [Gog galaxy](https://www.gog.com/)
 - [ICue](https://www.corsair.com/us/en/icue-mac)
 - [Iterm](https://www.iterm2.com/)
@@ -22,7 +22,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
-- [Openboard](https://openboard.ch)
 - [Openemu](https://openemu.org/)
 - [Pandora](https://www.pandora.com/desktop)
 - [SceneBuilder](https://gluonhq.com/products/scene-builder/)
@@ -35,7 +34,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Textual](https://www.codeux.com/textual/)
 - [Transmission](https://transmissionbt.com/)
 - [Transmission Remote GUI](https://github.com/transmission-remote-gui/transgui)
-- [Tunnelblick](https://tunnelblick.net/)
 - [Unicode Checker](https://earthlingsoft.net/UnicodeChecker/)
 - [Virtualbox](https://www.virtualbox.org/)
 - [VLC](https://www.videolan.org/vlc/index.html)
@@ -44,7 +42,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Zoom](https://zoom.us/)
 
 ## LaTeX
-- [MacTex](https://www.tug.org/mactex/)
 - [TeXStudio](https://www.texstudio.org/)
 
 
@@ -53,13 +50,22 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [FoundryVTT](https://foundryvtt.com/)
 - [Wonderdraft](https://www.wonderdraft.net/)
 - [Worldographer](https://worldographer.com)
+- [Tiled](https://mapeditor.org)
 
 ## Useful Software
 - [Jamovi](https://www.jamovi.org/)
 
+## Unused Software
+- [Battle.net](https://www.blizzard.com/en-us/apps/battle.net/desktop)
+- [Go64](https://www.stclairsoft.com/Go64/)
+- [MacTex](https://www.tug.org/mactex/)
+- [Openboard](https://openboard.ch)
+- [Tunnelblick](https://tunnelblick.net/)
+
 ## Games via Launchers
 - Baldur's Gate Enhanced Edition
 - Baldur's Gate II Enhanced Edition
+- Baldur's Gate III
 - Divinity - Original Sin 2
 - Divinity Original Sin Enhanced Edition
 - Divinity Original Sin Enhanced Edition - Soundtrack
