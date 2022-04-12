@@ -67,6 +67,7 @@ redefine xz="xz -T0"
 redefine grunt="grunt --stack"
 redefine gdb="gdb -s"
 redefine irb="irb --multiline"
+redefine tree="tree -C"
 
 alias ncvs="cvs -d eadler@cvs.NetBSD.org:/cvsroot"
 alias nwcvs="cvs -d anoncvs@wiki.NetBSD.org:/cvsroot"

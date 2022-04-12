@@ -9,3 +9,5 @@ fi
 
 . ~/.bashrc
 #source /opt/twitter_mde/etc/bash_profile
+# Automatically placed at end of file by MDE. To disable this behavior: touch ~/.no-mde-dotfile. Ideally you do not need to do this. Please contact mde-support@twitter.com to discuss long-term alternatives.
+source /opt/twitter_mde/etc/bash_profile
