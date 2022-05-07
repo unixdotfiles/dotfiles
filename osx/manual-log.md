@@ -19,6 +19,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [ICue](https://www.corsair.com/us/en/icue-mac)
 - [Iterm](https://www.iterm2.com/)
 - [Itsycal](https://www.mowglii.com/itsycal/)
+- [Kitty](https://github.com/kovidgoyal/kitty/releases)
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
