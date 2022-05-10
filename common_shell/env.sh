@@ -1,5 +1,5 @@
 export BLOCKSIZE=K;
-export EDITOR=mvim;
+export EDITOR=nvim;
 export PAGER=less;
 export LESS="-iRM";
 export READNULLCMD=$PAGER;
