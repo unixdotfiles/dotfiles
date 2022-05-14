@@ -15,6 +15,11 @@ zle -N slash-backward-kill-word
 [[ -z "$terminfo[kLFT5]" ]] || bindkey -M emacs $terminfo[kLFT5] backward-word # C-left
 [[ -z "$terminfo[kRIT5]" ]] || bindkey -M emacs $terminfo[kRIT5] forward-word # C-right
 
+# required for kitty
+bindkey '\e[H'  beginning-of-line
+bindkey '\e[F'  end-of-line
+bindkey '\e[3~' delete-char
+
 bindkey -M emacs '^[[1;5D' backward-word # screen-256-color C-left
 bindkey -M emacs '^[[1;5C' forward-word # screen-256-color C-right
 
