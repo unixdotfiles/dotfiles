@@ -56,12 +56,12 @@ htln screen/screenrc .screenrc
 htln vim/home .vim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
-ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/yt-dlp ~/.config/http-prompt ~/.config/htop ~/.config/kitty
+ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/yt-dlp ~/.config/http-prompt ~/.config/htop 
 htln http-prompt/config.py .config/http-prompt/config.py
 htln pianobar/config .config/pianobar/config
 htln youtube-dl/config .config/youtube-dl/config
 htln youtube-dl/config .config/yt-dlp/config
-htln kitty/kitty.conf .config/kitty/kitty.conf
+htln kitty/ .config/kitty
 ensure_directories ~/.ptpython
 htln ptpython/config.py .ptpython/config.py
 htln openbox/menu.xml .config/openbox/menu.xml
