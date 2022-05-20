@@ -80,6 +80,10 @@ alias b="popd";
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 
+if [ "$TERM" = "xterm-kitty" ];then
+  alias ssh='kitty +kitten ssh'
+fi
+
 redefine python="python -R"
 __py3opt="-bbttq"
 for wpython in python3 python3.6 python3.7 python3.8 python3.9

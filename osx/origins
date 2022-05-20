@@ -76,7 +76,6 @@ the_silver_searcher
 tk +quartz -x11
 tree
 unrar
-vim +huge +perl -python27 -python37 -python38 +python39 +cscope +lua
 neovim
 wget
 youtube-dl -python36 -python37 -python38 +python39
