@@ -24,6 +24,7 @@ fi
 
 __exists vim && redefine vi="vim"
 __exists nvim && redefine vi="nvim"
+__exists nvim && redefine vim="nvim"
 
 __exists idesk && alias switch-background="pkill idesk && idesk &";
 
