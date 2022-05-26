@@ -56,7 +56,8 @@ htln screen/screenrc .screenrc
 htln vim/home .vim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
-ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/yt-dlp ~/.config/http-prompt ~/.config/htop 
+ensure_directories ~/.config/openbox ~/.config/pianobar ~/.config/libfm ~/.config/youtube-dl ~/.config/yt-dlp ~/.config/http-prompt ~/.config/htop ~/.config/nvim
+htln nvim/init.vim .config/nvim/init.vim
 htln http-prompt/config.py .config/http-prompt/config.py
 htln pianobar/config .config/pianobar/config
 htln youtube-dl/config .config/youtube-dl/config
