@@ -24,8 +24,11 @@ map Y y$
 set ignorecase
 set smartcase
 
+" make `set list` better
+set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
+
 " Vim Files
-set backupdir=~/.vim/backup
+set backupdir=~/.nvim/backup
 call EnsureDirExists(&backupdir)
 " Prevent backups from overwriting each other. The naming is weird,
 " since I'm using the 'backupext' variable to append the path.
@@ -33,15 +36,15 @@ call EnsureDirExists(&backupdir)
 au BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g') . '~'
 
 " for swap file
-set directory+=~/.vim/swap// " double / so that the complete path gets used
+set directory+=~/.nvim/swap// " double / so that the complete path gets used
 set directory+=.
-call EnsureDirExists("~/.vim/swap")
+call EnsureDirExists("~/.nvim/swap")
 
 " Automatically cd into the directory that the file is in
 set autochdir
 
 if has("persistent_undo")
-	set undodir=~/.vim/undo
+	set undodir=~/.nvim/undo
 	set undofile
 	set undoreload=10000	"maximum number lines to save for undo on a buffer reload
     call EnsureDirExists(&undodir)
