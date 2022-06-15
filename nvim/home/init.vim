@@ -27,6 +27,10 @@ set smartcase
 " make `set list` better
 set listchars=tab:>-,trail:*,eol:$,conceal:#,nbsp:_,extends:!,precedes:!
 
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
+set confirm
+
 " Vim Files
 set backupdir=~/.nvim/backup
 call EnsureDirExists(&backupdir)
