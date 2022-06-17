@@ -23,6 +23,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
+- [NoTunes](https://github.com/tombonez/noTunes)
 - [Openemu](https://openemu.org/)
 - [Pandora](https://www.pandora.com/desktop)
 - [SceneBuilder](https://gluonhq.com/products/scene-builder/)
