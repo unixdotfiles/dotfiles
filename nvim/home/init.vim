@@ -55,5 +55,4 @@ if has("persistent_undo")
 endif
 set undolevels=1000		"maximum number of changes that can be undone
 
-call plug#begin('~/.config/nvim/plugged')
-call plug#end()
+source ~/.conf/nvim/home/plugins.vim
