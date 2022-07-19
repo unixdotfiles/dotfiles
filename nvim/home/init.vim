@@ -44,6 +44,8 @@ set directory+=~/.nvim/swap// " double / so that the complete path gets used
 set directory+=.
 call EnsureDirExists("~/.nvim/swap")
 
+set hidden
+
 " Automatically cd into the directory that the file is in
 set autochdir
 
