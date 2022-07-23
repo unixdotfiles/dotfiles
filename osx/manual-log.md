@@ -16,6 +16,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - Focusrite Control
 - [Gog galaxy](https://www.gog.com/)
+- [Hot](https://xs-labs.com/en/apps/hot/overview/)
 - [ICue](https://www.corsair.com/us/en/icue-mac)
 - [Iterm](https://www.iterm2.com/)
 - [Itsycal](https://www.mowglii.com/itsycal/)
