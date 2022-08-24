@@ -107,7 +107,6 @@ eggs/
 bin/
 /build/
 captures/
-gen/
 proguard/
 .gradle/
 .navigation/
