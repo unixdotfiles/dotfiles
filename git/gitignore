@@ -104,7 +104,6 @@ eggs/
 .vscode
 
 # Generated files
-bin/
 /build/
 captures/
 proguard/
@@ -143,8 +142,6 @@ cscope.po.out
 *.zip
 *.tgz
 *.tar
-
-log/
 
 # Never Ignore .gitignore
 !.gitignore
