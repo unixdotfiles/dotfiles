@@ -23,7 +23,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Locale & Localization
+# Locale & Localization / Get reasonable units
 defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 defaults write NSGlobalDomain AppleMeasurementUnits -string Centimeters
 defaults write NSGlobalDomain AppleMetricUnits -bool true
@@ -71,10 +71,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Show hidden/dot files in Finder by default
 # defaults write com.apple.Finder AppleShowAllFiles -bool true
-
-# Get reasonable units
-defaults write NSGlobalDomain AppleMetricUnits -bool true
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 
 # Finder.app
 defaults write com.apple.finder ShowPathbar -bool true
