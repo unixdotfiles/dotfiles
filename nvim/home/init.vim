@@ -11,6 +11,8 @@ nnoremap Q :noh<RETURN>
 nnoremap S i<RETURN><ESC>==k$
 
 
+set mouse=
+
 let mapleader = ","
 
 nmap <leader>n :bnext<CR>
