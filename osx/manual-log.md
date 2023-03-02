@@ -47,6 +47,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 
 ## LaTeX
 - [TeXStudio](https://www.texstudio.org/)
+- [MacTex](https://tug.org/mactex/mactex-download.html)
 
 
 ## Proprietary Gaming Software
