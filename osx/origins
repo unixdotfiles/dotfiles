@@ -40,7 +40,7 @@ mplayer +aa +caca +fribidi +mencoder_extras +osd +speex
 mtr
 nasm
 netperf
-nghttp2 +python39 -python38 -python37 -python36 -python27
+nghttp2 
 ninja
 ngrep
 nmap -subversion
@@ -49,20 +49,20 @@ p7zip
 pango +quartz -x11
 parallel
 perl5
-php80
-php80-APCu
-php80-curl
-php80-fpm
-php80-iconv
-php80-mbstring
-php80-mysql
-php80-openssl
-php80-pcntl
-php80-posix
+php82
+php82-APCu
+php82-curl
+php82-fpm
+php82-iconv
+php82-mbstring
+php82-mysql
+php82-openssl
+php82-pcntl
+php82-posix
 pv
-py39-pip
-py39-ipython
-python39 +optimizations
+py311-ipython
+py311-pip
+python311 +optimizations +lto
 R -gcc6 +gcc10
 realpath
 ruby27
@@ -78,6 +78,6 @@ tree
 unrar
 neovim
 wget
-youtube-dl -python36 -python37 -python38 +python39
+youtube-dl -python37 -python38 -python39 -python310 +python311
 zsh
 zsh-completions
