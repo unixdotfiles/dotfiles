@@ -34,6 +34,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Steam](https://store.steampowered.com/)
 - [StreamDeck](https://www.elgato.com/en/downloads)
 - [StreamDeck Google Meet Plugin](https://github.com/ChrisRegado/streamdeck-googlemeet)
+- [TailScale](https://tailscale.com/)
 - [Textual](https://www.codeux.com/textual/)
 - [Transmission](https://transmissionbt.com/)
 - [Transmission Remote GUI](https://github.com/transmission-remote-gui/transgui)
