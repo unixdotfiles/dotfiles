@@ -8,6 +8,7 @@ coreutils
 cowsay
 curl +ares +http2
 dash
+exiftool
 ffmpeg +gpl3 +nonfree +librtmp
 figlet
 findutils
