@@ -42,7 +42,6 @@ defaults write org.openemu.OpenEmu databasePath -string '~/Dropbox/ApplicationDa
 
 # Enable various debug menus
 defaults write com.skype.skype IncludeDebugMenu -bool true
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 # Disable backswipe in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
