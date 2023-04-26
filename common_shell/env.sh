@@ -35,7 +35,14 @@ export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HO
 
 if [ -z "${JAVA_HOME}" ]
 then
-  [ -e /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-16})
+  if [ -e /usr/libexec/java_home ]
+  then
+    # if no JVM is installed then this will error
+    if /usr/libexec/java_home -V >/dev/null 2>&1
+    then
+      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-16})
+    fi
+  fi
 fi
 
 __exists chrome && export BROWSER="$(which chrome)"
