@@ -47,7 +47,6 @@ utctodate() {
 
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
-__exists pip-2.7 && alias pip2=pip-2.7
 __exists pip-3.7 && alias pip3=pip-3.7
 ! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
@@ -87,7 +86,7 @@ fi
 
 redefine python="python -R"
 __py3opt="-bbttq"
-for wpython in python3 python3.6 python3.7 python3.8 python3.9
+for wpython in python3 python3.7 python3.8 python3.9 python3.10 python3.11
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
