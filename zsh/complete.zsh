@@ -114,3 +114,8 @@ then
   }
   compctl -K _pip_completion pip
 fi
+
+if __exists op
+then
+  eval "$(op completion zsh)"; compdef _op op
+fi

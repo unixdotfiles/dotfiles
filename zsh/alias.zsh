@@ -101,6 +101,8 @@ autodisown() {
 
 redefine xpdf="autodisown xpdf";
 redefine evince="autodisown evince";
+# gh uses the PAGER when it should not, so force it not to page.
+redefine gh='PAGER=cat gh'
 
 autoload -U colors && colors
 man() {
