@@ -103,5 +103,7 @@
     "java.codeGeneration.useBlocks": true,
     "java.debug.settings.showHex": true,
     "java.debug.settings.showStaticVariables": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "update.showReleaseNotes": false,
+    "remote.SSH.configFile": "/Users/eax/.ssh/config"
 }
