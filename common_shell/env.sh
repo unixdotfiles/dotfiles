@@ -17,6 +17,8 @@ _MYSQL_PATH=/opt/local/lib/mariadb-10.2/bin:/usr/local/mysql/bin
 _ANDROID_PATH=~/Library/Android/sdk/platform-tools
 _PERL_PATH=/opt/local/libexec/perl5.28/sitebin
 _LUA_PATH=~/.luarocks/bin
+_KITTEN_PATH=~/.local/kitty.app/bin
+
 for whichvscode in '/Applications/Visual Studio Code/Contents/Resources/app/bin' '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin'
 do
   if [ -d "$whichvscode" ]
@@ -25,11 +27,10 @@ do
   fi
 done
 
-if [ -d /usr/local/texlive/2020/bin/x86_64-darwin ]
-then
-  _TEX_PATH=/usr/local/texlive/2020/bin/x86_64-darwin
-fi
-export PATH="$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_VSCODE_PATH:$_LOCAL_PATH"
+# I need a better way to keep this up to date
+_TEX_PATH=/usr/local/texlive/2023/bin/universal-darwin
+
+export PATH="$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_VSCODE_PATH:$_KITTEN_PATH:$_LOCAL_PATH"
 export CCACHE_DIR=/srv/obj/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
 
