@@ -77,6 +77,8 @@ alias ocvs="cvs -d anoncvs@anoncvs.ca.openbsd.org:/cvs"
 alias p="pushd";
 alias b="popd";
 
+__exists kitten && alias pbcopy="kitten clipboard"
+
 __exists ack-grep && alias ack="ack-grep"
 __exists gpg2 && ! __exists gpg && alias gpg=gpg2
 
