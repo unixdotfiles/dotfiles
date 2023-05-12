@@ -143,5 +143,8 @@ cscope.po.out
 *.tgz
 *.tar
 
+# IntelliJ
+.ijwb/
+
 # Never Ignore .gitignore
 !.gitignore
