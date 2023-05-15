@@ -2,9 +2,11 @@
 if __exists colorls
 then
     alias ls="colorls -GF"
+# GNU ls (can't test -G because it means no-group)
+elif ls --version >/dev/null 2>&1
+then
+    ls --color -d . >/dev/null 3>&1 && alias ls='ls -F --color=tty'
 else
-    # Find the option for using colors in ls, depending on the version: Linux or BSD
-    ls --color -d . >/dev/null 2>&1 && alias ls='ls -F --color=tty'
     ls -G >/dev/null 2>&1 && alias ls='ls -GF'
 fi
 
