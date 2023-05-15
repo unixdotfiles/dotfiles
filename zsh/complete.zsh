@@ -119,3 +119,8 @@ if __exists op
 then
   eval "$(op completion zsh)"; compdef _op op
 fi
+
+if __exists aws-vault
+then
+  eval "$(aws-vault --completion-script-zsh)"
+fi
