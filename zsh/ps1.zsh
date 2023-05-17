@@ -53,9 +53,13 @@ setCurrentPS1()
 {
   #local $(stat -Ls .)
   PS1_VCS="%F{green}$vcs_info_msg_0_${vcs_info_msg_0_:+ }"
-	_VENV_NAME="${VIRTUAL_ENV##*/}"
-	_COLOR_VENV_NAME="(%F{blue}${_VENV_NAME}%f) "
-	RPS1_PYTHON="${_VENV_NAME:+$_COLOR_VENV_NAME}"
+	_PYTHON_ENV_NAME="${VIRTUAL_ENV##*/}"
+  if [[ -n "$CONDA_DEFAULT_ENV" ]]
+  then
+    _PYTHON_ENV_NAME="$CONDA_DEFAULT_ENV"
+  fi
+	_COLOR_PYTHON_ENV_NAME="(%F{blue}${_PYTHON_ENV_NAME}%f) "
+	RPS1_PYTHON="${_PYTHON_ENV_NAME:+$_COLOR_PYTHON_ENV_NAME}"
 }
 
 PS1='[$PS1_HIST$PS1_TIME$PS1_USER@$PS1_HOST$PS1_BATTERY$PS1_EC2$PS1_WD$PS1_SHLVL$PS1_JOBS$PS1_ERR%f]$PS1_END'
