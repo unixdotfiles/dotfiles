@@ -1,4 +1,5 @@
 fpath=( /opt/local/share/zsh/site-functions $fpath ~/bin ~/bin/.zfunc/ )
+fpath+=~/.conf/zsh/_zfunc
 autoload -U is-at-least
 
 HISTFILE=~/.zsh_history
