@@ -30,6 +30,7 @@ msource /etc/environment
 . $_confpath/start-tmux.sh
 . $_confpath/aliases.sh
 . $_shellpath/ps1.$__INTSHELL
+msource  "$HOME/miniconda3/etc/profile.d/conda.sh"
 if [ -n "$ITERM_SESSION_ID" ]
 then
   . $_confpath/extra/iterm2_shell_integration.$__INTSHELL
