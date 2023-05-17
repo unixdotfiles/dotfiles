@@ -11,6 +11,10 @@ __rc_shell_files="set-options alias complete keybinding precmd"
 
 # HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
 # . ~/.conf/zsh/zsh-histdb/sqlite-history.zsh
+if __exists atuin
+then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
 
 typeset -U path cdpath manpath fpath helpdir
 if [ -n "$_PROFILE_STARTUP" ]
