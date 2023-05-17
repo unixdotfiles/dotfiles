@@ -124,3 +124,8 @@ if __exists aws-vault
 then
   eval "$(aws-vault --completion-script-zsh)"
 fi
+
+if __exists atuin
+then
+  eval "$(atuin gen-completions -s zsh)"
+fi
