@@ -68,6 +68,7 @@
 	excludesfile = ~/.conf/git/gitignore
 	attributesfile = ~/.conf/git/attributes
 	pager = less -FRX
+	commentChar = ";"
 [gc]
 	reflogExpire = never
 	rerereResolved = 90
