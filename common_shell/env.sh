@@ -133,6 +133,10 @@ export SLACK_DEVELOPER_MENU=true
 # ripgrep does not have a default. Instead it must be set explicitly.
 export RIPGREP_CONFIG_PATH="$HOME/.conf/ripgrep/ripgrep.rc"
 
+# homebrew
+export HOMEBREW_NO_INSTALL_CLEANUP=true
+export HOMEBREW_BAT=1
+
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
 #Specific to ZSH - but these are envrioment variables so meh
