@@ -3,7 +3,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'grimreaper/vim-aurora-syntax'
-Plug 'grimreaper/arcanist.vim'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
