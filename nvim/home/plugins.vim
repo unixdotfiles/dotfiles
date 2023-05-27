@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'grimreaper/vim-aurora-syntax'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1

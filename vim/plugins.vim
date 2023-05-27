@@ -6,7 +6,6 @@ call plug#begin()
 "Plug 'jmcantrell/vim-virtualenv'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'grimreaper/vim-aurora-syntax'
 "Plug 'Shougo/neocomplete.vim'
 "Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/vinarise.vim'
