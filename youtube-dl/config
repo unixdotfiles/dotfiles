@@ -6,3 +6,7 @@
 --xattrs
 
 --console-title --no-call-home
+
+--write-description
+--write-info-json
+--write-playlist-metafiles
