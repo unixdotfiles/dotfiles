@@ -1,9 +1,0 @@
-[GLOBAL]
-enable_pantsd = False
-#time: True
-
-[DEFAULT]
-print_exception_stacktrace: False
-
-[repl.py]
-ipython: True

@@ -96,7 +96,6 @@ htln gpg/gpg.conf .gnupg/gpg.conf
 htln gtk/gtk-bookmarks .gtk-bookmarks
 htln ack/ackrc .ackrc
 htln slate/slate .slate
-htln pants/pants.rc .pants.rc
 htln psql/psqlrc .psqlrc
 htln irb/irbrc .irbrc
 ensure_directories ~/.R
