@@ -146,5 +146,9 @@ cscope.po.out
 # IntelliJ
 .ijwb/
 
+# SPR
+.spr.yml
+.nvimlog
+
 # Never Ignore .gitignore
 !.gitignore
