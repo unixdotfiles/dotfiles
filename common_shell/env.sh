@@ -20,6 +20,7 @@ _LUA_PATH=~/.luarocks/bin
 _KITTEN_PATH=~/.local/kitty.app/bin
 _GO_PATH=/usr/local/go/bin
 _BREW_PATH=/opt/homebrew/bin
+_PYENV_PATH="$HOME/.pyenv/bin"
 
 for whichvscode in '/Applications/Visual Studio Code/Contents/Resources/app/bin' '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin'
 do
@@ -32,7 +33,7 @@ done
 # I need a better way to keep this up to date
 _TEX_PATH=/usr/local/texlive/2023/bin/universal-darwin
 
-export PATH="$_GO_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_VSCODE_PATH:$_KITTEN_PATH:$_BREW_PATH:$_LOCAL_PATH"
+export PATH="$_GO_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_BREW_PATH:$_LOCAL_PATH"
 
 # This changes PATH amongst other things. It should be included above ideally.
 if __exists brew
@@ -135,6 +136,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.conf/ripgrep/ripgrep.rc"
 
 # homebrew
 export HOMEBREW_NO_INSTALL_CLEANUP=true
+export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BAT=1
 
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
