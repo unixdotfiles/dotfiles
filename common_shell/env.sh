@@ -18,7 +18,7 @@ _ANDROID_PATH=~/Library/Android/sdk/platform-tools
 _PERL_PATH=/opt/local/libexec/perl5.28/sitebin
 _LUA_PATH=~/.luarocks/bin
 _KITTEN_PATH=~/.local/kitty.app/bin
-_GO_PATH=/usr/local/go/bin
+_GO_PATH=/usr/local/go/bin:$HOME/go/bin
 _BREW_PATH=/opt/homebrew/bin
 _PYENV_PATH="$HOME/.pyenv/bin"
 
