@@ -150,5 +150,8 @@ cscope.po.out
 .spr.yml
 .nvimlog
 
+# hugo
+.hugo_build.lock
+
 # Never Ignore .gitignore
 !.gitignore
