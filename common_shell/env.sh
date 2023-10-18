@@ -139,6 +139,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BAT=1
 
+# jq
+export JQ_COLORS="0;90:2;30:0;30:0;30:0;32:1;30:1;30:1;34"
+
 # __exists curl && __EC2_IID="$(curl -sf --connect-timeout .1 http://169.254.169.254/latest/meta-data/instance-id)"
 
 #Specific to ZSH - but these are envrioment variables so meh
