@@ -36,7 +36,7 @@ _TEX_PATH=/usr/local/texlive/2023/bin/universal-darwin
 export PATH="$_GO_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_USER_PIP_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_BREW_PATH:$_LOCAL_PATH"
 
 # This changes PATH amongst other things. It should be included above ideally.
-if __exists brew
+if [ -f /opt/homebrew/bin/brew ]
 then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
