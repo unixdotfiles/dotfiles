@@ -24,6 +24,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
+- [Menu World Time](https://apps.apple.com/us/app/menu-world-time/id1446377255)
 - [NoTunes](https://github.com/tombonez/noTunes)
 - [Openemu](https://openemu.org/)
 - [Pandora](https://www.pandora.com/desktop)
@@ -86,7 +87,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - The Witcher Enhanced Edition
 - TIS-100
 - Ultima™ 4 Quest of the Avatar
-- Wasteland 3 
+- Wasteland 3
 
 ## Misc Software With Limited Utility
 
