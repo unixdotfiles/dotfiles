@@ -1,6 +1,6 @@
 . ../common_shell/functions.sh
 
-pythonver=310
+pythonver=312
 phpver=82
 
 if __exists port
@@ -13,14 +13,11 @@ sudo port select --set python2 python27
 sudo port select --set python3 python${pythonver}
 sudo port select --set ruby ruby27
 sudo port select --set pip pip${pythonver}
-sudo port select --set pip2 pip27
 sudo port select --set pip3 pip${pythonver}
 sudo port select --set php php${phpver}
-sudo port select --set pip pip27
 sudo port select --set pip pip${pythonver}
 sudo port select --set scala scala2.13
 sudo port select --set ipython py${pythonver}-ipython
-sudo port select --set ipython2 py27-ipython
 sudo port select --set ipython3 py${pythonver}-ipython
 sudo port select --set gcc mp-gcc10
 sudo port select --set llvm mp-llvm-7.0

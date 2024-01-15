@@ -61,9 +61,9 @@ php82-openssl
 php82-pcntl
 php82-posix
 pv
-py311-ipython
-py311-pip
-python311 +optimizations +lto
+py312-ipython
+py312-pip
+python312 +optimizations +lto
 R -gcc6 +gcc10
 realpath
 ruby27
