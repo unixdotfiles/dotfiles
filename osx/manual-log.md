@@ -181,3 +181,5 @@ What I did?
 1. Rename hostname of computer
 1. Enable “Use F1, F2, … as standard function keys”
 1. Disable “Mission Control”, “Application Window”, “Move Right A Space” and “Move Left a space” keyboard shortcuts as the break ctlr-left/right/down/up in terminal
+1. Create ssh key for github via make_key.sh
+1. add ssh key to github
