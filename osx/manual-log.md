@@ -140,3 +140,44 @@ cd osx
 cd global
 ./restore.sh
 ```
+
+
+# New Mac In Order
+
+What I did?
+1. Click buttons to upgrade Mac
+1. Set up bootstrap wifi
+1. Install Firefox
+1. Start Firefox (making Firefox default)
+1. Install 1password
+1. Delete all widgets
+1. Enable auto hide and show for dock
+1. Disable ‘show recent applications’ in dock
+1. Remove stuff from dock
+1. Remove iCloud drive from sidebar
+1. Enable ‘Show Percentage’ for Battery
+1. Enable ‘Use a 24-hour clock’
+1. Enable download new updates when available
+1. Enable install macOS updates
+1. Enable install applications from the App Store
+1. Enable ‘Install security responses and system files’
+1. Install kitty terminal
+```
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+1. Enable clock 24 hour time
+1. Installed 1password firefox extension
+1. Logged into Firefox
+1. Log into Apple ID
+1. Install Xcode via app
+1. Turned on contact key verification
+1. Clicked update all for ‘App Store’
+1. Sign into proper wifi
+1. Forgot bootstrap wifi
+1. Install dropbox - https://www.dropbox.com/download
+1. Enable Accessibility for Dropbox and 1password
+1. Enable Dropbox
+1. sudo xcodebuild -license
+1. Rename hostname of computer
+1. Enable “Use F1, F2, … as standard function keys”
+1. Disable “Mission Control”, “Application Window”, “Move Right A Space” and “Move Left a space” keyboard shortcuts as the break ctlr-left/right/down/up in terminal
