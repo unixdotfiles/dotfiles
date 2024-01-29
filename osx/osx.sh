@@ -147,4 +147,3 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 
 ~/.conf/osx/osx_select.sh
 ~/.conf/osx/third_party.sh
-~/.conf/osx/safety.sh
