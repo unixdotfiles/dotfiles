@@ -131,9 +131,6 @@ defaults write com.apple.coreservices.uiagent CSUIHasSafariBeenLaunched -bool YE
 defaults write com.apple.coreservices.uiagent CSUIRecommendSafariNextNotificationDate -date 2050-01-01T00:00:00Z
 defaults write com.apple.coreservices.uiagent CSUILastOSVersionWhereSafariRecommendationWasMade -float 10.99
 
-# iTunes disable "remote control daemon"
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
-
 # Disable Photos when plugging in a device
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
