@@ -190,3 +190,10 @@ cd global
 1. sudo xcodebuild -license
 1. Enable FileVault
 1. create ssh key via 1password, export it to disk, add ssh key to github
+1. Set up Zotero (install, attachment base, custom cite format, resolver)
+1. Install homebrew :(
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+1. Install jetbrains toolbox
+1. Install `atuin` and login and sync
