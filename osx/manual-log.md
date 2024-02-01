@@ -144,11 +144,29 @@ cd global
 
 # New Mac In Order
 
+1. Installed updates
+1. Installed git / developer tools
+1. git clone https://github.com/unixdotfiles/dotfiles .conf
+1. Installed firefox
+1. Set up firefox 
+1. Installed 1password
+1. Logged into 1pssword
+1. Logged into Firefox
+1. ran ~/.conf/osx/osx.sh
+1. touch ~/.hushlogin
+1. Ran ~/.conf/install.sh
+1. Disabled “play sound on startup”
+1. Disabled “play user interface sound effects”
+1. Changed “Alert Volume” to minimum
+1. renamed computer
+1. disable ctrl-left, ctrl-right, etc. for mac
+1. enable F1... as standard function keys
+1. enable "Show Input in menu bar"
+1. Enable "correct spelling automatically"
+1. Sign into proper wifi
+1. Forgot bootstrap wifi
+
 What I did?
-1. Click buttons to upgrade Mac
-1. Set up bootstrap wifi
-1. Install Firefox
-1. Start Firefox (making Firefox default)
 1. Install 1password
 1. Delete all widgets
 1. Enable auto hide and show for dock
@@ -172,8 +190,6 @@ What I did?
 1. Install Xcode via app
 1. Turned on contact key verification
 1. Clicked update all for ‘App Store’
-1. Sign into proper wifi
-1. Forgot bootstrap wifi
 1. Install dropbox - https://www.dropbox.com/download
 1. Enable Accessibility for Dropbox and 1password
 1. Enable Dropbox

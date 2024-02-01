@@ -53,6 +53,7 @@ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Res
 
 # Don't show debug text or filename on picture (cmd+option on desktop settings for more info)
 defaults write com.apple.dock desktop-picture-show-debug-text -bool false
+defaults write com.apple.dock autohide -bool true
 
 # Get a developer mode crash dialog
 defaults write com.apple.CrashReporter DialogType developer
