@@ -165,6 +165,13 @@ cd global
 1. Enable "correct spelling automatically"
 1. Sign into proper wifi
 1. Forgot bootstrap wifi
+1. Enable install macOS updates
+1. Enable install applications from the App Store
+1. Install kitty terminal
+```
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+1. Remove iCloud drive from sidebar
 
 What I did?
 1. Install 1password
@@ -172,20 +179,12 @@ What I did?
 1. Enable auto hide and show for dock
 1. Disable ‘show recent applications’ in dock
 1. Remove stuff from dock
-1. Remove iCloud drive from sidebar
 1. Enable ‘Show Percentage’ for Battery
 1. Enable ‘Use a 24-hour clock’
 1. Enable download new updates when available
-1. Enable install macOS updates
-1. Enable install applications from the App Store
 1. Enable ‘Install security responses and system files’
-1. Install kitty terminal
-```
-	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-```
 1. Enable clock 24 hour time
 1. Installed 1password firefox extension
-1. Logged into Firefox
 1. Log into Apple ID
 1. Install Xcode via app
 1. Turned on contact key verification
