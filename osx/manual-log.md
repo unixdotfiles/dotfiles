@@ -147,10 +147,12 @@ cd global
 1. Installed updates
 1. Installed git / developer tools
 1. git clone https://github.com/unixdotfiles/dotfiles .conf
+1. Disable ‘show recent applications’ in dock
 1. Installed firefox
 1. Set up firefox 
 1. Installed 1password
 1. Logged into 1pssword
+1. Installed 1password firefox extension
 1. Logged into Firefox
 1. ran ~/.conf/osx/osx.sh
 1. touch ~/.hushlogin
@@ -159,42 +161,32 @@ cd global
 1. Disabled “play user interface sound effects”
 1. Changed “Alert Volume” to minimum
 1. renamed computer
-1. disable ctrl-left, ctrl-right, etc. for mac
-1. enable F1... as standard function keys
+1. Enable “Use F1, F2, … as standard function keys”
+1. Disable “Mission Control”, “Application Window”, “Move Right A Space” and “Move Left a space” keyboard shortcuts as the break ctlr-left/right/down/up in terminal
 1. enable "Show Input in menu bar"
 1. Enable "correct spelling automatically"
+1. Rename hostname of computer
 1. Sign into proper wifi
 1. Forgot bootstrap wifi
 1. Enable install macOS updates
+1. Enable download new updates when available
 1. Enable install applications from the App Store
 1. Install kitty terminal
 ```
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 1. Remove iCloud drive from sidebar
-
-What I did?
-1. Install 1password
-1. Delete all widgets
-1. Enable auto hide and show for dock
-1. Disable ‘show recent applications’ in dock
+1. Sign into apple ID
+1. Delete all widgets for macOS
 1. Remove stuff from dock
-1. Enable ‘Show Percentage’ for Battery
-1. Enable ‘Use a 24-hour clock’
-1. Enable download new updates when available
-1. Enable ‘Install security responses and system files’
-1. Enable clock 24 hour time
-1. Installed 1password firefox extension
-1. Log into Apple ID
-1. Install Xcode via app
-1. Turned on contact key verification
 1. Clicked update all for ‘App Store’
-1. Install dropbox - https://www.dropbox.com/download
 1. Enable Accessibility for Dropbox and 1password
-1. Enable Dropbox
+1. Install dropbox - https://www.dropbox.com/download
+1. Enable Dropbox - but don't sync anything yet
+1. Install xcode
+1. Optimise battery on battery
+1. Enable ‘Show Percentage’ for Battery
+1. Install Xcode via app store
 1. sudo xcodebuild -license
-1. Rename hostname of computer
-1. Enable “Use F1, F2, … as standard function keys”
-1. Disable “Mission Control”, “Application Window”, “Move Right A Space” and “Move Left a space” keyboard shortcuts as the break ctlr-left/right/down/up in terminal
-1. Create ssh key for github via make_key.sh
-1. add ssh key to github
+1. Enable FileVault
+1. create ssh key via 1password, export it to disk, add ssh key to github
