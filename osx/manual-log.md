@@ -195,5 +195,5 @@ cd global
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-1. Install jetbrains toolbox
 1. Install `atuin` and login and sync
+1. Install software from list above
