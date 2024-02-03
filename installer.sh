@@ -53,7 +53,6 @@ htln mplayer/mencoder.conf .mplayer/mencoder.conf
 htln cvs/cvsrc .cvsrc
 htln xpdf/xpdfrc .xpdfrc
 htln screen/screenrc .screenrc
-htln vim/home .vim
 htln nvim/home .config/nvim
 htln gdb/gdbinit .gdbinit
 htln lldb/lldbinit .lldbinit
