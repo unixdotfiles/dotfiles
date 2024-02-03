@@ -149,7 +149,7 @@ cd global
 1. git clone https://github.com/unixdotfiles/dotfiles .conf
 1. Disable ‘show recent applications’ in dock
 1. Installed firefox
-1. Set up firefox 
+1. Set up firefox
 1. Installed 1password
 1. Logged into 1pssword
 1. Installed 1password firefox extension
@@ -197,3 +197,4 @@ cd global
 ```
 1. Install `atuin` and login and sync
 1. Install software from list above
+1. Enable Night Shift
