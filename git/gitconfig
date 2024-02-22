@@ -39,7 +39,6 @@
 	sync = !git pull && git push && git submodule update --init --recursive
 	tracking = !git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)
 	whatis = "!f() { git cat-file -e \"$1\" && printf \"type=\" && git cat-file -t \"$1\" && printf \"size=\" && git cat-file -s \"$1\"; }; f"
-	xpull = "!git fetch && git rebase $(git tracking)"
 	repush = "!git push --delete origin $(git cbranch); git push origin HEAD:$(git cbranch)"
 [color]
 	branch = auto
