@@ -117,12 +117,20 @@ fi
 
 if __exists op
 then
-  eval "$(op completion zsh)"; compdef _op op
+  op() {
+    unfunction "$0"
+    eval "$(op completion zsh)"; compdef _op op
+    $0 "$@"
+  }
 fi
 
 if __exists aws-vault
 then
-  eval "$(aws-vault --completion-script-zsh)"
+  op() {
+    unfunction "$0"
+    eval "$(aws-vault --completion-script-zsh)"
+    $0 "$@"
+  }
 fi
 
 if __exists atuin
