@@ -1,12 +1,12 @@
-#compdef conda mamba
+#compdef conda mamba micromamba
 #description:conda package manager
 #
 # ZSH Completion for conda (http://conda.pydata.org/)
 #
 # Author: Valentin Haenel <valentin@haenel.co>  (https://github.com/esc/)
 # Licence: WTFPL (http://sam.zoy.org/wtfpl/)
-# Version: 0.10-dev
-# Homepage: https://github.com/esc/conda-zsh-completion
+# Version: 0.11
+# Homepage: https://github.com/conda-incubator/conda-zsh-completion
 # Demo: https://asciinema.org/a/16516
 #
 # This completion depends on Python for a json parser, sorry. Unfortunately
@@ -14,7 +14,7 @@
 #
 # To use this completion, install it somewhere on your hard drive:
 #
-#     $ git clone https://github.com/esc/conda-zsh-completion
+#     $ git clone https://github.com/conda-incubator/conda-zsh-completion
 #
 # And then add it to your $fpath in ~/.zshrc before you call compinit:
 #
@@ -25,7 +25,7 @@
 # just add it to your $fpath before calling the OMZ or Prezto initialization
 # functions. For example:
 #
-#     git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+#     git clone https://github.com/conda-incubator/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
 #
 # And add lines in `.zshrc`
 #     plugins=(… conda-zsh-completion)
@@ -53,14 +53,14 @@
 # to your '.zshrc':
 #
 #    zstyle ":conda_zsh_completion:*" sort-envs-by-time true
-# 
+#
 # The completion will display both global environments (envs located in conda_dir/envs and base env)
 # and local environments (located in ~/.conda/envs).
 # If enables sort-envs-by-time, it will display local environments first.
 # To display global environments first, add the following to your '.zshrc':
 #
 #    zstyle ":conda_zsh_completion:*" show-global-envs-first true
-# 
+#
 # If not enables sort-envs-by-time, then all environments will be sorted by alphabetical order,
 # and this option is useless.
 #
@@ -73,13 +73,27 @@
 #    $ unfunction _conda && autoload -U _conda
 #
 # Please report any issues at:
-# https://github.com/esc/conda-zsh-completion/issues
+# https://github.com/conda-incubator/conda-zsh-completion/issues
 #
 # CHANGELOG
 # ---------
+#
+# * v0.11
+#
+#    * fix repo url in doc (esc)
+#    * ignore `KeyboardInterrupt` exception (rmekdma)
+#    * Fix completion of dir local prefixed environments (johannes-mueller)
+#    * Set initial value outside of local. (hwalinga)
+#    * Update repository URL (dstansby)
+#    * Add micromamba naive support (antony-frolov)
+#
 # * v0.10
 #
 #   * Search environments in custom environments paths, thanks to Thomas G. (coldfix).
+#   * Naive mamba support, thanks to olegtarasov
+#   * Remove path prefix from environments in default location, thanks to 3mb3dw0rk5
+#   * Sort environments to be completed by creation time, thanks to m-novikov
+#   * Check for environment directory before accessing, thanks to huyz-git
 #
 # * v0.9
 #
@@ -154,13 +168,15 @@ local -A opt_args
 
 __conda_envs(){
     local -a envs unnamed sort globalfirst localenvs globalenvs
-    local -a ls_opts=("-1")
+    local -a ls_opts
     local -a describe_opts
     local localenvspath
     # only parse environments.txt (including unnamed envs) if asked by the user
     zstyle -s ":conda_zsh_completion:*" show-unnamed unnamed
     zstyle -s ":conda_zsh_completion:*" sort-envs-by-time sort
     zstyle -s ":conda_zsh_completion:*" show-global-envs-first globalfirst
+
+    ls_opts=("-1")
     if test -n "$sort"; then
         ls_opts+=("-t")
         describe_opts+=("-V")
@@ -185,10 +201,10 @@ __conda_envs(){
     else
         envs=($localenvs $globalenvs)
     fi
-        
-    # unmaned envs (if show-unammed). 
+
+    # unmaned envs (if show-unammed).
     if test -n "$unnamed"; then
-        envs+=($( (test -n "$unnamed" && cat ${HOME:?}/.conda/environments.txt) | cut -f1 -d' ' | sed -e "s|^$localenvspath/||"))
+        envs+=($( (cat ${HOME:?}/.conda/environments.txt) 2>/dev/null | cut -f1 -d' ' | sed -e "s|^${PWD}|.|" | sed -e "s|^$localenvspath/||"))
     fi
 
     _describe $describe_opts -t envs 'conda environments' envs
@@ -212,8 +228,11 @@ __conda_package_available(){
         python -c "
 import json, sys
 parsed = json.load(sys.stdin)
-for k in parsed.keys():
-    print(k)
+try:
+    for k in parsed.keys():
+        print(k)
+except KeyboardInterrupt:
+    pass
         "))
         _store_cache conda_available_packages available_packages
     fi
@@ -233,8 +252,11 @@ __conda_existing_config_keys(){
         python -c "
 import json, sys
 keys = json.load(sys.stdin)['get'].keys()
-for k in keys:
-    print(k)
+try:
+    for k in keys:
+        print(k)
+except KeyboardInterrupt:
+    pass
         "))
     print -l $config_keys
 }
@@ -275,9 +297,7 @@ try:
     values = json.load(sys.stdin)['get']['$search_term']
     for v in values:
         print(v)
-except KeyError:
-    pass
-except ValueError:
+except (KeyError, VlaueError, KeyboardInterrupt):
     pass
         "))
     print -l $config_values
@@ -361,7 +381,7 @@ try:
     versions = set((e['version'] for e in json.load(sys.stdin)['$current_package']))
     for v in versions:
         print(v)
-except KeyError:
+except (KeyError, KeyboardInterrupt):
     pass
     "))
     _describe -t versions "$current_package version" versions
@@ -442,7 +462,7 @@ json_opts=(
 
 env_opts=(
     '(-n --name -p --prefix)'{-n,--name}'[name of environment]:environment:__conda_envs' \
-    '(-n --name -p --prefix)'{-p,--prefix}'[full path to environment prefix]:path:_path_files' \
+    '(-n --name -p --prefix)'{-p,--prefix}'[full path to environment prefix]:prefix:_directories' \
     )
 
 channel_opts=(
@@ -683,18 +703,19 @@ case $state in
                 (create)
                     _arguments -C $help_opts \
                                   $json_opts \
-                                  '(-n --name)'{-n,--name}'[name of environment]:environment:__conda_envs' \
+                                  $env_opts \
                                   '(-f --file)'{-f,--file}'[environment definition]:file:_path_files' \
                                   '(-q --quiet)'{-q,--quiet}'[]' \
                     ;;
                 (export)
                     _arguments -C $help_opts \
-                                  '(-n --name)'{-n,--name}'[name of environment]:environment:__conda_envs' \
+                                  $env_opts \
                                   '(-f --file)'{-f,--file}'[]:file:_path_files' \
                     ;;
                 (list)
                     _arguments -C $help_opts \
                                   $json_opts \
+                                  $env_opts
                     ;;
                 (remove)
                     _arguments -C $help_opts \
@@ -707,7 +728,7 @@ case $state in
                 (update)
                     _arguments -C $help_opts \
                                   $json_opts \
-                                  '(-n --name)'{-n,--name}'[name of environment]:environment:__conda_envs' \
+                                  $env_opts \
                                   '(-f --file)'{-f,--file}'[environment definition]:file:_path_files' \
                                   '(-q --quiet)'{-q,--quiet}'[]' \
                     ;;
@@ -718,7 +739,7 @@ case $state in
     (activate)
             _arguments -C $help_opts \
                           '--stack[activate this environment on top of the previous environment]' \
-                          '*:environment:__conda_envs'
+                          '*:environment:{__conda_envs; _directories}'
                     ;;
     (deactivate)
             _arguments -C $help_opts \
@@ -726,4 +747,3 @@ case $state in
     esac
     ;;
 esac
-
