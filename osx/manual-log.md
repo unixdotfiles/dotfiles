@@ -121,7 +121,7 @@ Enable the following menulets:
 - change default browser to firefox
 
 ## User Profile
-Set `/opt/local/bin/zsh` to be my login shell.
+Set `/opt/homebrew/bin/nvim` to be my login shell.
 
 # Actions
 

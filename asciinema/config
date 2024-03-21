@@ -1,2 +1,2 @@
 [record]
-command = /opt/local/bin/zsh -l
+command = /opt/homebrew/bin/nvim -l
