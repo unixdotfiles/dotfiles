@@ -138,6 +138,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.conf/ripgrep/ripgrep.rc"
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BAT=1
+export HOMEBREW_NO_ENV_HINTS=1
 
 # jq
 export JQ_COLORS="0;90:2;30:0;30:0;30:0;32:1;30:1;30:1;34"
