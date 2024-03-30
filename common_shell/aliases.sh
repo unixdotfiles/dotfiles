@@ -49,7 +49,6 @@ utctodate() {
 
 __exists curl && dict() { curl "dict://dict.org/d:$1"; }
 __exists hub && redefine git="hub"
-__exists pip-3.7 && alias pip3=pip-3.7
 ! __exists hd && __exists hexdump && alias hd="hexdump -C"
 
 redefine diff="diff -p";
@@ -90,15 +89,20 @@ fi
 
 redefine python="python -R"
 __py3opt="-bbttq"
-for wpython in python3 python3.7 python3.8 python3.9 python3.10 python3.11
+for wpython in python3 python3.10 python3.11 python3.12 python3.13 python3.14 python3.15
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
     if __exists $wpython
     then
-      __exists python && alias python="$wpython $__py3opt"
+      alias python="$wpython $__py3opt"
       alias python${_pythonmajorver}="$wpython $__py3opt"
       alias shareThisDir="$wpython -m http.server 8000"
+    fi
+    _expected_pip="pip${_pythonver}"
+    if __exists "$_expected_pip"
+    then
+      alias pip="$_expected_pip"
     fi
 done
 
