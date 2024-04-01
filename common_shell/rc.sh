@@ -44,6 +44,4 @@ do
   . $_shellpath/$fle.$__INTSHELL
 done
 
-msource ~/bin/submodules/arcanist/resources/shell/bash-completion
-
 msource ~/.options.post
