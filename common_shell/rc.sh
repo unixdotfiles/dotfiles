@@ -10,11 +10,15 @@ export _shellpath=~/.conf/$__INTSHELL
 
 _uname_s=$(uname -s)
 
+# /opt/homebrew/bin/virtualenvwrapper_lazy.sh
 for v in 3 3.10 3.11 3.12 3.13 3.14 3.15 3.16 3.17 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.0
 do
   if [ -e "$HOME/Library/Python/$v/bin" ]
   then
     _PRIMARY_PIP_PATH="$HOME/Library/Python/$v/bin"
+  elif [ -e "/opt/homebrew/bin/pip${v}" ]
+  then
+    _PRIMARY_PIP_PATH="/opt/homebrew/bin"
   fi
 done
 if [ -z "$_PRIMARY_PIP_PATH" ] && [ -e ~/.local/bin ]
