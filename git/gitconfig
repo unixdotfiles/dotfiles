@@ -80,6 +80,7 @@
 	autosetuprebase = always
 [rebase]
 	stat = true
+	updateRefs = true
 [log]
 	mailmap = true
 	date = iso-local
