@@ -73,4 +73,7 @@ defaults write com.soma-zone.LaunchControl warnAboutDeprecatedKeys -bool true
 defaults write com.skype.skype WebKitDeveloperExtras -bool true
 defaults write com.skype.skype DisableWebKitDeveloperExtras -bool false
 
+# hide bluesnooze icon
+defaults write com.oliverpeate.Bluesnooze hideIcon -bool true
+
 launchctl setenv SLACK_DEVELOPER_MENU true
