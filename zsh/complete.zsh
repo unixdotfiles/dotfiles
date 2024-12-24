@@ -76,6 +76,8 @@ zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 zstyle ':completion:*:(ls|rm):*:(all-|)files' ignored-patterns
 zstyle ':completion:*:*:vi(m|):*:*files' ignored-patterns '*?.(a|dylib|so|pyc|aux|dvi|ps|pdf|bbl|toc|lot|lof|o|cm)'
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
+zstyle ':completion::complete:lacheck:*' ignored-patterns '^(*.(tex))'
+zstyle ':completion::complete:chktex:*' ignored-patterns '^(*.(tex))'
 
 zstyle ':completion::complete:git-push:argument-1:' tag-order '! hosts' -
 zstyle ':completion::complete:ldapsearch:*' tag-order '! globbed-files' -
