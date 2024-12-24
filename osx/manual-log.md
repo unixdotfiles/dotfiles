@@ -26,6 +26,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Macports](https://www.macports.org/)
 - [Menu World Time](https://apps.apple.com/us/app/menu-world-time/id1446377255)
 - [NoTunes](https://github.com/tombonez/noTunes)
+- [OpenDeck](https://github.com/ninjadev64/OpenDeck)
 - [Openemu](https://openemu.org/)
 - [Pandora](https://www.pandora.com/desktop)
 - [SceneBuilder](https://gluonhq.com/products/scene-builder/)
