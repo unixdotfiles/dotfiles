@@ -199,3 +199,5 @@ cd global
 1. Install `atuin` and login and sync
 1. Install software from list above
 1. Enable Night Shift
+1. Install config profile (`General Settings.mobileconfig`)
+1. softwareupdate --install-rosetta --agree-to-license
