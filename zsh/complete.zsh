@@ -5,11 +5,13 @@
 autoload -Uz compinit
 zmodload zsh/complist
 zmodload zsh/complete
+#
+# Enable Bash completion
+autoload -Uz bashcompinit && bashcompinit
+
 # -C avoids about a 3x penalty due to readdir calls
 compinit -C
 
-# Enable Bash completion
-autoload -Uz bashcompinit && bashcompinit
 
 # show completion menu on succesive tab press
 setopt auto_menu
