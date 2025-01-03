@@ -1,1 +1,2 @@
 setopt shwordsplit # Required here since its used to process rc.sh
+skip_global_compinit=1 # avoid sillyness from Ubuntu - https://www.zsh.org/mla/users/2021/msg00879.html

@@ -5,13 +5,14 @@
 autoload -Uz compinit
 zmodload zsh/complist
 zmodload zsh/complete
-#
-# Enable Bash completion
-autoload -Uz bashcompinit && bashcompinit
 
 # -C avoids about a 3x penalty due to readdir calls
-compinit -C
+# compinit -C
+# I can't figure out why -C is broken right now but its really annoying
+compinit
 
+# Enable Bash completion
+autoload -Uz bashcompinit && bashcompinit
 
 # show completion menu on succesive tab press
 setopt auto_menu
@@ -103,6 +104,7 @@ __exists gpg2 && ! (( $+_comps[gpg2] )) && compdef gpg2=gpg
 
 compdef ll=ls
 compdef lls=ls
+compdef mcd=cd
 __exists xcc && compdef xcc=clang
 
 if __exists pip
