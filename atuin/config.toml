@@ -75,3 +75,7 @@ history_filter = [
 #   "^secret-cmd",
 #   "^innocuous-cmd .*--secret=.+"
 # ]
+
+cwd_filter = [
+ "pvt",
+]
