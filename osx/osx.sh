@@ -105,15 +105,6 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-# Transmission.app
-# Create 'incomplete' folder
-mkdir -p ~/.transmission/.Incomplete
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/.Incomplete"
-# Hide 'donate' message and 'legal' disclaimer
-defaults write org.m0k.transmission WarningDonate -bool false
-defaults write org.m0k.transmission WarningLegal -bool false
-
 # Chess.app
 defaults write com.apple.Chess MBCListenForMoves -bool false
 defaults write com.apple.Chess MBCSpeakMoves -bool false
