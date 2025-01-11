@@ -173,9 +173,10 @@ cd global
 1. Enable download new updates when available
 1. Enable install applications from the App Store
 1. Install kitty terminal
-  ```
-  	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-  ```
+
+    ```
+      curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    ```
 1. Remove iCloud drive from sidebar
 1. Sign into apple ID
 1. Delete all widgets for macOS
@@ -193,9 +194,10 @@ cd global
 1. create ssh key via 1password, export it to disk, add ssh key to github
 1. Set up Zotero (install, attachment base, custom cite format, resolver)
 1. Install homebrew :(
-  ```
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  ```
+
+    ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 1. Install `atuin` and login and sync
 1. Install software from list above
 1. Enable Night Shift
