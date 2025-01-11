@@ -145,26 +145,26 @@ cd global
 
 # New Mac In Order
 
-1. Installed updates
-1. Installed git / developer tools
-1. git clone https://github.com/unixdotfiles/dotfiles .conf
+1. Fully update mac updates
+1. Install git / developer tools
+1. `git clone https://github.com/unixdotfiles/dotfiles .conf`
 1. Disable ‘show recent applications’ in dock
-1. Installed firefox
+1. Install firefox
 1. Set up firefox
-1. Installed 1password
+1. Install 1password
 1. Logged into 1pssword
-1. Installed 1password firefox extension
+1. Install 1password firefox extension
 1. Logged into Firefox
-1. ran ~/.conf/osx/osx.sh
-1. touch ~/.hushlogin
-1. Ran ~/.conf/install.sh
-1. Disabled “play sound on startup”
-1. Disabled “play user interface sound effects”
-1. Changed “Alert Volume” to minimum
-1. renamed computer
+1. Execute `~/.conf/osx/osx.sh`
+1. touch `~/.hushlogin`
+1. Execute `~/.conf/install.sh`
+1. Disabl “play sound on startup”
+1. Disabl “play user interface sound effects”
+1. Chang “Alert Volume” to minimum
+1. Rename computer
 1. Enable “Use F1, F2, … as standard function keys”
 1. Disable “Mission Control”, “Application Window”, “Move Right A Space” and “Move Left a space” keyboard shortcuts as the break ctlr-left/right/down/up in terminal
-1. enable "Show Input in menu bar"
+1. Enable "Show Input in menu bar"
 1. Enable "correct spelling automatically"
 1. Rename hostname of computer
 1. Sign into proper wifi
@@ -180,7 +180,7 @@ cd global
 1. Sign into apple ID
 1. Delete all widgets for macOS
 1. Remove stuff from dock
-1. Clicked update all for ‘App Store’
+1. Click update all for ‘App Store’
 1. Enable Accessibility for Dropbox and 1password
 1. Install dropbox - https://www.dropbox.com/download
 1. Enable Dropbox - but don't sync anything yet
