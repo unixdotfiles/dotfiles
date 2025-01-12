@@ -5,30 +5,46 @@
 	<key>PayloadContent</key>
 	<array>
 		<dict>
-			<key>DefaultBrowserPromptingState2</key>
-			<integer>1</integer>
-			<key>DefaultBrowserPromptingState3</key>
-			<integer>2</integer>
-			<key>DidShowWhatsNewInSafari</key>
-			<true/>
-			<key>DownloadsClearingPolicy</key>
-			<integer>0</integer>
-			<key>ExtensionsEnabled</key>
-			<true/>
 			<key>PayloadDescription</key>
-			<string>Configures Safari configuration preferences</string>
+			<string>Use this section to define restrictions settings</string>
 			<key>PayloadDisplayName</key>
-			<string>Safari</string>
+			<string>Restrictions</string>
 			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.Safari.8B626DF2-8982-4596-B8AE-36E9699AE6C9</string>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.applicationaccess.06F379A3-251D-4AC5-80D2-FD145C6CD6B6</string>
 			<key>PayloadOrganization</key>
 			<string></string>
 			<key>PayloadType</key>
-			<string>com.apple.Safari</string>
+			<string>com.apple.applicationaccess</string>
 			<key>PayloadUUID</key>
-			<string>8B626DF2-8982-4596-B8AE-36E9699AE6C9</string>
+			<string>06F379A3-251D-4AC5-80D2-FD145C6CD6B6</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
+			<key>allowApplePersonalizedAdvertising</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Configures Google Chrome settings</string>
+			<key>PayloadDisplayName</key>
+			<string>Google Chrome</string>
+			<key>PayloadIdentifier</key>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.google.Chrome.D6D71539-3298-47E6-8FCE-B6A7CB24CFD4</string>
+			<key>PayloadOrganization</key>
+			<string></string>
+			<key>PayloadType</key>
+			<string>com.google.Chrome</string>
+			<key>PayloadUUID</key>
+			<string>D6D71539-3298-47E6-8FCE-B6A7CB24CFD4</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PrivacySandboxAdMeasurementEnabled</key>
+			<false/>
+			<key>PrivacySandboxAdTopicsEnabled</key>
+			<false/>
+			<key>PrivacySandboxPromptEnabled</key>
+			<false/>
+			<key>PrivacySandboxSiteEnabledAdsEnabled</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>DisablePocket</key>
@@ -49,81 +65,6 @@
 			<string>8E219F36-9B01-436F-80F1-EF21B36807F5</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>PayloadDescription</key>
-			<string>Configures TextEdit settings</string>
-			<key>PayloadDisplayName</key>
-			<string>TextEdit</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.TextEdit.D0034E0C-2662-4AC9-A97F-5CED0F8C6B92</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.TextEdit</string>
-			<key>PayloadUUID</key>
-			<string>D0034E0C-2662-4AC9-A97F-5CED0F8C6B92</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>RichText</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>PayloadDescription</key>
-			<string>macOS Time Synchronization Daemon settings</string>
-			<key>PayloadDisplayName</key>
-			<string>macOS Time Synchronization Daemon</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.timed.011C6CA1-1F5F-49A6-B7F6-B37DA26AD05A</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.timed</string>
-			<key>PayloadUUID</key>
-			<string>011C6CA1-1F5F-49A6-B7F6-B37DA26AD05A</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>TMAutomaticTimeOnlyEnabled</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>PayloadDescription</key>
-			<string>Use this section to define restrictions settings</string>
-			<key>PayloadDisplayName</key>
-			<string>Restrictions</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.applicationaccess.06F379A3-251D-4AC5-80D2-FD145C6CD6B6</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.applicationaccess</string>
-			<key>PayloadUUID</key>
-			<string>06F379A3-251D-4AC5-80D2-FD145C6CD6B6</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>allowApplePersonalizedAdvertising</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>PayloadDescription</key>
-			<string>Configures iTunes configuration preferences</string>
-			<key>PayloadDisplayName</key>
-			<string>iTunes</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.iTunes.A2888CB3-4821-4739-95D8-C7CBB983517B</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.iTunes</string>
-			<key>PayloadUUID</key>
-			<string>A2888CB3-4821-4739-95D8-C7CBB983517B</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>license-agreements</key>
-			<dict>
-				<key>EA1510</key>
-				<true/>
-			</dict>
 		</dict>
 		<dict>
 			<key>AutomaticCheckEnabled</key>
@@ -151,46 +92,6 @@
 		</dict>
 		<dict>
 			<key>PayloadDescription</key>
-			<string>Configures Safari Developer preferences</string>
-			<key>PayloadDisplayName</key>
-			<string>Safari Developer</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.Safari.SandboxBroker.B021B3D3-F99A-4CC6-AC6E-FE17C4D70C51</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.Safari.SandboxBroker</string>
-			<key>PayloadUUID</key>
-			<string>B021B3D3-F99A-4CC6-AC6E-FE17C4D70C51</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>ShowDevelopMenu</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Enable</key>
-			<string>On</string>
-			<key>PayloadDescription</key>
-			<string>Configures FileVault 2 settings</string>
-			<key>PayloadDisplayName</key>
-			<string>FDE FileVault</string>
-			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.MCX.FileVault2.B284F1A2-65A2-42F2-A218-A962932789D0</string>
-			<key>PayloadOrganization</key>
-			<string></string>
-			<key>PayloadType</key>
-			<string>com.apple.MCX.FileVault2</string>
-			<key>PayloadUUID</key>
-			<string>B284F1A2-65A2-42F2-A218-A962932789D0</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>ShowRecoveryKey</key>
-			<true/>
-			<key>UseRecoveryKey</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>PayloadDescription</key>
 			<string>Use this section to manage the Dock.</string>
 			<key>PayloadDisplayName</key>
 			<string>Dock</string>
@@ -208,6 +109,63 @@
 			<true/>
 			<key>show-recents</key>
 			<false/>
+		</dict>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Configures Safari Developer preferences</string>
+			<key>PayloadDisplayName</key>
+			<string>Safari Developer</string>
+			<key>PayloadIdentifier</key>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.Safari.SandboxBroker.B021B3D3-F99A-4CC6-AC6E-FE17C4D70C51</string>
+			<key>PayloadOrganization</key>
+			<string></string>
+			<key>PayloadType</key>
+			<string>com.apple.Safari.SandboxBroker</string>
+			<key>PayloadUUID</key>
+			<string>B021B3D3-F99A-4CC6-AC6E-FE17C4D70C51</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ShowDevelopMenu</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Configures TextEdit settings</string>
+			<key>PayloadDisplayName</key>
+			<string>TextEdit</string>
+			<key>PayloadIdentifier</key>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.TextEdit.D0034E0C-2662-4AC9-A97F-5CED0F8C6B92</string>
+			<key>PayloadOrganization</key>
+			<string></string>
+			<key>PayloadType</key>
+			<string>com.apple.TextEdit</string>
+			<key>PayloadUUID</key>
+			<string>D0034E0C-2662-4AC9-A97F-5CED0F8C6B92</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>RichText</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Configures iTunes configuration preferences</string>
+			<key>PayloadDisplayName</key>
+			<string>iTunes</string>
+			<key>PayloadIdentifier</key>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.iTunes.A2888CB3-4821-4739-95D8-C7CBB983517B</string>
+			<key>PayloadOrganization</key>
+			<string></string>
+			<key>PayloadType</key>
+			<string>com.apple.iTunes</string>
+			<key>PayloadUUID</key>
+			<string>A2888CB3-4821-4739-95D8-C7CBB983517B</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>license-agreements</key>
+			<dict>
+				<key>EA1510</key>
+				<true/>
+			</dict>
 		</dict>
 		<dict>
 			<key>PayloadDescription</key>
@@ -231,27 +189,47 @@
 		</dict>
 		<dict>
 			<key>PayloadDescription</key>
-			<string>Configures Google Chrome settings</string>
+			<string>macOS Time Synchronization Daemon settings</string>
 			<key>PayloadDisplayName</key>
-			<string>Google Chrome</string>
+			<string>macOS Time Synchronization Daemon</string>
 			<key>PayloadIdentifier</key>
-			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.google.Chrome.D6D71539-3298-47E6-8FCE-B6A7CB24CFD4</string>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.timed.011C6CA1-1F5F-49A6-B7F6-B37DA26AD05A</string>
 			<key>PayloadOrganization</key>
 			<string></string>
 			<key>PayloadType</key>
-			<string>com.google.Chrome</string>
+			<string>com.apple.timed</string>
 			<key>PayloadUUID</key>
-			<string>D6D71539-3298-47E6-8FCE-B6A7CB24CFD4</string>
+			<string>011C6CA1-1F5F-49A6-B7F6-B37DA26AD05A</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
-			<key>PrivacySandboxAdMeasurementEnabled</key>
-			<false/>
-			<key>PrivacySandboxAdTopicsEnabled</key>
-			<false/>
-			<key>PrivacySandboxPromptEnabled</key>
-			<false/>
-			<key>PrivacySandboxSiteEnabledAdsEnabled</key>
-			<false/>
+			<key>TMAutomaticTimeOnlyEnabled</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>DefaultBrowserPromptingState2</key>
+			<integer>1</integer>
+			<key>DefaultBrowserPromptingState3</key>
+			<integer>2</integer>
+			<key>DidShowWhatsNewInSafari</key>
+			<true/>
+			<key>DownloadsClearingPolicy</key>
+			<integer>0</integer>
+			<key>ExtensionsEnabled</key>
+			<true/>
+			<key>PayloadDescription</key>
+			<string>Configures Safari configuration preferences</string>
+			<key>PayloadDisplayName</key>
+			<string>Safari</string>
+			<key>PayloadIdentifier</key>
+			<string>com.willyu.ProfileCreator.557C7136-F314-4B89-8F47-D7788203A8B2.com.apple.Safari.8B626DF2-8982-4596-B8AE-36E9699AE6C9</string>
+			<key>PayloadOrganization</key>
+			<string></string>
+			<key>PayloadType</key>
+			<string>com.apple.Safari</string>
+			<key>PayloadUUID</key>
+			<string>8B626DF2-8982-4596-B8AE-36E9699AE6C9</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
