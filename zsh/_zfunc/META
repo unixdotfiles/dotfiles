@@ -1,3 +1,4 @@
 _conda: https://raw.githubusercontent.com/conda-incubator/conda-zsh-completion/master/_conda
-_hugo: hugo completion zsh 
+_hugo: hugo completion zsh
 _gt: gt completion
+_op: op completion zsh
