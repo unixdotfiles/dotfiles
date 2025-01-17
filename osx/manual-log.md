@@ -8,6 +8,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 - [Audacity](https://audacityteam.org/)
 - [Background Music](https://github.com/kyleneideck/BackgroundMusic)
+- [Betterdisplay](https://github.com/waydabber/BetterDisplay)
 - [Calibre](https://calibre-ebook.com/)
 - [Clipy](https://github.com/Clipy/Clipy)
 - [Discord](https://discord.com/)
