@@ -9,7 +9,8 @@ _CCACHE_PATH=/opt/local/libexec/ccache:/usr/local/libexec/ccache
 _HASKELL_PATH=/Users/eax/.local/bin
 _MACPORTS_PATH=/opt/local/sbin:/opt/local/bin
 _NPM_PATH=~/.local/lib/npm/bin
-_GEM_PATH=~/.gem/ruby/2.6.0/bin:~/.gem/ruby/3.2.0/bin:~/.rvm/bin
+# TODO: figure out how to handle updating this
+_GEM_PATH=~/.gem/ruby/3.4.0/bin:~/.rvm/bin
 _USER_PIP_PATH="$_PRIMARY_PIP_PATH"
 _PEAR_PATH=/opt/local/bin/pear
 _CARGO_PATH=~/.cargo/bin
@@ -19,9 +20,14 @@ _PERL_PATH=/opt/local/libexec/perl5.28/sitebin
 _LUA_PATH=~/.luarocks/bin
 _KITTEN_PATH=~/.local/kitty.app/bin
 _GO_PATH=/usr/local/go/bin:$HOME/go/bin
-_BREW_PATH=/opt/homebrew/bin
+_BREW_PATH=/opt/homebrew/bin:/opt/homebrew/sbin
+_BREW_RUBY_PATH=/opt/homebrew/opt/ruby/bin
 _PYENV_PATH="$HOME/.pyenv/bin"
 _ASDF_PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
+
+#if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+#  export PATH=`gem environment gemdir`/bin:$PATH
+#fi
 
 for whichvscode in '/Applications/Visual Studio Code/Contents/Resources/app/bin' '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin'
 do
@@ -34,13 +40,15 @@ done
 # I need a better way to keep this up to date
 _TEX_PATH=/usr/local/texlive/2024/bin/universal-darwin
 
-export PATH="$_GO_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_USER_PIP_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_BREW_PATH:$_LOCAL_PATH:$_ASDF_PATH"
+# TODO fully decouple zsh path from bash path, moslty to use array syntax
+export PATH="$_GO_PATH:$_BREW_RUBY_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_USER_PIP_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_BREW_PATH:$_LOCAL_PATH:$_ASDF_PATH"
 
-# This changes PATH amongst other things. It should be included above ideally.
-if [ -f /opt/homebrew/bin/brew ]
-then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+fpath[1,0]="/opt/homebrew/share/zsh/site-functions";
+[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 export CCACHE_DIR=/srv/obj/ccache
 export FORTUNE_PATH="/usr/share/games/fortune:/usr/local/share/games/fortune:$HOME/.fortune";
@@ -52,7 +60,7 @@ then
     # if no JVM is installed then this will error
     if /usr/libexec/java_home -V >/dev/null 2>&1
     then
-      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-17})
+      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-21})
     fi
   fi
 fi
@@ -96,13 +104,6 @@ fi
 if [ -n "$__shellrc_bgdaemons" ] && [ -z "$SSH_AUTH_SOCK" ] && ! __isroot
 then
     eval "$(ssh-agent)" >/dev/null
-fi
-
-if [ "$_uname_s" = "FreeBSD" ]
-then
-    export GOOS=freebsd
-    export GOARCH=amd64
-    export GOROOT=/usr/local/go
 fi
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
