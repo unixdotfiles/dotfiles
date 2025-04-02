@@ -60,7 +60,7 @@ then
     # if no JVM is installed then this will error
     if /usr/libexec/java_home -V >/dev/null 2>&1
     then
-      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-21})
+      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-17})
     fi
   fi
 fi
