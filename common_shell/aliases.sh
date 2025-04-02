@@ -132,3 +132,7 @@ dataurl() {
 	fi
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
+
+fastlane() {
+  bundle exec -- fastlane "$@"
+}
