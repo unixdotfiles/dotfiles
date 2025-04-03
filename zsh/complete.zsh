@@ -143,3 +143,6 @@ if __exists atuin
 then
   eval "$(atuin gen-completions -s zsh)"
 fi
+
+# fastlane enable_auto_complete
+msource ~/.fastlane/completions/completion.sh
