@@ -8,6 +8,7 @@ fastlane
 ffmpeg
 figlet
 git
+graphviz
 go
 hex-fiend
 ipython
