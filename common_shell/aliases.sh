@@ -89,7 +89,7 @@ fi
 
 redefine python="python -R"
 __py3opt="-bbttq"
-for wpython in python3 python3.10 python3.11 python3.12 python3.13 python3.14 python3.15
+for wpython in python3 python3.{13..30}
 do
     _pythonver="${wpython#python}"
     _pythonmajorver="${_pythonver%%[^0-9]*}"
