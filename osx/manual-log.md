@@ -53,7 +53,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [TeXStudio](https://www.texstudio.org/)
 - [MacTex](https://tug.org/mactex/mactex-download.html)
 
-
 ## Proprietary Gaming Software
 - [Cityographer](https://worldographer.com)
 - [FoundryVTT](https://foundryvtt.com/)
@@ -199,7 +198,8 @@ cd global
     ```
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
-1. Install `atuin` and login and sync
+1. `(cd ~/.conf/osx && brew bundle)`
+1. Log into `atuin` and sync
 1. Install software from list above
 1. Enable Night Shift
 1. Install config profile (`General Settings.mobileconfig`)
