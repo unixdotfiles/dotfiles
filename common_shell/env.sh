@@ -24,6 +24,7 @@ _BREW_PATH=/opt/homebrew/bin:/opt/homebrew/sbin
 _BREW_RUBY_PATH=/opt/homebrew/opt/ruby/bin
 _PYENV_PATH="$HOME/.pyenv/bin"
 _ASDF_PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
+_OPENJDK_PATH="/opt/homebrew/opt/openjdk@21/bin"
 
 #if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
 #  export PATH=`gem environment gemdir`/bin:$PATH
@@ -41,7 +42,7 @@ done
 _TEX_PATH=/usr/local/texlive/2024/bin/universal-darwin
 
 # TODO fully decouple zsh path from bash path, moslty to use array syntax
-export PATH="$_GO_PATH:$_BREW_RUBY_PATH:$_BREW_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_USER_PIP_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_LOCAL_PATH:$_ASDF_PATH"
+export PATH="$_GO_PATH:$_BREW_RUBY_PATH:$_BREW_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_USER_PIP_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_OPENJDK_PATH:$_LOCAL_PATH:$_ASDF_PATH"
 
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
@@ -60,7 +61,7 @@ then
     # if no JVM is installed then this will error
     if /usr/libexec/java_home -V >/dev/null 2>&1
     then
-      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-17})
+      export JAVA_HOME=$(/usr/libexec/java_home -v ${__shellrc_java_ver:-21})
     fi
   fi
 fi
