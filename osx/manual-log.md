@@ -200,6 +200,7 @@ cd global
     ```
 1. `(cd ~/.conf/osx && brew bundle)`
 1. Log into `atuin` and sync
+1. `asciinema auth`
 1. Install software from list above
 1. Enable Night Shift
 1. Install config profile (`General Settings.mobileconfig`)
