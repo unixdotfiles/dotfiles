@@ -31,6 +31,16 @@
 #     plugins=(… conda-zsh-completion)
 #     autoload -U compinit && compinit
 #
+# If you're using zim(Zsh IMproved), you must add it before `zmodule completion` to `.zimrc`,
+# completion zmodule will call compinit for you, `.zimrc` should like this:
+#
+# …
+# zmodule conda-incubator/conda-zsh-completion
+# zmodule completion
+# …
+#
+# and then run `zimfw install -v && exec zsh`
+#
 # If you use oh-my-zsh, you might have to move the "autoload" line to after you sourced
 # oh-my-zsh.sh.
 #
@@ -38,6 +48,12 @@
 # '.zshrc':
 #
 #     zstyle ':completion::complete:*' use-cache 1
+#
+# Note: this is IMPORTANT to activate! Otherwise the completion will appear to
+# hang when attempting to complete package names when using `conda install` as
+# the completion will attempt to fetch the list of ALL available packages from
+# anaconda.org. This may take 10s of seconds and the completion looks like it
+# 'hangs' while doing so.
 #
 # To display subcommand completion in groups, please add the following to your
 # '.zshrc':
@@ -77,6 +93,11 @@
 #
 # CHANGELOG
 # ---------
+#
+# * v0.12
+#
+#    * update conda search completion (#62 esc)
+#    * Conda info: removed arg package (#61 Hanspe-3019)
 #
 # * v0.11
 #
@@ -531,7 +552,6 @@ case $state in
                       '(-l --license)'{-l,--license}'[display information about local conda licenses list]' \
                       '(-s --system)'{-s,--system}'[list environment variables]' \
                       '--root[display root environment path]' \
-                      '*:packages:__describe_conda_package_available' \
         ;;
     (help)
         _arguments -C $help_opts \
@@ -558,6 +578,7 @@ case $state in
                       '(-v --verbose)'{-v,--verbose}'[Show available packages as blocks of data]' \
                       '--platform[Search the given platform.]' \
                       '--spec[Treat regex argument as a package specification]' \
+                      '(-i --info)'{-v,--verbose}'[Provide detailed information about each package.]' \
                       '*:regex:' \
         ;;
     (create)
