@@ -5,7 +5,7 @@
 
 --xattrs
 
---console-title --no-call-home
+--console-title
 
 --write-description
 --write-info-json
