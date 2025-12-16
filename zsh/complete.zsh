@@ -7,9 +7,7 @@ zmodload zsh/complist
 zmodload zsh/complete
 
 # -C avoids about a 3x penalty due to readdir calls
-# compinit -C
-# I can't figure out why -C is broken right now but its really annoying
-compinit
+compinit -C
 
 # Enable Bash completion
 autoload -Uz bashcompinit && bashcompinit
