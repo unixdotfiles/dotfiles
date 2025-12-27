@@ -9,6 +9,6 @@ c.TerminalInteractiveShell.term_title = True
 c.TerminalInteractiveShell.confirm_exit = False
 c.HistoryManager.db_log_output = True
 c.StoreMagics.autorestore = True
-c.InteractiveShell.colors = 'LightBG'
+c.InteractiveShell.colors = 'lightbg'
 #c.IPCompleter.greedy = True
 #c.IPCompleter.merge_completions = True
