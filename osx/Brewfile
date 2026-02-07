@@ -1,3 +1,4 @@
+tap "adoptopenjdk/openjdk"
 brew "atuin", restart_service: :changed
 brew "colordiff"
 brew "fastlane"
@@ -8,6 +9,7 @@ brew "gradle-completion"
 brew "markdownlint-cli2"
 brew "mas"
 brew "neovim"
+brew "openjdk@21"
 brew "pre-commit"
 brew "ripgrep"
 brew "vale"
@@ -28,4 +30,6 @@ cask "tailscale-app"
 cask "transmission"
 cask "whatsapp"
 cask "zotero@beta"
+mas "Apple Configurator", id: 1037126344
+mas "iMazing Profile Editor", id: 1487860882
 go "github.com/gohugoio/hugo"
