@@ -1,4 +1,5 @@
 tap "adoptopenjdk/openjdk"
+brew "asciinema"
 brew "atuin", restart_service: :changed
 brew "colordiff"
 brew "fastlane"
@@ -17,7 +18,9 @@ brew "yt-dlp"
 cask "1password-cli"
 cask "alt-tab"
 cask "audio-hijack"
+cask "discord"
 cask "dropbox"
+cask "insta360-link-controller"
 cask "itsycal"
 cask "jetbrains-toolbox"
 cask "jordanbaird-ice"
@@ -30,6 +33,7 @@ cask "soundsource"
 cask "tailscale-app"
 cask "transmission"
 cask "whatsapp"
+cask "zoom"
 cask "zotero@beta"
 mas "Apple Configurator", id: 1037126344
 mas "iMazing Profile Editor", id: 1487860882
