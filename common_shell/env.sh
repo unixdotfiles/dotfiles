@@ -66,10 +66,10 @@ then
   fi
 fi
 
-__exists chrome && export BROWSER="$(which chrome)"
-__exists google-chrome && export BROWSER="$(which google-chrome)"
-__exists firefox && export BROWSER="$(which firefox)"
-[ -e /Applications/Firefox.app/Contents/MacOS/firefox ] && export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
+# __exists chrome && export BROWSER="$(which chrome)"
+# __exists google-chrome && export BROWSER="$(which google-chrome)"
+# __exists firefox && export BROWSER="$(which firefox)"
+# [ -e /Applications/Firefox.app/Contents/MacOS/firefox ] && export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 __exists urxvtcd && export TERMINAL=urxvtcd
 
 [ -d /opt/local/share/cowsay/cows ] && export COWPATH="/opt/local/share/cowsay/cows"
