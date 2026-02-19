@@ -36,6 +36,7 @@ msource /etc/environment
 . $_shellpath/ps1.$__INTSHELL
 msource  "$HOME/miniconda3/etc/profile.d/conda.sh"
 msource "$HOME/.sdkman/bin/sdkman-init.sh"
+msource /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 if [ -n "$ITERM_SESSION_ID" ]
 then
   . $_confpath/extra/iterm2_shell_integration.$__INTSHELL
