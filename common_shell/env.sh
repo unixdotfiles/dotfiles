@@ -39,7 +39,7 @@ do
 done
 
 # I need a better way to keep this up to date
-_TEX_PATH=/usr/local/texlive/2024/bin/universal-darwin
+_TEX_PATH=/usr/local/texlive/2026/bin/universal-darwin
 
 # TODO fully decouple zsh path from bash path, moslty to use array syntax
 export PATH="$_GO_PATH:$_BREW_RUBY_PATH:$_BREW_PATH:$PATH:$HOME/bin:$_CCACHE_PATH:$_CARGO_PATH:$_HASKELL_PATH:$_NPM_PATH:$_GEM_PATH:$_MACPORTS_PATH:$_PEAR_PATH:$_MYSQL_PATH:$_PERL_PATH:$_ANDROID_PATH:$_LUA_PATH:$_TEX_PATH:$_USER_PIP_PATH:$_VSCODE_PATH:$_PYENV_PATH:$_KITTEN_PATH:$_OPENJDK_PATH:$_LOCAL_PATH:$_ASDF_PATH"
