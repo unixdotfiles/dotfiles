@@ -140,3 +140,5 @@
 	rebase = true
 [include]
 	path = ~/.gitconfig.local
+[url "git@salsa.debian.org:"]
+	pushInsteadOf = https://salsa.debian.org/
