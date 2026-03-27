@@ -7,7 +7,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer)
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 - [Audacity](https://audacityteam.org/)
-- [Background Music](https://github.com/kyleneideck/BackgroundMusic)
 - [Betterdisplay](https://github.com/waydabber/BetterDisplay)
 - [Calibre](https://calibre-ebook.com/)
 - [Clipy](https://github.com/Clipy/Clipy)
@@ -15,10 +14,8 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Dolphin](https://dolphin-emu.org/)
 - [Dropbox](https://dropbox.com/)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-- Focusrite Control
 - [Gog galaxy](https://www.gog.com/)
 - [Hot](https://xs-labs.com/en/apps/hot/overview/)
-- [ICue](https://www.corsair.com/us/en/icue-mac)
 - [Iterm](https://www.iterm2.com/)
 - [Itsycal](https://www.mowglii.com/itsycal/)
 - [Kitty](https://github.com/kovidgoyal/kitty/releases)
@@ -37,11 +34,11 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Steam](https://store.steampowered.com/)
 - [StreamDeck](https://www.elgato.com/en/downloads)
 - [StreamDeck Google Meet Plugin](https://github.com/ChrisRegado/streamdeck-googlemeet)
+- [SoundSource](https://rogueamoeba.com/soundsource/)
 - [TailScale](https://tailscale.com/)
 - [Textual](https://www.codeux.com/textual/)
 - [Transmission](https://transmissionbt.com/)
 - [Transmission Remote GUI](https://github.com/transmission-remote-gui/transgui)
-- [Unicode Checker](https://earthlingsoft.net/UnicodeChecker/)
 - [Virtualbox](https://www.virtualbox.org/)
 - [VLC](https://www.videolan.org/vlc/index.html)
 - [Wireshark](https://www.wireshark.org/)
@@ -95,8 +92,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - Android File Transfer
 - Authy Desktop
 - DriveThruRPG
-- lghub
-- Opera Developer
 - Wineskin Winery
 - XMind
 
