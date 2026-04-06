@@ -1,5 +1,4 @@
 tap "adoptopenjdk/openjdk"
-brew "xz"
 brew "asciinema"
 brew "atuin", restart_service: :changed
 brew "automake"
@@ -7,6 +6,7 @@ brew "chruby"
 brew "colordiff"
 brew "gmp"
 brew "coreutils"
+brew "xz"
 brew "libyaml"
 brew "openssl@3"
 brew "fastlane"
