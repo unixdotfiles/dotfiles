@@ -2,10 +2,8 @@ files="
 /opt/local/etc/macports/macports.conf
 /opt/local/etc/macports/sources.conf
 /opt/local/etc/macports/variants.conf
-/etc/hosts
 /etc/exports
 /etc/launchd.conf
 /etc/sysctl.conf
-/etc/apache2/httpd.conf
 /etc/pam.d/sudo
 "
