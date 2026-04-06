@@ -4,3 +4,4 @@ _gt: gt completion
 _op: op completion zsh
 _zsh: rustup completions zsh
 _cargo: rustup completions zsh cargo
+_gh: gh completion -s zsh
