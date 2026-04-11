@@ -35,6 +35,7 @@ cask "alt-tab"
 cask "audacity"
 cask "audio-hijack"
 cask "betterdisplay"
+cask "calibre"
 cask "discord"
 cask "dolphin"
 cask "insta360-link-controller"
@@ -62,6 +63,4 @@ cask "windows-app"
 cask "zoom"
 cask "zotero@beta"
 mas "1Password for Safari", id: 1569813296
-mas "Apple Configurator", id: 1037126344
-mas "iMazing Profile Editor", id: 1487860882
 go "github.com/gohugoio/hugo"
