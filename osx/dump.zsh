@@ -1,2 +1,2 @@
 #!/bin/sh
-brew bundle dump --all --force
+brew bundle dump --force
