@@ -15,10 +15,10 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Dropbox](https://dropbox.com/)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - [Gog galaxy](https://www.gog.com/)
-- [Hot](https://xs-labs.com/en/apps/hot/overview/)
 - [Iterm](https://www.iterm2.com/)
 - [Itsycal](https://www.mowglii.com/itsycal/)
 - [Kitty](https://github.com/kovidgoyal/kitty/releases)
+- [Jamovi](https://www.jamovi.org/)
 - [Jetbrains Toolbox](https://www.jetbrains.com/toolbox/app/)
 - [Keycastr](https://github.com/keycastr/keycastr/releases)
 - [Macports](https://www.macports.org/)
@@ -41,6 +41,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Transmission Remote GUI](https://github.com/transmission-remote-gui/transgui)
 - [Virtualbox](https://www.virtualbox.org/)
 - [VLC](https://www.videolan.org/vlc/index.html)
+- [UnicodeChecker](https://earthlingsoft.net/UnicodeChecker/)
 - [Wireshark](https://www.wireshark.org/)
 - [Yourkit](https://www.yourkit.com/)
 - [Zoom](https://zoom.us/)
@@ -56,9 +57,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Wonderdraft](https://www.wonderdraft.net/)
 - [Worldographer](https://worldographer.com)
 - [Tiled](https://mapeditor.org)
-
-## Useful Software
-- [Jamovi](https://www.jamovi.org/)
 
 ## Unused Software
 - [Battle.net](https://www.blizzard.com/en-us/apps/battle.net/desktop)
@@ -90,7 +88,6 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 ## Misc Software With Limited Utility
 
 - Android File Transfer
-- Authy Desktop
 - DriveThruRPG
 - Wineskin Winery
 - XMind
@@ -115,28 +112,6 @@ Enable the following menulets:
 - Sound > Play user interface sound settings - off
 - clear most things from the dock
 - change default browser to firefox
-
-## User Profile
-Set `/opt/homebrew/bin/nvim` to be my login shell.
-
-# Actions
-
-- Log into 1password
-- Log into Dropbox
-- Log into Steam
-- Log into GOG
-
-## Scripts
-```
-cd .conf
-./install.sh
-cd osx
-./boot.sh
-./osx.sh
-cd global
-./restore.sh
-```
-
 
 # New Mac In Order
 
