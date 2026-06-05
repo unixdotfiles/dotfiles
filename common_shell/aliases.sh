@@ -22,6 +22,9 @@ then
   alias localip="ipconfig getifaddr en0"
   alias showcodesign="codesign -dvvv -r - --entitlements - --extract-certificates --file-list - --strict=all --deep"
   __osx_define_alias ios /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+  jpdf() {
+    '/System/Library/Automator/Combine PDF Pages.action/Contents/MacOS/join' "$@"
+  }
 fi
 
 __exists vim && redefine vi="vim"
