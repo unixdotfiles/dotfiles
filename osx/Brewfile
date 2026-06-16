@@ -1,70 +1,136 @@
-tap "adoptopenjdk/openjdk"
+tap "adoptopenjdk/openjdk", trusted: true
+# Record and share terminal sessions
 brew "asciinema"
+# Improved shell history for zsh, bash, fish and nushell
 brew "atuin", restart_service: :changed
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Ruby environment tool
 brew "chruby"
+# Color-highlighted diff(1) output
 brew "colordiff"
+# GNU multiple precision arithmetic library
 brew "gmp"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# YAML Parser
 brew "libyaml"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Easiest way to build and release mobile apps
 brew "fastlane"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# GNU version of the tar archiving utility
 brew "gnu-tar"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Bash and Zsh completion for Gradle
 brew "gradle-completion"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
+# Portable Foreign Function Interface library
 brew "libffi"
+# Fast, flexible, config-based cli for linting Markdown/CommonMark files
 brew "markdownlint-cli2"
+# Mac App Store command-line interface
 brew "mas"
+# 'traceroute' and 'ping' in a single tool
 brew "mtr"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
 brew "nmap"
+# Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
 brew "ruby-install"
+# Wrapper around libsass that helps to create command-line apps
 brew "sassc"
+# Free software distribution for the TeX typesetting system
 brew "texlive"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Syntax-aware linter for prose
 brew "vale"
+# Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# Command-line interface for 1Password
 cask "1password-cli"
+# Sends audio from computer to outputs
 cask "airfoil"
+# Multi-track audio editor and recorder
 cask "audacity"
+# Records audio from any application
 cask "audio-hijack"
+# Display management tool
 cask "betterdisplay"
+# E-books management software
 cask "calibre"
+# Voice and text chat software
 cask "discord"
+# Emulator to play GameCube and Wii games
 cask "dolphin"
+# Genealogy software
 cask "gramps"
+# Controller for Insta360 webcams
 cask "insta360-link-controller"
+# Menu bar calendar
 cask "itsycal"
+# Statistical software
 cask "jamovi"
+# JetBrains tools manager
 cask "jetbrains-toolbox"
+# Cable-free audio router
 cask "loopback"
+# Full TeX Live distribution with GUI applications
 cask "mactex"
+# Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-cask "oscar"
+# Desktop client for the Pandora web radio service
 cask "pandora"
+# Tool to reverse the direction of scrolling
 cask "scroll-reverser"
+# Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
 cask "slack"
+# Sound and audio controller
 cask "soundsource"
+# Mesh VPN based on WireGuard
 cask "tailscale-app"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@25"
+# Menu bar manager
 cask "thaw"
+# Customizable email client
 cask "thunderbird"
+# Open-source BitTorrent client
 cask "transmission"
+# Multimedia player
 cask "vlc"
+# Native desktop client for WhatsApp
 cask "whatsapp"
+# Connect to Windows
 cask "windows-app"
+# Video communication and virtual meeting platform
 cask "zoom"
+# Collect, organize, cite, and share research sources
 cask "zotero@beta"
 mas "1Password for Safari", id: 1569813296
 go "github.com/gohugoio/hugo"
+npm "sass-migrator"
