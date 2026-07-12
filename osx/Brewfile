@@ -132,5 +132,6 @@ cask "zoom"
 # Collect, organize, cite, and share research sources
 cask "zotero@beta"
 mas "1Password for Safari", id: 1569813296
+mas "iMovie", id: 408981434
 go "github.com/gohugoio/hugo"
 npm "sass-migrator"
