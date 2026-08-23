@@ -9,10 +9,6 @@ brew "automake"
 brew "chruby"
 # Color-highlighted diff(1) output
 brew "colordiff"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # YAML Parser
@@ -27,16 +23,14 @@ brew "ffmpeg"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# GNU version of the tar archiving utility
-brew "gnu-tar"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Bash and Zsh completion for Gradle
-brew "gradle-completion"
-# Open-source build automation tool based on the Groovy and Kotlin DSL
-brew "gradle"
+# Interactive computing in Python
+brew "ipython"
 # Portable Foreign Function Interface library
 brew "libffi"
 # Fast, flexible, config-based cli for linting Markdown/CommonMark files
@@ -47,20 +41,14 @@ brew "mas"
 brew "mtr"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Port scanning utility for large networks
-brew "nmap"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
 brew "ruby-install"
-# Wrapper around libsass that helps to create command-line apps
-brew "sassc"
 # Free software distribution for the TeX typesetting system
 brew "texlive"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # Syntax-aware linter for prose
 brew "vale"
 # Feature-rich command-line audio/video downloader
@@ -105,18 +93,18 @@ cask "obsidian"
 cask "pandora"
 # Tool to reverse the direction of scrolling
 cask "scroll-reverser"
+# Review, edit and share dive log data
+cask "shearwater-cloud"
 # Instant messaging application focusing on security
 cask "signal"
 # Team communication and collaboration software
 cask "slack"
 # Sound and audio controller
 cask "soundsource"
+# Open source divelog program
+cask "subsurface"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@25"
-# Menu bar manager
-cask "thaw"
 # Customizable email client
 cask "thunderbird"
 # Open-source BitTorrent client
@@ -132,6 +120,7 @@ cask "zoom"
 # Collect, organize, cite, and share research sources
 cask "zotero@beta"
 mas "1Password for Safari", id: 1569813296
+mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 go "github.com/gohugoio/hugo"
 npm "sass-migrator"
