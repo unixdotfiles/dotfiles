@@ -3,18 +3,10 @@ tap "adoptopenjdk/openjdk", trusted: true
 brew "asciinema"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin", restart_service: :changed
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
 # Ruby environment tool
 brew "chruby"
 # Color-highlighted diff(1) output
 brew "colordiff"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# YAML Parser
-brew "libyaml"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Easiest way to build and release mobile apps
 brew "fastlane"
 # Play, record, convert, and stream select audio and video codecs
@@ -23,18 +15,10 @@ brew "ffmpeg"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU Privacy Guard (OpenPGP)
-brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Interactive computing in Python
 brew "ipython"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Fast, flexible, config-based cli for linting Markdown/CommonMark files
-brew "markdownlint-cli2"
 # Mac App Store command-line interface
 brew "mas"
 # 'traceroute' and 'ping' in a single tool
@@ -45,18 +29,10 @@ brew "neovim"
 brew "pre-commit"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
-brew "ruby-install"
-# Free software distribution for the TeX typesetting system
-brew "texlive"
-# Syntax-aware linter for prose
-brew "vale"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Sends audio from computer to outputs
-cask "airfoil"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Records audio from any application
@@ -79,10 +55,6 @@ cask "itsycal"
 cask "jamovi"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Cable-free audio router
-cask "loopback"
-# Full TeX Live distribution with GUI applications
-cask "mactex"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
 # Open-source software for live streaming and screen recording
@@ -123,4 +95,3 @@ mas "1Password for Safari", id: 1569813296
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 go "github.com/gohugoio/hugo"
-npm "sass-migrator"
