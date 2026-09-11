@@ -24,7 +24,8 @@ __exists() {
 # . ~/.conf/zsh/zsh-histdb/sqlite-history.zsh
 if __exists atuin
 then
-  eval "$(atuin init zsh --disable-up-arrow)"
+  # eval "$(atuin init zsh --disable-up-arrow)"
+  eval "$(atuin init zsh)"
 fi
 
 typeset -U path cdpath manpath fpath helpdir
