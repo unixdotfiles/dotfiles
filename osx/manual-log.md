@@ -16,6 +16,7 @@ It is mostly stuff I should eventually automate but have not yet had time figure
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - [Gog galaxy](https://www.gog.com/)
 - [Gramps](https://gramps-project.org)
+- [Hex Fiend](https://hexfiend.com/)
 - [Iterm](https://www.iterm2.com/)
 - [Itsycal](https://www.mowglii.com/itsycal/)
 - [Jamovi](https://www.jamovi.org/)
