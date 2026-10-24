@@ -1,8 +1,9 @@
 _atuin: atuin gen-completions --shell zsh
+_cargo: rustup completions zsh cargo
 _conda: https://raw.githubusercontent.com/conda-incubator/conda-zsh-completion/master/_conda
-_hugo: hugo completion zsh
+_flutter: flutter bash-completion
+_gh: gh completion -s zsh
 _gt: gt completion
+_hugo: hugo completion zsh
 _op: op completion zsh
 _zsh: rustup completions zsh
-_cargo: rustup completions zsh cargo
-_gh: gh completion -s zsh
