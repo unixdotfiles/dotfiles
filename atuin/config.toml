@@ -56,7 +56,7 @@ filter_mode = "host"
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
 ## leave unspecified to use same mode set in "filter_mode"
-filter_mode_shell_up_key_binding = "session"
+filter_mode_shell_up_key_binding = "host"
 
 ## which search mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "search_mode"
