@@ -6,4 +6,4 @@ _gh: gh completion -s zsh
 _gt: gt completion
 _hugo: hugo completion zsh
 _op: op completion zsh
-_zsh: rustup completions zsh
+_rustup: rustup completions zsh
