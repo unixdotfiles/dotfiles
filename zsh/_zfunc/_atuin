@@ -28,11 +28,291 @@ _atuin() {
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-command-$line[1]:"
         case $line[1] in
-            (setup)
+            (search)
+_arguments "${_arguments_options[@]}" : \
+'-c+[Filter search result by directory]:CWD:_default' \
+'--cwd=[Filter search result by directory]:CWD:_default' \
+'--exclude-cwd=[Exclude directory from results]:EXCLUDE_CWD:_default' \
+'*-e+[Filter by exit code; repeat to include any of the given codes]:EXIT:_default' \
+'*--exit=[Filter by exit code; repeat to include any of the given codes]:EXIT:_default' \
+'*--exclude-exit=[Exclude results with this exit code; repeat to exclude multiple codes]:EXCLUDE_EXIT:_default' \
+'-b+[Only include results added before this date]:BEFORE:_default' \
+'--before=[Only include results added before this date]:BEFORE:_default' \
+'--after=[Only include results after this date; see \`--before\` for how it is interpreted]:AFTER:_default' \
+'--limit=[How many entries to return at most]:LIMIT:_default' \
+'--offset=[Offset from the start of the results]:OFFSET:_default' \
+'--filter-mode=[Allow overriding filter mode over config]:FILTER_MODE:(global host session directory workspace session-preload)' \
+'--search-mode=[Allow overriding search mode over config]:SEARCH_MODE:(prefix fulltext fuzzy daemon-fuzzy)' \
+'--keymap-mode=[Notify the keymap at the shell'\''s side]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
+'--timezone=[Timezone to display command times in and to interpret \`--before\`/\`--after\` in, instead of the configured default.]::TIMEZONE:_default' \
+'--tz=[Timezone to display command times in and to interpret \`--before\`/\`--after\` in, instead of the configured default.]::TIMEZONE:_default' \
+'-f+[Available variables\: {command}, {directory}, {duration}, {user}, {host}, {time}, {exit} and {relativetime}]:FORMAT:_default' \
+'--format=[Available variables\: {command}, {directory}, {duration}, {user}, {host}, {time}, {exit} and {relativetime}]:FORMAT:_default' \
+'--inline-height=[Set the maximum number of lines Atuin'\''s interface should take up]:INLINE_HEIGHT:_default' \
+'*--author=[Filter by author. Supports \$all-user (non-agents), \$all-agent, or literal names]:AUTHOR:_default' \
+'--result-file=[File name to write the result to (hidden from help as this is meant to be used from a script)]:RESULT_FILE:_default' \
+'*--shell=[Filter by the shell that was used to run the command]:SHELL:_default' \
+'-i[Open interactive search UI]' \
+'--interactive[Open interactive search UI]' \
+'--shell-up-key-binding[Marker argument used to inform atuin that it was invoked from a shell up-key binding (hidden from help to avoid confusion)]' \
+'--human[Use human-readable formatting for time]' \
+'--cmd-only[Show only the text of the command]' \
+'--print0[Terminate the output with a null, for better multiline support]' \
+'--delete[Delete anything matching this query. Will not print out the match]' \
+'--delete-it-all[Delete EVERYTHING!]' \
+'-r[Reverse the order of results, oldest first]' \
+'--reverse[Reverse the order of results, oldest first]' \
+'--include-duplicates[Include duplicate commands in the output (non-interactive only)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query:_default' \
+&& ret=0
+;;
+(output)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__output_commands" \
+"*::: :->output" \
+&& ret=0
+
+    case $state in
+    (output)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-output-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+'--limit=[Maximum number of matches to return]:LIMIT:_default' \
+'-C+[Show only the matching lines, with this many lines of context on either side; without it, each match'\''s whole output]:CONTEXT:_default' \
+'--context=[Show only the matching lines, with this many lines of context on either side; without it, each match'\''s whole output]:CONTEXT:_default' \
+'--style=[How matches are rendered]:STYLE:((auto\:""
+plain\:""
+pretty\:""
+json\:"A single JSON array of match objects"
+ndjson\:"Newline-delimited JSON\: one match object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Words to search for; all must appear. Quote words to find them together, in that order. Use `--` before a query that starts with `-`:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__output__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-output-help-command-$line[1]:"
+        case $line[1] in
+            (search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(stats)
+_arguments "${_arguments_options[@]}" : \
+'-c+[How many top commands to list]:COUNT:_default' \
+'--count=[How many top commands to list]:COUNT:_default' \
+'-n+[The number of consecutive commands to consider]:NGRAM_SIZE:_default' \
+'--ngram-size=[The number of consecutive commands to consider]:NGRAM_SIZE:_default' \
+'--filter-mode=[Filter commands by scope \[global, host, session, directory, workspace\]]:FILTER_MODE:(global host session directory workspace session-preload)' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::period -- Compute statistics for the specified period, leave blank for statistics since the beginning:_default' \
+&& ret=0
+;;
+(sync)
+_arguments "${_arguments_options[@]}" : \
+'-f[Force re-download everything]' \
+'--force[Force re-download everything]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(login)
+_arguments "${_arguments_options[@]}" : \
+'-u+[]:USERNAME:_default' \
+'--username=[]:USERNAME:_default' \
+'-p+[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'--password=[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'-k+[The encryption key for your account. Falls back to \`ATUIN_ENCRYPTION_KEY\`, then a prompt]:KEY:_default' \
+'--key=[The encryption key for your account. Falls back to \`ATUIN_ENCRYPTION_KEY\`, then a prompt]:KEY:_default' \
+'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--from-registration[]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(logout)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
 '--help[Print help]' \
 && ret=0
+;;
+(register)
+_arguments "${_arguments_options[@]}" : \
+'-u+[]:USERNAME:_default' \
+'--username=[]:USERNAME:_default' \
+'-p+[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'--password=[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'-e+[]:EMAIL:_default' \
+'--email=[]:EMAIL:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(key)
+_arguments "${_arguments_options[@]}" : \
+'--base64[Switch to base64 output of the key]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(status)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(account)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__account_commands" \
+"*::: :->account" \
+&& ret=0
+
+    case $state in
+    (account)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-account-command-$line[1]:"
+        case $line[1] in
+            (login)
+_arguments "${_arguments_options[@]}" : \
+'-u+[]:USERNAME:_default' \
+'--username=[]:USERNAME:_default' \
+'-p+[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'--password=[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'-k+[The encryption key for your account. Falls back to \`ATUIN_ENCRYPTION_KEY\`, then a prompt]:KEY:_default' \
+'--key=[The encryption key for your account. Falls back to \`ATUIN_ENCRYPTION_KEY\`, then a prompt]:KEY:_default' \
+'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--from-registration[]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(register)
+_arguments "${_arguments_options[@]}" : \
+'-u+[]:USERNAME:_default' \
+'--username=[]:USERNAME:_default' \
+'-p+[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'--password=[Your password, or \`-\` to read it from stdin. Falls back to \`ATUIN_PASSWORD\`, then a prompt]:PASSWORD:_default' \
+'-e+[]:EMAIL:_default' \
+'--email=[]:EMAIL:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(logout)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+'-p+[]:PASSWORD:_default' \
+'--password=[]:PASSWORD:_default' \
+'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(change-password)
+_arguments "${_arguments_options[@]}" : \
+'-c+[]:CURRENT_PASSWORD:_default' \
+'--current-password=[]:CURRENT_PASSWORD:_default' \
+'-n+[]:NEW_PASSWORD:_default' \
+'--new-password=[]:NEW_PASSWORD:_default' \
+'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(link)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__account__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-account-help-command-$line[1]:"
+        case $line[1] in
+            (login)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(register)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(logout)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(delete)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(change-password)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(link)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
 ;;
 (history)
 _arguments "${_arguments_options[@]}" : \
@@ -126,8 +406,8 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (dedup)
 _arguments "${_arguments_options[@]}" : \
-'-b+[Only delete results added before this date]:BEFORE:_default' \
-'--before=[Only delete results added before this date]:BEFORE:_default' \
+'-b+[Only delete results added before this date, read in the configured timezone unless it carries an explicit offset]:BEFORE:_default' \
+'--before=[Only delete results added before this date, read in the configured timezone unless it carries an explicit offset]:BEFORE:_default' \
 '--dupkeep=[How many recent duplicates to keep]:DUPKEEP:_default' \
 '-n[List matching history lines without performing the actual deletion]' \
 '--dry-run[List matching history lines without performing the actual deletion]' \
@@ -191,55 +471,37 @@ esac
     ;;
 esac
 ;;
-(hook)
+(setup)
 _arguments "${_arguments_options[@]}" : \
+'--sync=[Where to sync\: \`cloud\`, \`off\`, or your own server'\''s address]:cloud|off|URL:_default' \
+'--yes[Set up without asking, as the flags say\: sync is off unless \`--sync\` says otherwise]' \
+'--no-shell-history[Don'\''t capture your shell history]' \
+'--no-threads[Don'\''t capture your conversations with your agents]' \
+'--no-agent-history[Don'\''t capture the commands your agents run]' \
+'--no-ctrl-r[Leave ctrl-r to your shell]' \
+'--no-up-arrow[Leave the up arrow to your shell]' \
+'--no-mcp[Don'\''t let your agents search Atuin over MCP]' \
+'--no-import[Don'\''t import the shell history and threads already on this machine]' \
+'--teams[Turn on Atuin for Teams]' \
 '-h[Print help]' \
 '--help[Print help]' \
-'::agent -- Which agent'\''s hook format to parse (e.g., "claude-code"):_default' \
-":: :_atuin__subcmd__hook_commands" \
-"*::: :->hook" \
-&& ret=0
-
-    case $state in
-    (hook)
-        words=($line[2] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-hook-command-$line[2]:"
-        case $line[2] in
-            (install)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-':agent -- Agent to install hooks for (e.g., "claude-code"):_default' \
 && ret=0
 ;;
-(help)
+(init)
 _arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__hook__subcmd__help_commands" \
-"*::: :->help" \
+'--disable-ctrl-r[Disable the binding of CTRL-R to atuin]' \
+'--disable-up-arrow[Disable the binding of the Up Arrow key to atuin]' \
+'--disable-ai[Disable the binding of ? to Atuin AI]' \
+'--bind-ai-resume[Bind CTRL-\] to atuin threads resume (zsh, bash and fish; off by default\: it replaces the shell'\''s own binding)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':shell:((zsh\:"Zsh setup"
+bash\:"Bash setup"
+fish\:"Fish setup"
+nu\:"Nu setup"
+xonsh\:"Xonsh setup"
+powershell\:"PowerShell setup"))' \
 && ret=0
-
-    case $state in
-    (help)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-hook-help-command-$line[1]:"
-        case $line[1] in
-            (install)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-        esac
-    ;;
-esac
 ;;
 (import)
 _arguments "${_arguments_options[@]}" : \
@@ -399,234 +661,11 @@ esac
     ;;
 esac
 ;;
-(stats)
-_arguments "${_arguments_options[@]}" : \
-'-c+[How many top commands to list]:COUNT:_default' \
-'--count=[How many top commands to list]:COUNT:_default' \
-'-n+[The number of consecutive commands to consider]:NGRAM_SIZE:_default' \
-'--ngram-size=[The number of consecutive commands to consider]:NGRAM_SIZE:_default' \
-'--filter-mode=[Filter commands by scope \[global, host, session, directory, workspace\]]:FILTER_MODE:(global host session directory workspace session-preload)' \
-'-h[Print help (see more with '\''--help'\'')]' \
-'--help[Print help (see more with '\''--help'\'')]' \
-'*::period -- Compute statistics for the specified period, leave blank for statistics since the beginning:_default' \
-&& ret=0
-;;
-(search)
-_arguments "${_arguments_options[@]}" : \
-'-c+[Filter search result by directory]:CWD:_default' \
-'--cwd=[Filter search result by directory]:CWD:_default' \
-'--exclude-cwd=[Exclude directory from results]:EXCLUDE_CWD:_default' \
-'-e+[Filter search result by exit code]:EXIT:_default' \
-'--exit=[Filter search result by exit code]:EXIT:_default' \
-'--exclude-exit=[Exclude results with this exit code]:EXCLUDE_EXIT:_default' \
-'-b+[Only include results added before this date]:BEFORE:_default' \
-'--before=[Only include results added before this date]:BEFORE:_default' \
-'--after=[Only include results after this date]:AFTER:_default' \
-'--limit=[How many entries to return at most]:LIMIT:_default' \
-'--offset=[Offset from the start of the results]:OFFSET:_default' \
-'--filter-mode=[Allow overriding filter mode over config]:FILTER_MODE:(global host session directory workspace session-preload)' \
-'--search-mode=[Allow overriding search mode over config]:SEARCH_MODE:(prefix fulltext fuzzy daemon-fuzzy)' \
-'--keymap-mode=[Notify the keymap at the shell'\''s side]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
-'--timezone=[Display the command time in another timezone other than the configured default.]::TIMEZONE:_default' \
-'--tz=[Display the command time in another timezone other than the configured default.]::TIMEZONE:_default' \
-'-f+[Available variables\: {command}, {directory}, {duration}, {user}, {host}, {time}, {exit} and {relativetime}]:FORMAT:_default' \
-'--format=[Available variables\: {command}, {directory}, {duration}, {user}, {host}, {time}, {exit} and {relativetime}]:FORMAT:_default' \
-'--inline-height=[Set the maximum number of lines Atuin'\''s interface should take up]:INLINE_HEIGHT:_default' \
-'*--author=[Filter by author. Supports \$all-user (non-agents), \$all-agent, or literal names]:AUTHOR:_default' \
-'--result-file=[File name to write the result to (hidden from help as this is meant to be used from a script)]:RESULT_FILE:_default' \
-'*--shell=[Filter by the shell that was used to run the command]:SHELL:_default' \
-'-i[Open interactive search UI]' \
-'--interactive[Open interactive search UI]' \
-'--shell-up-key-binding[Marker argument used to inform atuin that it was invoked from a shell up-key binding (hidden from help to avoid confusion)]' \
-'--human[Use human-readable formatting for time]' \
-'--cmd-only[Show only the text of the command]' \
-'--print0[Terminate the output with a null, for better multiline handling]' \
-'--delete[Delete anything matching this query. Will not print out the match]' \
-'--delete-it-all[Delete EVERYTHING!]' \
-'-r[Reverse the order of results, oldest first]' \
-'--reverse[Reverse the order of results, oldest first]' \
-'--include-duplicates[Include duplicate commands in the output (non-interactive only)]' \
-'-h[Print help (see more with '\''--help'\'')]' \
-'--help[Print help (see more with '\''--help'\'')]' \
-'*::query:_default' \
-&& ret=0
-;;
-(sync)
-_arguments "${_arguments_options[@]}" : \
-'-f[Force re-download everything]' \
-'--force[Force re-download everything]' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(login)
-_arguments "${_arguments_options[@]}" : \
-'-u+[]:USERNAME:_default' \
-'--username=[]:USERNAME:_default' \
-'-p+[]:PASSWORD:_default' \
-'--password=[]:PASSWORD:_default' \
-'-k+[The encryption key for your account]:KEY:_default' \
-'--key=[The encryption key for your account]:KEY:_default' \
-'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--from-registration[]' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(logout)
+(doctor)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
 '--help[Print help]' \
 && ret=0
-;;
-(register)
-_arguments "${_arguments_options[@]}" : \
-'-u+[]:USERNAME:_default' \
-'--username=[]:USERNAME:_default' \
-'-p+[]:PASSWORD:_default' \
-'--password=[]:PASSWORD:_default' \
-'-e+[]:EMAIL:_default' \
-'--email=[]:EMAIL:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(key)
-_arguments "${_arguments_options[@]}" : \
-'--base64[Switch to base64 output of the key]' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(status)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(account)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-":: :_atuin__subcmd__account_commands" \
-"*::: :->account" \
-&& ret=0
-
-    case $state in
-    (account)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-account-command-$line[1]:"
-        case $line[1] in
-            (login)
-_arguments "${_arguments_options[@]}" : \
-'-u+[]:USERNAME:_default' \
-'--username=[]:USERNAME:_default' \
-'-p+[]:PASSWORD:_default' \
-'--password=[]:PASSWORD:_default' \
-'-k+[The encryption key for your account]:KEY:_default' \
-'--key=[The encryption key for your account]:KEY:_default' \
-'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--from-registration[]' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(register)
-_arguments "${_arguments_options[@]}" : \
-'-u+[]:USERNAME:_default' \
-'--username=[]:USERNAME:_default' \
-'-p+[]:PASSWORD:_default' \
-'--password=[]:PASSWORD:_default' \
-'-e+[]:EMAIL:_default' \
-'--email=[]:EMAIL:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(logout)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-'-p+[]:PASSWORD:_default' \
-'--password=[]:PASSWORD:_default' \
-'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(change-password)
-_arguments "${_arguments_options[@]}" : \
-'-c+[]:CURRENT_PASSWORD:_default' \
-'--current-password=[]:CURRENT_PASSWORD:_default' \
-'-n+[]:NEW_PASSWORD:_default' \
-'--new-password=[]:NEW_PASSWORD:_default' \
-'-t+[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'--totp-code=[The two-factor authentication code for your account, if any]:TOTP_CODE:_default' \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(link)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__account__subcmd__help_commands" \
-"*::: :->help" \
-&& ret=0
-
-    case $state in
-    (help)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-account-help-command-$line[1]:"
-        case $line[1] in
-            (login)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(register)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(logout)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(change-password)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(link)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-        esac
-    ;;
-esac
 ;;
 (kv)
 _arguments "${_arguments_options[@]}" : \
@@ -765,6 +804,12 @@ _arguments "${_arguments_options[@]}" : \
 '::key -- The new key to use for encryption. Omit for a randomly-generated key:_default' \
 && ret=0
 ;;
+(compact)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
 (purge)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
@@ -793,7 +838,7 @@ _arguments "${_arguments_options[@]}" : \
 '-t+[The tag to push (eg, '\''history'\''). Defaults to all tags]:TAG:_default' \
 '--tag=[The tag to push (eg, '\''history'\''). Defaults to all tags]:TAG:_default' \
 '--page=[Page Size]:PAGE:_default' \
-'--force[Force push records]' \
+'--force[Force pull records]' \
 '-h[Print help (see more with '\''--help'\'')]' \
 '--help[Print help (see more with '\''--help'\'')]' \
 && ret=0
@@ -819,6 +864,10 @@ _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
 (rekey)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(compact)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -878,22 +927,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-alias-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-':name:_default' \
-':value:_default' \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-':name:_default' \
-&& ret=0
-;;
-(list)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 '--sort-by=[Sort results by field]:SORT_BY:((name\:"Sort by alias name"
 value\:"Sort by alias value"))' \
@@ -905,12 +939,6 @@ value\:"Sort by alias value"))' \
 '--reverse[Sort in reverse (descending) order]' \
 '-h[Print help (see more with '\''--help'\'')]' \
 '--help[Print help (see more with '\''--help'\'')]' \
-&& ret=0
-;;
-(clear)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
 && ret=0
 ;;
 (help)
@@ -925,19 +953,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-alias-help-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(clear)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -967,24 +983,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-var-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-'-n[]' \
-'--no-export[]' \
-'-h[Print help]' \
-'--help[Print help]' \
-':name:_default' \
-':value:_default' \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-':name:_default' \
-&& ret=0
-;;
-(list)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 '--sort-by=[Sort results by field]:SORT_BY:((name\:"Sort by variable name"
 value\:"Sort by variable value"))' \
@@ -1012,15 +1011,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-var-help-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1060,19 +1051,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-help-alias-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(clear)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1092,15 +1071,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-dotfiles-help-var-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1248,38 +1219,788 @@ esac
     ;;
 esac
 ;;
+(hook)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+'::agent -- Which agent'\''s hook format to parse (e.g., "claude-code"):_default' \
+":: :_atuin__subcmd__hook_commands" \
+"*::: :->hook" \
+&& ret=0
+
+    case $state in
+    (hook)
+        words=($line[2] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-hook-command-$line[2]:"
+        case $line[2] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':agent -- Agent to install hooks for (e.g., "claude-code"):_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__hook__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-hook-help-command-$line[1]:"
+        case $line[1] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(ai)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__ai_commands" \
+"*::: :->ai" \
+&& ret=0
+
+    case $state in
+    (ai)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-ai-command-$line[1]:"
+        case $line[1] in
+            (inline)
+_arguments "${_arguments_options[@]}" : \
+'--api-endpoint=[Custom API endpoint; defaults to reading from the \`ai.endpoint\` setting]:API_ENDPOINT:_default' \
+'--api-token=[Custom API token; defaults to reading from the \`ai.api_token\` setting]:API_TOKEN:_default' \
+'-v[Enable verbose logging]' \
+'--verbose[Enable verbose logging]' \
+'--hook[Use the hook mode]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'::command -- Current command line to complete:_default' \
+&& ret=0
+;;
 (init)
 _arguments "${_arguments_options[@]}" : \
-'--disable-ctrl-r[Disable the binding of CTRL-R to atuin]' \
-'--disable-up-arrow[Disable the binding of the Up Arrow key to atuin]' \
-'--disable-ai[Disable the binding of ? to Atuin AI]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'::_shell:_default' \
+&& ret=0
+;;
+(session)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__ai__subcmd__session_commands" \
+"*::: :->session" \
+&& ret=0
+
+    case $state in
+    (session)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-ai-session-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
 '-h[Print help (see more with '\''--help'\'')]' \
 '--help[Print help (see more with '\''--help'\'')]' \
-':shell:((zsh\:"Zsh setup"
-bash\:"Bash setup"
-fish\:"Fish setup"
-nu\:"Nu setup"
-xonsh\:"Xonsh setup"
-powershell\:"PowerShell setup"))' \
 && ret=0
 ;;
-(info)
+(show)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':thread -- Id (its last 8 digits, as `list` shows them, are enough) or harness id (a unique prefix is enough), or `latest` for the most recently active thread:_default' \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[Only search threads from this harness]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--limit=[Maximum threads to return; 0 for unbounded]:N:_default' \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Words to look for in thread titles, message text, reasoning, and tool calls; all must appear. Quote words to find them together, in that order. Use `--` before a query that starts with `-`:_default' \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[Only import threads from this harness]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[The harness the thread is from]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--session=[The thread'\''s id, as its harness names it]:SESSION:_default' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+'--in=[Continue the thread QUERY names (by id, or a unique id prefix) in another agent\: it is written out as a new session there, tool calls carried over as its own where it has a like tool (notes where they weren'\''t captured whole), and resumed. One that went on separately on several machines needs \`--branch\`]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'(--as-is)--branch=[The branch of the thread QUERY names to catch up to, to switch to with \`--switch\`, to fork from with \`--fork\`, or to continue with \`--in\`\: \`this\`, \`@<host id>\`, or the start of its head'\''s id. The newest by default; \`--in\`, and \`--switch\` with several branches to switch to, need it named]:BRANCH:_default' \
+'--filter-mode=[The filter the picker opens in (default\: global)]:FILTER_MODE:((global\:"Every thread, from every host"
+host\:"Threads recorded on this host"
+workspace\:"Threads whose working directory is inside the current git repository"
+directory\:"Threads started in the current directory"
+branch\:"Threads on the current git branch of the current repository"))' \
+'--inline-height=[Height of the inline picker; 0 for fullscreen]:INLINE_HEIGHT:_default' \
+'--keymap-mode=[Keymap mode, as passed by the shell widget]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
+'--print[Print the resume command instead of running it]' \
+'(--in)--fork[Fork the thread QUERY names (by id, or a unique id prefix)\: it is written out as a new session of the same agent, with the same history, and resumed. The original is left as it is]' \
+'(--fork --in)--as-is[Resume this machine'\''s copy of the thread QUERY names as it is, without catching it up with sync]' \
+'(--fork --in --as-is)--switch[Switch this machine'\''s copy of the thread QUERY names to another branch (the one \`--branch\` names, else the only one it can be switched to), in place, and resume it\: the history it shares with that branch is kept as it is, and the branch'\''s messages since are appended from sync. The branch it was on stays in atuin, for \`--fork\` to bring back, and the copy as it was is kept as a backup. Only when sync holds all of it and no agent here has it open]' \
+'--shell-widget[Report the result on stderr for the shell widget]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Search text, or a thread id (or unique id prefix) to resume without the picker:_default' \
+&& ret=0
+;;
+(enable)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
 '--help[Print help]' \
 && ret=0
 ;;
-(doctor)
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__ai__subcmd__session__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-ai-session-help-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(show)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+'--in=[Continue the thread QUERY names (by id, or a unique id prefix) in another agent\: it is written out as a new session there, tool calls carried over as its own where it has a like tool (notes where they weren'\''t captured whole), and resumed. One that went on separately on several machines needs \`--branch\`]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'(--as-is)--branch=[The branch of the thread QUERY names to catch up to, to switch to with \`--switch\`, to fork from with \`--fork\`, or to continue with \`--in\`\: \`this\`, \`@<host id>\`, or the start of its head'\''s id. The newest by default; \`--in\`, and \`--switch\` with several branches to switch to, need it named]:BRANCH:_default' \
+'--filter-mode=[The filter the picker opens in (default\: global)]:FILTER_MODE:((global\:"Every thread, from every host"
+host\:"Threads recorded on this host"
+workspace\:"Threads whose working directory is inside the current git repository"
+directory\:"Threads started in the current directory"
+branch\:"Threads on the current git branch of the current repository"))' \
+'--inline-height=[Height of the inline picker; 0 for fullscreen]:INLINE_HEIGHT:_default' \
+'--keymap-mode=[Keymap mode, as passed by the shell widget]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
+'--print[Print the resume command instead of running it]' \
+'(--in)--fork[Fork the thread QUERY names (by id, or a unique id prefix)\: it is written out as a new session of the same agent, with the same history, and resumed. The original is left as it is]' \
+'(--fork --in)--as-is[Resume this machine'\''s copy of the thread QUERY names as it is, without catching it up with sync]' \
+'(--fork --in --as-is)--switch[Switch this machine'\''s copy of the thread QUERY names to another branch (the one \`--branch\` names, else the only one it can be switched to), in place, and resume it\: the history it shares with that branch is kept as it is, and the branch'\''s messages since are appended from sync. The branch it was on stays in atuin, for \`--fork\` to bring back, and the copy as it was is kept as a backup. Only when sync holds all of it and no agent here has it open]' \
+'--shell-widget[Report the result on stderr for the shell widget]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Search text, or a thread id (or unique id prefix) to resume without the picker:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__ai__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-ai-help-command-$line[1]:"
+        case $line[1] in
+            (inline)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(init)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(session)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__ai__subcmd__help__subcmd__session_commands" \
+"*::: :->session" \
+&& ret=0
+
+    case $state in
+    (session)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-ai-help-session-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(show)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(threads)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__threads_commands" \
+"*::: :->threads" \
+&& ret=0
+
+    case $state in
+    (threads)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-threads-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(show)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':thread -- Id (its last 8 digits, as `list` shows them, are enough) or harness id (a unique prefix is enough), or `latest` for the most recently active thread:_default' \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[Only search threads from this harness]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--limit=[Maximum threads to return; 0 for unbounded]:N:_default' \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Words to look for in thread titles, message text, reasoning, and tool calls; all must appear. Quote words to find them together, in that order. Use `--` before a query that starts with `-`:_default' \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[Only import threads from this harness]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--style=[How output is rendered]:STYLE:((auto\:"Pretty when writing to a terminal, plain otherwise"
+plain\:""
+pretty\:""
+json\:"A single JSON document"
+ndjson\:"Newline-delimited JSON\: one object per line"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+'--harness=[The harness the thread is from]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'--session=[The thread'\''s id, as its harness names it]:SESSION:_default' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+'--in=[Continue the thread QUERY names (by id, or a unique id prefix) in another agent\: it is written out as a new session there, tool calls carried over as its own where it has a like tool (notes where they weren'\''t captured whole), and resumed. One that went on separately on several machines needs \`--branch\`]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'(--as-is)--branch=[The branch of the thread QUERY names to catch up to, to switch to with \`--switch\`, to fork from with \`--fork\`, or to continue with \`--in\`\: \`this\`, \`@<host id>\`, or the start of its head'\''s id. The newest by default; \`--in\`, and \`--switch\` with several branches to switch to, need it named]:BRANCH:_default' \
+'--filter-mode=[The filter the picker opens in (default\: global)]:FILTER_MODE:((global\:"Every thread, from every host"
+host\:"Threads recorded on this host"
+workspace\:"Threads whose working directory is inside the current git repository"
+directory\:"Threads started in the current directory"
+branch\:"Threads on the current git branch of the current repository"))' \
+'--inline-height=[Height of the inline picker; 0 for fullscreen]:INLINE_HEIGHT:_default' \
+'--keymap-mode=[Keymap mode, as passed by the shell widget]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
+'--print[Print the resume command instead of running it]' \
+'(--in)--fork[Fork the thread QUERY names (by id, or a unique id prefix)\: it is written out as a new session of the same agent, with the same history, and resumed. The original is left as it is]' \
+'(--fork --in)--as-is[Resume this machine'\''s copy of the thread QUERY names as it is, without catching it up with sync]' \
+'(--fork --in --as-is)--switch[Switch this machine'\''s copy of the thread QUERY names to another branch (the one \`--branch\` names, else the only one it can be switched to), in place, and resume it\: the history it shares with that branch is kept as it is, and the branch'\''s messages since are appended from sync. The branch it was on stays in atuin, for \`--fork\` to bring back, and the copy as it was is kept as a backup. Only when sync holds all of it and no agent here has it open]' \
+'--shell-widget[Report the result on stderr for the shell widget]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Search text, or a thread id (or unique id prefix) to resume without the picker:_default' \
+&& ret=0
+;;
+(enable)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
 '--help[Print help]' \
 && ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__threads__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-threads-help-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(show)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+'--in=[Continue the thread QUERY names (by id, or a unique id prefix) in another agent\: it is written out as a new session there, tool calls carried over as its own where it has a like tool (notes where they weren'\''t captured whole), and resumed. One that went on separately on several machines needs \`--branch\`]:HARNESS:(claude-code codex copilot grok hermes kiro opencode pi omp amp)' \
+'(--as-is)--branch=[The branch of the thread QUERY names to catch up to, to switch to with \`--switch\`, to fork from with \`--fork\`, or to continue with \`--in\`\: \`this\`, \`@<host id>\`, or the start of its head'\''s id. The newest by default; \`--in\`, and \`--switch\` with several branches to switch to, need it named]:BRANCH:_default' \
+'--filter-mode=[The filter the picker opens in (default\: global)]:FILTER_MODE:((global\:"Every thread, from every host"
+host\:"Threads recorded on this host"
+workspace\:"Threads whose working directory is inside the current git repository"
+directory\:"Threads started in the current directory"
+branch\:"Threads on the current git branch of the current repository"))' \
+'--inline-height=[Height of the inline picker; 0 for fullscreen]:INLINE_HEIGHT:_default' \
+'--keymap-mode=[Keymap mode, as passed by the shell widget]:KEYMAP_MODE:(emacs vim-normal vim-insert auto)' \
+'--print[Print the resume command instead of running it]' \
+'(--in)--fork[Fork the thread QUERY names (by id, or a unique id prefix)\: it is written out as a new session of the same agent, with the same history, and resumed. The original is left as it is]' \
+'(--fork --in)--as-is[Resume this machine'\''s copy of the thread QUERY names as it is, without catching it up with sync]' \
+'(--fork --in --as-is)--switch[Switch this machine'\''s copy of the thread QUERY names to another branch (the one \`--branch\` names, else the only one it can be switched to), in place, and resume it\: the history it shares with that branch is kept as it is, and the branch'\''s messages since are appended from sync. The branch it was on stays in atuin, for \`--fork\` to bring back, and the copy as it was is kept as a backup. Only when sync holds all of it and no agent here has it open]' \
+'--shell-widget[Report the result on stderr for the shell widget]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'*::query -- Search text, or a thread id (or unique id prefix) to resume without the picker:_default' \
+&& ret=0
+;;
+(mcp)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__mcp_commands" \
+"*::: :->mcp" \
+&& ret=0
+
+    case $state in
+    (mcp)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-mcp-command-$line[1]:"
+        case $line[1] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+'::agent -- Agent to connect (claude-code, codex, grok, opencode, pi or omp); omit to connect all agents with existing config files:_default' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__mcp__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-mcp-help-command-$line[1]:"
+        case $line[1] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
 ;;
 (wrapped)
 _arguments "${_arguments_options[@]}" : \
 '-h[Print help]' \
 '--help[Print help]' \
-'::year:_default' \
+'::year -- Year to recap (defaults to last year, or this year in December):_default' \
+&& ret=0
+;;
+(trick-or-treat)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(default-config)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(config)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__config_commands" \
+"*::: :->config" \
+&& ret=0
+
+    case $state in
+    (config)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-config-command-$line[1]:"
+        case $line[1] in
+            (get)
+_arguments "${_arguments_options[@]}" : \
+'-r[Print the value after defaults and overrides are applied]' \
+'--resolved[Print the value after defaults and overrides are applied]' \
+'-v[Print both the config file value and the resolved value]' \
+'--verbose[Print both the config file value and the resolved value]' \
+'-h[Print help]' \
+'--help[Print help]' \
+':key -- The configuration key to get:_default' \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" : \
+'-t+[Store value as an explicit type]:TYPE:((auto\:"Automatically determine the type of the value"
+string\:"Store value as a string"
+boolean\:"Store value as a boolean"
+integer\:"Store value as an integer"
+float\:"Store the value as a float"))' \
+'--type=[Store value as an explicit type]:TYPE:((auto\:"Automatically determine the type of the value"
+string\:"Store value as a string"
+boolean\:"Store value as a boolean"
+integer\:"Store value as an integer"
+float\:"Store the value as a float"))' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':key -- The configuration key to set:_default' \
+':value -- The value to set:_default' \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':feature -- The feature to enable:((daemon\:"The background daemon and daemon-backed search"
+output-capture\:"Command output capture, via the daemon and the pty proxy"
+threads\:"Capture your AI coding agents'\'' threads, to search and resume them"))' \
+&& ret=0
+;;
+(disable)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':feature -- The feature to disable:((daemon\:"The background daemon and daemon-backed search"
+output-capture\:"Command output capture, via the daemon and the pty proxy"
+threads\:"Capture your AI coding agents'\'' threads, to search and resume them"))' \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+'::key -- Print the value of a specific key and all its children:_default' \
+&& ret=0
+;;
+(types)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__config__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-config-help-command-$line[1]:"
+        case $line[1] in
+            (get)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(disable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(types)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(workspace)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_atuin__subcmd__workspace_commands" \
+"*::: :->workspace" \
+&& ret=0
+
+    case $state in
+    (workspace)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-workspace-command-$line[1]:"
+        case $line[1] in
+            (init)
+_arguments "${_arguments_options[@]}" : \
+'*--org=[An organization to share the threads with, by slug. Repeat it to name more than one. Without it, you'\''re asked.]:SLUG:_default' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__workspace__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-workspace-help-command-$line[1]:"
+        case $line[1] in
+            (init)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(info)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
 && ret=0
 ;;
 (daemon)
@@ -1365,158 +2086,6 @@ esac
     ;;
 esac
 ;;
-(default-config)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
-(config)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-":: :_atuin__subcmd__config_commands" \
-"*::: :->config" \
-&& ret=0
-
-    case $state in
-    (config)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-config-command-$line[1]:"
-        case $line[1] in
-            (get)
-_arguments "${_arguments_options[@]}" : \
-'-r[Print the value after defaults and overrides are applied]' \
-'--resolved[Print the value after defaults and overrides are applied]' \
-'-v[Print both the config file value and the resolved value]' \
-'--verbose[Print both the config file value and the resolved value]' \
-'-h[Print help]' \
-'--help[Print help]' \
-':key -- The configuration key to get:_default' \
-&& ret=0
-;;
-(set)
-_arguments "${_arguments_options[@]}" : \
-'-t+[Store value as an explicit type]:TYPE:((auto\:"Automatically determine the type of the value"
-string\:"Store value as a string"
-boolean\:"Store value as a boolean"
-integer\:"Store value as an integer"
-float\:"Store the value as a float"))' \
-'--type=[Store value as an explicit type]:TYPE:((auto\:"Automatically determine the type of the value"
-string\:"Store value as a string"
-boolean\:"Store value as a boolean"
-integer\:"Store value as an integer"
-float\:"Store the value as a float"))' \
-'-h[Print help (see more with '\''--help'\'')]' \
-'--help[Print help (see more with '\''--help'\'')]' \
-':key -- The configuration key to set:_default' \
-':value -- The value to set:_default' \
-&& ret=0
-;;
-(print)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help (see more with '\''--help'\'')]' \
-'--help[Print help (see more with '\''--help'\'')]' \
-'::key -- Print the value of a specific key and all its children:_default' \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__config__subcmd__help_commands" \
-"*::: :->help" \
-&& ret=0
-
-    case $state in
-    (help)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-config-help-command-$line[1]:"
-        case $line[1] in
-            (get)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(print)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-        esac
-    ;;
-esac
-;;
-(ai)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-":: :_atuin__subcmd__ai_commands" \
-"*::: :->ai" \
-&& ret=0
-
-    case $state in
-    (ai)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-ai-command-$line[1]:"
-        case $line[1] in
-            (inline)
-_arguments "${_arguments_options[@]}" : \
-'--api-endpoint=[Custom API endpoint; defaults to reading from the \`ai.endpoint\` setting]:API_ENDPOINT:_default' \
-'--api-token=[Custom API token; defaults to reading from the \`ai.api_token\` setting]:API_TOKEN:_default' \
-'-v[Enable verbose logging]' \
-'--verbose[Enable verbose logging]' \
-'--hook[Use the hook mode]' \
-'-h[Print help]' \
-'--help[Print help]' \
-'::command -- Current command line to complete:_default' \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__ai__subcmd__help_commands" \
-"*::: :->help" \
-&& ret=0
-
-    case $state in
-    (help)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-ai-help-command-$line[1]:"
-        case $line[1] in
-            (inline)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(help)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-        esac
-    ;;
-esac
-;;
-(mcp)
-_arguments "${_arguments_options[@]}" : \
-'-h[Print help]' \
-'--help[Print help]' \
-&& ret=0
-;;
 (__internal)
 _arguments "${_arguments_options[@]}" : \
 ":: :_atuin__subcmd____internal_commands" \
@@ -1533,6 +2102,10 @@ _arguments "${_arguments_options[@]}" : \
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
+(pty-proxy-active)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
         esac
     ;;
 esac
@@ -1543,10 +2116,10 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (pty-proxy)
 _arguments "${_arguments_options[@]}" : \
-'--shell=[Path to the shell binary that atuin pty-proxy should spawn. Defaults to the system login shell. Only valid when no subcommand is given]:PATH:_files' \
-'--debug-osc133[Highlight OSC 133 prompt, input, output, and exit-code regions]' \
-'-h[Print help]' \
-'--help[Print help]' \
+'*--shell=[Path to the shell binary that atuin pty-proxy should spawn]:PATH:_default' \
+'--debug-markers[Highlight \`OSC 18188735\` escape sequences used to mark the start and end of command output]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
 ":: :_atuin__subcmd__pty-proxy_commands" \
 "*::: :->pty-proxy" \
 && ret=0
@@ -1629,135 +2202,23 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-help-command-$line[1]:"
         case $line[1] in
-            (setup)
+            (search)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(history)
+(output)
 _arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__help__subcmd__history_commands" \
-"*::: :->history" \
+":: :_atuin__subcmd__help__subcmd__output_commands" \
+"*::: :->output" \
 && ret=0
 
     case $state in
-    (history)
+    (output)
         words=($line[1] "${words[@]}")
         (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-help-history-command-$line[1]:"
+        curcontext="${curcontext%:*:*}:atuin-help-output-command-$line[1]:"
         case $line[1] in
-            (start)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(end)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(tail)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(last)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(init-store)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(prune)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(dedup)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-(hook)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__help__subcmd__hook_commands" \
-"*::: :->hook" \
-&& ret=0
-
-    case $state in
-    (hook)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-help-hook-command-$line[1]:"
-        case $line[1] in
-            (install)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-(import)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__help__subcmd__import_commands" \
-"*::: :->import" \
-&& ret=0
-
-    case $state in
-    (import)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-help-import-command-$line[1]:"
-        case $line[1] in
-            (auto)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(zsh)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(zsh-hist-db)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(bash)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(replxx)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(resh)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(fish)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(nu)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(nu-hist-db)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(xonsh)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(xonsh-sqlite)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(powershell)
+            (search)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1766,10 +2227,6 @@ _arguments "${_arguments_options[@]}" : \
 esac
 ;;
 (stats)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(search)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1837,6 +2294,130 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
+(history)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__history_commands" \
+"*::: :->history" \
+&& ret=0
+
+    case $state in
+    (history)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-history-command-$line[1]:"
+        case $line[1] in
+            (start)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(end)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(last)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(init-store)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(prune)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(dedup)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(setup)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(init)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__import_commands" \
+"*::: :->import" \
+&& ret=0
+
+    case $state in
+    (import)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-import-command-$line[1]:"
+        case $line[1] in
+            (auto)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(zsh)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(zsh-hist-db)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(bash)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(replxx)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resh)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(fish)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(nu)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(nu-hist-db)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(xonsh)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(xonsh-sqlite)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(powershell)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(doctor)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
 (kv)
 _arguments "${_arguments_options[@]}" : \
 ":: :_atuin__subcmd__help__subcmd__kv_commands" \
@@ -1897,6 +2478,10 @@ _arguments "${_arguments_options[@]}" : \
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
+(compact)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
 (purge)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
@@ -1941,19 +2526,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-help-dotfiles-alias-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(clear)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -1973,15 +2546,7 @@ _arguments "${_arguments_options[@]}" : \
         (( CURRENT += 1 ))
         curcontext="${curcontext%:*:*}:atuin-help-dotfiles-var-command-$line[1]:"
         case $line[1] in
-            (set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(delete)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(list)
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -2033,19 +2598,247 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
+(hook)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__hook_commands" \
+"*::: :->hook" \
+&& ret=0
+
+    case $state in
+    (hook)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-hook-command-$line[1]:"
+        case $line[1] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(ai)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__ai_commands" \
+"*::: :->ai" \
+&& ret=0
+
+    case $state in
+    (ai)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-ai-command-$line[1]:"
+        case $line[1] in
+            (inline)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
 (init)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(info)
+(session)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__ai__subcmd__session_commands" \
+"*::: :->session" \
+&& ret=0
+
+    case $state in
+    (session)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-ai-session-command-$line[1]:"
+        case $line[1] in
+            (list)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
-(doctor)
+(show)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(threads)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__threads_commands" \
+"*::: :->threads" \
+&& ret=0
+
+    case $state in
+    (threads)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-threads-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(show)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(search)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(tail)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(import)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(push)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(resume)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(mcp)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__mcp_commands" \
+"*::: :->mcp" \
+&& ret=0
+
+    case $state in
+    (mcp)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-mcp-command-$line[1]:"
+        case $line[1] in
+            (install)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
 ;;
 (wrapped)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(trick-or-treat)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(default-config)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(config)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__config_commands" \
+"*::: :->config" \
+&& ret=0
+
+    case $state in
+    (config)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-config-command-$line[1]:"
+        case $line[1] in
+            (get)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(set)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(enable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(disable)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(print)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(types)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(workspace)
+_arguments "${_arguments_options[@]}" : \
+":: :_atuin__subcmd__help__subcmd__workspace_commands" \
+"*::: :->workspace" \
+&& ret=0
+
+    case $state in
+    (workspace)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:atuin-help-workspace-command-$line[1]:"
+        case $line[1] in
+            (init)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(info)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -2081,62 +2874,6 @@ _arguments "${_arguments_options[@]}" : \
     ;;
 esac
 ;;
-(default-config)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(config)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__help__subcmd__config_commands" \
-"*::: :->config" \
-&& ret=0
-
-    case $state in
-    (config)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-help-config-command-$line[1]:"
-        case $line[1] in
-            (get)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(set)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-(print)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-(ai)
-_arguments "${_arguments_options[@]}" : \
-":: :_atuin__subcmd__help__subcmd__ai_commands" \
-"*::: :->ai" \
-&& ret=0
-
-    case $state in
-    (ai)
-        words=($line[1] "${words[@]}")
-        (( CURRENT += 1 ))
-        curcontext="${curcontext%:*:*}:atuin-help-ai-command-$line[1]:"
-        case $line[1] in
-            (inline)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
-        esac
-    ;;
-esac
-;;
-(mcp)
-_arguments "${_arguments_options[@]}" : \
-&& ret=0
-;;
 (__internal)
 _arguments "${_arguments_options[@]}" : \
 ":: :_atuin__subcmd__help__subcmd____internal_commands" \
@@ -2150,6 +2887,10 @@ _arguments "${_arguments_options[@]}" : \
         curcontext="${curcontext%:*:*}:atuin-help-__internal-command-$line[1]:"
         case $line[1] in
             (prepare-search-index)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(pty-proxy-active)
 _arguments "${_arguments_options[@]}" : \
 && ret=0
 ;;
@@ -2209,12 +2950,9 @@ esac
 (( $+functions[_atuin_commands] )) ||
 _atuin_commands() {
     local commands; commands=(
-'setup:Setup Atuin features' \
-'history:Manipulate shell history' \
-'hook:Manage AI-agent shell hooks' \
-'import:Import shell history from file' \
-'stats:Calculate statistics for your history' \
 'search:Interactive history search' \
+'output:Work with captured command output' \
+'stats:Calculate statistics for your history' \
 'sync:Sync with the configured server' \
 'login:Login to the configured server' \
 'logout:Log out' \
@@ -2222,24 +2960,32 @@ _atuin_commands() {
 'key:Print the encryption key for transfer to another machine' \
 'status:Display the sync status' \
 'account:Manage your sync account' \
+'history:Manipulate shell history' \
+'setup:Setup Atuin features' \
+'init:Print Atuin'\''s shell init script' \
+'import:Import shell history from file' \
+'doctor:Run the doctor to check for common issues' \
 'kv:Get or set small key-value pairs' \
 'store:Manage the atuin data store' \
-'dotfiles:Manage your dotfiles with Atuin' \
+'dotfiles:List legacy synced dotfiles data' \
 'scripts:Manage your scripts with Atuin' \
-'init:Print Atuin'\''s shell init script' \
-'info:Information about dotfiles locations and ENV vars' \
-'doctor:Run the doctor to check for common issues' \
-'wrapped:' \
-'daemon:*Experimental* Manage the background daemon' \
-'default-config:Print the default atuin configuration (config.toml)' \
-'config:' \
+'hook:Manage AI-agent shell hooks' \
 'ai:Run the AI assistant' \
+'threads:Search, read and resume your coding agents'\'' captured threads' \
+'resume:Pick a captured coding-agent thread and resume it (short for \`atuin threads resume\`)' \
 'mcp:Start an MCP server exposing history search to AI tools (stdio)' \
+'wrapped:Show a fun, year-in-review recap of your shell history' \
+'trick-or-treat:Dig a forgotten command, or a ghost, out of your history' \
+'default-config:Print the default atuin configuration (config.toml)' \
+'config:Get, set, or print values in your atuin config file' \
+'workspace:Set up the .atuin.lua config file of a project' \
+'info:Information about Atuin data locations and ENV vars' \
+'daemon:Manage the background daemon' \
 '__internal:Internal subcommands, not for direct use by users' \
 '__internal_:We want to exclude the \`__internal\` subcommand from Clap'\''s \`infer_subcommands\`; otherwise, a user could access it simply by typing \`atuin _\`. However, Clap has no way to disable \`infer_subcommands\` for a single command. As a workaround, we define a dummy command with the same name but with an extra understore, which forces \`__internal\` to be typed out in entirety, since any prefix of the name would be ambiguous' \
 'pty-proxy:PTY proxy for atuin' \
 'uuid:Generate a UUID' \
-'contributors:' \
+'contributors:List the people who have contributed to Atuin' \
 'gen-completions:Generate shell completions' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
@@ -2249,6 +2995,7 @@ _atuin_commands() {
 _atuin__subcmd____internal_commands() {
     local commands; commands=(
 'prepare-search-index:' \
+'pty-proxy-active:Check whether the current terminal belongs to a live PTY proxy' \
     )
     _describe -t commands 'atuin __internal commands' commands "$@"
 }
@@ -2256,6 +3003,11 @@ _atuin__subcmd____internal_commands() {
 _atuin__subcmd____internal__subcmd__prepare-search-index_commands() {
     local commands; commands=()
     _describe -t commands 'atuin __internal prepare-search-index commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd____internal__subcmd__pty-proxy-active_commands] )) ||
+_atuin__subcmd____internal__subcmd__pty-proxy-active_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin __internal pty-proxy-active commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd____internal__commands] )) ||
 _atuin__subcmd____internal__commands() {
@@ -2357,6 +3109,9 @@ _atuin__subcmd__account__subcmd__register_commands() {
 _atuin__subcmd__ai_commands() {
     local commands; commands=(
 'inline:Inline completion mode with small TUI overlay' \
+'init:This command is no longer necessary. If you have it in your shell init file, feel free to remove it' \
+'session:\`atuin threads\`, as it was called before' \
+'resume:\`atuin threads resume\`, as it was called before' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin ai commands' commands "$@"
@@ -2365,6 +3120,9 @@ _atuin__subcmd__ai_commands() {
 _atuin__subcmd__ai__subcmd__help_commands() {
     local commands; commands=(
 'inline:Inline completion mode with small TUI overlay' \
+'init:This command is no longer necessary. If you have it in your shell init file, feel free to remove it' \
+'session:\`atuin threads\`, as it was called before' \
+'resume:\`atuin threads resume\`, as it was called before' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin ai help commands' commands "$@"
@@ -2374,25 +3132,227 @@ _atuin__subcmd__ai__subcmd__help__subcmd__help_commands() {
     local commands; commands=()
     _describe -t commands 'atuin ai help help commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__init_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help init commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__inline_commands] )) ||
 _atuin__subcmd__ai__subcmd__help__subcmd__inline_commands() {
     local commands; commands=()
     _describe -t commands 'atuin ai help inline commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__resume_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+    )
+    _describe -t commands 'atuin ai help session commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__enable_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__import_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__list_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__push_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__resume_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__search_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__show_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__tail_commands] )) ||
+_atuin__subcmd__ai__subcmd__help__subcmd__session__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai help session tail commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__init_commands] )) ||
+_atuin__subcmd__ai__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai init commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__ai__subcmd__inline_commands] )) ||
 _atuin__subcmd__ai__subcmd__inline_commands() {
     local commands; commands=()
     _describe -t commands 'atuin ai inline commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__ai__subcmd__resume_commands] )) ||
+_atuin__subcmd__ai__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session_commands] )) ||
+_atuin__subcmd__ai__subcmd__session_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin ai session commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__enable_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin ai session help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__enable_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__help_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__import_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__list_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__push_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__resume_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__search_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__show_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__tail_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__help__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session help tail commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__import_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__list_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__push_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__resume_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__search_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__show_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__ai__subcmd__session__subcmd__tail_commands] )) ||
+_atuin__subcmd__ai__subcmd__session__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin ai session tail commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__config_commands] )) ||
 _atuin__subcmd__config_commands() {
     local commands; commands=(
 'get:Get a configuration value from your config.toml file or after defaults and overrides are applied' \
 'set:Set a configuration value in your config.toml file' \
+'enable:Enable a feature, along with everything it depends on' \
+'disable:Disable a feature, leaving its dependencies enabled' \
 'print:Print all configuration values from your config.toml file in TOML format' \
+'types:Print the Luau types of atuin.lua and .atuin.lua config files, for your editor' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin config commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__config__subcmd__disable_commands] )) ||
+_atuin__subcmd__config__subcmd__disable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config disable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__config__subcmd__enable_commands] )) ||
+_atuin__subcmd__config__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config enable commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__config__subcmd__get_commands] )) ||
 _atuin__subcmd__config__subcmd__get_commands() {
@@ -2404,10 +3364,23 @@ _atuin__subcmd__config__subcmd__help_commands() {
     local commands; commands=(
 'get:Get a configuration value from your config.toml file or after defaults and overrides are applied' \
 'set:Set a configuration value in your config.toml file' \
+'enable:Enable a feature, along with everything it depends on' \
+'disable:Disable a feature, leaving its dependencies enabled' \
 'print:Print all configuration values from your config.toml file in TOML format' \
+'types:Print the Luau types of atuin.lua and .atuin.lua config files, for your editor' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin config help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__config__subcmd__help__subcmd__disable_commands] )) ||
+_atuin__subcmd__config__subcmd__help__subcmd__disable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config help disable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__config__subcmd__help__subcmd__enable_commands] )) ||
+_atuin__subcmd__config__subcmd__help__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config help enable commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__config__subcmd__help__subcmd__get_commands] )) ||
 _atuin__subcmd__config__subcmd__help__subcmd__get_commands() {
@@ -2429,6 +3402,11 @@ _atuin__subcmd__config__subcmd__help__subcmd__set_commands() {
     local commands; commands=()
     _describe -t commands 'atuin config help set commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__config__subcmd__help__subcmd__types_commands] )) ||
+_atuin__subcmd__config__subcmd__help__subcmd__types_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config help types commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__config__subcmd__print_commands] )) ||
 _atuin__subcmd__config__subcmd__print_commands() {
     local commands; commands=()
@@ -2438,6 +3416,11 @@ _atuin__subcmd__config__subcmd__print_commands() {
 _atuin__subcmd__config__subcmd__set_commands() {
     local commands; commands=()
     _describe -t commands 'atuin config set commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__config__subcmd__types_commands] )) ||
+_atuin__subcmd__config__subcmd__types_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin config types commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__contributors_commands] )) ||
 _atuin__subcmd__contributors_commands() {
@@ -2524,8 +3507,8 @@ _atuin__subcmd__doctor_commands() {
 (( $+functions[_atuin__subcmd__dotfiles_commands] )) ||
 _atuin__subcmd__dotfiles_commands() {
     local commands; commands=(
-'alias:Manage shell aliases with Atuin' \
-'var:Manage shell and environment variables with Atuin' \
+'alias:List legacy shell aliases synced with Atuin' \
+'var:List legacy shell and environment variables synced with Atuin' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles commands' commands "$@"
@@ -2533,44 +3516,18 @@ _atuin__subcmd__dotfiles_commands() {
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__alias_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__alias_commands() {
     local commands; commands=(
-'set:Set an alias' \
-'delete:Delete an alias' \
 'list:List all aliases' \
-'clear:Delete all aliases' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles alias commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__clear_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__clear_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias clear commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias delete commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__alias__subcmd__help_commands() {
     local commands; commands=(
-'set:Set an alias' \
-'delete:Delete an alias' \
 'list:List all aliases' \
-'clear:Delete all aliases' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles alias help commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__clear_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__clear_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias help clear commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias help delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__help_commands() {
@@ -2582,26 +3539,16 @@ _atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles alias help list commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__help__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias help set commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__list_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__alias__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles alias list commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__alias__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__alias__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles alias set commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help_commands() {
     local commands; commands=(
-'alias:Manage shell aliases with Atuin' \
-'var:Manage shell and environment variables with Atuin' \
+'alias:List legacy shell aliases synced with Atuin' \
+'var:List legacy shell and environment variables synced with Atuin' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles help commands' commands "$@"
@@ -2609,32 +3556,14 @@ _atuin__subcmd__dotfiles__subcmd__help_commands() {
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help__subcmd__alias_commands() {
     local commands; commands=(
-'set:Set an alias' \
-'delete:Delete an alias' \
 'list:List all aliases' \
-'clear:Delete all aliases' \
     )
     _describe -t commands 'atuin dotfiles help alias commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__clear_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__clear_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles help alias clear commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles help alias delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__list_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles help alias list commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__help__subcmd__alias__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles help alias set commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help__subcmd__help_commands() {
@@ -2644,56 +3573,30 @@ _atuin__subcmd__dotfiles__subcmd__help__subcmd__help_commands() {
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__var_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help__subcmd__var_commands() {
     local commands; commands=(
-'set:Set a variable' \
-'delete:Delete a variable' \
 'list:List all variables' \
     )
     _describe -t commands 'atuin dotfiles help var commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles help var delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__list_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles help var list commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__help__subcmd__var__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles help var set commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__var_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__var_commands() {
     local commands; commands=(
-'set:Set a variable' \
-'delete:Delete a variable' \
 'list:List all variables' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles var commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__var__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles var delete commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__var__subcmd__help_commands() {
     local commands; commands=(
-'set:Set a variable' \
-'delete:Delete a variable' \
 'list:List all variables' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin dotfiles var help commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__delete_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles var help delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__help_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__help_commands() {
@@ -2705,20 +3608,10 @@ _atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles var help list commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__var__subcmd__help__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles var help set commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__list_commands] )) ||
 _atuin__subcmd__dotfiles__subcmd__var__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin dotfiles var list commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__dotfiles__subcmd__var__subcmd__set_commands] )) ||
-_atuin__subcmd__dotfiles__subcmd__var__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin dotfiles var set commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__gen-completions_commands] )) ||
 _atuin__subcmd__gen-completions_commands() {
@@ -2728,12 +3621,9 @@ _atuin__subcmd__gen-completions_commands() {
 (( $+functions[_atuin__subcmd__help_commands] )) ||
 _atuin__subcmd__help_commands() {
     local commands; commands=(
-'setup:Setup Atuin features' \
-'history:Manipulate shell history' \
-'hook:Manage AI-agent shell hooks' \
-'import:Import shell history from file' \
-'stats:Calculate statistics for your history' \
 'search:Interactive history search' \
+'output:Work with captured command output' \
+'stats:Calculate statistics for your history' \
 'sync:Sync with the configured server' \
 'login:Login to the configured server' \
 'logout:Log out' \
@@ -2741,24 +3631,32 @@ _atuin__subcmd__help_commands() {
 'key:Print the encryption key for transfer to another machine' \
 'status:Display the sync status' \
 'account:Manage your sync account' \
+'history:Manipulate shell history' \
+'setup:Setup Atuin features' \
+'init:Print Atuin'\''s shell init script' \
+'import:Import shell history from file' \
+'doctor:Run the doctor to check for common issues' \
 'kv:Get or set small key-value pairs' \
 'store:Manage the atuin data store' \
-'dotfiles:Manage your dotfiles with Atuin' \
+'dotfiles:List legacy synced dotfiles data' \
 'scripts:Manage your scripts with Atuin' \
-'init:Print Atuin'\''s shell init script' \
-'info:Information about dotfiles locations and ENV vars' \
-'doctor:Run the doctor to check for common issues' \
-'wrapped:' \
-'daemon:*Experimental* Manage the background daemon' \
-'default-config:Print the default atuin configuration (config.toml)' \
-'config:' \
+'hook:Manage AI-agent shell hooks' \
 'ai:Run the AI assistant' \
+'threads:Search, read and resume your coding agents'\'' captured threads' \
+'resume:Pick a captured coding-agent thread and resume it (short for \`atuin threads resume\`)' \
 'mcp:Start an MCP server exposing history search to AI tools (stdio)' \
+'wrapped:Show a fun, year-in-review recap of your shell history' \
+'trick-or-treat:Dig a forgotten command, or a ghost, out of your history' \
+'default-config:Print the default atuin configuration (config.toml)' \
+'config:Get, set, or print values in your atuin config file' \
+'workspace:Set up the .atuin.lua config file of a project' \
+'info:Information about Atuin data locations and ENV vars' \
+'daemon:Manage the background daemon' \
 '__internal:Internal subcommands, not for direct use by users' \
 '__internal_:We want to exclude the \`__internal\` subcommand from Clap'\''s \`infer_subcommands\`; otherwise, a user could access it simply by typing \`atuin _\`. However, Clap has no way to disable \`infer_subcommands\` for a single command. As a workaround, we define a dummy command with the same name but with an extra understore, which forces \`__internal\` to be typed out in entirety, since any prefix of the name would be ambiguous' \
 'pty-proxy:PTY proxy for atuin' \
 'uuid:Generate a UUID' \
-'contributors:' \
+'contributors:List the people who have contributed to Atuin' \
 'gen-completions:Generate shell completions' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
@@ -2768,6 +3666,7 @@ _atuin__subcmd__help_commands() {
 _atuin__subcmd__help__subcmd____internal_commands() {
     local commands; commands=(
 'prepare-search-index:' \
+'pty-proxy-active:Check whether the current terminal belongs to a live PTY proxy' \
     )
     _describe -t commands 'atuin help __internal commands' commands "$@"
 }
@@ -2775,6 +3674,11 @@ _atuin__subcmd__help__subcmd____internal_commands() {
 _atuin__subcmd__help__subcmd____internal__subcmd__prepare-search-index_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help __internal prepare-search-index commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd____internal__subcmd__pty-proxy-active_commands] )) ||
+_atuin__subcmd__help__subcmd____internal__subcmd__pty-proxy-active_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help __internal pty-proxy-active commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd____internal__commands] )) ||
 _atuin__subcmd__help__subcmd____internal__commands() {
@@ -2827,22 +3731,102 @@ _atuin__subcmd__help__subcmd__account__subcmd__register_commands() {
 _atuin__subcmd__help__subcmd__ai_commands() {
     local commands; commands=(
 'inline:Inline completion mode with small TUI overlay' \
+'init:This command is no longer necessary. If you have it in your shell init file, feel free to remove it' \
+'session:\`atuin threads\`, as it was called before' \
+'resume:\`atuin threads resume\`, as it was called before' \
     )
     _describe -t commands 'atuin help ai commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__init_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai init commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__inline_commands] )) ||
 _atuin__subcmd__help__subcmd__ai__subcmd__inline_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help ai inline commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__resume_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+    )
+    _describe -t commands 'atuin help ai session commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__enable_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__import_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__list_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__push_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__resume_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__search_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__show_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__tail_commands] )) ||
+_atuin__subcmd__help__subcmd__ai__subcmd__session__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help ai session tail commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__help__subcmd__config_commands] )) ||
 _atuin__subcmd__help__subcmd__config_commands() {
     local commands; commands=(
 'get:Get a configuration value from your config.toml file or after defaults and overrides are applied' \
 'set:Set a configuration value in your config.toml file' \
+'enable:Enable a feature, along with everything it depends on' \
+'disable:Disable a feature, leaving its dependencies enabled' \
 'print:Print all configuration values from your config.toml file in TOML format' \
+'types:Print the Luau types of atuin.lua and .atuin.lua config files, for your editor' \
     )
     _describe -t commands 'atuin help config commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__config__subcmd__disable_commands] )) ||
+_atuin__subcmd__help__subcmd__config__subcmd__disable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help config disable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__config__subcmd__enable_commands] )) ||
+_atuin__subcmd__help__subcmd__config__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help config enable commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__config__subcmd__get_commands] )) ||
 _atuin__subcmd__help__subcmd__config__subcmd__get_commands() {
@@ -2858,6 +3842,11 @@ _atuin__subcmd__help__subcmd__config__subcmd__print_commands() {
 _atuin__subcmd__help__subcmd__config__subcmd__set_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help config set commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__config__subcmd__types_commands] )) ||
+_atuin__subcmd__help__subcmd__config__subcmd__types_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help config types commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__contributors_commands] )) ||
 _atuin__subcmd__help__subcmd__contributors_commands() {
@@ -2907,64 +3896,34 @@ _atuin__subcmd__help__subcmd__doctor_commands() {
 (( $+functions[_atuin__subcmd__help__subcmd__dotfiles_commands] )) ||
 _atuin__subcmd__help__subcmd__dotfiles_commands() {
     local commands; commands=(
-'alias:Manage shell aliases with Atuin' \
-'var:Manage shell and environment variables with Atuin' \
+'alias:List legacy shell aliases synced with Atuin' \
+'var:List legacy shell and environment variables synced with Atuin' \
     )
     _describe -t commands 'atuin help dotfiles commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias_commands] )) ||
 _atuin__subcmd__help__subcmd__dotfiles__subcmd__alias_commands() {
     local commands; commands=(
-'set:Set an alias' \
-'delete:Delete an alias' \
 'list:List all aliases' \
-'clear:Delete all aliases' \
     )
     _describe -t commands 'atuin help dotfiles alias commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__clear_commands] )) ||
-_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__clear_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin help dotfiles alias clear commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__delete_commands] )) ||
-_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin help dotfiles alias delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__list_commands] )) ||
 _atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help dotfiles alias list commands' commands "$@"
 }
-(( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__set_commands] )) ||
-_atuin__subcmd__help__subcmd__dotfiles__subcmd__alias__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin help dotfiles alias set commands' commands "$@"
-}
 (( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__var_commands] )) ||
 _atuin__subcmd__help__subcmd__dotfiles__subcmd__var_commands() {
     local commands; commands=(
-'set:Set a variable' \
-'delete:Delete a variable' \
 'list:List all variables' \
     )
     _describe -t commands 'atuin help dotfiles var commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__delete_commands] )) ||
-_atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__delete_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin help dotfiles var delete commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__list_commands] )) ||
 _atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__list_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help dotfiles var list commands' commands "$@"
-}
-(( $+functions[_atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__set_commands] )) ||
-_atuin__subcmd__help__subcmd__dotfiles__subcmd__var__subcmd__set_commands() {
-    local commands; commands=()
-    _describe -t commands 'atuin help dotfiles var set commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__gen-completions_commands] )) ||
 _atuin__subcmd__help__subcmd__gen-completions_commands() {
@@ -3047,13 +4006,13 @@ _atuin__subcmd__help__subcmd__import_commands() {
     local commands; commands=(
 'auto:Import history for the current shell' \
 'zsh:Import history from the zsh history file' \
-'zsh-hist-db:Import history from the zsh history file' \
+'zsh-hist-db:Import history from the zsh-histdb database' \
 'bash:Import history from the bash history file' \
 'replxx:Import history from the replxx history file' \
 'resh:Import history from the resh history file' \
 'fish:Import history from the fish history file' \
 'nu:Import history from the nu history file' \
-'nu-hist-db:Import history from the nu history file' \
+'nu-hist-db:Import history from the nu history database' \
 'xonsh:Import history from xonsh json files' \
 'xonsh-sqlite:Import history from xonsh sqlite db' \
 'powershell:Import history from the powershell history file' \
@@ -3183,8 +4142,27 @@ _atuin__subcmd__help__subcmd__logout_commands() {
 }
 (( $+functions[_atuin__subcmd__help__subcmd__mcp_commands] )) ||
 _atuin__subcmd__help__subcmd__mcp_commands() {
-    local commands; commands=()
+    local commands; commands=(
+'install:Connect AI agents to atuin'\''s MCP server' \
+    )
     _describe -t commands 'atuin help mcp commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__mcp__subcmd__install_commands] )) ||
+_atuin__subcmd__help__subcmd__mcp__subcmd__install_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help mcp install commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__output_commands] )) ||
+_atuin__subcmd__help__subcmd__output_commands() {
+    local commands; commands=(
+'search:Full-text search over captured command output' \
+    )
+    _describe -t commands 'atuin help output commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__output__subcmd__search_commands] )) ||
+_atuin__subcmd__help__subcmd__output__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help output search commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__pty-proxy_commands] )) ||
 _atuin__subcmd__help__subcmd__pty-proxy_commands() {
@@ -3202,6 +4180,11 @@ _atuin__subcmd__help__subcmd__pty-proxy__subcmd__init_commands() {
 _atuin__subcmd__help__subcmd__register_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help register commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__resume_commands] )) ||
+_atuin__subcmd__help__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help resume commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__scripts_commands] )) ||
 _atuin__subcmd__help__subcmd__scripts_commands() {
@@ -3271,12 +4254,18 @@ _atuin__subcmd__help__subcmd__store_commands() {
 'status:Print the current status of the record store' \
 'rebuild:Rebuild a store (eg atuin store rebuild history)' \
 'rekey:Re-encrypt the store with a new key (potential for data loss!)' \
+'compact:Rewrite every record in the compact on-disk encoding and reclaim space' \
 'purge:Delete all records in the store that cannot be decrypted with the current key' \
 'verify:Verify that all records in the store can be decrypted with the current key' \
 'push:Push all records to the remote sync server (one way sync)' \
 'pull:Pull records from the remote sync server (one way sync)' \
     )
     _describe -t commands 'atuin help store commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__store__subcmd__compact_commands] )) ||
+_atuin__subcmd__help__subcmd__store__subcmd__compact_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help store compact commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__store__subcmd__pull_commands] )) ||
 _atuin__subcmd__help__subcmd__store__subcmd__pull_commands() {
@@ -3318,10 +4307,81 @@ _atuin__subcmd__help__subcmd__sync_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help sync commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__help__subcmd__threads_commands] )) ||
+_atuin__subcmd__help__subcmd__threads_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+    )
+    _describe -t commands 'atuin help threads commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__enable_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__import_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__list_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__push_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__resume_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__search_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__show_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__threads__subcmd__tail_commands] )) ||
+_atuin__subcmd__help__subcmd__threads__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help threads tail commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__trick-or-treat_commands] )) ||
+_atuin__subcmd__help__subcmd__trick-or-treat_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help trick-or-treat commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__help__subcmd__uuid_commands] )) ||
 _atuin__subcmd__help__subcmd__uuid_commands() {
     local commands; commands=()
     _describe -t commands 'atuin help uuid commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__workspace_commands] )) ||
+_atuin__subcmd__help__subcmd__workspace_commands() {
+    local commands; commands=(
+'init:Create a .atuin.lua workspace config file in the current directory' \
+    )
+    _describe -t commands 'atuin help workspace commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__help__subcmd__workspace__subcmd__init_commands] )) ||
+_atuin__subcmd__help__subcmd__workspace__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin help workspace init commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__help__subcmd__wrapped_commands] )) ||
 _atuin__subcmd__help__subcmd__wrapped_commands() {
@@ -3479,13 +4539,13 @@ _atuin__subcmd__import_commands() {
     local commands; commands=(
 'auto:Import history for the current shell' \
 'zsh:Import history from the zsh history file' \
-'zsh-hist-db:Import history from the zsh history file' \
+'zsh-hist-db:Import history from the zsh-histdb database' \
 'bash:Import history from the bash history file' \
 'replxx:Import history from the replxx history file' \
 'resh:Import history from the resh history file' \
 'fish:Import history from the fish history file' \
 'nu:Import history from the nu history file' \
-'nu-hist-db:Import history from the nu history file' \
+'nu-hist-db:Import history from the nu history database' \
 'xonsh:Import history from xonsh json files' \
 'xonsh-sqlite:Import history from xonsh sqlite db' \
 'powershell:Import history from the powershell history file' \
@@ -3513,13 +4573,13 @@ _atuin__subcmd__import__subcmd__help_commands() {
     local commands; commands=(
 'auto:Import history for the current shell' \
 'zsh:Import history from the zsh history file' \
-'zsh-hist-db:Import history from the zsh history file' \
+'zsh-hist-db:Import history from the zsh-histdb database' \
 'bash:Import history from the bash history file' \
 'replxx:Import history from the replxx history file' \
 'resh:Import history from the resh history file' \
 'fish:Import history from the fish history file' \
 'nu:Import history from the nu history file' \
-'nu-hist-db:Import history from the nu history file' \
+'nu-hist-db:Import history from the nu history database' \
 'xonsh:Import history from xonsh json files' \
 'xonsh-sqlite:Import history from xonsh sqlite db' \
 'powershell:Import history from the powershell history file' \
@@ -3743,8 +4803,65 @@ _atuin__subcmd__logout_commands() {
 }
 (( $+functions[_atuin__subcmd__mcp_commands] )) ||
 _atuin__subcmd__mcp_commands() {
-    local commands; commands=()
+    local commands; commands=(
+'install:Connect AI agents to atuin'\''s MCP server' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
     _describe -t commands 'atuin mcp commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__mcp__subcmd__help_commands] )) ||
+_atuin__subcmd__mcp__subcmd__help_commands() {
+    local commands; commands=(
+'install:Connect AI agents to atuin'\''s MCP server' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin mcp help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__mcp__subcmd__help__subcmd__help_commands] )) ||
+_atuin__subcmd__mcp__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin mcp help help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__mcp__subcmd__help__subcmd__install_commands] )) ||
+_atuin__subcmd__mcp__subcmd__help__subcmd__install_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin mcp help install commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__mcp__subcmd__install_commands] )) ||
+_atuin__subcmd__mcp__subcmd__install_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin mcp install commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__output_commands] )) ||
+_atuin__subcmd__output_commands() {
+    local commands; commands=(
+'search:Full-text search over captured command output' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin output commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__output__subcmd__help_commands] )) ||
+_atuin__subcmd__output__subcmd__help_commands() {
+    local commands; commands=(
+'search:Full-text search over captured command output' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin output help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__output__subcmd__help__subcmd__help_commands] )) ||
+_atuin__subcmd__output__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin output help help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__output__subcmd__help__subcmd__search_commands] )) ||
+_atuin__subcmd__output__subcmd__help__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin output help search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__output__subcmd__search_commands] )) ||
+_atuin__subcmd__output__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin output search commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__pty-proxy_commands] )) ||
 _atuin__subcmd__pty-proxy_commands() {
@@ -3781,6 +4898,11 @@ _atuin__subcmd__pty-proxy__subcmd__init_commands() {
 _atuin__subcmd__register_commands() {
     local commands; commands=()
     _describe -t commands 'atuin register commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__resume_commands] )) ||
+_atuin__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin resume commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__scripts_commands] )) ||
 _atuin__subcmd__scripts_commands() {
@@ -3899,6 +5021,7 @@ _atuin__subcmd__store_commands() {
 'status:Print the current status of the record store' \
 'rebuild:Rebuild a store (eg atuin store rebuild history)' \
 'rekey:Re-encrypt the store with a new key (potential for data loss!)' \
+'compact:Rewrite every record in the compact on-disk encoding and reclaim space' \
 'purge:Delete all records in the store that cannot be decrypted with the current key' \
 'verify:Verify that all records in the store can be decrypted with the current key' \
 'push:Push all records to the remote sync server (one way sync)' \
@@ -3907,12 +5030,18 @@ _atuin__subcmd__store_commands() {
     )
     _describe -t commands 'atuin store commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__store__subcmd__compact_commands] )) ||
+_atuin__subcmd__store__subcmd__compact_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin store compact commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__store__subcmd__help_commands] )) ||
 _atuin__subcmd__store__subcmd__help_commands() {
     local commands; commands=(
 'status:Print the current status of the record store' \
 'rebuild:Rebuild a store (eg atuin store rebuild history)' \
 'rekey:Re-encrypt the store with a new key (potential for data loss!)' \
+'compact:Rewrite every record in the compact on-disk encoding and reclaim space' \
 'purge:Delete all records in the store that cannot be decrypted with the current key' \
 'verify:Verify that all records in the store can be decrypted with the current key' \
 'push:Push all records to the remote sync server (one way sync)' \
@@ -3920,6 +5049,11 @@ _atuin__subcmd__store__subcmd__help_commands() {
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'atuin store help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__store__subcmd__help__subcmd__compact_commands] )) ||
+_atuin__subcmd__store__subcmd__help__subcmd__compact_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin store help compact commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__store__subcmd__help__subcmd__help_commands] )) ||
 _atuin__subcmd__store__subcmd__help__subcmd__help_commands() {
@@ -4001,10 +5135,161 @@ _atuin__subcmd__sync_commands() {
     local commands; commands=()
     _describe -t commands 'atuin sync commands' commands "$@"
 }
+(( $+functions[_atuin__subcmd__threads_commands] )) ||
+_atuin__subcmd__threads_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin threads commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__enable_commands] )) ||
+_atuin__subcmd__threads__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help_commands] )) ||
+_atuin__subcmd__threads__subcmd__help_commands() {
+    local commands; commands=(
+'list:List captured threads, newest first' \
+'show:Show a thread and its messages. Accepts an id, a harness id or \`latest\`' \
+'search:Full-text search across captured threads, most relevant first.' \
+'tail:Follow threads and messages as they are recorded (until interrupted)' \
+'import:Import every thread the agents have on this machine, including those capture leaves alone\: the ones nobody has gone on with since it was turned on' \
+'push:Capture messages an agent hands over, one JSON object per line on stdin, as capture does its transcript'\''s. Messages already captured are skipped' \
+'resume:Pick a captured thread and resume it' \
+'enable:Turn thread capture on (short for \`atuin config enable threads\`)' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin threads help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__enable_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__enable_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help enable commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__help_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__import_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__list_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__push_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__resume_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__search_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__show_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__help__subcmd__tail_commands] )) ||
+_atuin__subcmd__threads__subcmd__help__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads help tail commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__import_commands] )) ||
+_atuin__subcmd__threads__subcmd__import_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads import commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__list_commands] )) ||
+_atuin__subcmd__threads__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads list commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__push_commands] )) ||
+_atuin__subcmd__threads__subcmd__push_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads push commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__resume_commands] )) ||
+_atuin__subcmd__threads__subcmd__resume_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads resume commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__search_commands] )) ||
+_atuin__subcmd__threads__subcmd__search_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads search commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__show_commands] )) ||
+_atuin__subcmd__threads__subcmd__show_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads show commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__threads__subcmd__tail_commands] )) ||
+_atuin__subcmd__threads__subcmd__tail_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin threads tail commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__trick-or-treat_commands] )) ||
+_atuin__subcmd__trick-or-treat_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin trick-or-treat commands' commands "$@"
+}
 (( $+functions[_atuin__subcmd__uuid_commands] )) ||
 _atuin__subcmd__uuid_commands() {
     local commands; commands=()
     _describe -t commands 'atuin uuid commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__workspace_commands] )) ||
+_atuin__subcmd__workspace_commands() {
+    local commands; commands=(
+'init:Create a .atuin.lua workspace config file in the current directory' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin workspace commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__workspace__subcmd__help_commands] )) ||
+_atuin__subcmd__workspace__subcmd__help_commands() {
+    local commands; commands=(
+'init:Create a .atuin.lua workspace config file in the current directory' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'atuin workspace help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__workspace__subcmd__help__subcmd__help_commands] )) ||
+_atuin__subcmd__workspace__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin workspace help help commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__workspace__subcmd__help__subcmd__init_commands] )) ||
+_atuin__subcmd__workspace__subcmd__help__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin workspace help init commands' commands "$@"
+}
+(( $+functions[_atuin__subcmd__workspace__subcmd__init_commands] )) ||
+_atuin__subcmd__workspace__subcmd__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'atuin workspace init commands' commands "$@"
 }
 (( $+functions[_atuin__subcmd__wrapped_commands] )) ||
 _atuin__subcmd__wrapped_commands() {
